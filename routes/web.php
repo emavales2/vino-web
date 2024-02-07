@@ -19,6 +19,7 @@ Route::get('/', function () {
     return Inertia::render('TestPage');
 });
 Route::get('/testwine', [WineController::class, 'index']);
+Route::get('/testsearch', [WineController::class, 'search']);
 /* Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
