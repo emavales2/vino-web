@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WineController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -17,7 +18,8 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('TestPage');
 });
-
+Route::get('/testwine', [WineController::class, 'index']);
+Route::get('/testsearch', [WineController::class, 'searchResult']);
 /* Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),

@@ -13,7 +13,8 @@ createInertiaApp({
         return createApp({ render: () => h(app, props) })
             .use(plugin)
             .mixin({ methods: { route } })
-            .mount(el);
+            .mount(el)
+            .$nextTick(() => { delete el.dataset.page });
     },
 });
 
