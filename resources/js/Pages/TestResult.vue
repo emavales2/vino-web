@@ -8,17 +8,27 @@
       >
         <h1>{{ wine.name }}</h1>
         <p>{{ wine.type }} | {{ wine.country }} | {{ wine.size }}</p>
-        <button @click="toggleDialog">Add to cellar</button>
+        <button @click="openDialog(wine.id)">Add to cellar</button>
       </li>
     </ul>
-    <div v-if="showDialog">
-      <h2>pls add some wine</h2>
-      <form action="">
-        <label for="quantity">Quantity</label>
-        <input type="number" id="quantity" v-model="quantity">
-        <button @click="addToCellar">Add</button>
-      </form>
-    </div>
+    <Transition name="pop-dialog">
+      <div v-if="showDialog" class="bg-stone-400">
+        <h2>pls add some wine</h2>
+        <form action="">
+          <h1>{{ selectedWine.name }}</h1>
+          <label for="quantity">Quantity</label>
+          <div>
+            <input type="number" id="quantity" v-model="quantity">
+            <button type="button" @click="quantity ++">+</button>
+            <button type="button" @click="quantity --">-</button>
+          </div>
+          <div>
+            <button type="button" @click="addToCellar">Add</button>
+            <button type="button" @click="closeDialog">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </Transition>
   </div>
 </template>
 
@@ -28,12 +38,23 @@
     data () {
       return {
         showDialog : false,
-        quantity : 0
+        quantity : 1,
+        selectedWine : ''
       }
     },
     methods: {
-      toggleDialog () {
-        this.showDialog = !this.showDialog
+      addToCellar() {
+        console.log(this.quantity, this.selectedWine.id)
+      },
+      closeDialog () {
+        this.showDialog = false;
+        this.quantity = 1;
+        this.wineId = 'id';
+      },
+      openDialog (id) {
+        this.showDialog = true;
+        this.quantity = 1;
+        this.selectedWine = this.results.find(w => w.id === id);
       }
     },
     props: ['results']

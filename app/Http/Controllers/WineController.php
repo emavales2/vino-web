@@ -28,12 +28,14 @@ class WineController extends Controller
     {
         //
     }
-    public function search()
+    public function searchResult()
     {
+        // $search proviendera d'un param de la fonction passé en argument lors de l'appel($request->search)
         $search = 'alta';
         $results = Wine::like('name', $search)->get();
         return Inertia::render('TestResult', compact('results'));
     }
+    
     /**
      * Store a newly created resource in storage.
      *
