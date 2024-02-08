@@ -3,6 +3,7 @@
 use App\Http\Controllers\WineController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CellarController;
+use App\Http\Controllers\CellarHasWineController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -32,6 +33,9 @@ Route::post('/cellar-create', [CellarController::class, 'store'])->name('cellar.
 Route::get('/cellar-edit/{cellar}', [CellarController::class, 'edit'])->name('cellar.edit');
 Route::put('/cellar-edit/{cellar}', [CellarController::class, 'update'])->name('cellar.edit');
 Route::delete('/cellar/{cellar}', [CellarController::class, 'destroy'])->name('cellar.delete');
+
+// WineHasCellar
+Route::post('/wine-store', [CellarHasWineController::class, 'store'])->name('wine.store');
 
 Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard')->middleware(['auth']);
 // User

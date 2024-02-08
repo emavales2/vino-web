@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Wine;
+use App\Models\CellarHasWine;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
+use Illuminate\Support\Facades\Auth;
 
-class WineController extends Controller
+class CellarHasWineController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,7 @@ class WineController extends Controller
      */
     public function index()
     {
-        $wines = Wine::all();
-        return Inertia::render('WineTest', compact('wines'));
+        //
     }
 
     /**
@@ -28,14 +27,7 @@ class WineController extends Controller
     {
         //
     }
-    public function searchResult()
-    {
-        // $search proviendera d'un param de la fonction passé en argument lors de l'appel($request->search)
-        $search = 'alta';
-        $results = Wine::like('name', $search)->get();
-        return Inertia::render('ResultView', compact('results'));
-    }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -44,16 +36,18 @@ class WineController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $test = ['user_id'=> Auth::user()->id, 'wine_id' => $request->wine_id, 'quantity'=>$request->quantity];
+
+        return $test;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Wine  $wine
+     * @param  \App\Models\CellarHasWine  $cellarHasWine
      * @return \Illuminate\Http\Response
      */
-    public function show(Wine $wine)
+    public function show(CellarHasWine $cellarHasWine)
     {
         //
     }
@@ -61,10 +55,10 @@ class WineController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Wine  $wine
+     * @param  \App\Models\CellarHasWine  $cellarHasWine
      * @return \Illuminate\Http\Response
      */
-    public function edit(Wine $wine)
+    public function edit(CellarHasWine $cellarHasWine)
     {
         //
     }
@@ -73,10 +67,10 @@ class WineController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Wine  $wine
+     * @param  \App\Models\CellarHasWine  $cellarHasWine
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Wine $wine)
+    public function update(Request $request, CellarHasWine $cellarHasWine)
     {
         //
     }
@@ -84,10 +78,10 @@ class WineController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Wine  $wine
+     * @param  \App\Models\CellarHasWine  $cellarHasWine
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Wine $wine)
+    public function destroy(CellarHasWine $cellarHasWine)
     {
         //
     }

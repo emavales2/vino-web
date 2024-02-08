@@ -15,16 +15,16 @@
       <Transition name="pop-dialog">
         <div v-if="showDialog" class="bg-stone-400">
           <h2>pls add some wine</h2>
-          <form action="">
+          <form @submit.prevent="addToCellar">
             <h1>{{ selectedWine.name }}</h1>
             <label for="quantity">Quantity</label>
             <div>
-              <input type="number" id="quantity" v-model="quantity">
-              <button type="button" @click="quantity ++">+</button>
-              <button type="button" @click="quantity --">-</button>
+              <input type="number" id="quantity" v-model="form.quantity">
+              <button type="button" @click="form.quantity ++">+</button>
+              <button type="button" @click="form.quantity --">-</button>
             </div>
             <div>
-              <button type="button" @click="addToCellar">Add</button>
+              <button>Add</button>
               <button type="button" @click="closeDialog">Cancel</button>
             </div>
           </form>
@@ -36,6 +36,7 @@
 
 <script>
 import MainLayout from '@/Layouts/MainLayout.vue';
+import { useForm } from '@inertiajs/inertia-vue3';
   export default{
     name:'testWine',
     components: {
@@ -44,23 +45,27 @@ import MainLayout from '@/Layouts/MainLayout.vue';
     data () {
       return {
         showDialog : false,
-        quantity : 1,
-        selectedWine : ''
+        selectedWine : '',
+        form : useForm({
+          wine_id : '',
+          quantity: '1'
+        })
       }
     },
     methods: {
       addToCellar() {
-        console.log(this.quantity, this.selectedWine.id)
+        console.log(this.form)
+        this.form.post(route('wine.store'))
       },
       closeDialog () {
-        this.showDialog = false;
-        this.quantity = 1;
-        this.wineId = 'id';
+        this.showDialog = false
+        this.form.reset()
       },
       openDialog (id) {
-        this.showDialog = true;
-        this.quantity = 1;
-        this.selectedWine = this.results.find(w => w.id === id);
+        this.form.reset()
+        this.showDialog = true
+        this.selectedWine = this.results.find(w => w.id === id)
+        this.form.wine_id = this.selectedWine.id
       }
     },
     props: ['results']
