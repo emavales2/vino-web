@@ -22,7 +22,6 @@ Route::get('/', function () {
     return Inertia::render('HomeView');
 });
 Route::get('/testwine', [WineController::class, 'index']);
-Route::get('/testsearch', [WineController::class, 'searchResult']);
 
 //Cellar
 //----------------------------------------------------
@@ -34,9 +33,11 @@ Route::get('/cellar-edit/{cellar}', [CellarController::class, 'edit'])->name('ce
 Route::put('/cellar-edit/{cellar}', [CellarController::class, 'update'])->name('cellar.edit');
 Route::delete('/cellar/{cellar}', [CellarController::class, 'destroy'])->name('cellar.delete');
 
+// Search
+Route::get('/search/{search}', [WineController::class, 'searchResult'])->name('search');
+
 // CellarHasWine
 Route::post('/wine-store', [CellarHasWineController::class, 'store'])->name('wine.store');
-
 
 // User
 //----------------------------------------------------
@@ -46,6 +47,5 @@ Route::get('/profile/{user}', [UserController::class, 'show'])->name('users.show
 Route::get('/users/edit/{user}', [UserController::class, 'edit'])->name('users.edit');
 Route::put('/users/edit', [UserController::class, 'update'])->name('users.update');
 Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.delete');
-
 
 require __DIR__.'/auth.php';

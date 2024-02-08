@@ -29,15 +29,14 @@ class WineController extends Controller
     {
         //
     }
-    public function searchResult()
+    public function searchResult(Request $request)
     {
-        // $search proviendra d'un param de la fonction passé en argument lors de l'appel($request->search)
-        $search = 'alta';
-
+        $search = $request->search;
+        $count = Wine::like('name', $search)->count();
+        $results = Wine::like('name', $search)->paginate(24);
         $user = Auth::user();
-        $results = Wine::like('name', $search)->get();
         $cellars = $user->cellar;
-        return Inertia::render('ResultView', compact('results', 'cellars', 'search'));
+        return Inertia::render('ResultView', compact('results', 'cellars', 'search', 'count'));
     }
     
     /**

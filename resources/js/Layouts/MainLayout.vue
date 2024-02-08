@@ -5,6 +5,7 @@
       <Link href="/about">About</Link>
       <Link href="/contact">Contact</Link>
       </header>
+    <SearchBar/>
     <article>
     <slot />
     </article>
@@ -12,10 +13,11 @@
 </template>
 <script>
 import { Link } from '@inertiajs/inertia-vue3';
-
+import SearchBar from '@/Components/SearchBar.vue';
 export default {
-components: {
-  Link,
-}
+  components: {
+    Link, 
+    SearchBar
+  }
 }
 </script>
