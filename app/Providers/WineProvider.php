@@ -51,16 +51,16 @@ class WineProvider {
                 // le reste est écrit comme tel
                 $wine['photo'] = $node->filter('.product-image-photo')->attr('src');
                 $wine['name'] = $node->filter('.product-item-link')->text();
+
     
                 // instancier le modèle BD
                 $wineDB = new Wine;
-
+                
                 // chercher le vin dans BD avec un code_saq ===
-                $target = $wineDB::where('code_saq', '=', $wine['code_saq'])->get()[0];
-
-                if($target) {
+                $target = $wineDB::where('code_saq', '=', $wine['code_saq'])->get();
+                if(isset($target[0])) {
                     // updater le vin si présent
-                    $target->update([
+                    $target[0]->update([
                         'name' => $wine['name'],
                         'price' => $wine['price'],
                         'type' => $wine['type'],
