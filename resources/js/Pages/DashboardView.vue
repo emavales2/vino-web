@@ -1,8 +1,3 @@
-<script setup>
-import { Head, Link, defineProps} from '@inertiajs/inertia-vue3';
-defineProps({ user: Object });
-</script>
-
 <template>
     <Head title="Dashboard" />
     <div class="p-4">
@@ -28,3 +23,21 @@ defineProps({ user: Object });
         </main>
     </div>
 </template>
+
+<script>
+import { Head, Link  } from '@inertiajs/inertia-vue3';
+
+export default {
+    name: 'DashboardView',
+    components: {
+        Head,
+        Link
+    },
+    methods: {
+        logout() {
+        Inertia.post(route('logout'));
+        }
+    },
+    props: ['user']
+}
+</script>

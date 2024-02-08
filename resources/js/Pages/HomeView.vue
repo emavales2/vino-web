@@ -1,17 +1,3 @@
-<script setup>
-import { Inertia, Head, Link, defineProps } from '@inertiajs/inertia-vue3';
-
-defineProps({
-    // canLogin: Boolean,
-    // canRegister: Boolean
-    status: String
-});
-
-const logout = () => {
-  Inertia.post(route('logout'));
-}
-
-</script>
 <template>
     <Head title="Home" />
     <div class="p-4">
@@ -29,3 +15,15 @@ const logout = () => {
     </div>
 </template>
 
+<script>
+import { Head, Link } from '@inertiajs/inertia-vue3';
+
+export default {
+    name: 'HomeView',
+    components: {
+        Head,
+        Link
+    },
+    props: ['status']
+}
+</script>
