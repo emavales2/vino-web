@@ -1,7 +1,7 @@
 <template>
   <MainLayout>
     <div>
-      <h1>results</h1>
+      <h1>results for {{ search }}</h1>
       <div v-if="results.length == 0">no results</div>
       <ul v-else>
         <li v-for="(wine, i) in results" 
@@ -9,11 +9,12 @@
         >
           <h1>{{ wine.name }}</h1>
           <p>{{ wine.type }} | {{ wine.country }} | {{ wine.size }}</p>
+          <img :src="wine.photo" alt="">
           <button @click="openDialog(wine.id)">Add to cellar</button>
         </li>
       </ul>
-      <Transition name="pop-dialog">
-        <div v-if="showDialog" class="bg-stone-400">
+      <Modal :show="show">
+        <div class="bg-stone-400">
           <h2>pls add some wine</h2>
           <form @submit.prevent="addToCellar">
             <h1>{{ selectedWine.name }}</h1>
@@ -35,22 +36,24 @@
             </div>
           </form>
         </div>
-      </Transition>
+      </Modal>
     </div>
   </MainLayout>
 </template>
 
 <script>
 import MainLayout from '@/Layouts/MainLayout.vue';
+import Modal from '@/Components/Modal.vue';
 import { useForm } from '@inertiajs/inertia-vue3';
   export default{
     name:'testWine',
     components: {
-      MainLayout
+      MainLayout,
+      Modal
     },
     data () {
       return {
-        showDialog : false,
+        show: false,
         selectedWine : '',
         form : useForm({
           wine_id : '',
@@ -65,17 +68,17 @@ import { useForm } from '@inertiajs/inertia-vue3';
         this.closeDialog();
       },
       closeDialog () {
-        this.showDialog = false
+        this.show= false
         this.form.reset()
       },
       openDialog (id) {
         this.form.reset()
-        this.showDialog = true
+        this.show = true
         this.selectedWine = this.results.find(w => w.id === id)
         this.form.wine_id = this.selectedWine.id
       }
     },
-    props: ['results', 'cellars']
+    props: ['results', 'cellars', 'search']
   }
 </script>
   

@@ -33,11 +33,11 @@ class WineController extends Controller
     {
         // $search proviendra d'un param de la fonction passé en argument lors de l'appel($request->search)
         $search = 'alta';
-        
+
         $user = Auth::user();
         $results = Wine::like('name', $search)->get();
         $cellars = $user->cellar;
-        return Inertia::render('ResultView', compact('results', 'cellars'));
+        return Inertia::render('ResultView', compact('results', 'cellars', 'search'));
     }
     
     /**
