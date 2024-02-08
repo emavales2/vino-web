@@ -1,14 +1,3 @@
-<script setup>
-import { defineProps, Head } from 'vue'
-defineProps({
-    users: Array
-})
-</script>
-
-<script>
-
-</script>
-
 <template>
     <Head title="Users" />
     <table>
@@ -32,3 +21,21 @@ defineProps({
         </tbody>
     </table>
 </template>
+<script>
+import { Head } from '@inertiajs/inertia-vue3';
+defineProps({ users: Array });
+
+export default {
+    name: 'UsersView',
+    components: {
+        Head
+    },
+    methods: {
+        deleteUser(user) {
+            if (confirm('Are you sure you want to delete this user?')) {
+                this.$inertia.delete(route('users.destroy', { user: user.id }));
+            }
+        }
+    }
+}
+</script>
