@@ -10,8 +10,11 @@ class CellarHasWine extends Model
     use HasFactory;
     public $fillable = [
         'wine_id',
-        'cellar_id'
+        'cellar_id',
+        'quantity'
     ];
+    public $timestamps = false;
+
     public function cellar() {
         $this->belongsTo(Cellar::class, 'cellar_id', 'id');
     }

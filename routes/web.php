@@ -34,6 +34,10 @@ Route::get('/cellar-edit/{cellar}', [CellarController::class, 'edit'])->name('ce
 Route::put('/cellar-edit/{cellar}', [CellarController::class, 'update'])->name('cellar.edit');
 Route::delete('/cellar/{cellar}', [CellarController::class, 'destroy'])->name('cellar.delete');
 
+// CellarHasWine
+Route::post('/wine-store', [CellarHasWineController::class, 'store'])->name('wine.store');
+
+
 // User
 //----------------------------------------------------
 Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard')->middleware(['auth']);

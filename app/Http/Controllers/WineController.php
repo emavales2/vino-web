@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Wine;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Auth;
 
 class WineController extends Controller
 {
@@ -30,10 +31,13 @@ class WineController extends Controller
     }
     public function searchResult()
     {
-        // $search proviendera d'un param de la fonction passé en argument lors de l'appel($request->search)
+        // $search proviendra d'un param de la fonction passé en argument lors de l'appel($request->search)
         $search = 'alta';
+        
+        $user = Auth::user();
         $results = Wine::like('name', $search)->get();
-        return Inertia::render('ResultView', compact('results'));
+        $cellars = $user->cellar;
+        return Inertia::render('ResultView', compact('results', 'cellars'));
     }
     
     /**

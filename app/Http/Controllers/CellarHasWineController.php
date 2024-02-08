@@ -36,9 +36,14 @@ class CellarHasWineController extends Controller
      */
     public function store(Request $request)
     {
-        $test = ['user_id'=> Auth::user()->id, 'wine_id' => $request->wine_id, 'quantity'=>$request->quantity];
-
-        return $test;
+        $cellarHasWine = new CellarHasWine;
+        $cellarHasWine->create([
+            'cellar_id'=>$request->cellar_id,
+            'wine_id' => $request->wine_id,
+            'quantity'=>$request->quantity
+        ]);
+        
+        return $cellarHasWine;
     }
 
     /**

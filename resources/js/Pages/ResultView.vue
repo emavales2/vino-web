@@ -23,6 +23,12 @@
               <button type="button" @click="form.quantity ++">+</button>
               <button type="button" @click="form.quantity --">-</button>
             </div>
+            <div v-for="(cellar, i) in cellars">
+              <legend>Select a cellar</legend>
+              <label>
+                <input type="radio" v-model="form.cellar_id" :value="cellar.id">{{ cellar.name }}
+              </label>
+            </div>
             <div>
               <button>Add</button>
               <button type="button" @click="closeDialog">Cancel</button>
@@ -48,7 +54,8 @@ import { useForm } from '@inertiajs/inertia-vue3';
         selectedWine : '',
         form : useForm({
           wine_id : '',
-          quantity: '1'
+          quantity: '1',
+          cellar_id: '1',
         })
       }
     },
@@ -68,7 +75,7 @@ import { useForm } from '@inertiajs/inertia-vue3';
         this.form.wine_id = this.selectedWine.id
       }
     },
-    props: ['results']
+    props: ['results', 'cellars']
   }
 </script>
   
