@@ -1,5 +1,5 @@
 <script setup>
-import { Inertia, Head, Link, defineProps } from '@inertiajs/inertia-vue3';
+import { Head, Link } from '@inertiajs/inertia-vue3';
 
 defineProps({
     // canLogin: Boolean,

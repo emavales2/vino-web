@@ -18,7 +18,7 @@ use Inertia\Inertia;
 |
 */
 Route::get('/', function () {
-    return Inertia::render('TestPage');
+    return Inertia::render('HomeView');
 });
 Route::get('/testwine', [WineController::class, 'index']);
 Route::get('/testsearch', [WineController::class, 'searchResult']);
@@ -41,8 +41,5 @@ Route::get('/users/edit/{user}', [UserController::class, 'edit'])->name('users.e
 Route::put('/users/edit', [UserController::class, 'update'])->name('users.update');
 Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.delete');
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';

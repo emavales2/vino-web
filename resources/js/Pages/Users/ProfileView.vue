@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, Head } from 'vue'
+import { Head } from '@inertiajs/inertia-vue3';
 defineProps({
     user: Object
 })
