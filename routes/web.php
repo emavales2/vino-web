@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\WineController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\CellarController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -32,15 +33,13 @@ Route::get('/cellar-edit/{cellar}', [CellarController::class, 'edit'])->name('ce
 Route::put('/cellar-edit/{cellar}', [CellarController::class, 'update'])->name('cellar.edit');
 Route::delete('/cellar/{cellar}', [CellarController::class, 'destroy'])->name('cellar.delete');
 
-
-/* Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-}); */
+Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard')->middleware(['auth']);
+// User
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::get('/profile/{user}', [UserController::class, 'show'])->name('users.show')->middleware(['auth']);
+Route::get('/users/edit/{user}', [UserController::class, 'edit'])->name('users.edit');
+Route::put('/users/edit', [UserController::class, 'update'])->name('users.update');
+Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.delete');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
