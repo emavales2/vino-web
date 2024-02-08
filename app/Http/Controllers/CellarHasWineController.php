@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\CellarHasWine;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 class CellarHasWineController extends Controller
 {
@@ -36,14 +37,21 @@ class CellarHasWineController extends Controller
      */
     public function store(Request $request)
     {
-        $cellarHasWine = new CellarHasWine;
-        $cellarHasWine->create([
-            'cellar_id'=>$request->cellar_id,
-            'wine_id' => $request->wine_id,
-            'quantity'=>$request->quantity
-        ]);
-        
-        return $cellarHasWine;
+        $target = CellarHasWine::find([$request->cellar_id, $request->wine_id]);
+        if($target) {
+            $newQuantity = $request->quantity + $target->quantity;
+            $target->update([
+                'cellar_id'=> $request->cellar_id,
+                'wine_id' => $request->wine_id,
+                'quantity'=> $newQuantity
+            ]);
+        } else {
+            CellarHasWine::create([
+                'cellar_id'=>$request->cellar_id,
+                'wine_id' => $request->wine_id,
+                'quantity'=> $request->quantity
+            ]);
+        }
     }
 
     /**

@@ -23,8 +23,8 @@
               <button type="button" @click="form.quantity ++">+</button>
               <button type="button" @click="form.quantity --">-</button>
             </div>
+            <legend>Select a cellar</legend>
             <div v-for="(cellar, i) in cellars">
-              <legend>Select a cellar</legend>
               <label>
                 <input type="radio" v-model="form.cellar_id" :value="cellar.id">{{ cellar.name }}
               </label>
@@ -61,8 +61,8 @@ import { useForm } from '@inertiajs/inertia-vue3';
     },
     methods: {
       addToCellar() {
-        console.log(this.form)
         this.form.post(route('wine.store'))
+        this.closeDialog();
       },
       closeDialog () {
         this.showDialog = false
