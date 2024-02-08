@@ -1,10 +1,3 @@
-<script setup>
-import { Head } from '@inertiajs/inertia-vue3';
-defineProps({
-    user: Object
-})
-</script>
-
 <template>
     <Head title="Profile" />
     <div>
@@ -17,3 +10,18 @@ defineProps({
         <p>Updated At: {{ user.updated_at }}</p>
     </div>
 </template>
+<script>
+import { Head } from '@inertiajs/inertia-vue3';
+
+export default {
+    name: 'ProfileView',
+    components: {
+        Head
+    },
+    props: {
+        user: {
+            type: Object,
+        }
+    }
+}
+</script>

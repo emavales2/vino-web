@@ -33,8 +33,9 @@ Route::get('/cellar-edit/{cellar}', [CellarController::class, 'edit'])->name('ce
 Route::put('/cellar-edit/{cellar}', [CellarController::class, 'update'])->name('cellar.edit');
 Route::delete('/cellar/{cellar}', [CellarController::class, 'destroy'])->name('cellar.delete');
 
-Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard')->middleware(['auth']);
 // User
+//----------------------------------------------------
+Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard')->middleware(['auth']);
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::get('/profile/{user}', [UserController::class, 'show'])->name('users.show')->middleware(['auth']);
 Route::get('/users/edit/{user}', [UserController::class, 'edit'])->name('users.edit');
