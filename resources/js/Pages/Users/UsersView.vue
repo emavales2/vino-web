@@ -1,4 +1,5 @@
 <template>
+    <MainLayout>
     <Head title="Users" />
     <table>
         <thead>
@@ -20,21 +21,26 @@
             </tr>
         </tbody>
     </table>
+    </MainLayout>
 </template>
 <script>
 import { Head } from '@inertiajs/inertia-vue3';
-defineProps({ users: Array });
-
+import MainLayout from '@/Layouts/MainLayout.vue';
 export default {
     name: 'UsersView',
     components: {
-        Head
+        Head, MainLayout
     },
     methods: {
         deleteUser(user) {
             if (confirm('Are you sure you want to delete this user?')) {
                 this.$inertia.delete(route('users.destroy', { user: user.id }));
             }
+        }
+    },
+    props: {
+        users: {
+            type: Array,
         }
     }
 }

@@ -36,10 +36,11 @@ Route::delete('/cellar/{cellar}', [CellarController::class, 'destroy'])->name('c
 // User
 //----------------------------------------------------
 Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard')->middleware(['auth']);
-Route::get('/users', [UserController::class, 'index'])->name('users.index');
-Route::get('/profile/{user}', [UserController::class, 'show'])->name('users.show')->middleware(['auth']);
-Route::get('/users/edit/{user}', [UserController::class, 'edit'])->name('users.edit');
-Route::put('/users/edit', [UserController::class, 'update'])->name('users.update');
+Route::get('/profile/{user}', [UserController::class, 'show'])->name('profile.show')->middleware(['auth']);
+Route::get('/profile/edit/{user}', [UserController::class, 'edit'])->name('profile.edit')->middleware(['auth']);
+Route::put('/profile/edit', [UserController::class, 'update'])->name('profile.update');
+// Admin (proteger avec middleware admin-> a faire)
+Route::get('/users', [UserController::class, 'index'])->name('users.index')->middleware(['auth']);
 Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.delete');
 
 

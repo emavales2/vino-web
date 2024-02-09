@@ -82,7 +82,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return Inertia::render('Users/EditView', [
+            'user' => $user
+        ]);
     }
 
     /**
@@ -94,7 +96,15 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $request->validate([
+            'first_name' => 'string|max:100|nullable',
+            'last_name' => 'string|max:100|nullable',
+            'email' => 'required|string|email|max:255'
+        ]);
+        $user = User::find($request->id);
+        $user->update($request->all());
+
+        return redirect()->route('profile.show', ['user' => $user->id]);
     }
 
     /**
