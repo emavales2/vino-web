@@ -1,8 +1,11 @@
 <template>
     <Head title="Home" />
-    <MainLayout>
         <div class="p-4">
-            <h1 class="text-bold text-xl mb-6">Welcome VINO {{ status }}</h1>
+            <header>
+                <h1 class="text-bold text-xl mb-6">Welcome VINO</h1>
+                <p>Unlock the Perfect Cellar Experience with Vino</p>
+                <p>Your Personal Wine Sanctuary</p>
+            </header>
             <nav>
                 <ul>
                     <li>
@@ -14,20 +17,16 @@
                 </ul>
             </nav>
         </div>
-    </MainLayout>
 </template>
 
 <script>
 import { Head, Link } from '@inertiajs/inertia-vue3';
-import MainLayout from '@/Layouts/MainLayout.vue';
 
 export default {
     name: 'HomeView',
     components: {
         Head,
-        Link,
-        MainLayout
+        Link
     },
-    props: ['status']
 }
 </script>

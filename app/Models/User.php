@@ -44,7 +44,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
     public function cellar() {
         return $this->hasMany(Cellar::class);
     }
+
+    public function wine() {
+        return $this->hasMany(Wine::class);
+    }
+
+
 }
+
+

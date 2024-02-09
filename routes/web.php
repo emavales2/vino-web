@@ -39,13 +39,21 @@ Route::get('/search/{search}', [WineController::class, 'searchResult'])->name('s
 // CellarHasWine
 Route::post('/wine-store', [CellarHasWineController::class, 'store'])->name('wine.store');
 
+
 // User
 //----------------------------------------------------
-Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard')->middleware(['auth']);
-Route::get('/users', [UserController::class, 'index'])->name('users.index');
-Route::get('/profile/{user}', [UserController::class, 'show'])->name('users.show')->middleware(['auth']);
-Route::get('/users/edit/{user}', [UserController::class, 'edit'])->name('users.edit');
-Route::put('/users/edit', [UserController::class, 'update'])->name('users.update');
-Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.delete');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+    Route::get('/profile/{user}', [UserController::class, 'show'])->name('profile.show');
+    Route::get('/users/edit/{user}', [UserController::class, 'edit'])->name('profile.edit');
+    Route::put('/users/edit', [UserController::class, 'update'])->name('profile.update');
+    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.delete');
+});
+
+Route::middleware(['admin'])->group(function () {
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.delete');
+});
+
 
 require __DIR__.'/auth.php';
