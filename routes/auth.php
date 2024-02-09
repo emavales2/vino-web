@@ -43,8 +43,7 @@ Route::middleware('auth')->group(function () {
                 ->name('password.confirm');
 
     Route::post('confirm-password', [ConfirmablePasswordController::class, 'store']);
-    // Route de dépannage pour la déconnexion 
-    Route::get('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+    
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
     Route::get('logout', [AuthenticatedSessionController::class, 'destroy']);
 });

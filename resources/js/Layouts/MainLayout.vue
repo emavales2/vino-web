@@ -1,7 +1,8 @@
+<!-- Layout pour l'app quand connecter -->
 <template>
   <main>
     <header>
-      <Link href="/">Home</Link>
+      <Link href="/dashboard">Home</Link>
       <Link href="/about">About</Link>
       <Link href="/contact">Contact</Link>
       </header>
