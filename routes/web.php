@@ -39,9 +39,11 @@ Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard'
 Route::get('/profile/{user}', [UserController::class, 'show'])->name('profile.show')->middleware(['auth']);
 Route::get('/profile/edit/{user}', [UserController::class, 'edit'])->name('profile.edit')->middleware(['auth']);
 Route::put('/profile/edit', [UserController::class, 'update'])->name('profile.update');
-// Admin (proteger avec middleware admin-> a faire)
-Route::get('/users', [UserController::class, 'index'])->name('users.index')->middleware(['auth']);
-Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.delete');
-
+// Admin 
+Route::group(['middleware' => 'admin'], function () {
+    Route::get('/users', [UserController::class, 'index'])->name('users.index')->middleware(['auth']);
+    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.delete');
+});
+Route::get('/error-page', [UserController::class, 'errorPage'])->name('error.page');
 
 require __DIR__.'/auth.php';

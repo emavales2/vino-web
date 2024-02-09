@@ -117,4 +117,9 @@ class UserController extends Controller
     {
         //
     }
+
+    public function errorPage()
+    {
+        return Inertia::render('ErrorView');
+    }
 }
