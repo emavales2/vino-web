@@ -1,11 +1,12 @@
 <template>
     <Head title="Dashboard" />
+    <MainLayout>
     <div class="p-4">
         <h1 class="text-bold text-xl mb-6">Welcome {{ user.first_name }}</h1> 
         <nav class="mb-6">
             <ul>
                 <li>
-                    <Link :href="route('users.show',  {user: user.id} )">Profile</Link>
+                    <Link :href="route('profile.show',  {user: user.id} )">Profile</Link>
                 </li>
                 <li>
                     <button @click="logout">Logout</button>
@@ -22,16 +23,20 @@
             </ul>
         </main>
     </div>
+    </MainLayout>
 </template>
 
 <script>
 import { Head, Link  } from '@inertiajs/inertia-vue3';
+import MainLayout from '@/Layouts/MainLayout.vue';
+import { Inertia } from '@inertiajs/inertia';
 
 export default {
     name: 'DashboardView',
     components: {
         Head,
-        Link
+        Link,
+        MainLayout
     },
     methods: {
         logout() {

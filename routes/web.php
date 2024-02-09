@@ -35,12 +35,18 @@ Route::delete('/cellar/{cellar}', [CellarController::class, 'destroy'])->name('c
 
 // User
 //----------------------------------------------------
-Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard')->middleware(['auth']);
-Route::get('/users', [UserController::class, 'index'])->name('users.index');
-Route::get('/profile/{user}', [UserController::class, 'show'])->name('users.show')->middleware(['auth']);
-Route::get('/users/edit/{user}', [UserController::class, 'edit'])->name('users.edit');
-Route::put('/users/edit', [UserController::class, 'update'])->name('users.update');
-Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.delete');
-
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+    Route::get('/profile/{user}', [UserController::class, 'show'])->name('profile.show');
+    Route::get('/profile/edit/{user}', [UserController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile/edit', [UserController::class, 'update'])->name('profile.update');
+});
+// Admin
+//----------------------------------------------------
+Route::group(['middleware' => 'admin'], function () {
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.delete');
+});
+Route::get('/error-page', [UserController::class, 'errorPage'])->name('error.page');
 
 require __DIR__.'/auth.php';
