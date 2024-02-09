@@ -21,7 +21,20 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('HomeView');
 });
-Route::get('/testwine', [WineController::class, 'index']);
+
+// Wine
+Route::middleware(['auth'])->group(function () {
+    Route::get('/wine-search', [WineController::class, 'searchResult'])->name('wine.search');
+    Route::get('/wine/{wine}', [WineController::class, 'show'])->name('wine.show');
+    Route::get('/wine-create', [WineController::class, 'create'])->name('wine.create');
+    Route::post('/wine-create', [WineController::class, 'store'])->name('wine.store');
+    Route::get('/wine-edit/{wine}', [WineController::class, 'edit'])->name('wine.edit');;
+    Route::put('/wine-edit/{wine}', [WineController::class, 'update']);
+    Route::delete('/wine-delete/{wine}', [WineController::class, 'destroy']);
+
+    //cette route est pour tester seulement, ne sera pas présent dans le produit final
+    Route::get('/wines', [WineController::class, 'index']);
+});
 
 //Cellar
 //----------------------------------------------------
@@ -33,11 +46,9 @@ Route::get('/cellar-edit/{cellar}', [CellarController::class, 'edit'])->name('ce
 Route::put('/cellar-edit/{cellar}', [CellarController::class, 'update'])->name('cellar.edit');
 Route::delete('/cellar/{cellar}', [CellarController::class, 'destroy'])->name('cellar.delete');
 
-// Search
-Route::get('/search/{search}', [WineController::class, 'searchResult'])->name('search');
 
 // CellarHasWine
-Route::post('/wine-store', [CellarHasWineController::class, 'store'])->name('wine.store');
+Route::post('/cellarwine-store', [CellarHasWineController::class, 'store'])->name('cellarwine.store')->middleware('auth');
 
 
 // User

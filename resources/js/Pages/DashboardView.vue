@@ -9,6 +9,9 @@
                     <Link :href="route('profile.show',  {user: user.id} )">Profile</Link>
                 </li>
                 <li>
+                    <Link :href="route('wine.create')">create wine</Link>
+                </li>
+                <li>
                     <button @click="logout">Logout</button>
                 </li>
             </ul>
