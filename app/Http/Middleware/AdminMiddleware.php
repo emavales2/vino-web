@@ -19,7 +19,6 @@ class AdminMiddleware
         if (!auth()->check() || !auth()->user()->is_admin) {
             return redirect()->route('error.page')->with('error', 'Unauthorized access.');
         }
-
         return $next($request);
     }
 }
