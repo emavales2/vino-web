@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Wine;
+use App\Models\CellarHasWine;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
-class WineController extends Controller
+class CellarHasWineController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,7 @@ class WineController extends Controller
      */
     public function index()
     {
-        $wines = Wine::all();
-        return Inertia::render('WineTest', compact('wines'));
+        //
     }
 
     /**
@@ -29,16 +28,7 @@ class WineController extends Controller
     {
         //
     }
-    public function searchResult(Request $request)
-    {
-        $search = $request->search;
-        $count = Wine::like('name', $search)->count();
-        $results = Wine::like('name', $search)->paginate(24);
-        $user = Auth::user();
-        $cellars = $user->cellar;
-        return Inertia::render('ResultView', compact('results', 'cellars', 'search', 'count'));
-    }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -47,16 +37,30 @@ class WineController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $target = CellarHasWine::find([$request->cellar_id, $request->wine_id]);
+        if($target) {
+            $newQuantity = $request->quantity + $target->quantity;
+            $target->update([
+                'cellar_id'=> $request->cellar_id,
+                'wine_id' => $request->wine_id,
+                'quantity'=> $newQuantity
+            ]);
+        } else {
+            CellarHasWine::create([
+                'cellar_id'=>$request->cellar_id,
+                'wine_id' => $request->wine_id,
+                'quantity'=> $request->quantity
+            ]);
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Wine  $wine
+     * @param  \App\Models\CellarHasWine  $cellarHasWine
      * @return \Illuminate\Http\Response
      */
-    public function show(Wine $wine)
+    public function show(CellarHasWine $cellarHasWine)
     {
         //
     }
@@ -64,10 +68,10 @@ class WineController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Wine  $wine
+     * @param  \App\Models\CellarHasWine  $cellarHasWine
      * @return \Illuminate\Http\Response
      */
-    public function edit(Wine $wine)
+    public function edit(CellarHasWine $cellarHasWine)
     {
         //
     }
@@ -76,10 +80,10 @@ class WineController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Wine  $wine
+     * @param  \App\Models\CellarHasWine  $cellarHasWine
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Wine $wine)
+    public function update(Request $request, CellarHasWine $cellarHasWine)
     {
         //
     }
@@ -87,10 +91,10 @@ class WineController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Wine  $wine
+     * @param  \App\Models\CellarHasWine  $cellarHasWine
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Wine $wine)
+    public function destroy(CellarHasWine $cellarHasWine)
     {
         //
     }

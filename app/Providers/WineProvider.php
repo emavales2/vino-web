@@ -24,7 +24,7 @@ class WineProvider {
 
         // démarrer la boucle pour chaque page. Inscrire $total_pages en condition pour avoir tout les résultats
         // condition à changer pour $total_pages
-        for ($i=0; $i < 2; $i++) { 
+        for ($i=0; $i < 20; $i++) { 
 
             // acceder à la page
             $crawler = $browser

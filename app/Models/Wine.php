@@ -23,7 +23,7 @@ class Wine extends Model
     public $timestamps = false;
 
     public function user() {
-        return $this->belongsTo(User::class, 'user_id', 'id');
+        return $this->belongsTo(User::class);
     }
 
     // retourner une méthode nommé 'like' (appartient à Model)
