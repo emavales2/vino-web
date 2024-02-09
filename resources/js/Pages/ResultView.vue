@@ -40,7 +40,7 @@
           </div>
           <div>
             <button>Add</button>
-            <button type="button" @click="closeDialog">Cancel</button>
+            <button type="button" @click="closeForm">Cancel</button>
           </div>
         </form>
       </div>
@@ -84,9 +84,9 @@ import { Link } from '@inertiajs/inertia-vue3';
         this.message = `You just added ${this.form.quantity} ${this.selectedWine.name} to your ${this.form.cellar_id} cellar`
         this.showDialog = true;
         setTimeout(() => { this.showDialog = false }, 2000)
-        this.closeFrom();
+        this.closeForm()
       },
-      closeFrom () {
+      closeForm () {
         this.showForm = false
         this.form.reset()
       },

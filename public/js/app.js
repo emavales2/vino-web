@@ -24903,9 +24903,9 @@ __webpack_require__.r(__webpack_exports__);
       setTimeout(function () {
         _this.showDialog = false;
       }, 2000);
-      this.closeFrom();
+      this.closeForm();
     },
-    closeFrom: function closeFrom() {
+    closeForm: function closeForm() {
       this.showForm = false;
       this.form.reset();
     },
@@ -25984,7 +25984,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }), 256 /* UNKEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
             type: "button",
             onClick: _cache[4] || (_cache[4] = function () {
-              return _ctx.closeDialog && _ctx.closeDialog.apply(_ctx, arguments);
+              return $options.closeForm && $options.closeForm.apply($options, arguments);
             })
           }, "Cancel")])], 32 /* NEED_HYDRATION */)])];
         }),
