@@ -17,6 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('wine_id');
             $table->integer('quantity');
             $table->foreign(['cellar_id', 'wine_id'])->references(['cellar_id', 'wine_id'])->on('cellar_has_wines')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
