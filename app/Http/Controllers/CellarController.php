@@ -16,8 +16,7 @@ class CellarController extends Controller
      */
     public function index()
     {        
-        //$userId = Auth::id();
-        $userId = 1;
+        $userId = Auth::id();
 
         $cellars = Cellar::where('user_id', $userId)->get();
 
@@ -46,8 +45,7 @@ class CellarController extends Controller
             'name' => 'min:3|max:100'
         ]);
 
-        //$userId = Auth::id();
-        $userId = 1;
+        $userId = Auth::id();
 
         $newCellar = Cellar::create([
             'name' => $request->name,
@@ -65,8 +63,7 @@ class CellarController extends Controller
      */
     public function show(Cellar $cellar)
     {
-        //$userId = Auth::id();
-        $userId = 1;
+        $userId = Auth::id();
 
         if ($cellar->user_id != $userId) {
             return redirect(route('cellar.index'))->withErrors("You do not have authorization to access this cellar");
@@ -83,8 +80,7 @@ class CellarController extends Controller
      */
     public function edit(Cellar $cellar)
     {
-        //$userId = Auth::id();
-        $userId = 1;
+        $userId = Auth::id();
 
         if ($cellar->user_id != $userId) {
             return redirect(route('cellar.index'))->withErrors("You do not have authorization to access this cellar");
@@ -108,6 +104,10 @@ class CellarController extends Controller
 
         $userId = Auth::id();
 
+        if ($cellar->user_id != $userId) {
+            return redirect(route('cellar.index'))->withErrors("You do not have authorization to access this cellar");
+        }        
+
         $cellar->update([
             'name' => $request->name
         ]);
@@ -123,6 +123,12 @@ class CellarController extends Controller
      */
     public function destroy(Cellar $cellar)
     {
+        $userId = Auth::id();
+
+        if ($cellar->user_id != $userId) {
+            return redirect(route('cellar.index'))->withErrors("You do not have authorization to access this cellar");
+        }
+        
         $hasWines = $cellar->cellarHasWines()->exists();
 
         if ($hasWines) {
