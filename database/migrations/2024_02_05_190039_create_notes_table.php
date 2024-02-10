@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('note');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('wine_id')->references('id')->on('wines')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
