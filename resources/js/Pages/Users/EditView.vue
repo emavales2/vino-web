@@ -73,7 +73,7 @@ export default {
             this.openDeleteModal = !this.openDeleteModal;
         },
         delete() {
-            this.form.delete(route('users.destroy', {user: this.user.id}));
+            this.form.delete(route('users.delete', {user: this.user.id}));
             this.openDeleteModal = false;
         }
     },
