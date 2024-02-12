@@ -25565,12 +25565,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+  width: "17",
+  height: "11",
+  viewBox: "0 0 17 11",
+  fill: "none",
+  xmlns: "http://www.w3.org/2000/svg"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
+  "fill-rule": "evenodd",
+  "clip-rule": "evenodd",
+  d: "M9.20577 10.547L0.545519 5.547L9.20577 0.546997V3.81495L17 3.81495V7.27905L9.20577 7.27905V10.547Z",
+  fill: "#EDE7D1"
+})], -1 /* HOISTED */);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "go back", -1 /* HOISTED */);
+var _hoisted_3 = [_hoisted_1, _hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
     onClick: _cache[0] || (_cache[0] = function () {
       return $options.goBack && $options.goBack.apply($options, arguments);
-    })
-  }, "back");
+    }),
+    "class": "goBackButton"
+  }, [].concat(_hoisted_3));
 }
 
 /***/ }),

@@ -1,3 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url(./config.css);
+@import url(./components/wineThumbnail.css);
+@import url(./components/goBackButton.css);
