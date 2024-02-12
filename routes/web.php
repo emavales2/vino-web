@@ -62,7 +62,7 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['admin'])->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
-    // Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.adminDelete');
+    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.adminDelete');
 });
 // Page d'erreur
 Route::get('/error', function () {
