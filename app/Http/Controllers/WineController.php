@@ -57,7 +57,7 @@ class WineController extends Controller
             'size' => 'min:3 | max:45 | nullable',
             'price' => 'numeric | gte:0 | nullable',
             'cellar_id' => Rule::exists('cellars', 'id')->where(function ($query) {
-                return $query->where('user_id', Auth::user()->id);
+                return $query->where('user_id', Auth::id());
             }),
             'cellar_qty' => Rule::requiredIf(!$request->buyList_qty),
             'buyList_qty' => Rule::requiredIf(!$request->cellar_qty)
@@ -68,7 +68,7 @@ class WineController extends Controller
             'country' => $request->country,
             'size' => $request->size,
             'price' => $request->price,
-            'user_id' => Auth::user()->id
+            'user_id' => Auth::id()
         ]);
         if($request->cellar_qty) {
             CellarHasWine::create([
@@ -80,7 +80,7 @@ class WineController extends Controller
 /*      if($request->buyList_qty) {
             BuyList::create([
                 'wine_id' => $wine->id,
-                'user_id' => Auth::user()->id,
+                'user_id' => Auth::id(),
                 'quantity' => $request->buyList_qty
             ]);
         } */

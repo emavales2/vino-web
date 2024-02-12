@@ -8,13 +8,14 @@
       </header>
     <SearchBar/>
     <article>
-    <slot />
+    <slot/>
     </article>
   </main>
 </template>
 <script>
 import { Link } from '@inertiajs/inertia-vue3';
 import SearchBar from '@/Components/SearchBar.vue';
+
 export default {
   components: {
     Link, 

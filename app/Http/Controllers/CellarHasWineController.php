@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CellarHasWine;
+use App\Models\Cellar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -14,9 +15,33 @@ class CellarHasWineController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function collection()
     {
-        //
+        $collection = [];
+        $cellars = Auth::user()->cellar;
+        foreach($cellars as $cellar) {
+            foreach($cellar->cellarHasWines as $wine) {
+                if(array_key_exists($wine->wine_id, $collection)) {
+                    $collection[$wine->wine_id]['totalQty'] += $wine->quantity;
+                    $collection[$wine->wine_id]['perCellar'][] = ['cellar' => $wine->cellar, 'qty'=>$wine->quantity];
+                } else {
+                    $collection[$wine->wine_id] = [
+                        'wine'=>$wine->wine,
+                        'totalQty' => $wine->quantity,
+                        'perCellar' => [['cellar' => $wine->cellar, 'qty'=>$wine->quantity]]
+                    ];
+                }
+            }
+        }
+        return Inertia::render('CollectionView', compact('collection'));
+    }
+
+    public function index(Cellar $cellar) {
+        $collection = [];
+        foreach($cellar->cellarHasWines as $wine) {
+            $collection[] = ['wine' => $wine->wine, 'qty' => $wine->quantity];
+        }
+        return Inertia::render('Cellar/CellarWinesView', compact('collection'));
     }
 
     /**
