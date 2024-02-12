@@ -19,7 +19,7 @@ export default{
   },
   methods: {
     submit () {
-      this.form.get(route('search', this.form.search))
+      this.form.get(route('wine.search'))
     }
   }
 }
