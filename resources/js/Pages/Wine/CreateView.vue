@@ -3,30 +3,30 @@
   <GoBackButton/>
   <header>
     <h1>Add your custom wine</h1>
-    <p>complete this form</p>
+    <p>complete this Form</p>
   </header>
   <form @submit.prevent="submit">
     <section>
       <legend>Tell us about your wine</legend>
       <label>name
-        <input type="text" v-model="form.name">
-        <p v-if="form.errors.name">{{ form.errors.name }}</p>
+        <input type="text" v-model="wineForm.name">
+        <p v-if="wineForm.errors.name">{{ wineForm.errors.name }}</p>
       </label>
       <label>type
-        <input type="text" v-model="form.type">
-        <p v-if="form.errors.type">{{ form.errors.type }}</p>
+        <input type="text" v-model="wineForm.type">
+        <p v-if="wineForm.errors.type">{{ wineForm.errors.type }}</p>
       </label>
       <label>country
-        <input type="text" v-model="form.country">
-        <p v-if="form.errors.country">{{ form.errors.country }}</p>
+        <input type="text" v-model="wineForm.country">
+        <p v-if="wineForm.errors.country">{{ wineForm.errors.country }}</p>
       </label>
       <label>size
-        <input type="text" v-model="form.size">
-        <p v-if="form.errors.size">{{ form.errors.size }}</p>
+        <input type="text" v-model="wineForm.size">
+        <p v-if="wineForm.errors.size">{{ wineForm.errors.size }}</p>
       </label>
       <label>price
-        <input type="number" min="0" step="0.01" v-model="form.price">
-        <p v-if="form.errors.price">{{ form.errors.price }}</p>
+        <input type="number" min="0" step="0.01" v-model="wineForm.price">
+        <p v-if="wineForm.errors.price">{{ wineForm.errors.price }}</p>
       </label>
     </section>
     <section>
@@ -34,16 +34,16 @@
       <div>
         <legend>Store in a cellar</legend>
         <label v-for="(cellar, i) in cellars">
-          <input type="radio" v-model="form.cellar_id" :value="cellar.id">{{ cellar.name }}
+          <input type="radio" v-model="wineForm.cellar_id" :value="cellar.id">{{ cellar.name }}
         </label>
         <label>How many bottles do you want to store?
-          <input type="number" v-model="form.cellar_quantity">
+          <input type="number" v-model="wineForm.cellar_quantity">
         </label>
       </div>
       <div>
         <legend>Add to your buy list</legend>
         <label>How many bottles do you want to buy?
-          <input type="number" v-model="form.buy_quantity">
+          <input type="number" v-model="wineForm.buy_quantity">
         </label>
       </div>
     </section>
@@ -72,14 +72,11 @@ export default {
         price: '',
         size: '',
       }),
-      cellarWineForm : useForm({
-        
-      })
     }
   },
   methods: {
     submit () {
-      this.form.post(route('wine.store'));
+      this.wineForm.post(route('wine.store'));
     }
   },
   props: ['cellars']

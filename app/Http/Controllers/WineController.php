@@ -56,15 +56,13 @@ class WineController extends Controller
             'size' => 'min:3 | max:45 | nullable',
             'price' => 'numeric | gte:0 | nullable'
         ]);
+        return $request;
         $wine = Wine::create([
             'name' => $request->name,
             'type' => $request->type,
             'country' => $request->country,
             'size' => $request->size,
             'price' => $request->price,
-        ]);
-        CellarHasWine::create([
-
         ]);
         return redirect(route('wine.show', $wine));
     }
