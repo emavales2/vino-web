@@ -36,14 +36,19 @@
         <label v-for="(cellar, i) in cellars">
           <input type="radio" v-model="wineForm.cellar_id" :value="cellar.id">{{ cellar.name }}
         </label>
+        <p v-if="wineForm.errors.cellar_id">{{ wineForm.errors.cellar_id }}</p>
+
         <label>How many bottles do you want to store?
-          <input type="number" v-model="wineForm.cellar_quantity">
+          <input type="number" v-model="wineForm.cellar_qty">
+          <p v-if="wineForm.errors.cellar_qty">{{ wineForm.errors.cellar_qty }}</p>
         </label>
+
       </div>
       <div>
         <legend>Add to your buy list</legend>
         <label>How many bottles do you want to buy?
-          <input type="number" v-model="wineForm.buy_quantity">
+          <input type="number" v-model="wineForm.buyList_qty">
+          <p v-if="wineForm.errors.buyList_qty">{{ wineForm.errors.buyList_qty }}</p>
         </label>
       </div>
     </section>
@@ -71,6 +76,9 @@ export default {
         country: '',
         price: '',
         size: '',
+        cellar_id: this.cellars[0].id,
+        cellar_qty: '',
+        buyList_qty: '',
       }),
     }
   },
