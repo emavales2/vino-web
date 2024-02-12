@@ -1,0 +1,19 @@
+
+.logo {
+    height: 100%;
+    text-align: center;
+}
+
+
+/* ------- * * * * TAILLE PORTABLE * * * * ------- */
+
+@media screen and (max-width: 600px) {
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        max-height: 100px;
+        /* padding: 10px; */
+        box-sizing: border-box;
+    }
+}

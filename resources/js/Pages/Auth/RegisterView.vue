@@ -1,7 +1,7 @@
 <script setup>
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
+// import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
 
@@ -22,94 +22,102 @@ const submit = () => {
 
 <template>
         <Head title="Register" />
-        <form @submit.prevent="submit">
-            <div>
-                <InputLabel for="first_name" value="First name" />
 
-                <TextInput
-                    id="first_name"
-                    type="text"
-                    class="mt-1 block w-full"
-                    v-model="form.first_name"
-                    required
-                    autofocus
-                    autocomplete="first_name"
-                />
+        <div class="burg_bg">
+            <main>
 
-                <InputError class="mt-2" :message="form.errors.first_name" />
-            </div>
+                <header> 
+                    <h1 class="block-font txt-center coral">Sign Up</h1>
+                    <!-- <h5 class="block-font txt-center coral">Unlock the Perfect Cellar Experience with Vino</h5>                -->
+                </header>
 
-            <div class="mt-4">
-                <InputLabel for="last_name" value="Last name" />
+                <form @submit.prevent="submit">
+                    <fieldset>
+                        <InputLabel for="first_name" value="First name" class="invisible" />
+                        <TextInput
+                            id="first_name"
+                            type="text"
+                            class="mt-1 block w-full"
+                            v-model="form.first_name"
+                            required
+                            autofocus
+                            autocomplete="first_name"
+                            placeholder="first name"
+                        />
+                        <InputError class=".input_err" :message="form.errors.first_name" />
+                    </fieldset>
 
-                <TextInput
-                    id="last_name"
-                    type="text"
-                    class="mt-1 block w-full"
-                    v-model="form.last_name"
-                    required
-                    autofocus
-                    autocomplete="last_name"
-                />
+                    <fieldset>
+                        <InputLabel for="last_name" value="Last name" class="invisible" />
+                        <TextInput
+                            id="last_name"
+                            type="text"
+                            class="mt-1 block w-full"
+                            v-model="form.last_name"
+                            required
+                            autofocus
+                            autocomplete="last_name"
+                            placeholder="last name"
+                        />
+                        <InputError class=".input_err" :message="form.errors.last_name" />
+                    </fieldset>
+                    
+                    <fieldset>
+                        <InputLabel for="email" value="Email" class="invisible" />
 
-                <InputError class="mt-2" :message="form.errors.last_name" />
-            </div>
+                        <TextInput
+                            id="email"
+                            type="email"
+                            class="mt-1 block w-full"
+                            v-model="form.email"
+                            required
+                            autocomplete="username"
+                            placeholder="email address"
+                        />
+                        <InputError class=".input_err" :message="form.errors.email" />
+                    </fieldset>
+
+                    <fieldset>
+                        <InputLabel for="password" value="Password" class="invisible" />
+                        <TextInput
+                            id="password"
+                            type="password"
+                            class="mt-1 block w-full"
+                            v-model="form.password"
+                            required
+                            autocomplete="new-password"
+                            placeholder="password"
+                        />
+                        <InputError class=".input_err" :message="form.errors.password" />
+                    </fieldset>
+
+                    <fieldset>
+                        <InputLabel for="password_confirmation" value="Confirm Password" class="invisible" />
+                        <TextInput
+                            id="password_confirmation"
+                            type="password"
+                            class="mt-1 block w-full"
+                            v-model="form.password_confirmation"
+                            required
+                            autocomplete="new-password"
+                            placeholder="confirm password"
+                        />
+                        <InputError class=".input_err" :message="form.errors.password_confirmation" />
+                    </fieldset>
+
+                    <div class="flex items-center justify-end mt-4">
+                        
+
+                        <button  :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                            <h6>Save</h6>
+                        </button>
+                    </div>
+                </form>
             
-            <div class="mt-4">
-                <InputLabel for="email" value="Email" />
-
-                <TextInput
-                    id="email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    v-model="form.email"
-                    required
-                    autocomplete="username"
-                />
-
-                <InputError class="mt-2" :message="form.errors.email" />
-            </div>
-
-            <div class="mt-4">
-                <InputLabel for="password" value="Password" />
-
-                <TextInput
-                    id="password"
-                    type="password"
-                    class="mt-1 block w-full"
-                    v-model="form.password"
-                    required
-                    autocomplete="new-password"
-                />
-
-                <InputError class="mt-2" :message="form.errors.password" />
-            </div>
-
-            <div class="mt-4">
-                <InputLabel for="password_confirmation" value="Confirm Password" />
-
-                <TextInput
-                    id="password_confirmation"
-                    type="password"
-                    class="mt-1 block w-full"
-                    v-model="form.password_confirmation"
-                    required
-                    autocomplete="new-password"
-                />
-
-                <InputError class="mt-2" :message="form.errors.password_confirmation" />
-            </div>
-            <div class="flex items-center justify-end mt-4">
-                <Link
-                    :href="route('login')"
-                    class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                    Already registered?
-                </Link>
-
-                <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Register
-                </PrimaryButton>
-            </div>
-        </form>
+                <small class="cream txt-center">
+                    Already have a member account?
+                    <Link class="block-font coral" :href="route('login')">Sign In!</Link>
+                </small>
+            </main>
+        </div>
     </template>
