@@ -43,7 +43,7 @@ Route::get('/cellar/{cellar}', [CellarController::class, 'show'])->name('cellar.
 Route::get('/cellar-create', [CellarController::class, 'create'])->name('cellar.create');
 Route::post('/cellar-create', [CellarController::class, 'store'])->name('cellar.store');
 Route::get('/cellar-edit/{cellar}', [CellarController::class, 'edit'])->name('cellar.edit');
-Route::put('/cellar-edit/{cellar}', [CellarController::class, 'update'])->name('cellar.edit');
+Route::put('/cellar-edit/{cellar}', [CellarController::class, 'update'])->name('cellar.update');
 Route::delete('/cellar/{cellar}', [CellarController::class, 'destroy'])->name('cellar.delete');
 
 

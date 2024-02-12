@@ -15,9 +15,12 @@ class CellarController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $cellars = Cellar::all();
-        return Inertia::render('CellarList', compact('cellars'));
+    {        
+        $userId = Auth::id();
+
+        $cellars = Cellar::where('user_id', $userId)->get();
+
+        return Inertia::render('Cellar/CellarsView', compact('cellars'));
     }
 
     /**
@@ -27,7 +30,7 @@ class CellarController extends Controller
      */
     public function create()
     {
-        return Inertia::render('CellarCreate');
+        return Inertia::render('Cellar/CreateView');
     }
 
     /**
@@ -49,7 +52,7 @@ class CellarController extends Controller
             'user_id' => $userId
         ]);
 
-        return redirect(route('cellar.show', $newCellar->id))->withSuccess('Cellier créée avec succès');
+        return redirect(route('cellar.show', $newCellar->id))->withSuccess('Cellar successfully created');
     }
 
     /**
@@ -63,10 +66,10 @@ class CellarController extends Controller
         $userId = Auth::id();
 
         if ($cellar->user_id != $userId) {
-            return redirect(route('cellar.index'))->withErrors("Vous n'avez pas l'autorisation d'accéder à cet cellier");
+            return redirect(route('cellar.index'))->withErrors("You do not have authorization to access this cellar");
         }
 
-        return Inertia::render('CellarShow', compact('cellar'));
+        return Inertia::render('Cellar/ShowView', compact('cellar'));
     }
 
     /**
@@ -80,10 +83,10 @@ class CellarController extends Controller
         $userId = Auth::id();
 
         if ($cellar->user_id != $userId) {
-            return redirect(route('cellar.index'))->withErrors("Vous n'avez pas l'autorisation d'accéder à cet cellier");
+            return redirect(route('cellar.index'))->withErrors("You do not have authorization to access this cellar");
         }
 
-        return Inertia::render('CellarEdit', compact('cellar'));
+        return Inertia::render('Cellar/EditView', compact('cellar'));
     }
 
     /**
@@ -101,11 +104,15 @@ class CellarController extends Controller
 
         $userId = Auth::id();
 
+        if ($cellar->user_id != $userId) {
+            return redirect(route('cellar.index'))->withErrors("You do not have authorization to access this cellar");
+        }        
+
         $cellar->update([
             'name' => $request->name
         ]);
 
-        return redirect(route('cellar.show', $cellar->id))->withSuccess('Cellier modifiée avec succès');
+        return redirect(route('cellar.show', $cellar->id))->withSuccess('Cellar modified successfully');
     }
 
     /**
@@ -116,9 +123,20 @@ class CellarController extends Controller
      */
     public function destroy(Cellar $cellar)
     {
-        //TO DO: Vérifie s'il y a un enregistrement dans la table Cellar_has_wines avant de le supprimer.
+        $userId = Auth::id();
+
+        if ($cellar->user_id != $userId) {
+            return redirect(route('cellar.index'))->withErrors("You do not have authorization to access this cellar");
+        }
+        
+        $hasWines = $cellar->cellarHasWines()->exists();
+
+        if ($hasWines) {
+            return redirect(route('cellar.index'))->withError('Unable to delete cellar. Wines are associated with it.');
+        }
+
         $cellar->delete();
 
-        return redirect(route('cellar.index'))->withSuccess(trans('Cellier supprimé avec succès'));
+        return redirect(route('cellar.index'))->withSuccess('Cellar deleted successfully');
     }
 }
