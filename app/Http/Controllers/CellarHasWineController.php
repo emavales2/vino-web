@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CellarHasWine;
 use App\Models\Cellar;
+use App\Models\Wine;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -42,6 +43,25 @@ class CellarHasWineController extends Controller
             $collection[] = ['wine' => $wine->wine, 'qty' => $wine->quantity];
         }
         return Inertia::render('Cellar/CellarWinesView', compact('collection'));
+    }
+
+    public function addOne(Cellar $cellar, Wine $wine) {
+        $target = CellarHasWine::find([$cellar->id, $wine->id]);
+        $newQuantity = $target->quantity + 1;
+        $target->update([
+            'cellar_id'=> $cellar->id,
+            'wine_id' => $wine->id,
+            'quantity' => $newQuantity
+        ]);
+    }
+    public function removeOne(Cellar $cellar, Wine $wine) {
+        $target = CellarHasWine::find([$cellar->id, $wine->id]);
+        $newQuantity = $target->quantity -1;
+        $target->update([
+            'cellar_id'=> $cellar->id,
+            'wine_id' => $wine->id,
+            'quantity' => $newQuantity
+        ]);
     }
 
     /**

@@ -49,7 +49,8 @@ Route::delete('/cellar/{cellar}', [CellarController::class, 'destroy'])->name('c
 // CellarHasWine
 Route::middleware(['auth'])->group(function () {
     Route::get('/cellarwine/{cellar}', [CellarHasWineController::class, 'index'])->name('collection');
-    Route::post('/cellarwine-store', [CellarHasWineController::class, 'store'])->name('cellarwine.store');
+    Route::get('cellarwine-add/{cellar}/{wine}', [CellarHasWineController::class, 'addOne'])->name('cellarwine.add');
+    Route::get('/cellarwine-remove/{cellar}/{wine}', [CellarHasWineController::class, 'removeOne'])->name('cellarwine.remove');
     Route::get('/collection', [CellarHasWineController::class, 'collection'])->name('collection');
 });
 

@@ -24444,9 +24444,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
+
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'WineThumbnail',
-  props: ['wine']
+  data: function data() {
+    return {
+      form: (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.useForm)({
+        quantity: this.wine.qty
+      })
+    };
+  },
+  methods: {
+    addBottle: function addBottle() {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.get(route('cellarwine.add', {
+        cellar: this.cellar.id,
+        wine: this.wine.wine.id
+      })).then(this.wine.qty++);
+    },
+    removeBottle: function removeBottle() {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.get(route('cellarwine.remove', {
+        cellar: this.cellar.id,
+        wine: this.wine.wine.id
+      })).then(this.wine.qty--);
+    }
+  },
+  props: ['wine', 'cellar']
 });
 
 /***/ }),
@@ -25014,20 +25039,7 @@ __webpack_require__.r(__webpack_exports__);
     WineThumbnail: _Components_WineThumbnail_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Link
   },
-  props: {
-    cellar: {
-      type: Object
-    },
-    collection: {
-      type: Object
-    }
-  },
   methods: {
-    redirectToEdit: function redirectToEdit(cellarId) {
-      this.$inertia.visit(route('cellar.edit', {
-        id: cellarId
-      }));
-    },
     redirectToDelete: function redirectToDelete() {
       if (confirm('Are you sure you want to delete this cellar?')) {
         this.$inertia["delete"](route('cellar.delete', {
@@ -25035,7 +25047,8 @@ __webpack_require__.r(__webpack_exports__);
         }));
       }
     }
-  }
+  },
+  props: ['cellar', 'collection']
 });
 
 /***/ }),
@@ -25780,7 +25793,20 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     alt: $props.wine.wine.name + ' photo',
     width: "100px",
     height: "100px"
-  }, null, 8 /* PROPS */, _hoisted_1), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.wine.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.qty) + " bottles", 1 /* TEXT */)]);
+  }, null, 8 /* PROPS */, _hoisted_1), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.wine.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "number",
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return $data.form.quantity = $event;
+    })
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.quantity]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.qty) + " bottles", 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onClick: _cache[1] || (_cache[1] = function () {
+      return $options.addBottle && $options.addBottle.apply($options, arguments);
+    })
+  }, "+"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onClick: _cache[2] || (_cache[2] = function () {
+      return $options.removeBottle && $options.removeBottle.apply($options, arguments);
+    })
+  }, "-")])]);
 }
 
 /***/ }),
@@ -26467,8 +26493,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.cellar.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_1, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.collection, function (wine, i) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_WineThumbnail, {
       key: i,
-      wine: wine
-    }, null, 8 /* PROPS */, ["wine"]);
+      wine: wine,
+      cellar: $props.cellar
+    }, null, 8 /* PROPS */, ["wine", "cellar"]);
   }), 128 /* KEYED_FRAGMENT */))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
     href: _ctx.route('cellar.edit', $props.cellar.id)
   }, {

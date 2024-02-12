@@ -25,7 +25,7 @@
     components: {
       Head,
       Link
-    }    
+    }
   }
 </script>
   
