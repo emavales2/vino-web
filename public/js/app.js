@@ -25190,7 +25190,7 @@ __webpack_require__.r(__webpack_exports__);
       this.openDeleteModal = !this.openDeleteModal;
     },
     "delete": function _delete() {
-      this.form["delete"](route('users.destroy', {
+      this.form["delete"](route('users.delete', {
         user: this.user.id
       }));
       this.openDeleteModal = false;

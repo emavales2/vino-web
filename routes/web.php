@@ -20,7 +20,7 @@ use Inertia\Inertia;
 */
 Route::get('/', function () {
     return Inertia::render('HomeView');
-});
+})->name('home');
 
 // Wine
 Route::middleware(['auth'])->group(function () {
@@ -50,7 +50,6 @@ Route::delete('/cellar/{cellar}', [CellarController::class, 'destroy'])->name('c
 // CellarHasWine
 Route::post('/cellarwine-store', [CellarHasWineController::class, 'store'])->name('cellarwine.store')->middleware('auth');
 
-
 // User
 //----------------------------------------------------
 Route::middleware(['auth'])->group(function () {
@@ -63,8 +62,11 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['admin'])->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
-    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.delete');
+    // Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.adminDelete');
 });
-
+// Page d'erreur
+Route::get('/error', function () {
+    return Inertia::render('ErrorView');
+})->name('error.page');
 
 require __DIR__.'/auth.php';
