@@ -55,19 +55,15 @@
 </template>
 
 <script>
-    import { Link } from '@inertiajs/inertia-vue3';
-    import SearchBar from '@/Components/SearchBar.vue';
-    
-    export default {
-        components: {
-            Link, 
-            SearchBar
-        },
-        props: ['user']
-        // props: {
-        //     user: Object 
-        // }
-    }
+
+import { Link } from '@inertiajs/inertia-vue3';
+import SearchBar from '@/Components/SearchBar.vue';
+
+export default {
+  components: {
+    Link, 
+    SearchBar
+  }
+}
 </script>
 
-<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->

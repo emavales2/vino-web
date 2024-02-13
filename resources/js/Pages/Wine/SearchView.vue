@@ -1,11 +1,11 @@
 <template>
-  <MainLayout>
+    <DialogWindow v-if="showDialog" :message="message"/>
     <section>
       <h1>There is {{ count }} results for <strong>{{ search }}</strong></h1>
       <div v-if="results.length !== 0">
         <ul>
           <li
-            v-for="(wine, i) in results" 
+            v-for="(wine, i) in results"
             :key="i"
           >
           <Link :href="route('wine.show', wine.id)">
@@ -18,7 +18,6 @@
         </ul>
       </div>
     </section>
-
     <Modal :show="showForm">
       <div class="bg-stone-400">
         <div v-if="hasCellar">
@@ -51,66 +50,61 @@
         </div>
       </div>
     </Modal>
-    <DialogWindow 
-      v-if="showDialog"
-      :message="message"
-    />
-  </MainLayout>
 </template>
 
 <script>
 import MainLayout from '@/Layouts/MainLayout.vue';
 import Modal from '@/Components/Modal.vue';
-import DialogWindow from '@/Components/DialogWindow.vue';
 import { useForm } from '@inertiajs/inertia-vue3';
 import { Link } from '@inertiajs/inertia-vue3';
-  export default{
-    name:'Wine.SearchView',
-    components: {
-      MainLayout,
-      Modal,
-      DialogWindow,
-      Link
+import DialogWindow from '@/Components/DialogWindow.vue';
+export default{
+  name:'Wine.SearchView',
+  components: {
+    Modal,
+    Link,
+    DialogWindow
+  },
+  layout: MainLayout,
+  data () {
+    return {
+      showDialog: false,
+      message: '',
+      showForm: false,
+      selectedWine : '',
+      form : useForm({
+        wine_id : '',
+        quantity: '1',
+        cellar_id: ''
+      })
+    }
+  },
+  methods: {
+    addToCellar() {
+      this.form.post(route('cellarwine.store'))
+      const cellarName = this.cellars.find(c => c.id === this.form.cellar_id).name
+      this.message = `Yeah! You just added ${this.form.quantity} ${this.selectedWine.name} to ${cellarName}`
+      this.showDialog = true
+      setTimeout(() => { this.showDialog = false }, 2000)
+      this.closeForm()
     },
-    data () {
-      return {
-        showForm: false,
-        showDialog: false,
-        message: '',
-        selectedWine : '',
-        form : useForm({
-          wine_id : '',
-          quantity: '1',
-          cellar_id: ''
-        })
+    closeForm () {
+      this.showForm = false
+      this.form.reset()
+    },
+    openForm (id) {
+      this.form.reset()
+      if(this.cellars[0]) {
+        this.hasCellar = true;
+        this.selectedWine = this.results.find(w => w.id === id)
+        this.form.cellar_id = this.cellars[0].id
+        this.form.wine_id = this.selectedWine.id
       }
-    },
-    methods: {
-      addToCellar() {
-        this.form.post(route('cellarwine.store'))
-        const cellarName = this.cellars.find(c => c.id === this.form.cellar_id).name
-        this.message = `Yeah! You just added ${this.form.quantity} ${this.selectedWine.name} to ${cellarName}`
-        this.showDialog = true;
-        setTimeout(() => { this.showDialog = false }, 2000)
-        this.closeForm()
-      },
-      closeForm () {
-        this.showForm = false
-        this.form.reset()
-      },
-      openForm (id) {
-        this.form.reset()
-        if(this.cellars[0]) {
-          this.hasCellar = true;
-          this.selectedWine = this.results.find(w => w.id === id)
-          this.form.cellar_id = this.cellars[0].id
-          this.form.wine_id = this.selectedWine.id
-        }
-        this.showForm = true
-      }
-    },
-    props: ['results', 'cellars', 'search', 'count']
-  }
+      this.showForm = true
+    }
+  },
+  props: ['results', 'cellars', 'search', 'count']
+}
 </script>
   
   
