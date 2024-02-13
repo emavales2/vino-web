@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CellarHasWine;
 use App\Models\Wine;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -16,8 +17,8 @@ class WineController extends Controller
      */
     public function index()
     {
-        $wines = Wine::all();
-        return Inertia::render('WineTest', compact('wines'));
+        $wines = Wine::select()->paginate(24);
+        return Inertia::render('Wine/WineTest', compact('wines'));
     }
 
     /**
@@ -27,16 +28,17 @@ class WineController extends Controller
      */
     public function create()
     {
-        //
+        $cellars = Auth::user()->cellar;
+        return Inertia::render('Wine/CreateView', compact('cellars'));
     }
+
     public function searchResult(Request $request)
     {
         $search = $request->search;
         $count = Wine::like('name', $search)->count();
-        $results = Wine::like('name', $search)->paginate(24);
-        $user = Auth::user();
-        $cellars = $user->cellar;
-        return Inertia::render('ResultView', compact('results', 'cellars', 'search', 'count'));
+        $results = Wine::like('name', $search)->get();
+        $cellars = Auth::user()->cellar;
+        return Inertia::render('Wine/SearchView', compact('results', 'search', 'cellars', 'count'));
     }
     
     /**
@@ -47,7 +49,22 @@ class WineController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'min:3 | max:100',
+            'type' => 'min:3 | max:45 | nullable',
+            'country' => 'min:3 | max:100 | nullable',
+            'size' => 'min:3 | max:45 | nullable',
+            'price' => 'numeric | gte:0 | nullable'
+        ]);
+        return $request;
+        $wine = Wine::create([
+            'name' => $request->name,
+            'type' => $request->type,
+            'country' => $request->country,
+            'size' => $request->size,
+            'price' => $request->price,
+        ]);
+        return redirect(route('wine.show', $wine));
     }
 
     /**
@@ -58,7 +75,7 @@ class WineController extends Controller
      */
     public function show(Wine $wine)
     {
-        //
+        return Inertia::render('Wine/ShowView', compact('wine'));
     }
 
     /**
