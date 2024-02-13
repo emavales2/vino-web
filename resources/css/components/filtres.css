@@ -1,0 +1,122 @@
+/* ----- Colonne qui contient les filtres ----- */
+
+.filtres_wrapper {
+    max-width: 20%;
+    min-width: 250px;
+    width: 100%;
+    flex-grow: 1;
+    margin: var(--espace_base);
+    box-sizing: border-box;
+
+    border-right: 1px solid var(--border_bg_2);
+    padding-right: var(--espace_base);
+    margin-right: 0;
+}
+
+.filtres_wrapper h4 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+
+/* ----- Chaque pièce-filtre ----- */
+
+.capsule_filtre {
+    margin-top: var(--espace_petit);
+}
+
+.capsule_filtre input {
+    width: -webkit-fill-available;
+}
+
+.capsule_filtre h6 {
+    margin-bottom: 10px;
+}
+
+
+
+/* ----- Capsules-filtre avec menu déroulant ----- */
+
+/* ------------ Cartouche Titre ------------ */
+.filtres_wrapper .capsule_menu_deroulant {
+    /* border: 1px solid var(--border_bg_2);
+    background: white; */
+
+    width: 100%;
+}
+
+/* Taille de Cartouche Titre specifiquement pour les filtres */
+.capsule_filtre .menu_titre {
+    margin: 0;
+    padding: 2px 10px;
+    justify-content: space-between;
+    height: var(--espace_petit);
+    color: white;
+    width: 100%;
+}
+
+.capsule_filtre .capsule_menu_deroulant { 
+    height: unset;
+    z-index: unset;
+}
+
+
+
+/* .capsule_filtre .capsule_menu_deroulant:hover {
+    border: 1px solid var(--bronze);
+} */
+
+/* .conteneur_filtres .capsule_menu_deroulant .menu_titre {
+    color: var(--aqua_tint_2);
+} */
+
+/* .capsule_filtre .capsule_menu_deroulant:hover .menu_titre {
+    background: var(--bronze);
+    color: var(--neutral_lightest);
+} */
+/* ------------ FIN Cartouche Titre ------------ */
+
+
+.capsule_filtre .contenu_menu_deroulant {
+    top: 25px;
+}
+
+/* .capsule_filtre .contenu_menu_deroulant a {
+    color: var(--neutral_lightest);
+} */
+
+/* .capsule_filtre .contenu_menu_deroulant a:hover {
+    background-color: var(--aqua_tint_1);
+    color: var(--gold_tint_2);
+} */
+
+
+
+
+.capsule_checkbox {
+    display: flex;
+    flex-direction: column;
+    color: var(--aqua_tint_2);
+}
+
+.capsule_checkbox input {
+    width: var(--espace_base);
+}
+
+.checkbox {
+    margin-top: var(--espace_moyen);
+}
+
+
+/* ------- * * * * TAILLE PORTABLE * * * * ------- */
+
+@media screen and (max-width: 600px) {
+
+    .filtres_wrapper {
+        max-width: 100%;
+        width: auto;
+        border-right: none;
+        margin: var(--espace_base);
+        padding: 0;
+    }
+}

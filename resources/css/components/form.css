@@ -1,0 +1,42 @@
+/* --------- * FORM * --------- */
+
+form {
+    /* background-color: darkkhaki; */
+    display: flex;
+    flex-direction: column;
+    gap: var(--safe-area);
+    margin: 0;
+    /* padding: var(--med_space); */
+}
+
+/* form > * {
+    display: contents;
+    margin: 0;
+    flex: 1;
+    /* width: 100%; This can be done here because it is limited to its container */
+    /* padding: 0;
+} */ 
+
+/* In the component "InputLabel.vue" (came with Laravel) */
+label {
+
+}
+
+form input {
+    box-sizing: border-box;
+    align-self: center;
+    padding: 12px;
+    width: 100%; /*This can be done here because it is limited to its container */
+    border-radius: 30px;
+    border: none;
+    background: var(--lt-cream);
+}
+
+form input:focus-visible {
+    outline: var(--coral) auto 1px;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+}
