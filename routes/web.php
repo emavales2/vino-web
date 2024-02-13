@@ -59,7 +59,7 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/users/edit', [UserController::class, 'update'])->name('profile.update');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.delete');
 });
-
+// Admin
 Route::middleware(['admin'])->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.adminDelete');
