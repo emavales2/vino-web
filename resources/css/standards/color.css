@@ -30,7 +30,7 @@
     --burgundy: #420101;
     --coral: #F95148;
     --cream: #F2D9AF;
-    --lt-cream: #EDE7D1;
+    --cream-lt: #EDE7D1;
     
 
     
@@ -52,7 +52,9 @@
 .burg_bg {
     background: var(--burgundy);
     height: 100%;
+    width: 100%;
     display: flex;
+    flex-direction: column;
 }
 
 .burg {
@@ -63,6 +65,23 @@
     color: var(--coral)
 }
 
-.cream{
+.cream_bg {
+    background: var(--cream);
+    height: 100%;
+    display: flex;
+}
+
+.cream {
     color: var(--cream)
+}
+
+.cream_lt_bg {
+    background: var(--cream-lt);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cream_lt {
+    color: var(--cream-lt)
 }

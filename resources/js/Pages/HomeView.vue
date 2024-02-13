@@ -1,7 +1,21 @@
 <template>
     <Head title="Home" />
-        <div class="burg_bg">
-            <main class="cont_narrow_splash">
+        <div class="cream_lt_bg">
+            <section class="background_blobs">
+                <figure class="fig_bg">
+                    <img src="../../img/coral_1.svg" class="coral_blob_bg" alt="">
+                </figure>
+
+                <figure class="fig_bg">
+                    <img src="../../img/med_vino.svg" class="med_blob_bg" alt="">
+                </figure>
+
+                <figure class="fig_bg">
+                    <img src="../../img/dark_vino.svg" class="dkvin_blob_bg" alt="">
+                </figure>
+            </section>
+
+            <main class="cont_narrow_splash just_top">
                 <header>
                     <figure>
                         <img src="../../logos/VINO_lt.svg" alt="">
@@ -9,7 +23,7 @@
 
                     <!-- <h1 class="block-font">Welcome</h1> -->
                     <!-- <p>Unlock the Perfect Cellar Experience with Vino</p> -->
-                    <h5 class="block-font txt-center coral">Your Personal Wine Sanctuary</h5>
+                    <h5 class="block-font txt-center coral">Your Personal <br>Wine Sanctuary</h5>
                 </header>
                 <div class="button_column">             
                     <button>

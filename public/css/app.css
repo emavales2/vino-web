@@ -78,9 +78,14 @@ footer {
 figure {
     /* background-color: cornflowerblue; */
     max-height: 100%;
-    /* min-height: 200px; */
     max-width: 100%;
     margin: 0;
+}
+
+.background_blobs, .fig_bg{
+    position: absolute;
+    max-height: 100%;
+    width: 100%;
 }
 
 img {
@@ -91,6 +96,20 @@ img {
     max-height: 100%;
 }
 
+.coral_blob_bg {
+    opacity: 70%;
+}
+
+.med_blob_bg {
+    /* opacity: 64%; */
+    z-index: 1;
+}
+
+.dkvin_blob_bg {
+    opacity: 64%;
+    z-index: 2;
+}
+
 
 /* input {
     height: var(--espace_petit);
@@ -99,13 +118,6 @@ img {
 
 
 /* ------- LAYOUT, RHYTHM & COMPOSITION ------- */
-
-html {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    width: 100%;
-}
 
 body, [id=app] {
     /* display: flex; */
@@ -135,6 +147,11 @@ main {
     gap: 30px;
     flex: 1;
     justify-content: center;
+    position: relative;
+}
+
+.just_top {
+    justify-content: start;
 }
 
 
@@ -165,13 +182,36 @@ main {
     padding: 50px;
 }
 
+.under_nav {
+    position: absolute;
+}
+
+.card_low {
+    margin-top: 6rem;  
+}
+
+.card_round {
+    border-start-end-radius: 40px; 
+}
+
+.index_title {
+    margin: 25px 36px;
+    font-weight: 500;
+}
+
+.grid_index {
+    
+}
+
 
 /* --------- * ERROR * --------- */
 
 .input_err {
-    margin-top: var(--safe-area);
-    font-size: small;
+    margin-top: 10px;
     color: red;
+    font-style: italic;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 
@@ -184,7 +224,9 @@ main {
 :root {
 
     --tall-line: 2.15rem;
+    --med-line: 1.7rem;
     --text-line: 1.4rem;
+    --small-line: 1.2rem;
     
     --text-spacing: .044em;
 
@@ -208,10 +250,19 @@ body {
     letter-spacing: .05rem;
 }
 
+.display-font {
+    font-family: var(--display-font);
+    color: var(--coral);
+}
+
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
-    line-height: var(--tall-line);
     font-weight: unset;
+    line-height: var(--med-line);
+}
+
+h1, h2, h3 {
+    line-height: var(--tall-line);
 }
 
 h1 {
@@ -234,7 +285,7 @@ h4 {
 }
 
 h5 {
-    font-size: 1.55rem;
+    font-size: 1.4rem;
 }
 
 h6 {
@@ -248,6 +299,7 @@ p {
 small {
     /* font-size: .833rem; */
     font-size: .694rem;
+    line-height: var(--small-line);
 }
 
 .txt-center {
@@ -286,7 +338,7 @@ small {
     --burgundy: #420101;
     --coral: #F95148;
     --cream: #F2D9AF;
-    --lt-cream: #EDE7D1;
+    --cream-lt: #EDE7D1;
     
 
     
@@ -308,7 +360,9 @@ small {
 .burg_bg {
     background: var(--burgundy);
     height: 100%;
+    width: 100%;
     display: flex;
+    flex-direction: column;
 }
 
 .burg {
@@ -319,8 +373,25 @@ small {
     color: var(--coral)
 }
 
-.cream{
+.cream_bg {
+    background: var(--cream);
+    height: 100%;
+    display: flex;
+}
+
+.cream {
     color: var(--cream)
+}
+
+.cream_lt_bg {
+    background: var(--cream-lt);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cream_lt {
+    color: var(--cream-lt)
 }
 
 
@@ -342,16 +413,42 @@ small {
 nav {
     box-sizing: border-box;
     text-align: center;
-    background: greenyellow;
+    background: var(--coral);
     padding: 10px;
     max-height: 80px;
     max-width: 100%;
     align-items: center;
 }
 
+.top_nav_header {
+    position: absolute;
+    z-index: 1;
+    /* added as per my other one*/
+    display: flex;
+}
+
 .top_nav {
     display: flex;
     justify-content: space-between; 
+    background-color: transparent;
+    color: var(--cream);
+    z-index: 1;
+}
+
+.top_nav figure {
+    -webkit-writing-mode: vertical-lr;
+    padding-left: 10px;
+}
+
+.top_nav img {
+    max-width: 100%;
+    height: 22px;
+}
+
+.top_nav svg {
+    fill: var(--cream);
+    width: 30px;
+    height: 30px;
 }
 
 .top_nav span {
@@ -366,8 +463,17 @@ nav {
 
 .bottom_nav {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 10px;   
+}
+
+.bottom_nav svg {
+    fill: var(--burgundy);
+}
+
+.bottom_nav img {
+    max-height: 100%;
+    width: 100%;
 }
 
 nav a {
@@ -377,13 +483,13 @@ nav a {
     /* align-items: center; */
     justify-content: center;
     min-height: 100%;
-    min-width: 100%;
+    max-width: 100%;
 }
 
 nav svg {
     box-sizing: border-box;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: 90%;
+    max-width: 90%;
     padding: 5px;
 }
 
@@ -393,19 +499,21 @@ nav svg {
     -webkit-appearance: none;
        -moz-appearance: none;
             appearance: none;
-    padding: var(--espace-petit);
+    padding: 5px;
 }
 
 .declancheur:not(:checked)::before {
-    content: "MENU";
-    font-family: 'Ibarra Real Nova', serif;
+    /* content: "MENU"; */
+    /* font-family: var(--block-text); */
+    content: url(/images/lupe.svg?83787e9b76a4bb2deab696f2e1fb6c4d);
     cursor: pointer;
     background: red;
 }
 
 .declancheur:checked::before {
-    content: "FERMER";
-    font-family: 'Ibarra Real Nova', serif;
+    /* /* content: "FERMER"; */
+    font-family: var(--block-text);
+    /* content: url(../../icons/lupe.svg); */
     cursor: pointer;
 }
 
@@ -438,7 +546,7 @@ nav svg {
 
 .nav_cachee {
     position: absolute;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     text-align: center;
     background: var(--aqua_tint_2);
@@ -447,32 +555,51 @@ nav svg {
     padding: 30px;
     width: 75%;
     color: var(--border_bg_1);
+    /* to togggle it on and off */
+    display: none
 }
 
-.nav_cachee .capsule_menu_deroulant {
+/* Show search bar when corresponding checkbox is checked */
+/* Show menu when corresponding checkbox is checked */
+/* input[type="checkbox"]:checked + .nav_cachee {
+    display: block;
+} */
+
+/* Show search bar when corresponding checkbox is checked */
+input[name="search"]:checked + label .search_cachee {
+    display: block;
+}
+
+/* Show menu when corresponding checkbox is checked */
+input[name="menu"]:checked + label .menu_cachee {
+    display: block;
+}
+
+
+/* .nav_cachee .capsule_menu_deroulant {
     height: unset;
     width: 75%;
     justify-content: center;
-}
+} */
 
 .nav_cachee input {
     width: 90%;
 }
 
-.nav_cachee span:nth-of-type(2) {
+/* .nav_cachee span:nth-of-type(2) {
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: center;
-}
+} */
 
 /* .nav_mobile_wrapper {
     display: none;
 } */
 
-.nav_cachee span .capsule_menu_deroulant:first-of-type {
+/* .nav_cachee span .capsule_menu_deroulant:first-of-type {
     border-right: 1px solid var(--border_bg_1);
-}
+} */
 
 .nav_cachee span {
     margin-bottom: 0;
@@ -502,13 +629,13 @@ nav svg {
     margin-bottom: 20px;
 }
 
-.nav_cachee .contenu_menu_deroulant {
+/* .nav_cachee .contenu_menu_deroulant {
     top: 35px;
 }
 
 .nav_cachee .menu_titre {
     color: var(--border_bg_1);
-}
+} */
 
 
 
@@ -621,11 +748,11 @@ label {
 form input {
     box-sizing: border-box;
     align-self: center;
-    padding: 12px;
+    padding: 12px 20px;
     width: 100%; /*This can be done here because it is limited to its container */
     border-radius: 30px;
     border: none;
-    background: var(--lt-cream);
+    background: var(--cream-lt);
 }
 
 form input:focus-visible {
