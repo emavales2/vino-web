@@ -29,4 +29,634 @@ body{
   padding: 3px 10px;
   text-transform: uppercase;
 }
+/* ------- GENERAL ------- */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+html,
+body,
+main,
+header,
+footer,
+[id=app] {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: lightblue;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+figure {
+    /* background-color: cornflowerblue; */
+    max-height: 100%;
+    /* min-height: 200px; */
+    max-width: 100%;
+    margin: 0;
+}
+
+img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+/* input {
+    height: var(--espace_petit);
+    border: 1px solid var(--bronze_tint_2);
+} */
+
+
+/* ------- LAYOUT, RHYTHM & COMPOSITION ------- */
+
+html {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+body, [id=app] {
+    /* display: flex; */
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+body > * {
+    width: 100%;
+}
+
+.safe_area {
+    padding: var(--safe-area);
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    margin: var(--safe-area);
+    padding: var(--med-space); 
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 30px;
+    flex: 1;
+    justify-content: center;
+}
+
+
+/* ------- PLACEMENT (containers) ------- */
+
+.header_cont {
+    padding: 0px var(--med-space);
+}
+
+.center_cont {
+    text-align: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.col_tight {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: center;
+}
+
+.cont_narrow_splash {
+    padding: 50px;
+}
+
+
+/* --------- * ERROR * --------- */
+
+.input_err {
+    margin-top: var(--safe-area);
+    font-size: small;
+    color: red;
+}
+
+
+/* ------------------ * UTILITARIAN * ------------------ */
+
+.invisible {
+    display: none;
+}
+
+:root {
+
+    --tall-line: 2.15rem;
+    --text-line: 1.4rem;
+    
+    --text-spacing: .044em;
+
+    --text-font: 'Roboto', sans-serif;
+    --display-font: 'Playfair Display', serif;
+    --block-font: 'Oswald', sans-serif;
+}
+
+
+/* --------- * Typographic scale chosen is 1.200 Minor Third base @ 12pt * --------- */
+
+body {
+    font-family: var(--text-font);
+    line-height: var(--text-line);
+}
+
+.block-font {
+    font-family: var(--block-font);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: .05rem;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    line-height: var(--tall-line);
+    font-weight: unset;
+}
+
+h1 {
+    font-size: 2.986rem;
+    /* font-family: 'Barlow Condensed', sans-serif; */
+    font-family: var(--block-font);
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2.488rem;
+}
+
+h3 {
+    font-size: 2.074rem;
+}
+
+h4 {
+    font-size: 1.728rem;
+}
+
+h5 {
+    font-size: 1.55rem;
+}
+
+h6 {
+    font-size: 1.12rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+small {
+    /* font-size: .833rem; */
+    font-size: .694rem;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+
+:root {
+
+    /* ---------- * * COLOR MODES * * ---------- */
+
+    /* ----- AQUAMARINE MODE ----- */
+
+    --background_1: var(--aqua_dark);
+    --border_bg_1: var(--gold_tint_4);
+    --header: var(--aqua_dark);
+    --background_2: var(--neutral_lightest);
+    --border_bg_1: var(--neutral_light);
+    --border_bg_2: var(--bronze_tint_2);
+
+    --button: white;
+    --button_hover: var(--gold_bright);
+
+    --titles_1: var(--bronze_shade_1);
+    --titles_2: var(--purple_dark);
+    --text: var(--purple_dark);
+
+    /* -------------------- */
+
+
+
+    /* ---------- * * COLOR SETS * * ---------- */
+
+    /* ----- BURGUNDY ----- */
+
+    --burgundy: #420101;
+    --coral: #F95148;
+    --cream: #F2D9AF;
+    --lt-cream: #EDE7D1;
+    
+
+    
+    
+
+    /* ----- NEUTRALS ----- */
+
+    --neutral_lightest: #f6f2e9;
+    --neutral_light: #e8e1d5;
+    --neutral_med: #c7bdad;
+
+    
+}
+
+
+/* --fieldtext: This will be the color of the fieldtext */
+
+
+.burg_bg {
+    background: var(--burgundy);
+    height: 100%;
+    display: flex;
+}
+
+.burg {
+    color: var(--burgundy);
+}
+
+.coral {
+    color: var(--coral)
+}
+
+.cream{
+    color: var(--cream)
+}
+
+
+:root {
+
+    /* ---------- * * SPACING * * ---------- */
+
+    --xxlarge-space: 50px;
+    --xlarge-space: 40px;
+    --large-space: 30px;
+    --med-space: 20px;
+    --small-space: 10px;
+    --vsmall-space: 5px;
+
+    --safe-area: 16px;
+}
+/* ---------- * * Navigation en Général * * ---------- */
+
+nav {
+    box-sizing: border-box;
+    text-align: center;
+    background: greenyellow;
+    padding: 10px;
+    max-height: 80px;
+    max-width: 100%;
+    align-items: center;
+}
+
+.top_nav {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.top_nav span {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.top_nav p {
+    padding-left: 10px;
+}
+
+.bottom_nav {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;   
+}
+
+nav a {
+    /* background: green; */
+    max-height: 32px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+nav svg {
+    box-sizing: border-box;
+    max-height: 100%;
+    max-width: 100%;
+    padding: 5px;
+}
+
+/* declancheur.css (composante) --------------- */
+
+.declancheur {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    padding: var(--espace-petit);
+}
+
+.declancheur:not(:checked)::before {
+    content: "MENU";
+    font-family: 'Ibarra Real Nova', serif;
+    cursor: pointer;
+    background: red;
+}
+
+.declancheur:checked::before {
+    content: "FERMER";
+    font-family: 'Ibarra Real Nova', serif;
+    cursor: pointer;
+}
+
+.declancheur, .declancheur:not(:checked)+ .nav_cachee {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ------- * * * * TAILLE PORTABLE * * * * ------- */
+
+/* @media screen and (max-width: 600px) { */
+
+    .declancheur, .declancheur:checked + .nav_cachee {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+/* } */
+
+.nav_mobile {
+    /* position: absolute; */
+    background: pink;
+}
+
+.nav_mobile input {
+    border: 0;
+    color: white;
+    font-size: large;
+}
+
+.nav_cachee {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: var(--aqua_tint_2);
+    top: 166px;
+    gap: 20px;
+    padding: 30px;
+    width: 75%;
+    color: var(--border_bg_1);
+}
+
+.nav_cachee .capsule_menu_deroulant {
+    height: unset;
+    width: 75%;
+    justify-content: center;
+}
+
+.nav_cachee input {
+    width: 90%;
+}
+
+.nav_cachee span:nth-of-type(2) {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+/* .nav_mobile_wrapper {
+    display: none;
+} */
+
+.nav_cachee span .capsule_menu_deroulant:first-of-type {
+    border-right: 1px solid var(--border_bg_1);
+}
+
+.nav_cachee span {
+    margin-bottom: 0;
+}
+
+.search {
+    padding-bottom: 20px;
+}
+
+.nav_cachee button {
+    width: 75%;
+    align-self: center;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid var(--border_bg_1);
+    color: var(--border_bg_1);
+}
+
+.nav_cachee button:hover {
+    background: var(--border_bg_1);
+    color: var(--aqua_tint_2);
+    border: 2px solid var(--border_bg_1);
+}
+
+/* Make this cleaner, maybe put buttons into one section */
+.nav_cachee button:last-of-type {
+    margin-bottom: 20px;
+}
+
+.nav_cachee .contenu_menu_deroulant {
+    top: 35px;
+}
+
+.nav_cachee .menu_titre {
+    color: var(--border_bg_1);
+}
+
+
+
+/* ------- * * * * TAILLE PORTABLE * * * * ------- */
+
+/* @media screen and (max-width: 600px) { */
+
+    .nav_mobile_wrapper {
+        display: flex;
+    }
+
+    .nav_mobile {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        padding-bottom: 20px;
+        z-index: 1;
+    }
+/* } */ 
+
+/* --------- * BUTTON * --------- */
+
+/* In the components "PrimaryButton.vue", "SecondaryButton.vue", "DangerButton.vue" (came with Laravel) */
+button {
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+    align-self: center;
+    padding: 16px;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: .05rem;
+    border-radius: 30px;
+    border: 3px solid var(--cream);
+    background: none;
+    color: var(--cream);
+}
+
+button h6 {
+    line-height: 1rem;
+    font-weight: 400;
+}
+
+.button_column {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+    gap: var(--safe-area);
+    align-items: center;
+    max-height: 100%;
+}
+
+button:active {
+    cursor: pointer;
+    background-color: var(--coral);
+    border: none;
+}
+
+/*button {
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    border-radius: 0px;
+    border: 2px solid var(--aqua_tint_2);
+    color: var(--aqua_tint_2);
+    background: none;
+    padding: 5px;
+    font-family: 'Lato', sans-serif;
+}
+
+.wide {
+    min-width: 200px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--bronze);
+    border: 2px solid var(--bronze);
+    color: white;
+}
+
+.button_line {
+    flex-direction: row;
+    margin-top: var(--espace_moyen);
+} */
+/* --------- * FORM * --------- */
+
+form {
+    /* background-color: darkkhaki; */
+    display: flex;
+    flex-direction: column;
+    gap: var(--safe-area);
+    margin: 0;
+    /* padding: var(--med_space); */
+}
+
+/* form > * {
+    display: contents;
+    margin: 0;
+    flex: 1;
+    /* width: 100%; This can be done here because it is limited to its container */
+    /* padding: 0;
+} */ 
+
+/* In the component "InputLabel.vue" (came with Laravel) */
+label {
+
+}
+
+form input {
+    box-sizing: border-box;
+    align-self: center;
+    padding: 12px;
+    width: 100%; /*This can be done here because it is limited to its container */
+    border-radius: 30px;
+    border: none;
+    background: var(--lt-cream);
+}
+
+form input:focus-visible {
+    outline: var(--coral) auto 1px;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+}
+/* ---------- * * VARIABLES * * ---------- */
+
+
+
+/* ---------- * * STANDARDS / VARIABLES * * ---------- */
+
+
+/* ---------- * * DANS SECTION NAVIGATION * * ---------- */
+
+/* @import url(navigation/nav_wrapper.css);
+@import url(navigation/nav_top_row.css);
+@import url(navigation/nav_bottom_row.css); */
+
+
+/* ---------- * * COMPONENTS RÉUTILISABLES * * ---------- */
+
+/* @import url(components/menu_deroulant.css);
+@import url(components/fiche_stamp.css);
+@import url(components/logo.css); */
+/* @import url(components/fiche_vedette.css);
+@import url(components/view_reel.css);
+@import url(components/filtres.css);
+@import url(components/module_pic_txt.css); */
 

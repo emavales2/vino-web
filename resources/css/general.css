@@ -1,0 +1,150 @@
+/* ------- GENERAL ------- */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+html,
+body,
+main,
+header,
+footer,
+[id=app] {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: lightblue;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+figure {
+    /* background-color: cornflowerblue; */
+    max-height: 100%;
+    /* min-height: 200px; */
+    max-width: 100%;
+    margin: 0;
+}
+
+img {
+    object-fit: cover;
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+/* input {
+    height: var(--espace_petit);
+    border: 1px solid var(--bronze_tint_2);
+} */
+
+
+/* ------- LAYOUT, RHYTHM & COMPOSITION ------- */
+
+html {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+body, [id=app] {
+    /* display: flex; */
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+body > * {
+    width: 100%;
+}
+
+.safe_area {
+    padding: var(--safe-area);
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    margin: var(--safe-area);
+    padding: var(--med-space); 
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 30px;
+    flex: 1;
+    justify-content: center;
+}
+
+
+/* ------- PLACEMENT (containers) ------- */
+
+.header_cont {
+    padding: 0px var(--med-space);
+}
+
+.center_cont {
+    text-align: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.col_tight {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: center;
+}
+
+.cont_narrow_splash {
+    padding: 50px;
+}
+
+
+/* --------- * ERROR * --------- */
+
+.input_err {
+    margin-top: var(--safe-area);
+    font-size: small;
+    color: red;
+}
+
+
+/* ------------------ * UTILITARIAN * ------------------ */
+
+.invisible {
+    display: none;
+}

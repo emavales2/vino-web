@@ -1,0 +1,83 @@
+
+/* ---------- * * Rayon Supérieur Navigation * * ---------- */
+
+/* La balise nav avant la classe reinforce la specificité (??) */
+.nav_wrapper >  .nav_top_row { 
+    height: 80px;
+    padding: var(--espace_moyen) var(--espace_base);
+    align-items: center;
+}
+
+.nav_top_row .nav_section {
+    margin: 0;
+    /* flex: 3; */
+    height: 100%;
+    padding: 0;
+
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 0 var(--espace_petit);  */
+}
+
+.nav_top_row .menu_titre {
+    margin-top: 26px;
+    height: min-content;
+}
+
+.nav_top_row .nav_section > a, .nav_top_row .menu_titre {
+    margin-bottom: 10px;
+}
+
+.nav_section .edge_left {
+    border-right: 1px solid var(--border_bg_1);
+}
+
+.nav_top_row > p:first-of-type > a:last-of-type {
+    border-right: none;
+}
+
+.nav_top_row .edge_right {
+    border-right: none;
+    padding-right: 0px;
+}
+
+.nav_top_row .capsule_menu_deroulant {
+    margin-top: 10px;
+}
+
+.nav_top_row .capsule_menu_deroulant > .contenu_menu_deroulant {
+    /* width: 100px; */
+    min-width: max-content;
+    /* left: 0; */
+}
+
+/* Only way to target the nav_section with the logo in it. Maybe change to id?*/
+.nav_top_row div {
+    min-width: 150px;
+}
+
+
+/* ------- * * * * TAILLE PORTABLE * * * * ------- */
+
+@media screen and (max-width: 600px) {
+
+    .nav_top_row > .nav_section {
+        display: none;
+        height: unset;
+    }
+
+    /* Je ne peux pas cibler la .nav_section avec le logo qu'en utilisant div à la place de la classe. Pourquoi??*/
+    .nav_wrapper .nav_top_row > div {
+        display: flex;
+    }
+
+    .nav_wrapper .nav_top_row {
+        padding: var(--espace_petit);
+    }
+
+
+
+
+}

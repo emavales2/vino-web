@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -29,7 +30,7 @@ class UserController extends Controller
         ]);
     }
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource. For the admin only.
      *
      * @return \Illuminate\Http\Response
      */
@@ -41,28 +42,7 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
+     * Display the specified resource. For the admin only.
      *
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
@@ -97,8 +77,8 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $request->validate([
-            'first_name' => 'alpha|max:100|min:2|nullable',
-            'last_name' => 'alpha|max:100|min:2|nullable',
+            'first_name' => 'regex:/^[a-zA-Z\s]+$/u|max:100|min:2|nullable',
+            'last_name' => 'regex:/^[a-zA-Z\s]+$/u|max:100|min:2|nullable',
             'email' => 'required|string|email|max:255'
         ]);
         $user = User::find($request->id);
@@ -115,14 +95,11 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        User::destroy($user->id);
+        if (Auth::check() && Auth::user()->is_admin == 1) {
+            return redirect()->route('users.index')->with('success', 'Administrateur supprimé avec succès');
+        }
+        return redirect()->route('home')->with('success', 'Utilisateur supprimé avec succès');
     }
 
-    /**
-     * Display the error page.
-     */
-    public function errorPage()
-    {
-        return Inertia::render('ErrorView');
-    }
 }

@@ -1,0 +1,68 @@
+
+:root {
+
+    /* ---------- * * COLOR MODES * * ---------- */
+
+    /* ----- AQUAMARINE MODE ----- */
+
+    --background_1: var(--aqua_dark);
+    --border_bg_1: var(--gold_tint_4);
+    --header: var(--aqua_dark);
+    --background_2: var(--neutral_lightest);
+    --border_bg_1: var(--neutral_light);
+    --border_bg_2: var(--bronze_tint_2);
+
+    --button: white;
+    --button_hover: var(--gold_bright);
+
+    --titles_1: var(--bronze_shade_1);
+    --titles_2: var(--purple_dark);
+    --text: var(--purple_dark);
+
+    /* -------------------- */
+
+
+
+    /* ---------- * * COLOR SETS * * ---------- */
+
+    /* ----- BURGUNDY ----- */
+
+    --burgundy: #420101;
+    --coral: #F95148;
+    --cream: #F2D9AF;
+    --lt-cream: #EDE7D1;
+    
+
+    
+    
+
+    /* ----- NEUTRALS ----- */
+
+    --neutral_lightest: #f6f2e9;
+    --neutral_light: #e8e1d5;
+    --neutral_med: #c7bdad;
+
+    
+}
+
+
+/* --fieldtext: This will be the color of the fieldtext */
+
+
+.burg_bg {
+    background: var(--burgundy);
+    height: 100%;
+    display: flex;
+}
+
+.burg {
+    color: var(--burgundy);
+}
+
+.coral {
+    color: var(--coral)
+}
+
+.cream{
+    color: var(--cream)
+}

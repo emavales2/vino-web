@@ -1,0 +1,136 @@
+
+.fiche_vedette {
+    display: flex;
+    gap: var(--espace_base);
+    padding: var(--espace_base) 100px;
+    /* align-items: center; */
+    background: white;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 5%);
+}
+
+.fiche_vedette picture, .view_reel {
+    margin-top: .75rem;
+}
+
+.fiche_vedette i {
+    color: var(--bronze);
+}
+
+.texte_vedette {
+    padding-left: var(--espace_base);
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.texte_vedette > header {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    width: 100%;
+    justify-content: space-between;
+    color: var(--bronze);
+}
+
+.texte_vedette h5 {
+    color: var(--aqua_tint_1);
+}
+
+.texte_vedette h6 {
+    color: var(--neutral_light);
+    letter-spacing: .05em;
+    padding-right: 10px;
+}
+
+.texte_vedette p {
+    color: var(--aqua_tint_2);
+}
+
+.fiche_vedette h1 {
+    margin-bottom: 0;
+}
+
+.fiche_vedette h3 {
+    margin-top: 0;
+}
+
+.texte_vedette > * {
+    align-items: left;
+}
+
+.texte_vedette i {
+    margin-top: var(--espace_petit);
+    margin: 0 5px;
+    align-self: center;
+}
+
+.texte_vedette span {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.texte_vedette article {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    background: var(--aqua_dark);
+    max-width: 100%;
+    gap: 25px;
+}
+
+.texte_vedette article h5, .texte_vedette article h6 {
+    margin: 0;
+    align-self: center;
+}
+
+.texte_vedette article h6 {
+    padding-right: var(--espace_base);
+}
+
+.texte_vedette button {
+    color: var(--neutral_light);
+    border: 2px solid var(--neutral_light);
+    padding: 10px;
+}
+
+.texte_vedette button:hover {
+    border: 2px solid var(--bronze);
+}
+
+.stamp_info {
+    padding: var(--espace_base) var(--espace_petit);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stamp_info span {
+    display: flex;
+    justify-content: start;
+}
+
+.stamp_info section * {
+    margin: 2px 0;
+}
+
+.stamp_info section h6 {
+    color: var(--aqua_dark);
+    min-width: 80px;
+}
+
+.stamp_info div {
+    margin-top: 15px;
+}
+
+.stamp_info div span {
+    display: flex;
+    gap: var(--espace_petit);
+}
+
+.stamp_info div h5 {
+    color: var(--bronze);
+}
