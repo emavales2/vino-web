@@ -1,0 +1,24 @@
+.nav_wrapper { 
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    box-sizing: border-box;
+}
+
+.nav_wrapper > div {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    padding: var(--espace_moyen) var(--espace_base);
+    box-sizing: border-box;
+}
+
+
+/* ------- * * * * TAILLE PORTABLE * * * * ------- */
+
+/* @media screen and (max-width: 600px) {
+    .nav_wrapper {
+        display: none;
+        pointer-events: none;
+    }
+} */

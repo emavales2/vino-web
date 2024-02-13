@@ -1,21 +1,30 @@
 <template>
     <Head title="Home" />
-        <div class="p-4">
-            <header>
-                <h1 class="text-bold text-xl mb-6">Welcome VINO</h1>
-                <p>Unlock the Perfect Cellar Experience with Vino</p>
-                <p>Your Personal Wine Sanctuary</p>
-            </header>
-            <nav>
-                <ul>
-                    <li>
-                        <Link :href="route('login')">Login</Link>
-                    </li>
-                    <li>
-                        <Link :href="route('register')">Register</Link>
-                    </li>
-                </ul>
-            </nav>
+        <div class="burg_bg">
+            <main class="cont_narrow_splash">
+                <header>
+                    <figure>
+                        <img src="../../logos/VINO_lt.svg" alt="">
+                    </figure>
+
+                    <!-- <h1 class="block-font">Welcome</h1> -->
+                    <!-- <p>Unlock the Perfect Cellar Experience with Vino</p> -->
+                    <h5 class="block-font txt-center coral">Your Personal Wine Sanctuary</h5>
+                </header>
+                <div class="button_column">             
+                    <button>
+                        <Link :href="route('login')">
+                            <h6 class="">Sign In</h6>
+                        </Link>
+                    </button>
+
+                    <button>
+                        <Link :href="route('register')">
+                            <h6>Sign Up</h6>
+                        </Link>
+                    </button>           
+                </div>
+            </main>
         </div>
 </template>
 

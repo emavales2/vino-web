@@ -15,27 +15,47 @@
                 <td>{{ user.id }}</td>
                 <td>{{ user.first_name + ' ' + user.last_name }} </td>
                 <td>{{ user.email }}</td>
-                <!-- <td>
-                    <a href="#" @click="deleteUser(user)">Delete</a>
-                </td> -->
+                <td>
+                    <button @click="toggleModal(user.id)">Delete this user</button> 
+                </td>
             </tr>
         </tbody>
     </table>
+    <ConfirmModal 
+            v-show="openDeleteModal" 
+            :YesAction="delete" 
+            action="delete" 
+            actionMessage="Are you sure you want to delete your account?" 
+        />
     </MainLayout>
 </template>
 <script>
 import { Head } from '@inertiajs/inertia-vue3';
+import ConfirmModal from '@/Components/ConfirmModal.vue';
 import MainLayout from '@/Layouts/MainLayout.vue';
 export default {
     name: 'UsersView',
     components: {
-        Head, MainLayout
+        Head,
+        MainLayout, 
+        ConfirmModal
+    },
+    data () {
+        return {
+            openDeleteModal: false,
+            user: {
+            id: null
+            }
+        }
     },
     methods: {
-        deleteUser(user) {
-            if (confirm('Are you sure you want to delete this user?')) {
-                this.$inertia.delete(route('users.destroy', { user: user.id }));
-            }
+        delete() {
+            this.$inertia.delete(route('users.adminDelete', { user: this.user.id }));
+            this.openDeleteModal = false;
+        },
+        toggleModal(userId) {
+            this.user.id = userId;
+            this.openDeleteModal = !this.openDeleteModal;
         }
     },
     props: {

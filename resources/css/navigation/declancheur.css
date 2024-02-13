@@ -1,0 +1,35 @@
+/* declancheur.css (composante) --------------- */
+
+.declancheur {
+    appearance: none;
+    padding: var(--espace-petit);
+}
+
+.declancheur:not(:checked)::before {
+    content: "MENU";
+    font-family: 'Ibarra Real Nova', serif;
+    cursor: pointer;
+    background: red;
+}
+
+.declancheur:checked::before {
+    content: "FERMER";
+    font-family: 'Ibarra Real Nova', serif;
+    cursor: pointer;
+}
+
+.declancheur, .declancheur:not(:checked)+ .nav_cachee {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ------- * * * * TAILLE PORTABLE * * * * ------- */
+
+/* @media screen and (max-width: 600px) { */
+
+    .declancheur, .declancheur:checked + .nav_cachee {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+/* } */

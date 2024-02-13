@@ -39,9 +39,16 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
         // Récupérer l'utilisateur connecté
         $user = Auth::user();
-        return Inertia::render('DashboardView', [
-            'user' => $user
-        ]);
+        // Si l'utilisateur est un admin
+        if ($user->is_admin == '1') {
+            return Inertia::render('Admin/DashboardView', [
+                'user' => $user
+            ]);
+        }else{
+            return Inertia::render('DashboardView', [
+                'user' => $user
+            ]);
+        }
     }
 
     /**
