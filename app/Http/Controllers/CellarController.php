@@ -16,9 +16,11 @@ class CellarController extends Controller
      */
     public function index()
     {        
-        $userId = Auth::id();
-
-        $cellars = Cellar::where('user_id', $userId)->get();
+        //this
+/*         $userId = Auth::id();
+        $cellars = Cellar::where('user_id', $userId)->get(); */
+        //could be
+        $cellars = Auth::user()->cellar;
 
         return Inertia::render('Cellar/CellarsView', compact('cellars'));
     }
@@ -64,12 +66,16 @@ class CellarController extends Controller
     public function show(Cellar $cellar)
     {
         $userId = Auth::id();
-
         if ($cellar->user_id != $userId) {
             return redirect(route('cellar.index'))->withErrors("You do not have authorization to access this cellar");
         }
+        
+        $collection = [];
+        foreach($cellar->cellarHasWines as $wine) {
+            $collection[] = ['wine' => $wine->wine, 'qty' => $wine->quantity];
+        }
 
-        return Inertia::render('Cellar/ShowView', compact('cellar'));
+        return Inertia::render('Cellar/ShowView', compact('cellar','collection'));
     }
 
     /**
