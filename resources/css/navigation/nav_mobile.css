@@ -12,7 +12,7 @@
 
 .nav_cachee {
     position: absolute;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     text-align: center;
     background: var(--aqua_tint_2);
@@ -21,32 +21,51 @@
     padding: 30px;
     width: 75%;
     color: var(--border_bg_1);
+    /* to togggle it on and off */
+    display: none
 }
 
-.nav_cachee .capsule_menu_deroulant {
+/* Show search bar when corresponding checkbox is checked */
+/* Show menu when corresponding checkbox is checked */
+/* input[type="checkbox"]:checked + .nav_cachee {
+    display: block;
+} */
+
+/* Show search bar when corresponding checkbox is checked */
+input[name="search"]:checked + label .search_cachee {
+    display: block;
+}
+
+/* Show menu when corresponding checkbox is checked */
+input[name="menu"]:checked + label .menu_cachee {
+    display: block;
+}
+
+
+/* .nav_cachee .capsule_menu_deroulant {
     height: unset;
     width: 75%;
     justify-content: center;
-}
+} */
 
 .nav_cachee input {
     width: 90%;
 }
 
-.nav_cachee span:nth-of-type(2) {
+/* .nav_cachee span:nth-of-type(2) {
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: center;
-}
+} */
 
 /* .nav_mobile_wrapper {
     display: none;
 } */
 
-.nav_cachee span .capsule_menu_deroulant:first-of-type {
+/* .nav_cachee span .capsule_menu_deroulant:first-of-type {
     border-right: 1px solid var(--border_bg_1);
-}
+} */
 
 .nav_cachee span {
     margin-bottom: 0;
@@ -76,13 +95,13 @@
     margin-bottom: 20px;
 }
 
-.nav_cachee .contenu_menu_deroulant {
+/* .nav_cachee .contenu_menu_deroulant {
     top: 35px;
 }
 
 .nav_cachee .menu_titre {
     color: var(--border_bg_1);
-}
+} */
 
 
 
