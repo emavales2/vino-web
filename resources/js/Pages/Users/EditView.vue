@@ -5,19 +5,46 @@
             <h1>Edit Profile</h1>
             <form @submit.prevent="submit">
                 <div>
-                    <label for="first_name">First Name</label>
-                    <input id="first_name" v-model="form.first_name" type="text" />
-                    <p v-if="form.errors.first_name" class="error">{{ form.errors.first_name }}</p>
+                    <InputLabel for="first_name" value="First name"/>
+                    <TextInput
+                            id="first_name"
+                            type="text"
+                            class="mt-1 block w-full"
+                            v-model="form.first_name"
+                            required
+                            autofocus
+                            autocomplete="first_name"
+                            placeholder="first name"
+                        />
+                    <InputError class="input_err" :message="form.errors.first_name" />
                 </div>
                 <div>
-                    <label for="last_name">Last Name</label>
-                    <input id="last_name" v-model="form.last_name" type="text" />
-                    <p v-if="form.errors.last_name" class="error">{{ form.errors.last_name }}</p>
+                    <InputLabel for="last_name" value="Last name"/>
+                    <TextInput
+                            id="last_name"
+                            type="text"
+                            class="mt-1 block w-full"
+                            v-model="form.last_name"
+                            required
+                            autofocus
+                            autocomplete="last_name"
+                            placeholder="last name"
+                        />
+                    <InputError class="input_err" :message="form.errors.last_name" />
                 </div>
                 <div>
-                    <label for="email">Email</label>
-                    <input id="email" v-model="form.email" type="email" />
-                    <p v-if="form.errors.email" class="error">{{ form.errors.email }}</p>
+                    <InputLabel for="email" value="Email" class="invisible" />
+                    <TextInput
+                            id="email"
+                            type="email"
+                            class="mt-1 block w-full"
+                            v-model="form.email"
+                            required
+                            autofocus
+                            autocomplete="username"
+                            placeholder="email address"
+                        />
+                    <InputError class="input_err" :message="form.errors.email" />
                 </div>
                 <input type="hidden" v-model="form.id" />
                 <div>
@@ -40,16 +67,22 @@
 <script>
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
 import ConfirmModal from '@/Components/ConfirmModal.vue';
+import InputLabel from '@/Components/InputLabel.vue';
+import InputError from '@/Components/InputError.vue';
 import MainLayout from '@/Layouts/MainLayout.vue';
+import TextInput from '@/Components/TextInput.vue';
 
 export default {
     name: 'EditView',
     components: {
-        Head,
-        ConfirmModal,
-        Link,
-        MainLayout
-    },
+    Head,
+    ConfirmModal,
+    Link,
+    MainLayout,
+    TextInput,
+    InputError,
+    InputLabel,
+},
     computed () {
 
     },
@@ -78,6 +111,5 @@ export default {
         }
     },
     props: ['user']
-
 }
 </script>
