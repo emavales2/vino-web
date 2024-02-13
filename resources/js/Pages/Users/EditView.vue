@@ -1,7 +1,7 @@
 <template>
-    <MainLayout>
+    <MainLayout :user="user">
         <Head title="Edit Profile" />
-        <div>
+        <section>
             <h1>Edit Profile</h1>
             <form @submit.prevent="submit">
                 <div>
@@ -51,7 +51,7 @@
                     <button type="submit">Save</button>
                 </div>
             </form>
-        </div>
+        </section>
         <button @click="toggleModal">Delete your account</button> 
         <Link :href="route('profile.show',  {user: user.id} )">Go back</Link>
         <ConfirmModal 

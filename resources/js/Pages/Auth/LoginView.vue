@@ -1,31 +1,3 @@
-<<<<<<< HEAD
-=======
-<script setup>
-    import InputError from '@/Components/InputError.vue';
-    // import InputLabel from '@/Components/InputLabel.vue';
-    // import PrimaryButton from '@/Components/PrimaryButton.vue';
-    import TextInput from '@/Components/TextInput.vue';
-    import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
-
-    defineProps({
-        canResetPassword: Boolean,
-        status: String,
-    });
-
-    const form = useForm({
-        email: '',
-        password: '',
-    });
-
-    // Appelle la route login pour se connecter
-    const submit = () => {
-        form.post(route('login'), {
-            onFinish: () => form.reset('password'),
-        });
-    };
-</script>
-
->>>>>>> 75a9cde044af1d04592db4fad5cf00fcfb2fbcab
 <template>
     <Head title="Log in" />
     <div class="burg_bg">

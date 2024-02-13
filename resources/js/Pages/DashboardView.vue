@@ -1,7 +1,7 @@
 <template>
     <Head title="Dashboard" />
 
-    <MainLayout>
+    <MainLayout :user="user">
         <div class="burg_bg under_nav">
             <!-- <SearchBar/> -->
             
@@ -74,8 +74,5 @@ export default {
         }
     },
     props: ['user']
-    // props: {
-    //     user: Object
-    // }
 }
 </script>
