@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('buy_lists', function (Blueprint $table) {
             $table->primary(['cellar_id', 'wine_id']);
-            $table->unsignedBigInteger('cellar_id');
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('wine_id');
             $table->integer('quantity');
-            $table->foreign(['cellar_id', 'wine_id'])->references(['cellar_id', 'wine_id'])->on('cellar_has_wines')->onDelete('cascade');
-            $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('wine_id')->references('id')->on('wines')->onDelete('cascade');
         });
     }
 
