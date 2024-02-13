@@ -1,12 +1,3 @@
-<script setup>
-defineProps({
-    type: {
-        type: String,
-        default: 'submit',
-    },
-});
-</script>
-
 <template>
     <button
         :type="type"
@@ -15,3 +6,10 @@ defineProps({
         <slot />
     </button>
 </template>
+
+<script>
+export default {
+    name: 'PrimaryButton',
+    props: ['type']
+};
+</script>
