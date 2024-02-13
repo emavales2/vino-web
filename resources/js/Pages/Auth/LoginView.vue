@@ -1,3 +1,31 @@
+<<<<<<< HEAD
+=======
+<script setup>
+    import InputError from '@/Components/InputError.vue';
+    // import InputLabel from '@/Components/InputLabel.vue';
+    // import PrimaryButton from '@/Components/PrimaryButton.vue';
+    import TextInput from '@/Components/TextInput.vue';
+    import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
+
+    defineProps({
+        canResetPassword: Boolean,
+        status: String,
+    });
+
+    const form = useForm({
+        email: '',
+        password: '',
+    });
+
+    // Appelle la route login pour se connecter
+    const submit = () => {
+        form.post(route('login'), {
+            onFinish: () => form.reset('password'),
+        });
+    };
+</script>
+
+>>>>>>> 75a9cde044af1d04592db4fad5cf00fcfb2fbcab
 <template>
     <Head title="Log in" />
     <div class="burg_bg">
@@ -11,32 +39,32 @@
 
             <form @submit.prevent="submit">
                 <fieldset>
-                    <InputLabel for="email" value="Email" class="invisible" />
-                    <TextInput
+                    <label for="email" value="Email" class="invisible" />
+                    <input
                         id="email"
                         type="email"
-                        class="mt-1 block w-full"
+                        class=""
                         v-model="form.email"
                         required
                         autofocus
                         autocomplete="username"
                         placeholder="email"
                     />
-                    <InputError class=".input_err" :message="form.errors.email" />
+                    <InputError class="input_err" :message="form.errors.email" />
                 </fieldset>
 
-                <fieldset class="mt-4">
-                    <InputLabel for="password" value="Password" class="invisible"  />
-                    <TextInput
+                <fieldset>
+                    <label for="password" value="Password" class="invisible" />
+                    <input
                         id="password"
                         type="password"
-                        class="mt-1 block w-full"
+                        class=""
                         v-model="form.password"
                         required
                         autocomplete="current-password"
                         placeholder="password"
                     />
-                    <InputError class=".input_err" :message="form.errors.password" />
+                    <InputError class="input_err" :message="form.errors.password" />
                 </fieldset>
                 <PrimaryButton class="mt-4">
                     <h6>Sign In</h6>
