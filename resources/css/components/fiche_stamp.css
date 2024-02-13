@@ -1,0 +1,184 @@
+/* ----- * * NEUTRE * * ----- */
+
+.fiche_stamp {
+
+    /* --- Dimensions & Composition du Module ---*/
+    box-sizing: border-box;
+    min-height: 300px;
+    width: 100%;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    padding: var(--espace_petit);
+    gap: 15px;
+
+    /* --- Transitions On Hover ---*/
+    background: var(--neutral_light);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0);
+    transition: 0.4s;
+}
+
+.fiche_stamp>section:first-of-type>.time {
+    margin-bottom: 15px;
+}
+
+
+/* --- * Component Image + Text * ---*/
+
+.fiche_stamp picture {
+    height: 40%;
+    max-height: 125px;
+    overflow: hidden;
+    background: var(--bronze);
+    /* background: var(--bronze_shade_1); */
+
+    /* Pour Aligner le Texte : On Hover */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.fiche_stamp img {
+    min-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+.fiche_stamp h3 {
+    color: white;
+    position: absolute;
+    opacity: 0;
+}
+
+
+/* --- * Component Texte * ---*/
+
+.fiche_text {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.fiche_text h5 {
+    font-weight: Bold 700;
+    margin: 0;
+    /* color: var(--bronze); */
+    color: var(--bronze_shade_1);
+}
+
+.fiche_text p {
+    font-family: 'Lato', sans-serif;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--aqua_tint_1);
+}
+
+
+/* --- * Capsule .time (Component Texte) * ---*/
+
+.time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.time p,
+.time small {
+    color: var(--aqua_tint_1);
+}
+
+.time>small {
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+}
+
+.offer {
+    /* background: var(--aqua_tint_2); */
+    /* background: white; */
+    /* padding: 5px 10px; */
+    padding: 5px 0px;
+    border-top: 1px solid var(--aqua_tint_2);
+    border-bottom: 1px solid var(--aqua_tint_2);
+}
+
+.offer h6 {
+    margin: 0;
+    color: white;
+    color: var(--aqua_tint_1);
+    font-family: 'Ibarra Real Nova', serif;
+
+}
+
+.time:last-of-type {
+    margin-top: 10px;
+}
+
+.fiche_text .time:last-of-type>small {
+    font-weight: 500;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+
+/* --- * Icônes * ---*/
+
+.fiche_stamp i {
+    color: var(--bronze);
+}
+
+.fa-hourglass-start {
+    transition: transform 0.5s ease;
+    margin-left: 5px;
+}
+
+
+
+
+/* ----- * * HOVER * * ----- */
+
+.fiche_stamp:hover {
+    background: var(--neutral_med);
+    box-shadow: 0px 8px 16px 0px rgb(100 79 37 / 25%);
+    background: white;
+}
+
+.fiche_stamp:hover img {
+    opacity: .35;
+}
+
+/* Rotate the element on hover */
+.fiche_stamp:hover .fa-hourglass-start {
+    transform: rotate(180deg);
+}
+
+.fiche_stamp:hover h3 {
+    opacity: 1;
+}
+
+/* .fiche_stamp:hover .offer {
+    background: var(--aqua_tint_2);
+    border-top: 1px solid var(--aqua_tint_2);
+    border-bottom: 1px solid var(--aqua_tint_2);
+} */
+
+/* .fiche_stamp:hover .offer h6 {
+    color: white;
+} */
+
+
+/* ------- * * * * TAILLE PORTABLE * * * * ------- */
+
+@media screen and (max-width: 600px) {
+
+    .fiche_stamp {
+        /* flex-direction: row; */
+        max-width: fit-content;
+    }
+
+    /* .fiche_stamp>section {
+        max-width: 50%;
+    } */
+}
