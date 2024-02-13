@@ -1,11 +1,6 @@
 <template>
     <Head title="Dashboard" />
-
-    <MainLayout>
         <div class="burg_bg under_nav">
-            <!-- <SearchBar/> -->
-            
-            
             <div class="card_low">
                 <header class="index_title">
                     <h4 class="display-font">Welcome, {{ user.first_name }}</h4>
@@ -25,6 +20,7 @@
                         </ul>
                     </aside> -->
                     <!-- FIN SUB NAV -->
+                    <SearchBar/>
 
                     <ul class="column">
                         <li>
@@ -53,22 +49,27 @@
             </div>
             </div>
         </div>
-    </MainLayout>
 </template>
 
 <script>
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import MainLayout from '@/Layouts/MainLayout.vue';
 import { Inertia } from '@inertiajs/inertia';
+import SearchBar from '@/Components/SearchBar.vue';
 
 export default {
     name: 'DashboardView',
     components: {
         Head,
         Link,
-        MainLayout
+        SearchBar
     },
+    layout: MainLayout,
     methods: {
+       test() {
+        console.log(this.$parent.propTest)
+        this.$parent.showDialog()
+       },
         logout() {
             Inertia.post(route('logout'));
         }

@@ -18,8 +18,7 @@
         </ul>
       </div>
     </section>
-    <Modal :show="showForm">
-      <div class="bg-stone-400">
+      <div v-if="showForm" class="bg-stone-400">
         <div v-if="hasCellar">
           <h2>Add this wine to your cellar</h2>
           <form @submit.prevent="addToCellar">
@@ -49,7 +48,6 @@
           <button type="button" @click="closeForm">Cancel</button>
         </div>
       </div>
-    </Modal>
 </template>
 
 <script>
@@ -93,6 +91,7 @@ export default{
       this.form.reset()
     },
     openForm (id) {
+      console.log('allor')
       this.form.reset()
       if(this.cellars[0]) {
         this.hasCellar = true;

@@ -505,7 +505,7 @@ nav svg {
 .declancheur:not(:checked)::before {
     /* content: "MENU"; */
     /* font-family: var(--block-text); */
-    content: url(/images/lupe.svg?83787e9b76a4bb2deab696f2e1fb6c4d);
+    content: url(/images/lupe.svg?0c1de3d5621e7b76c4d418e20520b674);
     cursor: pointer;
     background: red;
 }
@@ -762,6 +762,21 @@ form input:focus-visible {
 fieldset {
     border: none;
     padding: 0;
+}
+.modal{
+  align-items: center;
+  background-color: rgba(209, 209, 209, 0.58);
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+.modal>*{
+  flex: 1;
 }
 /* ---------- * * VARIABLES * * ---------- */
 

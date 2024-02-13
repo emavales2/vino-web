@@ -20,7 +20,9 @@ export default{
   methods: {
     submit () {
       this.form.get(route('wine.search'))
+      this.toggleSearch()
     }
-  }
+  },
+  props: ['toggleSearch']
 }
 </script>

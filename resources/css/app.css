@@ -32,6 +32,7 @@
 @import url(components/logo.css); */
 @import url(components/buttons.css);
 @import url(components/form.css);
+@import url(floaters/modal.css);
 /* @import url(components/fiche_vedette.css);
 @import url(components/view_reel.css);
 @import url(components/filtres.css);
