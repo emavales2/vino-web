@@ -1,35 +1,5 @@
-<script setup>
-    import InputError from '@/Components/InputError.vue';
-    // import InputLabel from '@/Components/InputLabel.vue';
-    // import PrimaryButton from '@/Components/PrimaryButton.vue';
-    import TextInput from '@/Components/TextInput.vue';
-    import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
-
-    defineProps({
-        canResetPassword: Boolean,
-        status: String,
-    });
-
-    const form = useForm({
-        email: '',
-        password: '',
-    });
-
-    // Appelle la route login pour se connecter
-    const submit = () => {
-        form.post(route('login'), {
-            onFinish: () => form.reset('password'),
-        });
-    };
-</script>
-
 <template>
     <Head title="Log in" />
-
-    <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
-        {{ status }}
-    </div>
-    
     <div class="burg_bg">
         <main>
             <header>
@@ -41,11 +11,7 @@
 
             <form @submit.prevent="submit">
                 <fieldset>
-<<<<<<< HEAD
                     <label for="email" value="Email" class="invisible"></label>
-=======
-                    <InputLabel for="email" value="Email" />
->>>>>>> 0d2935e45c51019724c15e42690829f91f00500f
                     <input
                         id="email"
                         type="email"
@@ -60,11 +26,7 @@
                 </fieldset>
 
                 <fieldset>
-<<<<<<< HEAD
                     <label for="password" value="Password" class="invisible"></label>
-=======
-                    <InputLabel for="password" value="Password" />
->>>>>>> 0d2935e45c51019724c15e42690829f91f00500f
                     <input
                         id="password"
                         type="password"
