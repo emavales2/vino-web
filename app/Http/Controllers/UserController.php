@@ -83,8 +83,8 @@ class UserController extends Controller
         ]);
         $user = User::find($request->id);
         $user->update($request->all());
-
-        return redirect()->route('profile.show', ['user' => $user->id]);
+        // Je ne recois pas la variable success !!!????
+        return Inertia::location(route('profile.show', ['user' => $user->id, 'success' => 'Profil mis à jour avec succès']));
     }
 
     /**
@@ -99,7 +99,7 @@ class UserController extends Controller
         if (Auth::check() && Auth::user()->is_admin == 1) {
             return redirect()->route('users.index')->with('success', 'Administrateur supprimé avec succès');
         }
-        return redirect()->route('home')->with('success', 'Utilisateur supprimé avec succès');
+        return Inertia::location(route('home', ['success' => 'Utilisateur supprimé avec succès']));
     }
 
 }
