@@ -1,12 +1,18 @@
 
 :root {
 
+    --xxtall-line: 3.3rem;
+    --xtall-line: 3rem;
     --tall-line: 2.15rem;
     --med-line: 1.7rem;
     --text-line: 1.4rem;
     --small-line: 1.2rem;
     
-    --text-spacing: .044em;
+    --text-ltr-spacing: .044rem;
+    --small-ltr-spacing: .05rem;
+    --button-ltr-spacing: .075rem;
+    --med-ltr-spacing: .1rem;
+    --large-ltr-spacing: .15rem;
 
     --text-font: 'Roboto', sans-serif;
     --display-font: 'Playfair Display', serif;
@@ -14,7 +20,7 @@
 }
 
 
-/* --------- * Typographic scale chosen is 1.200 Minor Third base @ 12pt * --------- */
+/* --------- * Scale typographique choisie :  1.200 Minor Third base @ 12pt * --------- */
 
 body {
     font-family: var(--text-font);
@@ -25,12 +31,11 @@ body {
     font-family: var(--block-font);
     text-transform: uppercase;
     font-weight: 500;
-    letter-spacing: .05rem;
+    letter-spacing: var(--small-ltr-spacing);
 }
 
 .display-font {
     font-family: var(--display-font);
-    color: var(--coral);
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -44,33 +49,49 @@ h1, h2, h3 {
     line-height: var(--tall-line);
 }
 
+/* ----- * H1 est le seul heading dont il n'ya qu'une seule font-family * ----- */
 h1 {
     font-size: 2.986rem;
-    /* font-family: 'Barlow Condensed', sans-serif; */
+    line-height: var(--xxtall-line);
     font-family: var(--block-font);
-    text-transform: uppercase;
+    letter-spacing: var(--med-ltr-spacing);
 }
 
 h2 {
     font-size: 2.488rem;
+    line-height: var(--xtall-line);
+    letter-spacing: var(--large-ltr-spacing);
 }
 
+h2.block-font {
+    letter-spacing: var(--med-ltr-spacing);
+}
+
+/* ----- * Fonctionne pour block & display fonts * ----- */
 h3 {
     font-size: 2.074rem;
+    line-height: 2.5rem;
 }
 
+/* ----- * Fonctionne pour block & display fonts * ----- */
 h4 {
     font-size: 1.728rem;
+    line-height: var(--tall-line);
 }
 
+/* ----- * Fonctionne pour block & display fonts * ----- */
 h5 {
     font-size: 1.4rem;
+    line-height: var(--med-line);
 }
 
+/* ----- * Fonctionne pour block & display fonts * ----- */
 h6 {
     font-size: 1.12rem;
+    letter-spacing: var(--small-ltr-spacing);
 }
 
+/* ----- * Fonctionne pour block & display fonts * ----- */
 p {
     font-size: 1rem;
 }
@@ -80,6 +101,9 @@ small {
     font-size: .694rem;
     line-height: var(--small-line);
 }
+
+
+/* ----- * ALIGNEMENT DU TEXTE * ----- */
 
 .txt-center {
     text-align: center;
