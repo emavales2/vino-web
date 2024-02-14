@@ -1,6 +1,6 @@
 <template>
     <div v-show="message">
-        <p>
+        <small>
             {{ message }}
         </small>
     </div>

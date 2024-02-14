@@ -29,7 +29,7 @@ form input {
     width: 100%; /*This can be done here because it is limited to its container */
     border-radius: 30px;
     border: none;
-    background: var(--cream-lt);
+    background: var(--cream);
 }
 
 form input:focus-visible {
