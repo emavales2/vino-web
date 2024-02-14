@@ -5,7 +5,11 @@
     <p>First Name: {{ user.first_name }}</p>
     <p>Last Name: {{ user.last_name }}</p>
     <p>Email: {{ user.email }}</p>
+<<<<<<< HEAD
     <p>{{ success }}</p>
+=======
+
+>>>>>>> 99197be09f13b843942b87e85dd118e7928adddb
   </div>
   <Link :href="route('profile.edit', user.id )">Edit your profile</Link>
   <Link :href="route('logout', user.id )">Logout</Link>

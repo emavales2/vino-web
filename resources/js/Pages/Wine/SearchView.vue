@@ -3,23 +3,19 @@
     <h1>There is {{ count }} results for <strong>{{ search }}</strong></h1>
     <div v-if="results.length !== 0">
       <ul class="wine-list">
-
-        <li class="wine-thumbnail"
-          v-for="(wine, i) in results"
-          :key="i"
-        >
-          <Link :href="route('wine.show', wine.id)">
-            <ColorDrop :class="setColor(wine.type)"/>
-            <img :src="wine.photo" loading="lazy" :alt="wine.name">
-            <h4>{{ wine.name }}</h4>
-          </Link>
-        </li>
-
+        <WineThumbnail v-for="(wine, i) in results" 
+          :key="i" 
+          :wine="wine"
+          :openForm="openForm"
+        />
       </ul>
     </div>
+    <div v-else>
+      <Link :href="route('wine.create')">You can always create your custom wine</Link>
+    </div>
   </section>
-  <div v-if="showForm" class="bg-stone-400">
-    <div v-if="hasCellar">
+  <div  class="bg-stone-400">
+    <div>
       <h2>Add this wine to your cellar</h2>
       <form @submit.prevent="addToCellar">
         <h1>{{ selectedWine.name }}</h1>
@@ -52,14 +48,14 @@
 
 <script>
 import MainLayout from '@/Layouts/MainLayout.vue';
-import ColorDrop from '@/Components/ButtonsIcons/ColorDrop.vue';
+import WineThumbnail from '@/Components/WineThumbnail.vue';
 import { useForm } from '@inertiajs/inertia-vue3';
 import { Link } from '@inertiajs/inertia-vue3';
 export default{
   name:'Wine.SearchView',
   components: {
     Link,
-    ColorDrop
+    WineThumbnail
   },
   data () {
     return {
@@ -68,23 +64,23 @@ export default{
       showForm: false,
       selectedWine : '',
       form : useForm({
-        wine_id : '',
+        wine_id : '1153',
         quantity: '1',
-        cellar_id: ''
+        cellar_id: '1'
       })
     }
   },
   layout: MainLayout,
   methods: {
     addToCellar() {
-      this.form.post(route('cellarwine.store'))
-      .then(() => {
-        const cellarName = this.cellars.find(c => c.id === this.form.cellar_id).name
-
-        this.$parent.openDialog(
-          `Yeah! You just added ${this.form.quantity} bottle${this.form.quantity > 1 ? 's' : ''} to ${cellarName}`
+      this.form.post(route('cellarwine.store'), {
+        onSuccess: () => {
+          const cellarName = this.cellars.find(c => c.id == this.form.cellar_id).name
+          this.$parent.openDialog(
+            `Yeah! You just added ${this.form.quantity} bottle${this.form.quantity > 1 ? 's' : ''} to ${cellarName}`
           )
-        this.closeForm()
+          this.closeForm()
+        }
       })
     },
     closeForm () {
@@ -100,9 +96,6 @@ export default{
         this.form.wine_id = this.selectedWine.id
       }
       this.showForm = true
-    },
-    setColor (color) {
-      return color.split(' ')[1]
     }
   },
   props: ['results', 'cellars', 'search', 'count']

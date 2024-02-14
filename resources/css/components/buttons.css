@@ -17,9 +17,11 @@
     color: var(--cream);
 }
 
-.button h6 {
+.button, .button a {
     line-height: 1rem;
     font-weight: 400;
+    font-size: 1.12rem;
+    letter-spacing: var(--small-ltr-spacing);
 }
 
 .button_column {

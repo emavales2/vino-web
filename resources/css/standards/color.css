@@ -1,61 +1,35 @@
 
 :root {
 
-    /* ---------- * * COLOR MODES * * ---------- */
-
-    /* ----- AQUAMARINE MODE ----- */
-
-    --background_1: var(--aqua_dark);
-    --border_bg_1: var(--gold_tint_4);
-    --header: var(--aqua_dark);
-    --background_2: var(--neutral_lightest);
-    --border_bg_1: var(--neutral_light);
-    --border_bg_2: var(--bronze_tint_2);
-
-    --button: white;
-    --button_hover: var(--gold_bright);
-
-    --titles_1: var(--bronze_shade_1);
-    --titles_2: var(--purple_dark);
-    --text: var(--purple_dark);
-
-    /* -------------------- */
-
-
-
     /* ---------- * * COLOR SETS * * ---------- */
 
     /* ----- BURGUNDY ----- */
 
-    --burgundy: #420101;
+    --burgundy: #2B0303;
+    --burgundy-lt: #4B0000;
+    
+
+    /* ----- ACCENT ----- */
+
     --coral: #F95148;
-    --cream: #F2D9AF;
-    --cream-lt: #EDE7D1;
-    
 
     
-    
-
     /* ----- NEUTRALS ----- */
 
-    --neutral_lightest: #f6f2e9;
-    --neutral_light: #e8e1d5;
-    --neutral_med: #c7bdad;
+    --cream: #F2D9AF;
+    --cream-lt: #EDE7D1;
+    --med-gray: #36332f;
 
+
+    /* ---------- * * APPLICATION * * ---------- */
+
+    --text: var(--med-gray);
     
 }
 
 
-/* --fieldtext: This will be the color of the fieldtext */
 
 
-.burg_bg {
-    background: var(--burgundy);
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
 
 .burg {
     color: var(--burgundy);
@@ -65,22 +39,13 @@
     color: var(--coral)
 }
 
-.cream_bg {
-    background: var(--cream);
-    height: 100%;
-    display: flex;
-}
+
 
 .cream {
     color: var(--cream)
 }
 
-.cream_lt_bg {
-    background: var(--cream-lt);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
+
 
 .cream_lt {
     color: var(--cream-lt)
