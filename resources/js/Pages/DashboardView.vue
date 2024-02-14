@@ -1,6 +1,6 @@
 <template>
-    <Head title="Dashboard" />
         <div class="burg_bg under_nav">
+            <Head title="Dashboard" />
             <div class="card_low">
                 <header class="index_title">
                     <h2 class="block-font">Welcome, {{ user.first_name }}</h2>

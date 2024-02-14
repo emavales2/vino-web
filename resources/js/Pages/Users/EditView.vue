@@ -95,7 +95,7 @@ export default {
     layout: MainLayout,
     methods: {
         submit() {
-            this.form.put(route('profile.update', {user: this.user.id}), this.form);
+            this.form.put(route('profile.update', {user: this.user.id}));
         },
         toggleModal() {
             this.openDeleteModal = !this.openDeleteModal;
