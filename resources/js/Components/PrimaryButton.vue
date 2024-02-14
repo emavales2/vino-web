@@ -1,3 +1,4 @@
+<!-- faire nouveau fichier Button et passer en props la class et le type -->
 <template>
     <button
         :type="type"

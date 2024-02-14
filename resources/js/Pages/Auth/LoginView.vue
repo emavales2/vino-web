@@ -41,7 +41,11 @@
 
             <form @submit.prevent="submit">
                 <fieldset>
+<<<<<<< HEAD
+                    <label for="email" value="Email" class="invisible"></label>
+=======
                     <InputLabel for="email" value="Email" />
+>>>>>>> 0d2935e45c51019724c15e42690829f91f00500f
                     <input
                         id="email"
                         type="email"
@@ -56,7 +60,11 @@
                 </fieldset>
 
                 <fieldset>
+<<<<<<< HEAD
+                    <label for="password" value="Password" class="invisible"></label>
+=======
                     <InputLabel for="password" value="Password" />
+>>>>>>> 0d2935e45c51019724c15e42690829f91f00500f
                     <input
                         id="password"
                         type="password"
@@ -90,9 +98,7 @@
 
 <script>
 import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
 
 export default {
@@ -100,8 +106,6 @@ export default {
     components: {
         Head,
         InputError,
-        InputLabel,
-        TextInput,
         Link,
         PrimaryButton,
     },
