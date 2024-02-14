@@ -1,7 +1,6 @@
 /* --------- * FORM * --------- */
 
 form {
-    /* background-color: darkkhaki; */
     display: flex;
     flex-direction: column;
     gap: var(--safe-area);
@@ -9,19 +8,7 @@ form {
     /* padding: var(--med_space); */
 }
 
-/* form > * {
-    display: contents;
-    margin: 0;
-    flex: 1;
-    /* width: 100%; This can be done here because it is limited to its container */
-    /* padding: 0;
-} */ 
-
-/* In the component "InputLabel.vue" (came with Laravel) */
-label {
-
-}
-
+/* Will grab "InputText.vue" (came with Laravel) as well as input in forms */
 form input {
     box-sizing: border-box;
     align-self: center;
@@ -30,6 +17,7 @@ form input {
     border-radius: 30px;
     border: none;
     background: var(--cream-lt);
+    font-size: large;
 }
 
 form input:focus-visible {

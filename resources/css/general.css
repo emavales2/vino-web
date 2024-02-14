@@ -1,4 +1,5 @@
-/* ------- GENERAL ------- */
+
+/* ------- GENÉRALE ------- */
 
 html, body {
     margin: 0;
@@ -77,12 +78,6 @@ img {
     opacity: 64%;
     z-index: 2;
 }
-
-
-/* input {
-    height: var(--espace_petit);
-    border: 1px solid var(--bronze_tint_2);
-} */
 
 
 /* ------- LAYOUT, RHYTHM & COMPOSITION ------- */
@@ -172,15 +167,7 @@ main {
 }
 
 
-/* --------- * ERROR * --------- */
 
-.input_err {
-    margin-top: 10px;
-    color: red;
-    font-style: italic;
-    text-transform: uppercase;
-    text-align: center;
-}
 
 
 /* ------------------ * UTILITARIAN * ------------------ */
@@ -188,3 +175,5 @@ main {
 .invisible {
     display: none;
 }
+
+
