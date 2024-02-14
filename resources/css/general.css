@@ -28,9 +28,9 @@ ul {
     padding: 0;
 }
 
-li {
+/* li {
     background: lightblue;
-}
+} */
 
 header {
     width: 100%;
@@ -160,6 +160,10 @@ main {
 .index_title {
     margin: 25px 36px;
     font-weight: 500;
+    & h2{
+        max-width: 13ch;
+        color: var(--coral);
+    }
 }
 
 .grid_index {

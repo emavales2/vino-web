@@ -1,0 +1,23 @@
+/* .card_cellar container -> a placer ailleurs ?? */
+.container_cards{   
+    display: flex;
+    gap: var(--med-space);
+    & h5{
+        font-family: var(--display-font);
+    }
+}
+/* Card compodents Dashboard CellarDisplayBox  */
+.card_cellar{
+    background-color: var(--burgundy);
+    border-radius: 12px;
+    font-family: var(--block-font);
+    text-transform: uppercase;
+    padding: var(--med-space);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 7ch;
+    max-height: 7ch;
+    flex: 1;
+    color: var(--cream);
+}
