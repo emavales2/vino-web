@@ -1,6 +1,6 @@
 <template>
     <Head title="Log in" />
-    <div class="burg_bg">
+    <div class=" bckgd burg">
         <main>
             <header>
                 <!-- <figure>   
@@ -11,7 +11,7 @@
 
             <form @submit.prevent="submit">
                 <fieldset>
-                    <label for="email" value="Email" class="invisible"></label>
+                    <label for="email" value="Email" hidden></label>
                     <input
                         id="email"
                         type="email"
@@ -26,7 +26,7 @@
                 </fieldset>
 
                 <fieldset>
-                    <label for="password" value="Password" class="invisible"></label>
+                    <label for="password" value="Password" hidden></label>
                     <input
                         id="password"
                         type="password"
@@ -39,20 +39,20 @@
                     <InputError class="msg input_err" :message="form.errors.password" />
                 </fieldset>
                     
-                <button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    <h6>Sign In</h6>
+                <button class="button" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    Sign In
                 </button>
             </form>
 
             <aside class="col_tight">
-                <small class="cream txt-center">          
+                <!-- <p class="cream txt-center">          
                     <Link class="block-font" :href="route('password.request')">Forgot your password?</Link>
-                </small>
+                </p> -->
 
-                <small class="cream txt-center">
-                    Don't have an account yet?
+                <p class="cream txt-center">
+                    Don't have an account yet?<br>
                     <Link class="block-font coral" :href="route('register')">Sign Up!</Link>
-                </small>
+                </p>
             </aside>
         </main>
     </div>

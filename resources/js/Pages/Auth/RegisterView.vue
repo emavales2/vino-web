@@ -77,7 +77,7 @@
                 </fieldset>
                 <div class="flex items-center justify-end mt-4">
                     
-                    <button  :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    <button class="button"  :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                         Save
                     </button>
                 </div>
