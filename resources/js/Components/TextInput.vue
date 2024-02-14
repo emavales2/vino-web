@@ -1,21 +1,3 @@
-<script setup>
-import { onMounted, ref } from 'vue';
-
-defineProps(['modelValue']);
-
-defineEmits(['update:modelValue']);
-
-const input = ref(null);
-
-onMounted(() => {
-    if (input.value.hasAttribute('autofocus')) {
-        input.value.focus();
-    }
-});
-
-defineExpose({ focus: () => input.value.focus() });
-</script>
-
 <template>
     <input
         class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
@@ -25,3 +7,26 @@ defineExpose({ focus: () => input.value.focus() });
     />
 </template>
 // destroy
+
+<script>
+export default {
+    props: ['modelValue'],
+    data() {
+        return {
+            input: null
+        };
+    },
+    emits: ['update:modelValue'],
+    mounted() {
+        if (this.$refs.input.hasAttribute('autofocus')) {
+            this.$refs.input.focus();
+        }
+    },
+    methods: {
+        focus() {
+            this.$refs.input.focus();
+        }
+    }
+
+};
+</script>

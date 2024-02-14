@@ -34,15 +34,14 @@
         <main>
             <header>
                 <!-- <figure>   
-                </figure> -->
-  
+                </figure> --> 
                 <h1 class="block-font txt-center cream">Sign In</h1>
                 <h5 class="block-font txt-center coral">Unlock the Perfect Cellar Experience with Vino</h5>               
             </header>
 
             <form @submit.prevent="submit">
                 <fieldset>
-                    <label for="email" value="Email" class="invisible" />
+                    <InputLabel for="email" value="Email" />
                     <input
                         id="email"
                         type="email"
@@ -53,11 +52,11 @@
                         autocomplete="username"
                         placeholder="email"
                     />
-                    <InputError class="input_err" :message="form.errors.email" />
+                    <InputError class="msg input_err" :message="form.errors.email" />
                 </fieldset>
 
                 <fieldset>
-                    <label for="password" value="Password" class="invisible" />
+                    <InputLabel for="password" value="Password" />
                     <input
                         id="password"
                         type="password"
@@ -67,7 +66,7 @@
                         autocomplete="current-password"
                         placeholder="password"
                     />
-                    <InputError class="input_err" :message="form.errors.password" />
+                    <InputError class="msg input_err" :message="form.errors.password" />
                 </fieldset>
                     
                 <button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
@@ -83,9 +82,44 @@
                 <small class="cream txt-center">
                     Don't have an account yet?
                     <Link class="block-font coral" :href="route('register')">Sign Up!</Link>
-                </small>
+                </p>
             </aside>
         </main>
     </div>
 </template>
 // keep
+
+<script>
+import InputError from '@/Components/InputError.vue';
+import InputLabel from '@/Components/InputLabel.vue';
+import PrimaryButton from '@/Components/PrimaryButton.vue';
+import TextInput from '@/Components/TextInput.vue';
+import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
+
+export default {
+    name: 'LoginView',
+    components: {
+        Head,
+        InputError,
+        InputLabel,
+        TextInput,
+        Link,
+        PrimaryButton,
+    },
+    data () {
+        return {
+            form: useForm({
+                email: '',
+                password: '',
+            }),
+        };
+    },
+    methods: {
+        submit() {
+            this.form.post(route('login'), {
+                onFinish: () => this.form.reset('password'),
+            });
+        },
+    },
+}
+</script>

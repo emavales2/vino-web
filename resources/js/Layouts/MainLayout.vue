@@ -94,7 +94,8 @@ export default {
     closeModal () {
       this.showSearch = false
     }
-  }
+  },
+  props: ['user']
 }
 </script>
 

@@ -11,7 +11,10 @@
 
 <script>
 import { Head, Link } from '@inertiajs/inertia-vue3';
+import { Inertia } from '@inertiajs/inertia';
+import GoBackButton from '@/Components/GoBackButton.vue';
 import MainLayout from '@/Layouts/MainLayout.vue';
+import PrimaryButton from '@/Components/PrimaryButton.vue';
 
 export default {
   name: 'ProfileView',

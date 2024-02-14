@@ -1,12 +1,14 @@
-<script setup>
-defineProps(['message']);
-</script>
-
 <template>
     <div v-show="message">
-        <small class="text-sm text-red-600">
+        <small>
             {{ message }}
         </small>
     </div>
 </template>
 // keep
+
+<script>
+export default {
+    props: ['message']
+}
+</script>

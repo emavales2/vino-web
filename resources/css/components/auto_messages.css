@@ -1,0 +1,21 @@
+
+/* --------- * MESSAGES AUTO-GENERÉS * --------- */
+
+.msg {
+    margin: 6px;
+    font-family: var(--text-font);
+    font-style: italic;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* --------- * ERROR * --------- */
+.input_err {
+    color: red;
+}
+
+/* --------- * STATUS (session; tjrs une class du v-if) * --------- */
+
+.status {
+    color: green;
+}
