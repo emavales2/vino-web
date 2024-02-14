@@ -80,7 +80,8 @@ export default {
       this.showDialog = true
       setTimeout(() => { this.showDialog = false }, 2000)
     }
-  }
+  },
+  props: ['user']
 }
 </script>
 

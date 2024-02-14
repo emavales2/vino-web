@@ -3,10 +3,9 @@
         <div class="burg_bg under_nav">
             <div class="card_low">
                 <header class="index_title">
-                    <h4 class="display-font">Welcome, {{ user.first_name }}</h4>
+                    <h2 class="block-font">Welcome, {{ user.first_name }}</h2>
                 </header>
-                
-                <div class="cream_lt_bg card_round">
+                <div>
                     <main class="column">
                     <!-- This is actually a SUB NAV; ACTUAL NAV IS IN MainLayout.vue setp file -->
                     <!-- <aside>     
@@ -24,24 +23,32 @@
 
                     <ul class="column">
                         <li>
+                            <section class="column">
+                                <h5 class="display-font">My Cellars</h5>
+                                <li v-if="cellars" class="container_cards">
+                                    <ul v-for="cellar in cellars" :key="cellar.id">
+                                        <CellarDisplayBox :cellar="cellar"/>
+                                    </ul>
+                                </li>
+                                <!-- si plus que 3 cellars, afficher un bouton "voir plus" -->
+                                <li v-else>
+                                    <p>You have no cellars yet.</p>
+                                </li>
+                                </section>
+                        </li>
+                        <li>
                             <section>
-                                <h5>My Cellars</h5>
-                                <div class=""></div>
+                                <h5 class="display-font">My Wine Collection</h5>
                             </section>
                         </li>
                         <li>
                             <section>
-                                <h5>My Wine Collection</h5>
+                                <h5 class="display-font">My Shopping Lists</h5>
                             </section>
                         </li>
                         <li>
                             <section>
-                                <h5>My Shopping Lists</h5>
-                            </section>
-                        </li>
-                        <li>
-                            <section>
-                                <h5>My Notes</h5>
+                                <h5 class="display-font">My Notes</h5>
                             </section>
                         </li>
                     </ul>
@@ -74,9 +81,6 @@ export default {
             Inertia.post(route('logout'));
         }
     },
-    props: ['user']
-    // props: {
-    //     user: Object
-    // }
+    props: ['user', 'cellars']
 }
 </script>
