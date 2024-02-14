@@ -41,6 +41,12 @@ body {
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     font-weight: unset;
+    line-height: var(--med-line);
+    max-width: max-content;
+}
+
+h1, h2, h3 {
+    line-height: var(--tall-line);
 }
 
 /* ----- * H1 est le seul heading dont il n'ya qu'une seule font-family * ----- */

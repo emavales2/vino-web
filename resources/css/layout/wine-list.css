@@ -1,0 +1,5 @@
+.wine-list{
+  display: flex;
+  flex-flow: wrap;
+  gap: var(--med-space);
+}

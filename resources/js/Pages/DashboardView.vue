@@ -1,14 +1,25 @@
 <template>
     <Head title="Dashboard" />
-
-    <MainLayout :user="user">
-        <div class="burg_bg under_nav">            
+        <div class="burg_bg under_nav">
             <div class="card_low">
                 <header class="index_title">
                     <h2 class="block-font">Welcome, {{ user.first_name }}</h2>
                 </header>
                 <div>
                     <main class="column">
+                    <!-- This is actually a SUB NAV; ACTUAL NAV IS IN MainLayout.vue setp file -->
+                    <!-- <aside>     
+                        <ul>
+                            <li>
+                                <Link :href="route('profile.show',  {user: user.id} )">Profile</Link>
+                            </li>
+                            <li>
+                                <button @click="logout">Logout</button>
+                            </li>
+                        </ul>
+                    </aside> -->
+                    <!-- FIN SUB NAV -->
+
                     <ul class="column">
                         <li>
                             <section class="column">
@@ -44,23 +55,20 @@
             </div>
             </div>
         </div>
-    </MainLayout>
 </template>
 
 <script>
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import MainLayout from '@/Layouts/MainLayout.vue';
 import { Inertia } from '@inertiajs/inertia';
-import CellarDisplayBox from '@/Components/CellarDisplayBox.vue';
 
 export default {
     name: 'DashboardView',
     components: {
-    Head,
-    Link,
-    MainLayout,
-    CellarDisplayBox
-},
+        Head,
+        Link
+    },
+    layout: MainLayout,
     methods: {
         logout() {
             Inertia.post(route('logout'));
