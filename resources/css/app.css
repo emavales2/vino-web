@@ -1,6 +1,7 @@
 @import url(./config.css);
 @import url(./components/wine-thumbnail.css);
 @import url(./components/goBackButton.css);
+
 /* ---------- * * VARIABLES * * ---------- */
 
 
@@ -12,6 +13,7 @@
 @import url(standards/typography.css);
 @import url(standards/color.css);
 @import url(standards/rhythm.css);
+@import url(standards/containers.css);
 
 
 /* ---------- * * DANS SECTION NAVIGATION * * ---------- */

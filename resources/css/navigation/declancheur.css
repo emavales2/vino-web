@@ -8,7 +8,7 @@
 .declancheur:not(:checked)::before {
     /* content: "MENU"; */
     /* font-family: var(--block-text); */
-    content: url(../../icons/lupe.svg);
+    content: url(@/../assets/icons/lupe.svg);
     cursor: pointer;
     background: red;
 }
@@ -16,7 +16,7 @@
 .declancheur:checked::before {
     /* /* content: "FERMER"; */
     font-family: var(--block-text);
-    /* content: url(../../icons/lupe.svg); */
+    /* content: url(@/../assets/icons/lupe.svg); */
     cursor: pointer;
 }
 
