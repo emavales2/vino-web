@@ -15,6 +15,7 @@ export default {
     name: 'ConfirmModal',
     methods: {
         closeModal() {
+           /*  this.$el */
             document.getElementById('confirmModal').style.display = 'none';
         },
     },

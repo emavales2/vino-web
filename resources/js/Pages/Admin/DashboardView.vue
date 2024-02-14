@@ -32,7 +32,7 @@ export default {
     },
     methods: {
         logout() {
-        Inertia.post(route('logout'));
+            Inertia.post(route('logout'));
         }
     },
     props: ['user']
