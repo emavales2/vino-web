@@ -19,10 +19,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Auth/LoginView', [
-            //'canResetPassword' => Route::has('password.request'),
-            'status' => session('status'),
-        ]);
+        return Inertia::render('Auth/LoginView');
     }
 
     /**
@@ -33,12 +30,11 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
-        // méthode dans http/request/auth/loginrequest.php
         $request->authenticate();
-        //Regénération de la session 
         $request->session()->regenerate();
-        // Récupérer l'utilisateur connecté
+        // Récupérer l'utilisateur connecté et ses celliers
         $user = Auth::user();
+        $cellars = $user->cellar()->limit(3)->get();
         // Si l'utilisateur est un admin
         if ($user->is_admin == '1') {
             return Inertia::render('Admin/DashboardView', [
@@ -46,7 +42,8 @@ class AuthenticatedSessionController extends Controller
             ]);
         }else{
             return Inertia::render('DashboardView', [
-                'user' => $user
+                'user' => $user,
+                'cellars' => $cellars
             ]);
         }
     }

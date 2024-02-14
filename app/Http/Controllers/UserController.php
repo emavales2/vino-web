@@ -16,7 +16,6 @@ class UserController extends Controller
      */
     public function welcome(): Response
     {
-        // il faudrait passer canLogin et canRegister mais je ne sais pas comment les récupérer
         return Inertia::render(('HomeView'));
     }
 
@@ -87,7 +86,7 @@ class UserController extends Controller
         $user = User::find($request->id);
         $user->update($request->all());
         // Je ne recois pas la variable success !!!????
-        return Inertia::location(route('profile.show', ['user' => $user->id, 'success' => 'Profil mis à jour avec succès']));
+        return Inertia::location(route('profile.show', ['user' => $user->id, 'success' => 'Profile updated successfully']));
     }
 
     /**
@@ -100,9 +99,9 @@ class UserController extends Controller
     {
         User::destroy($user->id);
         if (Auth::check() && Auth::user()->is_admin == 1) {
-            return redirect()->route('users.index')->with('success', 'Administrateur supprimé avec succès');
+            return Inertia::location(route('users.index', ['success' => 'User deleted successfully']));
         }
-        return Inertia::location(route('home', ['success' => 'Utilisateur supprimé avec succès']));
+        return Inertia::location(route('home', ['success' => 'User deleted successfully']));
     }
 
 }
