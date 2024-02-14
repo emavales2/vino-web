@@ -13,4 +13,3 @@ export default {
   props: ['collection']
 }
 </script>
-// keep

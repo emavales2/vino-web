@@ -38,4 +38,3 @@ export default {
     props: ['user']
 }
 </script>
-// keep

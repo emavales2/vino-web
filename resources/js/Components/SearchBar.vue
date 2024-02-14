@@ -35,4 +35,3 @@ export default{
   props: ['toggleSearch']
 }
 </script>
-// keep

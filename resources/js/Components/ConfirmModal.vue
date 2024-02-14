@@ -22,4 +22,3 @@ export default {
     props: ['YesAction', 'action', 'actionMessage']
 }
 </script>
-// keep
