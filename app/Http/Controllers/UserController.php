@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Cellar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -24,9 +25,11 @@ class UserController extends Controller
      */ 
     public function dashboard(): Response
     {
-        $user = auth()->user();
+        $user = Auth::user();
+        $cellars = $user->cellar()->limit(3)->get();
         return Inertia::render('DashboardView', [
-            'user' => $user
+            'user' => $user,
+            'cellars' => $cellars
         ]);
     }
     /**
