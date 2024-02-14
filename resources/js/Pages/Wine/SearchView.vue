@@ -52,14 +52,12 @@
 
 <script>
 import MainLayout from '@/Layouts/MainLayout.vue';
-import Modal from '@/Components/Modal.vue';
 import ColorDrop from '@/Components/ButtonsIcons/ColorDrop.vue';
 import { useForm } from '@inertiajs/inertia-vue3';
 import { Link } from '@inertiajs/inertia-vue3';
 export default{
   name:'Wine.SearchView',
   components: {
-    Modal,
     Link,
     ColorDrop
   },
