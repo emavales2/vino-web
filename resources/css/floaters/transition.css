@@ -1,0 +1,9 @@
+.inScreenOut-enter-active,
+.inScreenOut-leave-active {
+  transition: right 0.5s ease;
+}
+
+.inScreenOut-enter-from,
+.inScreenOut-leave-to {
+  right: -400px;
+}

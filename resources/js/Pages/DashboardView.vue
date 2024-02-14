@@ -19,7 +19,6 @@
                         </ul>
                     </aside> -->
                     <!-- FIN SUB NAV -->
-                    <SearchBar/>
 
                     <ul class="column">
                         <li>
@@ -62,21 +61,15 @@
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import MainLayout from '@/Layouts/MainLayout.vue';
 import { Inertia } from '@inertiajs/inertia';
-import SearchBar from '@/Components/SearchBar.vue';
 
 export default {
     name: 'DashboardView',
     components: {
         Head,
-        Link,
-        SearchBar
+        Link
     },
     layout: MainLayout,
     methods: {
-       test() {
-        console.log(this.$parent.propTest)
-        this.$parent.showDialog()
-       },
         logout() {
             Inertia.post(route('logout'));
         }
