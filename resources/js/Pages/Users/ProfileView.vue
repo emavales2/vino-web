@@ -5,6 +5,7 @@
     <p>First Name: {{ user.first_name }}</p>
     <p>Last Name: {{ user.last_name }}</p>
     <p>Email: {{ user.email }}</p>
+
   </div>
   <Link :href="route('profile.edit', user.id )">Edit your profile</Link>
   <Link :href="route('logout', user.id )">Logout</Link>
@@ -24,6 +25,6 @@ export default {
       Link
   },
   layout: MainLayout,
-  props: ['user']
+  props: ['user', 'success']
 }
 </script>

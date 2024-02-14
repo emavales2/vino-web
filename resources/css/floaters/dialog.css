@@ -4,7 +4,7 @@
   border: 2px solid var(--coral);
   border-radius: 100px;
   font-family: var(--block-font);
-  right: va r(--small-space);
+  right: var(--small-space);
   max-width: 300px;
   background-color: var(--cream);
   padding: var(--small-space);
