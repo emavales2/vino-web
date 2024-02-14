@@ -7,6 +7,7 @@
     <p>Email: {{ user.email }}</p>
   </div>
   <Link :href="route('profile.edit', user.id )">Edit your profile</Link>
+  <Link :href="route('logout', user.id )">Logout</Link>
 </template>
 
 <script>

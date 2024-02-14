@@ -59,12 +59,14 @@
 
 <script>
 import { Head, Link } from '@inertiajs/inertia-vue3';
+import CellarDisplayBox from '@/Components/CellarDisplayBox.vue';
 import MainLayout from '@/Layouts/MainLayout.vue';
 import { Inertia } from '@inertiajs/inertia';
 
 export default {
     name: 'DashboardView',
     components: {
+        CellarDisplayBox,
         Head,
         Link
     },

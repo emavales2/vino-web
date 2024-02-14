@@ -52,7 +52,7 @@
                 <small class="cream txt-center">
                     Don't have an account yet?
                     <Link class="block-font coral" :href="route('register')">Sign Up!</Link>
-                </p>
+                </small>
             </aside>
         </main>
     </div>
