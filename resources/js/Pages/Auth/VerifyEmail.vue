@@ -44,3 +44,4 @@ const verificationLinkSent = computed(() => props.status === 'verification-link-
             </div>
         </form>
     </template>
+// destroy

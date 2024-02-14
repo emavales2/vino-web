@@ -11,3 +11,4 @@ import MainLayout from '@/Layouts/MainLayout.vue';
     </MainLayout>
     <Head title="Test" />
 </template>
+// destroy

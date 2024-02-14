@@ -36,3 +36,5 @@ export default {
     'le reste en ordre alpha'
 }
 </script>
+
+// destroy

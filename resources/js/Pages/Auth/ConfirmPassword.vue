@@ -45,3 +45,4 @@ const submit = () => {
             </div>
         </form>
     </template>
+// destroy

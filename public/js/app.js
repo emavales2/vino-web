@@ -24164,6 +24164,7 @@ __webpack_require__.r(__webpack_exports__);
   name: 'ConfirmModal',
   methods: {
     closeModal: function closeModal() {
+      /*  this.$el */
       document.getElementById('confirmModal').style.display = 'none';
     }
   },
@@ -27056,7 +27057,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   render: () => (/* binding */ render)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var _img_coral_1_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../img/coral_1.svg */ "./resources/img/coral_1.svg");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 /* harmony import */ var _img_med_vino_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../img/med_vino.svg */ "./resources/img/med_vino.svg");
 /* harmony import */ var _img_dark_vino_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../img/dark_vino.svg */ "./resources/img/dark_vino.svg");
 /* harmony import */ var _logos_VINO_lt_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../logos/VINO_lt.svg */ "./resources/logos/VINO_lt.svg");
@@ -27068,7 +27069,7 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "cream_lt_bg"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"background_blobs\"><figure class=\"fig_bg\"><img src=\"" + _img_coral_1_svg__WEBPACK_IMPORTED_MODULE_1__["default"] + "\" class=\"coral_blob_bg\" alt=\"\"></figure><figure class=\"fig_bg\"><img src=\"" + _img_med_vino_svg__WEBPACK_IMPORTED_MODULE_2__["default"] + "\" class=\"med_blob_bg\" alt=\"\"></figure><figure class=\"fig_bg\"><img src=\"" + _img_dark_vino_svg__WEBPACK_IMPORTED_MODULE_3__["default"] + "\" class=\"dkvin_blob_bg\" alt=\"\"></figure></section>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"background_blobs\"><figure class=\"fig_bg\"><img src=\"" + Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()) + "\" class=\"coral_blob_bg\" alt=\"\"></figure><figure class=\"fig_bg\"><img src=\"" + _img_med_vino_svg__WEBPACK_IMPORTED_MODULE_2__["default"] + "\" class=\"med_blob_bg\" alt=\"\"></figure><figure class=\"fig_bg\"><img src=\"" + _img_dark_vino_svg__WEBPACK_IMPORTED_MODULE_3__["default"] + "\" class=\"dkvin_blob_bg\" alt=\"\"></figure></section>", 1);
 var _hoisted_3 = {
   "class": "cont_narrow_splash just_top"
 };
@@ -27928,21 +27929,6 @@ module.exports = TypeError;
 /** @type {import('./uri')} */
 module.exports = URIError;
 
-
-/***/ }),
-
-/***/ "./resources/img/coral_1.svg":
-/*!***********************************!*\
-  !*** ./resources/img/coral_1.svg ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/coral_1.svg?60f6a7ff82f6af01f7ef436cf01fce9b");
 
 /***/ }),
 

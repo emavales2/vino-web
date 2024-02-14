@@ -9,3 +9,4 @@ import { Link } from '@inertiajs/vue3';
         <slot />
     </Link>
 </template>
+// destroy

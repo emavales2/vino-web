@@ -8,3 +8,4 @@ defineProps(['value']);
         <span v-else><slot /></span>
     </label>
 </template>
+// destroy
