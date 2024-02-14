@@ -24720,12 +24720,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
 /* harmony import */ var _Components_ConfirmModal_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/ConfirmModal.vue */ "./resources/js/Components/ConfirmModal.vue");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/Components/InputLabel.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-/* harmony import */ var _Components_InputError_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/InputError.vue */ "./resources/js/Components/InputError.vue");
-/* harmony import */ var _Layouts_MainLayout_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Layouts/MainLayout.vue */ "./resources/js/Layouts/MainLayout.vue");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/Components/TextInput.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-
-
+/* harmony import */ var _Components_InputError_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/InputError.vue */ "./resources/js/Components/InputError.vue");
+/* harmony import */ var _Layouts_MainLayout_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Layouts/MainLayout.vue */ "./resources/js/Layouts/MainLayout.vue");
 
 
 
@@ -24736,10 +24732,8 @@ Object(function webpackMissingModule() { var e = new Error("Cannot find module '
     Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Head,
     ConfirmModal: _Components_ConfirmModal_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Link,
-    MainLayout: _Layouts_MainLayout_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    TextInput: Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/Components/TextInput.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()),
-    InputError: _Components_InputError_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    InputLabel: Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/Components/InputLabel.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())
+    MainLayout: _Layouts_MainLayout_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    InputError: _Components_InputError_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   computed: function computed() {},
   data: function data() {
@@ -24754,7 +24748,7 @@ Object(function webpackMissingModule() { var e = new Error("Cannot find module '
       openDeleteModal: false
     };
   },
-  layout: _Layouts_MainLayout_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+  layout: _Layouts_MainLayout_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
   methods: {
     submit: function submit() {
       this.form.put(route('profile.update', {
@@ -25929,13 +25923,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Edit Profile", -1 /* HOISTED */);
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "first_name",
+  value: "First name"
+}, null, -1 /* HOISTED */);
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "last_name",
+  value: "Last name"
+}, null, -1 /* HOISTED */);
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "email",
+  value: "Email",
+  "class": "invisible"
+}, null, -1 /* HOISTED */);
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   type: "submit"
 }, "Save")], -1 /* HOISTED */);
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Head");
-  var _component_InputLabel = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("InputLabel");
-  var _component_TextInput = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("TextInput");
   var _component_InputError = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("InputError");
   var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
   var _component_ConfirmModal = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ConfirmModal");
@@ -25945,14 +25950,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onSubmit: _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.submit && $options.submit.apply($options, arguments);
     }, ["prevent"]))
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_InputLabel, {
-    "for": "first_name",
-    value: "First name"
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TextInput, {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     id: "first_name",
     type: "text",
     "class": "mt-1 block w-full",
-    modelValue: $data.form.first_name,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $data.form.first_name = $event;
     }),
@@ -25960,17 +25961,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     autofocus: "",
     autocomplete: "first_name",
     placeholder: "first name"
-  }, null, 8 /* PROPS */, ["modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_InputError, {
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.first_name]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_InputError, {
     "class": "input_err",
     message: $data.form.errors.first_name
-  }, null, 8 /* PROPS */, ["message"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_InputLabel, {
-    "for": "last_name",
-    value: "Last name"
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TextInput, {
+  }, null, 8 /* PROPS */, ["message"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     id: "last_name",
     type: "text",
     "class": "mt-1 block w-full",
-    modelValue: $data.form.last_name,
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $data.form.last_name = $event;
     }),
@@ -25978,18 +25975,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     autofocus: "",
     autocomplete: "last_name",
     placeholder: "last name"
-  }, null, 8 /* PROPS */, ["modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_InputError, {
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.last_name]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_InputError, {
     "class": "input_err",
     message: $data.form.errors.last_name
-  }, null, 8 /* PROPS */, ["message"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_InputLabel, {
-    "for": "email",
-    value: "Email",
-    "class": "invisible"
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_TextInput, {
+  }, null, 8 /* PROPS */, ["message"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     id: "email",
     type: "email",
     "class": "mt-1 block w-full",
-    modelValue: $data.form.email,
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return $data.form.email = $event;
     }),
@@ -25997,7 +25989,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     autofocus: "",
     autocomplete: "username",
     placeholder: "email address"
-  }, null, 8 /* PROPS */, ["modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_InputError, {
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.email]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_InputError, {
     "class": "input_err",
     message: $data.form.errors.email
   }, null, 8 /* PROPS */, ["message"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -26005,7 +25997,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
       return $data.form.id = $event;
     })
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.id]]), _hoisted_2], 32 /* NEED_HYDRATION */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.id]]), _hoisted_5], 32 /* NEED_HYDRATION */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[5] || (_cache[5] = function () {
       return $options.toggleModal && $options.toggleModal.apply($options, arguments);
     })

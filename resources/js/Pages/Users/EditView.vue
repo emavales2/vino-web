@@ -4,8 +4,8 @@
             <h1>Edit Profile</h1>
             <form @submit.prevent="submit">
                 <div>
-                    <InputLabel for="first_name" value="First name"/>
-                    <TextInput
+                    <label for="first_name" value="First name"></label>
+                    <input
                             id="first_name"
                             type="text"
                             class="mt-1 block w-full"
@@ -18,8 +18,8 @@
                     <InputError class="input_err" :message="form.errors.first_name" />
                 </div>
                 <div>
-                    <InputLabel for="last_name" value="Last name"/>
-                    <TextInput
+                    <label for="last_name" value="Last name"></label>
+                    <input
                             id="last_name"
                             type="text"
                             class="mt-1 block w-full"
@@ -32,8 +32,8 @@
                     <InputError class="input_err" :message="form.errors.last_name" />
                 </div>
                 <div>
-                    <InputLabel for="email" value="Email" class="invisible" />
-                    <TextInput
+                    <label for="email" value="Email" class="invisible"></label>
+                    <input
                             id="email"
                             type="email"
                             class="mt-1 block w-full"
@@ -65,10 +65,8 @@
 <script>
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
 import ConfirmModal from '@/Components/ConfirmModal.vue';
-import InputLabel from '@/Components/InputLabel.vue';
 import InputError from '@/Components/InputError.vue';
 import MainLayout from '@/Layouts/MainLayout.vue';
-import TextInput from '@/Components/TextInput.vue';
 
 export default {
     name: 'EditView',
@@ -77,9 +75,7 @@ export default {
     ConfirmModal,
     Link,
     MainLayout,
-    TextInput,
-    InputError,
-    InputLabel,
+    InputError
 },
     computed () {
 
