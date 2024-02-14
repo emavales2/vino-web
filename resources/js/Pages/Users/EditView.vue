@@ -1,5 +1,4 @@
 <template>
-    <MainLayout :user="user">
         <Head title="Edit Profile" />
         <section>
             <h1>Edit Profile</h1>
@@ -60,7 +59,6 @@
             action="delete" 
             actionMessage="Are you sure you want to delete your account?" 
         />
-    </MainLayout>
 </template>
 
 
@@ -94,6 +92,7 @@ export default {
             openDeleteModal: false
         }
     },
+    layout: MainLayout,
     methods: {
         submit() {
             this.form.put(route('profile.update', {user: this.user.id}), this.form);

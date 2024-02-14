@@ -1,4 +1,38 @@
-/* ------- GENERAL ------- */
+@import url(https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap);
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #2B0303;
+}
+
+.wine-thumbnail{
+  flex: 300px;
+  flex-grow: 0;
+  padding: var(--med-space);
+}
+
+.goBackButton{
+  align-items: center;
+  background: none;
+  border: 2px solid;
+  border-color: #EDE7D1;
+  border-radius: 1000px;
+  color: #EDE7D1;
+  cursor: pointer;
+  display: flex;
+  font-family: 'Oswald';
+  font-size: 1em;
+  font-weight: 400;
+  gap: 6px;
+  line-height: 1.1;
+  padding: 3px 10px;
+  text-transform: uppercase;
+}
+
+/* ------- GENÉRALE ------- */
 
 html, body {
     margin: 0;
@@ -80,12 +114,6 @@ img {
 }
 
 
-/* input {
-    height: var(--espace_petit);
-    border: 1px solid var(--bronze_tint_2);
-} */
-
-
 /* ------- LAYOUT, RHYTHM & COMPOSITION ------- */
 
 body, [id=app] {
@@ -163,7 +191,7 @@ main {
     border-start-end-radius: 40px; 
 }
 
-.index_title {
+/* .index_title {
     margin: 25px 36px;
     font-weight: 500;
     & h2{
@@ -177,15 +205,7 @@ main {
 }
 
 
-/* --------- * ERROR * --------- */
 
-.input_err {
-    margin-top: 10px;
-    color: red;
-    font-style: italic;
-    text-transform: uppercase;
-    text-align: center;
-}
 
 
 /* ------------------ * UTILITARIAN * ------------------ */
@@ -194,14 +214,23 @@ main {
     display: none;
 }
 
+
+
+
 :root {
 
+    --xxtall-line: 3.3rem;
+    --xtall-line: 3rem;
     --tall-line: 2.15rem;
     --med-line: 1.7rem;
     --text-line: 1.4rem;
     --small-line: 1.2rem;
     
-    --text-spacing: .044em;
+    --text-ltr-spacing: .044rem;
+    --small-ltr-spacing: .05rem;
+    --button-ltr-spacing: .075rem;
+    --med-ltr-spacing: .1rem;
+    --large-ltr-spacing: .15rem;
 
     --text-font: 'Roboto', sans-serif;
     --display-font: 'Playfair Display', serif;
@@ -209,7 +238,7 @@ main {
 }
 
 
-/* --------- * Typographic scale chosen is 1.200 Minor Third base @ 12pt * --------- */
+/* --------- * Scale typographique choisie :  1.200 Minor Third base @ 12pt * --------- */
 
 body {
     font-family: var(--text-font);
@@ -220,51 +249,68 @@ body {
     font-family: var(--block-font);
     text-transform: uppercase;
     font-weight: 500;
-    letter-spacing: .05rem;
+    letter-spacing: var(--small-ltr-spacing);
 }
 
 .display-font {
     font-family: var(--display-font);
-    color: var(--coral);
 }
 
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     font-weight: unset;
     line-height: var(--med-line);
+    max-width: -moz-max-content;
+    max-width: max-content;
 }
 
 h1, h2, h3 {
     line-height: var(--tall-line);
 }
 
+/* ----- * H1 est le seul heading dont il n'ya qu'une seule font-family * ----- */
 h1 {
     font-size: 2.986rem;
-    /* font-family: 'Barlow Condensed', sans-serif; */
+    line-height: var(--xxtall-line);
     font-family: var(--block-font);
-    text-transform: uppercase;
+    letter-spacing: var(--med-ltr-spacing);
 }
 
 h2 {
     font-size: 2.488rem;
+    line-height: var(--xtall-line);
+    letter-spacing: var(--large-ltr-spacing);
 }
 
+h2.block-font {
+    letter-spacing: var(--med-ltr-spacing);
+}
+
+/* ----- * Fonctionne pour block & display fonts * ----- */
 h3 {
     font-size: 2.074rem;
+    line-height: 2.5rem;
 }
 
+/* ----- * Fonctionne pour block & display fonts * ----- */
 h4 {
     font-size: 1.728rem;
+    line-height: var(--tall-line);
 }
 
+/* ----- * Fonctionne pour block & display fonts * ----- */
 h5 {
     font-size: 1.4rem;
+    line-height: var(--med-line);
 }
 
+/* ----- * Fonctionne pour block & display fonts * ----- */
 h6 {
     font-size: 1.12rem;
+    letter-spacing: var(--small-ltr-spacing);
 }
 
+/* ----- * Fonctionne pour block & display fonts * ----- */
 p {
     font-size: 1rem;
 }
@@ -274,6 +320,9 @@ small {
     font-size: .694rem;
     line-height: var(--small-line);
 }
+
+
+/* ----- * ALIGNEMENT DU TEXTE * ----- */
 
 .txt-center {
     text-align: center;
@@ -381,17 +430,37 @@ small {
 
     --safe-area: 16px;
 }
-/* ---------- * * Navigation en Général * * ---------- */
+
+/* ---------- * * NAV GÉNÉRALE * * ---------- */
 
 nav {
     box-sizing: border-box;
     text-align: center;
-    background: var(--coral);
     padding: 10px;
     max-height: 80px;
+    min-height: 60px;
     max-width: 100%;
     align-items: center;
 }
+
+nav a {
+    max-height: 32px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    min-height: 100%;
+    max-width: 100%;
+}
+
+nav svg {
+    box-sizing: border-box;
+    max-height: 90%;
+    max-width: 90%;
+    padding: 5px;
+}
+
+
+/* ---------- * * TOP NAV * * ---------- */
 
 .top_nav_header {
     position: absolute;
@@ -434,38 +503,33 @@ nav {
     padding-left: 10px;
 }
 
+
+/* ---------- * * BOTTOM NAV * * ---------- */
+/* ---------- * * Navigation en Général * * ---------- */
+
 .bottom_nav {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 10px;   
+    /* --- Changer à 5 une fois rajouté l'icône pour "notes" --- */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px; 
+    background: var(--coral);  
 }
 
 .bottom_nav svg {
     fill: var(--burgundy);
 }
 
-.bottom_nav img {
-    max-height: 100%;
-    width: 100%;
-}
 
-nav a {
-    /* background: green; */
-    max-height: 32px;
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
-    min-height: 100%;
-    max-width: 100%;
-}
 
-nav svg {
-    box-sizing: border-box;
-    max-height: 90%;
-    max-width: 90%;
-    padding: 5px;
-}
+/* ------- * * * * AUTRES TAILLES * * * * ------- */
 
+/* @media screen and (max-width: 600px) {
+
+}     */
+
+
+
+/* <MainLayout :user="user"> */
 /* declancheur.css (composante) --------------- */
 
 .declancheur {
@@ -632,7 +696,7 @@ input[name="menu"]:checked + label .menu_cachee {
 /* --------- * BUTTON * --------- */
 
 /* In the components "PrimaryButton.vue", "SecondaryButton.vue", "DangerButton.vue" (came with Laravel) */
-button {
+.button {
     box-sizing: border-box;
     font-family: 'Oswald', sans-serif;
     align-self: center;
@@ -647,9 +711,41 @@ button {
     color: var(--cream);
 }
 
-button h6 {
+.button h6 {
     line-height: 1rem;
     font-weight: 400;
+}
+
+.button_column {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+    gap: var(--safe-area);
+    align-items: center;
+    max-height: 100%;
+}
+
+.button:active {
+    cursor: pointer;
+    background-color: var(--coral);
+    border: none;
+}
+/* button {
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+    align-self: center;
+    padding: 16px;
+    width: 100%;
+    text-transform: uppercase;
+    border-radius: 30px;
+    border: 3px solid var(--cream);
+    background: none;
+    color: var(--cream);
+    line-height: 1rem;
+    font-weight: 400;
+    font-size: 1.25rem;
+    letter-spacing: var(--button-ltr-spacing);
 }
 
 .button_column {
@@ -666,7 +762,7 @@ button:active {
     cursor: pointer;
     background-color: var(--coral);
     border: none;
-}
+} */
 
 /*button {
     text-transform: uppercase;
@@ -697,7 +793,6 @@ button:hover {
 /* --------- * FORM * --------- */
 
 form {
-    /* background-color: darkkhaki; */
     display: flex;
     flex-direction: column;
     gap: var(--safe-area);
@@ -705,19 +800,7 @@ form {
     /* padding: var(--med_space); */
 }
 
-/* form > * {
-    display: contents;
-    margin: 0;
-    flex: 1;
-    /* width: 100%; This can be done here because it is limited to its container */
-    /* padding: 0;
-} */ 
-
-/* In the component "InputLabel.vue" (came with Laravel) */
-label {
-
-}
-
+/* Will grab "InputText.vue" (came with Laravel) as well as input in forms */
 form input {
     box-sizing: border-box;
     align-self: center;
@@ -725,6 +808,8 @@ form input {
     width: 100%; /*This can be done here because it is limited to its container */
     border-radius: 30px;
     border: none;
+    background: var(--cream-lt);
+    font-size: large;
     background: var(--cream);
 }
 
@@ -735,6 +820,86 @@ form input:focus-visible {
 fieldset {
     border: none;
     padding: 0;
+}
+.modal{
+  align-items: start;
+  background-color: rgba(58, 29, 29, 0.58);
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+.modal>*{
+  flex: 1;
+}
+.dialog{
+  position: fixed;
+  bottom: var(--small-space);
+  border: 2px solid var(--coral);
+  border-radius: 100px;
+  font-family: var(--block-font);
+  right: va r(--small-space);
+  max-width: 300px;
+  background-color: var(--cream);
+  padding: var(--small-space);
+  z-index: 2;
+}
+.inScreenOut-enter-active,
+.inScreenOut-leave-active {
+  transition: right 0.5s ease;
+}
+
+.inScreenOut-enter-from,
+.inScreenOut-leave-to {
+  right: -400px;
+}
+
+.search-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.search-bar{
+  display: flex;
+  flex-flow: column;
+  gap: var(--small-space);
+  background-color: var(--cream);
+  padding: var(--med-space);
+}
+.search-bar form{
+  display: flex;
+  flex-flow: row;
+  gap: var(--vsmall-space);
+}
+.search-bar form>label{
+  flex-grow: 1;
+}
+.search-bar form>button{
+  
+}
+.wine-list{
+  display: flex;
+  flex-flow: wrap;
+  gap: var(--med-space);
+}
+.color-drop{
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+.color-drop.blanc{
+  background-color: var(--cream);
+}
+.color-drop.rouge{
+  background-color: var(--burgundy);
+}
+.color-drop.rosé{
+  background-color: var(--coral);
 }
 /* .card_cellar container -> a placer ailleurs ?? */
 .container_cards{   
@@ -762,7 +927,6 @@ fieldset {
 /* ---------- * * VARIABLES * * ---------- */
 
 
-
 /* ---------- * * STANDARDS / VARIABLES * * ---------- */
 
 
@@ -778,7 +942,9 @@ fieldset {
 /* @import url(components/menu_deroulant.css);
 @import url(components/fiche_stamp.css);
 @import url(components/logo.css); */
+
 /* @import url(components/fiche_vedette.css);
 @import url(components/view_reel.css);
 @import url(components/filtres.css);
 @import url(components/module_pic_txt.css); */
+

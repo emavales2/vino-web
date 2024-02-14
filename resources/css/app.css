@@ -1,8 +1,10 @@
+@import url(./config.css);
+@import url(./components/wine-thumbnail.css);
+@import url(./components/goBackButton.css);
 /* ---------- * * VARIABLES * * ---------- */
 
 
 @import url(general.css);
-
 
 
 /* ---------- * * STANDARDS / VARIABLES * * ---------- */
@@ -29,6 +31,15 @@
 @import url(components/logo.css); */
 @import url(components/buttons.css);
 @import url(components/form.css);
+
+@import url(floaters/modal.css);
+@import url(floaters/dialog.css);
+@import url(floaters/transition.css);
+@import url(components/search-button.css);
+@import url(components/search-bar.css);
+@import url(layout/wine-list.css);
+@import url(components/color-drop.css);
+
 /* @import url(components/fiche_vedette.css);
 @import url(components/view_reel.css);
 @import url(components/filtres.css);

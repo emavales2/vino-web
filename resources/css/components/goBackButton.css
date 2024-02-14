@@ -1,0 +1,18 @@
+
+.goBackButton{
+  align-items: center;
+  background: none;
+  border: 2px solid;
+  border-color: #EDE7D1;
+  border-radius: 1000px;
+  color: #EDE7D1;
+  cursor: pointer;
+  display: flex;
+  font-family: 'Oswald';
+  font-size: 1em;
+  font-weight: 400;
+  gap: 6px;
+  line-height: 1.1;
+  padding: 3px 10px;
+  text-transform: uppercase;
+}

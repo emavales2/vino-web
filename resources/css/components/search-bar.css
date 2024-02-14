@@ -1,0 +1,18 @@
+.search-bar{
+  display: flex;
+  flex-flow: column;
+  gap: var(--small-space);
+  background-color: var(--cream);
+  padding: var(--med-space);
+}
+.search-bar form{
+  display: flex;
+  flex-flow: row;
+  gap: var(--vsmall-space);
+}
+.search-bar form>label{
+  flex-grow: 1;
+}
+.search-bar form>button{
+  
+}

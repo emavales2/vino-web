@@ -1,4 +1,5 @@
-/* ------- GENERAL ------- */
+
+/* ------- GENÉRALE ------- */
 
 html, body {
     margin: 0;
@@ -79,12 +80,6 @@ img {
 }
 
 
-/* input {
-    height: var(--espace_petit);
-    border: 1px solid var(--bronze_tint_2);
-} */
-
-
 /* ------- LAYOUT, RHYTHM & COMPOSITION ------- */
 
 body, [id=app] {
@@ -162,7 +157,7 @@ main {
     border-start-end-radius: 40px; 
 }
 
-.index_title {
+/* .index_title {
     margin: 25px 36px;
     font-weight: 500;
     & h2{
@@ -176,15 +171,7 @@ main {
 }
 
 
-/* --------- * ERROR * --------- */
 
-.input_err {
-    margin-top: 10px;
-    color: red;
-    font-style: italic;
-    text-transform: uppercase;
-    text-align: center;
-}
 
 
 /* ------------------ * UTILITARIAN * ------------------ */
@@ -192,3 +179,5 @@ main {
 .invisible {
     display: none;
 }
+
+
