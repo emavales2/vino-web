@@ -27,7 +27,7 @@ class CellarHasWineController extends Controller
                     $collection[$wine->wine_id]['perCellar'][] = ['cellar' => $wine->cellar, 'qty'=>$wine->quantity];
                 } else {
                     $collection[$wine->wine_id] = [
-                        'wine'=>$wine->wine,
+                        'wine'=> $wine->wine,
                         'totalQty' => $wine->quantity,
                         'perCellar' => [['cellar' => $wine->cellar, 'qty'=>$wine->quantity]]
                     ];
@@ -69,9 +69,10 @@ class CellarHasWineController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(Wine $wine)
+    {   
+        $cellars = Auth::user()->cellar;
+        return Inertia::render('CellarWine/CreateView', compact('cellars', 'wine'));
     }
 
     /**

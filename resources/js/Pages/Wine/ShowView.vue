@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <img :src="wine.photo" :alt="wine.name">
     <section>
       <h1>{{ wine.name }}</h1>
@@ -17,13 +17,14 @@
         </div>
       </div>
     </section>
-  </div>
+  </main>
 </template>
 <script>
+import MainLayout from '@/Layouts/MainLayout.vue';
 export default{
   name:'Wine.ShowView',
-  components: {
-  },
+
+  layout: MainLayout,
   props: ['wine'],
 }
 </script>

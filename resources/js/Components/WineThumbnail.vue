@@ -5,19 +5,20 @@
       <div>
         <img 
         :src="wine.photo" 
-        loading="lazy" 
         :alt="wine.name"
-        >
+        loading="lazy" 
+      >
       </div>
       <div>
         <p v-if="wine.name.length > 30">
-          {{ wine.name.slice(0, 30) }}...
+          {{ wine.name.replaceAll('/', ' ').slice(0, 30) }}...
         </p>
-        <p v-else>{{ wine.name }}</p>
+        <p v-else>
+          {{ wine.name }}
+        </p>
       </div>
     </Link>
   </li>
-<!--   <BlobShape :shape="setShape"/> -->
 </template>
 
 <script>
@@ -32,10 +33,10 @@ export default {
   methods: {
     setColor (color) {
       if(color) return color.split(' ')[1]
-    },
+    }/* ,
     setShape () {
       return Math.floor(Math.random() * (5 - 1) + 1);
-    }
+    } */
   },
   props:['wine', 'colorDrop', 'openForm']
 }
