@@ -31,11 +31,9 @@
 
 body {
     background-color: var(--burgundy);
-    color: green;
+    /* color: green; */
 }
-body * {
-    color: green;
-}
+
 
 .bckgd-burg-lt {
     background-color: var(--burgundy-lt);
@@ -68,7 +66,6 @@ body * {
 .cream {
     color: var(--cream)
 }
-
 
 
 .cream_lt {

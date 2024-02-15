@@ -27,10 +27,16 @@ button{
 }
 /* Variante de btn small */
 .button.sml {
-    padding: 8px;
-    font-size: 0.8rem;
+    padding: 6px;
+    font-size: 0.6rem;
     max-width: max-content;
+    border: none;
+    background: var(--coral);
+    vertical-align: sub;
+    max-height: fit-content;
+    width: max-content;
 }
+
 /* Variante de btn Medium */
 .button.med {
     padding: 12px;
@@ -59,4 +65,20 @@ button{
     cursor: pointer;
     background-color: var(--coral);
     border: none;
+}
+
+.lien_sml {
+    padding: 6px;
+    font-size: 0.6rem;
+    max-width: max-content;
+    /* border: none; */
+    background: none;
+    vertical-align: sub;
+    max-height: fit-content;
+    width: max-content;
+    font-family: 'Oswald', sans-serif;
+}
+
+.lien_sml:hover {
+    color:var(--coral)
 }

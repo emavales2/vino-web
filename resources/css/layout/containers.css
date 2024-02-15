@@ -25,10 +25,22 @@
     flex-direction: row;
 }
 
+.row_els_apart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .column {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.column_index_list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .col_tight {
@@ -36,6 +48,16 @@
     flex-direction: column;
     gap: 3px;
     text-align: center;
+}
+
+.grid_square_horiz {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.grid_sq_insert {
+    aspect-ratio: 1/1;
 }
 
 
@@ -48,6 +70,10 @@
 /* To accomodate the nav */
 .pad_vert_general {
     padding: 40px 0;
+}
+
+.gap_20 {
+    gap: 20px;
 }
 
 /* .under_nav {
@@ -63,24 +89,25 @@
 }
 
 
-
-
 /* Tous les btn/link regrouper en bas de page */
 .btn-container{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: var(--small-space);
+    gap: 20px;
     margin-top: auto;
 }
 
 /* Page de Profil */
 .container_profil{
+    padding: 20px 50px;
+    align-content: center;
     display: flex;
     flex-direction: column;
+    gap: 20;
     color: var(--cream-lt);
     & dd{
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         color: var(--cream);
         padding-bottom: var(--med-space);
     }

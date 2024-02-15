@@ -15,7 +15,7 @@
         <div class="fiche_wine bckgd-coral">
             <main>
                 <div class="">
-                    <article>            
+                    <article class="flex-row">            
                         <figure>
                             <img :src="wine.photo" :alt="wine.name">
                         </figure>
@@ -32,7 +32,7 @@
                                 <p v-if="wine.user_id">custom wine</p>
                                 <p v-else>code saq: {{ wine.code_saq }}</p>
                                 <div>
-                                <p>Information</p>
+                                
                                 <ul>
                                     <li>{{ wine.type ? wine.type : 'n/a' }}</li>
                                     <!-- <li>country: {{ wine.country ? wine.country : 'n/a' }}</li> -->
@@ -48,6 +48,9 @@
                 <!-- ----- * FICHE NAV * ----- -->
                 <aside>
                     <Link class="button" :href="route('buylist.create', { wine: wine.id })">Add to my shopping list</Link>
+                </aside>
+                <aside>
+                    <Link class="button" :href="route('cellar-wine.create', { wine: wine.id })">Add to my wine collection</Link>
                 </aside>
             </main>
         </div>
