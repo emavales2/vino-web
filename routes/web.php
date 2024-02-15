@@ -4,6 +4,7 @@ use App\Http\Controllers\WineController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CellarController;
 use App\Http\Controllers\CellarHasWineController;
+use App\Http\Controllers\BuyListController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -36,15 +37,27 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/wines', [WineController::class, 'index']);
 });
 
+
 //Cellar
 //----------------------------------------------------
-Route::get('/cellars', [CellarController::class, 'index'])->name('cellar.index');
-Route::get('/cellar/{cellar}', [CellarController::class, 'show'])->name('cellar.show');
-Route::get('/cellar-create', [CellarController::class, 'create'])->name('cellar.create');
-Route::post('/cellar-create', [CellarController::class, 'store'])->name('cellar.store');
-Route::get('/cellar-edit/{cellar}', [CellarController::class, 'edit'])->name('cellar.edit');
-Route::put('/cellar-edit/{cellar}', [CellarController::class, 'update'])->name('cellar.update');
-Route::delete('/cellar/{cellar}', [CellarController::class, 'destroy'])->name('cellar.delete');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/cellars', [CellarController::class, 'index'])->name('cellar.index');
+    Route::get('/cellar/{cellar}', [CellarController::class, 'show'])->name('cellar.show');
+    Route::get('/cellar-create', [CellarController::class, 'create'])->name('cellar.create');
+    Route::post('/cellar-create', [CellarController::class, 'store'])->name('cellar.store');
+    Route::get('/cellar-edit/{cellar}', [CellarController::class, 'edit'])->name('cellar.edit');
+    Route::put('/cellar-edit/{cellar}', [CellarController::class, 'update'])->name('cellar.update');
+    Route::delete('/cellar/{cellar}', [CellarController::class, 'destroy'])->name('cellar.delete');
+});
+
+//BuyList
+//----------------------------------------------------
+Route::middleware(['auth'])->group(function () {
+    Route::get('/buy-list', [BuyListController::class, 'index'])->name('buylist.index');
+    Route::get('/buy-list-create/{wine}', [BuyListController::class, 'create'])->name('buylist.create');
+    Route::post('/buy-list', [BuyListController::class, 'store'])->name('buylist.store');
+    Route::delete('/buy-list/{wine}', [BuyListController::class, 'destroy'])->name('buylist.delete');
+});
 
 // CellarHasWine
 Route::middleware(['auth'])->group(function () {
@@ -57,7 +70,6 @@ Route::middleware(['auth'])->group(function () {
 
 Route::post('/cellarwine-store', [CellarHasWineController::class, 'store'])->name('cellarwine.store')->middleware('auth');
 
-
 // User
 //----------------------------------------------------
 Route::middleware(['auth'])->group(function () {
@@ -67,11 +79,13 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/users/edit', [UserController::class, 'update'])->name('profile.update');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.delete');
 });
+
 // Admin
 Route::middleware(['admin'])->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.adminDelete');
 });
+
 // Page d'erreur
 Route::get('/error', function () {
     return Inertia::render('ErrorView');

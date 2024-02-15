@@ -34,6 +34,9 @@
                             </ul>
                             </div>
                         </div>
+                        <div>
+                            <Link class="button" :href="route('buylist.create', { wine: wine.id })">Add to my shopping list</Link>
+                        </div>
                     </section>
                 </article>
             </main>
