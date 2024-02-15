@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CellarHasWine;
+use App\Models\BuyList;
 use App\Models\Wine;
 use App\Models\BuyList;
 use Illuminate\Http\Request;
@@ -96,7 +97,13 @@ class WineController extends Controller
      */
     public function show(Wine $wine)
     {
-        return Inertia::render('Wine/ShowView', compact('wine'));
+        $userId = Auth::id();
+
+        $exists = BuyList::where('user_id', $userId)
+        ->where('wine_id', $wine->id)
+        ->exists();
+        
+        return Inertia::render('Wine/ShowView', compact('wine','exists'));
     }
 
     /**

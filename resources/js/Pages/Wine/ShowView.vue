@@ -46,7 +46,7 @@
                 </div>
 
                 <!-- ----- * FICHE NAV * ----- -->
-                <aside>
+                <aside v-if="!exists">
                     <Link class="button" :href="route('buylist.create', { wine: wine.id })">Add to my shopping list</Link>
                 </aside>
             </main>
@@ -77,7 +77,10 @@ export default {
         //     Inertia.post(route('logout'));
         // }
     },
-    props: ['wine'],
+    props: {
+        wine: Object, 
+        exists: Boolean
+    }
 }
 </script>
 

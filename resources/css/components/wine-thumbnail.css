@@ -20,11 +20,14 @@
   justify-content: space-between;
 }
 .wine-thumbnail p{
-  text-align: left;
+  text-align: center;
   line-height: 1.2em;
   font-weight: 600;
   font-size: .8em;
   color: var(--burgundy);
+}
+.wine-thumbnail p:last-of-type{
+  font-size: 1.1em;
 }
 .wine-thumbnail div:first-of-type{
   height: 100px;
