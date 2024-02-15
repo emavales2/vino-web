@@ -47,9 +47,7 @@
                                         </li>
                                     </ul>
                                     <div v-if="collection.length > 3">
-                                        <button @click="showMoreWines">
-                                            Voir plus
-                                        </button>
+                                        <Link class="button sml" :href="route('collection')">See more</Link>
                                     </div>
                                 </li>
                                 <li v-else>

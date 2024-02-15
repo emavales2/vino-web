@@ -52,11 +52,11 @@ class WineController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'min:3 | max:100',
-            'type' => 'min:3 | max:45 | nullable',
-            'country' => 'min:3 | max:100 | nullable',
-            'size' => 'min:3 | max:45 | nullable',
-            'price' => 'numeric | gte:0 | nullable',
+            'name' => 'min:3|max:100',
+            'type' => 'min:3|max:45|nullable',
+            'country' => 'min:3|max:100|nullable',
+            'size' => 'min:3|max:45|nullable',
+            'price' => 'numeric|gte:0|nullable',
             'cellar_id' => Rule::exists('cellars', 'id')->where(function ($query) {
                 return $query->where('user_id', Auth::id());
             }),
@@ -136,6 +136,6 @@ class WineController extends Controller
      */
     public function destroy(Wine $wine)
     {
-        //
+        Wine::destroy($wine->id);
     }
 }
