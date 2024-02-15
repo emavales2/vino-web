@@ -1,6 +1,6 @@
 <template>
   <main>
-    <section>
+    <section class="cream">
       <h1>There is {{ count }} results for <strong>{{ search }}</strong></h1>
       <div v-if="results.length !== 0">
         <ul class="wine-list">
@@ -11,7 +11,8 @@
         </ul>
       </div>
       <div v-else>
-        <Link :href="route('wine.create')">You can always create your custom wine</Link>
+        <p>You can always create your custom wine !</p>
+        <Link class="button sml" :href="route('wine.create')">Create your wine</Link>
       </div>
     </section>
   </main>

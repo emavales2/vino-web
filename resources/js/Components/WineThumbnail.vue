@@ -4,7 +4,7 @@
       <ColorDrop :class="setColor(wine.type)"/> 
       <div>
         <img 
-        :src="wine.photo" 
+        :src="wine.photo"
         :alt="wine.name"
         loading="lazy" 
       >

@@ -129,6 +129,6 @@ class WineController extends Controller
      */
     public function destroy(Wine $wine)
     {
-        //
+        Wine::destroy($wine->id);
     }
 }
