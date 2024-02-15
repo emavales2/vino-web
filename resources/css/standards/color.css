@@ -31,6 +31,10 @@
 
 body {
     background-color: var(--burgundy);
+    color: green;
+}
+body * {
+    color: green;
 }
 
 .bckgd-burg-lt {

@@ -45,9 +45,9 @@
     padding: 50px;
 }
 
-/* To accomodate the top nav */
-.pad_top_general {
-    padding-top: 40px;
+/* To accomodate the nav */
+.pad_vert_general {
+    padding: 40px 0;
 }
 
 /* .under_nav {

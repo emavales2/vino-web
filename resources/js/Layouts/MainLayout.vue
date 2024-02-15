@@ -33,7 +33,9 @@
     </nav>        
   </header>
     
-  <slot/>
+  <div class="pad_vert_general">
+    <slot/>
+  </div>
 
   <footer>
     <nav class="bottom_nav">
