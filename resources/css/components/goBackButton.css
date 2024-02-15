@@ -3,9 +3,9 @@
   align-items: center;
   background: none;
   border: 2px solid;
-  border-color: #EDE7D1;
+  border-color: var(--cream);
   border-radius: 1000px;
-  color: #EDE7D1;
+  color: var(--cream);
   cursor: pointer;
   display: flex;
   font-family: 'Oswald';
