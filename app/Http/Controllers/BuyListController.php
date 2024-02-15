@@ -63,7 +63,6 @@ class BuyListController extends Controller
         ]);
 
         return redirect(route('buylist.index', $newBuyList->id))->withSuccess('The item has been added to your shopping list successfully');
-
     }
 
     /**

@@ -42,7 +42,6 @@ class CellarHasWineController extends Controller
                 $collection[$wine->id]['user_id'] = $wine->user_id;
             }
         }
-        
         return Inertia::render('CollectionView', compact('collection'));
     }
 

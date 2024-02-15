@@ -280,7 +280,6 @@ small {
     & h2 {
         max-width: 13ch;
         color: var(--coral);
-margin-top: 50px;
     }
 }
 
@@ -402,6 +401,12 @@ body {
 .flex-row {
     display: flex;
     flex-direction: row;
+}
+
+.row_els_apart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .column {
@@ -747,7 +752,7 @@ nav svg {
 .declancheur:not(:checked)::before {
     /* content: "MENU"; */
     /* font-family: var(--block-text); */
-    content: url(/images/lupe.svg?83787e9b76a4bb2deab696f2e1fb6c4d);
+    content: url(/images/lupe.svg?0c1de3d5621e7b76c4d418e20520b674);
     cursor: pointer;
     background: red;
 }
@@ -926,8 +931,8 @@ button{
 }
 /* Variante de btn small */
 .button.sml {
-    padding: 8px;
-    font-size: 0.8rem;
+    padding: 6px;
+    font-size: 0.6rem;
     max-width: -moz-max-content;
     max-width: max-content;
     border: none;
@@ -1320,19 +1325,6 @@ fieldset {
   bottom: 0;
   min-height: 150px;
   filter: drop-shadow(1px 2px 2px rgba(61, 49, 49, 0.572));
-}
-.main-default {
-    display: flex;
-    justify-content: flex-start;
-}
-.mt-50 {
-    margin-top: 50px;
-}
-.table-tr {
-    height: 50px;
-}
-.table-td {
-    text-align: center;
 }
 
 .radio{
