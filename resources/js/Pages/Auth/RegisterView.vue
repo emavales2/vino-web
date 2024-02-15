@@ -1,6 +1,5 @@
 <template>
     <Head title="Register" />
-    <div class="burg_bg">
         <main>
             <header> 
                 <h1 class="block-font txt-center coral">Sign Up</h1>

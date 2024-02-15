@@ -1,6 +1,6 @@
 <template>
     <div v-show="message">
-        <small>
+        <small  class="msg input_err">
             {{ message }}
         </small>
     </div>
