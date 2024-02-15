@@ -10,5 +10,17 @@
 }
 
 .fiche_wine_title {
-    
+    font-size: 1.4rem;
+    line-height: var(--med-line);
+}
+
+.fiche_wine_subtitle {
+    font-size: 1rem;
+    line-height: var(--text-line);
+}
+
+.country_line {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
