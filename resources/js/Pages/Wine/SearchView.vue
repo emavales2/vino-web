@@ -1,5 +1,5 @@
 <template>
-  <section class="pad_general">
+  <section>
     <h1>There is {{ count }} results for <strong>{{ search }}</strong></h1>
     <div v-if="results.length !== 0" class="column container_profil">
       <ul class="wine-list">

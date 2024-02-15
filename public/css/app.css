@@ -378,9 +378,6 @@ body {
     align-self: center;
 }
 
-
-
-
 /* ----- * CONTENT LAYOUT * ----- */
 
 /* Background color classes are in colors.css */
@@ -395,7 +392,11 @@ body {
     display: flex;
     flex-direction: row;
 }
-
+.row {
+    display: flex;
+    flex-flow: row;
+    gap: var(--small-space);
+}
 .column {
     display: flex;
     flex-direction: column;
@@ -420,8 +421,8 @@ body {
 .pad_top_general {
     padding-top: 40px;
 }
-.pad_general {
-    padding: 40px var(--small-space);
+.pad_vert_general {
+    padding: 40px 0;
 }
 /* .under_nav {
     display: flex;
@@ -598,6 +599,8 @@ Containers listed go from outside twds inside
 .wine-list{
   display: flex;
   flex-flow: wrap;
+  padding: var(--small-space);
+  padding-bottom: 30px;
   gap: var(--med-space);
 }
 
@@ -893,6 +896,7 @@ button{
 .button.sml {
     padding: 8px;
     font-size: 0.8rem;
+    border:2px solid var(--cream);
     max-width: -moz-max-content;
     max-width: max-content;
 }
@@ -1203,6 +1207,13 @@ fieldset {
 .wine-thumbnail{
   flex:0 0 100px;
   padding-top: 30px;
+  display: flex;
+  flex-flow: column;
+  gap: var(--small-space);
+}
+.wine-thumbnail>div{
+  display: flex;
+  gap: var(--small-space);
 }
 .wine-thumbnail a {
   background-color: var(--cream-lt);
@@ -1228,17 +1239,18 @@ fieldset {
   color: var(--burgundy);
 }
 
-.wine-thumbnail div:first-of-type{
+.wine-thumbnail a div:first-of-type{
   height: 100px;
   position: relative;
   display: flex;
   justify-content: center;
 }
-.wine-thumbnail div:last-of-type{
+.wine-thumbnail a div:last-of-type{
   height: 60px;
   display: flex;
   flex-flow: column;
 }
+
 .wine-thumbnail img{
   position: absolute;
   bottom: 0;

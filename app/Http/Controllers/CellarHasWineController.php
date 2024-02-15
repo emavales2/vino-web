@@ -142,8 +142,9 @@ class CellarHasWineController extends Controller
      * @param  \App\Models\CellarHasWine  $cellarHasWine
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CellarHasWine $cellarHasWine)
+    public function destroy(Cellar $cellar, Wine $wine)
     {
-        //
+        $cellarHasWine = new CellarHasWine;
+        $cellarHasWine::where('cellar_id', $cellar->id)->where('wine_id', $wine->id)->delete();
     }
 }

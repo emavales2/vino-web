@@ -28,10 +28,7 @@
       <MinusButton :color="'cream'" @click="removeOne(wine, quantity)"/>
       <PlusButton :color="'cream'" @click="addOne(wine, quantity)"/>
     </div>
-    <div v-if="quantity !== undefined">
-      <DeleteButton :color="'cream'" :deleteAction="deleteAction"/>
-    </div>
-
+    <button v-if="addOne" class="button sml" @click="deleteWine(wine)">remove wine</button>
   </li>
 </template>
 
@@ -62,6 +59,6 @@ export default {
       }
     },    
   },
-  props:['wine', 'colorDrop', 'openForm', 'quantity', 'deleteAction', 'addOne', 'removeOne']
+  props:['wine', 'colorDrop', 'openForm', 'quantity', 'deleteAction', 'addOne', 'removeOne', 'deleteWine']
 }
 </script>
