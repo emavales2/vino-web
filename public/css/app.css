@@ -349,8 +349,6 @@ body * {
     color: var(--coral)
 }
 
-
-
 .cream {
     color: var(--cream)
 }
@@ -509,7 +507,6 @@ Containers listed go from outside twds inside
         Border box 
         Can be modified by classes
 
-
 -- * FIN ONE PP * --
 
 -------------------------------
@@ -531,7 +528,6 @@ Containers listed go from outside twds inside
         takes up 100 width
         So far outermost header is for nav, at same level as main, and is set as fixed
         Can be modified by classes
-
 /*
 
 
@@ -718,7 +714,7 @@ nav svg {
 .declancheur:not(:checked)::before {
     /* content: "MENU"; */
     /* font-family: var(--block-text); */
-    content: url(/images/lupe.svg?83787e9b76a4bb2deab696f2e1fb6c4d);
+    content: url(/images/lupe.svg?0c1de3d5621e7b76c4d418e20520b674);
     cursor: pointer;
     background: red;
 }

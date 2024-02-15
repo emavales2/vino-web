@@ -1,8 +1,8 @@
 <template>
     <div class="card_cellar">
-      <h6>{{ cellar.name }}</h6>
+        <!-- Cliquer sur la boite pour entrer dans cellier -->
+        <Link :href="route('cellar.show', cellar.id)"><h6>{{ cellar.name }}</h6></Link>
     </div>
-    <!-- <Link :href="route('cellars.show', {cellar: cellar.id} )">Enter this cellar</Link>  -->
 </template>
 
 <script>
