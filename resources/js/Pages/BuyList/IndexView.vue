@@ -6,7 +6,7 @@
     <main>
       <div v-if="buylist.length !== 0">
         <ul class="wine-list">
-          <WineThumbnail v-for="(wine, i) in buylist" :key="i" :wine="wine" />
+          <WineThumbnail v-for="(wine, i) in buylist" :key="i" :wine="wine" :deleteAction="deleteOne"/>
         </ul>
       </div>
       <div v-else>
@@ -25,6 +25,19 @@ export default {
     WineThumbnail
   },
   props: ['buylist'],
+  methods: {
+    deleteOne(wine) {
+      Inertia.delete(route('buylist.delete', { wine: wine.id })
+      //, {
+        // onSuccess: () => {
+        //   this.$parent.openDialog(
+        //     `Wine ${wine.name} has been successfully removed from your shopping list.`
+        //   )
+        // }
+      //}
+      )
+    }
+  },
   layout: MainLayout
 }
 </script>

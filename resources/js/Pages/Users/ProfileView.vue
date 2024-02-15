@@ -16,7 +16,7 @@
         <div class="btn-container">
           <Link class="button" :href="route('profile.edit', user.id )">Edit your profile</Link>
           <Link class="button" :href="route('logout', user.id )">Logout</Link>
-          <GoBackButton />
+          <GoBackButton :color="'cream'"/>
         </div>
     </main>
   </div>

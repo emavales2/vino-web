@@ -470,6 +470,9 @@ body {
 
 }
 
+.pad_vert_general {
+    padding: 40px 0;
+}
 
 
 
@@ -961,12 +964,11 @@ button{
   flex-flow: row;
   gap: var(--vsmall-space);
 }
-.search-bar form>label{
-  flex-grow: 1;
+.search-bar svg{
+  width: 20px;
+  height: 20px;
 }
-.search-bar form>button{
-  
-}
+
 /* --------- * FORM * --------- */
 
 form {
@@ -976,7 +978,6 @@ form {
     margin: 0;
     /* padding: var(--med_space); */
 }
-
 /* Will grab "InputText.vue" (came with Laravel) as well as input in forms */
 form input {
     box-sizing: border-box;
@@ -1013,20 +1014,6 @@ fieldset {
   font-weight: 600;
   justify-self: flex-start;
 }
-.form-quantity [type=radio]{
-  display: none;
-}
-.form-quantity [type=radio] + label{
-  border: 2px solid;
-  border-color: transparent;
-  border-radius: 100px;
-  padding: var(--vsmall-space);
-  text-align: center;
-}
-.form-quantity [type=radio]:checked + label{
-  background-color: var(--cream);
-  border-color: var(--coral);
-}
 .form-quantity section:first-of-type{
   display: flex;
 
@@ -1057,6 +1044,19 @@ fieldset {
   filter: drop-shadow(1px 3px 2px rgba(24, 4, 4, 0.378));
 }
 
+.form-create-wine>div{
+  display: flex;
+  flex-flow: column;
+  gap: var(--small-space);
+}
+.form-create-wine>div>div{
+  display: flex;
+  flex-flow: row;
+  gap: var(--small-space);
+  >*{
+    flex: 1;
+  }
+}
 .modal{
   align-items: start;
   background-color: rgba(58, 29, 29, 0.58);
@@ -1134,6 +1134,20 @@ fieldset {
 .color-drop.rosé{
   background-color: var(--coral);
 }
+.quantity-drop{
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  min-height: 25px;
+  height: 25px;
+  border-radius: 100%;
+  text-align: center;
+  color: var(--cream);
+  font-size: .8em;
+  padding: var(--vsmall-space);
+}
 /* .card_cellar container -> a placer ailleurs ?? */
 .container_cards{   
     display: flex;
@@ -1203,6 +1217,11 @@ fieldset {
   height: 200px;
   filter: drop-shadow(1px 2px 2px rgba(14, 2, 2, 0.572));
 }
+.wine-thumbnail aside{
+  display: flex;
+  gap: var(--small-space);
+  justify-content: space-between;
+}
 .wine-thumbnail p{
   text-align: center;
   line-height: 1.2em;
@@ -1242,6 +1261,42 @@ fieldset {
 }
 .table-td {
     text-align: center;
+}
+
+.radio{
+  display: none;
+}
+.radio + label{
+  border: 2px solid;
+  border-color: transparent;
+  border-radius: 100px;
+  padding: var(--vsmall-space);
+  text-align: center;
+}
+.radio:checked + label{
+  background-color: var(--cream);
+  border-color: var(--coral);
+}
+
+/* --------- * MESSAGES AUTO-GENERÉS * --------- */
+
+.msg {
+    margin: 6px;
+    font-family: var(--text-font);
+    font-style: italic;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* --------- * ERROR * --------- */
+.input_err {
+    color: red;
+}
+
+/* --------- * STATUS (session; tjrs une class du v-if) * --------- */
+
+.status {
+    color: green;
 }
 
 

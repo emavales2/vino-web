@@ -1,0 +1,13 @@
+.form-create-wine>div{
+  display: flex;
+  flex-flow: column;
+  gap: var(--small-space);
+}
+.form-create-wine>div>div{
+  display: flex;
+  flex-flow: row;
+  gap: var(--small-space);
+  >*{
+    flex: 1;
+  }
+}
