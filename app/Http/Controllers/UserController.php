@@ -26,10 +26,8 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $cellars = $user->cellar()->limit(3)->get();
-        return Inertia::render('DashboardView', [
-            'user' => $user,
-            'cellars' => $cellars
-        ]);
+        $wines = $user->wine()->limit(3)->get();
+        return Inertia::render('DashboardView', compact('user', 'cellars', 'wines'));
     }
     /**
      * Display a listing of the resource. For the admin only.
@@ -38,9 +36,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Users/UsersView', [
-            'users' => User::all()
-        ]);
+        return Inertia::render('Users/UsersView', compact('users'));
     }
 
     /**
@@ -51,9 +47,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return Inertia::render('Users/ProfileView', [
-            'user' => $user
-        ]);
+        return Inertia::render('Users/ProfileView', compact('user'));
     }
 
     /**
@@ -64,9 +58,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return Inertia::render('Users/EditView', [
-            'user' => $user
-        ]);
+        return Inertia::render('Users/EditView', compact('user'));
     }
 
     /**
@@ -85,10 +77,7 @@ class UserController extends Controller
         ]);
         $user = User::find($request->id);
         $user->update($request->all());
-        // Je ne recois pas la variable success !!!????
-        return Inertia::render('Users/ProfileView', [
-            'user' => $user,
-        ]);
+        return Inertia::render('Users/ProfileView', compact('user'));
     }
 
     /**

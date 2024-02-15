@@ -1,63 +1,64 @@
 <template>
         <Head title="Edit Profile" />
-        <div class="under_nav card_mid">
-        <header class="index_title">
-                <h2>Edit Profile</h2>
-        </header>
-        <main>
-            <form @submit.prevent="submit">
-                <div>
-                    <label for="first_name" value="First name"></label>
-                    <input
-                            id="first_name"
-                            type="text"
-                            class="mt-1 block w-full"
-                            v-model="form.first_name"
-                            required
-                            autofocus
-                            autocomplete="first_name"
-                            placeholder="first name"
-                        />
-                    <InputError class="input_err" :message="form.errors.first_name" />
+        <div>
+            <header class="index_title">
+                    <h2>Edit Profile</h2>
+            </header>
+            <main>
+                <form @submit.prevent="submit">
+                    <div>
+                        <label for="first_name" value="First name"></label>
+                        <input
+                                id="first_name"
+                                type="text"
+                                class="mt-1 block w-full"
+                                v-model="form.first_name"
+                                required
+                                autofocus
+                                autocomplete="first_name"
+                                placeholder="first name"
+                            />
+                        <InputError class="input_err" :message="form.errors.first_name" />
+                    </div>
+                    <div>
+                        <label for="last_name" value="Last name"></label>
+                        <input
+                                id="last_name"
+                                type="text"
+                                class="mt-1 block w-full"
+                                v-model="form.last_name"
+                                required
+                                autofocus
+                                autocomplete="last_name"
+                                placeholder="last name"
+                            />
+                        <InputError class="input_err" :message="form.errors.last_name" />
+                    </div>
+                    <div>
+                        <label for="email" value="Email" class="invisible"></label>
+                        <input
+                                id="email"
+                                type="email"
+                                class="mt-1 block w-full"
+                                v-model="form.email"
+                                required
+                                autofocus
+                                autocomplete="username"
+                                placeholder="email address"
+                            />
+                        <InputError class="input_err" :message="form.errors.email" />
+                    </div>
+                    <input type="hidden" v-model="form.id" />
+                    <div>
+                        <button class="button success" type="submit">Save</button>
+                    </div>
+                </form>
+                <div class="btn-container">
+                    <button class="button warning" @click="toggleModal">Delete your account</button> 
+                    <GoBackButton 
+                    :color="cream"/>
                 </div>
-                <div>
-                    <label for="last_name" value="Last name"></label>
-                    <input
-                            id="last_name"
-                            type="text"
-                            class="mt-1 block w-full"
-                            v-model="form.last_name"
-                            required
-                            autofocus
-                            autocomplete="last_name"
-                            placeholder="last name"
-                        />
-                    <InputError class="input_err" :message="form.errors.last_name" />
-                </div>
-                <div>
-                    <label for="email" value="Email" class="invisible"></label>
-                    <input
-                            id="email"
-                            type="email"
-                            class="mt-1 block w-full"
-                            v-model="form.email"
-                            required
-                            autofocus
-                            autocomplete="username"
-                            placeholder="email address"
-                        />
-                    <InputError class="input_err" :message="form.errors.email" />
-                </div>
-                <input type="hidden" v-model="form.id" />
-                <div>
-                    <button class="button" type="submit">Save</button>
-                </div>
-            </form>
-            <div class="btn-container">
-                <button class="button" @click="toggleModal">Delete your account</button> 
-                <GoBackButton />
-            </div>
-        </main>
+            </main>
     </div>
         <ConfirmModal 
             v-show="openDeleteModal" 
@@ -71,7 +72,7 @@
 <script>
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
 import ConfirmModal from '@/Components/ConfirmModal.vue';
-import GoBackButton from '@/Components/GoBackButton.vue';
+import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue';
 import InputError from '@/Components/InputError.vue';
 import MainLayout from '@/Layouts/MainLayout.vue';
 

@@ -1,6 +1,6 @@
 <template>
   <Head title="Profile" />
-  <div class="under_nav card_mid">
+  <div class="under_nav">
     <header class="index_title">
         <h2>Profile</h2>
       </header>
@@ -25,7 +25,7 @@
 <script>
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import MainLayout from '@/Layouts/MainLayout.vue';
-import GoBackButton from '@/Components/GoBackButton.vue';
+import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue';
 
 export default {
   name: 'ProfileView',
