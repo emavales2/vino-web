@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Cellar;
+use App\Models\CellarHasWine;
+use App\Models\Wine;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -25,9 +27,28 @@ class UserController extends Controller
     public function dashboard(): Response
     {
         $user = Auth::user();
-        $cellars = $user->cellar()->limit(3)->get();
-        $wines = $user->wine()->limit(3)->get();
-        return Inertia::render('DashboardView', compact('user', 'cellars', 'wines'));
+        // Get the user's cellars and the wines in each cellar
+        $collection = [];
+        $cellars = $user->cellar();
+        foreach($cellars as $cellar) {
+            foreach($cellar->cellarHasWines as $wine) {
+                if(array_key_exists($wine->wine_id, $collection)) {
+                    $collection[$wine->wine_id]['quantities']['totalQty'] += $wine->quantity;
+                    $collection[$wine->wine_id]['quantities']['perCellar'][] = ['cellar' => $wine->cellar, 'qty'=>$wine->quantity];
+                } else {
+                    $collection[$wine->wine_id] = [
+                        'wine'=> $wine->wine,
+                        'quantities' => [
+                            'perCellar' => [['cellar' => $wine->cellar]],                        
+                            ]
+                    ];
+                }
+            }
+        }
+        $collection = array_slice($collection, 0, 4);
+        // Get the user's cellars (4 max)
+        $cellars = $cellars->limit(4)->get();
+        return Inertia::render('DashboardView', compact('user', 'cellars', 'collection'));
     }
     /**
      * Display a listing of the resource. For the admin only.
