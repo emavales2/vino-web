@@ -54,7 +54,7 @@ class CellarController extends Controller
             'user_id' => $userId
         ]);
 
-        return redirect(route('cellar.show', $newCellar->id))->withSuccess('Cellar successfully created');
+        return redirect(route('cellar.index', $newCellar->id))->withSuccess('Cellar successfully created');
     }
 
     /**

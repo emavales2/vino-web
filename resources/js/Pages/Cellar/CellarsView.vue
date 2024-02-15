@@ -1,31 +1,50 @@
 <template>
   <Head title="Cellars" />
-  <div>
-    <h1>List of Cellars</h1>
+  <header class="index_title">
+    <h2>List of Cellars</h2>
+  </header>
+  <main class="main-default">
     <div>
-      <Link :href="route('cellar.create')">Add</Link>
+      <Link class="button sml" :href="route('cellar.create')">Add Cellar</Link>
     </div>
-    <ul v-if="cellars.length > 0">
-      <li v-for="cellar in cellars" :key="cellar.id">
-        <Link :href="route('cellar.show', cellar.id)">{{ cellar.name }}</Link>
-      </li>
-    </ul>
+    <table v-if="cellars.length > 0">
+      <tr class="bckgd-coral">
+        <th>Name</th>
+        <!-- <th>Created</th> -->
+        <th></th>
+      </tr>
+      <tr v-for="cellar in cellars" :key="cellar.id" class="cream table-tr">
+        <td>{{ cellar.name }}</td>
+        <!-- <td class="table-td">{{ formatCreatedAt(cellar.created_at) }}</td> -->
+        <td class="table-td">
+          <Link class="button sml" :href="route('cellar.show', cellar.id)">Detail</Link>
+        </td>
+      </tr>
+    </table>
     <p v-else>There is no information available.</p>
-  </div>
+  </main>
 </template>
   
 <script>
-  import { Head } from '@inertiajs/inertia-vue3';
-  import { Link } from '@inertiajs/inertia-vue3';
-  export default {
-    name: 'CellarsView',
-    props: {
-      cellars: Array,
-    },
-    components: {
-      Head,
-      Link
+import { Head } from '@inertiajs/inertia-vue3';
+import { Link } from '@inertiajs/inertia-vue3';
+import MainLayout from '@/Layouts/MainLayout.vue';
+export default {
+  name: 'CellarsView',
+  props: {
+    cellars: Array,
+  },
+  components: {
+    Head,
+    Link
+  },
+  layout: MainLayout,
+  methods: {
+    formatCreatedAt(date) {
+      const formattedDate = new Date(date).toLocaleDateString();
+      return formattedDate;
     }
   }
+}
 </script>
   //keep
