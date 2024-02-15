@@ -5,7 +5,7 @@
     <ul class="flex flex-wrap g-3">
       <WineThumbnail v-for="(wine, i) in collection" 
         :key="i" 
-        :wine="wine"
+        :wine="wine.wine"
         :cellar="cellar"
       />
     </ul>

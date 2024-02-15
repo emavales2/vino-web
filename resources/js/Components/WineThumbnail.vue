@@ -45,15 +45,9 @@ export default {
       if(color) return color.split(' ')[1]
     },
     deleteOne(wine) {
-      Inertia.delete(route('buylist.delete', { wine: wine.id })
-      //, {
-        // onSuccess: () => {
-        //   this.$parent.openDialog(
-        //     `Wine ${wine.name} has been successfully removed from your shopping list.`
-        //   )
-        // }
-      //}
-      )
+      if (confirm('Are you sure you want to delete this wine from your shopping list?')) {
+        Inertia.delete(route('buylist.delete', { wine: wine.id }))
+      }
     },    
   },
   props:['wine', 'colorDrop', 'openForm']
