@@ -382,7 +382,6 @@ small {
 
     --coral: #F95148;
 
-    
     /* ----- NEUTRALS ----- */
 
     --cream: #F2D9AF;
@@ -784,6 +783,14 @@ input[name="menu"]:checked + label .menu_cachee {
     max-width: -moz-max-content;
     max-width: max-content;
 }
+/* Variante de btn Medium */
+.button.med {
+    padding: 12px;
+    font-size: 1rem;
+    max-width: -moz-max-content;
+    max-width: max-content;
+}
+
 .button, .button a {
     line-height: 1rem;
     font-weight: 400;

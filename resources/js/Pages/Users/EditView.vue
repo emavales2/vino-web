@@ -1,6 +1,6 @@
 <template>
         <Head title="Edit Profile" />
-        <div class="under_nav card_mid">
+        <div class="card_mid">
         <header class="index_title">
                 <h2>Edit Profile</h2>
         </header>
@@ -50,11 +50,11 @@
                 </div>
                 <input type="hidden" v-model="form.id" />
                 <div>
-                    <button class="button" type="submit">Save</button>
+                    <button class="button success" type="submit">Save</button>
                 </div>
             </form>
             <div class="btn-container">
-                <button class="button" @click="toggleModal">Delete your account</button> 
+                <button class="button warning" @click="toggleModal">Delete your account</button> 
                 <GoBackButton />
             </div>
         </main>
