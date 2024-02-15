@@ -24489,31 +24489,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
 /* harmony import */ var _ButtonsIcons_ColorDrop_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ButtonsIcons/ColorDrop.vue */ "./resources/js/Components/ButtonsIcons/ColorDrop.vue");
 /* harmony import */ var _ButtonsIcons_DeleteButton_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ButtonsIcons/DeleteButton.vue */ "./resources/js/Components/ButtonsIcons/DeleteButton.vue");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _ButtonsIcons_PlusButton_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ButtonsIcons/PlusButton.vue */ "./resources/js/Components/ButtonsIcons/PlusButton.vue");
+/* harmony import */ var _ButtonsIcons_MinusButton_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ButtonsIcons/MinusButton.vue */ "./resources/js/Components/ButtonsIcons/MinusButton.vue");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : String(i); }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
+
 
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'WineThumbnail',
-  components: {
+  components: _defineProperty(_defineProperty({
     Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Link,
     ColorDrop: _ButtonsIcons_ColorDrop_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    DeleteButton: _ButtonsIcons_DeleteButton_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
-  },
+    DeleteButton: _ButtonsIcons_DeleteButton_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    MinusButton: _ButtonsIcons_MinusButton_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }, "MinusButton", _ButtonsIcons_MinusButton_vue__WEBPACK_IMPORTED_MODULE_4__["default"]), "PlusButton", _ButtonsIcons_PlusButton_vue__WEBPACK_IMPORTED_MODULE_3__["default"]),
   methods: {
     setColor: function setColor(color) {
       if (color) return color.split(' ')[1];
     },
     deleteOne: function deleteOne(wine) {
       if (confirm('Are you sure you want to delete this wine from your shopping list?')) {
-        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__.Inertia["delete"](route('buylist.delete', {
+        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_5__.Inertia["delete"](route('buylist.delete', {
           wine: wine.id
         }));
       }
     }
   },
-  props: ['wine', 'colorDrop', 'openForm', 'quantity', 'deleteAction']
+  props: ['wine', 'colorDrop', 'openForm', 'quantity', 'deleteAction', 'addOne', 'removeOne']
 });
 
 /***/ }),
@@ -25050,7 +25059,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
-/* harmony import */ var _Components_WineThumbnail_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/WineThumbnail.vue */ "./resources/js/Components/WineThumbnail.vue");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _Components_WineThumbnail_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/WineThumbnail.vue */ "./resources/js/Components/WineThumbnail.vue");
+
 
 
 
@@ -25058,7 +25069,7 @@ __webpack_require__.r(__webpack_exports__);
   name: 'ShowView',
   components: {
     Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Head,
-    WineThumbnail: _Components_WineThumbnail_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    WineThumbnail: _Components_WineThumbnail_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Link
   },
   methods: {
@@ -25068,6 +25079,18 @@ __webpack_require__.r(__webpack_exports__);
           cellar: this.cellar
         }));
       }
+    },
+    removeOne: function removeOne(wine, quantity) {
+      if (quantity > 0) _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.get(route('cellarwine.remove', {
+        cellar: this.cellar,
+        wine: wine
+      }));
+    },
+    addOne: function addOne(wine) {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.get(route('cellarwine.add', {
+        cellar: this.cellar,
+        wine: wine
+      }));
     }
   },
   props: ['cellar', 'collection']
@@ -25964,9 +25987,14 @@ var _hoisted_5 = {
 var _hoisted_6 = {
   key: 0
 };
+var _hoisted_7 = {
+  key: 1
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_ColorDrop = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ColorDrop");
   var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
+  var _component_MinusButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("MinusButton");
+  var _component_PlusButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("PlusButton");
   var _component_DeleteButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("DeleteButton");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
     href: _ctx.route('wine.show', $props.wine.id)
@@ -25981,7 +26009,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8 /* PROPS */, _hoisted_3)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [$props.wine.name.length > 30 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.name.replaceAll('/', ' ').slice(0, 30)) + "... ", 1 /* TEXT */)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.name), 1 /* TEXT */))])];
     }),
     _: 1 /* STABLE */
-  }, 8 /* PROPS */, ["href"]), $props.quantity !== undefined ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DeleteButton, {
+  }, 8 /* PROPS */, ["href"]), $props.addOne ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_MinusButton, {
+    color: 'cream',
+    onClick: _cache[0] || (_cache[0] = function ($event) {
+      return $props.removeOne($props.wine, $props.quantity);
+    })
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_PlusButton, {
+    color: 'cream',
+    onClick: _cache[1] || (_cache[1] = function ($event) {
+      return $props.addOne($props.wine, $props.quantity);
+    })
+  })])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.quantity !== undefined ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DeleteButton, {
     color: 'cream',
     deleteAction: $props.deleteAction
   }, null, 8 /* PROPS */, ["deleteAction"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
@@ -26147,7 +26185,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     _: 1 /* STABLE */
   })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("figure", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-    href: "/wine-collection"
+    href: "/collection"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_9];
@@ -26793,8 +26831,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       key: i,
       wine: wine.wine,
       cellar: $props.cellar,
-      quantity: wine.qty
-    }, null, 8 /* PROPS */, ["wine", "cellar", "quantity"]);
+      quantity: wine.qty,
+      addOne: $options.addOne,
+      removeOne: $options.removeOne
+    }, null, 8 /* PROPS */, ["wine", "cellar", "quantity", "addOne", "removeOne"]);
   }), 128 /* KEYED_FRAGMENT */))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
     href: _ctx.route('cellar.edit', $props.cellar.id)
   }, {
@@ -27441,7 +27481,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "card_mid under_nav"
+  "class": "pad_general"
 };
 var _hoisted_2 = {
   key: 0,

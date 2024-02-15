@@ -49,7 +49,9 @@
 .pad_top_general {
     padding-top: 40px;
 }
-
+.pad_general {
+    padding: 40px var(--small-space);
+}
 /* .under_nav {
     display: flex;
     flex-direction: column;

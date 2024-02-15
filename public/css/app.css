@@ -420,7 +420,9 @@ body {
 .pad_top_general {
     padding-top: 40px;
 }
-
+.pad_general {
+    padding: 40px var(--small-space);
+}
 /* .under_nav {
     display: flex;
     flex-direction: column;
@@ -1225,9 +1227,7 @@ fieldset {
   font-size: .8em;
   color: var(--burgundy);
 }
-.wine-thumbnail p:last-of-type{
-  font-size: 1.1em;
-}
+
 .wine-thumbnail div:first-of-type{
   height: 100px;
   position: relative;

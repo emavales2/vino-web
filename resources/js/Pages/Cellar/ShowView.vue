@@ -8,6 +8,8 @@
         :wine="wine.wine"
         :cellar="cellar"
         :quantity="wine.qty"
+        :addOne="addOne"
+        :removeOne="removeOne"
       />
     </ul>
     <div>
@@ -20,6 +22,7 @@
 <script>
 import { Head } from '@inertiajs/inertia-vue3';
 import { Link } from '@inertiajs/inertia-vue3';
+import { Inertia } from '@inertiajs/inertia';
 import WineThumbnail from '@/Components/WineThumbnail.vue';
 
 export default {
@@ -35,6 +38,13 @@ export default {
         this.$inertia.delete(route('cellar.delete', { cellar: this.cellar }));
       }
     },
+    removeOne (wine, quantity) {
+      if(quantity > 0)
+        Inertia.get(route('cellarwine.remove', {cellar:this.cellar, wine:wine} ))
+    },
+    addOne (wine) {
+      Inertia.get(route('cellarwine.add', {cellar:this.cellar, wine:wine} ))
+    }
   },
   props:['cellar', 'collection']
 }

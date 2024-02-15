@@ -26,9 +26,7 @@
   font-size: .8em;
   color: var(--burgundy);
 }
-.wine-thumbnail p:last-of-type{
-  font-size: 1.1em;
-}
+
 .wine-thumbnail div:first-of-type{
   height: 100px;
   position: relative;

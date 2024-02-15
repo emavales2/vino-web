@@ -24,6 +24,10 @@
 
       </div>
     </Link>
+    <div v-if="addOne">
+      <MinusButton :color="'cream'" @click="removeOne(wine, quantity)"/>
+      <PlusButton :color="'cream'" @click="addOne(wine, quantity)"/>
+    </div>
     <div v-if="quantity !== undefined">
       <DeleteButton :color="'cream'" :deleteAction="deleteAction"/>
     </div>
@@ -35,14 +39,19 @@
 import { Link } from '@inertiajs/inertia-vue3'
 import ColorDrop from './ButtonsIcons/ColorDrop.vue'
 import DeleteButton from './ButtonsIcons/DeleteButton.vue'
+import PlusButton from './ButtonsIcons/PlusButton.vue'
+import MinusButton from './ButtonsIcons/MinusButton.vue'
 import { Inertia } from '@inertiajs/inertia';
 export default {
   name: 'WineThumbnail',
   components: {
     Link,
     ColorDrop,
-    DeleteButton
-  },
+    DeleteButton,
+    MinusButton,
+    MinusButton,
+    PlusButton
+},
   methods: {
     setColor (color) {
       if(color) return color.split(' ')[1]
@@ -53,6 +62,6 @@ export default {
       }
     },    
   },
-  props:['wine', 'colorDrop', 'openForm', 'quantity', 'deleteAction']
+  props:['wine', 'colorDrop', 'openForm', 'quantity', 'deleteAction', 'addOne', 'removeOne']
 }
 </script>
