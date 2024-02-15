@@ -113,7 +113,8 @@ class WineController extends Controller
      */
     public function edit(Wine $wine)
     {
-        //
+        $cellars = Auth::user()->cellar;
+        return Inertia::render('Wine/EditView', compact('wine', 'cellars'));
     }
 
     /**
