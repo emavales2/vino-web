@@ -33,6 +33,7 @@
         />
 </template>
 <script>
+import { Inertia } from '@inertiajs/inertia';
 import { Head, Link } from "@inertiajs/inertia-vue3";
 import ConfirmModal from "@/Components/ConfirmModal.vue";
 import DeleteButton from "@/Components/ButtonsIcons/DeleteButton.vue";
@@ -62,7 +63,7 @@ export default {
             this.openDeleteModal = !this.openDeleteModal;
         },
         delete() {
-          this.$inertia.delete(route("wine.delete", this.wineId));
+          Inertia.delete(route("wine.delete", this.wineId));
           this.openDeleteModal = false
         },
     },
