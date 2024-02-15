@@ -26,9 +26,11 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $cellars = $user->cellar()->limit(3)->get();
+        $wines = $user->wine()->limit(3)->get();
         return Inertia::render('DashboardView', [
             'user' => $user,
-            'cellars' => $cellars
+            'cellars' => $cellars,
+            'wines' => $wines
         ]);
     }
     /**
