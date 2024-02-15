@@ -71,7 +71,7 @@
 <script>
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
 import ConfirmModal from '@/Components/ConfirmModal.vue';
-import GoBackButton from '@/Components/GoBackButton.vue';
+import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue';
 import InputError from '@/Components/InputError.vue';
 import MainLayout from '@/Layouts/MainLayout.vue';
 

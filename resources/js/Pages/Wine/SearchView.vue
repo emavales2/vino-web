@@ -1,20 +1,18 @@
 <template>
-  <main>
-    <section>
-      <h1>There is {{ count }} results for <strong>{{ search }}</strong></h1>
-      <div v-if="results.length !== 0">
-        <ul class="wine-list">
-          <WineThumbnail v-for="(wine, i) in results"
-            :key="i"
-            :wine="wine"
-          />
-        </ul>
-      </div>
-      <div v-else>
-        <Link :href="route('wine.create')">You can always create your custom wine</Link>
-      </div>
-    </section>
-  </main>
+  <section class="card_mid under_nav">
+    <h1>There is {{ count }} results for <strong>{{ search }}</strong></h1>
+    <div v-if="results.length !== 0" class="column container_profil">
+      <ul class="wine-list">
+        <WineThumbnail v-for="(wine, i) in results"
+          :key="i"
+          :wine="wine"
+        />
+      </ul>
+    </div>
+    <div v-else>
+      <Link :href="route('wine.create')">You can always create your custom wine</Link>
+    </div>
+  </section>
 </template>
 
 <script>

@@ -16,7 +16,7 @@
         <div class="btn-container">
           <Link class="button" :href="route('profile.edit', user.id )">Edit your profile</Link>
           <Link class="button" :href="route('logout', user.id )">Logout</Link>
-          <GoBackButton />
+          <GoBackButton :color="'cream'"/>
         </div>
     </main>
   </div>
@@ -25,7 +25,7 @@
 <script>
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import MainLayout from '@/Layouts/MainLayout.vue';
-import GoBackButton from '@/Components/GoBackButton.vue';
+import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue';
 
 export default {
   name: 'ProfileView',

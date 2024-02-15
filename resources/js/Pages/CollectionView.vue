@@ -1,5 +1,4 @@
 <template>
-  <main>
     <section>
       <h1>Your Wines</h1>
       <div v-if="collection.length !== 0">
@@ -12,7 +11,6 @@
         </ul>
       </div>
     </section>
-  </main>
 </template>
 <script> 
 import WineThumbnail from '@/Components/WineThumbnail.vue';
