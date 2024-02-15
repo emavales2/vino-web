@@ -1,9 +1,6 @@
 
-@import url(./components/wine-thumbnail.css);
-@import url(./components/goBackButton.css);
 
-/* ---------- * * VARIABLES * * ---------- */
-
+/* ---------- * * GÉNÉRALE * * ---------- */
 
 @import url(general.css);
 
@@ -13,38 +10,37 @@
 @import url(standards/typography.css);
 @import url(standards/color.css);
 @import url(standards/rhythm.css);
-@import url(standards/containers.css);
 
+
+/* ---------- * * MISE EN PLACE * * ---------- */
+
+@import url(layout/containers.css);
+@import url(layout/wine-list.css);
 
 /* ---------- * * DANS SECTION NAVIGATION * * ---------- */
 
-/* @import url(navigation/nav_wrapper.css);
-@import url(navigation/nav_top_row.css);
-@import url(navigation/nav_bottom_row.css); */
 @import url(navigation/nav_general.css);
 @import url(navigation/declancheur.css);
 @import url(navigation/nav_mobile.css);
 
 
-/* ---------- * * COMPONENTS RÉUTILISABLES * * ---------- */
+/* ---------- * * COMPOSANTS RÉUTILISABLES * * ---------- */
 
-/* @import url(components/menu_deroulant.css);
-@import url(components/fiche_stamp.css);
-@import url(components/logo.css); */
 @import url(components/buttons.css);
+@import url(./components/goBackButton.css);
+@import url(components/search-button.css);
+@import url(components/search-bar.css);
+
 @import url(components/form.css);
-@import url(components/containers.css);
+@import url(components/form-quantity.css);
+
 @import url(floaters/modal.css);
 @import url(floaters/dialog.css);
 @import url(floaters/transition.css);
-@import url(components/search-button.css);
-@import url(components/search-bar.css);
-@import url(layout/wine-list.css);
-@import url(components/color-drop.css);
-@import url(components/form-quantity.css);
 
+@import url(components/color-drop.css);
 
 @import url(components/cards.css);
-
 @import url(components/fiche_wine.css);
+@import url(./components/wine-thumbnail.css);
 

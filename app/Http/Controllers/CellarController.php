@@ -69,12 +69,10 @@ class CellarController extends Controller
         if ($cellar->user_id != $userId) {
             return redirect(route('cellar.index'))->withErrors("You do not have authorization to access this cellar");
         }
-        
         $collection = [];
         foreach($cellar->cellarHasWines as $wine) {
             $collection[] = ['wine' => $wine->wine, 'qty' => $wine->quantity];
         }
-
         return Inertia::render('Cellar/ShowView', compact('cellar','collection'));
     }
 

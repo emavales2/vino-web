@@ -25,6 +25,10 @@ form input:focus-visible {
     outline: var(--coral) auto 1px;
 }
 
+input:-internal-autofill-selected {
+    background: green !important;
+}
+
 fieldset {
     border: none;
     padding: 0;

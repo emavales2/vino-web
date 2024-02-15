@@ -1,6 +1,6 @@
 <template>
   <Head title="Profile" />
-  <div class="under_nav card_mid">
+  <div class="under_nav">
     <header class="index_title">
         <h2>Profile</h2>
       </header>

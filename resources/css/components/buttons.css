@@ -31,6 +31,13 @@ button{
     font-size: 0.8rem;
     max-width: max-content;
 }
+/* Variante de btn Medium */
+.button.med {
+    padding: 12px;
+    font-size: 1rem;
+    max-width: max-content;
+}
+
 .button, .button a {
     line-height: 1rem;
     font-weight: 400;
