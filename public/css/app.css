@@ -279,7 +279,7 @@ small {
     & h2 {
         max-width: 13ch;
         color: var(--coral);
-        margin-top: 50px;
+margin-top: 50px;
     }
 }
 
