@@ -34,8 +34,10 @@ export default{
   },
   methods: {
     submit () {
-      this.form.get(route('wine.search'))
-      this.searchAction();
+      this.form.get(route('wine.search'), {
+        onSuccess: () => this.searchAction()
+      })
+      
     }
   },
   props: ['searchAction']

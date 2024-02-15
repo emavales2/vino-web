@@ -3,6 +3,7 @@
     <section class="cream">
       <h1>There is {{ count }} results for <strong>{{ search }}</strong></h1>
       <div v-if="results.length !== 0">
+        <p v-if="count > 1000">there is too many search results, here is the first 1000</p>
         <ul class="wine-list">
           <WineThumbnail v-for="(wine, i) in results"
             :key="i"

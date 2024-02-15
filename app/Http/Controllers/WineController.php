@@ -36,9 +36,12 @@ class WineController extends Controller
 
     public function searchResult(Request $request)
     {
+        $request->validate([
+            'search' => 'min:2'
+        ]);
         $search = $request->search;
         $count = Wine::like('name', $search)->count();
-        $results = Wine::like('name', $search)->get();
+        $results = Wine::like('name', $search)->limit(1000)->get();
         $cellars = Auth::user()->cellar;
         return Inertia::render('Wine/SearchView', compact('results', 'search', 'cellars', 'count'));
     }

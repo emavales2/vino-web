@@ -29,6 +29,7 @@ button{
 .button.sml {
     padding: 8px;
     font-size: 0.8rem;
+    border:2px solid var(--cream);
     max-width: max-content;
 }
 /* Variante de btn Medium */
