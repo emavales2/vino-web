@@ -15,25 +15,46 @@
         </p>
         <p v-else>
           {{ wine.name }}
+        </p>        
+        <p v-if="wine.quantity !== undefined">
+          {{ wine.quantity }} 
         </p>
       </div>
     </Link>
+    <div v-if="wine.quantity !== undefined">
+      <DeleteButton :color="'cream'" :deleteAction="() => deleteOne(wine)"/>
+    </div>
+
   </li>
 </template>
 
 <script>
 import { Link } from '@inertiajs/inertia-vue3'
 import ColorDrop from './ButtonsIcons/ColorDrop.vue'
+import DeleteButton from './ButtonsIcons/DeleteButton.vue'
+import { Inertia } from '@inertiajs/inertia';
 export default {
   name: 'WineThumbnail',
   components: {
     Link,
-    ColorDrop
+    ColorDrop,
+    DeleteButton
   },
   methods: {
     setColor (color) {
       if(color) return color.split(' ')[1]
-    }
+    },
+    deleteOne(wine) {
+      Inertia.delete(route('buylist.delete', { wine: wine.id })
+      //, {
+        // onSuccess: () => {
+        //   this.$parent.openDialog(
+        //     `Wine ${wine.name} has been successfully removed from your shopping list.`
+        //   )
+        // }
+      //}
+      )
+    },    
   },
   props:['wine', 'colorDrop', 'openForm']
 }
