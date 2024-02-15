@@ -1,11 +1,9 @@
 <template>
-    <div id="confirmModal" class="modal">
-            <div class="modal-content">
-                <p>{{ actionMessage }}</p>
-                <div>
-                    <button @click="YesAction">Yes, {{ action }}</button>
-                    <button @click="closeModal">Cancel</button>
-                </div>
+    <div id="confirmModal" class="confirm">
+            <p>{{ actionMessage }}</p>
+            <div>
+                <button class="button sml" @click="YesAction">Yes, {{ action }}</button>
+                <button class="button sml" @click="closeModal">Cancel</button>
             </div>
         </div>
 </template>
@@ -15,7 +13,6 @@ export default {
     name: 'ConfirmModal',
     methods: {
         closeModal() {
-           /*  this.$el */
             document.getElementById('confirmModal').style.display = 'none';
         },
     },

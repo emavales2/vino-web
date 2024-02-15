@@ -1,12 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap);
-*{
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-}
-body{
-  background-color: #2B0303;
-}
+@import url(https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
+
 
 .wine-thumbnail{
   flex:0 0 100px;
@@ -53,9 +48,9 @@ body{
   align-items: center;
   background: none;
   border: 2px solid;
-  border-color: #EDE7D1;
+  border-color: var(--cream);
   border-radius: 1000px;
-  color: #EDE7D1;
+  color: var(--cream);
   cursor: pointer;
   display: flex;
   font-family: 'Oswald';
@@ -69,20 +64,16 @@ body{
 
 /* ------- GENÉRALE ------- */
 
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-}
-
-html,
-body,
-main,
-header,
-footer,
-[id=app] {
+* {
+    margin:0;
+    padding:0;
     box-sizing: border-box;
+  }
+
+html, body, [id=app], main {
+    /* width: 100%; */
+    height: 100%;
+    max-width: 100vw;
 }
 
 a {
@@ -111,6 +102,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    max-width: 100vw;
 }
 
 figure {
@@ -159,6 +151,10 @@ body, [id=app] {
     justify-content: center;
     align-items: center;
 }
+
+/* body {
+    max-width: 100vw;
+} */
 
 body > * {
     width: 100%;
@@ -218,6 +214,10 @@ main {
     position: absolute;
 }
 
+.card_mid {
+    margin-top: 3rem;  
+}
+
 .card_low {
     margin-top: 6rem;  
 }
@@ -226,8 +226,8 @@ main {
     border-start-end-radius: 40px; 
 }
 
-/* .index_title {
-    margin: 25px 36px;
+.index_title {
+    padding: 25px 36px; 
     font-weight: 500;
     & h2{
         max-width: 13ch;
@@ -252,8 +252,32 @@ main {
 
 
 
-:root {
 
+/* Update the navigation styles */
+/* .bottom_nav {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    padding: 10px;
+    max-width: 100%;
+}
+
+.bottom_nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    max-width: calc(25% - 20px); 
+}
+
+.bottom_nav svg {
+    max-width: 100%;
+    max-height: 100%;
+    padding: 5px;
+    fill: var(--burgundy);
+} */
+
+:root {
     --xxtall-line: 3.3rem;
     --xtall-line: 3rem;
     --tall-line: 2.15rem;
@@ -313,7 +337,7 @@ h1 {
 h2 {
     font-size: 2.488rem;
     line-height: var(--xtall-line);
-    letter-spacing: var(--large-ltr-spacing);
+    letter-spacing: var(--med-ltr-spacing);
 }
 
 h2.block-font {
@@ -388,12 +412,35 @@ small {
     /* ---------- * * APPLICATION * * ---------- */
 
     --text: var(--med-gray);
+
     
 }
 
 
 
+body {
+    background-color: var(--burgundy);
+}
 
+.bckgd-burg-lt {
+    background-color: var(--burgundy-lt);
+}
+
+.bckgd-cream {
+    background-color: var(--cream);
+}
+
+.bckgd-cream-lt {
+    background-color: var(--cream-lt);
+}
+
+.bckgd-coral {
+    background-color: var(--coral);
+}
+
+.bckgd-white {
+    background-color: white;
+}
 
 .burg {
     color: var(--burgundy);
@@ -452,20 +499,36 @@ small {
     background-color: var(--cream-lt);
 }
 
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
 
-/* EXPLANATIONS */ 
+
+/* ----- * EXPLANATIONS * ----- */ 
+
 /* 
+Containers listed go from outside twds inside
 
--- ONE PP --
-body, [id=app]
-Containers that occupy the whole space, vert and horizontal
-NO: margin/padding, color
-height and width 100%
-border box 
+---- ONE PER PAGE ----
+<body>, [id=app]
+    Containers that occupy the whole space, vert and horizontal
+    --- * NO: inherent margin / padding / color * ---
+    height and width 100%
+    border box 
 
-bckg:  same as above, contains decor elements taht will be flat,
+.bckgd 
+    Contains decor elements (<main> + contents will float on top of bckgd)
+    --- * NO: inherent margin / padding / color * ---
+    height and width 100%
+    border box  
 
-main: has margin for safe area, and padding for placement of next element
+<main>
+    Has margin for safe area
+    --- * NO: inherent padding / color * ---
+    height and width 100%
+    border box 
+
 
 -- FIN ONE PP --
 -------------------------------
@@ -781,7 +844,13 @@ button{
     background: none;
     color: var(--cream);
 }
-
+/* Variante de btn small */
+.button.sml {
+    padding: 8px;
+    font-size: 0.8rem;
+    max-width: -moz-max-content;
+    max-width: max-content;
+}
 .button, .button a {
     line-height: 1rem;
     font-weight: 400;
@@ -804,7 +873,6 @@ button{
     background-color: var(--coral);
     border: none;
 }
-
 /* button {
     box-sizing: border-box;
     font-family: 'Oswald', sans-serif;
@@ -895,6 +963,32 @@ fieldset {
     border: none;
     padding: 0;
 }
+/* Tous les btn/link regrouper en bas de page */
+.btn-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--small-space);
+    margin-top: auto;
+}
+
+/* Page de Profil */
+.container_profil{
+    display: flex;
+    flex-direction: column;
+    color: var(--cream-lt);
+    & dd{
+        font-size: 1.4rem;
+        color: var(--cream);
+        padding-bottom: var(--med-space);
+    }
+    & dt{
+        color: var(--coral);
+        font-size: 1.12rem;
+        padding-bottom: var(--vsmall-space);
+    }
+
+}
 .modal{
   align-items: start;
   background-color: rgba(58, 29, 29, 0.58);
@@ -910,6 +1004,8 @@ fieldset {
 .modal>*{
   flex: 1;
 }
+
+
 .dialog{
   position: fixed;
   bottom: var(--small-space);
@@ -921,6 +1017,28 @@ fieldset {
   background-color: var(--cream);
   padding: var(--small-space);
   z-index: 2;
+}
+
+.confirm{
+  position: fixed;
+  background-color: var(--coral);
+  color: var(--cream);
+  border-radius: 13px;
+  padding: var(--med-space) var(--small-space);
+  font-family: var(--block-font);
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-space);
+  align-items: center;
+}
+.confirm > div{
+  display: flex;
+  gap: var(--small-space);
+  align-items: center;
 }
 .inScreenOut-enter-active,
 .inScreenOut-leave-active {
@@ -1054,6 +1172,21 @@ fieldset {
     flex: 1;
     color: var(--cream);
 }
+
+/* ----- * FICHE WINE (wine/show) * ----- */ 
+
+/* In this case the <main> will be contained in a <div>, essentially making it a card */
+
+.fiche_wine main > *  {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.fiche_wine_title {
+    
+}
+
 /* ---------- * * VARIABLES * * ---------- */
 
 
@@ -1073,8 +1206,4 @@ fieldset {
 @import url(components/fiche_stamp.css);
 @import url(components/logo.css); */
 
-/* @import url(components/fiche_vedette.css);
-@import url(components/view_reel.css);
-@import url(components/filtres.css);
-@import url(components/module_pic_txt.css); */
 
