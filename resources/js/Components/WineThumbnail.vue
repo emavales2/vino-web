@@ -33,10 +33,7 @@ export default {
   methods: {
     setColor (color) {
       if(color) return color.split(' ')[1]
-    }/* ,
-    setShape () {
-      return Math.floor(Math.random() * (5 - 1) + 1);
-    } */
+    }
   },
   props:['wine', 'colorDrop', 'openForm']
 }

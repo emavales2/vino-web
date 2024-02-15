@@ -1,6 +1,6 @@
 <template>
   <main>
-    <img :src="wine.photo" :alt="wine.name">
+    <figure><img :src="wine.photo" :alt="wine.name"></figure>
     <section>
       <h1>{{ wine.name }}</h1>
       <div>
