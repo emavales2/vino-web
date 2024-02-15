@@ -21,20 +21,36 @@
     background-color: var(--cream-lt);
 }
 
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
 
-/* EXPLANATIONS */ 
+
+/* ----- * EXPLANATIONS * ----- */ 
+
 /* 
+Containers listed go from outside twds inside
 
--- ONE PP --
-body, [id=app]
-Containers that occupy the whole space, vert and horizontal
-NO: margin/padding, color
-height and width 100%
-border box 
+---- ONE PER PAGE ----
+<body>, [id=app]
+    Containers that occupy the whole space, vert and horizontal
+    --- * NO: inherent margin / padding / color * ---
+    height and width 100%
+    border box 
 
-bckg:  same as above, contains decor elements taht will be flat,
+.bckgd 
+    Contains decor elements (<main> + contents will float on top of bckgd)
+    --- * NO: inherent margin / padding / color * ---
+    height and width 100%
+    border box  
 
-main: has margin for safe area, and padding for placement of next element
+<main>
+    Has margin for safe area
+    --- * NO: inherent padding / color * ---
+    height and width 100%
+    border box 
+
 
 -- FIN ONE PP --
 -------------------------------

@@ -24,12 +24,35 @@
     /* ---------- * * APPLICATION * * ---------- */
 
     --text: var(--med-gray);
+
     
 }
 
 
 
+body {
+    background-color: var(--burgundy);
+}
 
+.bckgd-burg-lt {
+    background-color: var(--burgundy-lt);
+}
+
+.bckgd-cream {
+    background-color: var(--cream);
+}
+
+.bckgd-cream-lt {
+    background-color: var(--cream-lt);
+}
+
+.bckgd-coral {
+    background-color: var(--coral);
+}
+
+.bckgd-white {
+    background-color: white;
+}
 
 .burg {
     color: var(--burgundy);
