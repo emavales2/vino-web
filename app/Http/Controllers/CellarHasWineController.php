@@ -19,6 +19,7 @@ class CellarHasWineController extends Controller
     public function collection()
     {
         $collection = [];
+        $wines = Auth::user()->wine;
         $cellars = Auth::user()->cellar;
         foreach($cellars as $cellar) {
             foreach($cellar->cellarHasWines as $wine) {
@@ -36,6 +37,12 @@ class CellarHasWineController extends Controller
                 }
             }
         }
+        foreach($wines as $wine) {
+            if(array_key_exists($wine->id, $collection)) {
+                $collection[$wine->id]['user_id'] = $wine->user_id;
+            }
+        }
+        
         return Inertia::render('CollectionView', compact('collection'));
     }
 
@@ -59,11 +66,13 @@ class CellarHasWineController extends Controller
     public function removeOne(Cellar $cellar, Wine $wine) {
         $target = CellarHasWine::find([$cellar->id, $wine->id]);
         $newQuantity = $target->quantity -1;
-        $target->update([
-            'cellar_id'=> $cellar->id,
-            'wine_id' => $wine->id,
-            'quantity' => $newQuantity
-        ]);
+        if($newQuantity >= 0) {
+            $target->update([
+                'cellar_id'=> $cellar->id,
+                'wine_id' => $wine->id,
+                'quantity' => $newQuantity
+            ]);
+        }
     }
 
     /**
@@ -121,7 +130,7 @@ class CellarHasWineController extends Controller
      */
     public function edit(CellarHasWine $cellarHasWine)
     {
-        //
+        //Ajouter les btn delete et changer la quantité sur chaque bouteille + btn edit si bouteille custom
     }
 
     /**
@@ -142,8 +151,9 @@ class CellarHasWineController extends Controller
      * @param  \App\Models\CellarHasWine  $cellarHasWine
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CellarHasWine $cellarHasWine)
+    public function destroy(Cellar $cellar, Wine $wine)
     {
-        //
+        $cellarHasWine = new CellarHasWine;
+        $cellarHasWine::where('cellar_id', $cellar->id)->where('wine_id', $wine->id)->delete();
     }
 }

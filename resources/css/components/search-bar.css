@@ -10,9 +10,7 @@
   flex-flow: row;
   gap: var(--vsmall-space);
 }
-.search-bar form>label{
-  flex-grow: 1;
-}
-.search-bar form>button{
-  
+.search-bar svg{
+  width: 20px;
+  height: 20px;
 }

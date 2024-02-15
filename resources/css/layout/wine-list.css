@@ -1,6 +1,8 @@
 .wine-list{
   display: flex;
   flex-flow: wrap;
+  padding: var(--small-space);
+  padding-bottom: 30px;
   gap: var(--med-space);
   justify-content: center;
 }

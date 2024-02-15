@@ -9,20 +9,6 @@
   font-weight: 600;
   justify-self: flex-start;
 }
-.form-quantity [type=radio]{
-  display: none;
-}
-.form-quantity [type=radio] + label{
-  border: 2px solid;
-  border-color: transparent;
-  border-radius: 100px;
-  padding: var(--vsmall-space);
-  text-align: center;
-}
-.form-quantity [type=radio]:checked + label{
-  background-color: var(--cream);
-  border-color: var(--coral);
-}
 .form-quantity section:first-of-type{
   display: flex;
 

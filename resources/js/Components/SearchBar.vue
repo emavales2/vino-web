@@ -9,16 +9,22 @@
           v-model="form.search"
         >
       </label>
-      <button>search</button>
-      <button type="button" @click="toggleSearch">Cancel</button>
+      <SearchIcon :color="'burgundy'" :searchAction="submit"/>
+      <DeleteButton :deleteAction="searchAction"/>
     </form>
   </div>
 </template>
 
 <script>
 import { useForm } from '@inertiajs/inertia-vue3';
+import SearchIcon from './ButtonsIcons/SearchIcon.vue';
+import DeleteButton from './ButtonsIcons/DeleteButton.vue';
 export default{
   name:'search-bar',
+  components:{
+    SearchIcon,
+    DeleteButton
+  },
   data () {
     return {
       form : useForm({
@@ -28,10 +34,12 @@ export default{
   },
   methods: {
     submit () {
-      this.form.get(route('wine.search'))
-      this.toggleSearch();
+      this.form.get(route('wine.search'), {
+        onSuccess: () => this.searchAction()
+      })
+      
     }
   },
-  props: ['toggleSearch']
+  props: ['searchAction']
 }
 </script>

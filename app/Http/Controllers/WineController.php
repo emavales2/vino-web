@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CellarHasWine;
+use App\Models\BuyList;
 use App\Models\Wine;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -35,9 +36,12 @@ class WineController extends Controller
 
     public function searchResult(Request $request)
     {
+        $request->validate([
+            'search' => 'min:2'
+        ]);
         $search = $request->search;
         $count = Wine::like('name', $search)->count();
-        $results = Wine::like('name', $search)->get();
+        $results = Wine::like('name', $search)->limit(1000)->get();
         $cellars = Auth::user()->cellar;
         return Inertia::render('Wine/SearchView', compact('results', 'search', 'cellars', 'count'));
     }
@@ -51,11 +55,11 @@ class WineController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'min:3 | max:100',
-            'type' => 'min:3 | max:45 | nullable',
-            'country' => 'min:3 | max:100 | nullable',
-            'size' => 'min:3 | max:45 | nullable',
-            'price' => 'numeric | gte:0 | nullable',
+            'name' => 'min:3|max:100',
+            'type' => 'min:3|max:45|nullable',
+            'country' => 'min:3|max:100|nullable',
+            'size' => 'min:3|max:45|nullable',
+            'price' => 'numeric|gte:0|nullable',
             'cellar_id' => Rule::exists('cellars', 'id')->where(function ($query) {
                 return $query->where('user_id', Auth::id());
             }),
@@ -72,18 +76,18 @@ class WineController extends Controller
         ]);
         if($request->cellar_qty) {
             CellarHasWine::create([
-            'wine_id' => $wine->id,
-            'cellar_id' => $request->cellar_id,
-            'quantity' => $request->cellar_qty
+                'wine_id' => $wine->id,
+                'cellar_id' => $request->cellar_id,
+                'quantity' => $request->cellar_qty
             ]);
         }
-/*      if($request->buyList_qty) {
+        if($request->buyList_qty) {
             BuyList::create([
                 'wine_id' => $wine->id,
                 'user_id' => Auth::id(),
                 'quantity' => $request->buyList_qty
             ]);
-        } */
+        }
         return redirect(route('wine.show', $wine));
     }
 
@@ -95,7 +99,13 @@ class WineController extends Controller
      */
     public function show(Wine $wine)
     {
-        return Inertia::render('Wine/ShowView', compact('wine'));
+        $userId = Auth::id();
+
+        $exists = BuyList::where('user_id', $userId)
+        ->where('wine_id', $wine->id)
+        ->exists();
+        
+        return Inertia::render('Wine/ShowView', compact('wine','exists'));
     }
 
     /**
@@ -106,7 +116,8 @@ class WineController extends Controller
      */
     public function edit(Wine $wine)
     {
-        //
+        $cellars = Auth::user()->cellar;
+        return Inertia::render('Wine/EditView', compact('wine', 'cellars'));
     }
 
     /**
@@ -129,6 +140,6 @@ class WineController extends Controller
      */
     public function destroy(Wine $wine)
     {
-        //
+        Wine::destroy($wine->id);
     }
 }
