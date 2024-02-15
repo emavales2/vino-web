@@ -7,7 +7,6 @@ form {
     margin: 0;
     /* padding: var(--med_space); */
 }
-
 /* Will grab "InputText.vue" (came with Laravel) as well as input in forms */
 form input {
     box-sizing: border-box;

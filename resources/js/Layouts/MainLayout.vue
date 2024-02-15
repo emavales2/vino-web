@@ -9,7 +9,8 @@
     :toggleOff="closeModal"
   >
     <SearchBar 
-      :toggleSearch="closeModal"
+      :searchAction="closeModal"
+      :color="'cream'"
     />
   </ModalTest>
 
@@ -22,7 +23,7 @@
         <span>
             <label for="search-toggle">
                 <SearchIcon 
-                  :toggleSearch="openSearch"
+                  :searchAction="openSearch"
                 />
             </label>
         </span>      
@@ -32,7 +33,6 @@
     </span>
     </nav>        
   </header>
-    
   <slot/>
 
   <footer>

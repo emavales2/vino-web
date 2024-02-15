@@ -13,7 +13,7 @@ export default {
   name: 'DeleteButton',
   data () {
     return {
-      fill: '#420101',
+      fill: '#F2D9AF',
     }
   },
   mounted () {

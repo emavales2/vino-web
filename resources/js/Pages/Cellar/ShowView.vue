@@ -35,7 +35,6 @@ export default {
         this.$inertia.delete(route('cellar.delete', { cellar: this.cellar }));
       }
     },
-
   },
   props:['cellar', 'collection']
 }

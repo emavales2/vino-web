@@ -27,7 +27,14 @@
             <legend>Select a cellar</legend>
             <div>
               <div v-for="(cellar, i) in cellars">
-                <input :id=cellar.id type="radio" v-model="form.cellar_id" :value="cellar.id">
+                <input 
+                  :key="i" 
+                  :id=cellar.id 
+                  type="radio" 
+                  class="radio" 
+                  v-model="form.cellar_id" 
+                  :value="cellar.id"
+                >
                 <label :for=cellar.id>{{ cellar.name }}</label>
               </div>
             </div>
