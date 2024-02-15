@@ -2,10 +2,10 @@
   <Head title="Cellar" />
   <div>
     <h1>{{ cellar.name }}</h1>
-    <ul class="flex flex-wrap g-3">
+    <ul class="wine-list">
       <WineThumbnail v-for="(wine, i) in collection" 
         :key="i" 
-        :wine="wine"
+        :wine="wine.wine"
         :cellar="cellar"
       />
     </ul>
