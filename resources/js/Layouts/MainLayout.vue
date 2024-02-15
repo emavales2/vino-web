@@ -81,7 +81,7 @@ export default {
       showDialog: false,
       showSearch: false,
       message: '',
-      user: this.$attrs.auth.user
+      user: this.$attrs.user
     }
   },
   components: {
@@ -103,7 +103,10 @@ export default {
     closeModal () {
       this.showSearch = false
     }
-  }
+  },
+/*   mounted () {
+    console.log(this.$attrs.user)
+  } */
 }
 </script>
 

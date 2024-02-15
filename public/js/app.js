@@ -24472,7 +24472,7 @@ __webpack_require__.r(__webpack_exports__);
       showDialog: false,
       showSearch: false,
       message: '',
-      user: this.$attrs.auth.user
+      user: this.$attrs.user
     };
   },
   components: {
@@ -24498,6 +24498,9 @@ __webpack_require__.r(__webpack_exports__);
       this.showSearch = false;
     }
   }
+  /*   mounted () {
+      console.log(this.$attrs.user)
+    } */
 });
 
 /***/ }),
@@ -27082,9 +27085,8 @@ var appName = ((_window$document$getE = window.document.getElementsByTagName('ti
       methods: {
         route: route
       }
-    }).mount(el).$nextTick(function () {
-      delete el.dataset.page;
-    });
+    }).mount(el);
+    /* .$nextTick(() => { delete el.dataset.page }); */
   }
 });
 _inertiajs_progress__WEBPACK_IMPORTED_MODULE_2__.InertiaProgress.init({

@@ -14,7 +14,7 @@ createInertiaApp({
             .use(plugin)
             .mixin({ methods: { route } })
             .mount(el)
-            .$nextTick(() => { delete el.dataset.page });
+            /* .$nextTick(() => { delete el.dataset.page }); */
     },
 });
 
