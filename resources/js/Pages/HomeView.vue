@@ -2,7 +2,7 @@
     <Head title="Home" />
 
         <!-- ---- * En dessus de body, le conteneur principale. Au dessous du page content * ---- -->
-        <div class="bckgd cream-lt">
+        <div class="bckgd bckgd-cream-lt">
             <!-- ---- * Contenu décoratif du bg (flat). Pas d'interaction avec page content * ---- -->
             <section class="background_blobs">
                 <figure class="fig_bg">
