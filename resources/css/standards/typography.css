@@ -60,7 +60,7 @@ h1 {
 h2 {
     font-size: 2.488rem;
     line-height: var(--xtall-line);
-    letter-spacing: var(--large-ltr-spacing);
+    letter-spacing: var(--med-ltr-spacing);
 }
 
 h2.block-font {

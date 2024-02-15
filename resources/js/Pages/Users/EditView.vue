@@ -1,7 +1,10 @@
 <template>
         <Head title="Edit Profile" />
-        <section>
-            <h1>Edit Profile</h1>
+        <div class="under_nav card_mid">
+        <header class="index_title">
+                <h2>Edit Profile</h2>
+        </header>
+        <main>
             <form @submit.prevent="submit">
                 <div>
                     <label for="first_name" value="First name"></label>
@@ -47,12 +50,15 @@
                 </div>
                 <input type="hidden" v-model="form.id" />
                 <div>
-                    <button type="submit">Save</button>
+                    <button class="button" type="submit">Save</button>
                 </div>
             </form>
-        </section>
-        <button @click="toggleModal">Delete your account</button> 
-        <Link :href="route('profile.show',  {user: user.id} )">Go back</Link>
+            <div class="btn-container">
+                <button class="button" @click="toggleModal">Delete your account</button> 
+                <GoBackButton />
+            </div>
+        </main>
+    </div>
         <ConfirmModal 
             v-show="openDeleteModal" 
             :YesAction="delete" 
@@ -65,6 +71,7 @@
 <script>
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
 import ConfirmModal from '@/Components/ConfirmModal.vue';
+import GoBackButton from '@/Components/GoBackButton.vue';
 import InputError from '@/Components/InputError.vue';
 import MainLayout from '@/Layouts/MainLayout.vue';
 
@@ -73,13 +80,11 @@ export default {
     components: {
     Head,
     ConfirmModal,
+    GoBackButton,
     Link,
     MainLayout,
-    InputError
+    InputError,
 },
-    computed () {
-
-    },
     data () {
         return {
             form: useForm({
@@ -95,13 +100,21 @@ export default {
     layout: MainLayout,
     methods: {
         submit() {
-            this.form.put(route('profile.update', {user: this.user.id}));
+            this.form.put(route('profile.update', { user: this.user.id }), {
+                onSuccess: () => {
+                    this.$parent.openDialog(`Great ! Your profile has been updated`);
+                }
+            });
         },
         toggleModal() {
             this.openDeleteModal = !this.openDeleteModal;
         },
         delete() {
-            this.form.delete(route('users.delete', {user: this.user.id}));
+            this.form.delete(route('users.delete', {user: this.user.id}), {
+                onSuccess: () => {
+                    this.$parent.openDialog(`Your account has been deleted`);
+                }
+            });
             this.openDeleteModal = false;
         }
     },

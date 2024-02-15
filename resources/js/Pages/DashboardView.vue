@@ -7,19 +7,6 @@
                 </header>
                 <div>
                     <main class="column">
-                    <!-- This is actually a SUB NAV; ACTUAL NAV IS IN MainLayout.vue setp file -->
-                    <!-- <aside>     
-                        <ul>
-                            <li>
-                                <Link :href="route('profile.show',  {user: user.id} )">Profile</Link>
-                            </li>
-                            <li>
-                                <button @click="logout">Logout</button>
-                            </li>
-                        </ul>
-                    </aside> -->
-                    <!-- FIN SUB NAV -->
-
                     <ul class="column">
                         <li>
                             <section class="column">
