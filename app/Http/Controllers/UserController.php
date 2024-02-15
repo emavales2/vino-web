@@ -30,6 +30,7 @@ class UserController extends Controller
         // Get the user's cellars and the wines in each cellar
         $collection = [];
         $cellars = $user->cellar;
+        $cellars = $user->cellar;
         foreach($cellars as $cellar) {
             foreach($cellar->cellarHasWines as $wine) {
                 if(array_key_exists($wine->wine_id, $collection)) {
@@ -41,15 +42,20 @@ class UserController extends Controller
                         'quantities' => ['perCellar' => [['cellar' => $wine->cellar]],
                         'totalQty' => $wine->quantity
                     ]
+                        'quantities' => ['perCellar' => [['cellar' => $wine->cellar]],
+                        'totalQty' => $wine->quantity
+                    ]
                     ];
                 }
             }
         }
         $collection = array_slice($collection, 0, 4);
 
+
         // Get the user's cellars (4 max)
         return Inertia::render('DashboardView', compact('user', 'cellars', 'collection'));
         
+
     }
     /**
      * Display a listing of the resource. For the admin only.

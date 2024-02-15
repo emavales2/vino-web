@@ -30,7 +30,7 @@
                         </header>
 
                         <ul v-if="!isEmpty(cellars)" class="grid_square_horiz">
-                            <!-- Utilisez v-for pour afficher les 3 premiÃ¨res caves -->
+                            <!-- Utilisez v-for pour afficher les 3 premières caves -->
                             <li class="grid_sq_insert" v-for="(cellar, index) in cellars.slice(0, 3)" :key="cellar.id">
                                 <CellarDisplayBox :cellar="cellar" />
                             </li>

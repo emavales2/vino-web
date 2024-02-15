@@ -33,9 +33,10 @@
     </span>
     </nav>        
   </header>
-<div class="pad_vert_general">  
-  <slot/>
-</div>
+    
+  <div class="pad_vert_general">
+    <slot/>
+  </div>
 
   <footer>
     <nav class="bottom_nav">
