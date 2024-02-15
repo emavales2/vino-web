@@ -21,3 +21,7 @@
     flex: 1;
     color: var(--cream);
 }
+
+.card_round {
+    border-start-end-radius: 40px; 
+}
