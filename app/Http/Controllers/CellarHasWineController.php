@@ -59,11 +59,13 @@ class CellarHasWineController extends Controller
     public function removeOne(Cellar $cellar, Wine $wine) {
         $target = CellarHasWine::find([$cellar->id, $wine->id]);
         $newQuantity = $target->quantity -1;
-        $target->update([
-            'cellar_id'=> $cellar->id,
-            'wine_id' => $wine->id,
-            'quantity' => $newQuantity
-        ]);
+        if($newQuantity >= 0) {
+            $target->update([
+                'cellar_id'=> $cellar->id,
+                'wine_id' => $wine->id,
+                'quantity' => $newQuantity
+            ]);
+        }
     }
 
     /**
