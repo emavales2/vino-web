@@ -1,18 +1,21 @@
 <template>
   <Head title="Cellar" />
-  <div>
-    <h1>New Cellar</h1>
+  <header class="index_title">
+    <h2>New Cellar</h2>
+  </header>
+  <main class="main-default">
     <form @submit.prevent="submitForm" :action="createRoute">
-      <label for="name">Name:</label>
+      <label for="name" class="cream">Name:</label>
       <input v-model="form.name" type="text" id="name" required>
 
-      <button type="submit">Save</button>
+      <button class="button" type="submit">Save</button>
     </form>
-  </div>
+  </main>
 </template>
 
 <script>
 import { Head } from '@inertiajs/inertia-vue3';
+import MainLayout from '@/Layouts/MainLayout.vue';
 
 export default {
   name: 'CreateView',
@@ -31,6 +34,7 @@ export default {
       return route('cellar.store');
     },
   },
+  layout: MainLayout,
   methods: {
     submitForm() {
       this.$inertia.post(this.createRoute, this.form)
