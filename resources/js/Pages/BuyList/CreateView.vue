@@ -1,21 +1,23 @@
 <template>
-  <main>
-    <div>
+  <main class="main-default">
+    <div class="mt-50">
       <GoBackButton :color="'cream'" />
       <h2 class="coral">Add this wine to your shopping list</h2>
-      <form @submit.prevent="addToBuyList" class="form-quantity">
-        <h6>{{ wineData.name }}</h6>
-        <section>
-          <figure><img :src="wineData.photo" :alt="wineData.name"></figure>
-          <div>
-            <label for="quantity"></label>
-            <input type="number" id="quantity" v-model="form.quantity">
+      <form @submit.prevent="addToBuyList">
+        <div class="form-quantity">
+          <h6>{{ wineData.name }}</h6>
+          <section>
+            <figure><img :src="wineData.photo" :alt="wineData.name"></figure>
             <div>
-              <MinusButton :color="'burgundy'" :removeAction="removeOne" />
-              <PlusButton :color="'burgundy'" :addAction="addOne" />
+              <label for="quantity"></label>
+              <input type="number" id="quantity" v-model="form.quantity">
+              <div>
+                <MinusButton :color="'burgundy'" :removeAction="removeOne" />
+                <PlusButton :color="'burgundy'" :addAction="addOne" />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
         <button class="button">Add</button>
       </form>
     </div>
