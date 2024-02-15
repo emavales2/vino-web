@@ -472,6 +472,9 @@ body {
 
 }
 
+.pad_vert_general {
+    padding: 40px 0;
+}
 
 
 
@@ -1272,6 +1275,28 @@ fieldset {
   background-color: var(--cream);
   border-color: var(--coral);
 }
+
+/* --------- * MESSAGES AUTO-GENERÉS * --------- */
+
+.msg {
+    margin: 6px;
+    font-family: var(--text-font);
+    font-style: italic;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* --------- * ERROR * --------- */
+.input_err {
+    color: red;
+}
+
+/* --------- * STATUS (session; tjrs une class du v-if) * --------- */
+
+.status {
+    color: green;
+}
+
 
 
 /* ---------- * * GÉNÉRALE * * ---------- */

@@ -19,6 +19,7 @@ class CellarHasWineController extends Controller
     public function collection()
     {
         $collection = [];
+        $wines = Auth::user()->wine;
         $cellars = Auth::user()->cellar;
         foreach($cellars as $cellar) {
             foreach($cellar->cellarHasWines as $wine) {
@@ -36,6 +37,12 @@ class CellarHasWineController extends Controller
                 }
             }
         }
+        foreach($wines as $wine) {
+            if(array_key_exists($wine->id, $collection)) {
+                $collection[$wine->id]['user_id'] = $wine->user_id;
+            }
+        }
+        
         return Inertia::render('CollectionView', compact('collection'));
     }
 
@@ -123,7 +130,7 @@ class CellarHasWineController extends Controller
      */
     public function edit(CellarHasWine $cellarHasWine)
     {
-        //
+        //Ajouter les btn delete et changer la quantité sur chaque bouteille + btn edit si bouteille custom
     }
 
     /**

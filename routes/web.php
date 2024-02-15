@@ -31,7 +31,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/wine-create', [WineController::class, 'store'])->name('wine.store');
     Route::get('/wine-edit/{wine}', [WineController::class, 'edit'])->name('wine.edit');;
     Route::put('/wine-edit/{wine}', [WineController::class, 'update']);
-    Route::delete('/wine-delete/{wine}', [WineController::class, 'destroy']);
+    Route::delete('/wine-delete/{wine}', [WineController::class, 'destroy'])->name('wine.delete');
 
     //cette route est pour tester seulement, ne sera pas présent dans le produit final
     Route::get('/wines', [WineController::class, 'index']);

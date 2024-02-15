@@ -125,6 +125,7 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
 import { Inertia } from '@inertiajs/inertia';
 import { useForm } from '@inertiajs/inertia-vue3';
 import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue';
+import InputError from '@/Components/InputError.vue';
 import MainLayout from '@/Layouts/MainLayout.vue';
 import InputError from '@/Components/InputError.vue';
 export default {
@@ -132,8 +133,13 @@ export default {
   components: {
       Head,
       Link,
+<<<<<<< HEAD
+      InputError,
+      GoBackButton
+=======
       GoBackButton,
       InputError
+>>>>>>> 0f87774561fc34b4fbb3a940103fe0fc873d2203
   },
   data () {
     return {
@@ -152,6 +158,13 @@ export default {
   layout: MainLayout,
   methods: {
     submit () {
+<<<<<<< HEAD
+      this.wineForm.post(route('wine.store'), {
+        onSuccess: () => {
+          this.$parent.openDialog(`Great ! Your wine has been added`);
+        }
+    });
+=======
       this.form.post(route('wine.store'), {
         onSuccess: () => {
           this.$parent.openDialog(
@@ -159,6 +172,7 @@ export default {
           )
         }
       })
+>>>>>>> 0f87774561fc34b4fbb3a940103fe0fc873d2203
     }
   },
   props: ['cellars']
