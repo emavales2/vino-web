@@ -1,4 +1,4 @@
-@import url(./config.css);
+
 @import url(./components/wine-thumbnail.css);
 @import url(./components/goBackButton.css);
 
@@ -41,9 +41,10 @@
 @import url(components/search-bar.css);
 @import url(layout/wine-list.css);
 @import url(components/color-drop.css);
+@import url(components/form-quantity.css);
 
-/* @import url(components/fiche_vedette.css);
-@import url(components/view_reel.css);
-@import url(components/filtres.css);
-@import url(components/module_pic_txt.css); */
+
 @import url(components/cards.css);
+
+@import url(components/fiche_wine.css);
+
