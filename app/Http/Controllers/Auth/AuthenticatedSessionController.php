@@ -38,15 +38,9 @@ class AuthenticatedSessionController extends Controller
         $wines = $user->wine()->limit(3)->get();    
         // Si l'utilisateur est un admin
         if ($user->is_admin == '1') {
-            return Inertia::render('Admin/DashboardView', [
-                'user' => $user
-            ]);
+            return Inertia::render('Admin/DashboardView', compact('user'));
         }else{
-            return Inertia::render('DashboardView', [
-                'user' => $user,
-                'cellars' => $cellars,
-                'wines' => $wines
-            ]);
+            return Inertia::render('DashboardView', compact('user', 'cellars', 'wines'));
         }
     }
 

@@ -11,7 +11,7 @@
                         <li>
                             <section class="container_dashboard_section">
                                 <h5 class="display-font">My Cellars</h5>
-                                <li v-if="cellars" class="container_cards">
+                                <li v-if="!isEmpty(cellars)" class="container_cards">
                                     <ul v-for="cellar in cellars" :key="cellar.id">
                                         <CellarDisplayBox :cellar="cellar"/>
                                     </ul>
@@ -25,7 +25,7 @@
                         <li>
                             <section class="container_dashboard_section">
                                 <h5 class="display-font">My Wine Collection</h5>
-                                <li v-if="wines">
+                                <li v-if="!isEmpty(wines)">
                                     <ul>
                                         <li v-for="wine in wines" :key="wine.id">
                                             <WineThumbnail :wine="wine" />
@@ -73,8 +73,11 @@ export default {
     methods: {
         logout() {
             Inertia.post(route('logout'));
+        },
+        isEmpty(obj) {
+            return Object.keys(obj).length === 0;
         }
     },
-    props: ['user', 'cellars']
+    props: ['user', 'cellars', 'wines']
 }
 </script>
