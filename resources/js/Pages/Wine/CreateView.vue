@@ -57,7 +57,7 @@
 <script>
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import { useForm } from '@inertiajs/inertia-vue3';
-import GoBackButton from '@/Components/GoBackButton.vue';
+import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue';
 import MainLayout from '@/Layouts/MainLayout.vue';
 
 export default {
