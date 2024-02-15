@@ -1,7 +1,12 @@
 <template>
   <li class="wine-thumbnail">
     <Link :href="route('wine.show', wine.id)">
-      <ColorDrop :class="setColor(wine.type)"/> 
+      <aside>
+        <ColorDrop :class="setColor(wine.type)"/>
+        <span v-if="quantity !== undefined" class="quantity-drop">
+          {{ quantity }}
+        </span>
+      </aside>
       <div>
         <img 
         :src="wine.photo" 
@@ -16,13 +21,11 @@
         <p v-else>
           {{ wine.name }}
         </p>        
-        <p v-if="wine.quantity !== undefined">
-          {{ wine.quantity }} 
-        </p>
+
       </div>
     </Link>
-    <div v-if="wine.quantity !== undefined">
-      <DeleteButton :color="'cream'" :deleteAction="() => deleteOne(wine)"/>
+    <div v-if="quantity !== undefined">
+      <DeleteButton :color="'cream'" :deleteAction="deleteAction"/>
     </div>
 
   </li>
@@ -50,6 +53,6 @@ export default {
       }
     },    
   },
-  props:['wine', 'colorDrop', 'openForm']
+  props:['wine', 'colorDrop', 'openForm', 'quantity', 'deleteAction']
 }
 </script>

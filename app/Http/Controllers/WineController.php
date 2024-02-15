@@ -73,18 +73,18 @@ class WineController extends Controller
         ]);
         if($request->cellar_qty) {
             CellarHasWine::create([
-            'wine_id' => $wine->id,
-            'cellar_id' => $request->cellar_id,
-            'quantity' => $request->cellar_qty
+                'wine_id' => $wine->id,
+                'cellar_id' => $request->cellar_id,
+                'quantity' => $request->cellar_qty
             ]);
         }
-/*      if($request->buyList_qty) {
+        if($request->buyList_qty) {
             BuyList::create([
                 'wine_id' => $wine->id,
                 'user_id' => Auth::id(),
                 'quantity' => $request->buyList_qty
             ]);
-        } */
+        }
         return redirect(route('wine.show', $wine));
     }
 
