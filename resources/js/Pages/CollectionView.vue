@@ -11,7 +11,7 @@
                             :quantities="wine.quantities"
                         />
                         <div>
-                          <button class="button sml" @click="toggleModal(wine.wine.id)">Delete</button> 
+                            <DeleteButton @click="toggleModal(wine.wine.id)" :color="cream" />
                           <Link v-if="wine.user_id !== null" class="button sml" :href="route('wine.edit', wine.wine.id)">Edit</Link>
                         </div>
                       </ul>
@@ -35,6 +35,7 @@
 <script>
 import { Head, Link } from "@inertiajs/inertia-vue3";
 import ConfirmModal from "@/Components/ConfirmModal.vue";
+import DeleteButton from "@/Components/ButtonsIcons/DeleteButton.vue";
 import MainLayout from "@/Layouts/MainLayout.vue";
 import WineThumbnail from "@/Components/WineThumbnail.vue";
 
@@ -42,6 +43,7 @@ export default {
     name: "CollectionView",
     components: {
         ConfirmModal,
+        DeleteButton,
         Head,
         Link,
         MainLayout,
