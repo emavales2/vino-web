@@ -32,15 +32,30 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
         $request->session()->regenerate();
-        // Récupérer l'utilisateur connecté et ses celliers
+        // Récupérer l'utilisateur connecté, sa collection et ses celliers
         $user = Auth::user();
-        $cellars = $user->cellar()->limit(3)->get();    
-        $wines = $user->wine()->limit(3)->get();    
-        // Si l'utilisateur est un admin
+        $collection = [];
+        $cellars = $user->cellar;
+        foreach($cellars as $cellar) {
+            foreach($cellar->cellarHasWines as $wine) {
+                if(array_key_exists($wine->wine_id, $collection)) {
+                    $collection[$wine->wine_id]['quantities']['totalQty'] += $wine->quantity;
+                    $collection[$wine->wine_id]['quantities']['perCellar'][] = ['cellar' => $wine->cellar, 'qty'=>$wine->quantity];
+                } else {
+                    $collection[$wine->wine_id] = [
+                        'wine'=> $wine->wine,
+                        'quantities' => ['perCellar' => [['cellar' => $wine->cellar]],
+                        'totalQty' => $wine->quantity
+                    ]
+                    ];
+                }
+            }
+        }
+        $collection = array_slice($collection, 0, 4);    
         if ($user->is_admin == '1') {
             return Inertia::render('Admin/DashboardView', compact('user'));
         }else{
-            return Inertia::render('DashboardView', compact('user', 'cellars', 'wines'));
+            return Inertia::render('DashboardView', compact('user', 'cellars', 'collection'));
         }
     }
 

@@ -11,8 +11,8 @@
                             :quantities="wine.quantities"
                         />
                         <div>
-                            <DeleteButton @click="toggleModal(wine.wine.id)" />
-                          <Link v-if="wine.user_id !== null" class="button sml" :href="route('wine.edit', wine.wine.id)">Edit</Link>
+                        <DeleteButton @click="toggleModal(wine.wine.id)" :color="'cream'"/>
+                        <Link v-if="wine.user_id !== null" class="button sml" :href="route('wine.edit', wine.wine.id)">Edit</Link>
                         </div>
                       </ul>
                     </div>
