@@ -1,0 +1,14 @@
+.quantity-drop{
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  min-height: 25px;
+  height: 25px;
+  border-radius: 100%;
+  text-align: center;
+  color: var(--cream);
+  font-size: .8em;
+  padding: var(--vsmall-space);
+}
