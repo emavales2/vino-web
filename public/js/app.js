@@ -25897,13 +25897,21 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "card_cellar"
 };
+var _hoisted_2 = {
+  key: 0,
+  "class": "block-font"
+};
+var _hoisted_3 = {
+  key: 1,
+  "class": "block-font"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Cliquer sur la boite pour entrer dans cellier "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
     href: _ctx.route('cellar.show', $props.cellar.id)
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.cellar.name), 1 /* TEXT */)];
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" To not overflow the text "), $props.cellar.name.length > 30 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.cellar.name.replaceAll('/', ' ').slice(0, 30)) + "... ", 1 /* TEXT */)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.cellar.name), 1 /* TEXT */))];
     }),
     _: 1 /* STABLE */
   }, 8 /* PROPS */, ["href"])]);
@@ -27433,26 +27441,51 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   render: () => (/* binding */ render)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _assets_img_blob_top_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/../assets/img/blob_top.svg */ "./resources/assets/img/blob_top.svg");
+
 
 var _hoisted_1 = {
-  "class": "under_nav"
+  "class": "bckgd"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", {
-  "class": "index_title"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Profile")], -1 /* HOISTED */);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", {
+  "class": "background_blobs"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("figure", {
+  "class": "fig_bg"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  src: _assets_img_blob_top_svg__WEBPACK_IMPORTED_MODULE_1__["default"],
+  "class": "coral_blob_bg",
+  alt: ""
+})])], -1 /* HOISTED */);
 var _hoisted_3 = {
-  "class": "column container_profil"
+  "class": "container_profil"
 };
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("dt", {
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", {
+  "class": "title-center"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+  "class": "block-font txt-center coral"
+}, "Profile")], -1 /* HOISTED */);
+var _hoisted_5 = {
+  "class": "txt-center"
+};
+var _hoisted_6 = {
+  "class": "flex-row gap_20"
+};
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("dt", {
   "class": "display-font"
 }, "First Name", -1 /* HOISTED */);
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("dt", {
+var _hoisted_8 = {
+  "class": "flex-row gap_20"
+};
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("dt", {
   "class": "display-font"
 }, "Last Name", -1 /* HOISTED */);
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("dt", {
+var _hoisted_10 = {
+  "class": "flex-row gap_20"
+};
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("dt", {
   "class": "display-font"
 }, "Email", -1 /* HOISTED */);
-var _hoisted_7 = {
+var _hoisted_12 = {
   "class": "btn-container"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -27461,12 +27494,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_GoBackButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("GoBackButton");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Head, {
     title: "Profile"
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("dl", null, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("dd", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.user.first_name), 1 /* TEXT */), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("dd", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.user.last_name), 1 /* TEXT */), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("dd", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.user.email), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <main class=\"column cont_narrow_splash\"> "), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("dl", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("dd", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.user.first_name), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("dd", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.user.last_name), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("dd", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.user.email), 1 /* TEXT */)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
     "class": "button",
     href: _ctx.route('profile.edit', $props.user.id)
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Edit your profile")];
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Edit profile")];
     }),
     _: 1 /* STABLE */
   }, 8 /* PROPS */, ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
@@ -27478,7 +27511,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     _: 1 /* STABLE */
   }, 8 /* PROPS */, ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_GoBackButton, {
-    color: 'cream'
+    color: "cream"
   })])])])], 64 /* STABLE_FRAGMENT */);
 }
 
@@ -27887,32 +27920,34 @@ var _hoisted_2 = {
 var _hoisted_3 = {
   "class": ""
 };
-var _hoisted_4 = ["src", "alt"];
-var _hoisted_5 = {
+var _hoisted_4 = {
+  "class": "flex-row"
+};
+var _hoisted_5 = ["src", "alt"];
+var _hoisted_6 = {
   "class": "country_line"
 };
-var _hoisted_6 = {
+var _hoisted_7 = {
   "class": "block-font fiche_wine_title"
 };
-var _hoisted_7 = {
+var _hoisted_8 = {
   key: 0
 };
-var _hoisted_8 = {
+var _hoisted_9 = {
   key: 1
 };
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Information", -1 /* HOISTED */);
 var _hoisted_10 = {
   key: 0
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_ColorDrop = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ColorDrop");
   var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <section class=\"background_blobs\">\r\n            <figure class=\"fig_bg\">\r\n                <img src=\"@/../assets/img/coral_1.svg\" class=\"coral_blob_bg\" alt=\"\">    \r\n            </figure>\r\n            <figure class=\"fig_bg\">\r\n                <img src=\"@/../assets/img/med_vino.svg\" class=\"med_blob_bg\" alt=\"\">\r\n            </figure>\r\n            <figure class=\"fig_bg\">\r\n                <img src=\"@/../assets/img/dark_vino.svg\" class=\"dkvin_blob_bg\" alt=\"\">\r\n            </figure>\r\n        </section> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("figure", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <section class=\"background_blobs\">\r\n            <figure class=\"fig_bg\">\r\n                <img src=\"@/../assets/img/coral_1.svg\" class=\"coral_blob_bg\" alt=\"\">    \r\n            </figure>\r\n            <figure class=\"fig_bg\">\r\n                <img src=\"@/../assets/img/med_vino.svg\" class=\"med_blob_bg\" alt=\"\">\r\n            </figure>\r\n            <figure class=\"fig_bg\">\r\n                <img src=\"@/../assets/img/dark_vino.svg\" class=\"dkvin_blob_bg\" alt=\"\">\r\n            </figure>\r\n        </section> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("figure", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
     src: $props.wine.photo,
     alt: $props.wine.name
-  }, null, 8 /* PROPS */, _hoisted_4)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ----- * TEXT SIDE OF FICHE * ----- "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ColorDrop, {
+  }, null, 8 /* PROPS */, _hoisted_5)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ----- * TEXT SIDE OF FICHE * ----- "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ColorDrop, {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($options.setColor($props.wine.type))
-  }, null, 8 /* PROPS */, ["class"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.country ? $props.wine.country : 'n/a'), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [$props.wine.user_id ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_7, "custom wine")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_8, "code saq: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.code_saq), 1 /* TEXT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.type ? $props.wine.type : 'n/a'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li>country: {{ wine.country ? wine.country : 'n/a' }}</li> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.size ? $props.wine.size : 'n/a'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "price: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.price ? $props.wine.price + ' $' : 'n/a'), 1 /* TEXT */)])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ----- * FICHE NAV * ----- "), !$props.exists ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("aside", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+  }, null, 8 /* PROPS */, ["class"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.country ? $props.wine.country : 'n/a'), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [$props.wine.user_id ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_8, "custom wine")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_9, "code saq: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.code_saq), 1 /* TEXT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.type ? $props.wine.type : 'n/a'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li>country: {{ wine.country ? wine.country : 'n/a' }}</li> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.size ? $props.wine.size : 'n/a'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "price: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.price ? $props.wine.price + ' $' : 'n/a'), 1 /* TEXT */)])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ----- * FICHE NAV * ----- "), !$props.exists ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("aside", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
     "class": "button",
     href: _ctx.route('buylist.create', {
       wine: $props.wine.id
@@ -27922,7 +27957,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Add to my shopping list")];
     }),
     _: 1 /* STABLE */
-  }, 8 /* PROPS */, ["href"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]);
+  }, 8 /* PROPS */, ["href"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("aside", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+    "class": "button",
+    href: _ctx.route('cellar-wine.create', {
+      wine: $props.wine.id
+    })
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Add to my wine collection")];
+    }),
+    _: 1 /* STABLE */
+  }, 8 /* PROPS */, ["href"])])])])]);
 }
 
 /***/ }),

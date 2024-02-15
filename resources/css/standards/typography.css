@@ -40,6 +40,7 @@ body {
 
 .display-font {
     font-family: var(--display-font);
+    font-weight: 600;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -123,4 +124,12 @@ small {
         max-width: 13ch;
         color: var(--coral);
     }
+}
+
+.no_show {
+    text-transform: uppercase;
+    /* font-style: italic; */
+    font-size: .7rem;
+    line-height: var(--small-line);
+    color: var(--coral);
 }

@@ -197,6 +197,7 @@ body {
 
 .display-font {
     font-family: var(--display-font);
+    font-weight: 600;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -282,6 +283,14 @@ small {
     }
 }
 
+.no_show {
+    text-transform: uppercase;
+    /* font-style: italic; */
+    font-size: .7rem;
+    line-height: var(--small-line);
+    color: var(--coral);
+}
+
 
 :root {
 
@@ -315,7 +324,9 @@ small {
 
 body {
     background-color: var(--burgundy);
+    /* color: green; */
 }
+
 
 .bckgd-burg-lt {
     background-color: var(--burgundy-lt);
@@ -348,7 +359,6 @@ body {
 .cream {
     color: var(--cream)
 }
-
 
 
 .cream_lt {
@@ -392,15 +402,23 @@ body {
     display: flex;
     flex-direction: row;
 }
-.row {
+
+.row_els_apart {
     display: flex;
-    flex-flow: row;
-    gap: var(--small-space);
+    flex-direction: row;
+    justify-content: space-between;
 }
+
 .column {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.column_index_list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .col_tight {
@@ -410,6 +428,16 @@ body {
     text-align: center;
 }
 
+.grid_square_horiz {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.grid_sq_insert {
+    aspect-ratio: 1/1;
+}
+
 
 /* ----- * CONTENT AREA MODS * ----- */
 
@@ -417,9 +445,13 @@ body {
     padding: 50px;
 }
 
-/* To accomodate the top nav */
-.pad_top_general {
-    padding-top: 40px;
+/* To accomodate the nav */
+.pad_vert_general {
+    padding: 40px 0;
+}
+
+.gap_20 {
+    gap: 20px;
 }
 .pad_vert_general {
     padding: 40px 0;
@@ -437,24 +469,25 @@ body {
 }
 
 
-
-
 /* Tous les btn/link regrouper en bas de page */
 .btn-container{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: var(--small-space);
+    gap: 20px;
     margin-top: auto;
 }
 
 /* Page de Profil */
 .container_profil{
+    padding: 20px 50px;
+    align-content: center;
     display: flex;
     flex-direction: column;
+    gap: 20;
     color: var(--cream-lt);
     & dd{
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         color: var(--cream);
         padding-bottom: var(--med-space);
     }
@@ -605,6 +638,7 @@ Containers listed go from outside twds inside
   padding: var(--small-space);
   padding-bottom: 30px;
   gap: var(--med-space);
+  justify-content: center;
 }
 
 /* ---------- * * NAV GÉNÉRALE * * ---------- */
@@ -897,12 +931,19 @@ button{
 }
 /* Variante de btn small */
 .button.sml {
-    padding: 8px;
-    font-size: 0.8rem;
-    border:2px solid var(--cream);
+    padding: 6px;
+    font-size: 0.6rem;
     max-width: -moz-max-content;
     max-width: max-content;
+    border: none;
+    background: var(--coral);
+    vertical-align: sub;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+    width: -moz-max-content;
+    width: max-content;
 }
+
 /* Variante de btn Medium */
 .button.med {
     padding: 12px;
@@ -932,6 +973,25 @@ button{
     cursor: pointer;
     background-color: var(--coral);
     border: none;
+}
+
+.lien_sml {
+    padding: 6px;
+    font-size: 0.6rem;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    /* border: none; */
+    background: none;
+    vertical-align: sub;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+    width: -moz-max-content;
+    width: max-content;
+    font-family: 'Oswald', sans-serif;
+}
+
+.lien_sml:hover {
+    color:var(--coral)
 }
 
 
@@ -1162,19 +1222,25 @@ fieldset {
     }
 }
 /* Card compodents Dashboard CellarDisplayBox  */
-.card_cellar{
-    background-color: var(--burgundy);
+.card_cellar {
+    /* background-color: var(--burgundy); */
+    background-color: var(--coral);
     border-radius: 12px;
-    font-family: var(--block-font);
-    text-transform: uppercase;
-    padding: var(--med-space);
+    /* font-family: var(--block-font); */
+    /* text-transform: uppercase; */
+    padding: var(--small-space);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    max-width: 7ch;
-    max-height: 7ch;
+    justify-content: center;
+    /* max-width: 7ch; */
+    height: 100%;
     flex: 1;
     color: var(--cream);
+    font-size: .833rem;
+    line-height: var(--small-line);
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
 }
 
 .card_round {
