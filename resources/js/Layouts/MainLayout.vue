@@ -81,7 +81,7 @@ export default {
       showDialog: false,
       showSearch: false,
       message: '',
-      user: this.$attrs.auth.user
+      user: this.$attrs.user || this.$attrs.auth.user
     }
   },
   components: {
@@ -98,14 +98,11 @@ export default {
       setTimeout(() => { this.showDialog = false }, 3000)
     },
     openSearch () {
-      this.showSearch = true;
+      this.showSearch = true
     },
     closeModal () {
       this.showSearch = false
     }
-  },
-  mounted () {
-    console.log(this.user.id)
   }
 }
 </script>

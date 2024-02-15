@@ -7,6 +7,7 @@
         :key="i" 
         :wine="wine.wine"
         :cellar="cellar"
+        :quantities="quantities"
       />
     </ul>
     <div>
