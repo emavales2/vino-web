@@ -1,6 +1,5 @@
 <template>
   <Head title="Create Wine" />
-  <MainLayout>
     <GoBackButton/>
     <header>
       <h1>Add your custom wine</h1>
@@ -53,7 +52,6 @@
       </section>
       <button>save wine</button>
     </form>
-  </MainLayout>
 </template>
 
 <script>
@@ -67,7 +65,6 @@ export default {
   components: {
       Head,
       Link,
-      MainLayout,
       GoBackButton
   },
   data () {
@@ -84,6 +81,7 @@ export default {
       }),
     }
   },
+  layout: MainLayout,
   methods: {
     submit () {
       this.wineForm.post(route('wine.store'));

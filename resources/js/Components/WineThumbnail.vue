@@ -1,39 +1,42 @@
 <template>
-  <article>
-    <img :src="wine.wine.photo" :alt="wine.wine.name + ' photo'" width="100px" height="100px">
-    <h1>{{ wine.wine.name }}</h1>
-    <label>
-      <input type="number" v-model="form.quantity">
-    </label>
-    <p>{{ wine.qty }} bottles</p>
-    <div>
-      <button @click="addBottle">+</button>
-      <button @click="removeBottle">-</button>
-    </div>
-  </article>
+  <li class="wine-thumbnail">
+    <Link :href="route('wine.show', wine.id)">
+      <ColorDrop :class="setColor(wine.type)"/> 
+      <div>
+        <img 
+        :src="wine.photo" 
+        loading="lazy" 
+        :alt="wine.name"
+        >
+      </div>
+      <div>
+        <p v-if="wine.name.length > 30">
+          {{ wine.name.slice(0, 30) }}...
+        </p>
+        <p v-else>{{ wine.name }}</p>
+      </div>
+    </Link>
+  </li>
+<!--   <BlobShape :shape="setShape"/> -->
 </template>
+
 <script>
-import { Inertia } from '@inertiajs/inertia'
-import { useForm } from '@inertiajs/inertia-vue3'
+import { Link } from '@inertiajs/inertia-vue3'
+import ColorDrop from './ButtonsIcons/ColorDrop.vue'
 export default {
   name: 'WineThumbnail',
-  data () {
-    return{
-      form: useForm({
-        quantity: this.wine.qty
-    })
-    }
+  components: {
+    Link,
+    ColorDrop
   },
   methods: {
-    addBottle () {
-      Inertia.get(route('cellarwine.add', {cellar: this.cellar.id, wine: this.wine.wine.id} ))
-      .then(this.wine.qty ++)
+    setColor (color) {
+      if(color) return color.split(' ')[1]
     },
-    removeBottle () {
-      Inertia.get(route('cellarwine.remove', {cellar: this.cellar.id, wine: this.wine.wine.id} ))
-      .then(this.wine.qty --)
+    setShape () {
+      return Math.floor(Math.random() * (5 - 1) + 1);
     }
   },
-  props: ['wine', 'cellar']
+  props:['wine', 'colorDrop', 'openForm']
 }
 </script>
