@@ -21,7 +21,6 @@
         <p v-else>
           {{ wine.name }}
         </p>        
-
       </div>
     </Link>
     <div v-if="addOne">

@@ -84,7 +84,7 @@ export default {
       showDialog: false,
       showSearch: false,
       message: '',
-      user: this.$attrs.user
+      user: this.$attrs.user || this.$attrs.auth.user
     }
   },
   components: {

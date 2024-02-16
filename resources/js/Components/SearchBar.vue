@@ -12,6 +12,7 @@
       <SearchIcon :color="'burgundy'" :searchAction="submit"/>
       <DeleteButton :deleteAction="searchAction"/>
     </form>
+    <InputError class="input_err" :message="form.errors.search"/>
   </div>
 </template>
 
@@ -19,11 +20,13 @@
 import { useForm } from '@inertiajs/inertia-vue3';
 import SearchIcon from './ButtonsIcons/SearchIcon.vue';
 import DeleteButton from './ButtonsIcons/DeleteButton.vue';
+import InputError from './InputError.vue';
 export default{
   name:'search-bar',
   components:{
     SearchIcon,
-    DeleteButton
+    DeleteButton,
+    InputError
   },
   data () {
     return {
@@ -35,7 +38,10 @@ export default{
   methods: {
     submit () {
       this.form.get(route('wine.search'), {
-        onSuccess: () => this.searchAction()
+        onSuccess: () => {
+          this.searchAction()
+          this.form.reset()
+        }
       })
       
     }
