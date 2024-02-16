@@ -752,7 +752,7 @@ nav svg {
 .declancheur:not(:checked)::before {
     /* content: "MENU"; */
     /* font-family: var(--block-text); */
-    content: url(/images/lupe.svg?0c1de3d5621e7b76c4d418e20520b674);
+    content: url(/images/lupe.svg?83787e9b76a4bb2deab696f2e1fb6c4d);
     cursor: pointer;
     background: red;
 }
@@ -1271,6 +1271,10 @@ fieldset {
     display: flex;
     flex-direction: row;
     gap: 10px;
+}
+
+.fiche_wine img {
+    height: 100%;
 }
 
 .wine-thumbnail{

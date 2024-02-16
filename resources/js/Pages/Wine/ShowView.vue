@@ -15,7 +15,7 @@
         <div class="fiche_wine bckgd-coral">
             <main>
                 <div class="">
-                    <article class="flex-row">            
+                    <article class="flex-row gap_20">            
                         <figure>
                             <img :src="wine.photo" :alt="wine.name">
                         </figure>
