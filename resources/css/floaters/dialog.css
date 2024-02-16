@@ -13,8 +13,8 @@
 
 .confirm{
   position: fixed;
-  background-color: var(--coral);
-  color: var(--cream);
+  background-color: var(--cream);
+  color: var(--burgundy-lt);
   border-radius: 13px;
   padding: var(--med-space) var(--small-space);
   font-family: var(--block-font);

@@ -3,7 +3,7 @@
   <div>
     <main>
       <header>
-        <h1>Add your custom wine</h1>
+        <h2 class="block-font txt-center coral">Add your custom wine</h2>
       </header>
       <GoBackButton :color="'cream'"/>
         <form @submit.prevent="submit" class="form-create-wine">
@@ -78,9 +78,9 @@
             </fieldset>
 
 
-            <h4>What do you want to do with this wine?</h4>
+            <h4 class="block-font txt-center coral">What do you want to do with this wine?</h4>
             <div>
-              <h5>Store in a cellar</h5>
+              <h5 class="cream">Store in a cellar</h5>
               <div>
                 <div v-for="(cellar, i) in cellars">
                   <input

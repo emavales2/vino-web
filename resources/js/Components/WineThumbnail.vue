@@ -28,6 +28,7 @@
       <MinusButton :color="'cream'" @click="removeOne(wine, quantity)"/>
       <PlusButton :color="'cream'" @click="addOne(wine, quantity)"/>
     </div>
+    <slot />
     <button v-if="addOne" class="button sml" @click="deleteWine(wine)">remove wine</button>
   </li>
 </template>

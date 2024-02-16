@@ -931,8 +931,10 @@ button{
 }
 /* Variante de btn small */
 .button.sml {
-    padding: 6px;
-    font-size: 0.6rem;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    max-height: -moz-max-content;
+    max-height: max-content;
     max-width: -moz-max-content;
     max-width: max-content;
     border: none;
@@ -1154,8 +1156,8 @@ fieldset {
 
 .confirm{
   position: fixed;
-  background-color: var(--coral);
-  color: var(--cream);
+  background-color: var(--cream);
+  color: var(--burgundy-lt);
   border-radius: 13px;
   padding: var(--med-space) var(--small-space);
   font-family: var(--block-font);
@@ -1173,6 +1175,7 @@ fieldset {
   gap: var(--small-space);
   align-items: center;
 }
+
 .inScreenOut-enter-active,
 .inScreenOut-leave-active {
   transition: right 0.5s ease;
