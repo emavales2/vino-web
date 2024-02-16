@@ -24,3 +24,7 @@
     flex-direction: row;
     gap: 10px;
 }
+
+.fiche_wine img {
+    height: 100%;
+}
