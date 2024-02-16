@@ -22,9 +22,8 @@
                         <header>
                             <span class="row_els_apart gap_20">
                                 <h5 class="display-font cream">my cellars</h5>
-                                <!-- <div v-if="cellars.length > 3"></div> -->
                                 <div>
-                                    <Link class="lien_sml cream block-font" :href="route('cellar.index')">See more</Link>
+                                    <Link v-if="cellars.length > 3" class="lien_sml cream block-font" :href="route('cellar.index')">See more</Link>
                                 </div>
                             </span>
                         </header>
@@ -51,16 +50,14 @@
                                 <h5 class="display-font cream">my wine collection</h5>
                                 <!-- <div v-if="collection.length > 3"> -->
                                 <div>
-                                    <button class="lien_sml cream block-font" @click="showMoreWines">
-                                        See more
-                                    </button>
+                                    <Link v-if="collection.length > 3" class="lien_sml cream block-font" :href="route('collection')">See more</Link>
                                 </div>
                             </span>
                         </header>
 
                         <div v-if="collection.length !== 0">
                             <ul class="wine-list">
-                            <WineThumbnail v-for="(wine, i) in collection"
+                            <WineThumbnail v-for="(wine, i) in collection.slice(0, 3)"
                                 :key="i"
                                 :wine="wine.wine"
                                 :quantities="wine.quantities"

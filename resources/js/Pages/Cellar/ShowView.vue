@@ -16,25 +16,38 @@
           :quantity="wine.qty"
           :addOne="addOne"
           :removeOne="removeOne"
-          :deleteWine="deleteWine"
+          @click="toggleModal(wine.wine.id)"
         />
       </ul>
-
     </div>
+    <ConfirmModal 
+            v-show="openDeleteModal" 
+            :YesAction="delete" 
+            action="delete" 
+            actionMessage="Are you sure you want to delete this wine from the cellar ?" 
+        />
 </template>
 
 <script>
 import { Head } from '@inertiajs/inertia-vue3';
 import { Link } from '@inertiajs/inertia-vue3';
 import { Inertia } from '@inertiajs/inertia';
+import ConfirmModal from '@/Components/ConfirmModal.vue';
 import WineThumbnail from '@/Components/WineThumbnail.vue';
 import MainLayout from '@/Layouts/MainLayout.vue';
 export default {
   name: 'ShowView',
   components: {
+    ConfirmModal,
     Head,
     WineThumbnail,
     Link
+  },
+  data() {
+    return {
+      openDeleteModal: false,
+      wineId: null
+    }
   },
   layout: MainLayout,
   methods: {
@@ -42,6 +55,10 @@ export default {
       if (confirm('Are you sure you want to delete this cellar?')) {
         this.$inertia.delete(route('cellar.delete', { cellar: this.cellar }));
       }
+    },
+    toggleModal(wine) {
+      this.wineId = wine;
+      this.openDeleteModal = !this.openDeleteModal;
     },
     removeOne (wine, quantity) {
       if(quantity > 0)
@@ -52,9 +69,10 @@ export default {
       Inertia.visit(route('cellarwine.add', {cellar:this.cellar, wine:wine} ),
       { preserveScroll: true })
     },
-    deleteWine (wine) {
-      Inertia.delete(route('cellarwine.delete', {cellar:this.cellar, wine:wine}),
+    delete () {
+      Inertia.delete(route('cellarwine.delete', {cellar:this.cellar, wine:this.wineId}),
       { preserveScroll: true })
+      this.openDeleteModal = false
     }
   },
   props:['cellar', 'collection']
