@@ -80,6 +80,16 @@ button{
     font-family: 'Oswald', sans-serif;
 }
 
+.flex-flow-unset {
+    flex-flow: unset;
+    max-height: 100%;
+}
+
 .lien_sml:hover {
     color:var(--coral)
+}
+
+.borderless {
+    padding: 0;
+    border: none;
 }

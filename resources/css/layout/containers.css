@@ -69,6 +69,10 @@
     padding: 40px 0;
 }
 
+.pad_hor_general {
+    padding: 0 40px;
+}
+
 .gap_20 {
     gap: 20px;
 }
