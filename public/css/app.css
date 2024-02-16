@@ -263,7 +263,25 @@ small {
     font-size: .694rem;
     line-height: var(--small-line);
 }
-
+.legend {
+    font-family: var(--display-font);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: var(--tall-line);
+    font-weight: 500;
+    text-align: center;
+}
+.legend_small {
+    font-size: 1.2rem;
+    font-family: var(--block-font);
+    line-height: var(--med-line);
+    font-weight: 400;
+    text-align: center;
+    -webkit-text-decoration: underline var(--cream);
+            text-decoration: underline var(--cream);
+    text-underline-offset: 0.3em;
+    padding: 10px 0px 16px 0px;
+}
 
 /* ----- * ALIGNEMENT DU TEXTE * ----- */
 
@@ -1338,11 +1356,14 @@ fieldset {
   display: none;
 }
 .radio + label{
+  font-family: var(--block-font);
   border: 2px solid;
   border-color: transparent;
   border-radius: 100px;
-  padding: var(--vsmall-space);
+  padding: var(--small-space);
   text-align: center;
+  font-weight: 600;
+  color: var(--coral);
 }
 .radio:checked + label{
   background-color: var(--cream);

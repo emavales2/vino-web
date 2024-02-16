@@ -1,26 +1,29 @@
 <template>
   <Head title="Cellar" />
-  <header class="index_title">
-    <h2>New Cellar</h2>
-  </header>
-  <main class="main-default">
-    <form @submit.prevent="submitForm" :action="createRoute">
-      <label for="name" class="cream">Name:</label>
-      <input v-model="form.name" type="text" id="name" required>
+  <main>
+    <header class="block-font txt-center coral">
+      <h2>New Cellar</h2>
+    </header>
+    <GoBackButton :color="'cream'"/>
+      <form @submit.prevent="submitForm" :action="createRoute">
+        <label for="name" class="legend cream">Just give it a name !</label>
+        <input v-model="form.name" type="text" id="name" placeholder="name" required>
 
-      <button class="button" type="submit">Save</button>
-    </form>
+        <button class="button" type="submit">Save</button>
+      </form>
   </main>
 </template>
 
 <script>
 import { Head } from '@inertiajs/inertia-vue3';
 import MainLayout from '@/Layouts/MainLayout.vue';
-
+import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue';
 export default {
   name: 'CreateView',
   components: {
-    Head
+    Head,
+    GoBackButton,
+    MainLayout,
   },
   data() {
     return {
