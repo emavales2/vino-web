@@ -24558,7 +24558,7 @@ __webpack_require__.r(__webpack_exports__);
       showDialog: false,
       showSearch: false,
       message: '',
-      user: this.$attrs.user || this.$attrs.auth.user
+      user: this.$attrs.user
     };
   },
   components: {
