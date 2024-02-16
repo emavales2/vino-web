@@ -12,16 +12,16 @@ use Illuminate\Validation\Rule;
 
 class WineController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $wines = Wine::select()->paginate(24);
-        return Inertia::render('Wine/WineTest', compact('wines'));
-    }
+    // /**
+    //  * Display a listing of the resource.
+    //  *
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function index()
+    // {
+    //     $wines = Wine::select()->paginate(24);
+    //     return Inertia::render('Wine/WineTest', compact('wines'));
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -34,6 +34,9 @@ class WineController extends Controller
         return Inertia::render('Wine/CreateView', compact('cellars'));
     }
 
+    /**
+     * Display a listing of the resource.
+     */
     public function searchResult(Request $request)
     {
         $request->validate([
@@ -116,8 +119,7 @@ class WineController extends Controller
      */
     public function edit(Wine $wine)
     {
-        $cellars = Auth::user()->cellar;
-        return Inertia::render('Wine/EditView', compact('wine', 'cellars'));
+        return Inertia::render('Wine/EditView', compact('wine'));
     }
 
     /**
@@ -129,7 +131,15 @@ class WineController extends Controller
      */
     public function update(Request $request, Wine $wine)
     {
-        //
+        $request->validate([
+            'name' => 'min:3|max:100',
+            'type' => 'min:3|max:45|nullable',
+            'country' => 'min:3|max:100|nullable',
+            'size' => 'min:3|max:45|nullable',
+            'price' => 'numeric|gte:0|nullable'
+        ]);
+        $wine->update($request->all());
+        return redirect(route('collection'));
     }
 
     /**
