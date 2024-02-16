@@ -32,11 +32,7 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
         $request->session()->regenerate();
-        // Récupérer l'utilisateur connecté et ses celliers
         $user = Auth::user();
-        $cellars = $user->cellar()->limit(3)->get();    
-        $wines = $user->wine()->limit(3)->get();
-        // Si l'utilisateur est un admin
         if ($user->is_admin == '1') {
             return Inertia::render('Admin/DashboardView', compact('user'));
         }else{

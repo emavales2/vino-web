@@ -52,6 +52,7 @@ class UserController extends Controller
         return Inertia::render('DashboardView', compact('user', 'cellars', 'collection'));
     
     }
+    
     /**
      * Display a listing of the resource. For the admin only.
      *
