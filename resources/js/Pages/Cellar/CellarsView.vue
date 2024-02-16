@@ -21,7 +21,7 @@
         </td>
       </tr>
     </table>
-    <p v-else>There is no information available.</p>
+    <p v-else class="cream">There is no information available.</p>
   </main>
 </template>
   

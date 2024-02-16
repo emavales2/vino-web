@@ -2,7 +2,7 @@
   <main class="main-default">
     <div class="mt-50">
       <GoBackButton :color="'cream'" />
-      <h2 class="coral">Add this wine to your shopping list</h2>
+      <h2 class="block-font txt-center coral">Add this wine to your shopping list</h2>
       <form @submit.prevent="addToBuyList">
         <div class="form-quantity">
           <h6>{{ wineData.name }}</h6>
