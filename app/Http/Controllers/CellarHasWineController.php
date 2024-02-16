@@ -37,14 +37,12 @@ class CellarHasWineController extends Controller
                 }
             }
         }
-        foreach($wines as $wine) {
-            if(array_key_exists($wine->id, $collection)) {
-                $collection[$wine->id]['user_id'] = $wine->user_id;
-            }
-        }
         return Inertia::render('CollectionView', compact('collection'));
     }
 
+    /**
+     * Display a listing of the resource.
+     */
     public function index(Cellar $cellar) {
         $collection = [];
         foreach($cellar->cellarHasWines as $wine) {
@@ -53,6 +51,9 @@ class CellarHasWineController extends Controller
         return Inertia::render('Cellar/CellarWinesView', compact('collection'));
     }
 
+    /**
+     * Add one bottle 
+     */
     public function addOne(Cellar $cellar, Wine $wine) {
         $target = CellarHasWine::find([$cellar->id, $wine->id]);
         $newQuantity = $target->quantity + 1;
@@ -62,6 +63,9 @@ class CellarHasWineController extends Controller
             'quantity' => $newQuantity
         ]);
     }
+    /**
+     * Remove one bottle
+     */
     public function removeOne(Cellar $cellar, Wine $wine) {
         $target = CellarHasWine::find([$cellar->id, $wine->id]);
         $newQuantity = $target->quantity -1;
