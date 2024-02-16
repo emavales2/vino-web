@@ -3,9 +3,9 @@
     <div>
       <GoBackButton :color="'cream'"/>
       <div v-if="cellars.length > 0">
-        <h2>Add this wine to your cellar</h2>
+        <h2 class="block-font txt-center coral">Add this wine to your cellar</h2>
         <form @submit.prevent="addToCellar" class="form-quantity">
-          <h6>{{ wine.name }}</h6>
+          <h6 class="legend_small ">{{ wine.name }}</h6>
           <section>
             <figure><img :src="wine.photo" :alt="wine.name"></figure>
             <div>
@@ -24,7 +24,7 @@
             </div>
           </section>
           <section>
-            <legend>Select a cellar</legend>
+            <legend class="legend coral">Select a cellar</legend>
             <div>
               <div v-for="(cellar, i) in cellars">
                 <input 
@@ -39,12 +39,12 @@
               </div>
             </div>
           </section>
-          <button class="button">Add</button>
+          <button class="button_burgundy">Add</button>
         </form>
       </div>
       <div v-else>
         <h1>Oh oh, seems like you have no cellar</h1>
-        <Link :href="route('cellar.create')">create a cellar</Link>
+        <Link class="button_burgundy" :href="route('cellar.create')">create a cellar</Link>
       </div>
     </div>
   </main>

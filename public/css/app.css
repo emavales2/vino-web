@@ -774,7 +774,7 @@ nav svg {
 .declancheur:not(:checked)::before {
     /* content: "MENU"; */
     /* font-family: var(--block-text); */
-    content: url(/images/lupe.svg?83787e9b76a4bb2deab696f2e1fb6c4d);
+    content: url(/images/lupe.svg?0c1de3d5621e7b76c4d418e20520b674);
     cursor: pointer;
     background: red;
 }
@@ -935,7 +935,20 @@ button{
     border: none;
     cursor: pointer;
 }
-
+.button_burgundy {
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+    align-self: center;
+    padding: 16px;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .05rem;
+    border-radius: 30px;
+    border: 3px solid var(--burgundy);
+    color: var(--burgundy);
+    background: none;
+}
 
 .button {
     box-sizing: border-box;
@@ -948,7 +961,6 @@ button{
     letter-spacing: .05rem;
     border-radius: 30px;
     border: 3px solid var(--cream);
-    background: none;
     color: var(--cream);
 }
 /* Variante de btn small */
