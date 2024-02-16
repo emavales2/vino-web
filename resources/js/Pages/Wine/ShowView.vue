@@ -45,9 +45,14 @@
                     </article>
                 </div>
 
-                <!-- ----- * FICHE NAV * ----- -->
+                <!-- ----- * NAV SECTION * ----- -->
                 <aside v-if="!exists">
-                    <Link class="button" :href="route('buylist.create', { wine: wine.id })">Add to my shopping list</Link>
+                    <!-- <Link class="button" :href="route('buylist.create', { wine: wine.id })">
+                        Add to my shopping list
+                    </Link> -->
+                    <Link :href="route('buylist.create', { wine: wine.id })">
+                        <AddListButton />
+                    </Link>
                 </aside>
                 <aside>
                     <Link class="button" :href="route('cellar-wine.create', { wine: wine.id })">Add to my wine collection</Link>
