@@ -1,11 +1,11 @@
 <template>
+  <main>
   <Head title="Cellar" />
-  <header class="index_title">
+  <header class="block-font txt-center coral">
     <h2>Edit Cellar</h2>
   </header>
-  <main class="main-default">
     <form @submit.prevent="submitForm" :action="updateRoute">
-      <label for="name" class="cream">Name:</label>
+      <label for="name" class="legend cream">Just give it name !</label>
       <input v-model="form.name" type="text" id="name" required>
 
       <button class="button" type="submit">Save</button>
