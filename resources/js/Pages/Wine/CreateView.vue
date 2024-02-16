@@ -3,11 +3,11 @@
   <div>
     <main>
       <header>
-        <h1>Add your custom wine</h1>
+        <h2 class="block-font txt-center coral">Add your custom wine</h2>
       </header>
       <GoBackButton :color="'cream'"/>
         <form @submit.prevent="submit" class="form-create-wine">
-            <legend>Tell us about your wine</legend>
+            <legend class="legend cream">Tell us about your wine</legend>
             <fieldset>
               <label for="name" hidden></label>
               <input
@@ -78,16 +78,16 @@
             </fieldset>
 
 
-            <h4>What do you want to do with this wine?</h4>
+            <h4 class="legend cream">What do you want to do with this wine?</h4>
             <div>
-              <h5>Store in a cellar</h5>
+              <h5 class="legend_small cream">Store in a cellar</h5>
               <div>
                 <div v-for="(cellar, i) in cellars">
                   <input
                     :key="i"
                     :id=cellar.id
                     type="radio"
-                    class="radio"
+                    class="radio cream"
                     v-model="form.cellar_id"
                     :value="cellar.id"
                   >
@@ -97,7 +97,7 @@
               <p v-if="form.errors.cellar_id">{{ form.errors.cellar_id }}</p>
             </div>
             <div>
-              <label for="cellar_qty">How many bottles do you want to store</label>
+              <label for="cellar_qty" class="legend_small cream">How many bottles do you want to store</label>
               <input
                   id="cellar_qty"
                   type="number"
@@ -108,13 +108,12 @@
                 />
               <InputError class="msg input_err" :message="form.errors.price" />
 
-              <h5>Add to your buy list</h5>
-              <label>How many bottles do you want to buy?
-                <input type="number" v-model="form.buyList_qty">
+              <h5 class="legend cream">Add to your buy list</h5>
+              <label for="buyList_qty" class="legend_small cream">How many bottles do you want to buy?</label>
+                <input id="buyList_qty" type="number" v-model="form.buyList_qty">
                 <p v-if="form.errors.buyList_qty">{{ form.errors.buyList_qty }}</p>
-              </label>
             </div>
-          <button>save wine</button>
+          <button class="button">save wine</button>
         </form>
       </main>
     </div>

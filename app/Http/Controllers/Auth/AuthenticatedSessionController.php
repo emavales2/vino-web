@@ -34,9 +34,9 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
         $user = Auth::user();
         if ($user->is_admin == '1') {
-            return redirect(route('dashboard'));
+            return Inertia::render('Admin/DashboardView', compact('user'));
         }else{
-            return redirect(route('DashboardView'));
+            return redirect(route('dashboard'));
         }
     }
 

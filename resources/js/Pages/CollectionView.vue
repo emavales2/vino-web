@@ -3,25 +3,26 @@
     <main>
         <section>
             <h1 class="coral">Your Wines</h1>
+            <Link class="button" :href="route('wine.create')"
+                    >Add custom wine</Link
+                >
             <div v-if="collection.length !== 0">
                 <div class="wine-list">
-                    <ul v-for="(wine, i) in collection" :key="i">
+                    <ul>
                         <WineThumbnail
+                        v-for="(wine, i) in collection" :key="i"
                             :wine="wine.wine"
-                            :quantities="wine.quantities"
-                        />
+                            :quantities="wine.quantities">
                         <div>
-                        <DeleteButton @click="toggleModal(wine.wine.id)" :color="'cream'"/>
-                        <Link v-if="wine.wine.user_id !== null" class="button sml" :href="route('wine.edit', wine.wine.id)">Edit</Link>
-                        </div>
+                            <DeleteButton @click="toggleModal(wine.wine.id)" :color="'cream'"/>      
+                            <Link v-if="wine.wine.user_id !== null" class="button sml" :href="route('wine.edit', wine.wine.id)">Edit</Link>
+                        </div>  
+                        </WineThumbnail>
                       </ul>
                     </div>
             </div>
             <div class="cream" v-else>
                 <p>You have no wines yet.</p>
-                <Link class="button" :href="route('wine.create')"
-                    >Add custom wine</Link
-                >
             </div>
         </section>
     </main>
