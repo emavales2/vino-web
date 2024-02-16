@@ -24871,6 +24871,93 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/CellarWine/CreateView.vue?vue&type=script&lang=js":
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/CellarWine/CreateView.vue?vue&type=script&lang=js ***!
+  \**********************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
+/* harmony import */ var _Layouts_MainLayout_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/MainLayout.vue */ "./resources/js/Layouts/MainLayout.vue");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _Components_ButtonsIcons_PlusButton_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/ButtonsIcons/PlusButton.vue */ "./resources/js/Components/ButtonsIcons/PlusButton.vue");
+/* harmony import */ var _Components_ButtonsIcons_MinusButton_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/ButtonsIcons/MinusButton.vue */ "./resources/js/Components/ButtonsIcons/MinusButton.vue");
+/* harmony import */ var _Components_ButtonsIcons_GoBackButton_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Components/ButtonsIcons/GoBackButton.vue */ "./resources/js/Components/ButtonsIcons/GoBackButton.vue");
+
+
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: 'AddForm',
+  components: {
+    Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Link,
+    PlusButton: _Components_ButtonsIcons_PlusButton_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    MinusButton: _Components_ButtonsIcons_MinusButton_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    GoBackButton: _Components_ButtonsIcons_GoBackButton_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+  },
+  data: function data() {
+    return {
+      showDialog: false,
+      message: '',
+      showForm: false,
+      selectedWine: '',
+      form: (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.useForm)({
+        wine_id: this.wine.id,
+        quantity: '1',
+        cellar_id: this.cellars[0].id
+      })
+    };
+  },
+  layout: _Layouts_MainLayout_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+  methods: {
+    addToCellar: function addToCellar() {
+      var _this = this;
+      this.form.post(route('cellarwine.store'), {
+        onSuccess: function onSuccess() {
+          var cellarName = _this.cellars.find(function (c) {
+            return c.id == _this.form.cellar_id;
+          }).name;
+          _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.get(route('wine.show', _this.wine.id));
+          _this.$parent.openDialog("Yeah! You just added ".concat(_this.form.quantity, " bottle").concat(_this.form.quantity > 1 ? 's' : '', " to ").concat(cellarName));
+          _this.closeForm();
+        }
+      });
+    },
+    closeForm: function closeForm() {
+      this.showForm = false;
+      this.form.reset();
+    },
+    openForm: function openForm(id) {
+      this.form.reset();
+      if (this.cellars[0]) {
+        this.hasCellar = true;
+        this.selectedWine = this.results.find(function (w) {
+          return w.id === id;
+        });
+        this.form.cellar_id = this.cellars[0].id;
+        this.form.wine_id = this.selectedWine.id;
+      }
+      this.showForm = true;
+    },
+    addOne: function addOne() {
+      this.form.quantity++;
+    },
+    removeOne: function removeOne() {
+      if (this.form.quantity > 1) this.form.quantity--;
+    }
+  },
+  props: ['cellars', 'wine']
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Cellar/CellarsView.vue?vue&type=script&lang=js":
 /*!*******************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Cellar/CellarsView.vue?vue&type=script&lang=js ***!
@@ -24974,20 +25061,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
-/* harmony import */ var _Layouts_MainLayout_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/MainLayout.vue */ "./resources/js/Layouts/MainLayout.vue");
+/* harmony import */ var _Components_ButtonsIcons_GoBackButton_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/ButtonsIcons/GoBackButton.vue */ "./resources/js/Components/ButtonsIcons/GoBackButton.vue");
+/* harmony import */ var _Layouts_MainLayout_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Layouts/MainLayout.vue */ "./resources/js/Layouts/MainLayout.vue");
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'EditView',
   components: {
-    Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Head
+    Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Head,
+    GoBackButton: _Components_ButtonsIcons_GoBackButton_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   props: {
     cellar: {
       type: Object
     }
   },
-  layout: _Layouts_MainLayout_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+  layout: _Layouts_MainLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
   data: function data() {
     return {
       form: {
@@ -25097,93 +25187,6 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   props: ['cellar', 'collection']
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/CellarWine/CreateView.vue?vue&type=script&lang=js":
-/*!**********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/CellarWine/CreateView.vue?vue&type=script&lang=js ***!
-  \**********************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
-/* harmony import */ var _Layouts_MainLayout_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/MainLayout.vue */ "./resources/js/Layouts/MainLayout.vue");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _Components_ButtonsIcons_PlusButton_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/ButtonsIcons/PlusButton.vue */ "./resources/js/Components/ButtonsIcons/PlusButton.vue");
-/* harmony import */ var _Components_ButtonsIcons_MinusButton_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/ButtonsIcons/MinusButton.vue */ "./resources/js/Components/ButtonsIcons/MinusButton.vue");
-/* harmony import */ var _Components_ButtonsIcons_GoBackButton_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Components/ButtonsIcons/GoBackButton.vue */ "./resources/js/Components/ButtonsIcons/GoBackButton.vue");
-
-
-
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: 'AddForm',
-  components: {
-    Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Link,
-    PlusButton: _Components_ButtonsIcons_PlusButton_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    MinusButton: _Components_ButtonsIcons_MinusButton_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    GoBackButton: _Components_ButtonsIcons_GoBackButton_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
-  },
-  data: function data() {
-    return {
-      showDialog: false,
-      message: '',
-      showForm: false,
-      selectedWine: '',
-      form: (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.useForm)({
-        wine_id: this.wine.id,
-        quantity: '1',
-        cellar_id: this.cellars[0].id
-      })
-    };
-  },
-  layout: _Layouts_MainLayout_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-  methods: {
-    addToCellar: function addToCellar() {
-      var _this = this;
-      this.form.post(route('cellarwine.store'), {
-        onSuccess: function onSuccess() {
-          var cellarName = _this.cellars.find(function (c) {
-            return c.id == _this.form.cellar_id;
-          }).name;
-          _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.get(route('wine.show', _this.wine.id));
-          _this.$parent.openDialog("Yeah! You just added ".concat(_this.form.quantity, " bottle").concat(_this.form.quantity > 1 ? 's' : '', " to ").concat(cellarName));
-          _this.closeForm();
-        }
-      });
-    },
-    closeForm: function closeForm() {
-      this.showForm = false;
-      this.form.reset();
-    },
-    openForm: function openForm(id) {
-      this.form.reset();
-      if (this.cellars[0]) {
-        this.hasCellar = true;
-        this.selectedWine = this.results.find(function (w) {
-          return w.id === id;
-        });
-        this.form.cellar_id = this.cellars[0].id;
-        this.form.wine_id = this.selectedWine.id;
-      }
-      this.showForm = true;
-    },
-    addOne: function addOne() {
-      this.form.quantity++;
-    },
-    removeOne: function removeOne() {
-      if (this.form.quantity > 1) this.form.quantity--;
-    }
-  },
-  props: ['cellars', 'wine']
 });
 
 /***/ }),
@@ -26419,7 +26422,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return [_hoisted_11];
     }),
     _: 1 /* STABLE */
-  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <Link href=\"/notes\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 25 25\"><path class=\"cls-1\" d=\"m24.13,4.07l-3.2-3.2c-1.16-1.16-3.05-1.16-4.21,0L1.8,15.79s-.06.06-.09.1h0s.04-.05.04-.05c-.2.16-.4.42-.48.66l-.31,1.69h0S.02,23.43.02,23.43c-.08.43.06.87.37,1.18h.01c.31.32.76.46,1.2.37l4.84-.98,2.09-.42c.27-.06.5-.18.68-.37l14.92-14.92c1.16-1.16,1.16-3.05,0-4.21Zm-9.31,2.92l3.18,3.18-8.33,8.33-2.41-.72-.65-2.55L14.82,6.99Zm7.19-.83l-1.89,1.89-3.18-3.18,1.87-1.87,3.2,3.17ZM3.4,21.54l.5-2.8.02-.14.16-.85.05-.05.42,1.65c.07.27.21.5.39.69.17.17.39.3.63.38l1.39.42-1.14.23-2.44.49Z\"/></svg>\n        </Link> ")])])], 64 /* STABLE_FRAGMENT */);
+  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <Link href=\"/notes\">\r\n            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 25 25\"><path class=\"cls-1\" d=\"m24.13,4.07l-3.2-3.2c-1.16-1.16-3.05-1.16-4.21,0L1.8,15.79s-.06.06-.09.1h0s.04-.05.04-.05c-.2.16-.4.42-.48.66l-.31,1.69h0S.02,23.43.02,23.43c-.08.43.06.87.37,1.18h.01c.31.32.76.46,1.2.37l4.84-.98,2.09-.42c.27-.06.5-.18.68-.37l14.92-14.92c1.16-1.16,1.16-3.05,0-4.21Zm-9.31,2.92l3.18,3.18-8.33,8.33-2.41-.72-.65-2.55L14.82,6.99Zm7.19-.83l-1.89,1.89-3.18-3.18,1.87-1.87,3.2,3.17ZM3.4,21.54l.5-2.8.02-.14.16-.85.05-.05.42,1.65c.07.27.21.5.39.69.17.17.39.3.63.38l1.39.42-1.14.23-2.44.49Z\"/></svg>\r\n        </Link> ")])])], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),
@@ -26489,7 +26492,7 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "bckgd burg"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <figure>   \n                </figure> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <figure>   \r\n                </figure> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
   "class": "block-font txt-center cream"
 }, "Sign In"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
   "class": "block-font txt-center coral"
@@ -26554,7 +26557,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       'opacity-25': $data.form.processing
     }]),
     disabled: $data.form.processing
-  }, " Sign In ", 10 /* CLASS, PROPS */, _hoisted_5)], 32 /* NEED_HYDRATION */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("aside", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p class=\"cream txt-center\">          \n                    <Link class=\"block-font\" :href=\"route('password.request')\">Forgot your password?</Link>\n                </p> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Don't have an account yet?"), _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+  }, " Sign In ", 10 /* CLASS, PROPS */, _hoisted_5)], 32 /* NEED_HYDRATION */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("aside", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p class=\"cream txt-center\">          \r\n                    <Link class=\"block-font\" :href=\"route('password.request')\">Forgot your password?</Link>\r\n                </p> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Don't have an account yet?"), _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
     "class": "block-font coral",
     href: _ctx.route('register')
   }, {
@@ -26815,6 +26818,97 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/CellarWine/CreateView.vue?vue&type=template&id=42373b8a":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/CellarWine/CreateView.vue?vue&type=template&id=42373b8a ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  key: 0
+};
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+  "class": "block-font txt-center coral"
+}, "Add this wine to your cellar", -1 /* HOISTED */);
+var _hoisted_3 = {
+  "class": "legend_small"
+};
+var _hoisted_4 = ["src", "alt"];
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "quantity"
+}, null, -1 /* HOISTED */);
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("legend", {
+  "class": "legend coral"
+}, "Select a cellar", -1 /* HOISTED */);
+var _hoisted_7 = ["id", "value"];
+var _hoisted_8 = ["for"];
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  "class": "button_burgundy"
+}, "Add", -1 /* HOISTED */);
+var _hoisted_10 = {
+  key: 1
+};
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Oh oh, seems like you have no cellar", -1 /* HOISTED */);
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_GoBackButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("GoBackButton");
+  var _component_MinusButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("MinusButton");
+  var _component_PlusButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("PlusButton");
+  var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("main", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_GoBackButton, {
+    color: 'cream'
+  }), $props.cellars.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+    onSubmit: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return $options.addToCellar && $options.addToCellar.apply($options, arguments);
+    }, ["prevent"])),
+    "class": "form-quantity"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("figure", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: $props.wine.photo,
+    alt: $props.wine.name
+  }, null, 8 /* PROPS */, _hoisted_4)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "number",
+    id: "quantity",
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return $data.form.quantity = $event;
+    })
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.quantity]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_MinusButton, {
+    color: 'burgundy',
+    removeAction: $options.removeOne
+  }, null, 8 /* PROPS */, ["removeAction"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_PlusButton, {
+    color: 'burgundy',
+    addAction: $options.addOne
+  }, null, 8 /* PROPS */, ["addAction"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.cellars, function (cellar, i) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("input", {
+      key: i,
+      id: cellar.id,
+      type: "radio",
+      "class": "radio",
+      "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+        return $data.form.cellar_id = $event;
+      }),
+      value: cellar.id
+    }, null, 8 /* PROPS */, _hoisted_7)), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.form.cellar_id]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+      "for": cellar.id
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(cellar.name), 9 /* TEXT, PROPS */, _hoisted_8)]);
+  }), 256 /* UNKEYED_FRAGMENT */))])]), _hoisted_9], 32 /* NEED_HYDRATION */)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+    "class": "button_burgundy",
+    href: _ctx.route('cellar.create')
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("create a cellar")];
+    }),
+    _: 1 /* STABLE */
+  }, 8 /* PROPS */, ["href"])]))])]);
+}
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Cellar/CellarsView.vue?vue&type=template&id=1f0b3a52":
 /*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Cellar/CellarsView.vue?vue&type=template&id=1f0b3a52 ***!
@@ -26940,35 +27034,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", {
+var _hoisted_1 = {
   "class": "block-font txt-center coral"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Edit Cellar")], -1 /* HOISTED */);
-var _hoisted_2 = ["action"];
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+};
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Edit Cellar", -1 /* HOISTED */);
+var _hoisted_3 = ["action"];
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "name",
   "class": "legend cream"
 }, "Just give it name !", -1 /* HOISTED */);
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   "class": "button",
   type: "submit"
 }, "Save", -1 /* HOISTED */);
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Head");
+  var _component_GoBackButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("GoBackButton");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("main", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Head, {
     title: "Cellar"
-  }), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_GoBackButton, {
+    color: 'cream'
+  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
     onSubmit: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.submitForm && $options.submitForm.apply($options, arguments);
     }, ["prevent"])),
     action: $options.updateRoute
-  }, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $data.form.name = $event;
     }),
     type: "text",
     id: "name",
     required: ""
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.name]]), _hoisted_4], 40 /* PROPS, NEED_HYDRATION */, _hoisted_2)]);
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.name]]), _hoisted_5], 40 /* PROPS, NEED_HYDRATION */, _hoisted_3)]);
 }
 
 /***/ }),
@@ -27033,89 +27131,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     action: "delete",
     actionMessage: "Are you sure you want to delete this wine from the cellar ?"
   }, null, 8 /* PROPS */, ["YesAction"]), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.openDeleteModal]])], 64 /* STABLE_FRAGMENT */);
-}
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/CellarWine/CreateView.vue?vue&type=template&id=42373b8a":
-/*!**************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/CellarWine/CreateView.vue?vue&type=template&id=42373b8a ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   render: () => (/* binding */ render)
-/* harmony export */ });
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-
-var _hoisted_1 = {
-  key: 0
-};
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Add this wine to your cellar", -1 /* HOISTED */);
-var _hoisted_3 = ["src", "alt"];
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "quantity"
-}, null, -1 /* HOISTED */);
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("legend", null, "Select a cellar", -1 /* HOISTED */);
-var _hoisted_6 = ["id", "value"];
-var _hoisted_7 = ["for"];
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "button"
-}, "Add", -1 /* HOISTED */);
-var _hoisted_9 = {
-  key: 1
-};
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Oh oh, seems like you have no cellar", -1 /* HOISTED */);
-function render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_GoBackButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("GoBackButton");
-  var _component_MinusButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("MinusButton");
-  var _component_PlusButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("PlusButton");
-  var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("main", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_GoBackButton, {
-    color: 'cream'
-  }), $props.cellars.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-    onSubmit: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
-      return $options.addToCellar && $options.addToCellar.apply($options, arguments);
-    }, ["prevent"])),
-    "class": "form-quantity"
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("figure", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: $props.wine.photo,
-    alt: $props.wine.name
-  }, null, 8 /* PROPS */, _hoisted_3)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "number",
-    id: "quantity",
-    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return $data.form.quantity = $event;
-    })
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.quantity]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_MinusButton, {
-    color: 'burgundy',
-    removeAction: $options.removeOne
-  }, null, 8 /* PROPS */, ["removeAction"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_PlusButton, {
-    color: 'burgundy',
-    addAction: $options.addOne
-  }, null, 8 /* PROPS */, ["addAction"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.cellars, function (cellar, i) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("input", {
-      key: i,
-      id: cellar.id,
-      type: "radio",
-      "class": "radio",
-      "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
-        return $data.form.cellar_id = $event;
-      }),
-      value: cellar.id
-    }, null, 8 /* PROPS */, _hoisted_6)), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.form.cellar_id]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-      "for": cellar.id
-    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(cellar.name), 9 /* TEXT, PROPS */, _hoisted_7)]);
-  }), 256 /* UNKEYED_FRAGMENT */))])]), _hoisted_8], 32 /* NEED_HYDRATION */)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-    href: _ctx.route('cellar.create')
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("create a cellar")];
-    }),
-    _: 1 /* STABLE */
-  }, 8 /* PROPS */, ["href"])]))])]);
 }
 
 /***/ }),
@@ -27305,7 +27320,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_CellarDisplayBox, {
       cellar: cellar
     }, null, 8 /* PROPS */, ["cellar"])]);
-  }), 128 /* KEYED_FRAGMENT */))])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" You have no cellars yet.")])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div v-if=\"cellars.length > 3\">\n                            <Link class=\"button sml\" :href=\"route('cellar.index')\">See more</Link>\n                        </div> ")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" --------------- * WINES * ------------------ "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div v-if=\"collection.length > 3\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [$props.collection.length > 3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Link, {
+  }), 128 /* KEYED_FRAGMENT */))])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" You have no cellars yet.")])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div v-if=\"cellars.length > 3\">\r\n                            <Link class=\"button sml\" :href=\"route('cellar.index')\">See more</Link>\r\n                        </div> ")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" --------------- * WINES * ------------------ "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div v-if=\"collection.length > 3\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [$props.collection.length > 3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Link, {
     key: 0,
     "class": "lien_sml cream block-font",
     href: _ctx.route('collection')
@@ -27322,7 +27337,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, null, 8 /* PROPS */, ["wine", "quantities"]);
   }), 128 /* KEYED_FRAGMENT */))])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     key: 1
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <ul v-if=\"!isEmpty(collection)\" class=\"grid_square_horiz\">\n                            <li v-for=\"(wine, index) in collection.slice(0, 3)\" :key=\"wine.id\">\n                                \n                                <WineThumbnail v-for=\"(wine, i) in collection\"\n                                    :key=\"i\"\n                                    :wine=\"wine.wine\"\n                                    :quantities=\"wine.quantities\"\n                                />\n                            </li>\n                        </ul> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <WineThumbnail :wine=\"wine\" /> "), _hoisted_16], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li>\n                    <section class=\"container_dashboard_section\">\n                        <h5 class=\"display-font\">My Shopping Lists</h5>\n                    </section>\n                </li> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li>\n                    <section class=\"container_dashboard_section\">\n                        <h5 class=\"display-font\">My Notes</h5>\n                    </section>\n                </li> ")])])])], 64 /* STABLE_FRAGMENT */);
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <ul v-if=\"!isEmpty(collection)\" class=\"grid_square_horiz\">\r\n                            <li v-for=\"(wine, index) in collection.slice(0, 3)\" :key=\"wine.id\">\r\n                                \r\n                                <WineThumbnail v-for=\"(wine, i) in collection\"\r\n                                    :key=\"i\"\r\n                                    :wine=\"wine.wine\"\r\n                                    :quantities=\"wine.quantities\"\r\n                                />\r\n                            </li>\r\n                        </ul> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <WineThumbnail :wine=\"wine\" /> "), _hoisted_16], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li>\r\n                    <section class=\"container_dashboard_section\">\r\n                        <h5 class=\"display-font\">My Shopping Lists</h5>\r\n                    </section>\r\n                </li> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li>\r\n                    <section class=\"container_dashboard_section\">\r\n                        <h5 class=\"display-font\">My Notes</h5>\r\n                    </section>\r\n                </li> ")])])])], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),
@@ -28166,14 +28181,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_GoBackButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("GoBackButton");
   var _component_ColorDrop = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ColorDrop");
   var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <section class=\"background_blobs\">\n            <figure class=\"fig_bg\">\n                <img src=\"@/../assets/img/coral_1.svg\" class=\"coral_blob_bg\" alt=\"\">    \n            </figure>\n            <figure class=\"fig_bg\">\n                <img src=\"@/../assets/img/med_vino.svg\" class=\"med_blob_bg\" alt=\"\">\n            </figure>\n            <figure class=\"fig_bg\">\n                <img src=\"@/../assets/img/dark_vino.svg\" class=\"dkvin_blob_bg\" alt=\"\">\n            </figure>\n        </section> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_GoBackButton, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <section class=\"background_blobs\">\r\n            <figure class=\"fig_bg\">\r\n                <img src=\"@/../assets/img/coral_1.svg\" class=\"coral_blob_bg\" alt=\"\">    \r\n            </figure>\r\n            <figure class=\"fig_bg\">\r\n                <img src=\"@/../assets/img/med_vino.svg\" class=\"med_blob_bg\" alt=\"\">\r\n            </figure>\r\n            <figure class=\"fig_bg\">\r\n                <img src=\"@/../assets/img/dark_vino.svg\" class=\"dkvin_blob_bg\" alt=\"\">\r\n            </figure>\r\n        </section> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_GoBackButton, {
     color: "coral"
   })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("article", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("figure", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
     src: $props.wine.photo,
     alt: $props.wine.name
   }, null, 8 /* PROPS */, _hoisted_7)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ----- * TEXT SIDE OF FICHE * ----- "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ColorDrop, {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($options.setColor($props.wine.type))
-  }, null, 8 /* PROPS */, ["class"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.country ? $props.wine.country : 'n/a'), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [$props.wine.user_id ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_10, "custom wine")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_11, "code saq: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.code_saq), 1 /* TEXT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.type ? $props.wine.type : 'n/a'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li>country: {{ wine.country ? wine.country : 'n/a' }}</li> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.size ? $props.wine.size : 'n/a'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "price: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.price ? $props.wine.price + ' $' : 'n/a'), 1 /* TEXT */)])])])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ----- * NAV SECTION * ----- "), !$props.exists ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("aside", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <Link class=\"button\" :href=\"route('buylist.create', { wine: wine.id })\">\n                        Add to my shopping list\n                    </Link> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+  }, null, 8 /* PROPS */, ["class"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.country ? $props.wine.country : 'n/a'), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [$props.wine.user_id ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_10, "custom wine")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_11, "code saq: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.code_saq), 1 /* TEXT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.type ? $props.wine.type : 'n/a'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li>country: {{ wine.country ? wine.country : 'n/a' }}</li> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.size ? $props.wine.size : 'n/a'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, "price: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.price ? $props.wine.price + ' $' : 'n/a'), 1 /* TEXT */)])])])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ----- * NAV SECTION * ----- "), !$props.exists ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("aside", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <Link class=\"button\" :href=\"route('buylist.create', { wine: wine.id })\">\r\n                        Add to my shopping list\r\n                    </Link> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
     "class": "button borderless",
     href: _ctx.route('buylist.create', {
       wine: $props.wine.id
@@ -28591,7 +28606,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/blob_top.svg?ba28fc2db84e278a5ff0a3eeb4b57dcb");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/blob_top.svg?937c16aed5db28f87a78caba85a2b91b");
 
 /***/ }),
 
@@ -28606,7 +28621,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/coral_1.svg?69b1715672e91f37b6985eed9d5b6bd0");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/coral_1.svg?60f6a7ff82f6af01f7ef436cf01fce9b");
 
 /***/ }),
 
@@ -28621,7 +28636,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/dark_vino.svg?44a503529d6dc219dc506f3b34d7dd14");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/dark_vino.svg?d6db7dd8deea5bb53ff595abf0442a03");
 
 /***/ }),
 
@@ -28636,7 +28651,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/med_vino.svg?831d26a19f65618b6d73e3d4f7408f58");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/med_vino.svg?11739e40988e41bab90000f8fb00c34c");
 
 /***/ }),
 
@@ -28651,7 +28666,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/VINO_lt.svg?525f35c7f3bbe42c41b66499b19e397f");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/VINO_lt.svg?3fb9a6fea93821506a583339b83f3bde");
 
 /***/ }),
 
@@ -53100,6 +53115,34 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/Pages/CellarWine/CreateView.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/Pages/CellarWine/CreateView.vue ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _CreateView_vue_vue_type_template_id_42373b8a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreateView.vue?vue&type=template&id=42373b8a */ "./resources/js/Pages/CellarWine/CreateView.vue?vue&type=template&id=42373b8a");
+/* harmony import */ var _CreateView_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CreateView.vue?vue&type=script&lang=js */ "./resources/js/Pages/CellarWine/CreateView.vue?vue&type=script&lang=js");
+/* harmony import */ var _node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_CreateView_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_CreateView_vue_vue_type_template_id_42373b8a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/CellarWine/CreateView.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Cellar/CellarsView.vue":
 /*!***************************************************!*\
   !*** ./resources/js/Pages/Cellar/CellarsView.vue ***!
@@ -53204,34 +53247,6 @@ __webpack_require__.r(__webpack_exports__);
 
 ;
 const __exports__ = /*#__PURE__*/(0,_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ShowView_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ShowView_vue_vue_type_template_id_077f7976__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Cellar/ShowView.vue"]])
-/* hot reload */
-if (false) {}
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
-
-/***/ }),
-
-/***/ "./resources/js/Pages/CellarWine/CreateView.vue":
-/*!******************************************************!*\
-  !*** ./resources/js/Pages/CellarWine/CreateView.vue ***!
-  \******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _CreateView_vue_vue_type_template_id_42373b8a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreateView.vue?vue&type=template&id=42373b8a */ "./resources/js/Pages/CellarWine/CreateView.vue?vue&type=template&id=42373b8a");
-/* harmony import */ var _CreateView_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CreateView.vue?vue&type=script&lang=js */ "./resources/js/Pages/CellarWine/CreateView.vue?vue&type=script&lang=js");
-/* harmony import */ var _node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
-
-
-
-
-;
-const __exports__ = /*#__PURE__*/(0,_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_CreateView_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_CreateView_vue_vue_type_template_id_42373b8a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/CellarWine/CreateView.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -53912,6 +53927,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/CellarWine/CreateView.vue?vue&type=script&lang=js":
+/*!******************************************************************************!*\
+  !*** ./resources/js/Pages/CellarWine/CreateView.vue?vue&type=script&lang=js ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CreateView_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CreateView_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./CreateView.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/CellarWine/CreateView.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Cellar/CellarsView.vue?vue&type=script&lang=js":
 /*!***************************************************************************!*\
   !*** ./resources/js/Pages/Cellar/CellarsView.vue?vue&type=script&lang=js ***!
@@ -53972,22 +54003,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ShowView_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ShowView_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ShowView.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Cellar/ShowView.vue?vue&type=script&lang=js");
- 
-
-/***/ }),
-
-/***/ "./resources/js/Pages/CellarWine/CreateView.vue?vue&type=script&lang=js":
-/*!******************************************************************************!*\
-  !*** ./resources/js/Pages/CellarWine/CreateView.vue?vue&type=script&lang=js ***!
-  \******************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CreateView_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CreateView_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./CreateView.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/CellarWine/CreateView.vue?vue&type=script&lang=js");
  
 
 /***/ }),
@@ -54520,6 +54535,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/CellarWine/CreateView.vue?vue&type=template&id=42373b8a":
+/*!************************************************************************************!*\
+  !*** ./resources/js/Pages/CellarWine/CreateView.vue?vue&type=template&id=42373b8a ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CreateView_vue_vue_type_template_id_42373b8a__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CreateView_vue_vue_type_template_id_42373b8a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./CreateView.vue?vue&type=template&id=42373b8a */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/CellarWine/CreateView.vue?vue&type=template&id=42373b8a");
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Cellar/CellarsView.vue?vue&type=template&id=1f0b3a52":
 /*!*********************************************************************************!*\
   !*** ./resources/js/Pages/Cellar/CellarsView.vue?vue&type=template&id=1f0b3a52 ***!
@@ -54580,22 +54611,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ShowView_vue_vue_type_template_id_077f7976__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ShowView_vue_vue_type_template_id_077f7976__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ShowView.vue?vue&type=template&id=077f7976 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Cellar/ShowView.vue?vue&type=template&id=077f7976");
-
-
-/***/ }),
-
-/***/ "./resources/js/Pages/CellarWine/CreateView.vue?vue&type=template&id=42373b8a":
-/*!************************************************************************************!*\
-  !*** ./resources/js/Pages/CellarWine/CreateView.vue?vue&type=template&id=42373b8a ***!
-  \************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CreateView_vue_vue_type_template_id_42373b8a__WEBPACK_IMPORTED_MODULE_0__.render)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CreateView_vue_vue_type_template_id_42373b8a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./CreateView.vue?vue&type=template&id=42373b8a */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/CellarWine/CreateView.vue?vue&type=template&id=42373b8a");
 
 
 /***/ }),

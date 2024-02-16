@@ -3,6 +3,7 @@
   <Head title="Cellar" />
   <header class="block-font txt-center coral">
     <h2>Edit Cellar</h2>
+    <GoBackButton :color="'cream'"/>
   </header>
     <form @submit.prevent="submitForm" :action="updateRoute">
       <label for="name" class="legend cream">Just give it name !</label>
@@ -15,12 +16,14 @@
   
 <script>
 import { Head } from '@inertiajs/inertia-vue3';
+import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue';
 import MainLayout from '@/Layouts/MainLayout.vue';
 
 export default {
   name: 'EditView',
   components: {
-    Head
+    Head,
+    GoBackButton,
   },
   props: {
     cellar: {
@@ -58,4 +61,3 @@ export default {
   },
 };
 </script>
-  // kkep
