@@ -21,6 +21,9 @@ export default {
       case 'cream':
         this.fill = '#F2D9AF'
         break;
+      case 'coral':
+        this.fill = '#F95148'
+        break;
       case 'burgundy':
         this.fill = '#2B0303'
       default:

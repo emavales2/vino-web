@@ -468,6 +468,10 @@ body {
     padding: 40px 0;
 }
 
+.pad_hor_general {
+    padding: 0 40px;
+}
+
 .gap_20 {
     gap: 20px;
 }
@@ -1010,8 +1014,18 @@ button{
     font-family: 'Oswald', sans-serif;
 }
 
+.flex-flow-unset {
+    flex-flow: unset;
+    max-height: 100%;
+}
+
 .lien_sml:hover {
     color:var(--coral)
+}
+
+.borderless {
+    padding: 0;
+    border: none;
 }
 
 
@@ -1351,6 +1365,16 @@ fieldset {
   min-height: 150px;
   filter: drop-shadow(1px 2px 2px rgba(61, 49, 49, 0.572));
 }
+
+wine-th-nav span:nth-of-type(2) {
+    flex-flow: unset;
+    height: inherit;
+}
+
+.wine-btn {
+    height: 42px;
+}
+
 
 .radio{
   display: none;
