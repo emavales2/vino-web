@@ -28,7 +28,7 @@
       <PlusButton :color="'cream'" @click="addOne(wine, quantity)"/>
     </div>
     <slot />
-    <button v-if="addOne" class="button sml" @click="deleteWine(wine)">remove wine</button>
+    <button v-if="deleteWine" class="button sml" @click="deleteWine(wine)">remove wine</button>
   </li>
 </template>
 
@@ -38,7 +38,6 @@ import ColorDrop from './ButtonsIcons/ColorDrop.vue'
 import DeleteButton from './ButtonsIcons/DeleteButton.vue'
 import PlusButton from './ButtonsIcons/PlusButton.vue'
 import MinusButton from './ButtonsIcons/MinusButton.vue'
-import { Inertia } from '@inertiajs/inertia';
 export default {
   name: 'WineThumbnail',
   components: {
@@ -46,18 +45,12 @@ export default {
     ColorDrop,
     DeleteButton,
     MinusButton,
-    MinusButton,
     PlusButton
 },
   methods: {
     setColor (color) {
       if(color) return color.split(' ')[1]
-    },
-    deleteOne(wine) {
-      if (confirm('Are you sure you want to delete this wine from your shopping list?')) {
-        Inertia.delete(route('buylist.delete', { wine: wine.id }))
-      }
-    },    
+    }
   },
   props:['wine', 'colorDrop', 'openForm', 'quantity', 'deleteAction', 'addOne', 'removeOne', 'deleteWine']
 }
