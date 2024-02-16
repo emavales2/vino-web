@@ -2,11 +2,14 @@
   display: none;
 }
 .radio + label{
+  font-family: var(--block-font);
   border: 2px solid;
   border-color: transparent;
   border-radius: 100px;
-  padding: var(--vsmall-space);
+  padding: var(--small-space);
   text-align: center;
+  font-weight: 600;
+  color: var(--coral);
 }
 .radio:checked + label{
   background-color: var(--cream);
