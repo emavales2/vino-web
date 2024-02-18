@@ -13,6 +13,7 @@
 
     --coral: #F95148;
 
+
     /* ----- NEUTRALS ----- */
 
     --cream: #F2D9AF;
@@ -31,9 +32,7 @@
 
 body {
     background-color: var(--burgundy);
-    /* color: green; */
 }
-
 
 .bckgd-burg-lt {
     background-color: var(--burgundy-lt);
@@ -59,6 +58,10 @@ body {
     color: var(--burgundy);
 }
 
+.burg-lt {
+    color: var(--burgundy-lt);
+}
+
 .coral {
     color: var(--coral)
 }
@@ -66,7 +69,6 @@ body {
 .cream {
     color: var(--cream)
 }
-
 
 .cream_lt {
     color: var(--cream-lt)

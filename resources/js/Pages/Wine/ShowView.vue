@@ -1,54 +1,37 @@
 <template>
     <div class="bckgd bckgd-cream-lt">
-        <!-- <section class="background_blobs">
-            <figure class="fig_bg">
-                <img src="@/../assets/img/coral_1.svg" class="coral_blob_bg" alt="">    
-            </figure>
-            <figure class="fig_bg">
-                <img src="@/../assets/img/med_vino.svg" class="med_blob_bg" alt="">
-            </figure>
-            <figure class="fig_bg">
-                <img src="@/../assets/img/dark_vino.svg" class="dkvin_blob_bg" alt="">
-            </figure>
-        </section> -->
-
-        <div class="column_index_list pad_vert_general">
-            <span class="pad_hor_general"><GoBackButton color="coral"/></span>
-                  
-                <main>
-                    <div class="fiche_wine">
-                    <div class="">
-                        <article class="flex-row gap_20">            
-                            <figure>
-                                <img :src="wine.photo" :alt="wine.name">
-                            </figure>
+        
+        <main>
+            <GoBackButton :color="'coral'" class="button_back"/>
+            <div class="fiche_wine">
+                <article class="flex-row gap_20">            
+                    <figure>
+                        <img :src="wine.photo" :alt="wine.name">
+                    </figure>
+                    
+                    <!-- ----- * TEXT SIDE OF FICHE * ----- -->
+                    <section>
+                        <span class="country_line">
+                            <ColorDrop :class="setColor(wine.type)"/>
+                            <h3 class="fs_6 display-font burg-lt">{{ wine.country ? wine.country : 'n/a' }}</h3>
+                        </span>
+                        <h1 class="block-font fiche_wine_title coral">{{ wine.name }}</h1>
+                        <div class="burg-lt">                        
+                            <p v-if="wine.user_id">custom wine</p>
+                            <p v-else>code saq: {{ wine.code_saq }}</p>
+                            <div>
                             
-                            <!-- ----- * TEXT SIDE OF FICHE * ----- -->
-                            <section>
-                                <span class="country_line">
-                                    <ColorDrop :class="setColor(wine.type)"/>
-                                    <h6>{{ wine.country ? wine.country : 'n/a' }}</h6>
-                                </span>
-
-                                <h1 class="block-font fiche_wine_title">{{ wine.name }}</h1>
-                                <div>                        
-                                    <p v-if="wine.user_id">custom wine</p>
-                                    <p v-else>code saq: {{ wine.code_saq }}</p>
-                                    <div>
-                                    
-                                    <ul>
-                                        <li>{{ wine.type ? wine.type : 'n/a' }}</li>
-                                        <!-- <li>country: {{ wine.country ? wine.country : 'n/a' }}</li> -->
-                                        <li>{{ wine.size ? wine.size : 'n/a' }}</li>
-                                        <li>price: {{ wine.price ? wine.price + ' $' : 'n/a' }}</li>
-                                    </ul>
-                                    </div>
-                                </div>                   
-                            </section>
-                        </article>
-                    </div>
-                </div>
-            </main>
+                            <ul>
+                                <li>{{ wine.type ? wine.type : 'n/a' }}</li>
+                                <li>{{ wine.size ? wine.size : 'n/a' }}</li>
+                                <li>price: {{ wine.price ? wine.price + ' $' : 'n/a' }}</li>
+                            </ul>
+                            </div>
+                        </div>                   
+                    </section>
+                </article>
+            </div>
+        </main>
                 <!-- ----- * NAV SECTION * ----- -->
                 <aside class="flex-row pad_hor_general" v-if="!exists">
                     <!-- <Link class="button" :href="route('buylist.create', { wine: wine.id })">
@@ -70,7 +53,7 @@
 
                     
                 </aside>
-        </div>  
+        <!-- </div>   -->
             
     </div>
 </template>

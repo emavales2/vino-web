@@ -17,7 +17,7 @@
   <header class="top_nav_header">        
     <nav class="top_nav">
     <figure>
-        <img src="@/../assets/logos/VINO_lt.svg" alt="">
+        <img src="@/../assets/logos/VINO_lt.svg" alt="VNO logo">
     </figure>
     <span>
         <span>

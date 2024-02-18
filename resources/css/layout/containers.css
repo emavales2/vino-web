@@ -79,6 +79,15 @@
 .pad_vert_general {
     padding: 40px 0;
 }
+
+.pad_med {
+    padding: 20px;
+}
+
+.pb_0 {
+    padding-bottom: 0;
+}
+
 /* .under_nav {
     display: flex;
     flex-direction: column;
@@ -103,7 +112,8 @@
 
 /* Page de Profil */
 .container_profil{
-    padding: 20px 50px;
+    /* padding: 20px 50px; */
+    align-self: center;
     align-content: center;
     display: flex;
     flex-direction: column;
@@ -130,6 +140,10 @@
 
 .pad_vert_general {
     padding: 40px 0;
+}
+
+u {
+    padding-top: 5px;
 }
 
 

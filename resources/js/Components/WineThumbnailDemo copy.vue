@@ -1,7 +1,7 @@
 <template>
   <article>
     <img :src="wine.wine.photo" :alt="wine.wine.name + ' photo'" width="100px" height="100px">
-    <h1>{{ wine.wine.name }}</h1>
+    <h1 class="type_1">{{ wine.wine.name }}</h1>
     <label>
       <input type="number" v-model="form.quantity">
     </label>

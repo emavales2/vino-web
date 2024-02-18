@@ -2,7 +2,9 @@
   background-color: var(--cream-lt);
   border-radius: 12px;
   padding: var(--small-space);
+  padding: var(--med-space);
 }
+
 .form-quantity input{
   font-family: var(--title-font);
   font-size: 3em;
@@ -11,6 +13,9 @@
 }
 .form-quantity section:first-of-type{
   display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  text-align-last: center;
 
   >*{
     flex: 1;
@@ -26,6 +31,7 @@
     gap: var(--med-space);
   }
 }
+
 .form-quantity section:last-of-type div{
   display: flex;
   flex-flow: wrap;

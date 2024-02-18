@@ -2,7 +2,7 @@
     <Head title="Dashboard Admin" />
     <MainLayout>
     <div class="p-4">
-        <h1 class="text-bold text-xl mb-6">Welcome {{ user.first_name }}</h1> 
+        <h1 class="fs_1 text-bold text-xl">Welcome {{ user.first_name }}</h1> 
         <nav class="mb-6">
             <ul>
                 <li>

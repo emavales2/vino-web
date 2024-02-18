@@ -1,7 +1,7 @@
 <template>
   <main>
     <section class="cream">
-      <h1>There is {{ count }} results for <strong>{{ search }}</strong></h1>
+      <h1 class="fs_4 block-font coral">We found {{ count }} results for "{{ search }}"</h1>
       <div v-if="results.length !== 0">
         <p v-if="count > 1000">there is too many search results, here is the first 1000</p>
         <ul class="wine-list">
