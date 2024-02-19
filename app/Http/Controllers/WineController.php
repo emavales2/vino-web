@@ -32,7 +32,7 @@ class WineController extends Controller
             'search' => 'min:2'
         ]);
         $search = $request->search;
-        $count = Wine::like('name', $search)->count();
+        $count = Wine::like('name', $search)->where('user_id', null)->count();
         $results = Wine::like('name', $search)->limit(1000)->get();
         $cellars = Auth::user()->cellar;
         return Inertia::render('Wine/SearchView', compact('results', 'search', 'cellars', 'count'));

@@ -12,7 +12,6 @@
                     type="text"
                     class="mt-1 block w-full"
                     v-model="form.first_name"
-                    required
                     autofocus
                     autocomplete="first_name"
                     placeholder="first name"
@@ -30,7 +29,6 @@
                     type="text"
                     class="mt-1 block w-full"
                     v-model="form.last_name"
-                    required
                     autofocus
                     autocomplete="last_name"
                     placeholder="last name"

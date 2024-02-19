@@ -9,13 +9,11 @@
                 <h1 class="fs_3 block-font coral">Add this wine to your cellar</h1>
             </header>
 
-            <div v-if="cellars.length > 0">    
+            <div v-if="cellars.length !== 0">    
                 <form @submit.prevent="addToCellar" class="form-quantity">
-                    <h2 class="block-font fiche_wine_title coral">{{ wine.name }}</h2>
-                    
+                    <h2 class="block-font fiche_wine_title coral">{{ wine.name }}</h2>             
                     <section>
                         <figure><img :src="wine.photo" :alt="wine.name"></figure>
-
                         <div>
                             <label for="quantity"></label>
                             <input type="number" id="quantity" v-model="form.quantity">
@@ -34,17 +32,17 @@
                     <section class="column">
                         <legend class="fs_6 display-font coral">select a cellar</legend>
                         <div>
-                        <div v-for="(cellar, i) in cellars">
-                            <input 
-                            :key="i" 
-                            :id=cellar.id 
-                            type="radio" 
-                            class="radio" 
-                            v-model="form.cellar_id" 
-                            :value="cellar.id"
-                            >
+                          <div v-for="(cellar, i) in cellars">
+                              <input 
+                              :key="i" 
+                              :id=cellar.id 
+                              type="radio" 
+                              class="radio" 
+                              v-model="form.cellar_id" 
+                              :value="cellar.id"
+                          >
                             <label :for=cellar.id>{{ cellar.name }}</label>
-                        </div>
+                          </div>
                         </div>
                     </section>
                     
@@ -52,8 +50,8 @@
                 </form>
             </div>
             <div v-else>
-                <h1>Oh oh, seems like you have no cellar</h1>
-                <Link class="button_burgundy" :href="route('cellar.create')">create a cellar</Link>
+                <h1>It seems like you have no cellar, please create one first</h1>
+                <Link class="button" :href="route('cellar.create')">create a cellar</Link>
             </div>
         </main>
     </div>

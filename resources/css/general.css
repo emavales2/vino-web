@@ -38,8 +38,6 @@ footer {
     max-width: 100vw;
 }
 
-
-
 /* ------- LAYOUT, RHYTHM & COMPOSITION ------- */
 
 body, [id=app] {
@@ -83,4 +81,7 @@ main {
 
 .invisible {
     display: none;
+}
+button[disabled] {
+    filter:brightness(.01)
 }
