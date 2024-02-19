@@ -42,14 +42,17 @@
             </ul>
         </main>
     </div>
-
-    <ConfirmModal 
-      v-show="openDeleteModal" 
-      :YesAction="delete" 
-      action="delete" 
-      :toggleModal="toggleModal"
-      actionMessage="Are you sure you want to delete this wine from the cellar ?" 
-    />
+    <Modal 
+      v-show="openDeleteModal"
+      :toggleOff="toggleModal"
+    >
+      <ConfirmModal 
+        :YesAction="delete" 
+        action="delete" 
+        :toggleModal="toggleModal"
+        actionMessage="Are you sure you want to delete this wine from the cellar ?" 
+      />
+    </Modal>
 </template>
 
 <script>
@@ -62,11 +65,12 @@ import ConfirmModal from '@/Components/ConfirmModal.vue';
 import WineThumbnail from '@/Components/WineThumbnail.vue';
 import MainLayout from '@/Layouts/MainLayout.vue';
 import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue';
-
+import Modal from '@/Components/Modal.vue';
 export default {
   name: 'ShowView',
   components: {
     ConfirmModal,
+    Modal,
     Head,
     WineThumbnail,
     GoBackButton,

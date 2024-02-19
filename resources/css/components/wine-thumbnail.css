@@ -19,7 +19,7 @@
   justify-content: space-between;
   padding: var(--small-space) var(--vsmall-space);
   height: 200px;
-  filter: drop-shadow(1px 2px 2px rgba(14, 2, 2, 0.572));
+  box-shadow: var(--box-shadow);
 }
 .wine-thumbnail aside {
   display: flex;
@@ -51,7 +51,7 @@
   position: absolute;
   bottom: 0;
   min-height: 150px;
-  filter: drop-shadow(1px 2px 2px rgba(61, 49, 49, 0.572));
+  filter: drop-shadow(var(--box-shadow));
 }
 
 .wine-thumbnail>section{

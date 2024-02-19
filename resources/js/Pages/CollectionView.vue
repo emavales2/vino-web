@@ -45,13 +45,16 @@
         </main>
     </div>
 
-    <ConfirmModal 
-            v-show="openDeleteModal" 
-            :YesAction="delete" 
-            action="delete" 
+    <Modal v-show="openDeleteModal"
+        :toggleOff="toggleModal"
+    >
+        <ConfirmModal
+            :YesAction="delete"
+            action="delete"
             :toggleModal="toggleModal"
-            actionMessage="Are you sure you want to delete this wine? This action will remove it from your cellars as well. This action cannot be undone." 
+            actionMessage="Are you sure you want to delete this wine? This action will remove it from your cellars as well. This action cannot be undone."
         />
+    </Modal>
 </template>
 
 <script>
@@ -62,11 +65,13 @@ import DeleteButton from "@/Components/ButtonsIcons/DeleteButton.vue";
 import EditButton from "@/Components/ButtonsIcons/EditButton.vue";
 import MainLayout from "@/Layouts/MainLayout.vue";
 import WineThumbnail from "@/Components/WineThumbnail.vue";
+import Modal from '@/Components/Modal.vue';
 
 export default {
     name: "CollectionView",
     components: {
         ConfirmModal,
+        Modal,
         DeleteButton,
         Head,
         Link,

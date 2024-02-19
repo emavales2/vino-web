@@ -21,8 +21,7 @@
             </tr>
         </tbody>
     </table>
-    <ConfirmModal 
-            v-show="openDeleteModal" 
+        <ConfirmModal v-show="openDeleteModal" 
             :YesAction="delete" 
             action="delete" 
             actionMessage="Are you sure you want to delete your account?" 

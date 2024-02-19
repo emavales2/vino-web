@@ -38,13 +38,17 @@
             </div>
         </main>
     </div>
-    <ConfirmModal 
-      v-show="openDeleteModal" 
-      :YesAction="delete" 
-      action="delete" 
-      :toggleModal="toggleModal"
-      actionMessage="Are you sure you want to delete this wine from your buy list ?" 
-    />
+    <Modal 
+      v-show="openDeleteModal"
+      :toggleOff="toggleModal"
+    >
+      <ConfirmModal
+        :YesAction="delete"
+        action="delete"
+        :toggleModal="toggleModal"
+        actionMessage="Are you sure you want to delete this wine from your buy list ?"
+      />
+    </Modal>
 </template>
   
 <script>
@@ -55,7 +59,7 @@ import WineThumbnail from '@/Components/WineThumbnail.vue';
 import PlusButton from '@/Components/ButtonsIcons/PlusButton.vue';
 import MinusButton from '@/Components/ButtonsIcons/MinusButton.vue';
 import ConfirmModal from '@/Components/ConfirmModal.vue';
-
+import Modal from '@/Components/Modal.vue';
 export default {
   components: {
     WineThumbnail,
@@ -63,7 +67,8 @@ export default {
     Link,
     MinusButton,
     PlusButton,
-    ConfirmModal
+    ConfirmModal,
+    Modal
   },
   data() {
     return {

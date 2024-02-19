@@ -83,5 +83,5 @@ main {
     display: none;
 }
 button[disabled] {
-    filter:brightness(.4)
+    filter:brightness(.01)
 }
