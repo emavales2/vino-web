@@ -63,11 +63,11 @@ export default {
     },
     removeOne (wine, quantity) {
       if(quantity > 0)
-        Inertia.visit(route('buylist.remove', { : this.cellar, wine: wine }), 
+        Inertia.visit(route('buylist.remove', { wine: wine }), 
       { preserveScroll: true })
     },
     addOne (wine) {
-      Inertia.visit(route('buylist.add', { cellar: this.cellar, wine: wine }),
+      Inertia.visit(route('buylist.add', { wine: wine }),
       { preserveScroll: true })
     },
   },
