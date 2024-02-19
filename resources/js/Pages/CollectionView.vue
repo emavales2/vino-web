@@ -30,7 +30,7 @@
                                 >
                                   edit wine
                                 </Link>
-                                <button class="button sml" @click="toggleModal">remove wine</button>
+                                <button class="button sml" @click="toggleModal(wine.wine)">remove wine</button>
                               </section>
 
                             </WineThumbnail>
@@ -49,6 +49,7 @@
             v-show="openDeleteModal" 
             :YesAction="delete" 
             action="delete" 
+            :toggleModal="toggleModal"
             actionMessage="Are you sure you want to delete this wine? This action will remove it from your cellars as well. This action cannot be undone." 
         />
 </template>
