@@ -1,14 +1,19 @@
 .search-bar{
+  height: max-content;
+  align-items: center;
   display: flex;
-  flex-flow: column;
+  flex-flow: row wrap;
   gap: var(--small-space);
+  column-gap: var(--med-space);
   background-color: var(--cream);
   padding: var(--med-space);
+  border-radius: 0 0 12px 12px;
+  box-shadow: var(--box-shadow);
 }
 .search-bar form{
   display: flex;
   flex-flow: row;
-  gap: var(--vsmall-space);
+  gap: var(--small-space);
 }
 .search-bar svg{
   width: 20px;

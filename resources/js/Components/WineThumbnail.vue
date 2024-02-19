@@ -1,5 +1,6 @@
 <template>
   <li class="wine-thumbnail">
+    <!-- section principal du thumbnail(incluant nom, qté(si présent), image et bckgd) -->
     <Link :href="route('wine.show', wine.id)">
       <aside>
         <ColorDrop :class="setColor(wine.type)"/>
@@ -9,10 +10,10 @@
       </aside>
       <div>
         <img 
-        :src="wine.photo"
-        :alt="wine.name"
-        loading="lazy" 
-      >
+          :src="wine.photo"
+          :alt="wine.name"
+          loading="lazy" 
+        >
       </div>
       <div>
         <p v-if="wine.name.length > 30">
@@ -23,12 +24,10 @@
         </p>        
       </div>
     </Link>
-    <section v-if="addOne" class="row_els_apart">
-      <MinusButton :color="'cream'" @click="removeOne(wine, quantity)"/>
-      <PlusButton :color="'cream'" @click="addOne(wine, quantity)"/>
-    </section>
+
+    <!-- <slot> utilisé pour les sections contenant des boutons affectant le vin(BD et DOM) -->
     <slot />
-    <button v-if="deleteWine" class="button sml" @click="deleteWine(wine)">remove wine</button>
+
   </li>
 </template>
 
@@ -52,6 +51,6 @@ export default {
       if(color) return color.split(' ')[1]
     }
   },
-  props:['wine', 'colorDrop', 'openForm', 'quantity', 'deleteAction', 'addOne', 'removeOne', 'deleteWine']
+  props:['wine', 'quantity']
 }
 </script>

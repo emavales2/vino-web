@@ -82,6 +82,7 @@
               <h4 class="legend cream">What do you want to do with this wine?</h4>
               <div>
                 <h5 class="legend_small cream">Store in a cellar</h5>
+                
                 <div>
                   <div v-for="(cellar, i) in cellars">
                     <input
@@ -94,6 +95,7 @@
                     >
                     <label :for=cellar.id>{{ cellar.name }}</label>
                   </div>
+                  
                 </div>
                 <p v-if="form.errors.cellar_id">{{ form.errors.cellar_id }}</p>
               </div>
@@ -116,6 +118,7 @@
               </div>
             <button class="button">save wine</button>
           </form>
+
         </main>
       </div>
   </template>
@@ -142,7 +145,7 @@
           country: '',
           price: '',
           size: '',
-          cellar_id: this.cellars[0].id,
+          cellar_id: this.cellars[0].id || null,
           cellar_qty: '0',
           buyList_qty: '',
         }),
