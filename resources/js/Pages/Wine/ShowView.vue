@@ -1,6 +1,14 @@
 <template>
-    <div class="bckgd bckgd-cream-lt">
-        
+    <div class="bckgd bckgd-white float_up">
+        <section class="background_blobs">
+            <figure class="fig_bg bottom_blob">
+                <img src="@/../assets/img/bott_cream_fiche.svg" alt="">    
+            </figure>
+            <figure class="fig_bg bottom_blob">
+                <img src="@/../assets/img/bott_coral_fiche.svg" class="coral_blob_bg" alt="">    
+            </figure>
+        </section> 
+
         <main>
             <GoBackButton :color="'coral'" class="button_back"/>
             <div class="fiche_wine">

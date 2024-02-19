@@ -14,6 +14,12 @@
     />
   </ModalTest>
 
+    <section class="background_blobs">
+        <figure class="fig_bg">
+            <img src="@/../assets/img/blob_top.svg" class="coral_blob_bg" alt="">    
+        </figure>
+    </section> 
+
   <header class="top_nav_header">        
     <nav class="top_nav">
     <figure>

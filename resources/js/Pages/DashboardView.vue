@@ -2,11 +2,6 @@
     <Head title="Dashboard" />
           
     <div class="bckgd">
-        <section class="background_blobs">
-            <figure class="fig_bg">
-                <img src="@/../assets/img/blob_top.svg" class="coral_blob_bg" alt="">    
-            </figure>
-        </section>
         
         <main>
             <header>
