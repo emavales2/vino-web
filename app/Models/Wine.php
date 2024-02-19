@@ -29,7 +29,7 @@ class Wine extends Model
     // retourner une méthode nommé 'like' (appartient à Model)
     public  function scopeLike($query, $field, $value){
 
-        /*REGEX =  début mot / <recherche> et [une lettre de grace->0 ou 1] / fin de mot */
+        /*REGEX == début mot / <recherche> et [une lettre de grace->0 ou 1] / fin de mot */
         $regex = "\b($value)[a-z]?\b";
         return $query->where($field, 'REGEXP', $regex);
     }
