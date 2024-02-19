@@ -129,10 +129,12 @@ class CellarController extends Controller
     {
         $userId = Auth::id();
 
+        // dans ma tête, ce n'était deja pas possible d'acceder ici manuellement
         if ($cellar->user_id != $userId) {
             return redirect(route('cellar.index'))->withErrors("You do not have authorization to access this cellar");
         }
         
+        //to discuss
         $hasWines = $cellar->cellarHasWines()->exists();
 
         if ($hasWines) {
