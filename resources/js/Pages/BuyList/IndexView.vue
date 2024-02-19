@@ -10,8 +10,25 @@
 
             <div v-if="buylist.length !== 0">
                 <ul class="wine-list">
-                <WineThumbnail v-for="(wine, i) in buylist" :key="i" :wine="wine">
-                    <button class="button sml" @click="deleteOne(wine)">remove wine</button>
+                <WineThumbnail v-for="(wine, i) in buylist" 
+                  :key="i" 
+                  :wine="wine"
+                  :quantity="wine.quantity"
+                >
+                <section>
+                    <div>
+                      <MinusButton 
+                        :color="'cream'" 
+                        :disabled="wine.qty === 0" 
+                        @click="removeOne(wine, wine.qty)"
+                      />
+                      <PlusButton 
+                        :color="'cream'" 
+                        @click="addOne(wine)"
+                      />
+                    </div>
+                    <button class="button sml" @click="toggleModal">remove wine</button>
+                  </section>
                 </WineThumbnail>
                 </ul>
             </div>
@@ -24,26 +41,37 @@
 </template>
   
 <script>
-import MainLayout from '@/Layouts/MainLayout.vue';
-import { Link } from '@inertiajs/inertia-vue3';
-import WineThumbnail from '@/Components/WineThumbnail.vue';
+import { Head, Link } from '@inertiajs/inertia-vue3';
 import { Inertia } from '@inertiajs/inertia';
-import { Head } from '@inertiajs/inertia-vue3';
+import MainLayout from '@/Layouts/MainLayout.vue';
+import WineThumbnail from '@/Components/WineThumbnail.vue';
+import PlusButton from '@/Components/ButtonsIcons/PlusButton.vue';
+import MinusButton from '@/Components/ButtonsIcons/MinusButton.vue';
 
 export default {
   components: {
     WineThumbnail,
     Head,
-    Link
+    Link,
+    MinusButton,
+    PlusButton
   },
-  props: ['buylist'],
+  layout: MainLayout,
   methods: {
     deleteOne(wine) {
-      Inertia.delete(route('buylist.delete', { wine: wine.id })
-      )
-    }
+      Inertia.delete(route('buylist.delete', { wine: wine.id }))
+    },
+    removeOne (wine, quantity) {
+      if(quantity > 0)
+        Inertia.visit(route('buylist.remove', { : this.cellar, wine: wine }), 
+      { preserveScroll: true })
+    },
+    addOne (wine) {
+      Inertia.visit(route('buylist.add', { cellar: this.cellar, wine: wine }),
+      { preserveScroll: true })
+    },
   },
-  layout: MainLayout
+  props: ['buylist']
 }
 </script>
   

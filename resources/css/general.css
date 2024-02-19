@@ -84,3 +84,6 @@ main {
 .invisible {
     display: none;
 }
+button[disabled] {
+    filter:brightness(.4)
+}

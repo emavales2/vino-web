@@ -17,17 +17,22 @@
                 <div v-if="collection.length !== 0">
                     <div>
                         <ul class="wine-list">
-                            <WineThumbnail
-                            v-for="(wine, i) in collection" :key="i"
-                                :wine="wine.wine"
-                                :quantities="wine.quantities">
+                            <WineThumbnail  v-for="(wine, i) in collection" 
+                              :key="i"
+                              :wine="wine.wine"
+                              :quantities="wine.quantities"
+                            >
+                              <!-- section std sloté -->
+                              <section>
+                                <Link v-if="wine.wine.user_id"
+                                  :href="route('wine.edit', wine.wine.id)" 
+                                  class="button sml"
+                                >
+                                  edit wine
+                                </Link>
+                                <button class="button sml" @click="toggleModal">remove wine</button>
+                              </section>
 
-                                <aside class="wine-th-nav">
-                                    <DeleteButton @click="toggleModal(wine.wine.id)" :color="'cream'"/> 
-                                    <Link :href="route('wine.edit', wine.wine.id)">
-                                        <EditButton :fill="'cream'"/>
-                                    </Link>
-                                </aside>
                             </WineThumbnail>
                         </ul>
                     </div>
