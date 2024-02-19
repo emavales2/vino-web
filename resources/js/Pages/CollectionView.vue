@@ -22,7 +22,7 @@
 
                                 <aside class="wine-th-nav">
                                     <DeleteButton @click="toggleModal(wine.wine.id)" :color="'cream'"/> 
-                                    <Link :href="route('wine.edit', wine.wine.id)">
+                                    <Link v-if="wine.wine.user_id != null" :href="route('wine.edit', wine.wine.id)">
                                         <EditButton :fill="'cream'"/>
                                     </Link>
                             </aside>
