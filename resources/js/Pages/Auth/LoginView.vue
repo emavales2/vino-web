@@ -12,8 +12,6 @@
 
             <form @submit.prevent="submit">
                 <fieldset class="fieldset_2">
-                    <!-- <legend class="cream">Email</legend> -->
-                    <!-- <label for="email" value="Email" hidden></label> -->
                     <label for="email" value="Email">email</label>
                     <input
                         id="email"
@@ -29,8 +27,6 @@
                 </fieldset>
 
                 <fieldset class="fieldset_2">
-                    <!-- <legend class="cream">password</legend> -->
-                    <!-- <label for="password" value="Password" hidden></label> -->
                     <label for="password" value="Password">Password</label>
                     <input
                         id="password"
@@ -50,10 +46,6 @@
             </form>
 
             <aside class="col_tight">
-                <!-- <p class="cream txt-center">          
-                    <Link class="block-font" :href="route('password.request')">Forgot your password?</Link>
-                </p> -->
-
                 <p class="cream txt-center">
                     Don't have an account yet?<br>
                     <Link class="block-font coral" :href="route('register')">Sign Up!</Link>

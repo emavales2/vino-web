@@ -25,11 +25,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // sera changé pour ->daily('02:00')
+        
         
         $schedule->call(function () {
             WineProvider::updateWineTable();
-        })->everyMinute();
+        })->daily('02:00');
     }
 
     /**

@@ -12,7 +12,6 @@
 
                 <!-- --------------- * CELLARS * ------------------ -->
                 <li>
-                    <!-- <section class="container_dashboard_section"> -->
                     <section class="column gap_20">
                         <header>
                             <span class="row_els_apart gap_20">
@@ -31,9 +30,6 @@
                         </ul>
 
                         <p class="no_show" v-else><strong>OH NO!</strong> You have no cellars yet.</p>
-                        <!-- <div v-if="cellars.length > 3">
-                            <Link class="button sml" :href="route('cellar.index')">See more</Link>
-                        </div> -->
                     </section>
                 </li>
 
@@ -43,7 +39,6 @@
                         <header>
                             <span class="row_els_apart gap_20">
                                 <h2 class="fs_5 display-font cream">my wine collection</h2>
-                                <!-- <div v-if="collection.length > 3"> -->
                                 <div>
                                     <Link v-if="collection.length > 3" class="lien_sml cream block-font" :href="route('collection')">See more</Link>
                                 </div>
@@ -60,33 +55,10 @@
                             </ul>
                         </div>
 
-                        <!-- <ul v-if="!isEmpty(collection)" class="grid_square_horiz">
-                            <li v-for="(wine, index) in collection.slice(0, 3)" :key="wine.id">
-                                
-                                <WineThumbnail v-for="(wine, i) in collection"
-                                    :key="i"
-                                    :wine="wine.wine"
-                                    :quantities="wine.quantities"
-                                />
-                            </li>
-                        </ul> -->
-
-                        <!-- <WineThumbnail :wine="wine" /> -->
-
                         <p class="no_show" v-else><strong>OH NO!</strong> You have no wines yet.</p>
                    
                     </section>
                 </li>
-                <!-- <li>
-                    <section class="container_dashboard_section">
-                        <h5 class="display-font">My Shopping Lists</h5>
-                    </section>
-                </li> -->
-                <!-- <li>
-                    <section class="container_dashboard_section">
-                        <h5 class="display-font">My Notes</h5>
-                    </section>
-                </li> -->
             </ul>
         </main>
     </div>  

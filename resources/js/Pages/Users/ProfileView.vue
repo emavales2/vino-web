@@ -10,7 +10,6 @@
 
         <main>
             <GoBackButton :color="'cream'" class="button_back"/>
-        <!-- <main class="column cont_narrow_splash"> -->
             <header>
                 <h1 class="index_title">Profile</h1>
             </header>
