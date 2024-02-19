@@ -2,11 +2,11 @@
     <Head title="Register" />
     <main>
         <header>
-            <h1 class="block-font txt-center coral">Sign Up</h1>
+            <h1 class="index_title">Sign Up</h1>
         </header>
         <form @submit.prevent="submit">
-            <fieldset>
-                <label for="first_name" value="First name" hidden></label>
+            <fieldset class="fieldset_2">
+                <label for="first_name" value="First name">First Name</label>
                 <input
                     id="first_name"
                     type="text"
@@ -22,8 +22,9 @@
                     :message="form.errors.first_name"
                 />
             </fieldset>
-            <fieldset>
-                <label for="last_name" value="Last name" hidden></label>
+
+            <fieldset class="fieldset_2">
+                <label for="last_name" value="Last name">Last Name</label>
                 <input
                     id="last_name"
                     type="text"
@@ -40,8 +41,8 @@
                 />
             </fieldset>
 
-            <fieldset>
-                <label for="email" value="Email" hidden></label>
+            <fieldset class="fieldset_2">
+                <label for="email" value="Email">Email Address</label>
                 <input
                     id="email"
                     type="email"
@@ -56,8 +57,9 @@
                     :message="form.errors.email"
                 />
             </fieldset>
-            <fieldset>
-                <label for="password" value="Password" hidden></label>
+
+            <fieldset class="fieldset_2">
+                <label for="password" value="Password">Password</label>
                 <input
                     id="password"
                     type="password"
@@ -72,12 +74,9 @@
                     :message="form.errors.password"
                 />
             </fieldset>
-            <fieldset>
-                <label
-                    for="password_confirmation"
-                    value="Confirm Password"
-                    hidden
-                ></label>
+
+            <fieldset class="fieldset_2">
+                <label for="password_confirmation" value="Confirm Password">Confirm Password</label>
                 <input
                     id="password_confirmation"
                     type="password"
@@ -92,7 +91,8 @@
                     :message="form.errors.password_confirmation"
                 />
             </fieldset>
-            <div class="flex items-center justify-end mt-4">
+            
+            <div class="flex items-center justify-end">
                 <button
                     class="button"
                     :class="{ 'opacity-25': form.processing }"

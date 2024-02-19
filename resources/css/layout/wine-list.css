@@ -5,4 +5,9 @@
   padding-bottom: 30px;
   gap: var(--med-space);
   justify-content: center;
+
+  /* Changé à grid pour maintenir l'alignement même s'il y a un seul vin */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  padding: 0;
 }

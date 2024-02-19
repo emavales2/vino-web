@@ -1,0 +1,79 @@
+/* ----- * MOCKUPS FOR LABEL CLARITY - EITHER OF THESE WILL REQUIRE ITS OWN CSS FILE * ------ */
+
+
+/* ----- * FIELD TEST FOR LABEL CLARITY (email field on Login.vue) * ------ */
+
+.field_test {
+    border: 2px solid var(--cream); 
+    border-radius: 30px;
+    /* margin: auto;  */
+    max-width: 100%;
+    width: 100%;
+}
+
+.field_test legend {
+    margin: 0 30px;
+    padding: 0 10px;
+    font-size: small;
+    text-transform: uppercase;
+}
+
+.field_test input {
+    box-sizing: border-box;
+    border-radius: 30px;
+    border: none;
+    background: transparent;
+    font-size: medium;
+    padding: 0px 20px;
+    margin-bottom: 12px;
+    margin-top: 4px;
+    max-width: 100%;
+    width: 100%;
+    color: var(--cream);
+}
+
+.field_test input:focus-visible {
+    outline: none;
+}
+
+.field_test input::placeholder {
+    color: var(--coral);
+}
+
+
+
+/* ----- * 2nd FIELD TEST FOR LABEL CLARITY (password field on Login.vue) * ------ */
+
+.fieldset_2 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.fieldset_2 label {
+    color: var(--coral);
+    font-size: small;
+    margin: 0 20px;
+    text-transform: uppercase;
+}
+
+.fieldset_2 input {
+    box-sizing: border-box;
+    align-self: center;
+    border-radius: 30px;
+    border: none;
+    background: var(--cream-lt);
+    font-size: medium;
+    padding: 12px 20px;
+    max-width: 100%;
+    width: 100%;
+    color: var(--burgundy-lt);
+}
+
+.fieldset_2 input::placeholder {
+    color: var(--coral);
+}
+
+/* This is to fix the display of wines etc */
+/* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */

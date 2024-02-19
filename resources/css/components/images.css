@@ -1,0 +1,55 @@
+figure {
+    /* background-color: cornflowerblue; */
+    max-height: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+
+.background_blobs, .fig_bg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+img {
+    object-fit: cover;
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.coral_blob_bg {
+    opacity: 70%;
+}
+
+.med_blob_bg {
+    /* opacity: 64%; */
+    z-index: 1;
+}
+
+.dkvin_blob_bg {
+    opacity: 64%;
+    z-index: 2;
+}
+
+.fig_bg {
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+}
+
+.fig_bg img {
+    align-self: baseline;
+}
+
+.fig_bg.bottom_blob img {
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.fig_bg.bottom_blob:last-child img {
+    margin-top: auto;
+    margin-bottom: 0;
+}

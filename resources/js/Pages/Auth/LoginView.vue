@@ -1,17 +1,20 @@
 <template>
     <Head title="Log in" />
-    <div class=" bckgd burg">
+
+    <div class="bckgd bckgd-burg">
         <main>
             <header>
                 <!-- <figure>   
                 </figure> --> 
-                <h1 class="block-font txt-center cream">Sign In</h1>
-                <h5 class="block-font txt-center coral">Unlock the Perfect Cellar Experience with Vino</h5>               
+                <h1 class="cream block-font fs_1">Sign In</h1>
+                <h2 class="fs_5 block-font coral">Unlock the Perfect Cellar Experience with Vino</h2>               
             </header>
 
             <form @submit.prevent="submit">
-                <fieldset>
-                    <label for="email" value="Email" hidden></label>
+                <fieldset class="fieldset_2">
+                    <!-- <legend class="cream">Email</legend> -->
+                    <!-- <label for="email" value="Email" hidden></label> -->
+                    <label for="email" value="Email">email</label>
                     <input
                         id="email"
                         type="email"
@@ -20,13 +23,15 @@
                         required
                         autofocus
                         autocomplete="username"
-                        placeholder="email"
+                        placeholder="your email address"
                     />
                     <InputError class="msg input_err" :message="form.errors.email" />
                 </fieldset>
 
-                <fieldset>
-                    <label for="password" value="Password" hidden></label>
+                <fieldset class="fieldset_2">
+                    <!-- <legend class="cream">password</legend> -->
+                    <!-- <label for="password" value="Password" hidden></label> -->
+                    <label for="password" value="Password">Password</label>
                     <input
                         id="password"
                         type="password"
@@ -34,7 +39,7 @@
                         v-model="form.password"
                         required
                         autocomplete="current-password"
-                        placeholder="password"
+                        placeholder="your password"
                     />
                     <InputError class="msg input_err" :message="form.errors.password" />
                 </fieldset>

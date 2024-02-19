@@ -2,8 +2,9 @@
     <Head title="Edit Profile" />
     <div>
         <main>
+            <GoBackButton :color="'cream'" class="button_back"/>
             <header>
-                <h2 class="block-font txt-center coral">Edit Profile</h2>
+                <h1 class="index_title">Edit Profile</h1>
             </header>
             <form @submit.prevent="submit">
                 <div>
@@ -66,7 +67,6 @@
                 <button class="button" @click="toggleModal">
                     Delete your account
                 </button>
-                <GoBackButton :color="'cream'" />
             </div>
         </main>
     </div>

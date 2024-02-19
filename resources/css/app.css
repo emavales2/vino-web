@@ -20,8 +20,6 @@
 /* ---------- * * DANS SECTION NAVIGATION * * ---------- */
 
 @import url(navigation/nav_general.css);
-@import url(navigation/declancheur.css);
-@import url(navigation/nav_mobile.css);
 
 
 /* ---------- * * COMPOSANTS RÉUTILISABLES * * ---------- */
@@ -34,6 +32,7 @@
 @import url(components/form.css);
 @import url(components/form-quantity.css);
 @import url(components/form-create-wine.css);
+@import url(components/fieldset.css);
 
 @import url(floaters/modal.css);
 @import url(floaters/dialog.css);
@@ -48,4 +47,6 @@
 @import url(./components/radio.css);
 
 @import url(components/auto_messages.css);
+
+@import url(components/images.css);
 

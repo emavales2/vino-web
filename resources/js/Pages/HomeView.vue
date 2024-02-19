@@ -21,11 +21,11 @@
             <main class="cont_narrow_splash just_top">
                 <header>
                     <figure>
-                        <img src="@/../assets/logos/VINO_lt.svg" alt="">
+                        <img src="@/../assets/logos/VINO_lt.svg" alt="VINO logo">
                     </figure>
 
                     <span class="title-center">
-                        <h5 class="block-font txt-center coral">Your Personal<br>Wine Sanctuary</h5>
+                        <h1 class="fs_5 block-font txt-center coral">Your Personal<br>Wine Sanctuary</h1>
                     </span>
                 </header>
                 <div class="button_column">             

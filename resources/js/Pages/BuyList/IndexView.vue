@@ -1,30 +1,47 @@
 <template>
-  <div>
-    <header class="index_title">
-      <h2>Shopping List</h2>
-    </header>
-    <main>
-      <div v-if="buylist.length !== 0">
-        <ul class="wine-list">
-          <WineThumbnail v-for="(wine, i) in buylist" :key="i" :wine="wine">
-            <button class="button sml" @click="deleteOne(wine)">remove wine</button>
-          </WineThumbnail>
-        </ul>
-      </div>
-      <div v-else>
-        <p class="cream">Your shopping list is empty.</p>
-      </div>
-    </main>
-  </div>
+    <Head title="Buy List" />
+
+    <div class="bckgd bckgd-burg">
+        
+        <main>
+            <header>
+                <h1 class="index_title">Shopping List</h1>
+            </header>
+
+            <!-- PATH IS NOT WORKING FOR ME, it breaks page's code -->
+            <!-- <button class="button">
+                <Link :href="route('buylist.create')">
+                    Add Wine to Buy List
+                </Link>
+            </button> -->
+
+            <div v-if="buylist.length !== 0">
+                <ul class="wine-list">
+                <WineThumbnail v-for="(wine, i) in buylist" :key="i" :wine="wine">
+                    <button class="button sml" @click="deleteOne(wine)">remove wine</button>
+                </WineThumbnail>
+                </ul>
+            </div>
+
+            <div v-else>
+                <p class="cream">Your shopping list is empty.</p>
+            </div>
+        </main>
+    </div>
 </template>
   
 <script>
 import MainLayout from '@/Layouts/MainLayout.vue';
+import { Link } from '@inertiajs/inertia-vue3';
 import WineThumbnail from '@/Components/WineThumbnail.vue';
 import { Inertia } from '@inertiajs/inertia';
+import { Head } from '@inertiajs/inertia-vue3';
+
 export default {
   components: {
-    WineThumbnail
+    WineThumbnail,
+    Head,
+    Link
   },
   props: ['buylist'],
   methods: {
