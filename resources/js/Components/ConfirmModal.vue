@@ -3,7 +3,7 @@
             <p>{{ actionMessage }}</p>
             <div>
                 <button class="button sml" @click="YesAction">Yes, {{ action }}</button>
-                <button class="button sml" @click="closeModal">Cancel</button>
+                <button class="button sml" @click="toggleModal">Cancel</button>
             </div>
         </div>
 </template>
@@ -11,11 +11,6 @@
 <script>
 export default {
     name: 'ConfirmModal',
-    methods: {
-        closeModal() {
-            document.getElementById('confirmModal').style.display = 'none';
-        },
-    },
-    props: ['YesAction', 'action', 'actionMessage']
+    props: ['YesAction', 'action', 'actionMessage', 'toggleModal']
 }
 </script>

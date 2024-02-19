@@ -19,8 +19,8 @@
                     <div>
                       <MinusButton 
                         :color="'cream'" 
-                        :disabled="wine.qty === 0" 
-                        @click="removeOne(wine, wine.qty)"
+                        :disabled="wine.quantity === 0" 
+                        @click="removeOne(wine, wine.quantity)"
                       />
                       <PlusButton 
                         :color="'cream'" 
@@ -38,6 +38,13 @@
             </div>
         </main>
     </div>
+    <ConfirmModal 
+      v-show="openDeleteModal" 
+      :YesAction="delete" 
+      action="delete" 
+      :toggleModal="toggleModal"
+      actionMessage="Are you sure you want to delete this wine from your buy list ?" 
+    />
 </template>
   
 <script>
@@ -47,6 +54,7 @@ import MainLayout from '@/Layouts/MainLayout.vue';
 import WineThumbnail from '@/Components/WineThumbnail.vue';
 import PlusButton from '@/Components/ButtonsIcons/PlusButton.vue';
 import MinusButton from '@/Components/ButtonsIcons/MinusButton.vue';
+import ConfirmModal from '@/Components/ConfirmModal.vue';
 
 export default {
   components: {
@@ -54,12 +62,20 @@ export default {
     Head,
     Link,
     MinusButton,
-    PlusButton
+    PlusButton,
+    ConfirmModal
+  },
+  data() {
+    return {
+      openDeleteModal: false,
+      wineId: null
+    }
   },
   layout: MainLayout,
   methods: {
-    deleteOne(wine) {
-      Inertia.delete(route('buylist.delete', { wine: wine.id }))
+    toggleModal(wine) {
+      this.wineId = wine;
+      this.openDeleteModal = !this.openDeleteModal;
     },
     removeOne (wine, quantity) {
       if(quantity > 0)
@@ -70,6 +86,11 @@ export default {
       Inertia.visit(route('buylist.add', { wine: wine }),
       { preserveScroll: true })
     },
+    delete () {
+      Inertia.delete(route('buylist.delete', {cellar: this.cellar, wine: this.wineId }),
+      { preserveScroll: true })
+      this.openDeleteModal = false
+    }
   },
   props: ['buylist']
 }

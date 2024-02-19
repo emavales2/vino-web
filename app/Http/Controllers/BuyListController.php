@@ -65,6 +65,32 @@ class BuyListController extends Controller
         return redirect(route('buylist.index', $newBuyList->id))->withSuccess('The item has been added to your shopping list successfully');
     }
 
+        /**
+     * Add one bottle 
+     */
+    public function addOne(Wine $wine) {
+        $target = BuyList::find([Auth::user()->id, $wine->id]);
+        $newQuantity = $target->quantity + 1;
+        $target->update([
+            'user_id'=> Auth::user()->id,
+            'wine_id' => $wine->id,
+            'quantity' => $newQuantity
+        ]);
+    }
+    /**
+     * Remove one bottle
+     */
+    public function removeOne(Wine $wine) {
+        $target = BuyList::find([Auth::user()->id, $wine->id]);
+        $newQuantity = $target->quantity -1;
+        if($newQuantity >= 0) {
+            $target->update([
+                'user_id'=> Auth::user()->id,
+                'wine_id' => $wine->id,
+                'quantity' => $newQuantity
+            ]);
+        }
+    }
     /**
      * Display the specified resource.
      *

@@ -24386,12 +24386,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'ConfirmModal',
-  methods: {
-    closeModal: function closeModal() {
-      document.getElementById('confirmModal').style.display = 'none';
-    }
-  },
-  props: ['YesAction', 'action', 'actionMessage']
+  props: ['YesAction', 'action', 'actionMessage', 'toggleModal']
 });
 
 /***/ }),
@@ -24839,6 +24834,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_WineThumbnail_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/WineThumbnail.vue */ "./resources/js/Components/WineThumbnail.vue");
 /* harmony import */ var _Components_ButtonsIcons_PlusButton_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/ButtonsIcons/PlusButton.vue */ "./resources/js/Components/ButtonsIcons/PlusButton.vue");
 /* harmony import */ var _Components_ButtonsIcons_MinusButton_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Components/ButtonsIcons/MinusButton.vue */ "./resources/js/Components/ButtonsIcons/MinusButton.vue");
+/* harmony import */ var _Components_ConfirmModal_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Components/ConfirmModal.vue */ "./resources/js/Components/ConfirmModal.vue");
+
 
 
 
@@ -24851,14 +24848,20 @@ __webpack_require__.r(__webpack_exports__);
     Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Head,
     Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Link,
     MinusButton: _Components_ButtonsIcons_MinusButton_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-    PlusButton: _Components_ButtonsIcons_PlusButton_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+    PlusButton: _Components_ButtonsIcons_PlusButton_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    ConfirmModal: _Components_ConfirmModal_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+  },
+  data: function data() {
+    return {
+      openDeleteModal: false,
+      wineId: null
+    };
   },
   layout: _Layouts_MainLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
   methods: {
-    deleteOne: function deleteOne(wine) {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia["delete"](route('buylist.delete', {
-        wine: wine.id
-      }));
+    toggleModal: function toggleModal(wine) {
+      this.wineId = wine;
+      this.openDeleteModal = !this.openDeleteModal;
     },
     removeOne: function removeOne(wine, quantity) {
       if (quantity > 0) _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.visit(route('buylist.remove', {
@@ -24873,6 +24876,15 @@ __webpack_require__.r(__webpack_exports__);
       }), {
         preserveScroll: true
       });
+    },
+    "delete": function _delete() {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia["delete"](route('buylist.delete', {
+        cellar: this.cellar,
+        wine: this.wineId
+      }), {
+        preserveScroll: true
+      });
+      this.openDeleteModal = false;
     }
   },
   props: ['buylist']
@@ -26059,7 +26071,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, "Yes, " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.action), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     "class": "button sml",
     onClick: _cache[1] || (_cache[1] = function () {
-      return $options.closeModal && $options.closeModal.apply($options, arguments);
+      return $props.toggleModal && $props.toggleModal.apply($props, arguments);
     })
   }, "Cancel")])]);
 }
@@ -26850,6 +26862,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_MinusButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("MinusButton");
   var _component_PlusButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("PlusButton");
   var _component_WineThumbnail = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("WineThumbnail");
+  var _component_ConfirmModal = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ConfirmModal");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Head, {
     title: "Buy List"
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", null, [_hoisted_2, $props.buylist.length !== 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.buylist, function (wine, i) {
@@ -26861,9 +26874,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
         return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_MinusButton, {
           color: 'cream',
-          disabled: wine.qty === 0,
+          disabled: wine.quantity === 0,
           onClick: function onClick($event) {
-            return $options.removeOne(wine, wine.qty);
+            return $options.removeOne(wine, wine.quantity);
           }
         }, null, 8 /* PROPS */, ["disabled", "onClick"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_PlusButton, {
           color: 'cream',
@@ -26873,13 +26886,18 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         }, null, 8 /* PROPS */, ["onClick"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
           "class": "button sml",
           onClick: _cache[0] || (_cache[0] = function () {
-            return _ctx.toggleModal && _ctx.toggleModal.apply(_ctx, arguments);
+            return $options.toggleModal && $options.toggleModal.apply($options, arguments);
           })
         }, "remove wine")])];
       }),
       _: 2 /* DYNAMIC */
     }, 1032 /* PROPS, DYNAMIC_SLOTS */, ["wine", "quantity"]);
-  }), 128 /* KEYED_FRAGMENT */))])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [].concat(_hoisted_7)))])])], 64 /* STABLE_FRAGMENT */);
+  }), 128 /* KEYED_FRAGMENT */))])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [].concat(_hoisted_7)))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ConfirmModal, {
+    YesAction: $options["delete"],
+    action: "delete",
+    toggleModal: $options.toggleModal,
+    actionMessage: "Are you sure you want to delete this wine from your buy list ?"
+  }, null, 8 /* PROPS */, ["YesAction", "toggleModal"]), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.openDeleteModal]])], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),
@@ -27226,8 +27244,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }), 128 /* KEYED_FRAGMENT */))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ConfirmModal, {
     YesAction: $options["delete"],
     action: "delete",
+    toggleModal: $options.toggleModal,
     actionMessage: "Are you sure you want to delete this wine from the cellar ?"
-  }, null, 8 /* PROPS */, ["YesAction"]), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.openDeleteModal]])], 64 /* STABLE_FRAGMENT */);
+  }, null, 8 /* PROPS */, ["YesAction", "toggleModal"]), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.openDeleteModal]])], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),

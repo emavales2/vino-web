@@ -47,6 +47,7 @@
       v-show="openDeleteModal" 
       :YesAction="delete" 
       action="delete" 
+      :toggleModal="toggleModal"
       actionMessage="Are you sure you want to delete this wine from the cellar ?" 
     />
 </template>
