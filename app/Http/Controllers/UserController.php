@@ -50,7 +50,6 @@ class UserController extends Controller
         $collection = array_slice($collection, 0, 4);
         // Get the user's cellars (4 max)
         return Inertia::render('DashboardView', compact('user', 'cellars', 'collection'));
-    
     }
     
     /**

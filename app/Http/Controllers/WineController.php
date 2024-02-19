@@ -12,17 +12,6 @@ use Illuminate\Validation\Rule;
 
 class WineController extends Controller
 {
-    // /**
-    //  * Display a listing of the resource.
-    //  *
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function index()
-    // {
-    //     $wines = Wine::select()->paginate(24);
-    //     return Inertia::render('Wine/WineTest', compact('wines'));
-    // }
-
     /**
      * Show the form for creating a new resource.
      *

@@ -5,14 +5,14 @@
 /* ------- GENÉRALE ------- */
 
 * {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
   }
 
 html, body, [id=app], main {
     /* width: 100%; */
-    height: 100%;
+    max-height: 100%;
     max-width: 100vw;
 }
 
@@ -26,10 +26,6 @@ ul {
     list-style: none;
     padding: 0;
 }
-
-/* li {
-    background: lightblue;
-} */
 
 header {
     width: 100%;
@@ -45,40 +41,6 @@ footer {
     max-width: 100vw;
 }
 
-figure {
-    /* background-color: cornflowerblue; */
-    max-height: 100%;
-    max-width: 100%;
-    margin: 0;
-}
-
-.background_blobs, .fig_bg{
-    position: absolute;
-    max-height: 100%;
-    width: 100%;
-}
-
-img {
-    -o-object-fit: cover;
-       object-fit: cover;
-    overflow: hidden;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.coral_blob_bg {
-    opacity: 70%;
-}
-
-.med_blob_bg {
-    /* opacity: 64%; */
-    z-index: 1;
-}
-
-.dkvin_blob_bg {
-    opacity: 64%;
-    z-index: 2;
-}
 
 
 /* ------- LAYOUT, RHYTHM & COMPOSITION ------- */
@@ -91,10 +53,6 @@ body, [id=app] {
     justify-content: center;
     align-items: center;
 }
-
-/* body {
-    max-width: 100vw;
-} */
 
 body > * {
     width: 100%;
@@ -110,11 +68,11 @@ main {
     margin: var(--safe-area);
     padding: var(--med-space); 
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     flex-direction: column;
     gap: 30px;
     flex: 1;
-    justify-content: center;
+    /* justify-content: center; */
     position: relative;
 }
 
@@ -124,42 +82,12 @@ main {
 
 
 
-
-
-
 /* ------------------ * UTILITARIAN * ------------------ */
 
 .invisible {
     display: none;
 }
 
-
-
-
-
-/* Update the navigation styles */
-/* .bottom_nav {
-    display: flex;
-    justify-content: space-around; 
-    align-items: center;
-    padding: 10px;
-    max-width: 100%;
-}
-
-.bottom_nav a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    max-width: calc(25% - 20px); 
-}
-
-.bottom_nav svg {
-    max-width: 100%;
-    max-height: 100%;
-    padding: 5px;
-    fill: var(--burgundy);
-} */
 
 :root {
     --xxtall-line: 3.3rem;
@@ -212,45 +140,44 @@ h1, h2, h3 {
 }
 
 /* ----- * H1 est le seul heading dont il n'ya qu'une seule font-family * ----- */
-h1 {
+.fs_1 {
     font-size: 2.986rem;
     line-height: var(--xxtall-line);
     font-family: var(--block-font);
     letter-spacing: var(--med-ltr-spacing);
 }
 
-h2 {
+.fs_2 {
     font-size: 2.488rem;
     line-height: var(--xtall-line);
     letter-spacing: var(--med-ltr-spacing);
 }
 
-h2.block-font {
+.fs_2.block-font {
     letter-spacing: var(--med-ltr-spacing);
 }
 
 /* ----- * Fonctionne pour block & display fonts * ----- */
-h3 {
+.fs_3 {
     font-size: 2.074rem;
     line-height: 2.5rem;
 }
 
 /* ----- * Fonctionne pour block & display fonts * ----- */
-h4 {
+.fs_4 {
     font-size: 1.728rem;
     line-height: var(--tall-line);
 }
 
 /* ----- * Fonctionne pour block & display fonts * ----- */
-h5 {
+.fs_5 {
     font-size: 1.4rem;
     line-height: var(--med-line);
 }
 
 /* ----- * Fonctionne pour block & display fonts * ----- */
-h6 {
+.fs_6 {
     font-size: 1.12rem;
-    letter-spacing: var(--small-ltr-spacing);
 }
 
 /* ----- * Fonctionne pour block & display fonts * ----- */
@@ -293,12 +220,19 @@ small {
 /* ----- * APPLICATIONS * ----- */
 
 .index_title {
-    padding: 25px 36px; 
+    /* padding: 25px 36px; 
     font-weight: 500;
     & h2 {
         max-width: 13ch;
         color: var(--coral);
-    }
+    } */
+    font-family: var(--block-font);
+    font-size: 2.488rem;
+    line-height: var(--xtall-line);
+    color: var(--coral);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: var(--small-ltr-spacing);
 }
 
 .no_show {
@@ -324,6 +258,7 @@ small {
 
     --coral: #F95148;
 
+
     /* ----- NEUTRALS ----- */
 
     --cream: #F2D9AF;
@@ -342,9 +277,7 @@ small {
 
 body {
     background-color: var(--burgundy);
-    /* color: green; */
 }
-
 
 .bckgd-burg-lt {
     background-color: var(--burgundy-lt);
@@ -370,6 +303,10 @@ body {
     color: var(--burgundy);
 }
 
+.burg-lt {
+    color: var(--burgundy-lt);
+}
+
 .coral {
     color: var(--coral)
 }
@@ -377,7 +314,6 @@ body {
 .cream {
     color: var(--cream)
 }
-
 
 .cream_lt {
     color: var(--cream-lt)
@@ -478,12 +414,14 @@ body {
 .pad_vert_general {
     padding: 40px 0;
 }
-/* .under_nav {
-    display: flex;
-    flex-direction: column;
-    max-width: 100%;
-    max-height: 100%;
-} */
+
+.pad_med {
+    padding: 20px;
+}
+
+.pb_0 {
+    padding-bottom: 0;
+}
 
 /* For when a card needs to start well below top (this is provisional) */
 .top_low {
@@ -502,7 +440,8 @@ body {
 
 /* Page de Profil */
 .container_profil{
-    padding: 20px 50px;
+    /* padding: 20px 50px; */
+    align-self: center;
     align-content: center;
     display: flex;
     flex-direction: column;
@@ -531,116 +470,12 @@ body {
     padding: 40px 0;
 }
 
-
-
-/* ----- * EXPLANATIONS * ----- */ 
-
-/* 
-Containers listed go from outside twds inside
-
----- * HTML generated by stack * ----
-
-    <body>, [id=app]
-    --- * NO: inherent margin / padding / color * ---
-        Containers that occupy the whole space, vert and horizontal
-        Height and width 100% of its container
-        Border box 
-
-
----- * ONE PER PAGE (view pages & layouts, not components) * ----
-
-    <div class="bckgd"> 
-    --- * NO: inherent margin / padding / color * ---
-        Can contain décor elements 
-        Can contain several containers < > in order to split pg content
-        If page contents not split, <main>, <header>, <footer> (whenever applicable) etc will float on top of this div
-        Height and width 100% of its container
-        Border box  
-
-    <main>
-    --- * NO: inherent color * ---
-        Has set margin for min safe area and set padding for placement
-        Height and width 100% of its container
-        Border box 
-        Can be modified by classes
-
--- * FIN ONE PP * --
-
--------------------------------
-
----- * CAN HAVE MORE THAN ONE PP * ----
-
-    <header>
-    --- * NO: inherent padding / color * ---
-        Empty container, centers content,
-        Width 100%, height to adjust to content
-        takes up 100 width, height settable or adjust to content
-        So far outermost header is for nav, at same level as main
-        Can be modified by classes
-
-    <footer>
-    --- * NO: inherent padding / color * ---
-        Empty container, centers content,
-        Width 100wh (so far only way of not having it go over the screen width), height settable or adjust to content
-        takes up 100 width
-        So far outermost header is for nav, at same level as main, and is set as fixed
-        Can be modified by classes
-/*
-
-
-
-/* ----- * EXPLANATIONS * ----- */ 
-/*
----- * BEFORE SIGN-IN * ---
-
-<html> -> <body> -> <div id=app>
-    <div class="bckgd"> 
-        <divs for bckd decor> (such as blobs) + other <divs> (as needed)
-        <main>  
-            <header> -> <h*>
-            -- * IF FORM NEEDED * --
-            <div (or other container if form needs specific placement)
-                <form>
-                    <fieldset> 
-                        <label hidden>
-                        <input> (make sure it has a placeholder)
-                        <InputError class="msg input_err">
-                </form>
-            </div>
-            <other containers + content as needed> 
-        </main> 
-    </div>   
-</html> -> </body> -> </div id=app>
-
-
-
----- * AFTER SIGN-IN * --- 
-
-<html> -> <body> -> <div id=app>
-    <div class="bckgd"> 
-        <divs for bckd decor> (such as blobs) + other <divs> (as needed)
-        <header class="top_nav_header">
-            <nav class="top_nav">
-        </header>
-        <main>  
-            <header> -> <h*>
-            -- * IF FORM NEEDED SEE ABOVE * --
-            <other containers + content as needed> 
-        </main> 
-        <footer>
-            <nav class="bottom_nav">
-        </header>
-    </div>   
-</html> -> </body> -> </div id=app>
-
-
-
-
-
-*/
-
-/* ------- PLACEMENT (containers) ------- */
-
+.float_up {
+    margin-top: 10px;
+    padding-bottom: 40px;
+    z-index: 2;
+    position: relative;
+}
 
 
 
@@ -661,6 +496,11 @@ Containers listed go from outside twds inside
   padding-bottom: 30px;
   gap: var(--med-space);
   justify-content: center;
+
+  /* Changé à grid pour maintenir l'alignement même s'il y a un seul vin */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  padding: 0;
 }
 
 /* ---------- * * NAV GÉNÉRALE * * ---------- */
@@ -762,168 +602,6 @@ nav svg {
 
 
 /* <MainLayout :user="user"> */
-/* declancheur.css (composante) --------------- */
-
-.declancheur {
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-    padding: 5px;
-}
-
-.declancheur:not(:checked)::before {
-    /* content: "MENU"; */
-    /* font-family: var(--block-text); */
-    content: url(/images/lupe.svg?83787e9b76a4bb2deab696f2e1fb6c4d);
-    cursor: pointer;
-    background: red;
-}
-
-.declancheur:checked::before {
-    /* /* content: "FERMER"; */
-    font-family: var(--block-text);
-    /* content: url(@/../assets/icons/lupe.svg); */
-    cursor: pointer;
-}
-
-.declancheur, .declancheur:not(:checked)+ .nav_cachee {
-    opacity: 0;
-    pointer-events: none;
-}
-
-/* ------- * * * * TAILLE PORTABLE * * * * ------- */
-
-/* @media screen and (max-width: 600px) { */
-
-    .declancheur, .declancheur:checked + .nav_cachee {
-        opacity: 1;
-        pointer-events: all;
-    }
-
-/* } */
-
-.nav_mobile {
-    /* position: absolute; */
-    background: pink;
-}
-
-.nav_mobile input {
-    border: 0;
-    color: white;
-    font-size: large;
-}
-
-.nav_cachee {
-    position: absolute;
-    /* display: flex; */
-    flex-direction: column;
-    text-align: center;
-    background: var(--aqua_tint_2);
-    top: 166px;
-    gap: 20px;
-    padding: 30px;
-    width: 75%;
-    color: var(--border_bg_1);
-    /* to togggle it on and off */
-    display: none
-}
-
-/* Show search bar when corresponding checkbox is checked */
-/* Show menu when corresponding checkbox is checked */
-/* input[type="checkbox"]:checked + .nav_cachee {
-    display: block;
-} */
-
-/* Show search bar when corresponding checkbox is checked */
-input[name="search"]:checked + label .search_cachee {
-    display: block;
-}
-
-/* Show menu when corresponding checkbox is checked */
-input[name="menu"]:checked + label .menu_cachee {
-    display: block;
-}
-
-
-/* .nav_cachee .capsule_menu_deroulant {
-    height: unset;
-    width: 75%;
-    justify-content: center;
-} */
-
-.nav_cachee input {
-    width: 90%;
-}
-
-/* .nav_cachee span:nth-of-type(2) {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-} */
-
-/* .nav_mobile_wrapper {
-    display: none;
-} */
-
-/* .nav_cachee span .capsule_menu_deroulant:first-of-type {
-    border-right: 1px solid var(--border_bg_1);
-} */
-
-.nav_cachee span {
-    margin-bottom: 0;
-}
-
-.search {
-    padding-bottom: 20px;
-}
-
-.nav_cachee button {
-    width: 75%;
-    align-self: center;
-    padding: 10px;
-    margin: 10px;
-    border: 2px solid var(--border_bg_1);
-    color: var(--border_bg_1);
-}
-
-.nav_cachee button:hover {
-    background: var(--border_bg_1);
-    color: var(--aqua_tint_2);
-    border: 2px solid var(--border_bg_1);
-}
-
-/* Make this cleaner, maybe put buttons into one section */
-.nav_cachee button:last-of-type {
-    margin-bottom: 20px;
-}
-
-/* .nav_cachee .contenu_menu_deroulant {
-    top: 35px;
-}
-
-.nav_cachee .menu_titre {
-    color: var(--border_bg_1);
-} */
-
-
-
-/* ------- * * * * TAILLE PORTABLE * * * * ------- */
-
-/* @media screen and (max-width: 600px) { */
-
-    .nav_mobile_wrapper {
-        display: flex;
-    }
-
-    .nav_mobile {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        padding-bottom: 20px;
-        z-index: 1;
-    }
-/* } */ 
 
 /* --------- * BUTTON * --------- */
 
@@ -934,20 +612,6 @@ button{
     background: none;
     border: none;
     cursor: pointer;
-}
-.button_burgundy {
-    box-sizing: border-box;
-    font-family: 'Oswald', sans-serif;
-    align-self: center;
-    padding: 16px;
-    width: 100%;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: .05rem;
-    border-radius: 30px;
-    border: 3px solid var(--burgundy);
-    color: var(--burgundy);
-    background: none;
 }
 
 .button {
@@ -963,6 +627,13 @@ button{
     border: 3px solid var(--cream);
     color: var(--cream);
 }
+
+.button_burgundy {
+    border: 3px solid var(--burgundy);
+    color: var(--burgundy);
+    background: none;
+}
+
 /* Variante de btn small */
 .button.sml {
     padding: 8px 12px;
@@ -1014,16 +685,14 @@ button{
 .lien_sml {
     padding: 6px;
     font-size: 0.6rem;
-    max-width: -moz-max-content;
-    max-width: max-content;
-    /* border: none; */
     background: none;
-    vertical-align: sub;
+    /* vertical-align: sub; */
     max-height: -moz-fit-content;
     max-height: fit-content;
     width: -moz-max-content;
     width: max-content;
     font-family: 'Oswald', sans-serif;
+    display: block;
 }
 
 .flex-flow-unset {
@@ -1038,6 +707,10 @@ button{
 .borderless {
     padding: 0;
     border: none;
+}
+
+.button_back {
+    align-self: flex-start;
 }
 
 
@@ -1087,6 +760,7 @@ form {
     flex-direction: column;
     gap: var(--safe-area);
     margin: 0;
+    gap: 30px;
     /* padding: var(--med_space); */
 }
 /* Will grab "InputText.vue" (came with Laravel) as well as input in forms */
@@ -1118,7 +792,9 @@ fieldset {
   background-color: var(--cream-lt);
   border-radius: 12px;
   padding: var(--small-space);
+  padding: var(--med-space);
 }
+
 .form-quantity input{
   font-family: var(--title-font);
   font-size: 3em;
@@ -1127,6 +803,10 @@ fieldset {
 }
 .form-quantity section:first-of-type{
   display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  -moz-text-align-last: center;
+       text-align-last: center;
 
   >*{
     flex: 1;
@@ -1142,6 +822,7 @@ fieldset {
     gap: var(--med-space);
   }
 }
+
 .form-quantity section:last-of-type div{
   display: flex;
   flex-flow: wrap;
@@ -1168,6 +849,93 @@ fieldset {
     flex: 1;
   }
 }
+/* ----- * MOCKUPS FOR LABEL CLARITY - EITHER OF THESE WILL REQUIRE ITS OWN CSS FILE * ------ */
+
+
+/* ----- * FIELD TEST FOR LABEL CLARITY (email field on Login.vue) * ------ */
+
+.field_test {
+    border: 2px solid var(--cream); 
+    border-radius: 30px;
+    /* margin: auto;  */
+    max-width: 100%;
+    width: 100%;
+}
+
+.field_test legend {
+    margin: 0 30px;
+    padding: 0 10px;
+    font-size: small;
+    text-transform: uppercase;
+}
+
+.field_test input {
+    box-sizing: border-box;
+    border-radius: 30px;
+    border: none;
+    background: transparent;
+    font-size: medium;
+    padding: 0px 20px;
+    margin-bottom: 12px;
+    margin-top: 4px;
+    max-width: 100%;
+    width: 100%;
+    color: var(--cream);
+}
+
+.field_test input:focus-visible {
+    outline: none;
+}
+
+.field_test input::-moz-placeholder {
+    color: var(--coral);
+}
+
+.field_test input::placeholder {
+    color: var(--coral);
+}
+
+
+
+/* ----- * 2nd FIELD TEST FOR LABEL CLARITY (password field on Login.vue) * ------ */
+
+.fieldset_2 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.fieldset_2 label {
+    color: var(--coral);
+    font-size: small;
+    margin: 0 20px;
+    text-transform: uppercase;
+}
+
+.fieldset_2 input {
+    box-sizing: border-box;
+    align-self: center;
+    border-radius: 30px;
+    border: none;
+    background: var(--cream-lt);
+    font-size: medium;
+    padding: 12px 20px;
+    max-width: 100%;
+    width: 100%;
+    color: var(--burgundy-lt);
+}
+
+.fieldset_2 input::-moz-placeholder {
+    color: var(--coral);
+}
+
+.fieldset_2 input::placeholder {
+    color: var(--coral);
+}
+
+/* This is to fix the display of wines etc */
+/* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
 .modal{
   align-items: start;
   background-color: rgba(58, 29, 29, 0.58);
@@ -1318,6 +1086,12 @@ fieldset {
     display: flex;
     flex-direction: row;
     gap: 10px;
+    align-items: center;
+}
+
+.fiche_wine figure {
+    max-height: 200px;
+    min-width: 30%;
 }
 
 .fiche_wine img {
@@ -1331,11 +1105,11 @@ fieldset {
   flex-flow: column;
   gap: var(--small-space);
 }
-.wine-thumbnail>div{
+.wine-thumbnail > div {
   display: flex;
   gap: var(--small-space);
 }
-.wine-thumbnail>a {
+.wine-thumbnail > a {
   background-color: var(--cream-lt);
   border-radius: 12px;
   display: flex;
@@ -1346,13 +1120,13 @@ fieldset {
   height: 200px;
   filter: drop-shadow(1px 2px 2px rgba(14, 2, 2, 0.572));
 }
-.wine-thumbnail aside{
+.wine-thumbnail aside {
   display: flex;
   gap: var(--small-space);
   justify-content: space-between;
   align-items: center;
 }
-.wine-thumbnail p{
+.wine-thumbnail p {
   text-align: center;
   line-height: 1.2em;
   font-weight: 600;
@@ -1360,7 +1134,7 @@ fieldset {
   color: var(--burgundy);
 }
 
-.wine-thumbnail a div:first-of-type{
+.wine-thumbnail a div:first-of-type {
   height: 100px;
   position: relative;
   display: flex;
@@ -1372,13 +1146,12 @@ fieldset {
   flex-flow: column;
 }
 
-.wine-thumbnail img{
+.wine-thumbnail img {
   position: absolute;
   bottom: 0;
   min-height: 150px;
   filter: drop-shadow(1px 2px 2px rgba(61, 49, 49, 0.572));
 }
-
 .radio{
   display: none;
 }
@@ -1418,6 +1191,62 @@ fieldset {
     color: green;
 }
 
+figure {
+    /* background-color: cornflowerblue; */
+    max-height: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+
+.background_blobs, .fig_bg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.coral_blob_bg {
+    opacity: 70%;
+}
+
+.med_blob_bg {
+    /* opacity: 64%; */
+    z-index: 1;
+}
+
+.dkvin_blob_bg {
+    opacity: 64%;
+    z-index: 2;
+}
+
+.fig_bg {
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+}
+
+.fig_bg img {
+    align-self: baseline;
+}
+
+.fig_bg.bottom_blob img {
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.fig_bg.bottom_blob:last-child img {
+    margin-top: auto;
+    margin-bottom: 0;
+}
 
 
 /* ---------- * * GÉNÉRALE * * ---------- */

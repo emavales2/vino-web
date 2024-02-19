@@ -8,13 +8,6 @@
                 <h1 class="index_title">Shopping List</h1>
             </header>
 
-            <!-- PATH IS NOT WORKING FOR ME, it breaks page's code -->
-            <!-- <button class="button">
-                <Link :href="route('buylist.create')">
-                    Add Wine to Buy List
-                </Link>
-            </button> -->
-
             <div v-if="buylist.length !== 0">
                 <ul class="wine-list">
                 <WineThumbnail v-for="(wine, i) in buylist" :key="i" :wine="wine">
@@ -47,13 +40,6 @@ export default {
   methods: {
     deleteOne(wine) {
       Inertia.delete(route('buylist.delete', { wine: wine.id })
-      //, {
-        // onSuccess: () => {
-        //   this.$parent.openDialog(
-        //     `Wine ${wine.name} has been successfully removed from your shopping list.`
-        //   )
-        // }
-      //}
       )
     }
   },
