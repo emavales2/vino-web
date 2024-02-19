@@ -89,6 +89,7 @@ export default {
     },
     toggleModal(wine) {
       this.wineId = wine;
+      console.log(wine)
       this.openDeleteModal = !this.openDeleteModal;
     },
     removeOne (wine, quantity) {

@@ -27,7 +27,7 @@
                         @click="addOne(wine)"
                       />
                     </div>
-                    <button class="button sml" @click="toggleModal">remove wine</button>
+                    <button class="button sml" @click="toggleModal(wine)">remove wine</button>
                   </section>
                 </WineThumbnail>
                 </ul>
@@ -87,7 +87,7 @@ export default {
       { preserveScroll: true })
     },
     delete () {
-      Inertia.delete(route('buylist.delete', {cellar: this.cellar, wine: this.wineId }),
+      Inertia.delete(route('buylist.delete', { wine: this.wineId }),
       { preserveScroll: true })
       this.openDeleteModal = false
     }

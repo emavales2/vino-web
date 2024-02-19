@@ -24879,7 +24879,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     "delete": function _delete() {
       _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia["delete"](route('buylist.delete', {
-        cellar: this.cellar,
         wine: this.wineId
       }), {
         preserveScroll: true
@@ -25193,6 +25192,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     toggleModal: function toggleModal(wine) {
       this.wineId = wine;
+      console.log(wine);
       this.openDeleteModal = !this.openDeleteModal;
     },
     removeOne: function removeOne(wine, quantity) {
@@ -26850,13 +26850,14 @@ var _hoisted_3 = {
 var _hoisted_4 = {
   "class": "wine-list"
 };
-var _hoisted_5 = {
+var _hoisted_5 = ["onClick"];
+var _hoisted_6 = {
   key: 1
 };
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "cream"
 }, "Your shopping list is empty.", -1 /* HOISTED */);
-var _hoisted_7 = [_hoisted_6];
+var _hoisted_8 = [_hoisted_7];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Head");
   var _component_MinusButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("MinusButton");
@@ -26885,14 +26886,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }
         }, null, 8 /* PROPS */, ["onClick"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
           "class": "button sml",
-          onClick: _cache[0] || (_cache[0] = function () {
-            return $options.toggleModal && $options.toggleModal.apply($options, arguments);
-          })
-        }, "remove wine")])];
+          onClick: function onClick($event) {
+            return $options.toggleModal(wine);
+          }
+        }, "remove wine", 8 /* PROPS */, _hoisted_5)])];
       }),
       _: 2 /* DYNAMIC */
     }, 1032 /* PROPS, DYNAMIC_SLOTS */, ["wine", "quantity"]);
-  }), 128 /* KEYED_FRAGMENT */))])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [].concat(_hoisted_7)))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ConfirmModal, {
+  }), 128 /* KEYED_FRAGMENT */))])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, [].concat(_hoisted_8)))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ConfirmModal, {
     YesAction: $options["delete"],
     action: "delete",
     toggleModal: $options.toggleModal,
