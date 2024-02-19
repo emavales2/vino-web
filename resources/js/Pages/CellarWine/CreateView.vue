@@ -1,57 +1,66 @@
 <template>
-  <main>
-    <div>
-      <GoBackButton :color="'cream'"/>
-      <div v-if="cellars.length > 0">
-        <h2 class="block-font txt-center coral">Add this wine to your cellar</h2>
-        <form @submit.prevent="addToCellar" class="form-quantity">
-          <h6 class="legend_small ">{{ wine.name }}</h6>
-          <section>
-            <figure><img :src="wine.photo" :alt="wine.name"></figure>
-            <div>
-              <label for="quantity"></label>
-              <input type="number" id="quantity" v-model="form.quantity">
-              <div>
-                <MinusButton 
-                  :color="'burgundy'"
-                  :removeAction="removeOne"
-                />
-                <PlusButton 
-                  :color="'burgundy'" 
-                  :addAction="addOne"
-                />
-              </div>
+    <Head title="Add Wine" />
+
+    <div class="bckgd">
+        <main>
+            <GoBackButton :color="'cream'" class="button_back"/>
+
+            <header>
+                <h1 class="fs_3 block-font coral">Add this wine to your cellar</h1>
+            </header>
+
+            <div v-if="cellars.length > 0">    
+                <form @submit.prevent="addToCellar" class="form-quantity">
+                    <h2 class="block-font fiche_wine_title coral">{{ wine.name }}</h2>
+                    
+                    <section>
+                        <figure><img :src="wine.photo" :alt="wine.name"></figure>
+
+                        <div>
+                            <label for="quantity"></label>
+                            <input type="number" id="quantity" v-model="form.quantity">
+                            
+                            <div>
+                                <MinusButton 
+                                :color="'burgundy'"
+                                :removeAction="removeOne"/>
+                                <PlusButton 
+                                :color="'burgundy'" 
+                                :addAction="addOne"/>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="column">
+                        <legend class="fs_6 display-font coral">select a cellar</legend>
+                        <div>
+                        <div v-for="(cellar, i) in cellars">
+                            <input 
+                            :key="i" 
+                            :id=cellar.id 
+                            type="radio" 
+                            class="radio" 
+                            v-model="form.cellar_id" 
+                            :value="cellar.id"
+                            >
+                            <label :for=cellar.id>{{ cellar.name }}</label>
+                        </div>
+                        </div>
+                    </section>
+                    
+                    <button class="button button_burgundy">Add</button>
+                </form>
             </div>
-          </section>
-          <section>
-            <legend class="legend coral">Select a cellar</legend>
-            <div>
-              <div v-for="(cellar, i) in cellars">
-                <input 
-                  :key="i" 
-                  :id=cellar.id 
-                  type="radio" 
-                  class="radio" 
-                  v-model="form.cellar_id" 
-                  :value="cellar.id"
-                >
-                <label :for=cellar.id>{{ cellar.name }}</label>
-              </div>
+            <div v-else>
+                <h1>Oh oh, seems like you have no cellar</h1>
+                <Link class="button_burgundy" :href="route('cellar.create')">create a cellar</Link>
             </div>
-          </section>
-          <button class="button_burgundy">Add</button>
-        </form>
-      </div>
-      <div v-else>
-        <h1>Oh oh, seems like you have no cellar</h1>
-        <Link class="button_burgundy" :href="route('cellar.create')">create a cellar</Link>
-      </div>
+        </main>
     </div>
-  </main>
 </template>
 
 <script>
-import { useForm, Link } from '@inertiajs/inertia-vue3';
+import { useForm, Link, Head } from '@inertiajs/inertia-vue3';
 import MainLayout from '@/Layouts/MainLayout.vue';
 import { Inertia } from '@inertiajs/inertia';
 import PlusButton from '@/Components/ButtonsIcons/PlusButton.vue'
@@ -62,6 +71,7 @@ export default{
   name: 'AddForm',
   components: {
     Link,
+    Head,
     PlusButton,
     MinusButton,
     GoBackButton

@@ -5,15 +5,21 @@
         <main>
             <section  class="column_index_list">
                 <header>
-                    <h2 class="block-font coral">Your Wines</h2>
+                    <h1 class="index_title">Your Wines</h1>
                 </header>
 
-                <span>
+                <button class="button">
+                    <Link :href="route('wine.create')">
+                        Add custom wine
+                    </Link>
+                </button>
+
+                <!-- <span>
                     <Link class="button" :href="route('wine.create')">Add custom wine</Link>
-                </span>
+                </span> -->
                 
                 <div v-if="collection.length !== 0">
-                    <div >
+                    <div>
                         <ul class="wine-list">
                             <WineThumbnail
                             v-for="(wine, i) in collection" :key="i"
@@ -25,17 +31,19 @@
                                     <Link v-if="wine.wine.user_id != null" :href="route('wine.edit', wine.wine.id)">
                                         <EditButton :fill="'cream'"/>
                                     </Link>
-                            </aside>
+                                </aside>
                             </WineThumbnail>
                         </ul>
-                        </div>
+                    </div>
                 </div>
+
                 <div class="cream" v-else>
                     <p>You have no wines yet.</p>
                 </div>
             </section>
         </main>
     </div>
+
     <ConfirmModal 
             v-show="openDeleteModal" 
             :YesAction="delete" 
@@ -43,6 +51,7 @@
             actionMessage="Are you sure you want to delete this wine? This action will remove it from your cellars as well. This action cannot be undone." 
         />
 </template>
+
 <script>
 import { Inertia } from '@inertiajs/inertia';
 import { Head, Link } from "@inertiajs/inertia-vue3";

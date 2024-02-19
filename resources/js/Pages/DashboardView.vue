@@ -2,15 +2,10 @@
     <Head title="Dashboard" />
           
     <div class="bckgd">
-        <section class="background_blobs">
-            <figure class="fig_bg">
-                <img src="@/../assets/img/blob_top.svg" class="coral_blob_bg" alt="">    
-            </figure>
-        </section>
         
         <main>
             <header>
-                <h2 class="block-font coral">Welcome, {{ user.first_name }}</h2>
+                <h1 class="index_title">Welcome, {{ user.first_name }}</h1>
             </header>
 
             <ul class="column_index_list">
@@ -21,7 +16,7 @@
                     <section class="column gap_20">
                         <header>
                             <span class="row_els_apart gap_20">
-                                <h5 class="display-font cream">my cellars</h5>
+                                <h2 class="fs_5 display-font cream">my cellars</h2>
                                 <div>
                                     <Link v-if="cellars.length > 3" class="lien_sml cream block-font" :href="route('cellar.index')">See more</Link>
                                 </div>
@@ -47,7 +42,7 @@
                     <section class="column gap_20">
                         <header>
                             <span class="row_els_apart gap_20">
-                                <h5 class="display-font cream">my wine collection</h5>
+                                <h2 class="fs_5 display-font cream">my wine collection</h2>
                                 <!-- <div v-if="collection.length > 3"> -->
                                 <div>
                                     <Link v-if="collection.length > 3" class="lien_sml cream block-font" :href="route('collection')">See more</Link>

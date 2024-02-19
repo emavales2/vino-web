@@ -1,17 +1,20 @@
 <template>
-  <main>
-  <Head title="Cellar" />
-  <header class="block-font txt-center coral">
-    <h2>Edit Cellar</h2>
-    <GoBackButton :color="'cream'"/>
-  </header>
-    <form @submit.prevent="submitForm" :action="updateRoute">
-      <label for="name" class="legend cream">Just give it name !</label>
-      <input v-model="form.name" type="text" id="name" required>
+    <Head title="Edit Cellar" />
 
-      <button class="button" type="submit">Save</button>
-    </form>
-  </main>
+    <main>
+        <GoBackButton :color="'cream'" class="button_back"/>
+    
+    <header>
+        <h1 class="index_title">Edit Cellar</h1>
+    </header>
+
+        <form @submit.prevent="submitForm" :action="updateRoute">
+        <label for="name" class="legend cream">Modify your cellar !</label>
+        <input v-model="form.name" type="text" id="name" required>
+
+        <button class="button" type="submit">Save</button>
+        </form>
+    </main>
 </template>
   
 <script>

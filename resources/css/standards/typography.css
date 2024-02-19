@@ -55,45 +55,44 @@ h1, h2, h3 {
 }
 
 /* ----- * H1 est le seul heading dont il n'ya qu'une seule font-family * ----- */
-h1 {
+.fs_1 {
     font-size: 2.986rem;
     line-height: var(--xxtall-line);
     font-family: var(--block-font);
     letter-spacing: var(--med-ltr-spacing);
 }
 
-h2 {
+.fs_2 {
     font-size: 2.488rem;
     line-height: var(--xtall-line);
     letter-spacing: var(--med-ltr-spacing);
 }
 
-h2.block-font {
+.fs_2.block-font {
     letter-spacing: var(--med-ltr-spacing);
 }
 
 /* ----- * Fonctionne pour block & display fonts * ----- */
-h3 {
+.fs_3 {
     font-size: 2.074rem;
     line-height: 2.5rem;
 }
 
 /* ----- * Fonctionne pour block & display fonts * ----- */
-h4 {
+.fs_4 {
     font-size: 1.728rem;
     line-height: var(--tall-line);
 }
 
 /* ----- * Fonctionne pour block & display fonts * ----- */
-h5 {
+.fs_5 {
     font-size: 1.4rem;
     line-height: var(--med-line);
 }
 
 /* ----- * Fonctionne pour block & display fonts * ----- */
-h6 {
+.fs_6 {
     font-size: 1.12rem;
-    letter-spacing: var(--small-ltr-spacing);
 }
 
 /* ----- * Fonctionne pour block & display fonts * ----- */
@@ -135,12 +134,19 @@ small {
 /* ----- * APPLICATIONS * ----- */
 
 .index_title {
-    padding: 25px 36px; 
+    /* padding: 25px 36px; 
     font-weight: 500;
     & h2 {
         max-width: 13ch;
         color: var(--coral);
-    }
+    } */
+    font-family: var(--block-font);
+    font-size: 2.488rem;
+    line-height: var(--xtall-line);
+    color: var(--coral);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: var(--small-ltr-spacing);
 }
 
 .no_show {

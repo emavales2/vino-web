@@ -1,25 +1,33 @@
 <template>
     <Head title="Cellar" />
-    <div>
-      <header class="index_title">
-        <h2>{{ cellar.name }}</h2>
-        <div class="row">
-          <Link :href="route('cellar.edit', cellar.id)" class="button sml">Edit cellar</Link>
-          <button type="button" @click="redirectToDelete(cellar.id)" class="button sml">Delete</button>
-        </div>
-      </header>
-      <ul class="wine-list">
-        <WineThumbnail v-for="(wine, i) in collection"
-          :key="i"
-          :wine="wine.wine"
-          :cellar="cellar"
-          :quantity="wine.qty"
-          :addOne="addOne"
-          :removeOne="removeOne"
-          @click="toggleModal(wine.wine.id)"
-        />
-      </ul>
+
+    <div class="bckgd">
+        <main>
+            <GoBackButton :color="'cream'" class="button_back"/>
+
+            <header>
+                <h1 class="index_title">{{ cellar.name }}</h1>
+
+                <section class="row_els_apart">
+                    <Link :href="route('cellar.edit', cellar.id)" class="button sml">Edit cellar</Link>
+                    <button type="button" @click="redirectToDelete(cellar.id)" class="button sml">Delete</button>
+                </section>
+            </header>
+
+            <ul class="wine-list">
+                <WineThumbnail v-for="(wine, i) in collection"
+                :key="i"
+                :wine="wine.wine"
+                :cellar="cellar"
+                :quantity="wine.qty"
+                :addOne="addOne"
+                :removeOne="removeOne"
+                @click="toggleModal(wine.wine.id)"
+                />
+            </ul>
+        </main>
     </div>
+
     <ConfirmModal 
             v-show="openDeleteModal" 
             :YesAction="delete" 
@@ -35,12 +43,15 @@ import { Inertia } from '@inertiajs/inertia';
 import ConfirmModal from '@/Components/ConfirmModal.vue';
 import WineThumbnail from '@/Components/WineThumbnail.vue';
 import MainLayout from '@/Layouts/MainLayout.vue';
+import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue';
+
 export default {
   name: 'ShowView',
   components: {
     ConfirmModal,
     Head,
     WineThumbnail,
+    GoBackButton,
     Link
   },
   data() {

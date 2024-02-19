@@ -1,10 +1,12 @@
 <template>
   <Head title="Cellar" />
   <main>
+    <GoBackButton :color="'cream'" class="button_back"/>
+
     <header class="block-font txt-center coral">
-      <h2>New Cellar</h2>
+      <h1 class="index_title">New Cellar</h1>
     </header>
-    <GoBackButton :color="'cream'"/>
+    
       <form @submit.prevent="submitForm" :action="createRoute">
         <label for="name" class="legend cream">Just give it a name !</label>
         <input v-model="form.name" type="text" id="name" placeholder="name" required>
@@ -18,6 +20,7 @@
 import { Head } from '@inertiajs/inertia-vue3';
 import MainLayout from '@/Layouts/MainLayout.vue';
 import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue';
+
 export default {
   name: 'CreateView',
   components: {

@@ -1,11 +1,13 @@
 <template>
 <Head title="Edit Wine" />
-<div>
+
+<div class="bckgd">
   <main>
+    <GoBackButton :color="'cream'" class="button_back"/>
     <header>
-      <h2 class="block-font txt-center coral">Edit your custom wine</h2>
+      <h1 class="index_title">Edit your custom wine</h1>
     </header>
-    <GoBackButton :color="'cream'"/>
+  
       <form @submit.prevent="submit" class="form-create-wine">
           <fieldset>
             <label for="name" hidden></label>

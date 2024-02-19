@@ -23,10 +23,10 @@
         </p>        
       </div>
     </Link>
-    <div v-if="addOne">
+    <section v-if="addOne" class="row_els_apart">
       <MinusButton :color="'cream'" @click="removeOne(wine, quantity)"/>
       <PlusButton :color="'cream'" @click="addOne(wine, quantity)"/>
-    </div>
+    </section>
     <slot />
     <button v-if="deleteWine" class="button sml" @click="deleteWine(wine)">remove wine</button>
   </li>

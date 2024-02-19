@@ -9,20 +9,6 @@ button{
     border: none;
     cursor: pointer;
 }
-.button_burgundy {
-    box-sizing: border-box;
-    font-family: 'Oswald', sans-serif;
-    align-self: center;
-    padding: 16px;
-    width: 100%;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: .05rem;
-    border-radius: 30px;
-    border: 3px solid var(--burgundy);
-    color: var(--burgundy);
-    background: none;
-}
 
 .button {
     box-sizing: border-box;
@@ -37,6 +23,13 @@ button{
     border: 3px solid var(--cream);
     color: var(--cream);
 }
+
+.button_burgundy {
+    border: 3px solid var(--burgundy);
+    color: var(--burgundy);
+    background: none;
+}
+
 /* Variante de btn small */
 .button.sml {
     padding: 8px 12px;
@@ -83,13 +76,12 @@ button{
 .lien_sml {
     padding: 6px;
     font-size: 0.6rem;
-    max-width: max-content;
-    /* border: none; */
     background: none;
-    vertical-align: sub;
+    /* vertical-align: sub; */
     max-height: fit-content;
     width: max-content;
     font-family: 'Oswald', sans-serif;
+    display: block;
 }
 
 .flex-flow-unset {
@@ -104,4 +96,8 @@ button{
 .borderless {
     padding: 0;
     border: none;
+}
+
+.button_back {
+    align-self: flex-start;
 }
