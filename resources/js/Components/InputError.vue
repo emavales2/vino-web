@@ -5,7 +5,6 @@
         </small>
     </div>
 </template>
-// keep
 
 <script>
 export default {

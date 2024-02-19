@@ -13,10 +13,6 @@
                         Add custom wine
                     </Link>
                 </button>
-
-                <!-- <span>
-                    <Link class="button" :href="route('wine.create')">Add custom wine</Link>
-                </span> -->
                 
                 <div v-if="collection.length !== 0">
                     <div>

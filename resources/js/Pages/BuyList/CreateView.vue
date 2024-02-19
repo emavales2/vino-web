@@ -38,7 +38,6 @@
 <script>
 import { useForm, Link, Head } from '@inertiajs/inertia-vue3';
 import MainLayout from '@/Layouts/MainLayout.vue';
-import { Inertia } from '@inertiajs/inertia';
 import PlusButton from '@/Components/ButtonsIcons/PlusButton.vue'
 import MinusButton from '@/Components/ButtonsIcons/MinusButton.vue'
 import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue'
