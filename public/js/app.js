@@ -26680,7 +26680,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $data.form.first_name = $event;
     }),
-    required: "",
     autofocus: "",
     autocomplete: "first_name",
     placeholder: "first name"
@@ -26694,7 +26693,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $data.form.last_name = $event;
     }),
-    required: "",
     autofocus: "",
     autocomplete: "last_name",
     placeholder: "last name"

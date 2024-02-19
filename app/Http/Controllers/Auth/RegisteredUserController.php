@@ -35,8 +35,8 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'first_name' => 'regex:/^[a-zA-Z\s]+$/u|max:100|min:2|nullable',
-            'last_name' => 'regex:/^[a-zA-Z\s]+$/u|max:100|min:2|nullable',
+            'first_name' => 'regex:/^[a-zA-Z-\s]+$/u|max:100|min:2|nullable',
+            'last_name' => 'regex:/^[a-zA-Z-\s]+$/u|max:100|min:2|nullable',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => ['required', 'alpha_dash', 'confirmed', Rules\Password::defaults()],
         ]);
