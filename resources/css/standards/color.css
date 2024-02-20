@@ -21,10 +21,12 @@
     --med-gray: #36332f;
 
     /* ----- SUCCESS ----- */
+
     --success-lt: #009788;
     --success: #0F423C;
 
     /* ----- WARNING ----- */
+    
     --warning-lt: #F4A22A;
     --warning: #AF7120;
 
