@@ -3,9 +3,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 25px;
-  min-height: 25px;
-  height: 25px;
+  width: var(--med-large-space);
+  min-height: var(--med-large-space);
+  height: var(--med-large-space);
   border-radius: 100%;
   text-align: center;
   color: var(--cream);

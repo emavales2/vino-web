@@ -1,7 +1,7 @@
 
 .wine-thumbnail{
   flex:0 0 100px;
-  padding-top: 30px;
+  padding-top: var(--large-space);
   display: flex;
   flex-flow: column;
   gap: var(--small-space);

@@ -1,52 +1,61 @@
 
 
-/* ---------- * * GÉNÉRALE * * ---------- */
-
-@import url(general.css);
+/* ---------- * * GÉNÉRALE * * ---------- */    
+    
+    @import url(general.css);
 
 
 /* ---------- * * STANDARDS / VARIABLES * * ---------- */
 
-@import url(standards/typography.css);
-@import url(standards/color.css);
-@import url(standards/rhythm.css);
+    @import url(standards/typography.css);
+    @import url(standards/color.css);
+    @import url(standards/rhythm.css);
 
 
 /* ---------- * * MISE EN PLACE * * ---------- */
 
-@import url(layout/containers.css);
-@import url(layout/wine-list.css);
+    @import url(layout/containers.css);
+    @import url(layout/wine-list.css);
+
 
 /* ---------- * * DANS SECTION NAVIGATION * * ---------- */
 
-@import url(navigation/nav_general.css);
+    @import url(navigation/nav_general.css);
 
 
-/* ---------- * * COMPOSANTS RÉUTILISABLES * * ---------- */
+/* ---------- * * BOUTONS * * ---------- */
 
-@import url(components/buttons.css);
-@import url(./components/goBackButton.css);
-@import url(components/search-button.css);
-@import url(components/search-bar.css);
+    @import url(buttons/buttons.css);
+    @import url(./buttons/goBackButton.css);
+    @import url(buttons/search-button.css);
+    @import url(./buttons/radio.css);
 
-@import url(components/form.css);
-@import url(components/form-quantity.css);
-@import url(components/form-create-wine.css);
-@import url(components/fieldset.css);
 
-@import url(floaters/modal.css);
-@import url(floaters/dialog.css);
-@import url(floaters/transition.css);
+/* ---------- * * FORMULAIRES * * ---------- */
 
-@import url(components/color-drop.css);
-@import url(components/quantity-drop.css);
+    @import url(forms/form.css);
+    @import url(forms/form-quantity.css);
+    @import url(forms/form-create-wine.css);
+    @import url(forms/fieldset.css);
+    @import url(forms/search-bar.css);
 
-@import url(components/cards.css);
-@import url(components/fiche_wine.css);
-@import url(./components/wine-thumbnail.css);
-@import url(./components/radio.css);
 
-@import url(components/auto_messages.css);
+/* ---------- * * FLOATERS * * ---------- */
 
-@import url(components/images.css);
+    @import url(floaters/modal.css);
+    @import url(floaters/dialog.css);
+    @import url(floaters/transition.css);
+
+
+/* ---------- * * AUTRES COMPOSANTS * * ---------- */
+
+    @import url(components/cards.css);
+    @import url(components/fiche_wine.css);
+    @import url(./components/wine-thumbnail.css);
+    @import url(./buttons/radio.css);
+    @import url(components/auto_messages.css);
+    @import url(components/images.css);
+    @import url(components/color-drop.css);
+    @import url(components/quantity-drop.css);
+    @import url(components/utilitarian.css);
 

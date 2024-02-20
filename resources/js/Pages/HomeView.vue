@@ -1,10 +1,12 @@
 <template>
     <Head title="Home" />
 
+    
+    <div class="marg_vert_home"> 
         <!-- ---- * En dessus de body, le conteneur principale. Au dessous du page content * ---- -->
-        <div class="bckgd bckgd-cream-lt">
+        <div class="bckgd bckgd-home">
             <!-- ---- * Contenu décoratif du bg (flat). Pas d'interaction avec page content * ---- -->
-            <section class="background_blobs">
+            <section class="background_blobs bb_home">
                 <figure class="fig_bg">
                     <img src="@/../assets/img/coral_1.svg" class="coral_blob_bg" alt="">    
                 </figure>
@@ -42,6 +44,7 @@
                 </div>
             </main>
         </div>
+    </div>
 </template>
 
 <script>
