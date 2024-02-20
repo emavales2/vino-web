@@ -3,13 +3,18 @@
   <main>
     <GoBackButton :color="'cream'" class="button_back"/>
 
-    <header class="block-font txt-center coral">
+    <header class="index_title">
       <h1 class="index_title">New Cellar</h1>
     </header>
     
       <form @submit.prevent="submitForm" :action="createRoute">
-        <label for="name" class="legend cream">Just give it a name !</label>
-        <input v-model="form.name" type="text" id="name" placeholder="name" required>
+        <label for="name">
+            <h2 class="disp_subtitle">Just give it a name !</h2>
+        </label>
+        <fieldset class="fieldset_1">
+            <legend>Cellar Name</legend>            
+            <input v-model="form.name" type="text" id="name" placeholder="Cellar Name" required>
+        </fieldset>
 
         <button class="button" type="submit">Save</button>
       </form>

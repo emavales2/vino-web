@@ -3,41 +3,58 @@
 
 /* ----- * FIELD TEST FOR LABEL CLARITY (email field on Login.vue) * ------ */
 
-.field_test {
+.fieldset_1 {
     border: 2px solid var(--cream); 
-    border-radius: 30px;
+    border-radius: var(--large-space);
     /* margin: auto;  */
     max-width: 100%;
     width: 100%;
 }
 
-.field_test legend {
-    margin: 0 30px;
-    padding: 0 10px;
-    font-size: small;
-    text-transform: uppercase;
+.fieldset_1 legend {
+    margin: 0 var(--large-space);
+    padding: 0 var(--small-space);
+    font-size: medium;
+    text-transform: lowercase;
+    color: var(--cream-lt);
+    font-family: var(--text-font);
 }
 
-.field_test input {
+.fieldset_1 input {
     box-sizing: border-box;
-    border-radius: 30px;
+    border-radius: var(--large-space);
     border: none;
     background: transparent;
     font-size: medium;
-    padding: 0px 20px;
+    padding: 0px var(--med-space);
     margin-bottom: 12px;
     margin-top: 4px;
     max-width: 100%;
     width: 100%;
-    color: var(--cream);
+    color: var(--cream-lt);
 }
 
-.field_test input:focus-visible {
+.fieldset_1 input:focus-visible {
     outline: none;
 }
 
-.field_test input::placeholder {
+.fieldset_1 input::placeholder {
     color: var(--coral);
+    font-family: var(--text-font);
+    text-transform: lowercase;
+}
+
+.fieldset_1 input:-webkit-autofill {
+    background-color: none;
+    color: var(--cream-lt) !important;
+}
+
+.fs_burg {
+    border: 2px solid var(--burgundy); 
+}
+
+.fs_burg legend, .fs_burg input {
+    color: var(--burgundy);
 }
 
 
@@ -47,24 +64,24 @@
 .fieldset_2 {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: var(--vsmall-space);
 }
 
 .fieldset_2 label {
     color: var(--coral);
     font-size: small;
-    margin: 0 20px;
+    margin: 0 var(--med-space);
     text-transform: uppercase;
 }
 
 .fieldset_2 input {
     box-sizing: border-box;
     align-self: center;
-    border-radius: 30px;
+    border-radius: var(--large-space);
     border: none;
     background: var(--cream-lt);
     font-size: medium;
-    padding: 12px 20px;
+    padding: 12px var(--med-space);
     max-width: 100%;
     width: 100%;
     color: var(--burgundy-lt);
@@ -72,6 +89,11 @@
 
 .fieldset_2 input::placeholder {
     color: var(--coral);
+}
+
+fieldset {
+    border: none;
+    padding: 0;
 }
 
 /* This is to fix the display of wines etc */

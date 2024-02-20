@@ -12,6 +12,10 @@ figure {
     z-index: -1;
 }
 
+.bb_home {
+    z-index: 0;
+}
+
 img {
     object-fit: cover;
     overflow: hidden;

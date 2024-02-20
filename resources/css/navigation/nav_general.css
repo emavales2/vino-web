@@ -4,7 +4,7 @@
 nav {
     box-sizing: border-box;
     text-align: center;
-    padding: 10px;
+    padding: var(--small-space);
     max-height: 80px;
     /* min-height: 60px; */
     max-width: 100%;
@@ -24,7 +24,7 @@ nav svg {
     box-sizing: border-box;
     max-height: 90%;
     max-width: 90%;
-    padding: 5px;
+    padding: var(--vsmall-space);
 }
 
 
@@ -35,6 +35,9 @@ nav svg {
     z-index: 1;
     /* added as per my other one*/
     display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: var(--med-space);
 }
 
 .top_nav {
@@ -47,7 +50,7 @@ nav svg {
 
 .top_nav figure {
     -webkit-writing-mode: vertical-lr;
-    padding-left: 10px;
+    padding-left: var(--small-space);
 }
 
 .top_nav img {
@@ -57,18 +60,18 @@ nav svg {
 
 .top_nav svg {
     fill: var(--cream);
-    width: 30px;
-    height: 30px;
+    width: var(--large-space);
+    height: var(--large-space);
 }
 
 .top_nav span {
     display: flex;
-    gap: 15px;
+    gap: var(--safe-area);
     justify-content: flex-end;
 }
 
 .top_nav p {
-    padding-left: 10px;
+    padding-left: var(--small-space);
 }
 
 
@@ -79,7 +82,7 @@ nav svg {
     display: grid;
     /* --- Changer à 5 une fois rajouté l'icône pour "notes" --- */
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 10px; 
+    gap: var(--small-space); 
     background: var(--coral);  
 }
 

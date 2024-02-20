@@ -3,14 +3,14 @@
 
     <div class="bckgd">
         <main>
-            <section  class="column_index_list">
+            <section class="column_30">
                 <header>
                     <h1 class="index_title">Your Wines</h1>
                 </header>
 
                 <button class="button">
                     <Link :href="route('wine.create')">
-                        Add custom wine
+                        Add a custom wine
                     </Link>
                 </button>
                 
