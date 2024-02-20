@@ -7,7 +7,8 @@
                 <h1 class="index_title">Edit Profile</h1>
             </header>
             <form @submit.prevent="submit">
-                <div>
+                <fieldset class="fieldset_1">
+                    <legend>First Name</legend>
                     <label for="first_name" value="First name"></label>
                     <input
                         id="first_name"
@@ -23,8 +24,10 @@
                         class="input_err"
                         :message="form.errors.first_name"
                     />
-                </div>
-                <div>
+                </fieldset>
+
+                <fieldset class="fieldset_1">
+                    <legend>Last Name</legend>
                     <label for="last_name" value="Last name"></label>
                     <input
                         id="last_name"
@@ -40,8 +43,10 @@
                         class="input_err"
                         :message="form.errors.last_name"
                     />
-                </div>
-                <div>
+                </fieldset>
+
+                <fieldset class="fieldset_1">
+                    <legend>Email Address</legend>
                     <label for="email" value="Email" class="invisible"></label>
                     <input
                         id="email"
@@ -57,8 +62,9 @@
                         class="input_err"
                         :message="form.errors.email"
                     />
-                </div>
+                </fieldset>
                 <input type="hidden" v-model="form.id" />
+                
                 <div>
                     <button class="button success" type="submit">Save</button>
                 </div>

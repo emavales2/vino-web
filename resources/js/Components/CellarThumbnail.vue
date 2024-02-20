@@ -17,7 +17,7 @@
 <script>
 import { Link } from '@inertiajs/inertia-vue3';
 export default {
-    name: 'CellarDisplayBox',
+    name: 'CellarThumbnail',
     components: {
         Link
     },

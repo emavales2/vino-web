@@ -121,7 +121,7 @@ small {
     text-align: center;
     text-decoration: underline var(--cream);
     text-underline-offset: 0.3em;
-    padding: 10px 0px 16px 0px;
+    padding: var(--small-space) 0px 16px 0px;
 }
 
 /* ----- * ALIGNEMENT DU TEXTE * ----- */
@@ -147,6 +147,17 @@ small {
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: var(--small-ltr-spacing);
+    max-width: 11ch;
+}
+
+.disp_subtitle {
+    font-size: 1.728rem;
+    line-height: var(--tall-line);
+    font-family: var(--display-font);
+    color: var(--cream);
+    font-weight: 600;
+    text-transform: lowercase;
+    max-width: 15ch;
 }
 
 .no_show {

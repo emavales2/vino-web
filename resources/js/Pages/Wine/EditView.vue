@@ -9,7 +9,8 @@
     </header>
   
       <form @submit.prevent="submit" class="form-create-wine">
-          <fieldset>
+        <fieldset class="fieldset_1">
+            <legend>Wine Name</legend>
             <label for="name" hidden></label>
             <input
                 id="name"
@@ -22,8 +23,10 @@
                 placeholder="name"
               />
             <InputError class="msg input_err" :message="form.errors.name" />
-          </fieldset>
-          <fieldset>
+        </fieldset>
+
+        <fieldset class="fieldset_1">
+            <legend>Wine Type</legend>
             <label for="type" hidden></label>
             <input
                 id="type"
@@ -35,8 +38,10 @@
                 placeholder="type"
               />
             <InputError class="msg input_err" :message="form.errors.type" />
-          </fieldset>
-          <fieldset>
+        </fieldset>
+
+        <fieldset class="fieldset_1">
+            <legend>Country</legend>
             <label for="country" hidden></label>
             <input
                 id="country"
@@ -48,8 +53,10 @@
                 placeholder="country"
               />
             <InputError class="msg input_err" :message="form.errors.country" />
-          </fieldset>
-          <fieldset>
+        </fieldset>
+
+        <fieldset class="fieldset_1">
+            <legend>Container Size</legend>
             <label for="size" hidden></label>
             <input
                 id="size"
@@ -61,8 +68,10 @@
                 placeholder="size"
               />
             <InputError class="msg input_err" :message="form.errors.size" />
-          </fieldset>
-          <fieldset>
+        </fieldset>
+
+        <fieldset class="fieldset_1">
+            <legend>Price</legend>
             <label for="price" hidden></label>
             <input
                 id="price"
@@ -76,7 +85,8 @@
                 placeholder="price"
               />
             <InputError class="msg input_err" :message="form.errors.price" />
-          </fieldset>
+        </fieldset>
+        
         <button class="button">Update</button>
       </form>
     </main>

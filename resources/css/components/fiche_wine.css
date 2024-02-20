@@ -6,7 +6,7 @@
 .fiche_wine main > *  {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: var(--med-space);
 }
 
 .fiche_wine_title {
@@ -22,7 +22,7 @@
 .country_line {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: var(--small-space);
     align-items: center;
 }
 

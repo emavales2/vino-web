@@ -4,13 +4,18 @@
     <main>
         <GoBackButton :color="'cream'" class="button_back"/>
     
-    <header>
-        <h1 class="index_title">Edit Cellar</h1>
-    </header>
+        <header>
+            <h1 class="index_title">Edit Cellar</h1>
+        </header>
 
         <form @submit.prevent="submitForm" :action="updateRoute">
-        <label for="name" class="legend cream">Modify your cellar !</label>
-        <input v-model="form.name" type="text" id="name" required>
+            <label for="name">
+                <h2 class="disp_subtitle">Modify your cellar !</h2>
+            </label>
+            <fieldset class="fieldset_1">
+                <legend>Cellar Name</legend>
+                <input v-model="form.name" type="text" id="name" required>
+            </fieldset>
 
         <button class="button" type="submit">Save</button>
         </form>
