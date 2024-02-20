@@ -25,7 +25,10 @@
 
     --text: var(--med-gray);
 
-    
+    /* EFFECTS AND VARS */
+
+    --box-shadow: 2px 2px 2px #19030392;
+    --veil: #0d0505cb;
 }
 
 

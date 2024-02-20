@@ -176,7 +176,7 @@
           country: '',
           price: '',
           size: '',
-          cellar_id: this.cellars[0].id,
+          cellar_id: this.cellars[0].id || null,
           cellar_qty: '0',
           buyList_qty: '',
         }),

@@ -10,8 +10,25 @@
 
             <div v-if="buylist.length !== 0">
                 <ul class="wine-list">
-                <WineThumbnail v-for="(wine, i) in buylist" :key="i" :wine="wine">
-                    <button class="button sml" @click="deleteOne(wine)">remove wine</button>
+                <WineThumbnail v-for="(wine, i) in buylist" 
+                  :key="i" 
+                  :wine="wine"
+                  :quantity="wine.quantity"
+                >
+                <section>
+                    <div>
+                      <MinusButton 
+                        :color="'cream'" 
+                        :disabled="wine.quantity === 0" 
+                        @click="removeOne(wine, wine.quantity)"
+                      />
+                      <PlusButton 
+                        :color="'cream'" 
+                        @click="addOne(wine)"
+                      />
+                    </div>
+                    <button class="button sml" @click="toggleModal(wine)">remove wine</button>
+                  </section>
                 </WineThumbnail>
                 </ul>
             </div>
@@ -21,29 +38,66 @@
             </div>
         </main>
     </div>
+    <Modal 
+      v-show="openDeleteModal"
+      :toggleOff="toggleModal"
+    >
+      <ConfirmModal
+        :YesAction="delete"
+        action="delete"
+        :toggleModal="toggleModal"
+        actionMessage="Are you sure you want to delete this wine from your buy list ?"
+      />
+    </Modal>
 </template>
   
 <script>
-import MainLayout from '@/Layouts/MainLayout.vue';
-import { Link } from '@inertiajs/inertia-vue3';
-import WineThumbnail from '@/Components/WineThumbnail.vue';
+import { Head, Link } from '@inertiajs/inertia-vue3';
 import { Inertia } from '@inertiajs/inertia';
-import { Head } from '@inertiajs/inertia-vue3';
-
+import MainLayout from '@/Layouts/MainLayout.vue';
+import WineThumbnail from '@/Components/WineThumbnail.vue';
+import PlusButton from '@/Components/ButtonsIcons/PlusButton.vue';
+import MinusButton from '@/Components/ButtonsIcons/MinusButton.vue';
+import ConfirmModal from '@/Components/ConfirmModal.vue';
+import Modal from '@/Components/Modal.vue';
 export default {
   components: {
     WineThumbnail,
     Head,
-    Link
+    Link,
+    MinusButton,
+    PlusButton,
+    ConfirmModal,
+    Modal
   },
-  props: ['buylist'],
-  methods: {
-    deleteOne(wine) {
-      Inertia.delete(route('buylist.delete', { wine: wine.id })
-      )
+  data() {
+    return {
+      openDeleteModal: false,
+      wineId: null
     }
   },
-  layout: MainLayout
+  layout: MainLayout,
+  methods: {
+    toggleModal(wine) {
+      this.wineId = wine;
+      this.openDeleteModal = !this.openDeleteModal;
+    },
+    removeOne (wine, quantity) {
+      if(quantity > 0)
+        Inertia.visit(route('buylist.remove', { wine: wine }), 
+      { preserveScroll: true })
+    },
+    addOne (wine) {
+      Inertia.visit(route('buylist.add', { wine: wine }),
+      { preserveScroll: true })
+    },
+    delete () {
+      Inertia.delete(route('buylist.delete', { wine: this.wineId }),
+      { preserveScroll: true })
+      this.openDeleteModal = false
+    }
+  },
+  props: ['buylist']
 }
 </script>
   

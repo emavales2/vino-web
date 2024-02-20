@@ -1,6 +1,6 @@
 <template>
   <div class="search-bar">
-    <legend>find a wine</legend>
+    <legend class="block-font">find a wine</legend>
     <form @submit.prevent="submit">
       <label>
         <input 

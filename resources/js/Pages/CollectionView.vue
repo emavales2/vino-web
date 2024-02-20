@@ -17,17 +17,22 @@
                 <div v-if="collection.length !== 0">
                     <div>
                         <ul class="wine-list">
-                            <WineThumbnail
-                            v-for="(wine, i) in collection" :key="i"
-                                :wine="wine.wine"
-                                :quantities="wine.quantities">
+                            <WineThumbnail  v-for="(wine, i) in collection" 
+                              :key="i"
+                              :wine="wine.wine"
+                              :quantities="wine.quantities"
+                            >
+                              <!-- section std sloté -->
+                              <section>
+                                <Link v-if="wine.wine.user_id"
+                                  :href="route('wine.edit', wine.wine.id)" 
+                                  class="button sml"
+                                >
+                                  edit wine
+                                </Link>
+                                <button class="button sml" @click="toggleModal(wine.wine)">remove wine</button>
+                              </section>
 
-                                <aside class="wine-th-nav">
-                                    <DeleteButton @click="toggleModal(wine.wine.id)" :color="'cream'"/> 
-                                    <Link :href="route('wine.edit', wine.wine.id)">
-                                        <EditButton :fill="'cream'"/>
-                                    </Link>
-                                </aside>
                             </WineThumbnail>
                         </ul>
                     </div>
@@ -40,12 +45,16 @@
         </main>
     </div>
 
-    <ConfirmModal 
-            v-show="openDeleteModal" 
-            :YesAction="delete" 
-            action="delete" 
-            actionMessage="Are you sure you want to delete this wine? This action will remove it from your cellars as well. This action cannot be undone." 
+    <Modal v-show="openDeleteModal"
+        :toggleOff="toggleModal"
+    >
+        <ConfirmModal
+            :YesAction="delete"
+            action="delete"
+            :toggleModal="toggleModal"
+            actionMessage="Are you sure you want to delete this wine? This action will remove it from your cellars as well. This action cannot be undone."
         />
+    </Modal>
 </template>
 
 <script>
@@ -56,11 +65,13 @@ import DeleteButton from "@/Components/ButtonsIcons/DeleteButton.vue";
 import EditButton from "@/Components/ButtonsIcons/EditButton.vue";
 import MainLayout from "@/Layouts/MainLayout.vue";
 import WineThumbnail from "@/Components/WineThumbnail.vue";
+import Modal from '@/Components/Modal.vue';
 
 export default {
     name: "CollectionView",
     components: {
         ConfirmModal,
+        Modal,
         DeleteButton,
         Head,
         Link,

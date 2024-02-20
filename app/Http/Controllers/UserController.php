@@ -94,8 +94,8 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $request->validate([
-            'first_name' => 'regex:/^[a-zA-Z\s]+$/u|max:100|min:2|nullable',
-            'last_name' => 'regex:/^[a-zA-Z\s]+$/u|max:100|min:2|nullable',
+            'first_name' => 'regex:/^[a-zA-Z-\s]+$/u|max:100|min:2|nullable',
+            'last_name' => 'regex:/^[a-zA-Z-\s]+$/u|max:100|min:2|nullable',
             'email' => 'required|string|email|max:255'
         ]);
         $user = User::find($request->id);

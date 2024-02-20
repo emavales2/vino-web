@@ -37,7 +37,6 @@
                 <Link class="button" :href="route('profile.edit', user.id )">Edit profile</Link>
                 <Link class="button" :href="route('logout', user.id )">Logout</Link>
             </div>
-
         </main>
     </div>
 </template>

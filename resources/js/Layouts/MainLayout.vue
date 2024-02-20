@@ -4,15 +4,14 @@
     :message="message"
   />
 
-  <ModalTest 
+  <Modal
     v-show="showSearch"
     :toggleOff="closeModal"
   >
-    <SearchBar 
+    <SearchBar v-if="showSearch"
       :searchAction="closeModal"
-      :color="'cream'"
     />
-  </ModalTest>
+  </Modal>
 
     <section class="background_blobs">
         <figure class="fig_bg">
@@ -78,13 +77,15 @@ import SearchIcon from '@/Components/ButtonsIcons/SearchIcon.vue'
 import { Link } from '@inertiajs/inertia-vue3'
 import SearchBar from '@/Components/SearchBar.vue'
 import DialogWindow from '@/Components/DialogWindow.vue'
-import ModalTest from '@/Components/ModalTest.vue'
-
+import Modal from '@/Components/Modal.vue'
+import ConfirmModal from '@/Components/ConfirmModal.vue'
 export default {
   data () {
     return {
       showDialog: false,
+      showModal: false,
       showSearch: false,
+      showConfirm: false,
       message: '',
       user: this.$attrs.user || this.$attrs.auth.user
     }
@@ -94,7 +95,8 @@ export default {
     Link,
     SearchBar,
     SearchIcon,
-    ModalTest
+    Modal,
+    ConfirmModal
 },
   methods: {
     openDialog (message) {

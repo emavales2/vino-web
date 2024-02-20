@@ -27,24 +27,23 @@
                     />
                 </fieldset>
 
-                <fieldset class="fieldset_1">
-                    <legend>Last Name</legend>
-                    <label for="last_name" value="Last name" hidden></label>
-                    <input
-                        id="last_name"
-                        type="text"
-                        class="mt-1 block w-full"
-                        v-model="form.last_name"
-                        required
-                        autofocus
-                        autocomplete="last_name"
-                        placeholder="last name"
-                    />
-                    <InputError
-                        class="msg input_err"
-                        :message="form.errors.last_name"
-                    />
-                </fieldset>
+            <fieldset class="fieldset_2">
+                <label for="last_name" value="Last name">Last Name</label>
+                <input
+                    id="last_name"
+                    type="text"
+                    class="mt-1 block w-full"
+                    v-model="form.last_name"
+                    required
+                    autofocus
+                    autocomplete="last_name"
+                    placeholder="last name"
+                />
+                <InputError
+                    class="msg input_err"
+                    :message="form.errors.last_name"
+                />
+            </fieldset>
 
                 <fieldset class="fieldset_1">
                     <legend>Email Address</legend>
