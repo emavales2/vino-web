@@ -10,7 +10,7 @@
 
                 <section class="row_els_apart">
                     <Link :href="route('cellar.edit', cellar.id)" class="button sml">Edit cellar</Link>
-                    <button type="button" @click="redirectToDelete(cellar.id)" class="button sml">Delete</button>
+                    <button type="button" @click="toggleModal(cellar)" class="button sml">Delete</button>
                 </section>
             </header>
 
@@ -50,7 +50,7 @@
         :YesAction="delete" 
         action="delete" 
         :toggleModal="toggleModal"
-        actionMessage="Are you sure you want to delete this wine from the cellar ?" 
+        actionMessage="Are you sure you want to delete this cellar? all wines will be deleted"
       />
     </Modal>
 </template>
@@ -81,19 +81,13 @@ export default {
   data() {
     return {
       openDeleteModal: false,
-      wineId: null
+      cellarId: null
     }
   },
   layout: MainLayout,
   methods: {
-    redirectToDelete() {
-      if (confirm('Are you sure you want to delete this cellar?')) {
-        this.$inertia.delete(route('cellar.delete', { cellar: this.cellar }));
-      }
-    },
-    toggleModal(wine) {
-      this.wineId = wine;
-      console.log(wine)
+    toggleModal(cellar) {
+      this.cellarId = cellar;
       this.openDeleteModal = !this.openDeleteModal;
     },
     removeOne (wine, quantity) {
@@ -106,7 +100,7 @@ export default {
       { preserveScroll: true })
     },
     delete () {
-      Inertia.delete(route('cellarwine.delete', {cellar: this.cellar, wine: this.wineId }),
+      Inertia.delete(route('cellar.delete', {cellar: this.cellar }),
       { preserveScroll: true })
       this.openDeleteModal = false
     }
