@@ -68,7 +68,7 @@
 
 <script>
 import { Head, Link } from "@inertiajs/inertia-vue3";
-import CellarDisplayBox from "@/Components/CellarDisplayBox.vue";
+import CellarThumbnail from "@/Components/CellarThumbnail.vue";
 import MainLayout from "@/Layouts/MainLayout.vue";
 import { Inertia } from "@inertiajs/inertia";
 import WineThumbnail from "@/Components/WineThumbnail.vue";
@@ -76,7 +76,7 @@ import WineThumbnail from "@/Components/WineThumbnail.vue";
 export default {
   name: "DashboardView",
   components: {
-    CellarDisplayBox,
+    CellarThumbnail,
     Head,
     Link,
     WineThumbnail,
