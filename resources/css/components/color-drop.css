@@ -1,8 +1,8 @@
 .color-drop{
   display: block;
-  width: 20px;
-  min-height: 20px;
-  height: 20px;
+  width: var(--med-space);
+  min-height: var(--med-space);
+  height: var(--med-space);
   border-radius: 100%;
 }
 .color-drop.blanc{

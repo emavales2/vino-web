@@ -6,28 +6,35 @@
         font-family: var(--display-font);
     }
 }
-/* Card compodents Dashboard CellarDisplayBox  */
+/* Card components Dashboard CellarDisplayBox  */
 .card_cellar {
-    /* background-color: var(--burgundy); */
     background-color: var(--coral);
     border-radius: 12px;
-    /* font-family: var(--block-font); */
-    /* text-transform: uppercase; */
+    font-family: var(--block-font);
+    text-transform: uppercase;
     padding: var(--small-space);
     display: flex;
     flex-direction: column;
     justify-content: center;
     /* max-width: 7ch; */
     height: 100%;
+    width: 100%;
     flex: 1;
-    color: var(--cream);
+    color: var(--cream-lt);
     font-size: .833rem;
     line-height: var(--small-line);
     overflow-wrap: break-word;
     hyphens: auto;
     -webkit-hyphens: auto;
+    aspect-ratio: 1/1;
+}
+
+.card_cellar.w_sections {
+    padding: var(--med-space);
+    gap: var(--large-space);
+
 }
 
 .card_round {
-    border-start-end-radius: 40px; 
+    border-start-end-radius: var(--xlarge-space); 
 }

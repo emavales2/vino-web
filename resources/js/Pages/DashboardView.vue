@@ -8,14 +8,20 @@
                 <h1 class="index_title">Welcome, {{ user.first_name }}</h1>
             </header>
 
-            <ul class="column_index_list">
+            <button class="button">
+                <Link :href="route('wine.create')">
+                    Add a custom wine
+                </Link>
+            </button>
+
+            <ul class="column_30">
 
                 <!-- --------------- * CELLARS * ------------------ -->
                 <li>
-                    <section class="column gap_20">
+                    <section class="column_20">
                         <header>
                             <span class="row_els_apart gap_20">
-                                <h2 class="fs_5 display-font cream">my cellars</h2>
+                                <h2 class="disp_subtitle">my cellars</h2>
                                 <div>
                                     <Link v-if="cellars.length > 3" class="lien_sml cream block-font" :href="route('cellar.index')">See more</Link>
                                 </div>
@@ -38,7 +44,7 @@
                     <section class="column gap_20">
                         <header>
                             <span class="row_els_apart gap_20">
-                                <h2 class="fs_5 display-font cream">my wine collection</h2>
+                                <h2 class="disp_subtitle">my wine collection</h2>
                                 <div>
                                     <Link v-if="collection.length > 3" class="lien_sml cream block-font" :href="route('collection')">See more</Link>
                                 </div>

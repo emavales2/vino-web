@@ -1,16 +1,32 @@
 
-/* ------- GENÉRALE ------- */
+/* ----- * GENÉRALE * ----- */
+/* Balises modifiées directement */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
+
+body > * {
+    width: 100%;
+}
 
 html, body, [id=app], main {
     /* width: 100%; */
     max-height: 100%;
     max-width: 100vw;
+    height: 100%;
+}
+
+main {
+    padding: var(--med-space); 
+    display: flex;
+    flex-direction: column;
+    gap: var(--xlarge-space);
+    flex: 1;
+    /* justify-content: center; */
+    position: relative;
 }
 
 a {
@@ -24,63 +40,9 @@ ul {
     padding: 0;
 }
 
-header {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
 footer {
     position: fixed;
     bottom: 0;
     width: 100%;
     max-width: 100vw;
-}
-
-
-
-/* ------- LAYOUT, RHYTHM & COMPOSITION ------- */
-
-body, [id=app] {
-    /* display: flex; */
-    flex-direction: column;
-    flex-grow: 1;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-body > * {
-    width: 100%;
-}
-
-.safe_area {
-    padding: var(--safe-area);
-    display: flex;
-    justify-content: center;
-}
-
-main {
-    margin: var(--safe-area);
-    padding: var(--med-space); 
-    display: flex;
-    /* flex-wrap: wrap; */
-    flex-direction: column;
-    gap: 30px;
-    flex: 1;
-    /* justify-content: center; */
-    position: relative;
-}
-
-.just_top {
-    justify-content: start;
-}
-
-
-
-/* ------------------ * UTILITARIAN * ------------------ */
-
-.invisible {
-    display: none;
 }

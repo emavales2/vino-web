@@ -1,114 +1,123 @@
 <template>
     <Head title="Register" />
-    <main>
-        <header>
-            <h1 class="index_title">Sign Up</h1>
-        </header>
-        <form @submit.prevent="submit">
-            <fieldset class="fieldset_2">
-                <label for="first_name" value="First name">First Name</label>
-                <input
-                    id="first_name"
-                    type="text"
-                    class="mt-1 block w-full"
-                    v-model="form.first_name"
-                    required
-                    autofocus
-                    autocomplete="first_name"
-                    placeholder="first name"
-                />
-                <InputError
-                    class="msg input_err"
-                    :message="form.errors.first_name"
-                />
-            </fieldset>
 
-            <fieldset class="fieldset_2">
-                <label for="last_name" value="Last name">Last Name</label>
-                <input
-                    id="last_name"
-                    type="text"
-                    class="mt-1 block w-full"
-                    v-model="form.last_name"
-                    required
-                    autofocus
-                    autocomplete="last_name"
-                    placeholder="last name"
-                />
-                <InputError
-                    class="msg input_err"
-                    :message="form.errors.last_name"
-                />
-            </fieldset>
+    <div class="bckgd marg_vert_home">
+        <main>
+            <header>
+                <h1 class="index_title">Sign Up</h1>
+            </header>
 
-            <fieldset class="fieldset_2">
-                <label for="email" value="Email">Email Address</label>
-                <input
-                    id="email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    v-model="form.email"
-                    required
-                    autocomplete="username"
-                    placeholder="email address"
-                />
-                <InputError
-                    class="msg input_err"
-                    :message="form.errors.email"
-                />
-            </fieldset>
+            <form @submit.prevent="submit">
+                <fieldset class="fieldset_1">
+                    <legend>First Name</legend>
+                    <label for="first_name" value="First name" hidden></label>
+                    <input
+                        id="first_name"
+                        type="text"
+                        class="mt-1 block w-full"
+                        v-model="form.first_name"
+                        required
+                        autofocus
+                        autocomplete="first_name"
+                        placeholder="first name"
+                    />
+                    <InputError
+                        class="msg input_err"
+                        :message="form.errors.first_name"
+                    />
+                </fieldset>
 
-            <fieldset class="fieldset_2">
-                <label for="password" value="Password">Password</label>
-                <input
-                    id="password"
-                    type="password"
-                    class="mt-1 block w-full"
-                    v-model="form.password"
-                    required
-                    autocomplete="new-password"
-                    placeholder="password"
-                />
-                <InputError
-                    class="msg input_err"
-                    :message="form.errors.password"
-                />
-            </fieldset>
+                <fieldset class="fieldset_1">
+                    <legend>Last Name</legend>
+                    <label for="last_name" value="Last name" hidden></label>
+                    <input
+                        id="last_name"
+                        type="text"
+                        class="mt-1 block w-full"
+                        v-model="form.last_name"
+                        required
+                        autofocus
+                        autocomplete="last_name"
+                        placeholder="last name"
+                    />
+                    <InputError
+                        class="msg input_err"
+                        :message="form.errors.last_name"
+                    />
+                </fieldset>
 
-            <fieldset class="fieldset_2">
-                <label for="password_confirmation" value="Confirm Password">Confirm Password</label>
-                <input
-                    id="password_confirmation"
-                    type="password"
-                    class="mt-1 block w-full"
-                    v-model="form.password_confirmation"
-                    required
-                    autocomplete="new-password"
-                    placeholder="confirm password"
-                />
-                <InputError
-                    class="msg input_err"
-                    :message="form.errors.password_confirmation"
-                />
-            </fieldset>
-            
-            <div class="flex items-center justify-end">
-                <button
-                    class="button"
-                    :class="{ 'opacity-25': form.processing }"
-                    :disabled="form.processing"
+                <fieldset class="fieldset_1">
+                    <legend>Email Address</legend>
+                    <label for="email" value="Email" hidden></label>
+                    <input
+                        id="email"
+                        type="email"
+                        class="mt-1 block w-full"
+                        v-model="form.email"
+                        required
+                        autocomplete="username"
+                        placeholder="email address"
+                    />
+                    <InputError
+                        class="msg input_err"
+                        :message="form.errors.email"
+                    />
+                </fieldset>
+
+                <fieldset class="fieldset_1">
+                    <legend>Password</legend>
+                    <label for="password" value="Password" hidden></label>
+                    <input
+                        id="password"
+                        type="password"
+                        class="mt-1 block w-full"
+                        v-model="form.password"
+                        required
+                        autocomplete="new-password"
+                        placeholder="password"
+                    />
+                    <InputError
+                        class="msg input_err"
+                        :message="form.errors.password"
+                    />
+                </fieldset>
+
+                <fieldset class="fieldset_1">
+                    <legend>Password Confirmation</legend>
+                    <label for="password_confirmation" value="Confirm Password" hidden></label>
+                    <input
+                        id="password_confirmation"
+                        type="password"
+                        class="mt-1 block w-full"
+                        v-model="form.password_confirmation"
+                        required
+                        autocomplete="new-password"
+                        placeholder="confirm password"
+                    />
+                    <InputError
+                        class="msg input_err"
+                        :message="form.errors.password_confirmation"
+                    />
+                </fieldset>
+                
+                <div class="flex items-center justify-end">
+                    <button
+                        class="button"
+                        :class="{ 'opacity-25': form.processing }"
+                        :disabled="form.processing"
+                    >
+                        Save
+                    </button>
+                </div>
+            </form>
+            <p class="cream txt-center">
+                Already have a member account?<br />
+                <Link class="block-font coral" :href="route('login')"
+                    >Sign In!</Link
                 >
-                    Save
-                </button>
-            </div>
-        </form>
-        <p class="cream txt-center">
-            Already have a member account?<br />
-            <Link class="block-font coral" :href="route('login')"
-                >Sign In!</Link
-            >
-        </p>
-    </main>
+            </p>
+        </main>
+    </div>
 </template>
 
 <script>

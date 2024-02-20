@@ -2,11 +2,11 @@
     <Head title="Profile" />
 
     <div class="bckgd">
-        <section class="background_blobs">
+        <!-- <section class="background_blobs">
             <figure class="fig_bg">
                 <img src="@/../assets/img/blob_top.svg" class="coral_blob_bg" alt="">    
             </figure>
-        </section>
+        </section> -->
 
         <main>
             <GoBackButton :color="'cream'" class="button_back"/>
@@ -34,8 +34,8 @@
             </div>
 
             <div class="btn-container">
-            <Link class="button" :href="route('profile.edit', user.id )">Edit profile</Link>
-            <Link class="button" :href="route('logout', user.id )">Logout</Link>
+                <Link class="button" :href="route('profile.edit', user.id )">Edit profile</Link>
+                <Link class="button" :href="route('logout', user.id )">Logout</Link>
             </div>
 
         </main>

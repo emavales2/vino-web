@@ -13,7 +13,7 @@
 }
 .form-quantity section:first-of-type{
   display: flex;
-  gap: 10px;
+  gap: var(--small-space);
   justify-content: space-between;
   text-align-last: center;
 

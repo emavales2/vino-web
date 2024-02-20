@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: wrap;
   padding: var(--small-space);
-  padding-bottom: 30px;
+  padding-bottom: var(--large-space);
   gap: var(--med-space);
   justify-content: center;
 

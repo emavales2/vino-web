@@ -11,6 +11,6 @@
   gap: var(--vsmall-space);
 }
 .search-bar svg{
-  width: 20px;
-  height: 20px;
+  width: var(--med-space);
+  height: var(--med-space);
 }

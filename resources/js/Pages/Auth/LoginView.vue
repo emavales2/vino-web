@@ -11,8 +11,9 @@
             </header>
 
             <form @submit.prevent="submit">
-                <fieldset class="fieldset_2">
-                    <label for="email" value="Email">email</label>
+                <fieldset class="fieldset_1">
+                    <legend>Email Address</legend>
+                    <label for="email" value="Email" hidden></label>
                     <input
                         id="email"
                         type="email"
@@ -26,12 +27,12 @@
                     <InputError class="msg input_err" :message="form.errors.email" />
                 </fieldset>
 
-                <fieldset class="fieldset_2">
-                    <label for="password" value="Password">Password</label>
+                <fieldset class="fieldset_1">
+                    <legend>Password</legend>
+                    <label for="password" value="Password" hidden></label>
                     <input
                         id="password"
                         type="password"
-                        class=""
                         v-model="form.password"
                         required
                         autocomplete="current-password"
