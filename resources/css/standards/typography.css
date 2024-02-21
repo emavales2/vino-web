@@ -53,7 +53,9 @@ h1, h2, h3, h4, h5, h6, p {
 h1, h2, h3 {
     line-height: var(--tall-line);
 }
-
+dt{
+    padding-bottom: var(--small-space);
+}
 /* ----- * H1 est le seul heading dont il n'ya qu'une seule font-family * ----- */
 .fs_1 {
     font-size: 2.986rem;
@@ -142,6 +144,7 @@ small {
     font-weight: 500;
     letter-spacing: var(--small-ltr-spacing);
     max-width: 11ch;
+    padding-bottom: var(--small-space);
 }
 
 .disp_subtitle {

@@ -3,9 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\Cellar;
-use App\Models\CellarHasWine;
-use App\Models\Wine;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -48,8 +45,15 @@ class UserController extends Controller
             }
         }
         $collection = array_slice($collection, 0, 4);
-        // Get the user's cellars (4 max)
         return Inertia::render('DashboardView', compact('user', 'cellars', 'collection'));
+    }
+
+    /**
+     * Display the dashboard of the admin.
+     */
+    public function adminDashboard(){
+        $user = Auth::user();
+        return Inertia::render('Admin/DashboardView', compact('user'));
     }
     
     /**
@@ -59,6 +63,7 @@ class UserController extends Controller
      */
     public function index()
     {
+        $users = User::all();
         return Inertia::render('Users/UsersView', compact('users'));
     }
 

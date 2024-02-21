@@ -34,10 +34,29 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request)
     {
+        $translations = []; // Define translations array
+        $locale = app()->getLocale(); // Get current locale
+        $filePath = resource_path('lang/'. $locale .'.json'); // Define file path
+
+        // If file exists, decode it and assign to translations array
+        if (file_exists($filePath)) {
+            $translations = json_decode(file_get_contents($filePath), true);
+        }
+
         return array_merge(parent::share($request), [
+            // Share locale with Inertia
+            'locale' => function () use ($locale){
+                return $locale;
+            },
+            // Share translations with Inertia
+            'translations' => function () use ($translations) {
+                return $translations;
+            },
+            // Share user with Inertia
             'auth' => [
                 'user' => $request->user(),
             ],
+            // Share Ziggy routes with Inertia
             'ziggy' => function () {
                 return (new Ziggy)->toArray();
             },

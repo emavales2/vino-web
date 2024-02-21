@@ -51,6 +51,11 @@ return [
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
         ],
+        // Add ‘languages’ disk so you can easily use Laravel’s Storage to access ‘resources/lang’ folder where your languages reside.
+        'languages' => [
+            'driver' => 'local',
+            'root' => base_path('resources/lang'),
+        ]
 
     ],
 
