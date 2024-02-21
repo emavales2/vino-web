@@ -6,12 +6,12 @@
     <main>
       <header>
         <!-- EXEMPLE POUR ACCEDER AUX TRADUCTIONS -->
-        <h1 class="index_title">{{ translations.dashboard.welcome }}, {{ user.first_name }}</h1>
+        <h1 class="index_title">{{ trans.dashboard.welcome }}, {{ user.first_name }}</h1>
       </header>
 
       <button class="button">
         <Link :href="route('wine.create')">
-          {{ translations.buttons.add_custom_wine }}
+          {{ trans.buttons.add_custom_wine }}
         </Link>
       </button>
 
@@ -22,9 +22,9 @@
           <section class="column_20">
             <header>
               <span class="row_els_apart gap_20">
-                <h2 class="disp_subtitle">{{ translations.dashboard.my_cellars }}</h2>
+                <h2 class="disp_subtitle">{{ trans.dashboard.my_cellars }}</h2>
                 <div>
-                  <Link v-if="cellars.length > 3" class="lien_sml cream block-font" :href="route('cellar.index')">{{ translations.buttons.see_more }}
+                  <Link v-if="cellars.length > 3" class="lien_sml cream block-font" :href="route('cellar.index')">{{ trans.buttons.see_more }}
                   </Link>
                 </div>
               </span>
@@ -43,9 +43,9 @@
           <section class="column gap_20">
             <header>
               <span class="row_els_apart gap_20">
-                <h2 class="disp_subtitle">{{ translations.dashboard.my_collection }}</h2>
+                <h2 class="disp_subtitle">{{ trans.dashboard.my_collection }}</h2>
                 <div>
-                  <Link v-if="collection.length > 3" class="lien_sml cream block-font" :href="route('collection')">{{ translations.buttons.see_more }}</Link>
+                  <Link v-if="collection.length > 3" class="lien_sml cream block-font" :href="route('collection')">{{ trans.buttons.see_more }}</Link>
                 </div>
               </span>
             </header>
@@ -87,6 +87,6 @@ export default {
       return Object.keys(obj).length === 0;
     },
   },
-  props: ['cellars', 'collection', 'user', 'translations'],
+  props: ['cellars', 'collection', 'user', 'trans'],
 };
 </script>
