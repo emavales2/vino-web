@@ -5,10 +5,11 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CellarController;
 use App\Http\Controllers\CellarHasWineController;
 use App\Http\Controllers\BuyListController;
+use App\Http\Controllers\LocaleController;
 use App\Models\BuyList;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-
+use Illuminate\Support\Facades\App;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -96,3 +97,11 @@ Route::get('/error', function () {
 })->name('error.page');
 
 require __DIR__.'/auth.php';
+
+// Langue
+// ----------------------------------------------------
+Route::get('/lang/{locale}', function ($locale) {
+    session()->put('locale', $locale);
+    App::setLocale($locale);
+    redirect()->back();
+})->name('lang');
