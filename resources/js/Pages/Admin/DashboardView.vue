@@ -1,10 +1,10 @@
 <template>
     <Head title="Dashboard Admin" />
-    <div  class="bckgd">
+    <div class="bckgd">
         <header>
             <h1 class="index_title">Welcome {{ user.first_name }}</h1> 
         </header>
-        <nav class="mb-6">
+        <main class="mb-6">
             <ul>
                 <li>
                     <button class="button" >
@@ -15,7 +15,7 @@
                     <button class="button"  @click="logout">Logout</button>
                 </li>
             </ul>
-        </nav>
+        </main>
     </div>
 </template>
 
@@ -30,7 +30,7 @@ export default {
         Head,
         Link
     },
-    Layout: MainLayout,
+    layout: MainLayout,
     methods: {
         logout() {
             Inertia.post(route('logout'));

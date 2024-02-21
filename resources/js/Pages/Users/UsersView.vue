@@ -47,7 +47,7 @@ export default {
             }
         }
     },
-    Layout: MainLayout,
+    layout: MainLayout,
     methods: {
         delete() {
             this.$inertia.delete(route('admin.delete', { user: this.user.id }));
