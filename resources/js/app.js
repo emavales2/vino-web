@@ -13,7 +13,6 @@ createInertiaApp({
         return createApp({ render: () => h(app, props) })
             .use(plugin)
             .mixin({ methods: { route } })
-            .mixin(require('./translation')) //ADD THIS
             .mount(el)
             .$nextTick(() => { delete el.dataset.page });
     },

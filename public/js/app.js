@@ -28538,8 +28538,7 @@ var appName = ((_window$document$getE = window.document.getElementsByTagName('ti
       methods: {
         route: route
       }
-    }).mixin(__webpack_require__(/*! ./translation */ "./resources/js/translation.js")) //ADD THIS
-    .mount(el).$nextTick(function () {
+    }).mount(el).$nextTick(function () {
       delete el.dataset.page;
     });
   }
@@ -28566,46 +28565,6 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
-/***/ }),
-
-/***/ "./resources/js/translation.js":
-/*!*************************************!*\
-  !*** ./resources/js/translation.js ***!
-  \*************************************/
-/***/ ((module) => {
-
-module.exports = {
-  methods: {
-    /**
-     * Translate the given key.
-     */
-    __: function __(key) {
-      var replace = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-      keys = key.split('.');
-      var translation = this.$page.props.language;
-      keys.forEach(function (keyTmp) {
-        translation = translation[keyTmp] ? translation[keyTmp] : keyTmp;
-      });
-      Object.keys(replace).forEach(function (key) {
-        translation = translation.replace(':' + key, replace[key]);
-      });
-      return translation;
-    },
-    /**
-     * Translate the given key with basic pluralization.
-     */
-    __n: function __n(key, number) {
-      var replace = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-      var options = key.split('|');
-      key = options[1];
-      if (number == 1) {
-        key = options[0];
-      }
-      return tt(key, replace);
-    }
-  }
-};
 
 /***/ }),
 
