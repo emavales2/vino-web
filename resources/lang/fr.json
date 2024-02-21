@@ -1,0 +1,86 @@
+{
+    "auth": {
+        "failed": "Ces identifiants ne correspondent pas \u00e0 nos enregistrements.",
+        "password": "Le mot de passe fourni est incorrect.",
+        "throttle": "Trop de tentatives de connexion. Veuillez r\u00e9essayer dans :seconds secondes."
+    },
+    "buttons": {
+        "add": "Ajouter",
+        "edit": "Modifier",
+        "delete": "Supprimer",
+        "save": "Enregistrer",
+        "cancel": "Annuler",
+        "see_more": "Voir plus",
+        "add_custom_wine": "Ajouter un vin personnalis\u00e9"
+    },
+    "dashboard": {
+        "welcome": "Bienvenue",
+        "my_cellars": "Mes celliers",
+        "my_collection": "Ma collection de vins"
+    },
+    "pagination": {
+        "previous": "&laquo; Pr\u00e9c\u00e9dent",
+        "next": "Suivant &raquo;"
+    },
+    "passwords": {
+        "reset": "Votre mot de passe a \u00e9t\u00e9 r\u00e9initialis\u00e9 !",
+        "sent": "Nous avons envoy\u00e9 par e-mail le lien de r\u00e9initialisation de votre mot de passe !",
+        "throttled": "Veuillez patienter avant de r\u00e9essayer.",
+        "token": "Ce jeton de r\u00e9initialisation de mot de passe est invalide.",
+        "user": "Nous ne trouvons aucun utilisateur avec cette adresse e-mail."
+    },
+    "validation": {
+        "accepted": "Le champ :attribute doit \u00eatre accept\u00e9.",
+        "active_url": "Le champ :attribute n'est pas une URL valide.",
+        "after": "Le champ :attribute doit \u00eatre une date post\u00e9rieure au :date.",
+        "alpha": "Le champ :attribute doit seulement contenir des lettres.",
+        "alpha_dash": "Le champ :attribute doit seulement contenir des lettres, des chiffres et des tirets.",
+        "alpha_num": "Le champ :attribute doit seulement contenir des chiffres et des lettres.",
+        "before": "Le champ :attribute doit \u00eatre une date ant\u00e9rieure au :date.",
+        "between": {
+            "numeric": "La valeur de :attribute doit \u00eatre comprise entre :min et :max.",
+            "file": "Le fichier :attribute doit avoir une taille entre :min et :max kilobytes.",
+            "string": "Le texte :attribute doit avoir entre :min et :max caract\u00e8res."
+        },
+        "confirmed": "Le champ de confirmation :attribute ne correspond pas.",
+        "date": "Le champ :attribute n'est pas une date valide.",
+        "date_format": "Le champ :attribute ne correspond pas au format :format.",
+        "different": "Les champs :attribute et :other doivent \u00eatre diff\u00e9rents.",
+        "digits": "Le champ :attribute doit avoir :digits chiffres.",
+        "digits_between": "Le champ :attribute doit avoir entre :min and :max chiffres.",
+        "email": "Le format du champ :attribute est invalide.",
+        "exists": "Le champ :attribute s\u00e9lectionn\u00e9 est invalide.",
+        "image": "Le champ :attribute doit \u00eatre une image.",
+        "in": "Le champ :attribute est invalide.",
+        "integer": "Le champ :attribute doit \u00eatre un entier.",
+        "ip": "Le champ :attribute doit \u00eatre une adresse IP valide.",
+        "max": {
+            "numeric": "La valeur de :attribute ne peut \u00eatre sup\u00e9rieure \u00e0 :max.",
+            "file": "Le fichier :attribute ne peut \u00eatre plus gros que :max kilobytes.",
+            "string": "Le texte de :attribute ne peut contenir plus de :max caract\u00e8res."
+        },
+        "mimes": "Le champ :attribute doit \u00eatre un fichier de type : :values.",
+        "min": {
+            "numeric": "La valeur de :attribute doit \u00eatre inf\u00e9rieure \u00e0 :min.",
+            "file": "Le fichier :attribute doit \u00eatre plus que gros que :min kilobytes.",
+            "string": "Le texte :attribute doit contenir au moins :min caract\u00e8res."
+        },
+        "not_in": "Le champ :attribute s\u00e9lectionn\u00e9 n'est pas valide.",
+        "numeric": "Le champ :attribute doit contenir un nombre.",
+        "regex": "Le format du champ :attribute est invalide.",
+        "required": "Le champ :attribute est obligatoire.",
+        "required_if": "Le champ :attribute est obligatoire quand la valeur de :other est :value.",
+        "required_with": "Le champ :attribute est obligatoire quand :values est pr\u00e9sent.",
+        "required_without": "Le champ :attribute est obligatoire quand :values n'est pas pr\u00e9sent.",
+        "same": "Les champs :attribute et :other doivent \u00eatre identiques.",
+        "size": {
+            "numeric": "La taille de la valeur de :attribute doit \u00eatre :size.",
+            "file": "La taille du fichier de :attribute doit \u00eatre de :size kilobytes.",
+            "string": "Le texte de :attribute doit contenir :size caract\u00e8res."
+        },
+        "unique": "La valeur du champ :attribute est d\u00e9j\u00e0 utilis\u00e9e.",
+        "url": "Le format de l'URL de :attribute n'est pas valide.",
+        "custom": [],
+        "attributes": []
+    }
+}

@@ -80,6 +80,7 @@ return [
     |
     */
 
+    // Englais par défaut ou francais ??
     'locale' => 'en',
 
     /*
