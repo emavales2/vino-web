@@ -1,15 +1,29 @@
 <template>
   <div class="search-bar">
-    <legend class="block-font">find a wine</legend>
+    <!-- <legend class="block-font">find a wine</legend> -->
     <form @submit.prevent="submit">
-      <label>
+        <fieldset class="fieldset_1 fs_burg row_els_apart">
+            <legend aria-labelledby="search">find a wine!</legend>
+            <label>
+                <input 
+                type="text" 
+                id="search"
+                placeholder="chardonnay"
+                v-model="form.search"
+                >
+            </label>
+            <SearchIcon :color="'burgundy'" :searchAction="submit"/>
+        </fieldset>    
+
+      <!-- <label>
         <input 
           type="text" 
           placeholder="chardonnay"
           v-model="form.search"
         >
-      </label>
-      <SearchIcon :color="'burgundy'" :searchAction="submit"/>
+      </label> -->
+
+      <!-- <SearchIcon :color="'burgundy'" :searchAction="submit"/> -->
       <DeleteButton :deleteAction="searchAction"/>
     </form>
     <InputError class="input_err" :message="form.errors.search"/>

@@ -30,7 +30,7 @@
                                 >
                                   edit wine
                                 </Link>
-                                <button class="button sml" @click="toggleModal(wine.wine)">remove wine</button>
+                                <button class="button sml btn_wide" @click="toggleModal(wine.wine)">remove</button>
                               </section>
 
                             </WineThumbnail>

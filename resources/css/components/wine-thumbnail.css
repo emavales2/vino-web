@@ -1,15 +1,16 @@
 
-.wine-thumbnail{
-  flex:0 0 100px;
+.wine-thumbnail {
   padding-top: var(--large-space);
   display: flex;
   flex-flow: column;
   gap: var(--small-space);
 }
+
 .wine-thumbnail > div {
   display: flex;
   gap: var(--small-space);
 }
+
 .wine-thumbnail > a {
   background-color: var(--cream-lt);
   border-radius: 12px;
@@ -21,12 +22,14 @@
   height: 200px;
   box-shadow: var(--box-shadow);
 }
+
 .wine-thumbnail aside {
   display: flex;
   gap: var(--small-space);
   justify-content: space-between;
   align-items: center;
 }
+
 .wine-thumbnail p {
   text-align: center;
   line-height: 1.2em;
