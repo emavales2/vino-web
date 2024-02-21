@@ -16,6 +16,7 @@
 
     /* ----- NEUTRALS ----- */
 
+    --white: #fffaf6;
     --cream: #F2D9AF;
     --cream-lt: #EDE7D1;
     --med-gray: #36332f;
@@ -52,7 +53,7 @@ body {
 }
 
 .bckgd-white {
-    background-color: white;
+    background-color: var(--white);
 }
 
 .burg {
@@ -73,4 +74,8 @@ body {
 
 .cream_lt {
     color: var(--cream-lt)
+}
+
+.white {
+    color: var(--white);
 }

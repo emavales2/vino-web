@@ -12,8 +12,9 @@
             <label for="name">
                 <h2 class="disp_subtitle">Modify your cellar !</h2>
             </label>
+            
             <fieldset class="fieldset_1">
-                <legend>Cellar Name</legend>
+                <legend aria-labelledby="name">Cellar Name</legend>
                 <input v-model="form.name" type="text" id="name" required>
             </fieldset>
 

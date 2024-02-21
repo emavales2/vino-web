@@ -47,6 +47,12 @@ button {
     width: max-content;
 }
 
+/* Variante de btn small */
+.button.sml.btn_wide {
+    width: 100%;
+    max-width: 100%;
+}
+
 /* Variante de btn Medium */
 .button.med {
     padding: 12px;
@@ -104,6 +110,10 @@ button {
 
 .button_back {
     align-self: flex-start;
+}
+
+button[disabled]{
+    filter: brightness(.01);
 }
 
 

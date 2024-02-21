@@ -1,7 +1,7 @@
 <template>
     <Head title="Log in" />
 
-    <div class="bckgd bckgd-burg">
+    <div class="bckgd marg_vert_home">
         <main>
             <header>
                 <!-- <figure>   
@@ -12,7 +12,7 @@
 
             <form @submit.prevent="submit">
                 <fieldset class="fieldset_1">
-                    <legend>Email Address</legend>
+                    <legend aria-labelledby="email">Email Address</legend>
                     <label for="email" value="Email" hidden></label>
                     <input
                         id="email"
@@ -28,7 +28,7 @@
                 </fieldset>
 
                 <fieldset class="fieldset_1">
-                    <legend>Password</legend>
+                    <legend aria-labelledby="password">Password</legend>
                     <label for="password" value="Password" hidden></label>
                     <input
                         id="password"
