@@ -49,7 +49,7 @@ class HandleInertiaRequests extends Middleware
                 return $locale;
             },
             // Share translations with Inertia
-            'translations' => function () use ($translations) {
+            'trans' => function () use ($translations) {
                 return $translations;
             },
             // Share user with Inertia
