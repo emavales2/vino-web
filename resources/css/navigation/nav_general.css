@@ -89,7 +89,9 @@ nav svg {
 .bottom_nav svg {
     fill: var(--burgundy);
 }
-
+.bottom_nav .here svg{
+    fill: var(--cream);
+}
 
 
 /* ------- * * * * AUTRES TAILLES * * * * ------- */
