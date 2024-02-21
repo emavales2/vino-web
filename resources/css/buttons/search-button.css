@@ -2,4 +2,6 @@
   border: none;
   background: none;
   cursor: pointer;
+  padding: 0 var(--small-space);
+  align-self: flex-start;
 }

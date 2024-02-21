@@ -8,7 +8,7 @@
             </header>
             <form @submit.prevent="submit">
                 <fieldset class="fieldset_1">
-                    <legend>First Name</legend>
+                    <legend aria-labelledby="first_name">First Name</legend>
                     <label for="first_name" value="First name"></label>
                     <input
                         id="first_name"
@@ -27,7 +27,7 @@
                 </fieldset>
 
                 <fieldset class="fieldset_1">
-                    <legend>Last Name</legend>
+                    <legend aria-labelledby="last_name">Last Name</legend>
                     <label for="last_name" value="Last name"></label>
                     <input
                         id="last_name"
@@ -46,7 +46,7 @@
                 </fieldset>
 
                 <fieldset class="fieldset_1">
-                    <legend>Email Address</legend>
+                    <legend aria-labelledby="email">Email Address</legend>
                     <label for="email" value="Email" class="invisible"></label>
                     <input
                         id="email"
@@ -63,12 +63,14 @@
                         :message="form.errors.email"
                     />
                 </fieldset>
+
                 <input type="hidden" v-model="form.id" />
                 
                 <div>
                     <button class="button success" type="submit">Save</button>
                 </div>
             </form>
+
             <div class="btn-container">
                 <button class="button" @click="toggleModal">
                     Delete your account

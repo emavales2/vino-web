@@ -5,12 +5,13 @@
 
     <main>
       <header>
-        <h1 class="index_title">Welcome, {{ user.first_name }}</h1>
+        <!-- EXEMPLE POUR ACCEDER AUX TRADUCTIONS -->
+        <h1 class="index_title">{{ translations.dashboard.welcome }}, {{ user.first_name }}</h1>
       </header>
 
       <button class="button">
         <Link :href="route('wine.create')">
-        Add a custom wine
+          {{ translations.buttons.add_custom_wine }}
         </Link>
       </button>
 
@@ -21,9 +22,9 @@
           <section class="column_20">
             <header>
               <span class="row_els_apart gap_20">
-                <h2 class="disp_subtitle">my cellars</h2>
+                <h2 class="disp_subtitle">{{ translations.dashboard.my_cellars }}</h2>
                 <div>
-                  <Link v-if="cellars.length > 3" class="lien_sml cream block-font" :href="route('cellar.index')">See more
+                  <Link v-if="cellars.length > 3" class="lien_sml cream block-font" :href="route('cellar.index')">{{ translations.buttons.see_more }}
                   </Link>
                 </div>
               </span>
@@ -42,10 +43,9 @@
           <section class="column gap_20">
             <header>
               <span class="row_els_apart gap_20">
-                <h2 class="disp_subtitle">my wine collection</h2>
+                <h2 class="disp_subtitle">{{ translations.dashboard.my_collection }}</h2>
                 <div>
-                  <Link v-if="collection.length > 3" class="lien_sml cream block-font" :href="route('collection')">See
-                  more</Link>
+                  <Link v-if="collection.length > 3" class="lien_sml cream block-font" :href="route('collection')">{{ translations.buttons.see_more }}</Link>
                 </div>
               </span>
             </header>
@@ -56,9 +56,7 @@
                   :quantities="wine.quantities" />
               </ul>
             </div>
-
             <p class="no_show" v-else><strong>OH NO!</strong> You have no wines yet.</p>
-
           </section>
         </li>
       </ul>
@@ -72,7 +70,6 @@ import CellarListing from "@/Components/CellarListing.vue";
 import MainLayout from "@/Layouts/MainLayout.vue";
 import { Inertia } from "@inertiajs/inertia";
 import WineThumbnail from "@/Components/WineThumbnail.vue";
-
 export default {
   name: "DashboardView",
   components: {
@@ -90,6 +87,6 @@ export default {
       return Object.keys(obj).length === 0;
     },
   },
-  props: ['cellars', 'collection', 'user'],
+  props: ['cellars', 'collection', 'user', 'translations'],
 };
 </script>

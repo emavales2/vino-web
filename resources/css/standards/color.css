@@ -16,10 +16,20 @@
 
     /* ----- NEUTRALS ----- */
 
+    --white: #fffaf6;
     --cream: #F2D9AF;
     --cream-lt: #EDE7D1;
     --med-gray: #36332f;
 
+    /* ----- SUCCESS ----- */
+
+    --success-lt: #009788;
+    --success: #0F423C;
+
+    /* ----- WARNING ----- */
+    
+    --warning-lt: #F4A22A;
+    --warning: #AF7120;
 
     /* ---------- * * APPLICATION * * ---------- */
 
@@ -52,7 +62,7 @@ body {
 }
 
 .bckgd-white {
-    background-color: white;
+    background-color: var(--white);
 }
 
 .burg {
@@ -73,4 +83,8 @@ body {
 
 .cream_lt {
     color: var(--cream-lt)
+}
+
+.white {
+    color: var(--white);
 }

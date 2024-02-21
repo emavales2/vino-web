@@ -6,7 +6,7 @@
             <GoBackButton :color="'cream'" class="button_back"/>
 
             <header>
-                <h1 class="fs_3 block-font coral">Add this wine to your cellar</h1>
+                <h1 class="index_title">Add this wine to your cellar</h1>
             </header>
 
             <div v-if="cellars.length !== 0">    
@@ -50,7 +50,7 @@
                 </form>
             </div>
             <div v-else>
-                <h1>It seems like you have no cellar, please create one first</h1>
+                <h2 class="disp_subtitle">It seems like you have no cellar, please create one first</h2>
                 <Link class="button" :href="route('cellar.create')">create a cellar</Link>
             </div>
         </main>

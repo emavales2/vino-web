@@ -28,8 +28,9 @@ Route::get('/', function () {
 // Routes Admin
 //----------------------------------------------------
 Route::middleware(['admin'])->group(function () {
+    Route::get('/admin', [UserController::class, 'adminDashboard'])->name('admin.dashboard');
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
-    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.adminDelete');
+    Route::delete('/admin/{user}', [UserController::class, 'destroy'])->name('admin.delete');
 });
 
 // Routes Auth(utilisateur connecté)

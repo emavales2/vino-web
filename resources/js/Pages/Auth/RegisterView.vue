@@ -9,8 +9,8 @@
 
             <form @submit.prevent="submit">
                 <fieldset class="fieldset_1">
-                    <legend>First Name</legend>
-                    <label for="first_name" value="First name" hidden></label>
+                    <legend aria-labelledby="first_name">First Name</legend>
+                    <label for="first_name" value="First name"></label>
                     <input
                         id="first_name"
                         type="text"
@@ -27,27 +27,28 @@
                     />
                 </fieldset>
 
-            <fieldset class="fieldset_2">
-                <label for="last_name" value="Last name">Last Name</label>
-                <input
-                    id="last_name"
-                    type="text"
-                    class="mt-1 block w-full"
-                    v-model="form.last_name"
-                    required
-                    autofocus
-                    autocomplete="last_name"
-                    placeholder="last name"
-                />
-                <InputError
-                    class="msg input_err"
-                    :message="form.errors.last_name"
-                />
-            </fieldset>
+                <fieldset class="fieldset_1">
+                    <legend aria-labelledby="last_name">Last Name</legend>
+                    <label for="last_name" value="Last name"></label>
+                    <input
+                        id="last_name"
+                        type="text"
+                        class="mt-1 block w-full"
+                        v-model="form.last_name"
+                        required
+                        autofocus
+                        autocomplete="last_name"
+                        placeholder="last name"
+                    />
+                    <InputError
+                        class="msg input_err"
+                        :message="form.errors.last_name"
+                    />
+                </fieldset>
 
                 <fieldset class="fieldset_1">
-                    <legend>Email Address</legend>
-                    <label for="email" value="Email" hidden></label>
+                    <legend aria-labelledby="email">Email Address</legend>
+                    <label for="email" value="Email"></label>
                     <input
                         id="email"
                         type="email"
@@ -64,7 +65,7 @@
                 </fieldset>
 
                 <fieldset class="fieldset_1">
-                    <legend>Password</legend>
+                    <legend aria-labelledby="password">Password</legend>
                     <label for="password" value="Password" hidden></label>
                     <input
                         id="password"
@@ -82,7 +83,7 @@
                 </fieldset>
 
                 <fieldset class="fieldset_1">
-                    <legend>Password Confirmation</legend>
+                    <legend aria-labelledby="password_confirmation">Password Confirmation</legend>
                     <label for="password_confirmation" value="Confirm Password" hidden></label>
                     <input
                         id="password_confirmation"
