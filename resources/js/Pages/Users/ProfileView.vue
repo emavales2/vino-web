@@ -27,6 +27,10 @@
                 </dl>
             </div>
 
+            <dl class="cream">
+                <dt>App language :</dt>
+                <LanguageSelector/>
+            </dl>
             <div class="btn-container">
                 <Link class="button" :href="route('profile.edit', user.id )">Edit profile</Link>
                 <Link class="button" :href="route('logout', user.id )">Logout</Link>
@@ -37,6 +41,7 @@
 
 <script>
 import { Head, Link } from '@inertiajs/inertia-vue3';
+import LanguageSelector from '@/Components/LanguageSelector.vue';
 import MainLayout from '@/Layouts/MainLayout.vue';
 import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue';
 
@@ -44,10 +49,11 @@ export default {
   name: 'ProfileView',
   components: {
     Head,
+    LanguageSelector,
     Link,
     GoBackButton
 },
   layout: MainLayout,
-  props: ['user']
+  props: ['user', 'locale', 'trans']
 }
 </script>
