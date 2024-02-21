@@ -47,14 +47,7 @@ export default {
     Link,
     GoBackButton
 },
-  onMounted() {
-    if(this.success){
-      this.$parent.openDialog(
-          ``
-      )
-    }
-  },
   layout: MainLayout,
-  props: ['user', 'success']
+  props: ['user']
 }
 </script>

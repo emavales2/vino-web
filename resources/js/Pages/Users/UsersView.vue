@@ -1,7 +1,9 @@
 <template>
-    <MainLayout>
     <Head title="Users" />
-    <table>
+    <header>
+        <h1 class="index_title">Users</h1>
+    </header>
+    <table class="cream">
         <thead>
             <tr>
                 <th>Id</th>
@@ -16,7 +18,7 @@
                 <td>{{ user.first_name + ' ' + user.last_name }} </td>
                 <td>{{ user.email }}</td>
                 <td>
-                    <button @click="toggleModal(user.id)">Delete this user</button> 
+                    <button class="button sml" @click="toggleModal(user.id)">Delete this user</button> 
                 </td>
             </tr>
         </tbody>
@@ -26,7 +28,6 @@
             action="delete" 
             actionMessage="Are you sure you want to delete your account?" 
         />
-    </MainLayout>
 </template>
 <script>
 import { Head } from '@inertiajs/inertia-vue3';
@@ -36,7 +37,6 @@ export default {
     name: 'UsersView',
     components: {
         Head,
-        MainLayout, 
         ConfirmModal
     },
     data () {
@@ -47,9 +47,10 @@ export default {
             }
         }
     },
+    Layout: MainLayout,
     methods: {
         delete() {
-            this.$inertia.delete(route('users.adminDelete', { user: this.user.id }));
+            this.$inertia.delete(route('admin.delete', { user: this.user.id }));
             this.openDeleteModal = false;
         },
         toggleModal(userId) {
@@ -57,10 +58,6 @@ export default {
             this.openDeleteModal = !this.openDeleteModal;
         }
     },
-    props: {
-        users: {
-            type: Array,
-        }
-    }
+    props: ['users']
 }
 </script>

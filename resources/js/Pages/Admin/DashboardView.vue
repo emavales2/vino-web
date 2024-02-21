@@ -1,21 +1,22 @@
 <template>
     <Head title="Dashboard Admin" />
-    <MainLayout>
-    <div class="p-4">
-        <h1 class="fs_1 text-bold text-xl">Welcome {{ user.first_name }}</h1> 
+    <div  class="bckgd">
+        <header>
+            <h1 class="index_title">Welcome {{ user.first_name }}</h1> 
+        </header>
         <nav class="mb-6">
             <ul>
                 <li>
-                    <Link :href="route('users.index')">Show all users</Link>
+                    <button class="button" >
+                        <Link :href="route('users.index')">Show all users</Link>
+                    </button>
                 </li>
                 <li>
-                    <button @click="logout">Logout</button>
+                    <button class="button"  @click="logout">Logout</button>
                 </li>
             </ul>
         </nav>
-        Statistics and other stuff
     </div>
-    </MainLayout>
 </template>
 
 <script>
@@ -27,9 +28,9 @@ export default {
     name: 'DashboardView',
     components: {
         Head,
-        Link,
-        MainLayout
+        Link
     },
+    Layout: MainLayout,
     methods: {
         logout() {
             Inertia.post(route('logout'));

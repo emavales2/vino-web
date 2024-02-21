@@ -47,6 +47,14 @@ class UserController extends Controller
         $collection = array_slice($collection, 0, 4);
         return Inertia::render('DashboardView', compact('user', 'cellars', 'collection'));
     }
+
+    /**
+     * Display the dashboard of the admin.
+     */
+    public function adminDashboard(){
+        $user = Auth::user();
+        return Inertia::render('Admin/DashboardView', compact('user'));
+    }
     
     /**
      * Display a listing of the resource. For the admin only.
@@ -55,6 +63,7 @@ class UserController extends Controller
      */
     public function index()
     {
+        $users = User::all();
         return Inertia::render('Users/UsersView', compact('users'));
     }
 
