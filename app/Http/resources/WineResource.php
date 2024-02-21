@@ -14,9 +14,9 @@ class WineResource extends JsonResource
      */
     public function toArray($request)
     {
-        $default = 'en';
+        $default = 'fr';
         $locale = $default;
-        if(session()->get('locale')) $locale = session()->get('locale');
+        if(session()->has('locale')) $locale = session()->get('locale');
         return [
             'id' => $this->id,
             'code_saq' => $this->code_saq,

@@ -34,7 +34,11 @@ class WineController extends Controller
         ]);
         $search = $request->search;
         $count = Wine::like('name', $search)->where('user_id', null)->count();
-        $results = WineResource::collection(Wine::like('name', $search)->where('user_id', null)->limit(1000)->get())->resolve();
+        $results = WineResource::collection(Wine::like('name', $search)
+            ->where('user_id', null)
+            ->limit(1000)
+            ->get()
+        )->resolve();
         $cellars = Auth::user()->cellar;
         return Inertia::render('Wine/SearchView', compact('results', 'search', 'cellars', 'count'));
     }
@@ -59,10 +63,12 @@ class WineController extends Controller
             'cellar_qty' => Rule::requiredIf(!$request->buyList_qty),
             'buyList_qty' => Rule::requiredIf(!$request->cellar_qty)
         ]);
+        $type = json_encode(['fr' => $request->type]);
+        $country = json_encode(['fr' => $request->country]);
         $wine = Wine::create([
             'name' => $request->name,
-            'type' => $request->type,
-            'country' => $request->country,
+            'type' => $type,
+            'country' => $country,
             'size' => $request->size,
             'price' => $request->price,
             'user_id' => Auth::id()
