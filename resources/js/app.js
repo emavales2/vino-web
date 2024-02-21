@@ -12,7 +12,8 @@ createInertiaApp({
     setup({ el, app, props, plugin }) {
         return createApp({ render: () => h(app, props) })
             .use(plugin)
-            .mixin({ methods: { route } })
+            .mixin(require('./base'))
+            .mixin({ methods: { route }})
             .mount(el)
             .$nextTick(() => { delete el.dataset.page });
     },
