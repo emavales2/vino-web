@@ -6,6 +6,7 @@ use App\Models\CellarHasWine;
 use App\Models\BuyList;
 use App\Models\Wine;
 use Illuminate\Http\Request;
+use App\Http\Resources\WineResource;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
@@ -33,7 +34,7 @@ class WineController extends Controller
         ]);
         $search = $request->search;
         $count = Wine::like('name', $search)->where('user_id', null)->count();
-        $results = Wine::like('name', $search)->where('user_id', null)->limit(1000)->get();
+        $results = WineResource::collection(Wine::like('name', $search)->where('user_id', null)->limit(1000)->get())->resolve();
         $cellars = Auth::user()->cellar;
         return Inertia::render('Wine/SearchView', compact('results', 'search', 'cellars', 'count'));
     }
@@ -96,6 +97,8 @@ class WineController extends Controller
         $exists = BuyList::where('user_id', $userId)
         ->where('wine_id', $wine->id)
         ->exists();
+        $wine = new WineResource($wine);
+        $wine = $wine->resolve();
         
         return Inertia::render('Wine/ShowView', compact('wine','exists'));
     }
