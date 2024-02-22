@@ -4,11 +4,11 @@
   <div class="bckgd bckgd-burg">
     <main>
       <header>
-        <h1 class="index_title">List of Cellars</h1>
+        <h1 class="index_title">{{ __('cellar.list') }}</h1>
       </header>
 
       <button class="button">
-        <Link :href="route('cellar.create')">Add Cellar</Link>
+        <Link :href="route('cellar.create')">{{ __('cellar.add') }}</Link>
       </button>
 
       <CellarListing

@@ -13,10 +13,27 @@
         "see_more": "See more",
         "add_custom_wine": "Add custom wine"
     },
+    "cellar": {
+        "list": "List of cellars",
+        "add": "Add a cellar",
+        "edit": "Edit this cellar",
+        "modify_text": "modify your cellar",
+        "name": "Cellar name",
+        "new": "New cellar",
+        "give_name": "Give a name to your cellar!",
+        "add_wine": "Add this wine to your cellar",
+        "select": "Select a cellar",
+        "no_cellar": "It seems like you have no cellar, please create one first",
+        "create": "Create a cellar"
+    },
     "dashboard": {
         "welcome": "Welcome",
         "my_cellars": "My cellars",
         "my_collection": "My wine collection"
+    },
+    "dialogue": {
+        "show_view": "Are you sure you want to delete this cellar? All wines will be deleted too.",
+        "show_view_wine": "Are you sure you want to delete this wine?"
     },
     "pagination": {
         "previous": "&laquo; Previous",
