@@ -13,10 +13,26 @@
         "see_more": "Voir plus",
         "add_custom_wine": "Ajouter un vin personnalis\u00e9"
     },
+    "cellar": {
+        "list": "Liste des celliers",
+        "add": "Ajouter un cellier",
+        "edit": "Modifier ce cellier",
+        "modify_text": "Modifier votre cellier",
+        "name": "Nom du cellier",
+        "new": "Nouveau cellier",
+        "give_name": "Donnez un nom \u00e0 votre cellier !",
+        "add_wine": "Ajouter ce vin \u00e0 votre cellier",
+        "select": "S\u00e9lectionner un cellier",
+        "0": "no"
+    },
     "dashboard": {
         "welcome": "Bienvenue",
         "my_cellars": "Mes celliers",
         "my_collection": "Ma collection de vins"
+    },
+    "dialogue": {
+        "show_view": "\u00cates-vous s\u00fbr de vouloir supprimer ce cellier? Tous les vins seront \u00e9galement supprim\u00e9s.",
+        "show_view_wine": "\u00cates-vous s\u00fbr de vouloir supprimer ce vin?"
     },
     "pagination": {
         "previous": "&laquo; Pr\u00e9c\u00e9dent",

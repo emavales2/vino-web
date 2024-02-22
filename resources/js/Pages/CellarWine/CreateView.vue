@@ -6,7 +6,7 @@
             <GoBackButton :color="'cream'" class="button_back"/>
 
             <header>
-                <h1 class="index_title">Add this wine to your cellar</h1>
+                <h1 class="index_title">{{ __('add_wine') }}</h1>
             </header>
 
             <div v-if="cellars.length !== 0">    
@@ -30,7 +30,7 @@
                     </section>
 
                     <section class="column">
-                        <legend class="fs_6 display-font coral">select a cellar</legend>
+                        <legend class="fs_6 display-font coral">{{ __('select') }}</legend>
                         <div>
                           <div v-for="(cellar, i) in cellars">
                               <input 
@@ -46,12 +46,12 @@
                         </div>
                     </section>
                     
-                    <button class="button button_burgundy">Add</button>
+                    <button class="button button_burgundy">{{ __('buttons.add') }}</button>
                 </form>
             </div>
             <div v-else>
-                <h2 class="disp_subtitle">It seems like you have no cellar, please create one first</h2>
-                <Link class="button" :href="route('cellar.create')">create a cellar</Link>
+                <h2 class="disp_subtitle">{{ __('cellar.no_cellar') }}</h2>
+                <Link class="button" :href="route('cellar.create')">{{ __('cellar.create') }}</Link>
             </div>
         </main>
     </div>
