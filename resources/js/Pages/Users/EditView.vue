@@ -4,11 +4,11 @@
         <main>
             <GoBackButton :color="'cream'" class="button_back"/>
             <header>
-                <h1 class="index_title">Edit Profile</h1>
+                <h1 class="index_title">{{ __('user.edit_profile') }}</h1>
             </header>
             <form @submit.prevent="submit">
                 <fieldset class="fieldset_1">
-                    <legend aria-labelledby="first_name">First Name</legend>
+                    <legend aria-labelledby="first_name">{{ __('user.first_name') }}</legend>
                     <label for="first_name" value="First name"></label>
                     <input
                         id="first_name"
@@ -27,7 +27,7 @@
                 </fieldset>
 
                 <fieldset class="fieldset_1">
-                    <legend aria-labelledby="last_name">Last Name</legend>
+                    <legend aria-labelledby="last_name">{{ __('user.last_name') }}</legend>
                     <label for="last_name" value="Last name"></label>
                     <input
                         id="last_name"
@@ -46,7 +46,7 @@
                 </fieldset>
 
                 <fieldset class="fieldset_1">
-                    <legend aria-labelledby="email">Email Address</legend>
+                    <legend aria-labelledby="email">{{ __('user.email') }}</legend>
                     <label for="email" value="Email" class="invisible"></label>
                     <input
                         id="email"
@@ -67,13 +67,13 @@
                 <input type="hidden" v-model="form.id" />
                 
                 <div>
-                    <button class="button success" type="submit">Save</button>
+                    <button class="button success" type="submit">{{ __('buttons.save') }}</button>
                 </div>
             </form>
 
             <div class="btn-container">
                 <button class="button" @click="toggleModal">
-                    Delete your account
+                    {{ __('user.delete_account') }}
                 </button>
             </div>
         </main>
@@ -120,6 +120,7 @@ export default {
                 errors: {},
             }),
             openDeleteModal: false,
+            message: null
         };
     },
     layout: MainLayout,

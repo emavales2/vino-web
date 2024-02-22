@@ -27,19 +27,24 @@
                     </figure>
 
                     <span class="title-center">
-                        <h1 class="fs_5 block-font txt-center coral">Your Personal<br>Wine Sanctuary</h1>
+                        <h1 class="fs_5 block-font txt-center coral">{{ __('home.sub') }}<br>{{ __('home.sub2') }}</h1>
                     </span>
                 </header>
                 <div class="button_column">             
                     <button class="button">
                         <Link :href="route('login')">
-                            Sign In
+                            {{ __('home.sign') }}
                         </Link>
                     </button>
 
                     <p class="cream txt-center">
-                        Don't have an account yet?
-                        <Link class="block-font coral" :href="route('register')">Sign Up!</Link>
+                        {{ __('home.no_account') }}
+                        <Link class="block-font coral" :href="route('register')">{{ __('home.join') }}</Link>
+                       
+                    </p>
+                    <p class="cream txt-center"> 
+                        {{ __('home.switch') }}
+                        <LanguageSelector/>
                     </p>
                 </div>
             </main>
@@ -49,12 +54,13 @@
 
 <script>
 import { Head, Link } from '@inertiajs/inertia-vue3';
-
+import LanguageSelector from '@/Components/LanguageSelector';
 export default {
     name: 'HomeView',
     components: {
         Head,
-        Link
+        Link,
+        LanguageSelector,
     },
 }
 </script>

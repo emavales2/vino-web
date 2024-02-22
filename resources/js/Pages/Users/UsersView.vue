@@ -1,15 +1,15 @@
 <template>
     <Head title="Users" />
     <header>
-        <h1 class="index_title">Users</h1>
+        <h1 class="index_title">{{ __('user.users') }}</h1>
     </header>
     <table class="cream">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Delete</th>
+                <th>{{ __('user.id') }}</th>
+                <th>{{ __('user.name') }}</th>
+                <th>{{ __('user.email') }}</th>
+                <th>{{ __('buttons.delete') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -18,7 +18,7 @@
                 <td>{{ user.first_name + ' ' + user.last_name }} </td>
                 <td>{{ user.email }}</td>
                 <td>
-                    <button class="button sml" @click="toggleModal(user.id)">Delete this user</button> 
+                    <button class="button sml" @click="toggleModal(user.id)">{{ __('user.delete_user') }}</button> 
                 </td>
             </tr>
         </tbody>
