@@ -1,6 +1,14 @@
 <template>
-  <form @submit.prevent="addToCellar" class="form-quantity variant">         
-    <h2>Store this wine in a cellar?</h2>
+  <div v-if="!showForm" class="confirm">
+    <p>{{ actionMessage }}</p>
+    <div>
+      <button class="button sml" @click="toggleForm">Yes, {{ yesMessage }}</button>
+      <button class="button sml" @click="deleteWine">No, {{ noMessage }}</button>
+    </div>
+    <button class="button sml" @click="toggleModal">Cancel</button>
+  </div>
+
+  <form v-if=showForm @submit.prevent="addToCellar" class="form-quantity variant-modal">         
     <section>
       <legend class="fs_6 display-font coral">{{ __('select') }}</legend>
       <div>
@@ -18,29 +26,10 @@
       </div>
     </section>
     <section>
-      <button class="button button_burgundy">Store all</button>
+      <button class="button sml button_coral">Store all</button>
     </section>
-      <section>
-        Or choose how many bottles you want to store
-          <div>
-              <label for="quantity"></label>
-              <input type="number" id="quantity" v-model="form.quantity">
-              <div>
-                <MinusButton 
-                  :color="'burgundy'"
-                  :removeAction="removeOne"
-                  :disabled="form.quantity === 1" 
-                />
-                <PlusButton 
-                  :color="'burgundy'" 
-                  :addAction="addOne"
-                  :disabled="form.quantity >= wine.quantity" 
-                />
-              </div>
-          </div>
-      </section>
-      <button class="button button_burgundy">store</button>
   </form>
+
 </template>
 
 <script>
@@ -48,6 +37,7 @@ import { useForm } from '@inertiajs/inertia-vue3';
 import PlusButton from './ButtonsIcons/PlusButton.vue';
 import MinusButton from './ButtonsIcons/MinusButton.vue';
 import { computed } from 'vue';
+import { Inertia } from '@inertiajs/inertia';
 export default{
   name: 'BuyListToCellar',
   components:{
@@ -56,6 +46,7 @@ export default{
   },
   data () {
     return {
+      showForm: false,
       form : useForm({
         wine_id : this.wine.id,
         quantity: this.wine.quantity,
@@ -69,8 +60,29 @@ export default{
     },
     removeOne () {
       if(this.form.quantity > 1) this.form.quantity --
+    },
+    toggleForm () {
+      if(this.cellars.length > 1 ) this.showForm = true
+      else this.storeInCellar(this.cellars[0])
+    },
+    submit () {
+
+    },
+    storeInCellar (cellar) {
+      
+      
+    },
+    deleteWine () {
+      Inertia.delete(route('buylist.delete', { wine: this.wine }), {
+        onSuccess: () => {
+          this.openDialog(
+              `Yes ! you deleted this wine from you buy list`
+          );
+        },
+      })
+      this.toggleModal()
     }
   },
-  props:['cellars', 'wine']
+  props:['cellars', 'wine','actionMessage', 'yesAction', 'altAction', 'yesMessage', 'noMessage', 'toggleModal', 'openDialog']
 }
 </script>

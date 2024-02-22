@@ -42,17 +42,16 @@
       v-show="openDeleteModal"
       :toggleOff="toggleModal"
     >
-      <ConfirmModal
-        :YesAction="deleteWine"
-        action="delete"
-        :toggleModal="toggleModalWine"
-        :actionMessage="message"
-      />
-      <!-- <BuyListToCellar
+      <BuyListToCellar
         v-if="wineId"
+        :toggleModal="toggleModal"
+        :openDialog="this.$parent.openDialog"
+        :yesMessage="'store'"
+        :noMessage="'just delete them'"
+        :actionMessage="'do you want to store this wine in a cellar?'"
         :wine="wineId"
         :cellars="cellars"
-      /> -->
+      />
     </Modal>
 </template>
   
@@ -73,7 +72,6 @@ export default {
     Link,
     MinusButton,
     PlusButton,
-    ConfirmModal,
     Modal,
     BuyListToCellar
   },
