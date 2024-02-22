@@ -20,7 +20,7 @@
                     <!-- ----- * TEXT SIDE OF FICHE * ----- -->
                     <section>
                         <span class="country_line">
-                            <ColorDrop :class="setColor(wine.type)"/>
+                            <ColorDrop :color="wine.type"/>
                             <h3 class="fs_6 display-font burg-lt">{{ wine.country ? wine.country : 'n/a' }}</h3>
                         </span>
                         <h1 class="block-font fiche_wine_title coral">{{ wine.name }}</h1>
@@ -79,11 +79,6 @@ export default {
         GoBackButton
     },
     layout: MainLayout,
-    methods: {
-        setColor (color) {
-            if(color) return color.split(' ')[1]
-        },
-    },
     props: {
         wine: Object, 
         exists: Boolean

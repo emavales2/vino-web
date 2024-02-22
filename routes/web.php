@@ -7,6 +7,7 @@ use App\Http\Controllers\CellarHasWineController;
 use App\Http\Controllers\BuyListController;
 use App\Http\Controllers\LocaleController;
 use App\Models\BuyList;
+use App\Providers\WineProvider;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\App;
@@ -97,6 +98,8 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/error', function () {
     return Inertia::render('ErrorView');
 })->name('error.page');
+
+Route::get('/test', [WineProvider::class, 'updateWineTable']);
 
 require __DIR__.'/auth.php';
 

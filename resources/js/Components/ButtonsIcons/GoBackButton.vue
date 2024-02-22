@@ -33,7 +33,8 @@ export default {
   },
   methods: {
     goBack () {
-      window.history.back()
+      history.back({})
+      console.log(this.$page.component)
     }
   },
   props: ['color']

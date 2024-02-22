@@ -78,13 +78,17 @@
             </div>
         </main>
     </div>
-    
-    <ConfirmModal
+    <Modal
         v-show="openDeleteModal"
-        :YesAction="delete"
-        action="delete"
-        actionMessage="Are you sure you want to delete your account?"
-    />
+        :toggleOff="toggleModal"
+    >
+        <ConfirmModal
+            :toggleModal="toggleModal"
+            :YesAction="delete"
+            action="delete"
+            actionMessage="Are you sure you want to delete your account?"
+        />
+    </Modal>
 </template>
 
 <script>
@@ -93,6 +97,7 @@ import ConfirmModal from "@/Components/ConfirmModal.vue";
 import GoBackButton from "@/Components/ButtonsIcons/GoBackButton.vue";
 import InputError from "@/Components/InputError.vue";
 import MainLayout from "@/Layouts/MainLayout.vue";
+import Modal from "@/Components/Modal.vue";
 
 export default {
     name: "EditView",
@@ -103,6 +108,7 @@ export default {
         Link,
         MainLayout,
         InputError,
+        Modal
     },
     data() {
         return {
