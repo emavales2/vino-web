@@ -42,7 +42,6 @@
 
 <script>
 import { Head, Link } from '@inertiajs/inertia-vue3';
-import LanguageSelector from '@/Components/LanguageSelector.vue';
 import MainLayout from '@/Layouts/MainLayout.vue';
 import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue';
 
@@ -50,7 +49,6 @@ export default {
   name: 'ProfileView',
   components: {
     Head,
-    LanguageSelector,
     Link,
     GoBackButton
 },
