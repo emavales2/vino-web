@@ -5,7 +5,7 @@
         
         <main>
             <header>
-                <h1 class="index_title">Shopping List</h1>
+                <h1 class="index_title">{{ __('cellar.buylist') }}</h1>
             </header>
 
             <div v-if="buylist.length !== 0">
@@ -34,7 +34,7 @@
             </div>
 
             <div v-else>
-                <p class="cream">Your shopping list is empty.</p>
+                <p class="cream">{{ __('cellar.no_list') }}</p>
             </div>
         </main>
     </div>

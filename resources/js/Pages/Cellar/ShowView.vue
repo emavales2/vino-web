@@ -56,8 +56,8 @@
               </WineThumbnail>
           </ul>
           <div v-else>
-            <p class="cream" v-if="term">No wines found with the term <strong>{{ term }}</strong>.</p>
-            <p class="cream" v-else>No wine was found in his cellar.</p>
+            <p class="cream" v-if="term">{{ __('dialogue.no_term') }} <strong>{{ term }}</strong>.</p>
+            <p class="cream" v-else>{{ __('dialogue.no_wine') }}</p>
           </div>
           
       </main>

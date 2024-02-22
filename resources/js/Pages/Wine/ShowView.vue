@@ -25,14 +25,14 @@
                         </span>
                         <h1 class="block-font fiche_wine_title coral">{{ wine.name }}</h1>
                         <div class="burg-lt">                        
-                            <p v-if="wine.user_id">custom wine</p>
-                            <p v-else>code saq: {{ wine.code_saq }}</p>
+                            <p v-if="wine.user_id">{{ __('cellar.custom') }}</p>
+                            <p v-else>{{ __('cellar.code') }}: {{ wine.code_saq }}</p>
                             <div>
                             
                             <ul>
                                 <li>{{ wine.type != null ? wine.type : 'n/a' }}</li>
                                 <li>{{ wine.size ? wine.size : 'n/a' }}</li>
-                                <li>price: {{ wine.price ? wine.price + ' $' : 'n/a' }}</li>
+                                <li>{{ __('cellar.price') }}: {{ wine.price ? wine.price + ' $' : 'n/a' }}</li>
                             </ul>
                             </div>
                         </div>                   

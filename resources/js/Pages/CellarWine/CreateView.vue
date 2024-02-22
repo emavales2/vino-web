@@ -6,7 +6,7 @@
             <GoBackButton :color="'cream'" class="button_back"/>
 
             <header>
-                <h1 class="index_title">{{ __('add_wine') }}</h1>
+                <h1 class="index_title">{{ __('cellar.add_wine_buylist') }}</h1>
             </header>
 
             <div v-if="cellars.length !== 0">    
@@ -30,7 +30,7 @@
                     </section>
 
                     <section class="column">
-                        <legend class="fs_6 display-font coral">{{ __('select') }}</legend>
+                        <legend class="fs_6 display-font coral">{{ __('cellar.select') }}</legend>
                         <div>
                           <div v-for="(cellar, i) in cellars">
                               <input 
@@ -42,6 +42,7 @@
                               :value="cellar.id"
                           >
                             <label :for=cellar.id>{{ cellar.name }}</label>
+                            <InputError class="msg input_err" :message="form.errors.cellar_id" />
                           </div>
                         </div>
                     </section>
@@ -64,6 +65,7 @@ import { Inertia } from '@inertiajs/inertia';
 import PlusButton from '@/Components/ButtonsIcons/PlusButton.vue'
 import MinusButton from '@/Components/ButtonsIcons/MinusButton.vue'
 import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue'
+import InputError from '@/Components/InputError.vue';
 
 export default{
   name: 'AddForm',
@@ -72,8 +74,9 @@ export default{
     Head,
     PlusButton,
     MinusButton,
-    GoBackButton
-  },
+    GoBackButton,
+    InputError
+},
   data () {
     return {
       showDialog: false,
@@ -95,7 +98,7 @@ export default{
           const cellarName = this.cellars.find(c => c.id == this.form.cellar_id).name
           Inertia.get(route('wine.show', this.wine.id))
           this.$parent.openDialog(
-            `Yeah! You just added ${this.form.quantity} bottle${this.form.quantity > 1 ? 's' : ''} to ${cellarName}`
+            `${this.trans.dialogue.yeah} ${this.form.quantity} ${this.trans.dialogue.bottle} ${this.form.quantity > 1 ? `${this.trans.dialogue.s}`  : `${this.trans.dialogue.vide}`} ${this.trans.dialogue.to}  ${cellarName}`
           )
           this.closeForm()
         }
@@ -122,6 +125,6 @@ export default{
       if(this.form.quantity > 1) this.form.quantity --
     }
   },
-  props: ['cellars', 'wine']
+  props: ['cellars', 'wine', 'trans']
 }
 </script>

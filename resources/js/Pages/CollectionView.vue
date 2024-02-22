@@ -5,12 +5,12 @@
         <main>
             <section class="column_30">
                 <header>
-                    <h1 class="index_title">Your Wines</h1>
+                    <h1 class="index_title">{{ __('cellar.your_wines') }}</h1>
                 </header>
 
                 <button class="button">
                     <Link :href="route('wine.create')">
-                        Add a custom wine
+                        {{ __('cellar.add_custom') }}
                     </Link>
                 </button>
                 
@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="cream" v-else>
-                    <p>You have no wines yet.</p>
+                    <p>{{ __('dialogue.no_wine') }}</p>
                 </div>
             </section>
         </main>
@@ -52,7 +52,7 @@
             :YesAction="delete"
             action="delete"
             :toggleModal="toggleModal"
-            actionMessage="Are you sure you want to delete this wine? This action will remove it from your cellars as well. This action cannot be undone."
+            :actionMessage="message"
         />
     </Modal>
 </template>
@@ -83,6 +83,7 @@ export default {
         return {
             openDeleteModal: false,
             wineId: null,
+            message: this.trans.dialogue.delete_wine
         };
     },
     layout: MainLayout,
@@ -96,6 +97,6 @@ export default {
           this.openDeleteModal = false
         },
     },
-    props: ["collection"],
+    props: ["collection", 'trans'],
 };
 </script>

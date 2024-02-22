@@ -4,18 +4,18 @@
       <main class="column_40">
             <GoBackButton :color="'cream'" class="button_back"/>
             <header>
-            <h1 class="index_title">Create a custom wine</h1>
+            <h1 class="index_title">{{ __('cellar.create_custom') }}</h1>
             </header>
             
             <form @submit.prevent="submit" class="form-create-wine">
                 <section class="column_25">
                     <header>
-                        <h2 class="disp_subtitle">tell us about your wine...</h2>
+                        <h2 class="disp_subtitle">{{ __('cellar.tell_us') }}</h2>
                     </header>
 
                     <!-- <legend class="legend cream">Tell us about your wine</legend> -->
                     <fieldset class="fieldset_1">
-                    <legend>Wine Name</legend>
+                    <legend>{{ __('cellar.wine_name') }}</legend>
                     <label for="name" hidden></label>
                     <input
                         id="name"
@@ -31,7 +31,7 @@
                     </fieldset>
 
                     <fieldset class="fieldset_1">
-                    <legend>Wine Type</legend>
+                    <legend>{{ __('cellar.wine_type') }}</legend>
                     <label for="type" hidden></label>
                     <input
                         id="type"
@@ -46,7 +46,7 @@
                     </fieldset>
 
                     <fieldset class="fieldset_1">
-                    <legend>Country</legend>
+                    <legend>{{ __('cellar.wine_country') }}</legend>
                     <label for="country" hidden></label>
                     <input
                         id="country"
@@ -61,7 +61,7 @@
                     </fieldset>
 
                     <fieldset class="fieldset_1">
-                        <legend>Container Size</legend>
+                        <legend>{{ __('cellar.wine_size') }}</legend>
                         <label for="size" hidden></label>
                         <input
                             id="size"
@@ -76,7 +76,7 @@
                     </fieldset>
 
                     <fieldset class="fieldset_1">
-                        <legend>Price</legend>
+                        <legend>{{ __('cellar.wine_price') }}</legend>
                         <label for="price" hidden></label>
                         <input
                             id="price"
@@ -94,10 +94,10 @@
                 </section>
 
                 <section class="card_cellar w_sections">
-                    <h2 class="disp_subtitle">What do you want to do with this wine?</h2>
+                    <h2 class="disp_subtitle">{{ __('cellar.what_to_do') }}</h2>
                     <div class="column_15">
                         <!-- <h5 class="legend_small cream">Store in a cellar</h5> -->
-                        <h3 class="fs_5 burg-lt block-font">Store in a cellar</h3>
+                        <h3 class="fs_5 burg-lt block-font">{{ __('cellar.store') }}</h3>
                         <div class="grid_square_horiz">
                             <div v-for="(cellar, i) in cellars"  class="grid_sq_insert">
                                 <input
@@ -115,7 +115,7 @@
 
                         <!-- <label for="cellar_qty" class="legend_small cream">How many bottles do you want to store</label> -->
                         <fieldset class="fieldset_1 fs_burg">
-                            <legend>How many bottles?</legend>
+                            <legend>{{ __('cellar.how_many') }}</legend>
                             <!-- <label for="cellar_qty" class="legend_small cream">How many bottles do you want to store</label> -->
                             <label for="cellar_qty" hidden></label>
                             <input
@@ -132,10 +132,10 @@
 
                     <div class="column_15">
                         <!-- <h5 class="legend cream">Add to your buy list</h5> -->
-                        <h3 class="fs_5 burg-lt block-font">Add to your buy list</h3>
+                        <h3 class="fs_5 burg-lt block-font">{{ __('cellar.add_buylist') }}</h3>
                         
                         <fieldset class="fieldset_1 fs_burg">
-                            <legend>How many bottles?</legend>
+                            <legend>{{ __('cellar.how_many') }}</legend>
                             <label for="buyList_qty" hidden></label>
                             <!-- <label for="buyList_qty" class="legend_small cream">How many bottles do you want to buy?</label> -->
                         <input 
@@ -148,7 +148,7 @@
                         </fieldset>
                     </div>
                 </section>
-                <button class="button">save wine</button>
+                <button class="button">{{ __('cellar.save_wine') }}</button>
             </form>
         </main>
      </div>
