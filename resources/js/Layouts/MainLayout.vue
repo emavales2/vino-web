@@ -34,7 +34,8 @@
         </span>      
           <Link :href="route('profile.show', user.id)">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><circle class="cls-1" cx="12.5" cy="5.05" r="5.05"/><path d="m12.5,11.88C5.9,11.88.41,16.76,0,23c-.03.52.15,1.03.5,1.4.35.38.85.59,1.37.59h21.25c.52,0,1.01-.21,1.37-.59.35-.38.54-.89.5-1.4-.41-6.24-5.9-11.13-12.5-11.13Z"/></svg>
-          </Link>                
+          </Link>
+          <LanguageSelector/>                
     </span>
     </nav>        
   </header>
@@ -85,6 +86,7 @@ import SearchIcon from '@/Components/ButtonsIcons/SearchIcon.vue'
 import { Link } from '@inertiajs/inertia-vue3'
 import SearchBar from '@/Components/SearchBar.vue'
 import DialogWindow from '@/Components/DialogWindow.vue'
+import LanguageSelector from '@/Components/LanguageSelector.vue'
 import Modal from '@/Components/Modal.vue'
 import ConfirmModal from '@/Components/ConfirmModal.vue'
 import { computed } from 'vue'
@@ -104,6 +106,7 @@ export default {
   },
   components: {
     DialogWindow,
+    LanguageSelector,
     Link,
     SearchBar,
     SearchIcon,

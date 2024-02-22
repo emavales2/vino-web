@@ -17,10 +17,6 @@ class CellarController extends Controller
      */
     public function index()
     {        
-        //this
-/*         $userId = Auth::id();
-        $cellars = Cellar::where('user_id', $userId)->get(); */
-        //could be
         $cellars = Auth::user()->cellar;
 
         return Inertia::render('Cellar/CellarsView', compact('cellars'));
@@ -58,6 +54,27 @@ class CellarController extends Controller
         return redirect(route('cellar.index', $newCellar->id))->withSuccess('Cellar successfully created');
     }
 
+
+    public function searchAuto(Request $request)
+    {
+        $term = $request->input('term');
+        $cellarId = $request->input('cellarId');
+
+        $cellar = Cellar::find($cellarId);
+
+        $collection = [];
+
+        foreach ($cellar->cellarHasWines as $Wine) {
+            $wine = $Wine->wine;
+        
+            if (stripos($wine->name, $term) !== false) {
+                $collection[] = ['wine' => $wine, 'qty' => $Wine->quantity];
+            }
+        }
+
+        return Inertia::render('Cellar/ShowView', compact('cellar','collection','term'));
+    }    
+
     /**
      * Display the specified resource.
      *
@@ -67,15 +84,18 @@ class CellarController extends Controller
     public function show(Cellar $cellar)
     {
         $userId = Auth::id();
+
         if ($cellar->user_id != $userId) {
             return redirect(route('cellar.index'))->withErrors("You do not have authorization to access this cellar");
         }
+
         $collection = [];
         foreach($cellar->cellarHasWines as $cellarWine) {
             $wine = new WineResource($cellarWine->wine);
             $wine = $wine->resolve();
             $collection[] = ['wine' => $wine, 'qty' => $cellarWine->quantity];
         }
+
         return Inertia::render('Cellar/ShowView', compact('cellar','collection'));
     }
 

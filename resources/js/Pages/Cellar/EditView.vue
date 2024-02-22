@@ -5,20 +5,20 @@
         <GoBackButton :color="'cream'" class="button_back"/>
     
         <header>
-            <h1 class="index_title">Edit Cellar</h1>
+            <h1 class="index_title">{{__('cellar.edit')}}</h1>
         </header>
 
         <form @submit.prevent="submitForm" :action="updateRoute">
             <label for="name">
-                <h2 class="disp_subtitle">Modify your cellar !</h2>
+                <h2 class="disp_subtitle">{{ __('cellar.modify_text') }}</h2>
             </label>
             
             <fieldset class="fieldset_1">
-                <legend aria-labelledby="name">Cellar Name</legend>
+                <legend aria-labelledby="name">{{ __('cellar.name') }}</legend>
                 <input v-model="form.name" type="text" id="name" required>
             </fieldset>
 
-        <button class="button" type="submit">Save</button>
+        <button class="button" type="submit">{{ __('buttons.save') }}</button>
         </form>
     </main>
 </template>

@@ -89,6 +89,8 @@ Route::middleware(['auth'])->group(function () {
     //->buy-list
     Route::get('buy-list-add/{wine}', [BuyListController::class, 'addOne'])->name('buylist.add');
     Route::get('/buy-list-remove/{wine}', [BuyListController::class, 'removeOne'])->name('buylist.remove');
+    //-------------- Search ------------------------------
+    Route::get('/search-auto', [CellarController::class, 'searchAuto'])->name('cellar.searchauto');
 });
 
 // Page d'erreur

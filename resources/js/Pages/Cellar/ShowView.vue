@@ -1,58 +1,76 @@
 <template>
-    <Head title="Cellar" />
+  <Head title="Cellar" />
 
-    <div class="bckgd">
-        <main>
-            <GoBackButton :color="'cream'" class="button_back"/>
+  <div class="bckgd">
+      <main>
+          <GoBackButton :color="'cream'" class="button_back" />
 
-            <header>
-                <h1 class="index_title">{{ cellar.name }}</h1>
+          <header>
+              <h1 class="index_title">{{ cellar.name }}</h1>
 
-                <section class="row_els_apart">
-                    <Link :href="route('cellar.edit', cellar.id)" class="button sml">Edit cellar</Link>
-                    <button type="button" @click="toggleModal(cellar)" class="button sml">Delete</button>
-                </section>
-            </header>
+              <section class="row_els_apart">
+                  <Link
+                      :href="route('cellar.edit', cellar.id)"
+                      class="button sml"
+                      >{{ __("buttons.edit") }}</Link
+                  >
+                  <button
+                      type="button"
+                      @click.stop="toggleModal(cellar)"
+                      class="button sml"
+                  >
+                      {{ __("buttons.delete") }}
+                  </button>
+              </section>
+              <SearchAuto :cellar="cellar" :termReturn="term" v-if="collection.length !== 0 || term" />
+          </header>
 
-            <ul class="wine-list">
-
-                <WineThumbnail v-for="(wine, i) in collection"
+          <ul class="wine-list" v-if="collection.length !== 0">
+              <WineThumbnail
+                  v-for="(wine, i) in collection"
                   :key="i"
                   :wine="wine.wine"
                   :cellar="cellar"
                   :quantity="wine.qty"
-                >
+              >
                   <!-- section std(sloté dans WineThumbnail), inclus btns - et + ainsi que btn remove -->
                   <section>
-                    <div>
-                      <MinusButton 
-                        :color="'cream'" 
-                        :disabled="wine.qty === 0" 
-                        @click="removeOne(wine.wine, wine.qty)"
-                      />
-                      <PlusButton 
-                        :color="'cream'" 
-                        @click="addOne(wine.wine)"
-                      />
-                    </div>
-                    <button class="button sml" @click="toggleModal(wine.wine)">remove wine</button>
+                      <div>
+                          <MinusButton
+                              :color="'cream'"
+                              :disabled="wine.qty === 0"
+                              @click.stop="removeOne(wine.wine, wine.qty)"
+                          />
+                          <PlusButton
+                              :color="'cream'"
+                              @click.stop="addOne(wine.wine)"
+                          />
+                      </div>
+                      <button
+                          class="button sml"
+                          @click.stop="toggleModalWine(wine.wine, cellar.id)"
+                      >
+                          {{ __("buttons.delete") }}
+                      </button>
                   </section>
-                  
-                </WineThumbnail>
-            </ul>
-        </main>
-    </div>
-    <Modal 
-      v-show="openDeleteModal"
-      :toggleOff="toggleModal"
-    >
-      <ConfirmModal 
-        :YesAction="delete" 
-        action="delete" 
-        :toggleModal="toggleModal"
-        actionMessage="Are you sure you want to delete this cellar? all wines will be deleted"
-      />
-    </Modal>
+              </WineThumbnail>
+          </ul>
+          <div v-else>
+            <p class="cream" v-if="term">No wines found with the term <strong>{{ term }}</strong>.</p>
+            <p class="cream" v-else>No wine was found in his cellar.</p>
+          </div>
+          
+      </main>
+  </div>
+  <Modal v-show="openDeleteModal" :toggleOff="toggleModal">
+      <!-- // Modal pour la suppression d'un vin -->
+      <ConfirmModal
+              :YesAction="deleteWine"
+              action="delete"
+              :toggleModal="toggleModalWine"
+              :actionMessage="message"
+          />
+  </Modal>
 </template>
 
 <script>
@@ -66,45 +84,62 @@ import WineThumbnail from '@/Components/WineThumbnail.vue';
 import MainLayout from '@/Layouts/MainLayout.vue';
 import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue';
 import Modal from '@/Components/Modal.vue';
+import SearchAuto from '@/Components/SearchAuto.vue';
+
 export default {
-  name: 'ShowView',
-  components: {
-    ConfirmModal,
-    Modal,
-    Head,
-    WineThumbnail,
-    GoBackButton,
-    Link,
-    PlusButton,
-    MinusButton
+name: 'ShowView',
+components: {
+  ConfirmModal,
+  Modal,
+  Head,
+  WineThumbnail,
+  GoBackButton,
+  Link,
+  PlusButton,
+  MinusButton,
+  SearchAuto
+},
+data() {
+  return {
+    openDeleteModal: false,
+    cellarId: null,
+    message: null,
+    wineId: null
+  }
+},
+layout: MainLayout,
+methods: {
+  toggleModal(cellar) {
+    this.message = this.trans.dialogue.show_view;
+    this.cellarId = cellar;
+    this.openDeleteModal = !this.openDeleteModal;
   },
-  data() {
-    return {
-      openDeleteModal: false,
-      cellarId: null
-    }
+  toggleModalWine(wine, cellar) {
+    this.message = this.trans.dialogue.show_view_wine;
+    this.cellarId = cellar;
+    this.wineId = wine;
+    this.openDeleteModal = !this.openDeleteModal;
   },
-  layout: MainLayout,
-  methods: {
-    toggleModal(cellar) {
-      this.cellarId = cellar;
-      this.openDeleteModal = !this.openDeleteModal;
-    },
-    removeOne (wine, quantity) {
-      if(quantity > 0)
-        Inertia.visit(route('cellarwine.remove', {cellar: this.cellar, wine: wine }), 
-      { preserveScroll: true })
-    },
-    addOne (wine) {
-      Inertia.visit(route('cellarwine.add', {cellar: this.cellar, wine: wine }),
-      { preserveScroll: true })
-    },
-    delete () {
-      Inertia.delete(route('cellar.delete', {cellar: this.cellar }),
-      { preserveScroll: true })
-      this.openDeleteModal = false
-    }
+  removeOne (wine, quantity) {
+    if(quantity > 0)
+      Inertia.visit(route('cellarwine.remove', {cellar: this.cellar, wine: wine }),
+    { preserveScroll: true })
   },
-  props:['cellar', 'collection']
+  addOne (wine) {
+    Inertia.visit(route('cellarwine.add', {cellar: this.cellar, wine: wine }),
+    { preserveScroll: true })
+  },
+  delete () {
+    Inertia.delete(route('cellar.delete', {cellar: this.cellar }),
+    { preserveScroll: true })
+    this.openDeleteModal = false
+  },
+  deleteWine () {
+    Inertia.delete(route('cellarwine.delete', {cellar: this.cellar, wine: this.wineId }),
+    { preserveScroll: true })
+    this.openDeleteModal = false
+  }
+},
+props:['cellar', 'collection', 'trans', 'term']
 }
 </script>
