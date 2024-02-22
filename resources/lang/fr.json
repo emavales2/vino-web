@@ -12,7 +12,8 @@
         "cancel": "Annuler",
         "see_more": "Voir plus",
         "add_custom_wine": "Ajouter un vin personnalis\u00e9",
-        "logout": "Se d\u00e9connecter"
+        "logout": "Se d\u00e9connecter",
+        "remove": "Enlever"
     },
     "cellar": {
         "list": "Liste des celliers",

@@ -9,4 +9,5 @@ return [
     'see_more' => 'Voir plus',
     'add_custom_wine' => 'Ajouter un vin personnalisé',
     'logout' => 'Se déconnecter',
+    'remove' => 'Enlever'
 ];

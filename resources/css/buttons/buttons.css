@@ -81,6 +81,8 @@ button {
     cursor: pointer;
     background-color: var(--coral);
     border: none;
+    /* rajouté un border pour pas que la dispo en bas du bouton change */
+    border: 3px solid var(--coral);
 }
 
 .lien_sml {
