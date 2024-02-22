@@ -26,6 +26,12 @@
                     </span>        
                 </dl>
             </div>
+
+            <dl class="cream">
+                <dt>App language :</dt>
+                {{ __('auth.failed') }}
+                <LanguageSelector/>
+            </dl>
             <div class="btn-container">
                 <Link class="button" :href="route('profile.edit', user.id )">Edit profile</Link>
                 <Link class="button" :href="route('logout', user.id )">Logout</Link>
@@ -47,6 +53,6 @@ export default {
     GoBackButton
 },
   layout: MainLayout,
-  props: ['user', 'locale', 'trans']
+  props: ['user', 'locale']
 }
 </script>

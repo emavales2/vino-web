@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cellar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\WineResource;
 use Inertia\Inertia;
 
 class CellarController extends Controller
@@ -89,9 +90,10 @@ class CellarController extends Controller
         }
 
         $collection = [];
-        
-        foreach($cellar->cellarHasWines as $wine) {
-            $collection[] = ['wine' => $wine->wine, 'qty' => $wine->quantity];
+        foreach($cellar->cellarHasWines as $cellarWine) {
+            $wine = new WineResource($cellarWine->wine);
+            $wine = $wine->resolve();
+            $collection[] = ['wine' => $wine, 'qty' => $cellarWine->quantity];
         }
 
         return Inertia::render('Cellar/ShowView', compact('cellar','collection'));

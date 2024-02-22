@@ -3,7 +3,7 @@
     <!-- section principal du thumbnail(incluant nom, qté(si présent), image et bckgd) -->
     <Link :href="route('wine.show', wine.id)">
       <aside>
-        <ColorDrop :class="setColor(wine.type)"/>
+        <ColorDrop :color="wine.type"/>
         <span v-if="quantity !== undefined" class="quantity-drop">
           {{ quantity }}
         </span>
@@ -45,11 +45,6 @@ export default {
     DeleteButton,
     MinusButton,
     PlusButton
-},
-  methods: {
-    setColor (color) {
-      if(color) return color.split(' ')[1]
-    }
   },
   props:['wine', 'quantity']
 }

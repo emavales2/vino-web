@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\WineResource;
 use App\Models\CellarHasWine;
 use App\Models\Cellar;
 use App\Models\Wine;
@@ -19,19 +20,20 @@ class CellarHasWineController extends Controller
     public function collection()
     {
         $collection = [];
-        $wines = Auth::user()->wine;
         $cellars = Auth::user()->cellar;
         foreach($cellars as $cellar) {
-            foreach($cellar->cellarHasWines as $wine) {
-                if(array_key_exists($wine->wine_id, $collection)) {
-                    $collection[$wine->wine_id]['quantities']['totalQty'] += $wine->quantity;
-                    $collection[$wine->wine_id]['quantities']['perCellar'][] = ['cellar' => $wine->cellar, 'qty'=>$wine->quantity];
+            foreach($cellar->cellarHasWines as $cellarWine) {
+                if(array_key_exists($cellarWine->wine_id, $collection)) {
+                    $collection[$cellarWine->wine_id]['quantities']['totalQty'] += $cellarWine->quantity;
+                    $collection[$cellarWine->wine_id]['quantities']['perCellar'][] = ['cellar' => $cellarWine->cellar, 'qty'=>$cellarWine->quantity];
                 } else {
-                    $collection[$wine->wine_id] = [
-                        'wine'=> $wine->wine,
+                    $wine = new WineResource($cellarWine->wine);
+                    $wine = $wine->resolve();
+                    $collection[$cellarWine->wine_id] = [
+                        'wine'=> $wine,
                         'quantities' => [
-                            'perCellar' => [['cellar' => $wine->cellar, 'qty'=>$wine->quantity]],
-                            'totalQty' => $wine->quantity,
+                            'perCellar' => [['cellar' => $cellarWine->cellar, 'qty'=>$cellarWine->quantity]],
+                            'totalQty' => $cellarWine->quantity,
                         ]
                     ];
                 }
