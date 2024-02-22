@@ -22,10 +22,10 @@
                       {{ __("buttons.delete") }}
                   </button>
               </section>
-              <SearchAuto :cellar="cellar" :termReturn="term" />
+              <SearchAuto :cellar="cellar" :termReturn="term" v-if="collection.length !== 0 || term" />
           </header>
 
-          <ul class="wine-list">
+          <ul class="wine-list" v-if="collection.length !== 0">
               <WineThumbnail
                   v-for="(wine, i) in collection"
                   :key="i"
@@ -55,6 +55,11 @@
                   </section>
               </WineThumbnail>
           </ul>
+          <div v-else>
+            <p class="cream" v-if="term">No wines found with the term <strong>{{ term }}</strong>.</p>
+            <p class="cream" v-else>No wine was found in his cellar.</p>
+          </div>
+          
       </main>
   </div>
   <Modal v-show="openDeleteModal" :toggleOff="toggleModal">
