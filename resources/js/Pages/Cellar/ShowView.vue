@@ -22,6 +22,7 @@
                       {{ __("buttons.delete") }}
                   </button>
               </section>
+              <SearchAuto :cellar="cellar" :termReturn="term" />
           </header>
 
           <ul class="wine-list">
@@ -78,6 +79,7 @@ import WineThumbnail from '@/Components/WineThumbnail.vue';
 import MainLayout from '@/Layouts/MainLayout.vue';
 import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue';
 import Modal from '@/Components/Modal.vue';
+import SearchAuto from '@/Components/SearchAuto.vue';
 
 export default {
 name: 'ShowView',
@@ -89,7 +91,8 @@ components: {
   GoBackButton,
   Link,
   PlusButton,
-  MinusButton
+  MinusButton,
+  SearchAuto
 },
 data() {
   return {
@@ -132,6 +135,6 @@ methods: {
     this.openDeleteModal = false
   }
 },
-props:['cellar', 'collection', 'trans']
+props:['cellar', 'collection', 'trans', 'term']
 }
 </script>

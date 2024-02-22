@@ -10,10 +10,16 @@ createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => require(`./Pages/${name}.vue`),
     setup({ el, app, props, plugin }) {
+        const focusDirective = {
+            mounted(el) {
+                el.focus();
+            },
+        };
         return createApp({ render: () => h(app, props) })
             .use(plugin)
             .mixin(require('./base'))
             .mixin({ methods: { route }})
+            .directive('focus', focusDirective)
             .mount(el)
             .$nextTick(() => { delete el.dataset.page });
     },
