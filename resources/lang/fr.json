@@ -11,7 +11,8 @@
         "save": "Enregistrer",
         "cancel": "Annuler",
         "see_more": "Voir plus",
-        "add_custom_wine": "Ajouter un vin personnalis\u00e9"
+        "add_custom_wine": "Ajouter un vin personnalis\u00e9",
+        "logout": "Se d\u00e9connecter"
     },
     "cellar": {
         "list": "Liste des celliers",
@@ -23,8 +24,29 @@
         "give_name": "Donnez un nom \u00e0 votre cellier !",
         "add_wine": "Ajouter ce vin \u00e0 votre cellier",
         "select": "S\u00e9lectionner un cellier",
-        "0": "no"
+        "no_cellar": "Il semble que vous n'ayez pas de cellier, veuillez en cr\u00e9er un d'abord",
+        "create": "Cr\u00e9er un cellier",
+        "your_wines": "Vos vins",
+        "add_custom": "Ajouter un vin personnalis\u00e9",
+        "create_custom": "Cr\u00e9er un vin personnalis\u00e9",
+        "tell_us": "Parlez-nous de votre vin...",
+        "wine_name": "Nom du vin",
+        "wine_type": "Type de vin",
+        "wine_country": "Pays",
+        "wine_size": "Taille du contenant",
+        "wine_price": "Prix",
+        "what_to_do": "Que voulez-vous faire avec ce vin?",
+        "store": "Mettre dans un cellier",
+        "how_many": "Combien de bouteilles?",
+        "add_buylist": "Ajouter ce vin \u00e0 votre liste d'achats",
+        "save_wine": "Enregistrer ce vin",
+        "code": "Code SAQ",
+        "price": "Prix",
+        "buylist": "Liste d'achats",
+        "add_wine_buylist": "Ajouter ce vin \u00e0 votre liste d'achats",
+        "no_list": "Votre liste d'achats est vide."
     },
+    "composant": [],
     "dashboard": {
         "welcome": "Bienvenue",
         "my_cellars": "Mes celliers",
@@ -32,7 +54,37 @@
     },
     "dialogue": {
         "show_view": "\u00cates-vous s\u00fbr de vouloir supprimer ce cellier? Tous les vins seront \u00e9galement supprim\u00e9s.",
-        "show_view_wine": "\u00cates-vous s\u00fbr de vouloir supprimer ce vin?"
+        "delete_wine": "\u00cates-vous s\u00fbr de vouloir supprimer ce vin? Cette action le supprimera \u00e9galement de vos celliers. Cette action est irr\u00e9versible.",
+        "show_view_wine": "\u00cates-vous s\u00fbr de vouloir supprimer ce vin?",
+        "no_wine": " Vous n'avez pas encore de vin",
+        "no_term": "Aucun vin trouv\u00e9 avec le terme ",
+        "Oh": "Oh non!",
+        "yeah": "Yeah! Vous venez d'ajouter ",
+        "bottle": " bouteille",
+        "s": "s",
+        "vide": "",
+        "to": " \u00e0 ",
+        "no_result": "Aucun r\u00e9sultat trouv\u00e9 avec le terme ",
+        "found": "Nous avons trouv\u00e9",
+        "result": " r\u00e9sultat(s) pour",
+        "too_many": "Il y a trop de r\u00e9sultats, voici les 1000 premiers",
+        "create": "Vous pouvez toujours cr\u00e9er votre vin personnalis\u00e9 !",
+        "create_wine": "Cr\u00e9er votre vin"
+    },
+    "home": {
+        "sub": "Votre sanctuaire",
+        "sub2": "personnel de vin",
+        "sign": "Se connecter",
+        "no_account": "Pas encore de compte ?",
+        "join": "Inscrivez-vous !",
+        "switch": "Changer de langue",
+        "sub_sign": "Vivez l'exp\u00e9rience parfaite des celliers avec Vino",
+        "email": "Adresse e-mail",
+        "password": "Mot de passe",
+        "first_name": "Pr\u00e9nom",
+        "last_name": "Nom",
+        "confirm_password": "Confirmez le mot de passe",
+        "already_account": "Vous avez d\u00e9j\u00e0 un compte ?"
     },
     "pagination": {
         "previous": "&laquo; Pr\u00e9c\u00e9dent",
@@ -44,6 +96,20 @@
         "throttled": "Veuillez patienter avant de r\u00e9essayer.",
         "token": "Ce jeton de r\u00e9initialisation de mot de passe est invalide.",
         "user": "Nous ne trouvons aucun utilisateur avec cette adresse e-mail."
+    },
+    "user": {
+        "profile": "Profil",
+        "first_name": "Pr\u00e9nom",
+        "last_name": "Nom de famille",
+        "email": "Courriel",
+        "edit_profile": "Modifier votre profil",
+        "delete_account": "Supprime ton compte",
+        "users": "Utilisateurs",
+        "id": "ID",
+        "name": "Nom",
+        "delete_user": "Supprimer l'utilisateur",
+        "edit_user": "Modifier l'utilisateur",
+        "show_users": "Afficher tous les utilisateurs"
     },
     "validation": {
         "accepted": "Le champ :attribute doit \u00eatre accept\u00e9.",

@@ -7,7 +7,7 @@
             <GoBackButton :color="'cream'" class="button_back"/>
 
             <header>
-                <h1 class="fs_3 block-font coral">Add this wine to your shopping list</h1>
+                <h1 class="fs_3 block-font coral">{{ __('cellar.add_buylist') }}</h1>
             </header>
 
             <form @submit.prevent="addToBuyList" class="form-quantity">
@@ -28,7 +28,7 @@
                 </section>
 
                 <section>
-                    <button class="button button_burgundy">Add</button>
+                    <button class="button button_burgundy">{{ __('buttons.add') }}</button>
                 </section>
             </form>
         </main>

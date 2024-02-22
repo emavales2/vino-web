@@ -14,7 +14,7 @@
         
         <fieldset class="fieldset_1">
             <legend aria-labelledby="name">{{ __('cellar.name') }}</legend>            
-            <input v-model="form.name" type="text" id="name" placeholder="Cellar Name" required>
+            <input v-model="form.name" type="text" id="name" placeholder="Cellar Name">
         </fieldset>
 
         <button class="button" type="submit">{{ __('buttons.save') }}</button>

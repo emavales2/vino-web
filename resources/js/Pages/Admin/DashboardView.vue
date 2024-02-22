@@ -2,17 +2,17 @@
     <Head title="Dashboard Admin" />
     <div class="bckgd">
         <header>
-            <h1 class="index_title">Welcome {{ user.first_name }}</h1> 
+            <h1 class="index_title">{{ __('dashboard.welcome') }} {{ user.first_name }}</h1> 
         </header>
         <main class="mb-6">
             <ul>
                 <li>
                     <button class="button" >
-                        <Link :href="route('users.index')">Show all users</Link>
+                        <Link :href="route('users.index')">{{ __('user.show_users') }}</Link>
                     </button>
                 </li>
                 <li>
-                    <button class="button"  @click="logout">Logout</button>
+                    <button class="button"  @click="logout">{{ __('buttons.logout') }}</button>
                 </li>
             </ul>
         </main>

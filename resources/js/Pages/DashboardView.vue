@@ -56,7 +56,7 @@
                   :quantities="wine.quantities" />
               </ul>
             </div>
-            <p class="no_show" v-else><strong>OH NO!</strong> You have no wines yet.</p>
+            <p class="no_show" v-else><strong>{{ __('dialogue.oh') }}</strong>{{ __('dialogue.no_wine') }}.</p>
           </section>
         </li>
       </ul>

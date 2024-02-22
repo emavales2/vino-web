@@ -4,12 +4,12 @@
     <div class="bckgd marg_vert_home">
         <main>
             <header>
-                <h1 class="index_title">Sign Up</h1>
+                <h1 class="index_title">{{ __('home.join') }}</h1>
             </header>
 
             <form @submit.prevent="submit">
                 <fieldset class="fieldset_1">
-                    <legend aria-labelledby="first_name">First Name</legend>
+                    <legend aria-labelledby="first_name">{{ __('home.first_name') }}</legend>
                     <label for="first_name" value="First name"></label>
                     <input
                         id="first_name"
@@ -28,7 +28,7 @@
                 </fieldset>
 
                 <fieldset class="fieldset_1">
-                    <legend aria-labelledby="last_name">Last Name</legend>
+                    <legend aria-labelledby="last_name">{{ __('home.last_name') }}</legend>
                     <label for="last_name" value="Last name"></label>
                     <input
                         id="last_name"
@@ -47,7 +47,7 @@
                 </fieldset>
 
                 <fieldset class="fieldset_1">
-                    <legend aria-labelledby="email">Email Address</legend>
+                    <legend aria-labelledby="email">{{ __('home.email') }}</legend>
                     <label for="email" value="Email"></label>
                     <input
                         id="email"
@@ -65,7 +65,7 @@
                 </fieldset>
 
                 <fieldset class="fieldset_1">
-                    <legend aria-labelledby="password">Password</legend>
+                    <legend aria-labelledby="password">{{ __('home.password') }}</legend>
                     <label for="password" value="Password" hidden></label>
                     <input
                         id="password"
@@ -83,7 +83,7 @@
                 </fieldset>
 
                 <fieldset class="fieldset_1">
-                    <legend aria-labelledby="password_confirmation">Password Confirmation</legend>
+                    <legend aria-labelledby="password_confirmation">{{ __('home.confirm_password') }}</legend>
                     <label for="password_confirmation" value="Confirm Password" hidden></label>
                     <input
                         id="password_confirmation"
@@ -106,14 +106,14 @@
                         :class="{ 'opacity-25': form.processing }"
                         :disabled="form.processing"
                     >
-                        Save
+                        {{ __('buttons.save') }}
                     </button>
                 </div>
             </form>
             <p class="cream txt-center">
-                Already have a member account?<br />
+                {{ __('home.already_account') }}<br />
                 <Link class="block-font coral" :href="route('login')"
-                    >Sign In!</Link
+                    >{{ __('home.sign') }}</Link
                 >
             </p>
         </main>

@@ -5,36 +5,31 @@
         <main>
             <GoBackButton :color="'cream'" class="button_back"/>
             <header>
-                <h1 class="index_title">Profile</h1>
+                <h1 class="index_title">{{ __('user.profile') }}</h1>
             </header>
 
             <div>
                 <dl class="txt-center">
                     <span class="flex-row gap_20">
-                        <dt class="display-font coral">First Name</dt>
+                        <dt class="display-font coral">{{ __('user.first_name') }}</dt>
                         <dd class="cream block-font">{{ user.first_name }}</dd>
                     </span>
 
                     <span class="flex-row gap_20">
-                        <dt class="display-font coral">Last Name</dt>
+                        <dt class="display-font coral">{{ __('user.last_name') }}</dt>
                         <dd class="cream block-font">{{ user.last_name }}</dd>
                     </span>
 
                     <span class="flex-row gap_20">
-                        <dt class="display-font coral">Email</dt>
+                        <dt class="display-font coral">{{__('user.email')}}</dt>
                         <dd class="cream block-font">{{ user.email }}</dd>
                     </span>        
                 </dl>
             </div>
 
-            <dl class="cream">
-                <dt>App language :</dt>
-                {{ __('auth.failed') }}
-                <LanguageSelector/>
-            </dl>
             <div class="btn-container">
-                <Link class="button" :href="route('profile.edit', user.id )">Edit profile</Link>
-                <Link class="button" :href="route('logout', user.id )">Logout</Link>
+                <Link class="button" :href="route('profile.edit', user.id )">{{ __('user.edit_profile') }}</Link>
+                <Link class="button" :href="route('logout', user.id )">{{ __('buttons.logout') }}</Link>
             </div>
         </main>
     </div>

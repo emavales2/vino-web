@@ -6,13 +6,13 @@
             <header>
                 <!-- <figure>   
                 </figure> --> 
-                <h1 class="cream block-font fs_1">Sign In</h1>
-                <h2 class="fs_5 block-font coral">Unlock the Perfect Cellar Experience with Vino</h2>               
+                <h1 class="cream block-font fs_1">{{ __('home.sign') }}</h1>
+                <h2 class="fs_5 block-font coral">{{ __('home.sub_sign') }}</h2>               
             </header>
 
             <form @submit.prevent="submit">
                 <fieldset class="fieldset_1">
-                    <legend aria-labelledby="email">Email Address</legend>
+                    <legend aria-labelledby="email">{{ __('home.email') }}</legend>
                     <label for="email" value="Email" hidden></label>
                     <input
                         id="email"
@@ -28,7 +28,7 @@
                 </fieldset>
 
                 <fieldset class="fieldset_1">
-                    <legend aria-labelledby="password">Password</legend>
+                    <legend aria-labelledby="password">{{ __('home.password') }}</legend>
                     <label for="password" value="Password" hidden></label>
                     <input
                         id="password"
@@ -42,14 +42,14 @@
                 </fieldset>
                     
                 <button class="button" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Sign In
+                    {{ __('home.sign') }}
                 </button>
             </form>
 
             <aside class="col_tight">
                 <p class="cream txt-center">
-                    Don't have an account yet?<br>
-                    <Link class="block-font coral" :href="route('register')">Sign Up!</Link>
+                    {{ __('home.no_account') }}<br>
+                    <Link class="block-font coral" :href="route('register')">{{ __('home.join') }}</Link>
                 </p>
             </aside>
         </main>
