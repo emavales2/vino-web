@@ -21,7 +21,7 @@
                     <section>
                         <span class="country_line">
                             <ColorDrop :color="wine.type"/>
-                            <h3 class="fs_6 display-font burg-lt">{{ wine.country ? wine.country : 'n/a' }}</h3>
+                            <h3 class="fs_6 display-font burg-lt">{{ wine.country != null ? wine.country : 'n/a' }}</h3>
                         </span>
                         <h1 class="block-font fiche_wine_title coral">{{ wine.name }}</h1>
                         <div class="burg-lt">                        
@@ -30,7 +30,7 @@
                             <div>
                             
                             <ul>
-                                <li>{{ wine.type ? wine.type : 'n/a' }}</li>
+                                <li>{{ wine.type != null ? wine.type : 'n/a' }}</li>
                                 <li>{{ wine.size ? wine.size : 'n/a' }}</li>
                                 <li>price: {{ wine.price ? wine.price + ' $' : 'n/a' }}</li>
                             </ul>
