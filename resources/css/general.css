@@ -23,7 +23,6 @@ main {
     display: flex;
     flex-direction: column;
     gap: var(--xxlarge-space);
-    flex: 1;
     /* justify-content: center; */
     position: relative;
 }
