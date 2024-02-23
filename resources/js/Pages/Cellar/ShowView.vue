@@ -8,16 +8,16 @@
             <!-- ---- * Titre et boutons qui affecten le cellier * ---- -->
             <header>
                 <h1 class="index_title">{{ cellar.name }}</h1>
-                <section class="row_els_apart">
+                <section>
                     <Link
                         :href="route('cellar.edit', cellar.id)"
-                        class="button"
+                        class="font_link cream"
                         >{{ __("buttons.edit") }}</Link
                     >
                     <button
                         type="button"
                         @click.stop="toggleModal(cellar)"
-                        class="button"
+                        class="font_link cream"
                     >
                         {{ __("cellar.cellar_delete") }}
                     </button>
@@ -27,7 +27,7 @@
             <!-- ---- * Carte nav pour filtrer les vins * ---- -->
             <aside v-if="collection.length !== 0 || term" class="card_nav bckgd-burg-lt">
                 <h2 class="disp_subtitle sm">
-                    {{ __("cellar.more_options") }}, {{ user.first_name }}
+                    {{ __("cellar.more_options") }}
                 </h2>
 
                 <!-- ---- * Rechercher un vin dans ce cellier * ---- -->
@@ -39,8 +39,8 @@
               />
 
                 <span class="row_els_apart">
-                    <button class="button button-sml btn_wide">Filter</button>
-                    <button class="button button-sml btn_wide">Sort</button>
+                    <button class="button button-sml btn_wide">{{ __("cellar.filter") }}</button>
+                    <button class="button button-sml btn_wide">{{ __("cellar.sort") }}</button>
                 </span>
             </aside>
 
@@ -53,8 +53,8 @@
                   :quantity="wine.qty"
               >
                   <!-- section std(sloté dans WineThumbnail), inclus btns - et + ainsi que btn remove -->
-                  <section class="thb_nav">
-                    <span class="row_els_apart">
+                  <section class="wine_thb_nav">
+                    <span>
                           <MinusButton
                               :color="'coral'"
                               :disabled="wine.qty === 0"
