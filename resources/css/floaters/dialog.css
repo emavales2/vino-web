@@ -1,13 +1,13 @@
 .dialog{
-  position: fixed;
+  background-color: var(--success);
   bottom: 60px;
   border: 2px solid var(--success-lt);
   border-radius: 100px;
-  font-family: var(--block-font);
-  right: var(--small-space);
-  max-width: 300px;
   color: var(--white);
-  background-color: var(--success);
+  font-family: var(--block-font);
+  max-width: 300px;
   padding: var(--small-space);
+  position: fixed;
+  right: var(--small-space);
   z-index: 2;
 }
