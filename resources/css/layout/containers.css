@@ -8,6 +8,10 @@
     justify-content: center;
 }
 
+.lang_menu {
+    padding: 0 var(--vsmall-space);
+}
+
 /* ----- * CONTENT LAYOUT * ----- */
 
 /* Conteneur qui permet modifier l'arrière plan dans <template> sans avoir besoin de toucher le <body> */
@@ -36,6 +40,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: var(--med-space);
+    align-items: center;
 }
 
 .column_15 {
