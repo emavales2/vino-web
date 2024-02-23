@@ -23,14 +23,14 @@
                               :quantities="wine.quantities"
                             >
                               <!-- section std sloté -->
-                              <section>
+                              <section class="button_column_tight">
                                 <Link v-if="wine.wine.user_id"
                                   :href="route('wine.edit', wine.wine.id)" 
                                   class="button btn-sml btn-full btn-coral"
                                 >
-                                  edit wine
+                                  edit
                                 </Link>
-                                <button class="button btn-sml btn-full btn-coral" @click="toggleModal(wine.wine)">remove</button>
+                                <button class="button btn-sml btn-full btn-coral" @click="toggleModal(wine.wine)">delete</button>
                               </section>
                             </WineThumbnail>
                         </ul>

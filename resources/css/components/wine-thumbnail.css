@@ -1,18 +1,17 @@
 
 .wine-thumbnail {
-    padding-top: var(--large-space);
+    /* padding-top: var(--large-space); */
     display: flex;
     flex-flow: column;
     gap: var(--med-sm-space);
     justify-content: space-between;
     background-color: var(--cream-lt);
-    border-radius: 12px;
-    justify-content: space-between;
+    border-radius: 20px;
     box-shadow: var(--box-shadow);
     height: 100%;
-    padding: var(--small-space) var(--vsmall-space); 
+    padding: var(--vsmall-space); 
+    padding-top: var(--small-space) ;
 }
-
 
 /* ---- * Contient l'image + info du vin * ---- */
 .wine-thumbnail a {
@@ -36,7 +35,7 @@
 
 /* ---- * Contient l'image * ---- */
 .wine-thumbnail a div:first-of-type {
-    height: 100px;
+    height: 60px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -56,6 +55,8 @@
     flex-flow: column;
     gap: var(--small-space);
     justify-content: space-between;
+    max-height: 100%;
+    height: 75px;
 }
 
 /* ---- * Nom du vin * ---- */
@@ -77,7 +78,7 @@
 }
 
 /* ---- * Qty + "delete" nav * ---- */
-.thb_nav {
+.wine_thb_nav {
     align-items: center;
     display: flex;
     flex-flow: column;
@@ -87,28 +88,26 @@
 }
 
 /* ---- * Boutons qté * ---- */
-.thb_nav > span > button {
+.wine_thb_nav > span {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: var(--med-space);
+    align-items: center;
+}
+
+.wine_thb_nav > span > button {
     max-width: 30%;
 }
 
-.thb_nav p {
-    color: var(--cream); 
-    padding-left: var(--vsmall-space);
-}
-
-
-.thb_nav.vert p {
-    color: var(--burgundy-lt);
-}
-
-.thb_nav svg {
+.wine_thb_nav svg {
     max-width: 100%;
     max-height: 100%;
     vertical-align: middle;
     height: fit-content;
 }
 
-.wine-thumbnail > section > div{
+.wine-thumbnail > section > div {
   display: flex;
   flex-flow: row;
   gap: var(--med-space);

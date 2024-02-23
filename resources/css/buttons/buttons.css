@@ -5,9 +5,10 @@ button {
     border: none;
     cursor: pointer;
 }
+
 /* attrs pour tous les boutons */
 .button {
-    border: 3px solid var(--cream);
+    border: 2px solid var(--cream);
     border-radius: var(--large-space);
     color: var(--cream);
     display: block;
@@ -19,12 +20,17 @@ button {
     padding: 16px;
     text-transform: uppercase;
     width: max-content;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* - états - */
 .button:active {
     transform: translate(2px, 2px);
 }
+
 .button:focus-visible {
     outline-color: var(--coral);
 }
@@ -35,10 +41,12 @@ button {
     border-color: var(--burgundy);
     color: var(--burgundy);
 }
+
 .button.btn-coral {
     background: var(--coral);
     border-color: var(--coral);
 }
+
 .button.btn-warning { 
     background-color: var(--danger);
     border-color:var(--danger);
@@ -50,13 +58,13 @@ button {
     border-width: 2px;
     font-size: 0.8rem;
     padding: 8px 12px;
-    /* what does this do? */
-    vertical-align: sub;
 }
+
 .button.btn-med {
     font-size: 1rem;
     padding: 12px;
 }
+
 /* largeur totale du parent */
 .button.btn-full {
     max-width: 120px;
@@ -64,14 +72,16 @@ button {
 }
 
 /* - variants pour icones - */
-.button--icon{
+.button--icon {
     border: none;
     max-width: max-content;
     padding: 0;
 }
-.button--icon:active{
+
+.button--icon:active {
     transform: translate(2px, 2px);
 }
+
 .button--icon[disabled]{
     filter: opacity(.5);
 }

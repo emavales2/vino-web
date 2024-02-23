@@ -8,22 +8,26 @@
                 <h1 class="index_title">
                     {{ __("dashboard.welcome") }}, {{ user.first_name }}
                 </h1>
-                <!-- ---- * Carte nav pour filtrer les vins * ---- -->
-                <div class="search-dashboard">
-                    <SearchBar class="search-dashboard"/>
-                </div>
-            </header>
 
-            <button class="button">
-                <Link :href="route('wine.create')">
-                    {{ __("buttons.add_custom_wine") }}
-                </Link>
-            </button>
+                <aside class="column_20">
+                    <!-- ---- * Rechercher un vin * ---- -->
+                    <span class="search-dashboard">
+                        <SearchBar class="search-dashboard"/>
+                    </span>
 
-            <ul class="column_30">
+                    <!-- ---- * Custom wine * ---- -->
+                    <button class="button">
+                        <Link :href="route('wine.create')">
+                            {{ __("buttons.add_custom_wine") }}
+                        </Link>
+                    </button>
+                </aside>
+            </header>           
+
+            <ul class="column_40">
                 <!-- --------------- * CELLARS * ------------------ -->
                 <li>
-                    <section class="column_20">
+                    <section class="column_30">
                         <header>
                             <span class="row_els_apart gap_20">
                                 <h2 class="disp_subtitle">
@@ -46,7 +50,7 @@
 
                 <!-- --------------- * WINES * ------------------ -->
                 <li>
-                    <section class="column gap_20">
+                    <section class="column_30">
                         <header>
                             <span class="row_els_apart gap_20">
                                 <h2 class="disp_subtitle">
@@ -55,7 +59,7 @@
                                 <div>
                                     <Link
                                         v-if="collection.length > 3"
-                                        class="lien_sml cream block-font"
+                                        class="font_link plain cream"
                                         :href="route('collection')"
                                         >{{ __("buttons.see_more") }}</Link
                                     >

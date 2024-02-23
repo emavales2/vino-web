@@ -8,7 +8,9 @@
         "add": "ajouter",
         "cancel": "annuler",
         "close": "fermer",
-        "open": "ouvrir"
+        "open": "ouvrir",
+        "filter": "filtre",
+        "sort": "trier"
     },
     "auth": {
         "failed": "Ces identifiants ne correspondent pas \u00e0 nos enregistrements.",
@@ -31,7 +33,7 @@
         "just_delete": "supprimer le vin",
         "store_in_cellar": "voulez-vous ins\u00e9rer ce vin dans un cellier?",
         "success_store_beg": "Super! vous venez d'ajouter",
-        "success_store_mid": "bouteille(s) dans votre",
+        "success_store_mid": "bouteille(s) dans",
         "success_delete": "vous avez supprimer ce vin de votre liste d'achat!"
     },
     "cellar": {
@@ -49,6 +51,7 @@
         "create": "Cr\u00e9er un cellier",
         "your_wines": "Vos vins",
         "add_custom": "Ajouter un vin personnalis\u00e9",
+        "more_options": "Plus d'options",
         "create_custom": "Cr\u00e9er un vin personnalis\u00e9",
         "tell_us": "Parlez-nous de votre vin...",
         "wine_name": "Nom du vin",

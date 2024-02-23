@@ -53,9 +53,11 @@ h1, h2, h3, h4, h5, h6, p {
 h1, h2, h3 {
     line-height: var(--tall-line);
 }
+
 dt{
     padding-bottom: var(--small-space);
 }
+
 /* ----- * H1 est le seul heading dont il n'ya qu'une seule font-family * ----- */
 .fs_1 {
     font-size: 2.986rem;
@@ -138,6 +140,7 @@ small {
 
 /* ----- * APPLICATIONS * ----- */
 
+/* ---- * Tous les titres h1 principaux std * ---- */
 .index_title {
     font-family: var(--block-font);
     font-size: 2.488rem;
@@ -150,8 +153,8 @@ small {
     padding-bottom: var(--small-space);
 }
 
+/* ---- * Tous les sous-titres ou titres h2 de section std * ---- */
 .disp_subtitle {
-    padding-bottom: var(--med-space);
     font-size: 1.728rem;
     line-height: var(--tall-line);
     font-family: var(--display-font);
@@ -161,6 +164,7 @@ small {
     max-width: 15ch;
 }
 
+/* ---- * Var taille * ---- */
 .disp_subtitle.sm {
     font-size: 1.4rem;
 }
@@ -171,4 +175,24 @@ small {
     font-size: 1rem;
     line-height: var(--small-line);
     color: var(--coral);
+}
+
+.font_link {
+    font-family: 'Roboto', sans-serif;
+    text-transform: lowercase;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 0 var(--med-space);
+}
+
+.font_link:first-child {
+    border-right: 1px solid white;
+    padding-left: var(--small-space);
+}
+
+.font_link.plain {
+    border-right: none;
+    padding: 0;
+    width: 100%;
+    display: block;
 }

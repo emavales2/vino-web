@@ -10,4 +10,6 @@ return [
   'cancel' => 'cancel',
   'close' => 'close',
   'open' => 'open',
+  'filter' => 'filter',
+  'sort' => 'sort'
 ];
