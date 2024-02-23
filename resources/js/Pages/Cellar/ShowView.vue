@@ -26,7 +26,9 @@
 
             <!-- ---- * Carte nav pour filtrer les vins * ---- -->
             <aside v-if="collection.length !== 0 || term" class="card_nav bckgd-burg-lt">
-                <h2 class="disp_subtitle sm">More cellar options</h2>
+                <h2 class="disp_subtitle sm">
+                    {{ __("cellar.more_options") }}, {{ user.first_name }}
+                </h2>
 
                 <!-- ---- * Rechercher un vin dans ce cellier * ---- -->
                 <SearchAuto 

@@ -17,6 +17,7 @@ return [
     // Collection
     'your_wines' => 'Your wines',
     'add_custom' => 'Add a custom wine',
+    'more_options' => 'More cellar options',
     // create custom wine
     'custom' => 'Custom wine',
     'create_custom' => 'Create a custom wine',
