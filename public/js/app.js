@@ -24945,19 +24945,21 @@ __webpack_require__.r(__webpack_exports__);
         email: "",
         password: "",
         password_confirmation: ""
-      })
+      }),
+      registerDialog: this.trans.dialogue.registerDialog
     };
   },
   methods: {
     submit: function submit() {
       var _this = this;
       this.form.post(route("register"), {
-        onFinish: function onFinish() {
-          return _this.form.reset("password", "password_confirmation");
+        onSuccess: function onSuccess() {
+          _this.openDialog(_this.registerDialog);
         }
       });
     }
-  }
+  },
+  props: ['trans', 'openDialog']
 });
 
 /***/ }),
@@ -25664,7 +25666,9 @@ __webpack_require__.r(__webpack_exports__);
       openDeleteModal: false,
       message: null,
       modalMessage: this.trans.dialogue.delete_account,
-      modalAction: this.trans.dialogue["delete"]
+      modalAction: this.trans.dialogue["delete"],
+      updateDialog: this.trans.dialogue.account_updated,
+      deleteDialog: this.trans.dialogue.account_deleted
     };
   },
   layout: _Layouts_MainLayout_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
@@ -25675,7 +25679,7 @@ __webpack_require__.r(__webpack_exports__);
         user: this.user.id
       }), {
         onSuccess: function onSuccess() {
-          _this.$parent.openDialog("Great ! Your profile has been updated");
+          _this.$parent.openDialog(_this.updateDialog);
         }
       });
     },
@@ -25688,7 +25692,7 @@ __webpack_require__.r(__webpack_exports__);
         user: this.user.id
       }), {
         onSuccess: function onSuccess() {
-          _this2.$parent.openDialog("Your account has been deleted");
+          _this2.$parent.openDialog(_this2.deleteDialog);
         }
       });
       this.openDeleteModal = false;
@@ -27303,7 +27307,7 @@ var _hoisted_7 = {
   key: 1
 };
 var _hoisted_8 = {
-  "class": "cream"
+  "class": "no_show"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
@@ -27787,8 +27791,10 @@ var _hoisted_6 = {
 };
 var _hoisted_7 = ["onClick"];
 var _hoisted_8 = {
-  key: 1,
-  "class": "cream"
+  key: 1
+};
+var _hoisted_9 = {
+  "class": "no_show"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Head");
@@ -27830,7 +27836,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }),
       _: 2 /* DYNAMIC */
     }, 1032 /* PROPS, DYNAMIC_SLOTS */, ["wine", "quantities"]);
-  }), 128 /* KEYED_FRAGMENT */))])])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__('dialogue.no_wine')), 1 /* TEXT */)]))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Modal, {
+  }), 128 /* KEYED_FRAGMENT */))])])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__('dialogue.oh')), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__('dialogue.no_wine')), 1 /* TEXT */)])]))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Modal, {
     toggleOff: $options.toggleModal
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {

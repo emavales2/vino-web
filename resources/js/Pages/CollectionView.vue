@@ -38,8 +38,8 @@
                     </div>
                 </div>
 
-                <div class="cream" v-else>
-                    <p>{{ __('dialogue.no_wine') }}</p>
+                <div v-else>
+                    <p class="no_show"><strong>{{__('dialogue.oh')}}</strong> {{ __('dialogue.no_wine') }}</p>
                 </div>
             </section>
         </main>

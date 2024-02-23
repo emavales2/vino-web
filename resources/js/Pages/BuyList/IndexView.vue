@@ -33,7 +33,7 @@
             </div>
 
             <div v-else>
-                <p class="cream">{{ __('cellar.no_list') }}</p>
+                <p class="no_show">{{ __('cellar.no_list') }}</p>
             </div>
         </main>
     </div>
