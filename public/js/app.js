@@ -24423,17 +24423,33 @@ __webpack_require__.r(__webpack_exports__);
       if (this.form.quantity > 1) this.form.quantity--;
     },
     toggleForm: function toggleForm() {
-      if (this.cellars.length > 1) this.showForm = true;else this.storeInCellar(this.cellars[0]);
+      if (this.cellars.length > 1) this.showForm = true;else this.submit();
     },
-    submit: function submit() {},
-    storeInCellar: function storeInCellar(cellar) {},
-    deleteWine: function deleteWine() {
+    submit: function submit() {
       var _this = this;
       _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__.Inertia["delete"](route('buylist.delete', {
         wine: this.wine
       }), {
+        onFinish: function onFinish() {
+          _this.toggleModal();
+          _this.form.post(route('cellarwine.store'), {
+            onSuccess: function onSuccess() {
+              var cellarName = _this.cellars.find(function (c) {
+                return c.id == _this.form.cellar_id;
+              }).name;
+              _this.openDialog("yes");
+            }
+          });
+        }
+      });
+    },
+    deleteWine: function deleteWine() {
+      var _this2 = this;
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__.Inertia["delete"](route('buylist.delete', {
+        wine: this.wine
+      }), {
         onSuccess: function onSuccess() {
-          _this.openDialog("Yes ! you deleted this wine from you buy list");
+          _this2.openDialog("Yes ! you deleted this wine from you buy list");
         }
       });
       this.toggleModal();
@@ -26263,7 +26279,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, "Cancel")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.showForm ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("form", {
     key: 1,
     onSubmit: _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
-      return _ctx.addToCellar && _ctx.addToCellar.apply(_ctx, arguments);
+      return $options.submit && $options.submit.apply($options, arguments);
     }, ["prevent"])),
     "class": "form-quantity variant-modal"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("legend", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__('select')), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.cellars, function (cellar, i) {

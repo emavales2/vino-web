@@ -8,7 +8,7 @@
     <button class="button sml" @click="toggleModal">Cancel</button>
   </div>
 
-  <form v-if=showForm @submit.prevent="addToCellar" class="form-quantity variant-modal">         
+  <form v-if=showForm @submit.prevent="submit" class="form-quantity variant-modal">         
     <section>
       <legend class="fs_6 display-font coral">{{ __('select') }}</legend>
       <div>
@@ -63,14 +63,22 @@ export default{
     },
     toggleForm () {
       if(this.cellars.length > 1 ) this.showForm = true
-      else this.storeInCellar(this.cellars[0])
+      else this.submit()
     },
     submit () {
-
-    },
-    storeInCellar (cellar) {
-      
-      
+      Inertia.delete(route('buylist.delete', { wine: this.wine }), {
+        onFinish: () => {
+          this.toggleModal()
+          this.form.post(route('cellarwine.store'), {
+            onSuccess: () => {
+              const cellarName = this.cellars.find(c => c.id == this.form.cellar_id).name
+              this.openDialog(
+                `yes`
+              )
+            }
+          })
+        }
+      })
     },
     deleteWine () {
       Inertia.delete(route('buylist.delete', { wine: this.wine }), {
