@@ -113,7 +113,7 @@ button {
 }
 
 button[disabled]{
-    filter: brightness(.01);
+    filter: opacity(.5);
 }
 
 
