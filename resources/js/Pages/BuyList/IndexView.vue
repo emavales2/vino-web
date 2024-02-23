@@ -97,12 +97,7 @@ export default {
     addOne (wine) {
       Inertia.visit(route('buylist.add', { wine: wine }),
       { preserveScroll: true })
-    },
-/*     delete () {
-      Inertia.delete(route('buylist.delete', { wine: this.wineId }),
-      { preserveScroll: true })
-      this.openDeleteModal = false
-    } */
+    }
   },
   props: ['buylist', 'cellars']
 }

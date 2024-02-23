@@ -20,7 +20,7 @@
             class="radio" 
             v-model="form.cellar_id" 
             :value="cellar.id"
-        >
+          >
           <label :for=cellar.id>{{ cellar.name }}</label>
         </div>
       </div>
