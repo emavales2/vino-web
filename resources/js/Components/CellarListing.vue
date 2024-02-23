@@ -7,7 +7,7 @@
       </li>
     </ul>
 
-    <p class="no_show" v-else><strong>OH NO!</strong> You have no cellars yet.</p>
+    <p class="no_show" v-else><strong>{{ __('dialogue.oh') }}</strong> {{ __('dialogue.no_cellar') }}</p>
   </section>
 </template>
 

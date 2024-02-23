@@ -85,8 +85,8 @@
         <ConfirmModal
             :toggleModal="toggleModal"
             :YesAction="delete"
-            action="delete"
-            actionMessage="Are you sure you want to delete your account?"
+            :action="modalAction"
+            :actionMessage="modalMessage"
         />
     </Modal>
 </template>
@@ -120,7 +120,9 @@ export default {
                 errors: {},
             }),
             openDeleteModal: false,
-            message: null
+            message: null,
+            modalMessage: this.trans.dialogue.delete_account,
+            modalAction: this.trans.dialogue.delete
         };
     },
     layout: MainLayout,
@@ -146,6 +148,6 @@ export default {
             this.openDeleteModal = false;
         },
     },
-    props: ["user"],
+    props: ["user", 'trans'],
 };
 </script>
