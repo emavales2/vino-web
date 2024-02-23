@@ -1,4 +1,15 @@
 {
+    "actions": {
+        "remove": "enlever",
+        "store": "ins\u00e9rer",
+        "store_all": "ins\u00e9rer tout",
+        "delete": "supprimer",
+        "save": "sauvegarder",
+        "add": "ajouter",
+        "cancel": "annuler",
+        "close": "fermer",
+        "open": "ouvrir"
+    },
     "auth": {
         "failed": "Ces identifiants ne correspondent pas \u00e0 nos enregistrements.",
         "password": "Le mot de passe fourni est incorrect.",
@@ -15,6 +26,13 @@
         "logout": "Se d\u00e9connecter",
         "remove": "Enlever",
         "yes_delete": "Oui, supprimer"
+    },
+    "buylist": {
+        "just_delete": "supprimer le vin",
+        "store_in_cellar": "voulez-vous ins\u00e9rer ce vin dans un cellier?",
+        "success_store_beg": "Super! vous venez d'ajouter",
+        "success_store_mid": "bouteille(s) dans votre",
+        "success_delete": "vous avez supprimer ce vin de votre liste d'achat!"
     },
     "cellar": {
         "list": "Liste des celliers",
@@ -170,5 +188,9 @@
         "url": "Le format de l'URL de :attribute n'est pas valide.",
         "custom": [],
         "attributes": []
+    },
+    "words": {
+        "yes": "oui",
+        "no": "non"
     }
 }

@@ -2,10 +2,10 @@
   <div v-if="!showForm" class="confirm">
     <p>{{ actionMessage }}</p>
     <div>
-      <button class="button sml" @click="toggleForm">Yes, {{ yesMessage }}</button>
-      <button class="button sml" @click="deleteWine">No, {{ noMessage }}</button>
+      <button class="button sml" @click="toggleForm">{{ __('words.yes') }}, {{ yesMessage }}</button>
+      <button class="button sml" @click="deleteWine">{{ __('words.no') }}, {{ noMessage }}</button>
     </div>
-    <button class="button sml" @click="toggleModal">Cancel</button>
+    <button class="button sml" @click="toggleModal">{{__('actions.cancel')}}</button>
   </div>
 
   <form v-if=showForm @submit.prevent="submit" class="form-quantity variant-modal">         
@@ -26,7 +26,7 @@
       </div>
     </section>
     <section>
-      <button class="button sml button_coral">Store all</button>
+      <button class="button sml button_coral">{{ __('actions.store_all') }}</button>
     </section>
   </form>
 
@@ -36,8 +36,8 @@
 import { useForm } from '@inertiajs/inertia-vue3';
 import PlusButton from './ButtonsIcons/PlusButton.vue';
 import MinusButton from './ButtonsIcons/MinusButton.vue';
-import { computed } from 'vue';
 import { Inertia } from '@inertiajs/inertia';
+
 export default{
   name: 'BuyListToCellar',
   components:{
@@ -73,7 +73,7 @@ export default{
             onSuccess: () => {
               const cellarName = this.cellars.find(c => c.id == this.form.cellar_id).name
               this.openDialog(
-                `Yes! you just added ${this.form.quantity} bottle(s) to ${cellarName}`
+                `${this.__('buylist.success_store_beg') + ' ' + this.wine.quantity + ' ' + this.__('buylist.success_store_mid') + ' ' + cellarName }`
               )
             }
           })
@@ -84,7 +84,7 @@ export default{
       Inertia.delete(route('buylist.delete', { wine: this.wine }), {
         onSuccess: () => {
           this.openDialog(
-              `you deleted this wine from you buy list`
+              `${this.__('buylist.success_delete')}`
           );
         },
       })

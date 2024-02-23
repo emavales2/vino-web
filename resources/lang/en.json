@@ -1,4 +1,15 @@
 {
+    "actions": {
+        "remove": "remove",
+        "store": "store",
+        "store_all": "store all",
+        "delete": "delete",
+        "save": "save",
+        "add": "add",
+        "cancel": "cancel",
+        "close": "close",
+        "open": "open"
+    },
     "auth": {
         "failed": "These credentials do not match our records.",
         "password": "The provided password is incorrect.",
@@ -16,6 +27,13 @@
         "remove": "Remove",
         "yes_delete": "Yes, delete",
         "yes": "Yes"
+    },
+    "buylist": {
+        "just_delete": "just delete them",
+        "store_in_cellar": "do you want to store this wine in a cellar?",
+        "success_store_beg": "Great! you just added",
+        "success_store_mid": "bottle(s) in your",
+        "success_delete": "you deleted this wine from your buy list!"
     },
     "cellar": {
         "list": "List of cellars",
@@ -231,5 +249,9 @@
             }
         },
         "attributes": []
+    },
+    "words": {
+        "yes": "yes",
+        "no": "no"
     }
 }
