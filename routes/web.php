@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CellarController;
 use App\Http\Controllers\CellarHasWineController;
 use App\Http\Controllers\BuyListController;
+use App\Http\Controllers\NoteController;
 use App\Http\Controllers\LocaleController;
 use App\Models\BuyList;
 use App\Providers\WineProvider;
@@ -80,6 +81,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/buy-list-create/{wine}', [BuyListController::class, 'create'])->name('buylist.create');
     Route::post('/buy-list', [BuyListController::class, 'store'])->name('buylist.store');
     Route::delete('/buy-list/{wine}', [BuyListController::class, 'destroy'])->name('buylist.delete');
+
+    //Notes
+    Route::get('note-create', [NoteController::class, 'create'])->name('note.create');
+
 
     // Utilitaires
     //-------------- Add & Remove One --------------------
