@@ -121,6 +121,7 @@ export default {
   layout: MainLayout,
   methods: {
     submit() {
+      console.log(this.form.id);
       this.form.put(route("wine.update", {wine: this.wine.id}), {
         onSuccess: () => {
           this.$parent.openDialog('Wine updated successfully!');

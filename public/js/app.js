@@ -25881,6 +25881,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     submit: function submit() {
       var _this = this;
+      console.log(this.form.id);
       this.form.put(route("wine.update", {
         wine: this.wine.id
       }), {
@@ -28439,7 +28440,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $data.form.name = $event;
     }),
-    required: "",
     autofocus: "",
     autocomplete: "name",
     placeholder: "what is the wine's name"

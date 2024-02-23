@@ -117,6 +117,7 @@ class WineController extends Controller
      */
     public function edit(Wine $wine)
     {
+
         $wine = new WineResource($wine);
         $wine->resolve();
         return Inertia::render('Wine/EditView', compact('wine'));
@@ -131,8 +132,9 @@ class WineController extends Controller
      */
     public function update(Request $request, Wine $wine)
     {
+
         $request->validate([
-            'name' => 'min:3|max:100',
+            'name' => 'required|min:3|max:100',
             'type' => 'min:3|max:45|nullable',
             'country' => 'min:3|max:100|nullable',
             'size' => 'min:3|max:45|nullable',
