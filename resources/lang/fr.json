@@ -13,7 +13,8 @@
         "see_more": "Voir plus",
         "add_custom_wine": "Ajouter un vin personnalis\u00e9",
         "logout": "Se d\u00e9connecter",
-        "remove": "Enlever"
+        "remove": "Enlever",
+        "yes_delete": "Oui, supprimer"
     },
     "cellar": {
         "list": "Liste des celliers",
@@ -57,9 +58,11 @@
         "show_view": "\u00cates-vous s\u00fbr de vouloir supprimer ce cellier? Tous les vins seront \u00e9galement supprim\u00e9s.",
         "delete_wine": "\u00cates-vous s\u00fbr de vouloir supprimer ce vin? Cette action le supprimera \u00e9galement de vos celliers. Cette action est irr\u00e9versible.",
         "show_view_wine": "\u00cates-vous s\u00fbr de vouloir supprimer ce vin?",
+        "find_wine": "Trouver un vin !",
         "no_wine": " Vous n'avez pas encore de vin",
         "no_term": "Aucun vin trouv\u00e9 avec le terme ",
         "Oh": "Oh non!",
+        "no_cellar": " Vous n'avez pas encore de cellier",
         "yeah": "Yeah! Vous venez d'ajouter ",
         "bottle": " bouteille",
         "s": "s",
@@ -70,7 +73,9 @@
         "result": " r\u00e9sultat(s) pour",
         "too_many": "Il y a trop de r\u00e9sultats, voici les 1000 premiers",
         "create": "Vous pouvez toujours cr\u00e9er votre vin personnalis\u00e9 !",
-        "create_wine": "Cr\u00e9er votre vin"
+        "create_wine": "Cr\u00e9er votre vin",
+        "delete_account": "\u00cates-vous s\u00fbr de vouloir supprimer votre compte ? Cette action est irr\u00e9versible.",
+        "delete": "supprimer"
     },
     "home": {
         "sub": "Votre sanctuaire",
