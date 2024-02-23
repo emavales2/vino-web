@@ -17,7 +17,7 @@
                     <button
                         type="button"
                         @click.stop="toggleModal(cellar)"
-                        class="font_link cream"
+                        class="button btn-sml btn-warning"
                     >
                         {{ __("cellar.cellar_delete") }}
                     </button>
@@ -67,7 +67,7 @@
                       
                       </span>
                       <button
-                          class="button btn-sml btn-full btn-coral"
+                          class="button btn-sml btn-warning"
                           @click.stop="toggleModalWine(wine.wine, cellar.id)"
                       >
                           {{ __("buttons.delete") }}

@@ -31,6 +31,7 @@ return [
     'how_many' => 'Combien de bouteilles?',
     'add_buylist' => 'Ajouter à votre liste d\'achats',
     'save_wine' => 'Enregistrer ce vin',
+    'edit_title' => 'Modifier votre vin personnalisé',
     // Fiche Vin
     'code' => 'Code SAQ',
     'price' => 'Prix',

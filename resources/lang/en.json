@@ -28,7 +28,8 @@
         "logout": "Logout",
         "remove": "Remove",
         "yes_delete": "Yes, delete",
-        "yes": "Yes"
+        "yes": "Yes",
+        "update": "Update"
     },
     "buylist": {
         "just_delete": "just delete them",
@@ -66,6 +67,7 @@
         "how_many": "How many bottles?",
         "add_buylist": "Add this wine to your buylist",
         "save_wine": "Save this wine",
+        "edit_title": "Edit your custom wine",
         "code": "SAQ code",
         "price": "Price",
         "buylist": "Buylist",
@@ -103,7 +105,8 @@
         "account_deleted": "Your account has been deleted. We are sad to see you go. Goodbye!",
         "account_updated": "Great ! Your account has been updated.",
         "registerDialog": "Yeah ! Thanks for register",
-        "wine_create": "Great ! Your wine has been added."
+        "wine_create": "Great ! Your wine has been added.",
+        "wine_update": "Great ! Your wine has been updated."
     },
     "home": {
         "sub": "Your personal",

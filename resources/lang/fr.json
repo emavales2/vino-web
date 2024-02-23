@@ -27,7 +27,9 @@
         "add_custom_wine": "Ajouter un vin personnalis\u00e9",
         "logout": "Se d\u00e9connecter",
         "remove": "Enlever",
-        "yes_delete": "Oui, supprimer"
+        "yes_delete": "Oui, supprimer",
+        "yes": "Oui",
+        "update": "Mettre \u00e0 jour"
     },
     "buylist": {
         "just_delete": "supprimer le vin",
@@ -64,6 +66,7 @@
         "how_many": "Combien de bouteilles?",
         "add_buylist": "Ajouter ce vin \u00e0 votre liste d'achats",
         "save_wine": "Enregistrer ce vin",
+        "edit_title": "Modifier votre vin personnalis\u00e9",
         "code": "Code SAQ",
         "price": "Prix",
         "buylist": "Liste d'achats",
@@ -101,7 +104,8 @@
         "account_deleted": "Votre compte a \u00e9t\u00e9 supprim\u00e9. Nous sommes tristes de vous voir partir. Au revoir !",
         "account_updated": "Super ! Votre compte a \u00e9t\u00e9 mis \u00e0 jour.",
         "registerDialog": "Yeah ! Merci pour votre inscription",
-        "wine_create": "Super ! Votre vin a \u00e9t\u00e9 ajout\u00e9."
+        "wine_create": "Super ! Votre vin a \u00e9t\u00e9 ajout\u00e9.",
+        "wine_update": "Super ! Votre vin a \u00e9t\u00e9 mis \u00e0 jour."
     },
     "home": {
         "sub": "Votre sanctuaire",
