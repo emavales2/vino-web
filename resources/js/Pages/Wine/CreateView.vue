@@ -180,6 +180,7 @@
           cellar_qty: '0',
           buyList_qty: '',
         }),
+        wineDialog: this.trans.dialogue.wine_create
       }
     },
     layout: MainLayout,
@@ -187,11 +188,11 @@
       submit () {
         this.form.post(route('wine.store'), {
           onSuccess: () => {
-            this.$parent.openDialog(`Great ! Your wine has been added`);
+            this.$parent.openDialog(this.wineDialog);
           }
       });
       }
     },
-    props: ['cellars']
+    props: ['cellars', 'trans']
   }
   </script>

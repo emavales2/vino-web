@@ -25826,7 +25826,8 @@ __webpack_require__.r(__webpack_exports__);
         cellar_id: this.cellars[0].id || null,
         cellar_qty: '0',
         buyList_qty: ''
-      })
+      }),
+      wineDialog: this.trans.dialogue.wine_create
     };
   },
   layout: _Layouts_MainLayout_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
@@ -25835,12 +25836,12 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
       this.form.post(route('wine.store'), {
         onSuccess: function onSuccess() {
-          _this.$parent.openDialog("Great ! Your wine has been added");
+          _this.$parent.openDialog(_this.wineDialog);
         }
       });
     }
   },
-  props: ['cellars']
+  props: ['cellars', 'trans']
 });
 
 /***/ }),
