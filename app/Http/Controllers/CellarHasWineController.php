@@ -9,6 +9,7 @@ use App\Models\Wine;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\DB;
 
 class CellarHasWineController extends Controller
 {
@@ -160,5 +161,27 @@ class CellarHasWineController extends Controller
     {
         $cellarHasWine = new CellarHasWine;
         $cellarHasWine::where('cellar_id', $cellar->id)->where('wine_id', $wine->id)->delete();
+
+        return redirect(route('cellar.show', $cellar))->with('timestamp', now());
+    }
+
+    public function destroyAllWine(Cellar $cellar)
+    {
+        try {
+            DB::beginTransaction();
+
+            CellarHasWine::where('cellar_id', $cellar->id)->delete();
+
+            $cellar->delete();
+
+            DB::commit();
+    
+            return redirect(route('cellar.index'));
+        } catch (\Exception $e) {
+
+            DB::rollback();
+    
+            return redirect(route('cellar.index'))->with('error', 'Error deleting records.');
+        }
     }
 }
