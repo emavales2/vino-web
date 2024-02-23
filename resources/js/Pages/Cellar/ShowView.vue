@@ -1,28 +1,34 @@
 <template>
-    <Head title="Cellar" />
+  <Head title="Cellar" />
 
-    <div class="bckgd">
-        <main>
-            <GoBackButton :color="'cream'" class="button_back" />
+  <div class="bckgd">
+      <main>
+          <GoBackButton :color="'cream'" class="button_back" />
 
-            <!-- ---- * Titre et boutons qui affectent le cellier * ---- -->
-            <header>
-                <h1 class="index_title">{{ cellar.name }}</h1>
-                <section class="row_els_apart">
-                    <Link
-                        :href="route('cellar.edit', cellar.id)"
-                        class="button"
-                        >{{ __("buttons.edit") }}</Link
-                    >
-                    <button
-                        type="button"
-                        @click.stop="toggleModal(cellar)"
-                        class="button"
-                    >
-                        {{ __("buttons.delete") }}
-                    </button>
-                </section>                
-            </header>
+          <header>
+              <h1 class="index_title">{{ cellar.name }}</h1>
+
+              <section class="row_els_apart">
+                  <Link
+                      :href="route('cellar.edit', cellar.id)"
+                      class="button sml"
+                      >{{ __("buttons.edit") }}</Link
+                  >
+                  <button
+                      type="button"
+                      @click.stop="toggleModal(cellar)"
+                      class="button sml"
+                  >
+                      {{ __("buttons.delete") }}
+                  </button>
+              </section>
+              <SearchAuto 
+                :cellars="collection"
+                :collection="collectionReceived"
+                @collection-event="receiveTreatedCollection"
+                v-if="collection.length !== 0"
+              />
+          </header>
 
             <!-- ---- * Carte nav pour filtrer les vins * ---- -->
             <aside v-if="collection.length !== 0 || term" class="card_nav bckgd-burg-lt">
@@ -114,8 +120,15 @@ data() {
     openDeleteModal: false,
     cellarId: null,
     message: null,
-    wineId: null
+    wineId: null,
+    collectionReceived: this.collection || [],
+    term: null
   }
+},
+watch: {
+  collectionReceived() {
+    this.filteredCollection = this.collectionReceived.filter(wine => !this.collection.includes(wine));
+  },
 },
 layout: MainLayout,
 methods: {
@@ -148,8 +161,12 @@ methods: {
     Inertia.delete(route('cellarwine.delete', {cellar: this.cellar, wine: this.wineId }),
     { preserveScroll: true })
     this.openDeleteModal = false
+  },
+  receiveTreatedCollection(data) {
+    this.collectionReceived = data.myCollection;
+    this.term = data.term;
   }
 },
-props:['cellar', 'collection', 'trans', 'term']
+props:['cellar', 'collection', 'trans']
 }
 </script>
