@@ -8,7 +8,9 @@
         "add": "ajouter",
         "cancel": "annuler",
         "close": "fermer",
-        "open": "ouvrir"
+        "open": "ouvrir",
+        "filter": "filtre",
+        "sort": "trier"
     },
     "auth": {
         "failed": "Ces identifiants ne correspondent pas \u00e0 nos enregistrements.",

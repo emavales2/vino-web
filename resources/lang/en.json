@@ -8,7 +8,9 @@
         "add": "add",
         "cancel": "cancel",
         "close": "close",
-        "open": "open"
+        "open": "open",
+        "filter": "filter",
+        "sort": "sort"
     },
     "auth": {
         "failed": "These credentials do not match our records.",

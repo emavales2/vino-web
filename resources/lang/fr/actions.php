@@ -10,4 +10,6 @@ return [
   'cancel' => 'annuler',
   'close' => 'fermer',
   'open' => 'ouvrir',
+  'filter' => 'filtre',
+  'sort' => 'trier'
 ];
