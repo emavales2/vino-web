@@ -16,24 +16,15 @@
                 >
                 <section>
                     <div>
-<!--                       <MinusButton 
-                        :color="'cream'" 
-                        :disabled="wine.quantity === 0" 
-                        @click="removeOne(wine, wine.quantity)"
-                      />
-                      <PlusButton 
-                        :color="'cream'" 
-                        @click="addOne(wine)"
-                      /> -->
                     </div>
-                    <button class="button sml" @click="toggleModal(wine)">{{ __('buttons.remove') }}</button>
+                    <button class="button btn-sml btn-coral" @click="toggleModal(wine)">{{ __('buttons.remove') }}</button>
                   </section>
                 </WineThumbnail>
                 </ul>
             </div>
 
             <div v-else>
-                <p class="cream">{{ __('cellar.no_list') }}</p>
+                <p class="no_show">{{ __('cellar.no_list') }}</p>
             </div>
         </main>
     </div>
@@ -46,9 +37,9 @@
         v-if="wineId"
         :toggleModal="toggleModal"
         :openDialog="this.$parent.openDialog"
-        :yesMessage="'store'"
-        :noMessage="'just delete them'"
-        :actionMessage="'do you want to store this wine in a cellar?'"
+        :yesMessage="__('actions.store')"
+        :noMessage="__('buylist.just_delete')"
+        :actionMessage="__('buylist.store_in_cellar')"
         :wine="wineId"
         :cellars="cellars"
       />
@@ -85,7 +76,6 @@ export default {
   layout: MainLayout,
   methods: {
     toggleModal(wine) {
-      this.message = 'do you want to store the bottles in a cellar?';
       this.wineId = wine;
       this.openDeleteModal = !this.openDeleteModal;
     },
@@ -97,12 +87,7 @@ export default {
     addOne (wine) {
       Inertia.visit(route('buylist.add', { wine: wine }),
       { preserveScroll: true })
-    },
-/*     delete () {
-      Inertia.delete(route('buylist.delete', { wine: this.wineId }),
-      { preserveScroll: true })
-      this.openDeleteModal = false
-    } */
+    }
   },
   props: ['buylist', 'cellars']
 }

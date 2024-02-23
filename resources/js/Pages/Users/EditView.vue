@@ -2,7 +2,7 @@
     <Head title="Edit Profile" />
     <div>
         <main>
-            <GoBackButton :color="'cream'" class="button_back"/>
+            <GoBackButton :color="'cream'"/>
             <header>
                 <h1 class="index_title">{{ __('user.edit_profile') }}</h1>
             </header>
@@ -122,7 +122,9 @@ export default {
             openDeleteModal: false,
             message: null,
             modalMessage: this.trans.dialogue.delete_account,
-            modalAction: this.trans.dialogue.delete
+            modalAction: this.trans.dialogue.delete,
+            updateDialog: this.trans.dialogue.account_updated,
+            deleteDialog: this.trans.dialogue.account_deleted
         };
     },
     layout: MainLayout,
@@ -131,7 +133,7 @@ export default {
             this.form.put(route("profile.update", { user: this.user.id }), {
                 onSuccess: () => {
                     this.$parent.openDialog(
-                        `Great ! Your profile has been updated`
+                        this.updateDialog
                     );
                 },
             });
@@ -142,7 +144,7 @@ export default {
         delete() {
             this.form.delete(route("users.delete", { user: this.user.id }), {
                 onSuccess: () => {
-                    this.$parent.openDialog(`Your account has been deleted`);
+                    this.$parent.openDialog(this.deleteDialog);
                 },
             });
             this.openDeleteModal = false;

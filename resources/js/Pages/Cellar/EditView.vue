@@ -2,7 +2,7 @@
   <Head title="Edit Cellar" />
 
   <main>
-    <GoBackButton :color="'cream'" class="button_back" />
+    <GoBackButton :color="'cream'" />
 
     <header>
       <h1 class="index_title">{{ __('cellar.edit') }}</h1>

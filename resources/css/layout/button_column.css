@@ -1,0 +1,13 @@
+.button_column {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+  gap: var(--safe-area);
+  align-items: center;
+  max-height: 100%;
+}
+
+.button_column_tight {
+    gap: var(--small-space);
+  }

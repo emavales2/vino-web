@@ -27,5 +27,9 @@ return [
     // User edit
     'delete_account' => 'Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.',
     'delete' => 'supprimer',
+    'account_deleted' => 'Votre compte a été supprimé. Nous sommes tristes de vous voir partir. Au revoir !',
+    'account_updated' => 'Super ! Votre compte a été mis à jour.',
+    // Register
+    'registerDialog' => 'Yeah ! Merci pour votre inscription',
 
 ];
