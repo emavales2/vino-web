@@ -8,7 +8,7 @@ button {
 
 /* attrs pour tous les boutons */
 .button {
-    border: 3px solid var(--cream);
+    border: 2px solid var(--cream);
     border-radius: var(--large-space);
     color: var(--cream);
     display: block;
@@ -20,6 +20,10 @@ button {
     padding: 16px;
     text-transform: uppercase;
     width: max-content;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* - états - */

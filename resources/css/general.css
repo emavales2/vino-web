@@ -22,7 +22,7 @@ main {
     padding: var(--med-space); 
     display: flex;
     flex-direction: column;
-    gap: var(--xlarge-space);
+    gap: var(--xxlarge-space);
     flex: 1;
     /* justify-content: center; */
     position: relative;
