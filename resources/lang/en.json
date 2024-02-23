@@ -25,6 +25,7 @@
         "name": "Cellar name",
         "new": "New cellar",
         "give_name": "Give a name to your cellar!",
+        "cellar_delete": "Delete this cellar",
         "add_wine": "Add this wine to your cellar",
         "select": "Select a cellar",
         "no_cellar": "It seems like you have no cellar, please create one first",
@@ -77,7 +78,10 @@
         "create": "You can always create your custom wine !",
         "create_wine": "Create your wine",
         "delete_account": "Are you sure you want to delete your account? This action cannot be undone.",
-        "delete": "delete"
+        "delete": "delete",
+        "account_deleted": "Your account has been deleted. We are sad to see you go. Goodbye!",
+        "account_updated": "Great ! Your account has been updated.",
+        "registerDialog": "Yeah ! Thanks for register"
     },
     "home": {
         "sub": "Your personal",

@@ -28,5 +28,9 @@ return [
     // User edit
     'delete_account' => 'Are you sure you want to delete your account? This action cannot be undone.',
     'delete' => 'delete',
+    'account_deleted' => 'Your account has been deleted. We are sad to see you go. Goodbye!',
+    'account_updated' => 'Great ! Your account has been updated.',
+    // Register
+    'registerDialog' => 'Yeah ! Thanks for register',
 
 ];

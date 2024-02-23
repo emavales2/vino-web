@@ -82,6 +82,7 @@ nav svg {
     justify-content: center;
     padding: var(--small-space) 0;
     padding-right: var(--small-space);
+    cursor: pointer;
 }
 
 /* ---------- * * BOTTOM NAV * * ---------- */

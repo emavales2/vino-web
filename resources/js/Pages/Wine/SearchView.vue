@@ -13,7 +13,7 @@
       </div>
       <div v-else>
         <p>{{ __('dialogue.create') }}</p>
-        <Link class="button sml" :href="route('wine.create')">{{ __('dialogue.create_wine') }}</Link>
+        <Link class="button button-sml" :href="route('wine.create')">{{ __('dialogue.create_wine') }}</Link>
       </div>
     </section>
   </main>

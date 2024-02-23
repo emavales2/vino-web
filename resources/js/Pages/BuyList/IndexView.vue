@@ -26,14 +26,14 @@
                         @click="addOne(wine)"
                       /> -->
                     </div>
-                    <button class="button sml" @click="toggleModal(wine)">{{ __('buttons.remove') }}</button>
+                    <button class="button button-sml" @click="toggleModal(wine)">{{ __('buttons.remove') }}</button>
                   </section>
                 </WineThumbnail>
                 </ul>
             </div>
 
             <div v-else>
-                <p class="cream">{{ __('cellar.no_list') }}</p>
+                <p class="no_show">{{ __('cellar.no_list') }}</p>
             </div>
         </main>
     </div>
