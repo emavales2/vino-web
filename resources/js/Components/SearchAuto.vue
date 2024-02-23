@@ -1,7 +1,7 @@
 <template>
   <div>
     <fieldset class="fieldset_1">
-      <legend aria-labelledby="search">Find a wine!</legend>
+      <legend aria-labelledby="search">{{ __('dialogue.find_wine') }}</legend>
       <label>
         <input 
           type="text" 

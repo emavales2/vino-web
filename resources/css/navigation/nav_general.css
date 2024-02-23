@@ -74,6 +74,15 @@ nav svg {
     padding-left: var(--small-space);
 }
 
+/* ---------- * * Language * * ---------- */
+.lang{
+    max-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--small-space) 0;
+    padding-right: var(--small-space);
+}
 
 /* ---------- * * BOTTOM NAV * * ---------- */
 /* ---------- * * Navigation en Général * * ---------- */

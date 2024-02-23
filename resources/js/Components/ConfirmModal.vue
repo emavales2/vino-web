@@ -2,8 +2,8 @@
   <div id="confirmModal" class="confirm">
     <p>{{ actionMessage }}</p>
     <div>
-      <button class="button sml" @click="YesAction">Yes, {{ action }}</button>
-      <button class="button sml" @click="toggleModal">Cancel</button>
+      <button class="button sml" @click="YesAction">{{ __('buttons.yes') }}, {{ action }}</button>
+      <button class="button sml" @click="toggleModal">{{ __('buttons.cancel') }}</button>
     </div>
   </div>
 </template>

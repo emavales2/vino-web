@@ -12,7 +12,9 @@
         "cancel": "Cancel",
         "see_more": "See more",
         "add_custom_wine": "Add custom wine",
-        "logout": "Logout"
+        "logout": "Logout",
+        "yes_delete": "Yes, delete",
+        "yes": "Yes"
     },
     "cellar": {
         "list": "List of cellars",
@@ -57,9 +59,11 @@
         "show_view": "Are you sure you want to delete this cellar? All wines will be deleted too.",
         "show_view_wine": "Are you sure you want to delete this wine?",
         "delete_wine": "Are you sure you want to delete this wine? This action will remove it from your cellars as well. This action cannot be undone.",
+        "find_wine": "Find a wine !",
         "no_wine": " You have no wines yet",
         "no_term": "No wines found with the term ",
         "Oh": "Oh No!",
+        "no_cellar": " You have no cellars yet",
         "yeah": "Yeah! You just added ",
         "bottle": " bottle",
         "s": "s",
@@ -70,7 +74,9 @@
         "result": " result(s) for",
         "too_many": "There is too many search results, here is the first 1000",
         "create": "You can always create your custom wine !",
-        "create_wine": "Create your wine"
+        "create_wine": "Create your wine",
+        "delete_account": "Are you sure you want to delete your account? This action cannot be undone.",
+        "delete": "delete"
     },
     "home": {
         "sub": "Your personal",

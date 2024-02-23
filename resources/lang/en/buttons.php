@@ -9,7 +9,8 @@ return [
     'see_more' => 'See more',
     'add_custom_wine' => 'Add custom wine',
     'logout' => 'Logout',
-
+    'yes_delete' => 'Yes, delete',
+    'yes' => 'Yes',
 
 
 ];
