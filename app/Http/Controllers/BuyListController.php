@@ -18,12 +18,12 @@ class BuyListController extends Controller
     public function index()
     {
         $userId = Auth::id();
-
+        $cellars = Auth::user()->cellar;
         $buylist = BuyList::where('buy_lists.user_id', $userId)
             ->join('wines', 'wines.id', '=', 'buy_lists.wine_id')
             ->get();
 
-        return Inertia::render('BuyList/IndexView', compact('buylist'));
+        return Inertia::render('BuyList/IndexView', compact('buylist', 'cellars'));
     }
 
     /**
