@@ -2,10 +2,10 @@
   <div v-if="!showForm" class="confirm">
     <p>{{ actionMessage }}</p>
     <div>
-      <button class="button sml" @click="toggleForm">{{ __('words.yes') }}, {{ yesMessage }}</button>
-      <button class="button sml" @click="deleteWine">{{ __('words.no') }}, {{ noMessage }}</button>
+      <button class="button btn-sml btn-coral" @click="toggleForm">{{ __('words.yes') }}, {{ yesMessage }}</button>
+      <button class="button btn-sml btn-warning" @click="deleteWine">{{ __('words.no') }}, {{ noMessage }}</button>
     </div>
-    <button class="button sml" @click="toggleModal">{{__('actions.cancel')}}</button>
+    <button class="button btn-sml btn-coral" @click="toggleModal">{{__('actions.cancel')}}</button>
   </div>
 
   <form v-if=showForm @submit.prevent="submit" class="form-quantity variant-modal">         

@@ -16,6 +16,7 @@
 
     @import url(layout/containers.css);
     @import url(layout/wine-list.css);
+    @import url(layout/button_column.css);
 
 
 /* ---------- * * DANS SECTION NAVIGATION * * ---------- */
@@ -26,9 +27,9 @@
 /* ---------- * * BOUTONS * * ---------- */
 
     @import url(buttons/buttons.css);
-    @import url(./buttons/goBackButton.css);
     @import url(buttons/search-button.css);
     @import url(./buttons/radio.css);
+    @import url(buttons/lien_sml.css);
 
 
 /* ---------- * * FORMULAIRES * * ---------- */

@@ -1,115 +1,83 @@
 
-/* --------- * BUTTON * --------- */
-
-/* In the components "PrimaryButton.vue", "SecondaryButton.vue", "DangerButton.vue" (came with Laravel) */
-
-/* cancel all previous button style */
+/* cancel all previous button style and add pointer*/
 button {
     background: none;
     border: none;
     cursor: pointer;
 }
+/* attrs pour tous les boutons */
 .button {
-    box-sizing: border-box;
-    font-family: 'Oswald', sans-serif;
-    padding: 16px;
-    width: max-content;
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: .05rem;
-    border-radius: var(--large-space);
     border: 3px solid var(--cream);
+    border-radius: var(--large-space);
     color: var(--cream);
-}
-
-.button_burgundy {
-    border: 3px solid var(--burgundy);
-    color: var(--burgundy);
-    background: none;
-}
-
-/* Variante de btn small */
-.button.sml {
-    padding: 8px 12px;
-    font-size: 0.8rem;
-    border: none;
-    background: var(--coral);
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.12rem;
+    font-weight: 500;
+    letter-spacing: var(--small-ltr-spacing);
+    line-height: 1rem;
+    padding: 16px;
+    text-transform: uppercase;
     width: max-content;
+}
 
-    /* what does that do? */
+/* - états - */
+.button:active {
+    transform: translate(2px, 2px);
+}
+.button:focus-visible {
+    outline-color: var(--coral);
+}
+
+/* - variants couleurs - */
+.button.btn-burgundy {
+    background: none;
+    border-color: var(--burgundy);
+    color: var(--burgundy);
+}
+.button.btn-coral {
+    background: var(--coral);
+    border-color: var(--coral);
+}
+.button.btn-warning {
+    background-color: var(--danger);
+    border-color:var(--danger);
+    color: var(--cream)
+}   
+
+/* - variants de tailles - */
+.button.btn-sml {
+    border-width: 2px;
+    font-size: 0.8rem;
+    padding: 8px 12px;
+    /* what does this do? */
     vertical-align: sub;
 }
-
-/* Variante de btn small */
-.button.sml.btn_wide {
-    width: 100%;
-    max-width: 100%;
-}
-
-/* Variante de btn Medium */
-.button.med {
-    padding: 12px;
+.button.btn-med {
     font-size: 1rem;
-    max-width: max-content;
+    padding: 12px;
+}
+.button.btn-full {
+    max-width: 120px;
+    width: 100%;
 }
 
-.button, .button a {
+/* - variants pour icones - */
+.button--icon{
+    border: none;
+    max-width: max-content;
+    padding: 0;
+}
+.button--icon:active{
+    transform: translate(2px, 2px);
+}
+.button--icon[disabled]{
+    filter: opacity(.5);
+}
+
+/* a.button {
     line-height: 1rem;
     font-weight: 400;
     font-size: 1.12rem;
     letter-spacing: var(--small-ltr-spacing);
-}
-
-.button_column {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    width: 100%;
-    gap: var(--safe-area);
-    align-items: center;
-    max-height: 100%;
-}
-
-.button:active {
-/*  maybe its simpler to just translate it, removes issues with borders and stuff */
-    transform: translate(2px, 2px);
-
-/* background-color: var(--coral);
-border: none; */
-}
-
-.lien_sml {
-    padding: 6px;
-    font-size: 0.6rem;
-    background: none;
-    /* vertical-align: sub; */
-    max-height: fit-content;
-    width: max-content;
-    font-family: 'Oswald', sans-serif;
-    display: block;
-}
-
-.flex-flow-unset {
-    flex-flow: unset;
-    max-height: 100%;
-}
-
-.lien_sml:hover {
-    color:var(--coral)
-}
-.borderless {
-    padding: 0;
-    border: none;
-}
-
-.button_back {
-    align-self: flex-start;
-}
-.button_back:active{
-    transform: translate(2px, 2px);
-}
-button[disabled]{
-    filter: opacity(.5);
-}
-
-
+} */

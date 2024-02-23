@@ -8,7 +8,6 @@
           id="search"
           class="mt-1 block w-full"
           placeholder="chardonnay"
-          v-focus
           v-model="term"
           @input="handleInput"
         />

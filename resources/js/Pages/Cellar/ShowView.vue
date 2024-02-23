@@ -36,35 +36,34 @@
             </aside>
 
             <ul class="wine-list" v-if="collection.length !== 0">
-                <WineThumbnail
-                    v-for="(wine, i) in collection"
-                    :key="i"
-                    :wine="wine.wine"
-                    :cellar="cellar"
-                    :quantity="wine.qty"
-                >
-                    <!-- section std(sloté dans WineThumbnail), inclus btns +/- et btn "delete" -->
-                    <section class="thb_nav">
-                            <span class="row_els_apart">
-                                <PlusButton
-                                    :color="'coral'"
-                                    @click.stop="addOne(wine.wine)"
-                                />
-                            
-                                <MinusButton
-                                    :color="'coral'"
-                                    :disabled="wine.qty === 0"
-                                    @click.stop="removeOne(wine.wine, wine.qty)"
-                                />
-                            </span>
-                            <button
-                            class="button sml btn_wide"
-                            @click.stop="toggleModalWine(wine.wine, cellar.id)"
-                        >
-                            {{ __("buttons.delete") }}
-                        </button>                        
-                    </section>
-                </WineThumbnail>
+              <WineThumbnail
+                  v-for="(wine, i) in collection"
+                  :key="i"
+                  :wine="wine.wine"
+                  :cellar="cellar"
+                  :quantity="wine.qty"
+              >
+                <!-- section std(sloté dans WineThumbnail), inclus btns +/- et btn "delete" -->
+                <section class="thb_nav">
+                  <span class="row_els_apart">
+                    <MinusButton
+                        :color="'coral'"
+                        :disabled="wine.qty === 0"
+                        @click.stop="removeOne(wine.wine, wine.qty)"
+                    />
+                    <PlusButton
+                        :color="'coral'"
+                        @click.stop="addOne(wine.wine)"
+                    />
+                  </span>
+                  <button
+                    class="button sml btn_wide"
+                    @click.stop="toggleModalWine(wine.wine, cellar.id)"
+                  >
+                    {{ __("buttons.delete") }}
+                  </button>                        
+                </section>
+              </WineThumbnail>
             </ul>
             <div v-else>
                 <p class="cream" v-if="term">{{ __('dialogue.no_term') }} <strong>{{ term }}</strong>.</p>
