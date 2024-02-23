@@ -138,6 +138,7 @@ small {
 
 /* ----- * APPLICATIONS * ----- */
 
+/* ---- * Tous les titres h1 principaux std * ---- */
 .index_title {
     font-family: var(--block-font);
     font-size: 2.488rem;
@@ -150,6 +151,7 @@ small {
     padding-bottom: var(--small-space);
 }
 
+/* ---- * Tous les sous-titres ou titres h2 de section std * ---- */
 .disp_subtitle {
     padding-bottom: var(--med-space);
     font-size: 1.728rem;
@@ -161,6 +163,7 @@ small {
     max-width: 15ch;
 }
 
+/* ---- * Var taille * ---- */
 .disp_subtitle.sm {
     font-size: 1.4rem;
 }

@@ -13,7 +13,6 @@
     padding: var(--small-space) var(--vsmall-space); 
 }
 
-
 /* ---- * Contient l'image + info du vin * ---- */
 .wine-thumbnail a {
     gap: var(--small-space);
@@ -56,6 +55,8 @@
     flex-flow: column;
     gap: var(--small-space);
     justify-content: space-between;
+    max-height: 100%;
+    height: 75px;
 }
 
 /* ---- * Nom du vin * ---- */

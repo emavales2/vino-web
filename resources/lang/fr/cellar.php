@@ -17,6 +17,7 @@ return [
     // Collection
     'your_wines' => 'Vos vins',
     'add_custom' => 'Ajouter un vin personnalisé',
+    'more_options' => 'Plus d\'options',
     // create custom wine
     'create_custom' => 'Créer un vin personnalisé',
     'tell_us' => 'Parlez-nous de votre vin...',
