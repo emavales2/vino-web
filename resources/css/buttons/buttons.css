@@ -13,11 +13,9 @@ button {
 .button {
     box-sizing: border-box;
     font-family: 'Oswald', sans-serif;
-
+    max-width: max-content;
     /* j'ai oté le align-self. En fait, ça joue sur de l'externe(comme margin) et ça peut créer des bugs dans l'alignement, svp aligner à partir du parent*/
     /* align-self: center; */
-
-
     padding: 16px;
     width: 100%;
     text-transform: uppercase;
@@ -35,7 +33,7 @@ button {
 }
 
 /* Variante de btn small */
-.button.sml {
+.button.button-sml {
     padding: 8px 12px;
     font-size: 0.8rem;
     max-height: max-content;
@@ -48,7 +46,7 @@ button {
 }
 
 /* Variante de btn small */
-.button.sml.btn_wide {
+.button.button-sml.btn_wide {
     width: 100%;
     max-width: 100%;
 }

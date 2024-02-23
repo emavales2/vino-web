@@ -26,11 +26,11 @@
                               <section>
                                 <Link v-if="wine.wine.user_id"
                                   :href="route('wine.edit', wine.wine.id)" 
-                                  class="button sml"
+                                  class="button button-sml"
                                 >
                                   edit wine
                                 </Link>
-                                <button class="button sml btn_wide" @click="toggleModal(wine.wine)">remove</button>
+                                <button class="button button-sml btn_wide" @click="toggleModal(wine.wine)">remove</button>
                               </section>
 
                             </WineThumbnail>

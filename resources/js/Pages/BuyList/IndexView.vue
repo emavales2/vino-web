@@ -26,7 +26,7 @@
                         @click="addOne(wine)"
                       /> -->
                     </div>
-                    <button class="button sml" @click="toggleModal(wine)">{{ __('buttons.remove') }}</button>
+                    <button class="button button-sml" @click="toggleModal(wine)">{{ __('buttons.remove') }}</button>
                   </section>
                 </WineThumbnail>
                 </ul>

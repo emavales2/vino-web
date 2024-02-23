@@ -8,6 +8,7 @@ return [
     'name' => 'Cellar name',
     'new' => 'New cellar',
     'give_name' => 'Give a name to your cellar!',
+    'cellar_delete' => 'Delete this cellar',
     // cellar/wine
     'add_wine' => 'Add this wine to your cellar',
     'select' => 'Select a cellar',

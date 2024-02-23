@@ -17,3 +17,24 @@
   width: var(--med-space);
   height: var(--med-space);
 }
+
+/* Class qui s'applique sur search Bar dans la page Dashboard */
+.search-bar.search-dashboard {
+  box-shadow: none;
+  background-color: transparent;
+  padding: 0;
+  & legend{
+    color: var(--cream);
+  }
+  & fieldset_1{
+    max-width: 100%;
+  }
+  & .fs_burg{
+    border-color: var(--cream);  
+  }
+  & svg{
+    fill: var(--cream);
+    margin-right: 10px;
+    margin-top: 3px;
+  }
+}

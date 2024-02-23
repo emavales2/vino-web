@@ -19,7 +19,7 @@
                         @click.stop="toggleModal(cellar)"
                         class="button"
                     >
-                        {{ __("buttons.delete") }}
+                        {{ __("cellar.cellar_delete") }}
                     </button>
                 </section>                
             </header>
@@ -30,8 +30,8 @@
                 <SearchAuto :cellar="cellar" :termReturn="term" />
                 <!-- <SearchAuto :cellar="cellar" :termReturn="term" v-if="collection.length !== 0 || term" /> -->
                 <span class="row_els_apart">
-                    <button class="button sml btn_wide">Filter</button>
-                    <button class="button sml btn_wide">Sort</button>
+                    <button class="button button-sml btn_wide">Filter</button>
+                    <button class="button button-sml btn_wide">Sort</button>
                 </span>
             </aside>
 
@@ -58,7 +58,7 @@
                                 />
                             </span>
                             <button
-                            class="button sml btn_wide"
+                            class="button button-sml btn_wide"
                             @click.stop="toggleModalWine(wine.wine, cellar.id)"
                         >
                             {{ __("buttons.delete") }}

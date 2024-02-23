@@ -24,6 +24,7 @@
         "name": "Nom du cellier",
         "new": "Nouveau cellier",
         "give_name": "Donnez un nom \u00e0 votre cellier !",
+        "cellar_delete": "Supprimer ce cellier",
         "add_wine": "Ajouter ce vin \u00e0 votre cellier",
         "select": "S\u00e9lectionner un cellier",
         "no_cellar": "Il semble que vous n'ayez pas de cellier, veuillez en cr\u00e9er un d'abord",
