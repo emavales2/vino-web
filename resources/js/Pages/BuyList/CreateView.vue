@@ -4,7 +4,7 @@
     <div class="bckgd bckgd-burg">
 
         <main class="main-default">
-            <GoBackButton :color="'cream'" class="button_back"/>
+            <GoBackButton :color="'cream'"/>
 
             <header>
                 <h1 class="fs_3 block-font coral">{{ __('cellar.add_buylist') }}</h1>
@@ -29,7 +29,7 @@
                 </section>
 
                 <section>
-                    <button class="button button_burgundy">{{ __('buttons.add') }}</button>
+                    <button class="button btn-burgundy">{{ __('buttons.add') }}</button>
                 </section>
             </form>
         </main>

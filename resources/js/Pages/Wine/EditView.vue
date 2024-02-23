@@ -3,7 +3,7 @@
 
 <div class="bckgd">
   <main>
-    <GoBackButton :color="'cream'" class="button_back"/>
+    <GoBackButton :color="'cream'"/>
     <header>
       <h1 class="index_title">Edit your custom wine</h1>
     </header>

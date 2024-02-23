@@ -31,6 +31,10 @@
     --warning-lt: #F4A22A;
     --warning: #AF7120;
 
+    /* ----- DANGER ----- */
+    --danger: #a6160e;
+    --danger-lt: #d8cdcc;
+
     /* ---------- * * APPLICATION * * ---------- */
 
     --text: var(--med-gray);
