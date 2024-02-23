@@ -19,7 +19,6 @@
     gap: var(--small-space);
     display: flex;
     flex-direction: column;
-    height: 100%;
 }
 
 /* ---- * Contient le ColorDrop et la qté de bouteilles * ---- */

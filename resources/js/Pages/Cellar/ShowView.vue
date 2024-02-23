@@ -3,7 +3,7 @@
 
   <div class="bckgd">
       <main>
-          <GoBackButton :color="'cream'" class="button_back" />
+          <GoBackButton :color="'cream'"/>
 
             <!-- ---- * Titre et boutons qui affectent le cellier * ---- -->
             <header>
@@ -46,7 +46,7 @@
                           />
                       </div>
                       <button
-                          class="button sml"
+                          class="button btn-sml btn-full btn-coral"
                           @click.stop="toggleModalWine(wine.wine, cellar.id)"
                       >
                           {{ __("buttons.delete") }}

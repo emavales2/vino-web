@@ -17,7 +17,7 @@
                 <section>
                     <div>
                     </div>
-                    <button class="button button-sml" @click="toggleModal(wine)">{{ __('buttons.remove') }}</button>
+                    <button class="button btn-sml btn-coral" @click="toggleModal(wine)">{{ __('buttons.remove') }}</button>
                   </section>
                 </WineThumbnail>
                 </ul>

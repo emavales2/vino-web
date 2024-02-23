@@ -2,7 +2,7 @@
     <Head title="Create Wine" />
     <div>
       <main class="column_40">
-            <GoBackButton :color="'cream'" class="button_back"/>
+            <GoBackButton :color="'cream'"/>
             <header>
             <h1 class="index_title">{{ __('cellar.create_custom') }}</h1>
             </header>
