@@ -1,38 +1,41 @@
 <template>
-    <Head title="Edit Cellar" />
+  <Head title="Edit Cellar" />
 
-    <main>
-        <GoBackButton :color="'cream'" class="button_back"/>
-    
-        <header>
-            <h1 class="index_title">{{__('cellar.edit')}}</h1>
-        </header>
+  <main>
+    <GoBackButton :color="'cream'" class="button_back" />
 
-        <form @submit.prevent="submitForm" :action="updateRoute">
-            <label for="name">
-                <h2 class="disp_subtitle">{{ __('cellar.modify_text') }}</h2>
-            </label>
-            
-            <fieldset class="fieldset_1">
-                <legend aria-labelledby="name">{{ __('cellar.name') }}</legend>
-                <input v-model="form.name" type="text" id="name" required>
-            </fieldset>
+    <header>
+      <h1 class="index_title">{{ __('cellar.edit') }}</h1>
+    </header>
 
-        <button class="button" type="submit">{{ __('buttons.save') }}</button>
-        </form>
-    </main>
+    <form @submit.prevent="submitForm">
+      <label for="name">
+        <h2 class="disp_subtitle">{{ __('cellar.modify_text') }}</h2>
+      </label>
+
+      <fieldset class="fieldset_1">
+        <legend aria-labelledby="name">{{ __('cellar.name') }}</legend>
+        <input v-model="form.name" type="text" id="name" required>
+        <InputError class="msg input_err" :message="form.errors.name" />
+      </fieldset>
+
+      <button class="button" type="submit">{{ __('buttons.save') }}</button>
+    </form>
+  </main>
 </template>
   
 <script>
-import { Head } from '@inertiajs/inertia-vue3';
+import { Head, useForm } from '@inertiajs/inertia-vue3';
 import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue';
 import MainLayout from '@/Layouts/MainLayout.vue';
+import InputError from '@/Components/InputError.vue';
 
 export default {
   name: 'EditView',
   components: {
     Head,
     GoBackButton,
+    InputError
   },
   props: {
     cellar: {
@@ -42,30 +45,19 @@ export default {
   layout: MainLayout,
   data() {
     return {
-      form: {
+      form: useForm({
         id: this.cellar.id,
         name: this.cellar.name,
-      },
+      }),
     };
-  },
-  computed: {
-    updateRoute() {
-      return route('cellar.update', { cellar: this.form.id });
-    },
   },
   methods: {
     submitForm() {
-      this.$inertia.put(this.updateRoute, this.form)
-        .then(response => {
-          if (response.headers.location) {
-            this.$inertia.visit(response.headers.location);
-          } else {
-            console.error("The 'location' header is not defined in the response.");
-          }
-        })
-        .catch(error => {
-          console.error('Erreur:', error);
-        });
+      this.form.put(route('cellar.update', { cellar: this.form.id }), {
+        onSuccess: () => {
+          this.$parent.openDialog(`Cellar updated successfully!`);
+        },
+      });
     },
   },
 };

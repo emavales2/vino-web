@@ -7,7 +7,7 @@
       <h1 class="index_title">{{ __('cellar.new') }}</h1>
     </header>
     
-      <form @submit.prevent="submitForm" :action="createRoute">
+      <form @submit.prevent="submitForm">
         <label for="name">
             <h2 class="disp_subtitle">{{ __('cellar.give_name') }}</h2>
         </label>
@@ -15,6 +15,7 @@
         <fieldset class="fieldset_1">
             <legend aria-labelledby="name">{{ __('cellar.name') }}</legend>            
             <input v-model="form.name" type="text" id="name" placeholder="Cellar Name">
+            <InputError class="msg input_err" :message="form.errors.name" />
         </fieldset>
 
         <button class="button" type="submit">{{ __('buttons.save') }}</button>
@@ -24,8 +25,10 @@
 
 <script>
 import { Head } from '@inertiajs/inertia-vue3';
+import { useForm } from '@inertiajs/inertia-vue3';
 import MainLayout from '@/Layouts/MainLayout.vue';
 import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue';
+import InputError from '@/Components/InputError.vue';
 
 export default {
   name: 'CreateView',
@@ -33,35 +36,24 @@ export default {
     Head,
     GoBackButton,
     MainLayout,
+    InputError
   },
   data() {
     return {
-      form: {
+      form: useForm({
         name: '',
-      },
+      }),
     };
-  },
-  computed: {
-    createRoute() {
-      return route('cellar.store');
-    },
   },
   layout: MainLayout,
   methods: {
     submitForm() {
-      this.$inertia.post(this.createRoute, this.form)
-        .then(response => {
-          if (response.headers.location) {
-            this.$inertia.visit(response.headers.location);
-          } else {
-            console.error("The 'location' header is not defined in the response.");
+      this.form.post(route('cellar.store'), {
+          onSuccess: () => {
+            this.$parent.openDialog(`Great ! Your cellar has been added`);
           }
-        })
-        .catch(error => {
-          console.error('Erreur:', error);
-        });
+      });
     },
   },
 };
 </script>
-// keep
