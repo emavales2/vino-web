@@ -19,6 +19,7 @@
                     <div>
                         <label for="quantity"></label>
                         <input type="number" id="quantity" v-model="form.quantity">
+                        <InputError class="msg input_err" :message="form.errors.quantity" />
 
                         <div>
                             <MinusButton :color="'burgundy'" :removeAction="removeOne" />
@@ -38,9 +39,10 @@
 <script>
 import { useForm, Link, Head } from '@inertiajs/inertia-vue3';
 import MainLayout from '@/Layouts/MainLayout.vue';
-import PlusButton from '@/Components/ButtonsIcons/PlusButton.vue'
-import MinusButton from '@/Components/ButtonsIcons/MinusButton.vue'
-import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue'
+import PlusButton from '@/Components/ButtonsIcons/PlusButton.vue';
+import MinusButton from '@/Components/ButtonsIcons/MinusButton.vue';
+import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue';
+import InputError from '@/Components/InputError.vue';
 
 export default {
   name: 'AddForm',
@@ -49,7 +51,8 @@ export default {
     Head,
     PlusButton,
     MinusButton,
-    GoBackButton
+    GoBackButton,
+    InputError
   },
   data() {
     return {

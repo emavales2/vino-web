@@ -1,9 +1,9 @@
 <template>
-    <Head title="Cellar" />
+  <Head title="Cellar" />
 
-    <div class="bckgd">
-        <main>
-            <GoBackButton :color="'cream'" class="button_back" />
+  <div class="bckgd">
+      <main>
+          <GoBackButton :color="'cream'" class="button_back" />
 
             <!-- ---- * Titre et boutons qui affectent le cellier * ---- -->
             <header>
@@ -115,8 +115,15 @@ data() {
     openDeleteModal: false,
     cellarId: null,
     message: null,
-    wineId: null
+    wineId: null,
+    collectionReceived: this.collection || [],
+    term: null
   }
+},
+watch: {
+  collectionReceived() {
+    this.filteredCollection = this.collectionReceived.filter(wine => !this.collection.includes(wine));
+  },
 },
 layout: MainLayout,
 methods: {
@@ -149,8 +156,12 @@ methods: {
     Inertia.delete(route('cellarwine.delete', {cellar: this.cellar, wine: this.wineId }),
     { preserveScroll: true })
     this.openDeleteModal = false
+  },
+  receiveTreatedCollection(data) {
+    this.collectionReceived = data.myCollection;
+    this.term = data.term;
   }
 },
-props:['cellar', 'collection', 'trans', 'term']
+props:['cellar', 'collection', 'trans']
 }
 </script>

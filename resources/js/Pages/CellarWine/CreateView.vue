@@ -17,6 +17,7 @@
                         <div>
                             <label for="quantity"></label>
                             <input type="number" id="quantity" v-model="form.quantity">
+                            <InputError class="msg input_err" :message="form.errors.quantity" />
                             
                             <div>
                                 <MinusButton 

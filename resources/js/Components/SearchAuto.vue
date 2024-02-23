@@ -8,7 +8,6 @@
           id="search"
           class="mt-1 block w-full"
           placeholder="chardonnay"
-          v-focus
           v-model="term"
           @input="handleInput"
         />
@@ -18,30 +17,37 @@
 </template>
 
 <script>
-import { Inertia } from '@inertiajs/inertia';
 
 export default {
   name: 'SearchAuto',
-  props: ['cellar','termReturn'],
+  props: ['cellars'],
   data() {
     return {
-      term: this.termReturn || '',
+      collection: this.cellars,
+      term: ''
     };
   },
   methods: {
     handleInput() {
-      if (this.term.length >= 3) {
-        this.searchAuto();
-      } else if (this.term.length === 0) {
-        this.index();
+      const data = {
+        myCollection: [],
+        term: this.term || ''
       }
-    },
-    searchAuto() {
-      Inertia.get(route('cellar.searchauto', { cellarId: this.cellar.id, term: this.term }));
-    },
-    index() {
-      Inertia.visit(route('cellar.show', {cellar: this.cellar }));
-    },
+      const lowerCaseTerm = this.term.toLowerCase();
+      
+      if (this.term.length >= 3) {
+        data.myCollection = this.collection.filter(objeto => {
+        if (objeto.wine && objeto.wine.name) {
+          const wineName = objeto.wine.name.toLowerCase();
+          return wineName.includes(lowerCaseTerm);
+        }
+      });
+        this.$emit('collection-event', data);
+      } else if (this.term.length === 0) {
+        this.$emit('collection-event', data);
+      }
+      
+    }
   },
 };
 </script>
