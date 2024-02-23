@@ -23,6 +23,7 @@
   box-shadow: none;
   background-color: transparent;
   padding: 0;
+  padding-top: var(--small-space);
   & legend{
     color: var(--cream);
   }
