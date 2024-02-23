@@ -1,6 +1,6 @@
 .dialog{
   position: fixed;
-  bottom: var(--small-space);
+  bottom: 60px;
   border: 2px solid var(--coral);
   border-radius: 100px;
   font-family: var(--block-font);

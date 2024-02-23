@@ -9,6 +9,7 @@ return [
     'see_more' => 'See more',
     'add_custom_wine' => 'Add custom wine',
     'logout' => 'Logout',
+    'remove' => 'Remove',
     'yes_delete' => 'Yes, delete',
     'yes' => 'Yes',
 

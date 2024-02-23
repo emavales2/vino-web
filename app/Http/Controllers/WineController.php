@@ -117,6 +117,8 @@ class WineController extends Controller
      */
     public function edit(Wine $wine)
     {
+        $wine = new WineResource($wine);
+        $wine->resolve();
         return Inertia::render('Wine/EditView', compact('wine'));
     }
 
