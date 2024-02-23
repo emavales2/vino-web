@@ -73,7 +73,7 @@ export default{
             onSuccess: () => {
               const cellarName = this.cellars.find(c => c.id == this.form.cellar_id).name
               this.openDialog(
-                `yes`
+                `Yes! you just added ${this.form.quantity} bottle(s) to ${cellarName}`
               )
             }
           })
@@ -84,7 +84,7 @@ export default{
       Inertia.delete(route('buylist.delete', { wine: this.wine }), {
         onSuccess: () => {
           this.openDialog(
-              `Yes ! you deleted this wine from you buy list`
+              `you deleted this wine from you buy list`
           );
         },
       })
