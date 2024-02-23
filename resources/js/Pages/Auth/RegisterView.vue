@@ -131,7 +131,7 @@ export default {
         Head,
         InputError,
         Link,
-        PrimaryButton,
+        PrimaryButton
     },
     data() {
         return {
@@ -142,15 +142,18 @@ export default {
                 password: "",
                 password_confirmation: "",
             }),
+            registerDialog: this.trans.dialogue.registerDialog,
         };
     },
     methods: {
         submit() {
             this.form.post(route("register"), {
-                onFinish: () =>
-                    this.form.reset("password", "password_confirmation"),
+                onSuccess: () => {
+                    this.openDialog(this.registerDialog);
+                },
             });
         },
     },
+    props: ['trans', 'openDialog']
 };
 </script>

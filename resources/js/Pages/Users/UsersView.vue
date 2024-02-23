@@ -18,7 +18,7 @@
                 <td>{{ user.first_name + ' ' + user.last_name }} </td>
                 <td>{{ user.email }}</td>
                 <td>
-                    <button class="button sml" @click="toggleModal(user.id)">{{ __('user.delete_user') }}</button> 
+                    <button class="button button-sml" @click="toggleModal(user.id)">{{ __('user.delete_user') }}</button> 
                 </td>
             </tr>
         </tbody>

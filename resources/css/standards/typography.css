@@ -151,6 +151,7 @@ small {
 }
 
 .disp_subtitle {
+    padding-bottom: var(--med-space);
     font-size: 1.728rem;
     line-height: var(--tall-line);
     font-family: var(--display-font);
@@ -167,7 +168,7 @@ small {
 .no_show {
     text-transform: uppercase;
     /* font-style: italic; */
-    font-size: .7rem;
+    font-size: 1rem;
     line-height: var(--small-line);
     color: var(--coral);
 }

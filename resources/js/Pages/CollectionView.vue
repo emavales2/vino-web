@@ -26,11 +26,11 @@
                               <section>
                                 <Link v-if="wine.wine.user_id"
                                   :href="route('wine.edit', wine.wine.id)" 
-                                  class="button sml"
+                                  class="button button-sml"
                                 >
                                   edit wine
                                 </Link>
-                                <button class="button sml btn_wide" @click="toggleModal(wine.wine)">remove</button>
+                                <button class="button button-sml btn_wide" @click="toggleModal(wine.wine)">remove</button>
                               </section>
 
                             </WineThumbnail>
@@ -38,8 +38,8 @@
                     </div>
                 </div>
 
-                <div class="cream" v-else>
-                    <p>{{ __('dialogue.no_wine') }}</p>
+                <div v-else>
+                    <p class="no_show"><strong>{{__('dialogue.oh')}}</strong> {{ __('dialogue.no_wine') }}</p>
                 </div>
             </section>
         </main>

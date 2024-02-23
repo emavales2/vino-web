@@ -5,7 +5,7 @@
       <button class="button btn-sml btn-coral" @click="toggleForm">{{ __('words.yes') }}, {{ yesMessage }}</button>
       <button class="button btn-sml btn-warning" @click="deleteWine">{{ __('words.no') }}, {{ noMessage }}</button>
     </div>
-    <button class="button btn-sml btn-coral" @click="toggleModal">{{__('actions.cancel')}}</button>
+    <button class="button sml" @click="toggleModal">Cancel</button>
   </div>
 
   <form v-if=showForm @submit.prevent="submit" class="form-quantity variant-modal">         
@@ -26,7 +26,7 @@
       </div>
     </section>
     <section>
-      <button class="button sml button_coral">{{ __('actions.store_all') }}</button>
+      <button class="button sml button_coral">Store all</button>
     </section>
   </form>
 

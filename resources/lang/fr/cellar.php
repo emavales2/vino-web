@@ -8,6 +8,7 @@ return [
     'name' => 'Nom du cellier',
     'new' => 'Nouveau cellier',
     'give_name' => 'Donnez un nom à votre cellier !',
+    'cellar_delete' => 'Supprimer ce cellier',
     // cellar/wine
     'add_wine' => 'Ajouter ce vin à votre cellier',
     'select' => 'Sélectionner un cellier',
