@@ -3,7 +3,7 @@
 
     <div class="bckgd">
         <main>
-            <GoBackButton :color="'cream'" class="button_back"/>
+            <GoBackButton :color="'cream'"/>
 
             <header>
                 <h1 class="index_title">{{ __('cellar.add_wine_buylist') }}</h1>
@@ -48,7 +48,7 @@
                         </div>
                     </section>
                     
-                    <button class="button button_burgundy">{{ __('buttons.add') }}</button>
+                    <button class="button btn-burgundy">{{ __('buttons.add') }}</button>
                 </form>
             </div>
             <div v-else>

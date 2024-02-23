@@ -2,7 +2,7 @@
     <Head title="Edit Profile" />
     <div>
         <main>
-            <GoBackButton :color="'cream'" class="button_back"/>
+            <GoBackButton :color="'cream'"/>
             <header>
                 <h1 class="index_title">{{ __('user.edit_profile') }}</h1>
             </header>

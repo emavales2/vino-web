@@ -1,117 +1,78 @@
 
-/* --------- * BUTTON * --------- */
-
-/* In the components "PrimaryButton.vue", "SecondaryButton.vue", "DangerButton.vue" (came with Laravel) */
-
-/* cancel all previous button style */
+/* cancel all previous button style and add pointer*/
 button {
     background: none;
     border: none;
     cursor: pointer;
 }
-
+/* attrs pour tous les boutons */
 .button {
-    box-sizing: border-box;
-    font-family: 'Oswald', sans-serif;
-    max-width: max-content;
-    /* j'ai oté le align-self. En fait, ça joue sur de l'externe(comme margin) et ça peut créer des bugs dans l'alignement, svp aligner à partir du parent*/
-    /* align-self: center; */
-    padding: 16px;
-    width: 100%;
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: .05rem;
-    border-radius: var(--large-space);
     border: 3px solid var(--cream);
+    border-radius: var(--large-space);
     color: var(--cream);
-}
-
-.button_burgundy {
-    border: 3px solid var(--burgundy);
-    color: var(--burgundy);
-    background: none;
-}
-
-/* Variante de btn small */
-.button.button-sml {
-    padding: 8px 12px;
-    font-size: 0.8rem;
-    max-height: max-content;
-    max-width: max-content;
-    border: none;
-    background: var(--coral);
-    vertical-align: sub;
-    max-height: fit-content;
-    width: max-content;
-}
-
-/* Variante de btn small */
-.button.button-sml.btn_wide {
-    width: 100%;
-    max-width: 100%;
-}
-
-/* Variante de btn Medium */
-.button.med {
-    padding: 12px;
-    font-size: 1rem;
-    max-width: max-content;
-}
-
-.button, .button a {
-    line-height: 1rem;
-    font-weight: 400;
-    font-size: 1.12rem;
-    letter-spacing: var(--small-ltr-spacing);
-}
-
-.button_column {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    width: 100%;
-    gap: var(--safe-area);
-    align-items: center;
-    max-height: 100%;
-}
-
-.button:active {
-    cursor: pointer;
-    background-color: var(--coral);
-    border: none;
-}
-
-.lien_sml {
-    padding: 6px;
-    font-size: 0.6rem;
-    background: none;
-    /* vertical-align: sub; */
-    max-height: fit-content;
-    width: max-content;
-    font-family: 'Oswald', sans-serif;
     display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.12rem;
+    font-weight: 500;
+    letter-spacing: var(--small-ltr-spacing);
+    line-height: 1rem;
+    padding: 16px;
+    text-transform: uppercase;
+    width: max-content;
 }
 
-.flex-flow-unset {
-    flex-flow: unset;
-    max-height: 100%;
+/* - états - */
+.button:active {
+    transform: translate(2px, 2px);
+}
+.button:focus-visible {
+    outline-color: var(--coral);
 }
 
-.lien_sml:hover {
-    color:var(--coral)
+/* - variants couleurs - */
+.button.btn-burgundy {
+    background: none;
+    border-color: var(--burgundy);
+    color: var(--burgundy);
+}
+.button.btn-coral {
+    background: var(--coral);
+    border-color: var(--coral);
+}
+.button.btn-warning { 
+    background-color: var(--danger);
+    border-color:var(--danger);
+    color: var(--cream)
+}   
+
+/* - variants de tailles - */
+.button.btn-sml {
+    border-width: 2px;
+    font-size: 0.8rem;
+    padding: 8px 12px;
+    /* what does this do? */
+    vertical-align: sub;
+}
+.button.btn-med {
+    font-size: 1rem;
+    padding: 12px;
+}
+/* largeur totale du parent */
+.button.btn-full {
+    max-width: 120px;
+    width: 100%;
 }
 
-.borderless {
-    padding: 0;
+/* - variants pour icones - */
+.button--icon{
     border: none;
+    max-width: max-content;
+    padding: 0;
 }
-
-.button_back {
-    align-self: flex-start;
+.button--icon:active{
+    transform: translate(2px, 2px);
 }
-
-button[disabled]{
+.button--icon[disabled]{
     filter: opacity(.5);
 }
-
 

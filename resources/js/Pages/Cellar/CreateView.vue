@@ -1,7 +1,7 @@
 <template>
   <Head title="Cellar" />
   <main>
-    <GoBackButton :color="'cream'" class="button_back"/>
+    <GoBackButton :color="'cream'"/>
 
     <header class="index_title">
       <h1 class="index_title">{{ __('cellar.new') }}</h1>
