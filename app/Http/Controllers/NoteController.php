@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\resources\WineResource;
 use App\Models\Note;
+use App\Models\Wine;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -13,9 +16,12 @@ class NoteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function wineIndex(Wine $wine)
     {
-        //
+        $notes = Note::where('user_id', Auth::id())
+            ->where('wine_id', $wine->id)
+            ->get();
+        return Inertia::render('Note/WineIndexView', compact('notes', 'wine'));
     }
 
     /**
@@ -23,9 +29,9 @@ class NoteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Wine $wine)
     {
-        return Inertia::render('Note/CreateView');
+        return Inertia::render('Note/CreateView', compact('wine'));
     }
 
     /**
@@ -36,18 +42,29 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'note' => 'min:10 | max:600'
+        ]);
+        $note = Note::create([
+            'note' => $request->note,
+            'wine_id' => $request->wine_id,
+            'user_id' => Auth::id()
+        ]);
+        
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Note  $note
+     * @param  \App\Models\Note $note
      * @return \Illuminate\Http\Response
      */
     public function show(Note $note)
     {
-        //
+        if($note->user != Auth::user()) return 'nooo';
+        $wine = new WineResource($note->wine);
+        $wine = $wine->resolve();
+        return Inertia::render('Note/ShowView', compact('note', 'wine'));
     }
 
     /**

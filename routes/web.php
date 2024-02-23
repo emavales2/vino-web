@@ -83,8 +83,10 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/buy-list/{wine}', [BuyListController::class, 'destroy'])->name('buylist.delete');
 
     //Notes
-    Route::get('note-create', [NoteController::class, 'create'])->name('note.create');
-
+    Route::get('/note-wine-index/{wine}', [NoteController::class, 'wineIndex'])->name('note.wine-index');
+    Route::get('/note-create/{wine}', [NoteController::class, 'create'])->name('note.create');
+    Route::get('/note-show/{note}', [NoteController::class, 'show'])->name('note.show');
+    Route::post('/note-store', [NoteController::class, 'store'])->name('note.store');
 
     // Utilitaires
     //-------------- Add & Remove One --------------------
