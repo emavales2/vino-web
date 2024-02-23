@@ -32,9 +32,33 @@
 .card_cellar.w_sections {
     padding: var(--med-space);
     gap: var(--large-space);
-
 }
 
 .card_round {
     border-start-end-radius: var(--xlarge-space); 
+}
+
+.card_nav {
+    background-color: var(--coral);
+    /* border-radius: 12px; */
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--small-space);
+}
+
+.card_nav.bckgd-burg-lt {
+    background-color: var(--burgundy-lt);
+    gap: var(--small-space);
+}
+
+.card_nav ul {
+    display: flex; 
+}
+
+.card_nav li {
+    color: white;
+    border-right: 2px solid white;
+    padding: 0px 10px;
 }

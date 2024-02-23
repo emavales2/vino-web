@@ -26646,6 +26646,9 @@ var _hoisted_4 = {
 var _hoisted_5 = {
   key: 1
 };
+var _hoisted_6 = {
+  "class": "wine-th-price"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_ColorDrop = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ColorDrop");
   var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
@@ -26659,7 +26662,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         src: $props.wine.photo,
         alt: $props.wine.name,
         loading: "lazy"
-      }, null, 8 /* PROPS */, _hoisted_3)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [$props.wine.name.length > 30 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.name.replaceAll('/', ' ').slice(0, 30)) + "... ", 1 /* TEXT */)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.name), 1 /* TEXT */))])];
+      }, null, 8 /* PROPS */, _hoisted_3)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [$props.wine.name.length > 30 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.name.replaceAll('/', ' ').slice(0, 30)) + "... ", 1 /* TEXT */)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.name), 1 /* TEXT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.price) + " CAD ", 1 /* TEXT */)])];
     }),
     _: 1 /* STABLE */
   }, 8 /* PROPS */, ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <slot> utilisé pour les sections contenant des boutons affectant le vin(BD et DOM) "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")]);
@@ -27632,17 +27635,37 @@ var _hoisted_3 = {
 };
 var _hoisted_4 = {
   key: 0,
+  "class": "card_nav bckgd-burg-lt"
+};
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+  "class": "disp_subtitle sm"
+}, "More cellar options", -1 /* HOISTED */);
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "row_els_apart"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  "class": "button sml btn_wide"
+}, "Filter"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  "class": "button sml btn_wide"
+}, "Sort")], -1 /* HOISTED */);
+var _hoisted_7 = {
+  key: 1,
   "class": "wine-list"
 };
-var _hoisted_5 = ["onClick"];
-var _hoisted_6 = {
-  key: 1
+var _hoisted_8 = {
+  "class": "thb_nav"
 };
-var _hoisted_7 = {
+var _hoisted_9 = {
+  "class": "row_els_apart"
+};
+var _hoisted_10 = ["onClick"];
+var _hoisted_11 = {
+  key: 2
+};
+var _hoisted_12 = {
   key: 0,
   "class": "cream"
 };
-var _hoisted_8 = {
+var _hoisted_13 = {
   key: 1,
   "class": "cream"
 };
@@ -27651,8 +27674,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_GoBackButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("GoBackButton");
   var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
   var _component_SearchAuto = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("SearchAuto");
-  var _component_MinusButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("MinusButton");
   var _component_PlusButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("PlusButton");
+  var _component_MinusButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("MinusButton");
   var _component_WineThumbnail = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("WineThumbnail");
   var _component_ConfirmModal = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ConfirmModal");
   var _component_Modal = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Modal");
@@ -27661,9 +27684,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_GoBackButton, {
     color: 'cream',
     "class": "button_back"
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.cellar.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ---- * Titre et boutons qui affectent le cellier * ---- "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.cellar.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
     href: _ctx.route('cellar.edit', $props.cellar.id),
-    "class": "button sml"
+    "class": "button"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__("buttons.edit")), 1 /* TEXT */)];
@@ -27674,12 +27697,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
       return $options.toggleModal($props.cellar);
     }, ["stop"])),
-    "class": "button sml"
-  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__("buttons.delete")), 1 /* TEXT */)]), $props.collection.length !== 0 || $props.term ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_SearchAuto, {
-    key: 0,
+    "class": "button"
+  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__("buttons.delete")), 1 /* TEXT */)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ---- * Carte nav pour filtrer les vins * ---- "), $props.collection.length !== 0 || $props.term ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("aside", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_SearchAuto, {
     cellar: $props.cellar,
     termReturn: $props.term
-  }, null, 8 /* PROPS */, ["cellar", "termReturn"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), $props.collection.length !== 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.collection, function (wine, i) {
+  }, null, 8 /* PROPS */, ["cellar", "termReturn"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <SearchAuto :cellar=\"cellar\" :termReturn=\"term\" v-if=\"collection.length !== 0 || term\" /> "), _hoisted_6])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.collection.length !== 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_7, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.collection, function (wine, i) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_WineThumbnail, {
       key: i,
       wine: wine.wine,
@@ -27687,27 +27709,27 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       quantity: wine.qty
     }, {
       "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-        return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" section std(sloté dans WineThumbnail), inclus btns - et + ainsi que btn remove "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_MinusButton, {
-          color: 'cream',
+        return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" section std(sloté dans WineThumbnail), inclus btns +/- et btn \"delete\" "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_PlusButton, {
+          color: 'coral',
+          onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+            return $options.addOne(wine.wine);
+          }, ["stop"])
+        }, null, 8 /* PROPS */, ["onClick"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_MinusButton, {
+          color: 'coral',
           disabled: wine.qty === 0,
           onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
             return $options.removeOne(wine.wine, wine.qty);
           }, ["stop"])
-        }, null, 8 /* PROPS */, ["disabled", "onClick"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_PlusButton, {
-          color: 'cream',
-          onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
-            return $options.addOne(wine.wine);
-          }, ["stop"])
-        }, null, 8 /* PROPS */, ["onClick"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-          "class": "button sml",
+        }, null, 8 /* PROPS */, ["disabled", "onClick"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+          "class": "button sml btn_wide",
           onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
             return $options.toggleModalWine(wine.wine, $props.cellar.id);
           }, ["stop"])
-        }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__("buttons.delete")), 9 /* TEXT, PROPS */, _hoisted_5)])];
+        }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__("buttons.delete")), 9 /* TEXT, PROPS */, _hoisted_10)])];
       }),
       _: 2 /* DYNAMIC */
     }, 1032 /* PROPS, DYNAMIC_SLOTS */, ["wine", "cellar", "quantity"]);
-  }), 128 /* KEYED_FRAGMENT */))])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, [$props.term ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__('dialogue.no_term')) + " ", 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.term), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(".")])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__('dialogue.no_wine')), 1 /* TEXT */))]))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Modal, {
+  }), 128 /* KEYED_FRAGMENT */))])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_11, [$props.term ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__('dialogue.no_term')) + " ", 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.term), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(".")])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__('dialogue.no_wine')), 1 /* TEXT */))]))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Modal, {
     toggleOff: $options.toggleModal
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -50883,12 +50905,9 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 /*!*******************************!*\
   !*** ./resources/css/app.css ***!
   \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/css-loader/dist/cjs.js):\nError: Can't resolve './buttons/goBackButton.css' in 'C:\\Users\\thomas\\Desktop\\vino\\vino-web\\resources\\css'\n    at finishWithoutResolve (C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\enhanced-resolve\\lib\\Resolver.js:369:18)\n    at C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\enhanced-resolve\\lib\\Resolver.js:461:15\n    at C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\enhanced-resolve\\lib\\Resolver.js:519:5\n    at eval (eval at create (C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:16:1)\n    at C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\enhanced-resolve\\lib\\Resolver.js:519:5\n    at eval (eval at create (C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:27:1)\n    at C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\enhanced-resolve\\lib\\DescriptionFilePlugin.js:89:43\n    at C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\enhanced-resolve\\lib\\Resolver.js:519:5\n    at eval (eval at create (C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\enhanced-resolve\\lib\\Resolver.js:519:5\n    at eval (eval at create (C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:16:1)\n    at C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\enhanced-resolve\\lib\\Resolver.js:519:5\n    at eval (eval at create (C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:16:1)\n    at C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\enhanced-resolve\\lib\\Resolver.js:519:5\n    at eval (eval at create (C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:27:1)\n    at C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\enhanced-resolve\\lib\\DescriptionFilePlugin.js:89:43\n    at C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\enhanced-resolve\\lib\\Resolver.js:519:5\n    at eval (eval at create (C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:16:1)\n    at C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\enhanced-resolve\\lib\\Resolver.js:519:5\n    at eval (eval at create (C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\enhanced-resolve\\lib\\DirectoryExistsPlugin.js:41:15\n    at process.processTicksAndRejections (node:internal/process/task_queues:81:21)\n    at processResult (C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\webpack\\lib\\NormalModule.js:764:19)\n    at C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\webpack\\lib\\NormalModule.js:866:5\n    at C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\loader-runner\\lib\\LoaderRunner.js:400:11\n    at C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\loader-runner\\lib\\LoaderRunner.js:252:18\n    at context.callback (C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at Object.loader (C:\\Users\\thomas\\Desktop\\vino\\vino-web\\node_modules\\css-loader\\dist\\index.js:155:5)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)");
 
 /***/ }),
 
@@ -56688,42 +56707,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"axios","version":"0.21.4","de
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = __webpack_modules__;
-/******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/chunk loaded */
-/******/ 	(() => {
-/******/ 		var deferred = [];
-/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
-/******/ 			if(chunkIds) {
-/******/ 				priority = priority || 0;
-/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
-/******/ 				deferred[i] = [chunkIds, fn, priority];
-/******/ 				return;
-/******/ 			}
-/******/ 			var notFulfilled = Infinity;
-/******/ 			for (var i = 0; i < deferred.length; i++) {
-/******/ 				var [chunkIds, fn, priority] = deferred[i];
-/******/ 				var fulfilled = true;
-/******/ 				for (var j = 0; j < chunkIds.length; j++) {
-/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
-/******/ 						chunkIds.splice(j--, 1);
-/******/ 					} else {
-/******/ 						fulfilled = false;
-/******/ 						if(priority < notFulfilled) notFulfilled = priority;
-/******/ 					}
-/******/ 				}
-/******/ 				if(fulfilled) {
-/******/ 					deferred.splice(i--, 1)
-/******/ 					var r = fn();
-/******/ 					if (r !== undefined) result = r;
-/******/ 				}
-/******/ 			}
-/******/ 			return result;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -56773,68 +56757,13 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"axios","version":"0.21.4","de
 /******/ 		};
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/jsonp chunk loading */
-/******/ 	(() => {
-/******/ 		// no baseURI
-/******/ 		
-/******/ 		// object to store loaded and loading chunks
-/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
-/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
-/******/ 		var installedChunks = {
-/******/ 			"/js/app": 0,
-/******/ 			"css/app": 0
-/******/ 		};
-/******/ 		
-/******/ 		// no chunk on demand loading
-/******/ 		
-/******/ 		// no prefetching
-/******/ 		
-/******/ 		// no preloaded
-/******/ 		
-/******/ 		// no HMR
-/******/ 		
-/******/ 		// no HMR manifest
-/******/ 		
-/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
-/******/ 		
-/******/ 		// install a JSONP callback for chunk loading
-/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
-/******/ 			var [chunkIds, moreModules, runtime] = data;
-/******/ 			// add "moreModules" to the modules object,
-/******/ 			// then flag all "chunkIds" as loaded and fire callback
-/******/ 			var moduleId, chunkId, i = 0;
-/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
-/******/ 				for(moduleId in moreModules) {
-/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
-/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
-/******/ 					}
-/******/ 				}
-/******/ 				if(runtime) var result = runtime(__webpack_require__);
-/******/ 			}
-/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
-/******/ 			for(;i < chunkIds.length; i++) {
-/******/ 				chunkId = chunkIds[i];
-/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
-/******/ 					installedChunks[chunkId][0]();
-/******/ 				}
-/******/ 				installedChunks[chunkId] = 0;
-/******/ 			}
-/******/ 			return __webpack_require__.O(result);
-/******/ 		}
-/******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
-/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
-/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
-/******/ 	})();
-/******/ 	
 /************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/app.css")))
-/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	__webpack_require__("./resources/js/app.js");
+/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
+/******/ 	var __webpack_exports__ = __webpack_require__("./resources/css/app.css");
 /******/ 	
 /******/ })()
 ;

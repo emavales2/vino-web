@@ -109,7 +109,7 @@ border: none; */
     transform: translate(2px, 2px);
 }
 button[disabled]{
-    filter: brightness(.01);
+    filter: opacity(.5);
 }
 
 

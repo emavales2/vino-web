@@ -1,9 +1,33 @@
 
 .wine-thumbnail {
-  padding-top: var(--large-space);
-  display: flex;
-  flex-flow: column;
-  gap: var(--small-space);
+    padding-top: var(--large-space);
+    display: flex;
+    flex-flow: column;
+    gap: var(--med-sm-space);
+    justify-content: space-between;
+    background-color: var(--cream-lt);
+    border-radius: 12px;
+    justify-content: space-between;
+    box-shadow: var(--box-shadow);
+    height: 100%;
+    padding: var(--small-space) var(--vsmall-space); 
+}
+
+
+/* ---- * Contient l'image + info du vin * ---- */
+.wine-thumbnail a {
+    gap: var(--small-space);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* ---- * Contient le ColorDrop et la qté de bouteilles * ---- */
+.wine-thumbnail aside {
+    display: flex;
+    gap: var(--small-space);
+    justify-content: space-between;
+    align-items: center;
 }
 
 .wine-thumbnail > div {
@@ -11,60 +35,91 @@
   gap: var(--small-space);
 }
 
-.wine-thumbnail > a {
-  background-color: var(--cream-lt);
-  border-radius: 12px;
-  display: flex;
-  flex-flow: column;
-  gap: var(--vsmall-space);
-  justify-content: space-between;
-  padding: var(--small-space) var(--vsmall-space);
-  height: 200px;
-  box-shadow: var(--box-shadow);
-}
-
-.wine-thumbnail aside {
-  display: flex;
-  gap: var(--small-space);
-  justify-content: space-between;
-  align-items: center;
-}
-
-.wine-thumbnail p {
-  text-align: center;
-  line-height: 1.2em;
-  font-weight: 600;
-  font-size: .8em;
-  color: var(--burgundy);
-}
-
+/* ---- * Contient l'image * ---- */
 .wine-thumbnail a div:first-of-type {
-  height: 100px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-.wine-thumbnail a div:last-of-type{
-  height: 60px;
-  display: flex;
-  flex-flow: column;
+    height: 100px;
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .wine-thumbnail img {
-  position: absolute;
-  bottom: 0;
-  min-height: 150px;
-  filter: drop-shadow(var(--box-shadow));
+    position: absolute;
+    bottom: 0;
+    min-height: 150px;
+    filter: drop-shadow(var(--box-shadow));
 }
 
-.wine-thumbnail>section{
-  align-items: center;
-  display: flex;
-  flex-flow: column;
-  gap: var(--vsmall-space);
+/* ---- * Contient le nom et le prix * ---- */
+.wine-thumbnail a div:last-of-type {
+    height: fit-content;
+    display: flex;
+    flex-flow: column;
+    gap: var(--small-space);
+    justify-content: space-between;
 }
-.wine-thumbnail>section>div{
+
+/* ---- * Nom du vin * ---- */
+.wine-thumbnail p {
+    text-align: center;
+    line-height: 1.2em;
+    font-weight: 400;
+    font-size: .833rem;
+    color: var(--burgundy);
+}
+
+/* ---- * Prix du vin * ---- */
+.wine-thumbnail p.wine-th-price {
+    text-align: left;
+    font-weight: 600;
+    line-height: 1.2em;
+    font-size: .9rem;
+    text-align: center;
+}
+
+/* ---- * Qty + "delete" nav * ---- */
+.thb_nav {
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    gap: var(--small-space);
+    background: transparent;
+    padding: 0;
+}
+
+/* ---- * Boutons qté * ---- */
+.thb_nav > span > button {
+    max-width: 30%;
+}
+
+.thb_nav p {
+    color: var(--cream); 
+    padding-left: var(--vsmall-space);
+}
+
+
+.thb_nav.vert p {
+    color: var(--burgundy-lt);
+}
+
+.thb_nav svg {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+    height: fit-content;
+}
+
+.wine-thumbnail > section > div{
   display: flex;
   flex-flow: row;
   gap: var(--med-space);
 }
+
+
+
+
+
+
+
+
+
