@@ -12,6 +12,10 @@
 .fiche_wine_title {
     font-size: 1.4rem;
     line-height: var(--med-line);
+    font-family: var(--block-font);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: var(--small-ltr-spacing);
 }
 
 .fiche_wine_subtitle {
