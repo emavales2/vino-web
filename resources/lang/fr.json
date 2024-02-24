@@ -33,10 +33,10 @@
     },
     "buylist": {
         "just_delete": "supprimer le vin",
-        "store_in_cellar": "voulez-vous ins\u00e9rer ce vin dans un cellier?",
+        "store_in_cellar": "Voulez-vous ins\u00e9rer ce vin dans un cellier?",
         "success_store_beg": "Super! vous venez d'ajouter",
         "success_store_mid": "bouteille(s) dans",
-        "success_delete": "vous avez supprimer ce vin de votre liste d'achat!"
+        "success_delete": "Vous avez supprimer ce vin de votre liste d'achat!"
     },
     "cellar": {
         "list": "Liste des celliers",

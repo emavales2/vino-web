@@ -67,12 +67,12 @@
                 <input type="hidden" v-model="form.id" />
                 
                 <div>
-                    <button class="button success" type="submit">{{ __('buttons.save') }}</button>
+                    <button class="button" type="submit">{{ __('buttons.save') }}</button>
                 </div>
             </form>
 
             <div class="btn-container">
-                <button class="button" @click="toggleModal">
+                <button class="button btn-warning" @click="toggleModal">
                     {{ __('user.delete_account') }}
                 </button>
             </div>
