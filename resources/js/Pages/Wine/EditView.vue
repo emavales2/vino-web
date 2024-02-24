@@ -5,19 +5,18 @@
   <main>
     <GoBackButton :color="'cream'"/>
     <header>
-      <h1 class="index_title">Edit your custom wine</h1>
+      <h1 class="index_title">{{ __('cellar.edit_title') }}</h1>
     </header>
   
       <form @submit.prevent="submit" class="form-create-wine">
         <fieldset class="fieldset_1">
-            <legend>Wine Name</legend>
+            <legend>{{ __('cellar.wine_name') }}</legend>
             <label for="name" hidden></label>
             <input
                 id="name"
                 type="text"
                 class="mt-1 block w-full"
                 v-model="form.name"
-                required
                 autofocus
                 autocomplete="name"
                 placeholder="name"
@@ -26,7 +25,7 @@
         </fieldset>
 
         <fieldset class="fieldset_1">
-            <legend>Wine Type</legend>
+            <legend>{{ __('cellar.wine_type') }}</legend>
             <label for="type" hidden></label>
             <input
                 id="type"
@@ -41,7 +40,7 @@
         </fieldset>
 
         <fieldset class="fieldset_1">
-            <legend>Country</legend>
+            <legend>{{ __('cellar.wine_country') }}</legend>
             <label for="country" hidden></label>
             <input
                 id="country"
@@ -56,7 +55,7 @@
         </fieldset>
 
         <fieldset class="fieldset_1">
-            <legend>Container Size</legend>
+            <legend>{{ __('cellar.wine_size') }}</legend>
             <label for="size" hidden></label>
             <input
                 id="size"
@@ -71,7 +70,7 @@
         </fieldset>
 
         <fieldset class="fieldset_1">
-            <legend>Price</legend>
+            <legend>{{ __('cellar.wine_price') }}</legend>
             <label for="price" hidden></label>
             <input
                 id="price"
@@ -87,7 +86,7 @@
             <InputError class="msg input_err" :message="form.errors.price" />
         </fieldset>
         
-        <button class="button">Update</button>
+        <button class="button">{{ __('buttons.update') }}</button>
       </form>
     </main>
   </div>
@@ -117,18 +116,20 @@ export default {
             size: this.wine.size,
             price: this.wine.price,
         }),
+        updateDialogue: this.trans.dialogue.wine_update
     };
   },
   layout: MainLayout,
   methods: {
     submit() {
+      console.log(this.form.id);
       this.form.put(route("wine.update", {wine: this.wine.id}), {
         onSuccess: () => {
-          this.$parent.openDialog('Wine updated successfully!');
+          this.$parent.openDialog(this.updateDialogue);
         }
       });
     },
   },
-    props: ["wine"]
+    props: ["wine", "trans"]
 };
 </script>

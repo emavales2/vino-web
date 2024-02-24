@@ -114,7 +114,10 @@
   gap: var(--med-space);
 }
 
-
+/* ---- * Bouton "delete" * ---- */
+.wine-thumbnail .button.btn-sml.btn-warning{
+    margin-inline: auto;   
+}
 
 
 

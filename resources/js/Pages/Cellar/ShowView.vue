@@ -42,8 +42,8 @@
               <PlusButton :color="'coral'" @click.stop="addOne(wine.wine)" />
 
             </span>
-            <button class="button btn-sml btn-full btn-coral" @click.stop="toggleModalWine(wine.wine, cellar.id)">
-              {{ __("buttons.delete") }}
+            <button class="button btn-sml btn-warning" @click.stop="toggleModalWine(wine.wine, cellar.id)">
+              {{ __("buttons.remove") }}
             </button>
           </section>
         </WineThumbnail>

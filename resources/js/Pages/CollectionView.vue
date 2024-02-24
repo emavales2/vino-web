@@ -28,9 +28,9 @@
                                   :href="route('wine.edit', wine.wine.id)" 
                                   class="button btn-sml btn-full btn-coral"
                                 >
-                                  edit
+                                  {{ __('buttons.edit') }}
                                 </Link>
-                                <button class="button btn-sml btn-full btn-coral" @click="toggleModal(wine.wine)">delete</button>
+                                <button class="button btn-sml btn-warning" @click="toggleModal(wine.wine)">{{ __('buttons.remove') }}</button>
                               </section>
                             </WineThumbnail>
                         </ul>

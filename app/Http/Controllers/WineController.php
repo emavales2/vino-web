@@ -117,8 +117,9 @@ class WineController extends Controller
      */
     public function edit(Wine $wine)
     {
+
         $wine = new WineResource($wine);
-        $wine->resolve();
+        $wine = $wine->resolve();
         return Inertia::render('Wine/EditView', compact('wine'));
     }
 
@@ -130,18 +131,28 @@ class WineController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Wine $wine)
-    {
-        $request->validate([
-            'name' => 'min:3|max:100',
-            'type' => 'min:3|max:45|nullable',
-            'country' => 'min:3|max:100|nullable',
-            'size' => 'min:3|max:45|nullable',
-            'price' => 'numeric|gte:0|nullable'
-        ]);
-        $wine->update($request->all());
-        return redirect(route('collection'));
-    }
+{
+    $request->validate([
+        'name' => 'required|min:3|max:100',
+        'type' => 'min:3|max:45|nullable',
+        'country' => 'min:3|max:100|nullable',
+        'size' => 'min:3|max:45|nullable',
+        'price' => 'numeric|gte:0|nullable'
+    ]);
 
+    $type = json_encode(['fr' => $request->type]);
+    $country = json_encode(['fr' => $request->country]);
+
+    $wine->update([
+        'name' => $request->name,
+        'type' => $type,
+        'country' => $country,
+        'size' => $request->size,
+        'price' => $request->price,
+    ]);
+
+    return redirect(route('collection'));
+}
     /**
      * Remove the specified resource from storage.
      *

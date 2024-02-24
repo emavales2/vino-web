@@ -32,6 +32,7 @@ return [
     'how_many' => 'How many bottles?',
     'add_buylist' => 'Add to your buylist',
     'save_wine' => 'Save this wine',
+    'edit_title' => 'Edit your custom wine',
     // Fiche Vin
     'code' => 'SAQ code',
     'price' => 'Price',
