@@ -30,7 +30,7 @@ export default {
   methods: {
     handleInput() {
       const data = {
-        myCollection: [],
+        myCollection: this.collection,
         term: this.term || ''
       }
       const lowerCaseTerm = this.term.toLowerCase();
