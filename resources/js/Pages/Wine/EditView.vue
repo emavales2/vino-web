@@ -11,7 +11,7 @@
       <form @submit.prevent="submit" class="form-create-wine">
         <fieldset class="fieldset_1">
             <legend>{{ __('cellar.wine_name') }}</legend>
-            <label for="name" hidden></label>
+            <label aria-labelledby="name" for="name" hidden></label>
             <input
                 id="name"
                 type="text"
@@ -26,7 +26,7 @@
 
         <fieldset class="fieldset_1">
             <legend>{{ __('cellar.wine_type') }}</legend>
-            <label for="type" hidden></label>
+            <label aria-labelledby="type" for="type" hidden></label>
             <input
                 id="type"
                 type="text"
@@ -41,7 +41,7 @@
 
         <fieldset class="fieldset_1">
             <legend>{{ __('cellar.wine_country') }}</legend>
-            <label for="country" hidden></label>
+            <label aria-labelledby="country" for="country" hidden></label>
             <input
                 id="country"
                 type="text"
@@ -56,7 +56,7 @@
 
         <fieldset class="fieldset_1">
             <legend>{{ __('cellar.wine_size') }}</legend>
-            <label for="size" hidden></label>
+            <label aria-labelledby="size" for="size" hidden></label>
             <input
                 id="size"
                 type="text"
@@ -71,7 +71,7 @@
 
         <fieldset class="fieldset_1">
             <legend>{{ __('cellar.wine_price') }}</legend>
-            <label for="price" hidden></label>
+            <label aria-labelledby="price" for="price" hidden></label>
             <input
                 id="price"
                 type="number"

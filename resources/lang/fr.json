@@ -12,6 +12,9 @@
         "filter": "filtre",
         "sort": "trier"
     },
+    "aria": {
+        "profil": "Profil utilisateur"
+    },
     "auth": {
         "failed": "Ces identifiants ne correspondent pas \u00e0 nos enregistrements.",
         "password": "Le mot de passe fourni est incorrect.",
