@@ -33,10 +33,10 @@
     },
     "buylist": {
         "just_delete": "supprimer le vin",
-        "store_in_cellar": "Voulez-vous ins\u00e9rer ce vin dans un cellier?",
+        "store_in_cellar": "voulez-vous ins\u00e9rer ce vin dans un cellier?",
         "success_store_beg": "Super! vous venez d'ajouter",
         "success_store_mid": "bouteille(s) dans",
-        "success_delete": "Vous avez supprimer ce vin de votre liste d'achat!"
+        "success_delete": "vous avez supprimer ce vin de votre liste d'achat!"
     },
     "cellar": {
         "list": "Liste des celliers",
@@ -114,7 +114,7 @@
         "no_account": "Pas encore de compte ?",
         "join": "Inscrivez-vous !",
         "switch": "Changer de langue",
-        "sub_sign": "Vivez l'exp\u00e9rience parfaite des celliers avec Vino",
+        "sub_sign": "Vivez l'exp\u00e9rience parfaite de vos celliers avec Vino",
         "email": "Adresse e-mail",
         "password": "Mot de passe",
         "first_name": "Pr\u00e9nom",

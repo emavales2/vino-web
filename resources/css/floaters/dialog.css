@@ -8,6 +8,6 @@
   max-width: 300px;
   color: var(--white);
   background-color: var(--success);
-  padding: var(--small-space);
+  padding: var(--med-space);
   z-index: 2;
 }
