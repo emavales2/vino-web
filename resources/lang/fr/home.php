@@ -9,7 +9,7 @@ return [
     'join' => 'Inscrivez-vous !',
     'switch' => 'Changer de langue',
     // Page SIGN IN
-    'sub_sign' => 'Vivez l\'expérience parfaite des celliers avec Vino',
+    'sub_sign' => 'Vivez l\'expérience parfaite de vos celliers avec Vino',
     'email' => 'Adresse e-mail',
     'password' => 'Mot de passe',
     // SIGN UP

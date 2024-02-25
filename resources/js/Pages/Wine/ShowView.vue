@@ -60,12 +60,10 @@
                                 </ul>
                             </div>
                         </div>
-                        
-                        <button @click="shareOnFacebook">
-                            Partage sur Facebook
-                        </button>
-
-                        <!-- Mettre btn de partage sur facebook -->
+                        <!-- Btn de partage sur facebook -->
+                        <div id="fb-root"></div>
+                        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_CA/sdk.js#xfbml=1&version=v19.0" nonce="gONjY4BZ"></script>
+                        <div class="fb-share-button" :data-href="testUrl" ><a target="_blank" :href="'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(testUrl)" class="fb-xfbml-parse-ignore">Partager sur facebook</a></div>
                     </section>
                 </article>
             </div>
@@ -157,7 +155,6 @@ import { Head, Link } from "@inertiajs/inertia-vue3";
 import MainLayout from "@/Layouts/MainLayout.vue";
 import ColorDrop from "@/Components/ButtonsIcons/ColorDrop.vue";
 import GoBackButton from "@/Components/ButtonsIcons/GoBackButton.vue";
-// import { Inertia } from '@inertiajs/inertia';
 
 export default {
     name: "Wine.ShowView",
@@ -169,42 +166,33 @@ export default {
     },
     data() {
         return {
+            testUrl: "https://thomasira.com/",
             currentUrl: window.location.href,
         };
     },
     layout: MainLayout,
-    methods: {
-        loadFacebookSDK() {
-            window.fbAsyncInit = function () {
-                FB.init({
-                    appId: "1213281232966329",  // Remplacez par votre ID d'application Facebook
-                    xfbml: true,
-                    version: "v19.0",
-                });
-            };
-            
-            // Chargez de manière asynchrone le SDK Facebook
-            (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = "https://connect.facebook.net/fr_CA/sdk.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-        },
-        shareOnFacebook() {
-            window.FB.ui(
-                {
-                    method: "share",
-                    href: this.currentUrl,  // ajouter dans les app domains de notre app facebook
-                },
-                function (response) {}
-            );
-        },
-    },
-    mounted() {
-        this.loadFacebookSDK();
-    },
+    // methods: {
+    //     loadFacebookSDK() {
+    //         window.fbAsyncInit = function () {
+    //             FB.init({
+    //                 appId: "1213281232966329",  // Remplacez par votre ID d'application Facebook
+    //                 xfbml: true,
+    //                 version: "v19.0",
+    //             });
+    //         };
+    //         // Chargez de manière asynchrone le SDK Facebook
+    //         (function(d, s, id) {
+    //             var js, fjs = d.getElementsByTagName(s)[0];
+    //             if (d.getElementById(id)) return;
+    //             js = d.createElement(s); js.id = id;
+    //             js.src = "https://connect.facebook.net/fr_CA/sdk.js";
+    //             fjs.parentNode.insertBefore(js, fjs);
+    //         }(document, 'script', 'facebook-jssdk'));
+    //     },
+    // },
+    // mounted() {
+    //     this.loadFacebookSDK();
+    // },
     props: {
         wine: Object,
         exists: Boolean,

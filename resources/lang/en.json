@@ -28,15 +28,14 @@
         "logout": "Logout",
         "remove": "Remove",
         "yes_delete": "Yes, delete",
-        "yes": "Yes",
-        "update": "Update"
+        "yes": "Yes"
     },
     "buylist": {
         "just_delete": "just delete them",
-        "store_in_cellar": "Do you want to store this wine in a cellar?",
+        "store_in_cellar": "do you want to store this wine in a cellar?",
         "success_store_beg": "Great! you just added",
         "success_store_mid": "bottle(s) in",
-        "success_delete": "You deleted this wine from your buy list!"
+        "success_delete": "you deleted this wine from your buy list!"
     },
     "cellar": {
         "list": "List of cellars",
