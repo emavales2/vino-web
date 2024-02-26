@@ -25975,28 +25975,37 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   layout: _Layouts_MainLayout_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-  // methods: {
-  //     loadFacebookSDK() {
-  //         window.fbAsyncInit = function () {
-  //             FB.init({
-  //                 appId: "1213281232966329",  // Remplacez par votre ID d'application Facebook
-  //                 xfbml: true,
-  //                 version: "v19.0",
-  //             });
-  //         };
-  //         // Chargez de manière asynchrone le SDK Facebook
-  //         (function(d, s, id) {
-  //             var js, fjs = d.getElementsByTagName(s)[0];
-  //             if (d.getElementById(id)) return;
-  //             js = d.createElement(s); js.id = id;
-  //             js.src = "https://connect.facebook.net/fr_CA/sdk.js";
-  //             fjs.parentNode.insertBefore(js, fjs);
-  //         }(document, 'script', 'facebook-jssdk'));
-  //     },
-  // },
-  // mounted() {
-  //     this.loadFacebookSDK();
-  // },
+  methods: {
+    shareOnFacebook: function shareOnFacebook() {
+      FB.ui({
+        method: "share",
+        href: this.currentUrl
+      });
+    },
+    loadFacebookSDK: function loadFacebookSDK() {
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: "1213281232966329",
+          // Remplacez par votre ID d'application Facebook
+          xfbml: true,
+          version: "v19.0"
+        });
+      };
+      // Chargez de manière asynchrone le SDK Facebook
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/fr_CA/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, 'script', 'facebook-jssdk');
+    }
+  },
+  mounted: function mounted() {
+    this.loadFacebookSDK();
+  },
   props: {
     wine: Object,
     exists: Boolean,
@@ -28992,7 +29001,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1 /* STABLE */
   }, 8 /* PROPS */, ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[0] || (_cache[0] = function () {
-      return _ctx.shareOnFacebook && _ctx.shareOnFacebook.apply(_ctx, arguments);
+      return $options.shareOnFacebook && $options.shareOnFacebook.apply($options, arguments);
     })
   }, " Partage sur Facebook "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Mettre btn de partage sur facebook ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
 }
