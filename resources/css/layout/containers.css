@@ -1,34 +1,32 @@
+/* ----- * MISE EN PLACE DU CONTENU * ----- */
 
-/* ----- * TEXT PLACEMENT * ----- */
-
-/* Empty container that centers titles/subtitles in the middle of it */
-.title-center {
+/* ---- * Boîte vide avec du contenu centré horiz/vert * ---- */
+.cont-center {
     display: flex;
     align-self: center;
     justify-content: center;
 }
 
-.lang_menu {
-    padding: 0 var(--vsmall-space);
+/* ---- * Padding épais tout autour (HomeView) * ---- */
+.cont_narrow_splash {
+    padding: var(--xxlarge-space);
 }
 
-/* ----- * CONTENT LAYOUT * ----- */
+/* ---- * Donne l'espace nécessaire au contenu (clears the nav) * ---- */
+.cont_pad_vert_gral {
+    padding: var(--xxlarge-space) 0;
+}
 
-/* Conteneur qui permet modifier l'arrière plan dans <template> sans avoir besoin de toucher le <body> */
-.bckgd {
-    max-height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+/* ---- * Permet que la fiche_vin se place en dessus du bckgd * ---- */
+.cont_float_up {
+    padding-bottom: var(--xlarge-space);
+    z-index: 2;
     position: relative;
 }
 
-/* Background spécifique pour l'accueil (besoin de z-index à cause du placement d'autres éléments) */
-.bckgd-home {
-    /* z-index: -2; */
-    background: var(--cream-lt);
-}
+
+
+
 
 .flex-row {
     display: flex;
@@ -58,70 +56,16 @@
     align-items: center;
 }
 
-.column_10 {
-    display: flex;
-    flex-direction: column;
-    gap: var(--small-space);
-}
 
-.column_15 {
-    display: flex;
-    flex-direction: column;
-    gap: var(--safe-area);
-}
 
-.column_20 {
-    display: flex;
-    flex-direction: column;
-    gap: var(--med-space);
-}
 
-.column_25 {
-    display: flex;
-    flex-direction: column;
-    gap: var(--med-large-space);
-}
-
-.column_30 {
-    display: flex;
-    flex-direction: column;
-    gap: var(--large-space);
-}
-
-.column_40 {
-    display: flex;
-    flex-direction: column;
-    gap: var(--xlarge-space);
-}
-
-.col_tight {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    text-align: center;
-}
-
-.grid_square_horiz {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--med-space);
-}
-
-.grid_sq_insert {
-    aspect-ratio: 1/1;
-}
 
 
 /* ----- * CONTENT AREA MODS * ----- */
 
-.cont_narrow_splash {
-    padding: var(--xxlarge-space);
-}
 
-/* To accomodate the nav */
-.pad_vert_general {
-    padding: var(--xxlarge-space) 0;
-}
+
+
 
 .pad_hor_general {
     padding: 0 var(--xlarge-space);
@@ -160,7 +104,7 @@
 }
 
 /* Page de Profil */
-.container_profil{
+.container_profil {
     /* padding: 20px var(--xxlarge-space); */
     align-self: center;
     align-content: center;
@@ -180,18 +124,7 @@
     }
 }
 
-.container_dashboard_section{
-    & h5{
-        color: var(--cream);
-    }
 
-}
-
-.float_up {
-    padding-bottom: var(--xlarge-space);
-    z-index: 2;
-    position: relative;
-}
 
 
 

@@ -6,8 +6,8 @@
             <header>
                 <!-- <figure>   
                 </figure> --> 
-                <h1 class="cream block-font fs_1">{{ __('home.sign') }}</h1>
-                <h2 class="fs_5 block-font coral">{{ __('home.sub_sign') }}</h2>               
+                <h1 class="cream typo-block-font typo-fs-1">{{ __('home.sign') }}</h1>
+                <h2 class="typo-fs-5 typo-block-font coral">{{ __('home.sub_sign') }}</h2>               
             </header>
 
             <form @submit.prevent="submit">
@@ -24,7 +24,7 @@
                         autocomplete="username"
                         placeholder="your email address"
                     />
-                    <InputError class="msg input_err" :message="form.errors.email" />
+                    <InputError class="auto_msg auto_msg_input_err" :message="form.errors.email" />
                 </fieldset>
 
                 <fieldset class="fieldset_1">
@@ -38,7 +38,7 @@
                         autocomplete="current-password"
                         placeholder="your password"
                     />
-                    <InputError class="msg input_err" :message="form.errors.password" />
+                    <InputError class="auto_msg auto_msg_input_err" :message="form.errors.password" />
                 </fieldset>
                     
                 <button class="button" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
@@ -49,7 +49,7 @@
             <aside class="col_tight">
                 <p class="cream txt-center">
                     {{ __('home.no_account') }}<br>
-                    <Link class="block-font coral" :href="route('register')">{{ __('home.join') }}</Link>
+                    <Link class="typo-block-font coral" :href="route('register')">{{ __('home.join') }}</Link>
                 </p>
             </aside>
         </main>

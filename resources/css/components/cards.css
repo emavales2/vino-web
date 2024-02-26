@@ -1,44 +1,33 @@
-/* .card_cellar container -> a placer ailleurs ?? */
-.container_cards{   
-    display: flex;
-    gap: var(--med-space);
-    & h5{
-        font-family: var(--display-font);
-    }
-}
+
 /* Card components Dashboard CellarDisplayBox  */
+
 .card_cellar {
     background-color: var(--cream);
     border-radius: 12px;
-    font-family: var(--block-font);
-    text-transform: uppercase;
     padding: var(--small-space);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* max-width: 7ch; */
     height: 100%;
     width: 100%;
     flex: 1;
     color: var(--burgundy);
+    font-family: var(--block-font);
+    text-transform: uppercase;
     font-size: .833rem;
     line-height: var(--small-line);
     overflow-wrap: break-word;
     hyphens: auto;
-    -webkit-hyphens: auto;
     aspect-ratio: 1/1;
 }
 
-.card_cellar.w_sections {
+.card_cellar.card_cell_w_sections {
     padding: var(--med-space);
     gap: var(--large-space);
     background-color: var(--coral);
 }
 
-.card_round {
-    border-start-end-radius: var(--xlarge-space); 
-}
-
+/* ---- * Card components for filter box : TO BE REASSESSED LATER * ----  */
 .card_nav {
     background-color: var(--coral);
     /* border-radius: 12px; */

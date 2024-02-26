@@ -7,16 +7,25 @@
 
 /* ---------- * * STANDARDS / VARIABLES * * ---------- */
 
-    @import url(standards/typography.css);
     @import url(standards/color.css);
     @import url(standards/rhythm.css);
+
+
+/* ---------- * * TIPOGRAPHIE * * ---------- */
+
+    @import url(standards/typography/typography.css);
+    @import url(standards/typography/legend.css);
+    @import url(standards/typography/titles.css);
 
 
 /* ---------- * * MISE EN PLACE * * ---------- */
 
     @import url(layout/containers.css);
+    @import url(layout/background.css);
+    @import url(layout/grid.css);
     @import url(layout/wine-list.css);
     @import url(layout/button_column.css);
+    @import url(layout/columns.css);
 
 
 /* ---------- * * DANS SECTION NAVIGATION * * ---------- */
@@ -30,6 +39,7 @@
     @import url(buttons/search-button.css);
     @import url(./buttons/radio.css);
     @import url(buttons/lien_sml.css);
+    @import url(buttons/btn_link.css);
 
 
 /* ---------- * * FORMULAIRES * * ---------- */
@@ -45,17 +55,19 @@
 
     @import url(floaters/modal.css);
     @import url(floaters/dialog.css);
-    @import url(floaters/transition.css);
+    @import url(floaters/transitions/inScreenOut.css);
+    @import url(floaters/confirm.css);
 
 
 /* ---------- * * AUTRES COMPOSANTS * * ---------- */
 
     @import url(components/cards.css);
+    @import url(components/blobs.css);
     @import url(components/fiche_wine.css);
     @import url(./components/wine-thumbnail.css);
     @import url(./buttons/radio.css);
     @import url(components/auto_messages.css);
-    @import url(components/images.css);
+    @import url(components/figure.css);
     @import url(components/color-drop.css);
     @import url(components/quantity-drop.css);
     @import url(components/utilitarian.css);

@@ -5,18 +5,18 @@
     <GoBackButton :color="'cream'" />
 
     <header>
-      <h1 class="index_title">{{ __('cellar.edit') }}</h1>
+      <h1 class="title_index">{{ __('cellar.edit') }}</h1>
     </header>
 
     <form @submit.prevent="submitForm">
       <label for="name">
-        <h2 class="disp_subtitle">{{ __('cellar.modify_text') }}</h2>
+        <h2 class="title_disp_subt">{{ __('cellar.modify_text') }}</h2>
       </label>
 
       <fieldset class="fieldset_1">
         <legend aria-labelledby="name">{{ __('cellar.name') }}</legend>
         <input v-model="form.name" type="text" id="name" required>
-        <InputError class="msg input_err" :message="form.errors.name" />
+        <InputError class="auto_msg auto_msg_input_err" :message="form.errors.name" />
       </fieldset>
 
       <button class="button" type="submit">{{ __('buttons.save') }}</button>

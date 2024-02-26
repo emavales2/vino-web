@@ -31,6 +31,12 @@
   gap: var(--small-space);
 }
 
+.wine-thumbnail > section > div {
+    display: flex;
+    flex-flow: row;
+    gap: var(--med-space);
+  }
+
 /* ---- * Contient l'image * ---- */
 .wine-thumbnail a div:first-of-type {
     height: 60px;
@@ -108,14 +114,8 @@
     height: fit-content;
 }
 
-.wine-thumbnail > section > div {
-  display: flex;
-  flex-flow: row;
-  gap: var(--med-space);
-}
-
 /* ---- * Bouton "delete" * ---- */
-.wine-thumbnail .button.btn-sml.btn-warning{
+.wine-thumbnail .button.btn-sml.btn-warning {
     margin-inline: auto;   
 }
 

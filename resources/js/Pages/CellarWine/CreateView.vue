@@ -6,18 +6,18 @@
             <GoBackButton :color="'cream'"/>
 
             <header>
-                <h1 class="index_title">{{ __('cellar.add_wine_buylist') }}</h1>
+                <h1 class="title_index">{{ __('cellar.add_wine_buylist') }}</h1>
             </header>
 
             <div v-if="cellars.length !== 0">    
                 <form @submit.prevent="addToCellar" class="form-quantity">
-                    <h2 class="block-font fiche_wine_title coral">{{ wine.name }}</h2>             
+                    <h2 class="typo-block-font fiche_wine_title coral">{{ wine.name }}</h2>             
                     <section>
                         <figure><img :src="wine.photo" :alt="wine.name"></figure>
                         <div>
                             <label for="quantity"></label>
                             <input type="number" id="quantity" v-model="form.quantity">
-                            <InputError class="msg input_err" :message="form.errors.quantity" />
+                            <InputError class="auto_msg auto_msg_input_err" :message="form.errors.quantity" />
                             
                             <div>
                                 <MinusButton 
@@ -31,7 +31,7 @@
                     </section>
 
                     <section class="column">
-                        <legend class="fs_6 display-font coral">{{ __('cellar.select') }}</legend>
+                        <legend class="typo-fs-6 typo-display-font coral">{{ __('cellar.select') }}</legend>
                         <div>
                           <div v-for="(cellar, i) in cellars">
                               <input 
@@ -43,7 +43,7 @@
                               :value="cellar.id"
                           >
                             <label :for=cellar.id>{{ cellar.name }}</label>
-                            <InputError class="msg input_err" :message="form.errors.cellar_id" />
+                            <InputError class="auto_msg auto_msg_input_err" :message="form.errors.cellar_id" />
                           </div>
                         </div>
                     </section>
@@ -52,7 +52,7 @@
                 </form>
             </div>
             <div v-else>
-                <h2 class="disp_subtitle">{{ __('cellar.no_cellar') }}</h2>
+                <h2 class="title_disp_subt">{{ __('cellar.no_cellar') }}</h2>
                 <Link class="button" :href="route('cellar.create')">{{ __('cellar.create') }}</Link>
             </div>
         </main>

@@ -1,7 +1,7 @@
 
 /* --------- * MESSAGES AUTO-GENERÉS * --------- */
 
-.msg {
+.auto_msg {
     margin: 6px;
     font-family: var(--text-font);
     font-style: italic;
@@ -10,12 +10,20 @@
 }
 
 /* --------- * ERROR * --------- */
-.input_err {
+.auto_msg_input_err {
     color: red;
 }
 
 /* --------- * STATUS (session; tjrs une class du v-if) * --------- */
 
-.status {
+.auto_msg_status {
     color: green;
+}
+
+/* ---- * Sur les messages montrés quand collection d'éléments est vide * ---- */
+.auto_msg_no_show {
+    text-transform: uppercase;
+    font-size: 1rem;
+    line-height: var(--small-line);
+    color: var(--coral);
 }

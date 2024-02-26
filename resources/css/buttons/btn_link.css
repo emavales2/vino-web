@@ -1,0 +1,22 @@
+/* ---- * GROUPE: OPTION AUX BOUTONS * ---- */
+
+.btn_link {
+    font-family: 'Roboto', sans-serif;
+    text-transform: lowercase;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 0 var(--med-space);
+}
+
+.btn_link:first-child {
+    border-right: 1px solid var(--cream-lt);
+    padding-left: var(--small-space);
+}
+
+.btn_link.plain {
+    border-right: none;
+    padding: 0;
+    width: 100%;
+    display: block;
+}
+/* ---- * FIN GROUPE: links * ---- */

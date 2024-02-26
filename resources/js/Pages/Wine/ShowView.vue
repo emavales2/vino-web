@@ -1,12 +1,12 @@
 <template>
-    <div class="bckgd bckgd-white float_up">
+    <div class="bckgd bckgd-white cont_float_up">
         <!-- ----- * DÉCOR BACKGROUND * ----- -->
-        <section class="background_blobs">
-            <figure class="fig_bg bottom_blob">
+        <section class="blobs_bckgd">
+            <figure class="fig_bg blob_bottom">
                 <img src="@/../assets/img/bott_cream_fiche.svg" alt="" />
             </figure>
-            <figure class="fig_bg bottom_blob">
-                <img src="@/../assets/img/bott_coral_fiche.svg" class="coral_blob_bg" alt=""
+            <figure class="fig_bg blob_bottom">
+                <img src="@/../assets/img/bott_coral_fiche.svg" class="blob_coral_bg" alt=""
                 />
             </figure>
         </section>
@@ -29,9 +29,9 @@
                     <header class="column_10">
                         <span class="row_gap_10">
                             <ColorDrop :color="wine.type"/>
-                            <h3 class="disp_subtitle ds_smllst burg-lt">{{ wine.country != null ? wine.country : 'n/a' }}</h3>
+                            <h3 class="title_disp_subt ds_smllst burg-lt">{{ wine.country != null ? wine.country : 'n/a' }}</h3>
                         </span>
-                        <h1 class="block-font fiche_wine_title coral">{{ wine.name }}</h1>
+                        <h1 class="typo-block-font fiche_wine_title coral">{{ wine.name }}</h1>
                     </header>
         
                     <ul class="burg-lt">
@@ -43,7 +43,7 @@
                         <li>{{ wine.size ? wine.size : 'n/a' }}</li>
                     </ul>                        
                      
-                    <span class="semibold burg-lt">{{ __('cellar.price') }}: {{ wine.price ? wine.price + ' $' : 'n/a' }}</span>                  
+                    <span class="typo-semibold burg-lt">{{ __('cellar.price') }}: {{ wine.price ? wine.price + ' $' : 'n/a' }}</span>                  
                 </section>
             </article>
             <aside class="row_els_apart row_els_line" v-if="!exists">
