@@ -19,7 +19,7 @@
         <fieldset class="fieldset_1">
             <legend aria-labelledby="note">{{ __('note.note') }}</legend>          
             <textarea v-model="form.note" id="note" placeholder="This wine is fruity and light..."></textarea>
-            <InputError class="msg input_err" :message="form.errors.note" />
+            <!-- <InputError class="msg input_err" :message="form.errors.note" /> -->
         </fieldset>
 
         <button class="button" type="submit">{{ __('buttons.save') }}</button>

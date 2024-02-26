@@ -1,0 +1,12 @@
+.note-thumbnail{
+  background-color: var(--cream);
+  padding: var(--small-space);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  width: max-content;
+}
+.note-thumbnail p {
+}
+.note-thumbnail time{
+  font-size: .6em;
+}

@@ -107,11 +107,10 @@ class WineController extends Controller
 
         // --- * Previent conflit btn GoBack + redirection vers wine-create * ---
         $prevPage = str_replace(url('/'), '', URL::previous());
-
+        $notes = $wine->note;
         $wine = new WineResource($wine);
         $wine = $wine->resolve();
-
-        return Inertia::render('Wine/ShowView', compact('wine','exists', 'prevPage'));
+        return Inertia::render('Wine/ShowView', compact('wine', 'notes','exists', 'prevPage'));
     }
 
     /**

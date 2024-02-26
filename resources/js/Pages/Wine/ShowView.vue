@@ -46,10 +46,7 @@
                     <span class="semibold burg-lt">{{ __('cellar.price') }}: {{ wine.price ? wine.price + ' $' : 'n/a' }}</span>                  
                 </section>
             </article>
-        </main>
-
-        <!-- ----- * NAV SECTION : BOUTONS * ----- -->
-        <aside class="row_els_apart row_els_line" v-if="!exists">
+            <aside class="row_els_apart row_els_line" v-if="!exists">
             <Link class="button--icon" :href="route('buylist.create', { wine: wine.id })">
                 <figure>
                     <svg width="42" height="42" fill="var(--coral)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58.63 57.77"><path class="cls-1" d="m42.74,19.27h-5.91c-.98,0-1.77.79-1.77,1.77s.79,1.77,1.77,1.77h5.91c.98,0,1.77-.79,1.77-1.77s-.79-1.77-1.77-1.77Z"/><path class="cls-1" d="m42.74,28.5h-5.91c-.98,0-1.77.79-1.77,1.77s.79,1.77,1.77,1.77h5.91c.98,0,1.77-.79,1.77-1.77s-.79-1.77-1.77-1.77Z"/><path class="cls-1" d="m42.74,40.8h-21.35c-.98,0-1.77-.79-1.77-1.77s.79-1.77,1.77-1.77h21.35c.98,0,1.77.79,1.77,1.77s-.79,1.77-1.77,1.77Z"/><path class="cls-1" d="m31.05,19.27h-10.14c-.71,0-1.28.57-1.28,1.28v10.14c0,.71.57,1.28,1.28,1.28h10.14c.71,0,1.28-.57,1.28-1.28v-10.14c0-.71-.57-1.28-1.28-1.28Zm-.87,4.67l-3.61,5.04c-.28.39-.72.6-1.17.6-.29,0-.58-.09-.83-.27l-2.74-1.96c-.64-.46-.79-1.35-.33-2,.46-.64,1.35-.79,2-.33l1.58,1.13,2.77-3.87c.46-.64,1.36-.79,2-.33s.79,1.36.33,2Z"/><path class="cls-1" d="m32.13,4.77c-1.93,0-3.81.21-5.63.61C23.75,2.09,19.62,0,15,0,6.72,0,0,6.72,0,15c0,4.89,2.35,9.23,5.98,11.97-.23,1.4-.35,2.84-.35,4.3,0,14.61,11.89,26.5,26.5,26.5s26.5-11.89,26.5-26.5S46.74,4.77,32.13,4.77ZM6.2,14.96c0-.83.67-1.5,1.5-1.5h5.8v-5.8c0-.83.67-1.5,1.5-1.5s1.5.67,1.5,1.5v5.8h5.8c.83,0,1.5.67,1.5,1.5s-.67,1.5-1.5,1.5h-5.8v5.8c0,.83-.67,1.5-1.5,1.5s-1.5-.67-1.5-1.5v-5.8h-5.8c-.83,0-1.5-.67-1.5-1.5Zm25.93,39.8c-12.96,0-23.5-10.54-23.5-23.5,0-.89.05-1.77.15-2.63,1.9.87,4,1.36,6.22,1.36,8.28,0,15-6.72,15-15,0-2.5-.62-4.85-1.7-6.92,1.25-.2,2.52-.32,3.83-.32,12.96,0,23.5,10.54,23.5,23.5s-10.54,23.5-23.5,23.5Z"/></svg>
@@ -65,7 +62,7 @@
                 Partage sur Facebook
             </button>
 
-            <Link class="button--icon" :href="route('note.wine-index', { wine: wine.id })">
+            <Link class="button--icon" :href="route('note.create', { wine: wine.id })">
                 <figure>
                     <svg width="42" height="42" viewBox="0 0 59 58" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M32.13 4.77C30.2 4.77 28.32 4.98 26.5 5.38C23.75 2.09 19.62 0 15 0C6.72 0 0 6.72 0 15C0 19.89 2.35 24.23 5.98 26.97C5.75 28.37 5.63 29.81 5.63 31.27C5.63 45.88 17.52 57.77 32.13 57.77C46.74 57.77 58.63 45.88 58.63 31.27C58.63 16.66 46.74 4.77 32.13 4.77ZM6.2 14.96C6.2 14.13 6.87 13.46 7.7 13.46H13.5V7.66C13.5 6.83 14.17 6.16 15 6.16C15.83 6.16 16.5 6.83 16.5 7.66V13.46H22.3C23.13 13.46 23.8 14.13 23.8 14.96C23.8 15.79 23.13 16.46 22.3 16.46H16.5V22.26C16.5 23.09 15.83 23.76 15 23.76C14.17 23.76 13.5 23.09 13.5 22.26V16.46H7.7C6.87 16.46 6.2 15.79 6.2 14.96ZM32.13 54.76C19.17 54.76 8.63 44.22 8.63 31.26C8.63 30.37 8.68 29.49 8.78 28.63C10.68 29.5 12.78 29.99 15 29.99C23.28 29.99 30 23.27 30 14.99C30 12.49 29.38 10.14 28.3 8.07C29.55 7.87 30.82 7.75 32.13 7.75C45.09 7.75 55.63 18.29 55.63 31.25C55.63 44.21 45.09 54.75 32.13 54.75V54.76Z" fill="#F95148"/>
@@ -74,10 +71,18 @@
                 </figure>
             </Link>
                     
-        <!-- </div>   -->
             
-                        <!-- Mettre btn de partage sur facebook -->           
+            <!-- Mettre btn de partage sur facebook -->           
         </aside>            
+        
+        <section>
+            <NoteThumbnail v-for="(note, i) in notes"
+                :note="note"
+            />
+        </section>
+        </main>
+
+        <!-- ----- * NAV SECTION : BOUTONS * ----- -->
     </div>
 </template>
 
@@ -86,7 +91,7 @@ import { Head, Link } from "@inertiajs/inertia-vue3";
 import MainLayout from "@/Layouts/MainLayout.vue";
 import ColorDrop from "@/Components/ButtonsIcons/ColorDrop.vue";
 import GoBackButton from "@/Components/ButtonsIcons/GoBackButton.vue";
-
+import NoteThumbnail from "@/Components/NoteThumbnail.vue";
 export default {
     name: "Wine.ShowView",
     components: {
@@ -94,6 +99,7 @@ export default {
         Link,
         ColorDrop,
         GoBackButton,
+        NoteThumbnail
     },
     data() {
         return {
@@ -133,7 +139,8 @@ export default {
     props: {
         wine: Object, 
         exists: Boolean,
-        prevPage: String
+        prevPage: String,
+        notes: Object
     }
 }
 </script>
