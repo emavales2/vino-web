@@ -4,7 +4,7 @@
     <div class="bckgd marg_vert_home">
         <main>
             <header>
-                <h1 class="index_title">{{ __('home.join') }}</h1>
+                <h1 class="title_index">{{ __('home.join') }}</h1>
             </header>
 
             <form @submit.prevent="submit">
@@ -22,7 +22,7 @@
                         placeholder="first name"
                     />
                     <InputError
-                        class="msg input_err"
+                        class="auto_msg auto_msg_input_err"
                         :message="form.errors.first_name"
                     />
                 </fieldset>
@@ -41,7 +41,7 @@
                         placeholder="last name"
                     />
                     <InputError
-                        class="msg input_err"
+                        class="auto_msg auto_msg_input_err"
                         :message="form.errors.last_name"
                     />
                 </fieldset>
@@ -59,7 +59,7 @@
                         placeholder="email address"
                     />
                     <InputError
-                        class="msg input_err"
+                        class="auto_msg auto_msg_input_err"
                         :message="form.errors.email"
                     />
                 </fieldset>
@@ -77,7 +77,7 @@
                         placeholder="password"
                     />
                     <InputError
-                        class="msg input_err"
+                        class="auto_msg auto_msg_input_err"
                         :message="form.errors.password"
                     />
                 </fieldset>
@@ -95,7 +95,7 @@
                         placeholder="confirm password"
                     />
                     <InputError
-                        class="msg input_err"
+                        class="auto_msg auto_msg_input_err"
                         :message="form.errors.password_confirmation"
                     />
                 </fieldset>
@@ -112,7 +112,7 @@
             </form>
             <p class="cream txt-center">
                 {{ __('home.already_account') }}<br />
-                <Link class="block-font coral" :href="route('login')"
+                <Link class="typo-block-font coral" :href="route('login')"
                     >{{ __('home.sign') }}</Link
                 >
             </p>

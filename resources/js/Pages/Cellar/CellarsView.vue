@@ -4,7 +4,7 @@
   <div class="bckgd bckgd-burg">
     <main>
       <header>
-        <h1 class="index_title">{{ __('cellar.list') }}</h1>
+        <h1 class="title_index">{{ __('cellar.list') }}</h1>
       </header>
 
       <button class="button">

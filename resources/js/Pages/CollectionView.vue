@@ -5,7 +5,7 @@
         <main>
             <section class="column_30">
                 <header>
-                    <h1 class="index_title">{{ __('cellar.my_wines') }}</h1>
+                    <h1 class="title_index">{{ __('cellar.my_wines') }}</h1>
                 </header>
 
                 <button class="button">
@@ -38,7 +38,7 @@
                 </div>
 
                 <div v-else>
-                    <p class="no_show"><strong>{{__('dialogue.oh')}}</strong> {{ __('dialogue.no_wine') }}</p>
+                    <p class="auto_msg_no_show"><strong>{{__('dialogue.oh')}}</strong> {{ __('dialogue.no_wine') }}</p>
                 </div>
             </section>
         </main>

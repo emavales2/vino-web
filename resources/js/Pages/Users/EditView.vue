@@ -4,7 +4,7 @@
         <main>
             <GoBackButton :color="'cream'"/>
             <header>
-                <h1 class="index_title">{{ __('user.edit_profile') }}</h1>
+                <h1 class="title_index">{{ __('user.edit_profile') }}</h1>
             </header>
             <form @submit.prevent="submit">
                 <fieldset class="fieldset_1">
@@ -47,7 +47,7 @@
 
                 <fieldset class="fieldset_1">
                     <legend aria-labelledby="email">{{ __('user.email') }}</legend>
-                    <label for="email" value="Email" class="invisible"></label>
+                    <label for="email" value="Email"></label>
                     <input
                         id="email"
                         type="email"

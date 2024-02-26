@@ -5,7 +5,7 @@
         <main>
             <header>
                 <!-- EXEMPLE POUR ACCEDER AUX TRADUCTIONS -->
-                <h1 class="index_title">
+                <h1 class="title_index">
                     {{ __("dashboard.welcome") }}, {{ user.first_name }}
                 </h1>
 
@@ -30,13 +30,13 @@
                     <section class="column_30">
                         <header>
                             <span class="row_els_apart gap_20">
-                                <h2 class="disp_subtitle">
+                                <h2 class="title_disp_subt">
                                     {{ __("dashboard.my_cellars") }}
                                 </h2>
                                 <div>
                                     <Link
                                         v-if="cellars.length > 3"
-                                        class="lien_sml cream block-font"
+                                        class="lien_sml cream typo-block-font"
                                         :href="route('cellar.index')"
                                         >{{ __("buttons.see_more") }}
                                     </Link>
@@ -53,7 +53,7 @@
                     <section class="column_30">
                         <header>
                             <span class="row_els_apart gap_20">
-                                <h2 class="disp_subtitle">
+                                <h2 class="title_disp_subt">
                                     {{ __("dashboard.my_wines") }}
                                 </h2>
 
@@ -82,7 +82,7 @@
                         </div>
 
                         <!-- ---- * Message "No Wine" si pertinent * ---- -->
-                        <p class="no_show" v-else>
+                        <p class="auto_msg_no_show" v-else>
                             <strong>{{ __("dialogue.oh") }}</strong
                             >{{ __("dialogue.no_wine") }}.
                         </p>

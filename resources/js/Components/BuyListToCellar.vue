@@ -10,7 +10,7 @@
 
   <form v-if=showForm @submit.prevent="submit" class="form-quantity variant-modal">         
     <section>
-      <legend class="fs_6 display-font coral">{{ __('select') }}</legend>
+      <legend class="typo-fs-6 typo-display-font coral">{{ __('select') }}</legend>
       <div>
         <div v-for="(cellar, i) in cellars">
             <input 

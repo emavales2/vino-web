@@ -4,13 +4,13 @@
       <main class="column_40">
             <GoBackButton :color="'cream'"/>
             <header>
-            <h1 class="index_title">{{ __('cellar.create_custom') }}</h1>
+            <h1 class="title_index">{{ __('cellar.create_custom') }}</h1>
             </header>
             
             <form @submit.prevent="submit" class="form-create-wine">
                 <section class="column_25">
                     <header>
-                        <h2 class="disp_subtitle">{{ __('cellar.tell_us') }}</h2>
+                        <h2 class="title_disp_subt">{{ __('cellar.tell_us') }}</h2>
                     </header>
 
                     <!-- <legend class="legend cream">Tell us about your wine</legend> -->
@@ -20,14 +20,14 @@
                     <input
                         id="name"
                         type="text"
-                        class="mt-1 block w-full"
+                        class=""
                         v-model="form.name"
                         autofocus
                         autocomplete="name"
                         placeholder="what is the wine's name"
                         aria-label="Nom du vin" 
                         />
-                    <InputError class="msg input_err" :message="form.errors.name" />
+                    <InputError class="auto_msg auto_msg_input_err" :message="form.errors.name" />
                     </fieldset>
 
                     <fieldset class="fieldset_1">
@@ -36,14 +36,14 @@
                     <input
                         id="type"
                         type="text"
-                        class="mt-1 block w-full"
+                        class=""
                         v-model="form.type"
                         autofocus
                         autocomplete="type"
                         placeholder="what type of wine is it?"
                         aria-label="Type de vin"
                         />
-                    <InputError class="msg input_err" :message="form.errors.type" />
+                    <InputError class="auto_msg auto_msg_input_err" :message="form.errors.type" />
                     </fieldset>
 
                     <fieldset class="fieldset_1">
@@ -52,14 +52,14 @@
                     <input
                         id="country"
                         type="text"
-                        class="mt-1 block w-full"
+                        class=""
                         v-model="form.country"
                         autofocus
                         autocomplete="country"
                         placeholder="where is your wine from?"
                         aria-label="Pays de provenance du vin"
                         />
-                    <InputError class="msg input_err" :message="form.errors.country" />
+                    <InputError class="auto_msg auto_msg_input_err" :message="form.errors.country" />
                     </fieldset>
 
                     <fieldset class="fieldset_1">
@@ -68,14 +68,14 @@
                         <input
                             id="size"
                             type="text"
-                            class="mt-1 block w-full"
+                            class=""
                             v-model="form.size"
                             autofocus
                             autocomplete="size"
                             placeholder="what size is your wine?"
                             aria-label="Taille de la bouteille de vin"
                             />
-                        <InputError class="msg input_err" :message="form.errors.size" />
+                        <InputError class="auto_msg auto_msg_input_err" :message="form.errors.size" />
                     </fieldset>
 
                     <fieldset class="fieldset_1">
@@ -86,22 +86,22 @@
                             type="number"
                             min="0"
                             step="0.01"
-                            class="mt-1 block w-full"
+                            class=""
                             v-model="form.price"
                             autofocus
                             autocomplete="price"
                             placeholder="how much is your wine?"
                             aria-label="Prix du vin"
                             />
-                        <InputError class="msg input_err" :message="form.errors.price" />
+                        <InputError class="auto_msg auto_msg_input_err" :message="form.errors.price" />
                     </fieldset>
                 </section>
 
-                <section class="card_cellar w_sections">
-                    <h2 class="disp_subtitle">{{ __('cellar.what_to_do') }}</h2>
+                <section class="card_cellar card_cell_w_sections">
+                    <h2 class="title_disp_subt">{{ __('cellar.what_to_do') }}</h2>
                     <div class="column_15">
                         <!-- <h5 class="legend_small cream">Store in a cellar</h5> -->
-                        <h3 class="fs_5 burg-lt block-font">{{ __('cellar.store') }}</h3>
+                        <h3 class="typo-fs-5 burg-lt typo-block-font">{{ __('cellar.store') }}</h3>
                         <div class="grid_square_horiz">
                             <div v-for="(cellar, i) in cellars"  class="grid_sq_insert">
                                 <input
@@ -112,7 +112,7 @@
                                     v-model="form.cellar_id"
                                     :value="cellar.id"
                                 >
-                                <label class="block-font fs_5" :for=cellar.id>{{ cellar.name }}</label>
+                                <label class="typo-block-font typo-fs-5" :for=cellar.id>{{ cellar.name }}</label>
                             </div>
                         </div>
                         <p v-if="form.errors.cellar_id">{{ form.errors.cellar_id }}</p>
@@ -131,13 +131,13 @@
                                 placeholder="please choose a number"
                                 aria-label="Quantité de bouteilles à stocker dans le cellier"
                                 />
-                            <InputError class="msg input_err" :message="form.errors.price" />
+                            <InputError class="auto_msg auto_msg_input_err" :message="form.errors.price" />
                         </fieldset>
                     </div>
 
                     <div class="column_15">
                         <!-- <h5 class="legend cream">Add to your buy list</h5> -->
-                        <h3 class="fs_5 burg-lt block-font">{{ __('cellar.add_buylist') }}</h3>
+                        <h3 class="typo-fs-5 burg-lt typo-block-font">{{ __('cellar.add_buylist') }}</h3>
                         
                         <fieldset class="fieldset_1 fs_burg">
                             <legend>{{ __('cellar.how_many') }}</legend>

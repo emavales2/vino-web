@@ -1,0 +1,18 @@
+.legend {
+    font-family: var(--display-font);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: var(--tall-line);
+    text-align: center;
+} 
+
+.legend_small {
+    font-size: 1.2rem;
+    font-family: var(--block-font);
+    line-height: var(--med-line);
+    font-weight: 400;
+    text-align: center;
+    text-decoration: underline var(--cream);
+    text-underline-offset: 0.3em;
+    padding: var(--small-space) 0px 16px 0px;
+}

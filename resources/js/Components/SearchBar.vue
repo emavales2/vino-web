@@ -1,6 +1,6 @@
 <template>
   <div class="search-bar">
-    <!-- <legend class="block-font">find a wine</legend> -->
+    
     <form @submit.prevent="submit">
         <fieldset class="fieldset_1 fs_burg row_els_apart">
             <legend aria-labelledby="search">{{ __('dialogue.find_wine') }}</legend>

@@ -1,0 +1,38 @@
+/* ---- * BLOBS DÉCORATIFS DANS L'ARRIÈRE_PLAN * ---- */
+
+.blobs_bckgd {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.blobs_bckgd.blobs_bckgd_home {
+    z-index: 0;
+}
+
+/* ---- * Élement affecté sur l'html : fig_bg blob_bottom img  * ---- */
+.blob_bottom img {
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: 0;
+} 
+
+/* ---- * Élement affecté sur l'html : fig_bg blob_bottom:last-child img * ---- */
+.blob_bottom:last-child img {
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.blob_coral_bg {
+    opacity: 70%;
+}
+
+.blob_med_bg {
+    z-index: 1;
+}
+
+.blob_burg_bg {
+    opacity: 64%;
+    z-index: 2;
+}
