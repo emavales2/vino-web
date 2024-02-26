@@ -5,7 +5,7 @@
   <main>
     <GoBackButton :color="'cream'"/>
     <header>
-      <h1 class="index_title">{{ __('cellar.edit_title') }}</h1>
+      <h1 class="title_index">{{ __('cellar.edit_title') }}</h1>
     </header>
   
       <form @submit.prevent="submit" class="form-create-wine">
@@ -21,7 +21,7 @@
                 autocomplete="name"
                 placeholder="name"
               />
-            <InputError class="msg input_err" :message="form.errors.name" />
+            <InputError class="auto_msg auto_msg_input_err" :message="form.errors.name" />
         </fieldset>
 
         <fieldset class="fieldset_1">
@@ -36,7 +36,7 @@
                 autocomplete="type"
                 placeholder="type"
               />
-            <InputError class="msg input_err" :message="form.errors.type" />
+            <InputError class="auto_msg auto_msg_input_err" :message="form.errors.type" />
         </fieldset>
 
         <fieldset class="fieldset_1">
@@ -51,7 +51,7 @@
                 autocomplete="country"
                 placeholder="country"
               />
-            <InputError class="msg input_err" :message="form.errors.country" />
+            <InputError class="auto_msg auto_msg_input_err" :message="form.errors.country" />
         </fieldset>
 
         <fieldset class="fieldset_1">
@@ -66,7 +66,7 @@
                 autocomplete="size"
                 placeholder="size"
               />
-            <InputError class="msg input_err" :message="form.errors.size" />
+            <InputError class="auto_msg auto_msg_input_err" :message="form.errors.size" />
         </fieldset>
 
         <fieldset class="fieldset_1">
@@ -83,7 +83,7 @@
                 autocomplete="price"
                 placeholder="price"
               />
-            <InputError class="msg input_err" :message="form.errors.price" />
+            <InputError class="auto_msg auto_msg_input_err" :message="form.errors.price" />
         </fieldset>
         
         <button class="button">{{ __('buttons.update') }}</button>

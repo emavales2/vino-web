@@ -1,15 +1,14 @@
-.quantity-drop{
+.quantity-drop {
   background-color: var(--burgundy-lt);
+  min-height: var(--med-space);
+  height: var(--med-space);
+  padding: var(--vsmall-space);
+  border-radius: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* width: var(--med-space); */
-  min-height: var(--med-space);
   aspect-ratio: 1/1;
-  height: var(--med-space);
-  border-radius: 100%;
   text-align: center;
   color: var(--cream);
   font-size: .694rem;
-  padding: var(--vsmall-space);
 }

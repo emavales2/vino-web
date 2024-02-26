@@ -1,8 +1,6 @@
 
 /* ----- * FICHE WINE (wine/show) * ----- */ 
 
-/* In this case the <main> will be contained in a <div>, essentially making it a card */
-
 .fiche_wine {
     display: flex;
     flex-direction: row;

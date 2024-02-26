@@ -7,11 +7,11 @@
             <GoBackButton :color="'cream'"/>
 
             <header>
-                <h1 class="fs_3 block-font coral">{{ __('cellar.add_buylist') }}</h1>
+                <h1 class="typo-fs-3 typo-block-font coral">{{ __('cellar.add_buylist') }}</h1>
             </header>
 
             <form @submit.prevent="addToBuyList" class="form-quantity">
-                <h2 class="block-font fiche_wine_title coral">{{ wineData.name }}</h2>
+                <h2 class="typo-block-font fiche_wine_title coral">{{ wineData.name }}</h2>
                 
                 <section>
                     <figure><img :src="wineData.photo" :alt="wineData.name"></figure>
@@ -19,7 +19,7 @@
                     <div>
                         <label for="quantity"></label>
                         <input type="number" id="quantity" v-model="form.quantity">
-                        <InputError class="msg input_err" :message="form.errors.quantity" />
+                        <InputError class="auto_msg auto_msg_input_err" :message="form.errors.quantity" />
 
                         <div>
                             <MinusButton :color="'burgundy'" :removeAction="removeOne" />

@@ -7,18 +7,18 @@
 
       <!-- ---- * Titre et boutons qui affecten le cellier * ---- -->
       <header>
-        <h1 class="index_title">{{ cellar.name }}</h1>
+        <h1 class="title_index">{{ cellar.name }}</h1>
         <section>
-          <Link :href="route('cellar.edit', cellar.id)" class="font_link cream">{{ __("buttons.edit") }}</Link>
-          <button type="button" @click.stop="toggleModal(cellar)" class="font_link cream">
+          <Link :href="route('cellar.edit', cellar.id)" class="btn_link cream">{{ __("buttons.edit") }}</Link>
+          <button type="button" @click.stop="toggleModal(cellar)" class="btn_link cream">
             {{ __("cellar.cellar_delete") }}
           </button>
         </section>
       </header>
 
-      <!-- ---- * Carte nav pour filtrer les vins * ---- -->
+      <!-- ---- * SECTION RECHERCHE/FILTRES/TRI * ---- -->
       <aside v-if="collection.length !== 0 || searchTerm" class="card_nav bckgd-burg-lt">
-        <h2 class="disp_subtitle sm">
+        <h2 class="title_disp_subt tit_sub_sm">
           {{ __("cellar.more_options") }}
         </h2>
 
@@ -26,8 +26,11 @@
         <SearchAuto :cellars="collection" :collection="collectionReceived" @collection-event="receiveTreatedCollection"
           v-if="collection.length !== 0" />
 
+        <!-- ---- * Filtres * ---- -->  
         <span class="row_els_apart">
           <button class="button button-sml btn_wide">{{ __("cellar.filter") }}</button>
+
+         <!-- ---- * Tri * ---- -->  
           <button class="button button-sml btn_wide">{{ __("cellar.sort") }}</button>
         </span>
       </aside>
@@ -42,7 +45,7 @@
               <PlusButton :color="'coral'" @click.stop="addOne(wine.wine)" />
 
             </span>
-            <button class="button btn-sml btn-warning" @click.stop="toggleModalWine(wine.wine, cellar.id)">
+            <button class="button btn-sml btn-full btn-warning" @click.stop="toggleModalWine(wine.wine, cellar.id)">
               {{ __("buttons.remove") }}
             </button>
           </section>

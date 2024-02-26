@@ -2,7 +2,7 @@
     <Head title="Dashboard Admin" />
     <div class="bckgd">
         <header>
-            <h1 class="index_title">{{ __('dashboard.welcome') }} {{ user.first_name }}</h1> 
+            <h1 class="title_index">{{ __('dashboard.welcome') }} {{ user.first_name }}</h1> 
         </header>
         <main class="mb-6">
             <ul>

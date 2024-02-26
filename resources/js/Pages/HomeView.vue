@@ -6,17 +6,17 @@
         <!-- ---- * En dessus de body, le conteneur principale. Au dessous du page content * ---- -->
         <div class="bckgd bckgd-home">
             <!-- ---- * Contenu décoratif du bg (flat). Pas d'interaction avec page content * ---- -->
-            <section class="background_blobs bb_home">
+            <section class="blobs_bckgd blobs_bckgd_home">
                 <figure class="fig_bg">
-                    <img src="@/../assets/img/coral_1.svg" class="coral_blob_bg" alt="">    
+                    <img src="@/../assets/img/coral_1.svg" class="blob_coral_bg" alt="decoration element">    
                 </figure>
 
                 <figure class="fig_bg">
-                    <img src="@/../assets/img/med_vino.svg" class="med_blob_bg" alt="">
+                    <img src="@/../assets/img/med_vino.svg" class="blob_med_bg" alt="decoration element">
                 </figure>
 
                 <figure class="fig_bg">
-                    <img src="@/../assets/img/dark_vino.svg" class="dkvin_blob_bg" alt="">
+                    <img src="@/../assets/img/dark_vino.svg" class="blob_burg_bg" alt="decoration element">
                 </figure>
             </section>
 
@@ -26,8 +26,8 @@
                         <img src="@/../assets/logos/VINO_lt.svg" alt="VINO logo">
                     </figure>
 
-                    <span class="title-center">
-                        <h1 class="fs_5 block-font txt-center coral">{{ __('home.sub') }}<br>{{ __('home.sub2') }}</h1>
+                    <span class="cont-center">
+                        <h1 class="typo-fs-5 typo-block-font txt-center coral">{{ __('home.sub') }}<br>{{ __('home.sub2') }}</h1>
                     </span>
                 </header>
                 <div class="button_column">             
@@ -39,7 +39,7 @@
 
                     <p class="cream txt-center">
                         {{ __('home.no_account') }}
-                        <Link class="block-font coral" :href="route('register')">{{ __('home.join') }}</Link>
+                        <Link class="typo-block-font coral" :href="route('register')">{{ __('home.join') }}</Link>
                        
                     </p>
                     <p class="cream txt-center"> 

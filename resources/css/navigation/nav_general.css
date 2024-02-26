@@ -1,4 +1,3 @@
-
 /* ---------- * * NAV GÉNÉRALE * * ---------- */
 
 nav {
@@ -30,7 +29,8 @@ nav svg {
 
 /* ---------- * * TOP NAV * * ---------- */
 
-.top_nav_header {
+
+.nav_top_header {
     position: absolute;
     z-index: 1;
     /* added as per my other one*/
@@ -40,7 +40,7 @@ nav svg {
     gap: var(--med-space);
 }
 
-.top_nav {
+.nav_top {
     display: flex;
     justify-content: space-between; 
     background-color: transparent;
@@ -48,34 +48,34 @@ nav svg {
     z-index: 1;
 }
 
-.top_nav figure {
-    -webkit-writing-mode: vertical-lr;
+.nav_top figure {
+    writing-mode: vertical-lr;
     padding-left: var(--small-space);
 }
 
-.top_nav img {
+.nav_top img {
     max-width: 100%;
     height: 22px;
 }
 
-.top_nav svg {
+.nav_top svg {
     fill: var(--cream);
     width: var(--large-space);
     height: var(--large-space);
 }
 
-.top_nav span {
+.nav_top span {
     display: flex;
     gap: var(--safe-area);
     justify-content: flex-end;
 }
 
-.top_nav p {
+.nav_top p {
     padding-left: var(--small-space);
 }
 
 /* ---------- * * Language * * ---------- */
-.lang{
+.nav_lang {
     max-height: 30px;
     display: flex;
     align-items: center;
@@ -88,7 +88,7 @@ nav svg {
 /* ---------- * * BOTTOM NAV * * ---------- */
 /* ---------- * * Navigation en Général * * ---------- */
 
-.bottom_nav {
+.nav_bottom {
     display: grid;
     /* --- Changer à 5 une fois rajouté l'icône pour "notes" --- */
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -96,10 +96,10 @@ nav svg {
     background: var(--coral);  
 }
 
-.bottom_nav svg {
+.nav_bottom svg {
     fill: var(--burgundy);
 }
-.bottom_nav .here svg{
+.nav_bottom .here svg{
     fill: var(--cream-lt);
 }
 
@@ -109,7 +109,3 @@ nav svg {
 /* @media screen and (max-width: 600px) {
 
 }     */
-
-
-
-/* <MainLayout :user="user"> */

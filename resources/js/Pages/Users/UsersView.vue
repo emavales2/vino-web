@@ -1,7 +1,7 @@
 <template>
     <Head title="Users" />
     <header>
-        <h1 class="index_title">{{ __('user.users') }}</h1>
+        <h1 class="title_index">{{ __('user.users') }}</h1>
     </header>
     <table class="cream">
         <thead>

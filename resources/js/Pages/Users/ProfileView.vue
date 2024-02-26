@@ -5,24 +5,24 @@
         <main>
             <GoBackButton :color="'cream'"/>
             <header>
-                <h1 class="index_title">{{ __('user.profile') }}</h1>
+                <h1 class="title_index">{{ __('user.profile') }}</h1>
             </header>
 
             <div>
                 <dl class="txt-center">
                     <span class="flex-row gap_20">
-                        <dt class="display-font coral">{{ __('user.first_name') }}</dt>
-                        <dd class="cream block-font">{{ user.first_name }}</dd>
+                        <dt class="typo-display-font coral">{{ __('user.first_name') }}</dt>
+                        <dd class="cream typo-block-font">{{ user.first_name }}</dd>
                     </span>
 
                     <span class="flex-row gap_20">
-                        <dt class="display-font coral">{{ __('user.last_name') }}</dt>
-                        <dd class="cream block-font">{{ user.last_name }}</dd>
+                        <dt class="typo-display-font coral">{{ __('user.last_name') }}</dt>
+                        <dd class="cream typo-block-font">{{ user.last_name }}</dd>
                     </span>
 
                     <span class="flex-row gap_20">
-                        <dt class="display-font coral">{{__('user.email')}}</dt>
-                        <dd class="cream block-font">{{ user.email }}</dd>
+                        <dt class="typo-display-font coral">{{__('user.email')}}</dt>
+                        <dd class="cream typo-block-font">{{ user.email }}</dd>
                     </span>        
                 </dl>
             </div>
