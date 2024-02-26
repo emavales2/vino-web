@@ -5,6 +5,8 @@
   border-radius: 100px;
   color: var(--white);
   background-color: var(--success);
-  padding: var(--med-space);
+  padding: var(--small-space);
+  position: fixed;
+  right: var(--small-space);
   z-index: 2;
 }
