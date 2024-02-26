@@ -93,6 +93,7 @@ import Modal from '@/Components/Modal.vue'
 import ConfirmModal from '@/Components/ConfirmModal.vue'
 import { computed } from 'vue'
 export default {
+  name: 'MainLayout',
   data () {
     return {
       page: computed(() => {
