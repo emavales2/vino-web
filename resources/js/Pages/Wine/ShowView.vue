@@ -3,12 +3,13 @@
         <!-- ----- * DÉCOR BACKGROUND * ----- -->
         <section class="background_blobs">
             <figure class="fig_bg bottom_blob">
-                <img src="@/../assets/img/bott_cream_fiche.svg" alt="">    
+                <img src="@/../assets/img/bott_cream_fiche.svg" alt="" />
             </figure>
             <figure class="fig_bg bottom_blob">
-                <img src="@/../assets/img/bott_coral_fiche.svg" class="coral_blob_bg" alt="">    
+                <img src="@/../assets/img/bott_coral_fiche.svg" class="coral_blob_bg" alt=""
+                />
             </figure>
-        </section> 
+        </section>
 
         <main>
             <!-- ----- * BACK BUTTON * ----- -->
@@ -17,6 +18,7 @@
                 <GoBackButton :color="'coral'"/>
             </span>
 
+            <!-- ----- * FICHE * ----- -->
             <article class="fiche_wine">
                 <figure>
                     <img :src="wine.photo" :alt="wine.name">
@@ -46,7 +48,7 @@
             </article>
         </main>
 
-        <!-- ----- * NAV SECTION * ----- -->
+        <!-- ----- * NAV SECTION : BOUTONS * ----- -->
         <aside class="row_els_apart row_els_line" v-if="!exists">
             <Link class="button--icon" :href="route('buylist.create', { wine: wine.id })">
                 <figure>
@@ -69,58 +71,48 @@
 </template>
 
 <script>
-import { Head, Link } from '@inertiajs/inertia-vue3';
-import MainLayout from '@/Layouts/MainLayout.vue';
-import ColorDrop from '@/Components/ButtonsIcons/ColorDrop.vue'
-import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue';
-// import { Inertia } from '@inertiajs/inertia';
+import { Head, Link } from "@inertiajs/inertia-vue3";
+import MainLayout from "@/Layouts/MainLayout.vue";
+import ColorDrop from "@/Components/ButtonsIcons/ColorDrop.vue";
+import GoBackButton from "@/Components/ButtonsIcons/GoBackButton.vue";
 
 export default {
-    name:'Wine.ShowView',
+    name: "Wine.ShowView",
     components: {
         Head,
         Link,
         ColorDrop,
-        GoBackButton
+        GoBackButton,
     },
     data() {
         return {
+            testUrl: "https://thomasira.com/",
             currentUrl: window.location.href,
         };
     },
     layout: MainLayout,
-    methods: {
-        loadFacebookSDK() {
-            window.fbAsyncInit = function () {
-                FB.init({
-                    appId: "1213281232966329",  // Remplacez par votre ID d'application Facebook
-                    xfbml: true,
-                    version: "v19.0",
-                });
-            };
-            
-            // Chargez de manière asynchrone le SDK Facebook
-            (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = "https://connect.facebook.net/fr_CA/sdk.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-        },
-        shareOnFacebook() {
-            window.FB.ui(
-                {
-                    method: "share",
-                    href: this.currentUrl,  // ajouter dans les app domains de notre app facebook
-                },
-                function (response) {}
-            );
-        },
-    },
-    mounted() {
-        this.loadFacebookSDK();
-    },
+    // methods: {
+    //     loadFacebookSDK() {
+    //         window.fbAsyncInit = function () {
+    //             FB.init({
+    //                 appId: "1213281232966329",  // Remplacez par votre ID d'application Facebook
+    //                 xfbml: true,
+    //                 version: "v19.0",
+    //             });
+    //         };
+    //         // Chargez de manière asynchrone le SDK Facebook
+    //         (function(d, s, id) {
+    //             var js, fjs = d.getElementsByTagName(s)[0];
+    //             if (d.getElementById(id)) return;
+    //             js = d.createElement(s); js.id = id;
+    //             js.src = "https://connect.facebook.net/fr_CA/sdk.js";
+    //             fjs.parentNode.insertBefore(js, fjs);
+    //         }(document, 'script', 'facebook-jssdk'));
+    //     },
+    // },
+    // mounted() {
+    //     this.loadFacebookSDK();
+    // },
     props: {
         wine: Object, 
         exists: Boolean,

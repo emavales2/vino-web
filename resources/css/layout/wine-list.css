@@ -1,6 +1,4 @@
 .wine-list{
-  /* padding: var(--small-space);
-  padding-bottom: var(--large-space); */
   gap: var(--med-sm-space);
   justify-content: center;
   /* Changé à grid pour maintenir l'alignement même s'il y a un seul vin */
