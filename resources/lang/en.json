@@ -12,9 +12,6 @@
         "filter": "filter",
         "sort": "sort"
     },
-    "aria": {
-        "profil": "User Profile"
-    },
     "auth": {
         "failed": "These credentials do not match our records.",
         "password": "The provided password is incorrect.",
@@ -53,6 +50,7 @@
         "select": "Select a cellar",
         "no_cellar": "It seems like you have no cellar, please create one first",
         "create": "Create a cellar",
+        "sort_by": "Sort by",
         "my_wines": "My wines",
         "add_custom": "Add a custom wine",
         "more_options": "More cellar options",

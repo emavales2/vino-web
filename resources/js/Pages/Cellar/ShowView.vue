@@ -36,19 +36,19 @@
 
         <transition name="sort-square-fade">
           <section v-show="isSortSquareOpen" class="sort-square">
-            <h1 class="fs_6 display-font coral">Sort by</h1>
+            <h1 class="fs_6 display-font coral">{{ __('cellar.sort_by') }}</h1>
             <div class="sort-square-options">
               <div>
                 <input type="radio" class="radio" name="sort" id="type" v-model="sort" :value="1">
-                <label for="type">Type</label>
+                <label for="type">{{ __('cellar.wine_type') }}</label>
               </div>
               <div>
                 <input type="radio" class="radio" name="sort" id="country" v-model="sort" :value="2">
-                <label for="country">Country</label>
+                <label for="country">{{ __('cellar.wine_country') }}</label>
               </div>
               <div>
                 <input type="radio" class="radio" name="sort" id="price" v-model="sort" :value="3">
-                <label for="price">Price</label>
+                <label for="price">{{ __('cellar.wine_price') }}</label>
               </div>
             </div>
           </section>

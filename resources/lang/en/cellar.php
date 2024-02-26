@@ -14,6 +14,8 @@ return [
     'select' => 'Select a cellar',
     'no_cellar' => 'It seems like you have no cellar, please create one first',
     'create' => 'Create a cellar',
+    // TRIER
+    'sort_by' => 'Sort by',
     // Collection
     'my_wines' => 'My wines',
     'add_custom' => 'Add a custom wine',

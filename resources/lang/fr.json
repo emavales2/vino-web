@@ -12,9 +12,6 @@
         "filter": "filtre",
         "sort": "trier"
     },
-    "aria": {
-        "profil": "Profil utilisateur"
-    },
     "auth": {
         "failed": "Ces identifiants ne correspondent pas \u00e0 nos enregistrements.",
         "password": "Le mot de passe fourni est incorrect.",
@@ -54,6 +51,7 @@
         "select": "S\u00e9lectionner un cellier",
         "no_cellar": "Il semble que vous n'ayez pas de cellier, veuillez en cr\u00e9er un d'abord",
         "create": "Cr\u00e9er un cellier",
+        "sort_by": "Trier par",
         "my_wines": "Mes vins",
         "add_custom": "Ajouter un vin personnalis\u00e9",
         "more_options": "Plus d'options",
