@@ -4,10 +4,10 @@
         <Link :href="route('cellar.show', cellar.id)">
             
             <!-- To not overflow the text -->
-            <span class="block-font" v-if="cellar.name.length > 30">
+            <span class="block-font burg" v-if="cellar.name.length > 30">
                 {{ cellar.name.replaceAll('/', ' ').slice(0, 30) }}...
             </span>
-            <span class="block-font" v-else>
+            <span class="block-font burg" v-else>
                 {{ cellar.name }}
             </span>  
         </Link>

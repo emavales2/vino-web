@@ -8,9 +8,9 @@ button {
 
 /* attrs pour tous les boutons */
 .button {
-    border: 2px solid var(--cream);
+    border: 2px solid var(--cream-lt);
     border-radius: var(--large-space);
-    color: var(--cream);
+    color: var(--cream-lt);
     display: block;
     font-family: 'Oswald', sans-serif;
     font-size: 1.12rem;
@@ -50,7 +50,7 @@ button {
 .button.btn-warning { 
     background-color: var(--danger);
     border-color:var(--danger);
-    color: var(--cream)
+    color: var(--cream-lt)
 }   
 
 /* - variants de tailles - */

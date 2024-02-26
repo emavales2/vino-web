@@ -8,7 +8,7 @@
 }
 /* Card components Dashboard CellarDisplayBox  */
 .card_cellar {
-    background-color: var(--coral);
+    background-color: var(--cream);
     border-radius: 12px;
     font-family: var(--block-font);
     text-transform: uppercase;
@@ -20,7 +20,7 @@
     height: 100%;
     width: 100%;
     flex: 1;
-    color: var(--cream-lt);
+    color: var(--burgundy);
     font-size: .833rem;
     line-height: var(--small-line);
     overflow-wrap: break-word;
@@ -32,6 +32,7 @@
 .card_cellar.w_sections {
     padding: var(--med-space);
     gap: var(--large-space);
+    background-color: var(--coral);
 }
 
 .card_round {

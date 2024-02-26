@@ -160,7 +160,7 @@ small {
     font-size: 1.728rem;
     line-height: var(--tall-line);
     font-family: var(--display-font);
-    color: var(--cream);
+    color: var(--cream-lt);
     font-weight: 600;
     text-transform: lowercase;
     max-width: 15ch;
