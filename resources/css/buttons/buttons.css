@@ -42,6 +42,12 @@ button {
     color: var(--burgundy);
 }
 
+.button.btn-cream {
+    background: none;
+    border-color: var(--cream);
+    color: var(--cream);
+}
+
 .button.btn-coral {
     background: var(--coral);
     border-color: var(--coral);

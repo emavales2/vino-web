@@ -8,7 +8,7 @@
                     <h1 class="title_index">{{ __('cellar.my_wines') }}</h1>
                 </header>
 
-                <button class="button">
+                <button class="button btn-cream">
                     <Link :href="route('wine.create')">
                         {{ __('cellar.add_custom') }}
                     </Link>
