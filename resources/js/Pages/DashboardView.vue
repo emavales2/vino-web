@@ -16,7 +16,7 @@
                     </span>
 
                     <!-- ---- * Custom wine * ---- -->
-                    <button class="button">
+                    <button class="button btn-cream">
                         <Link :href="route('wine.create')">
                             {{ __("buttons.add_custom_wine") }}
                         </Link>
