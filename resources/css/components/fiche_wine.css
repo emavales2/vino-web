@@ -3,10 +3,16 @@
 
 /* In this case the <main> will be contained in a <div>, essentially making it a card */
 
-.fiche_wine main > *  {
+.fiche_wine {
     display: flex;
     flex-direction: row;
     gap: var(--med-space);
+}
+
+.fiche_wine > section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--med-sm-space);
 }
 
 .fiche_wine_title {
@@ -21,13 +27,6 @@
 .fiche_wine_subtitle {
     font-size: 1rem;
     line-height: var(--text-line);
-}
-
-.country_line {
-    display: flex;
-    flex-direction: row;
-    gap: var(--small-space);
-    align-items: center;
 }
 
 .fiche_wine figure {

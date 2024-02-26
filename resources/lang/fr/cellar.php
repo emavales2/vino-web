@@ -15,7 +15,7 @@ return [
     'no_cellar' => 'Il semble que vous n\'ayez pas de cellier, veuillez en créer un d\'abord',
     'create' => 'Créer un cellier',
     // Collection
-    'your_wines' => 'Vos vins',
+    'my_wines' => 'Mes vins',
     'add_custom' => 'Ajouter un vin personnalisé',
     'more_options' => 'Plus d\'options',
     // create custom wine
