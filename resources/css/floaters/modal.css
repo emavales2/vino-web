@@ -15,8 +15,9 @@
 
 .confirm{
   align-self: center;
-  background-color: var(--cream);
-  color: var(--burgundy-lt);
+  background-color: var(--danger-lt);
+  color: var(--danger);
+  font-size: 1em;
   border-radius: 13px;
   padding: var(--med-space) var(--small-space);
   font-family: var(--block-font);

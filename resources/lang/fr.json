@@ -12,6 +12,9 @@
         "filter": "filtre",
         "sort": "trier"
     },
+    "aria": {
+        "profil": "Profil utilisateur"
+    },
     "auth": {
         "failed": "Ces identifiants ne correspondent pas \u00e0 nos enregistrements.",
         "password": "Le mot de passe fourni est incorrect.",
@@ -27,7 +30,9 @@
         "add_custom_wine": "Ajouter un vin personnalis\u00e9",
         "logout": "Se d\u00e9connecter",
         "remove": "Enlever",
-        "yes_delete": "Oui, supprimer"
+        "yes_delete": "Oui, supprimer",
+        "yes": "Oui",
+        "update": "Mettre \u00e0 jour"
     },
     "buylist": {
         "just_delete": "supprimer le vin",
@@ -49,7 +54,7 @@
         "select": "S\u00e9lectionner un cellier",
         "no_cellar": "Il semble que vous n'ayez pas de cellier, veuillez en cr\u00e9er un d'abord",
         "create": "Cr\u00e9er un cellier",
-        "your_wines": "Vos vins",
+        "my_wines": "Mes vins",
         "add_custom": "Ajouter un vin personnalis\u00e9",
         "more_options": "Plus d'options",
         "create_custom": "Cr\u00e9er un vin personnalis\u00e9",
@@ -64,6 +69,7 @@
         "how_many": "Combien de bouteilles?",
         "add_buylist": "Ajouter ce vin \u00e0 votre liste d'achats",
         "save_wine": "Enregistrer ce vin",
+        "edit_title": "Modifier votre vin personnalis\u00e9",
         "code": "Code SAQ",
         "price": "Prix",
         "buylist": "Liste d'achats",
@@ -74,7 +80,7 @@
     "dashboard": {
         "welcome": "Bienvenue",
         "my_cellars": "Mes celliers",
-        "my_collection": "Ma collection de vins"
+        "my_wines": "Mes vins"
     },
     "dialogue": {
         "show_view": "\u00cates-vous s\u00fbr de vouloir supprimer ce cellier? Tous les vins seront \u00e9galement supprim\u00e9s.",
@@ -100,7 +106,9 @@
         "delete": "supprimer",
         "account_deleted": "Votre compte a \u00e9t\u00e9 supprim\u00e9. Nous sommes tristes de vous voir partir. Au revoir !",
         "account_updated": "Super ! Votre compte a \u00e9t\u00e9 mis \u00e0 jour.",
-        "registerDialog": "Yeah ! Merci pour votre inscription"
+        "registerDialog": "Yeah ! Merci pour votre inscription",
+        "wine_create": "Super ! Votre vin a \u00e9t\u00e9 ajout\u00e9.",
+        "wine_update": "Super ! Votre vin a \u00e9t\u00e9 mis \u00e0 jour."
     },
     "home": {
         "sub": "Votre sanctuaire",
@@ -109,7 +117,7 @@
         "no_account": "Pas encore de compte ?",
         "join": "Inscrivez-vous !",
         "switch": "Changer de langue",
-        "sub_sign": "Vivez l'exp\u00e9rience parfaite des celliers avec Vino",
+        "sub_sign": "Vivez l'exp\u00e9rience parfaite de vos celliers avec Vino",
         "email": "Adresse e-mail",
         "password": "Mot de passe",
         "first_name": "Pr\u00e9nom",

@@ -4,10 +4,7 @@
   border: 2px solid var(--success-lt);
   border-radius: 100px;
   color: var(--white);
-  font-family: var(--block-font);
-  max-width: 300px;
-  padding: var(--small-space);
-  position: fixed;
-  right: var(--small-space);
+  background-color: var(--success);
+  padding: var(--med-space);
   z-index: 2;
 }

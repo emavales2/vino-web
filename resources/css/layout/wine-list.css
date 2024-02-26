@@ -1,11 +1,9 @@
 .wine-list{
-  /* padding: var(--small-space);
-  padding-bottom: var(--large-space); */
   gap: var(--med-sm-space);
   justify-content: center;
   /* Changé à grid pour maintenir l'alignement même s'il y a un seul vin */
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(79px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
   padding: 0;
   margin-top: var(--xxlarge-space);
   gap: var(--xxxlarge-space) var(--med-sm-space);

@@ -15,7 +15,7 @@ return [
     'no_cellar' => 'Il semble que vous n\'ayez pas de cellier, veuillez en créer un d\'abord',
     'create' => 'Créer un cellier',
     // Collection
-    'your_wines' => 'Vos vins',
+    'my_wines' => 'Mes vins',
     'add_custom' => 'Ajouter un vin personnalisé',
     'more_options' => 'Plus d\'options',
     // create custom wine
@@ -31,6 +31,7 @@ return [
     'how_many' => 'Combien de bouteilles?',
     'add_buylist' => 'Ajouter à votre liste d\'achats',
     'save_wine' => 'Enregistrer ce vin',
+    'edit_title' => 'Modifier votre vin personnalisé',
     // Fiche Vin
     'code' => 'Code SAQ',
     'price' => 'Prix',

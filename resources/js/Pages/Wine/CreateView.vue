@@ -16,23 +16,23 @@
                     <!-- <legend class="legend cream">Tell us about your wine</legend> -->
                     <fieldset class="fieldset_1">
                     <legend>{{ __('cellar.wine_name') }}</legend>
-                    <label for="name" hidden></label>
+                    <label aria-labelledby="name" for="name" hidden></label>
                     <input
                         id="name"
                         type="text"
                         class="mt-1 block w-full"
                         v-model="form.name"
-                        required
                         autofocus
                         autocomplete="name"
                         placeholder="what is the wine's name"
+                        aria-label="Nom du vin" 
                         />
                     <InputError class="msg input_err" :message="form.errors.name" />
                     </fieldset>
 
                     <fieldset class="fieldset_1">
                     <legend>{{ __('cellar.wine_type') }}</legend>
-                    <label for="type" hidden></label>
+                    <label aria-labelledby="type" for="type" hidden></label>
                     <input
                         id="type"
                         type="text"
@@ -41,13 +41,14 @@
                         autofocus
                         autocomplete="type"
                         placeholder="what type of wine is it?"
+                        aria-label="Type de vin"
                         />
                     <InputError class="msg input_err" :message="form.errors.type" />
                     </fieldset>
 
                     <fieldset class="fieldset_1">
                     <legend>{{ __('cellar.wine_country') }}</legend>
-                    <label for="country" hidden></label>
+                    <label aria-labelledby="country" for="country" hidden></label>
                     <input
                         id="country"
                         type="text"
@@ -56,13 +57,14 @@
                         autofocus
                         autocomplete="country"
                         placeholder="where is your wine from?"
+                        aria-label="Pays de provenance du vin"
                         />
                     <InputError class="msg input_err" :message="form.errors.country" />
                     </fieldset>
 
                     <fieldset class="fieldset_1">
                         <legend>{{ __('cellar.wine_size') }}</legend>
-                        <label for="size" hidden></label>
+                        <label  aria-labelledby="size" for="size" hidden></label>
                         <input
                             id="size"
                             type="text"
@@ -71,13 +73,14 @@
                             autofocus
                             autocomplete="size"
                             placeholder="what size is your wine?"
+                            aria-label="Taille de la bouteille de vin"
                             />
                         <InputError class="msg input_err" :message="form.errors.size" />
                     </fieldset>
 
                     <fieldset class="fieldset_1">
-                        <legend>{{ __('cellar.wine_price') }}</legend>
-                        <label for="price" hidden></label>
+                        <legend >{{ __('cellar.wine_price') }}</legend>
+                        <label aria-labelledby="price" for="price" hidden></label>
                         <input
                             id="price"
                             type="number"
@@ -88,6 +91,7 @@
                             autofocus
                             autocomplete="price"
                             placeholder="how much is your wine?"
+                            aria-label="Prix du vin"
                             />
                         <InputError class="msg input_err" :message="form.errors.price" />
                     </fieldset>
@@ -117,7 +121,7 @@
                         <fieldset class="fieldset_1 fs_burg">
                             <legend>{{ __('cellar.how_many') }}</legend>
                             <!-- <label for="cellar_qty" class="legend_small cream">How many bottles do you want to store</label> -->
-                            <label for="cellar_qty" hidden></label>
+                            <label aria-labelledby="quantité" for="cellar_qty" hidden></label>
                             <input
                                 id="cellar_qty"
                                 type="number"
@@ -125,6 +129,7 @@
                                 v-model="form.cellar_qty"
                                 autofocus
                                 placeholder="please choose a number"
+                                aria-label="Quantité de bouteilles à stocker dans le cellier"
                                 />
                             <InputError class="msg input_err" :message="form.errors.price" />
                         </fieldset>
@@ -136,13 +141,13 @@
                         
                         <fieldset class="fieldset_1 fs_burg">
                             <legend>{{ __('cellar.how_many') }}</legend>
-                            <label for="buyList_qty" hidden></label>
-                            <!-- <label for="buyList_qty" class="legend_small cream">How many bottles do you want to buy?</label> -->
+                            <label aria-labelledby="quantité" for="buyList_qty" hidden></label>
                         <input 
                             id="buyList_qty" 
                             type="number" 
                             min="0"
                             v-model="form.buyList_qty"
+                            aria-label="Quantité de bouteilles à ajouter à la liste d'achat"
                             />
                         <p v-if="form.errors.buyList_qty">{{ form.errors.buyList_qty }}</p>
                         </fieldset>
@@ -180,6 +185,7 @@
           cellar_qty: '0',
           buyList_qty: '',
         }),
+        wineDialog: this.trans.dialogue.wine_create
       }
     },
     layout: MainLayout,
@@ -187,11 +193,11 @@
       submit () {
         this.form.post(route('wine.store'), {
           onSuccess: () => {
-            this.$parent.openDialog(`Great ! Your wine has been added`);
+            this.$parent.openDialog(this.wineDialog);
           }
       });
       }
     },
-    props: ['cellars']
+    props: ['cellars', 'trans']
   }
   </script>

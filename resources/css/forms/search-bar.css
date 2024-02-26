@@ -36,6 +36,8 @@
   & svg{
     fill: var(--cream);
     margin-right: 10px;
-    margin-top: 3px;
+  }
+  & > form > .button--icon{
+    display: none;
   }
 }

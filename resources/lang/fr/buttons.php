@@ -11,4 +11,6 @@ return [
     'logout' => 'Se déconnecter',
     'remove' => 'Enlever',
     'yes_delete' => 'Oui, supprimer',
+    'yes' => 'Oui',
+    'update' => 'Mettre à jour',
 ];

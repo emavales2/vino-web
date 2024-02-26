@@ -32,5 +32,7 @@ return [
     'account_updated' => 'Great ! Your account has been updated.',
     // Register
     'registerDialog' => 'Yeah ! Thanks for register',
-
+    // Wine
+    'wine_create' => 'Great ! Your wine has been added.',
+    'wine_update' => 'Great ! Your wine has been updated.'
 ];

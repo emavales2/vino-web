@@ -28,7 +28,6 @@
 
 body {
     font-family: var(--text-font);
-    /* line-height: var(--text-line); */
 }
 
 .block-font {
@@ -54,15 +53,18 @@ h1, h2, h3 {
     line-height: var(--tall-line);
 }
 
-dt{
+dt {
     padding-bottom: var(--small-space);
 }
 
-/* ----- * H1 est le seul heading dont il n'ya qu'une seule font-family * ----- */
+.semibold {
+    font-weight: 700;
+}
+
+/* ----- * Fonctionne pour block & display fonts * ----- */
 .fs_1 {
     font-size: 2.986rem;
     line-height: var(--xxtall-line);
-    font-family: var(--block-font);
     letter-spacing: var(--med-ltr-spacing);
 }
 
@@ -116,9 +118,8 @@ small {
     font-weight: 600;
     font-size: 1.5rem;
     line-height: var(--tall-line);
-    font-weight: 500;
     text-align: center;
-}
+} 
 
 .legend_small {
     font-size: 1.2rem;
@@ -130,6 +131,7 @@ small {
     text-underline-offset: 0.3em;
     padding: var(--small-space) 0px 16px 0px;
 }
+
 
 /* ----- * ALIGNEMENT DU TEXTE * ----- */
 
@@ -158,7 +160,7 @@ small {
     font-size: 1.728rem;
     line-height: var(--tall-line);
     font-family: var(--display-font);
-    color: var(--cream);
+    color: var(--cream-lt);
     font-weight: 600;
     text-transform: lowercase;
     max-width: 15ch;
@@ -169,13 +171,24 @@ small {
     font-size: 1.4rem;
 }
 
+/* ---- * Var taille -> utilisé dans fiche_wine * ---- */
+.disp_subtitle.ds_smllst {
+    font-weight: 700;
+    font-size: 1.12rem;
+    text-transform: unset;
+    line-height: var(--text-line);
+}
+
+
+/* ---- * Sur les messages montrés quand collection d'éléments est vide * ---- */
 .no_show {
     text-transform: uppercase;
-    /* font-style: italic; */
     font-size: 1rem;
     line-height: var(--small-line);
     color: var(--coral);
 }
+
+/* ---- * GROUPE: OPTION AUX BOUTONS * ---- */
 
 .font_link {
     font-family: 'Roboto', sans-serif;
@@ -186,7 +199,7 @@ small {
 }
 
 .font_link:first-child {
-    border-right: 1px solid white;
+    border-right: 1px solid var(--cream-lt);
     padding-left: var(--small-space);
 }
 
@@ -196,3 +209,5 @@ small {
     width: 100%;
     display: block;
 }
+/* ---- * FIN GROUPE: links * ---- */
+
