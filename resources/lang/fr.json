@@ -33,10 +33,10 @@
     },
     "buylist": {
         "just_delete": "supprimer le vin",
-        "store_in_cellar": "Voulez-vous ins\u00e9rer ce vin dans un cellier?",
+        "store_in_cellar": "voulez-vous ins\u00e9rer ce vin dans un cellier?",
         "success_store_beg": "Super! vous venez d'ajouter",
         "success_store_mid": "bouteille(s) dans",
-        "success_delete": "Vous avez supprimer ce vin de votre liste d'achat!"
+        "success_delete": "vous avez supprimer ce vin de votre liste d'achat!"
     },
     "cellar": {
         "list": "Liste des celliers",
@@ -51,7 +51,7 @@
         "select": "S\u00e9lectionner un cellier",
         "no_cellar": "Il semble que vous n'ayez pas de cellier, veuillez en cr\u00e9er un d'abord",
         "create": "Cr\u00e9er un cellier",
-        "your_wines": "Vos vins",
+        "my_wines": "Mes vins",
         "add_custom": "Ajouter un vin personnalis\u00e9",
         "more_options": "Plus d'options",
         "create_custom": "Cr\u00e9er un vin personnalis\u00e9",
@@ -77,7 +77,7 @@
     "dashboard": {
         "welcome": "Bienvenue",
         "my_cellars": "Mes celliers",
-        "my_collection": "Ma collection de vins"
+        "my_wines": "Mes vins"
     },
     "dialogue": {
         "show_view": "\u00cates-vous s\u00fbr de vouloir supprimer ce cellier? Tous les vins seront \u00e9galement supprim\u00e9s.",

@@ -10,6 +10,7 @@ use App\Http\Resources\WineResource;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\URL;
 
 class WineController extends Controller
 {
@@ -103,10 +104,14 @@ class WineController extends Controller
         $exists = BuyList::where('user_id', $userId)
         ->where('wine_id', $wine->id)
         ->exists();
+
+        // --- * Previent conflit btn GoBack + redirection vers wine-create * ---
+        $prevPage = str_replace(url('/'), '', URL::previous());
+
         $wine = new WineResource($wine);
         $wine = $wine->resolve();
-        
-        return Inertia::render('Wine/ShowView', compact('wine','exists'));
+
+        return Inertia::render('Wine/ShowView', compact('wine','exists', 'prevPage'));
     }
 
     /**

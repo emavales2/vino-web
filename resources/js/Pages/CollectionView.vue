@@ -5,7 +5,7 @@
         <main>
             <section class="column_30">
                 <header>
-                    <h1 class="index_title">{{ __('cellar.your_wines') }}</h1>
+                    <h1 class="index_title">{{ __('cellar.my_wines') }}</h1>
                 </header>
 
                 <button class="button">
@@ -30,7 +30,7 @@
                                 >
                                   {{ __('buttons.edit') }}
                                 </Link>
-                                <button class="button btn-sml btn-warning" @click="toggleModal(wine.wine)">{{ __('buttons.remove') }}</button>
+                                <button class="button btn-full btn-sml btn-warning" @click="toggleModal(wine.wine)">{{ __('buttons.remove') }}</button>
                               </section>
                             </WineThumbnail>
                         </ul>

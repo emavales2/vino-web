@@ -54,8 +54,10 @@
                         <header>
                             <span class="row_els_apart gap_20">
                                 <h2 class="disp_subtitle">
-                                    {{ __("dashboard.my_collection") }}
+                                    {{ __("dashboard.my_wines") }}
                                 </h2>
+
+                                <!-- ---- * "See More" link si pertinent * ---- -->
                                 <div>
                                     <Link
                                         v-if="collection.length > 3"
@@ -67,6 +69,7 @@
                             </span>
                         </header>
 
+                        <!-- ---- * "Si existent, grille + vins * ---- -->
                         <div v-if="collection.length !== 0">
                             <ul class="wine-list">
                                 <WineThumbnail
@@ -77,6 +80,8 @@
                                 />
                             </ul>
                         </div>
+
+                        <!-- ---- * Message "No Wine" si pertinent * ---- -->
                         <p class="no_show" v-else>
                             <strong>{{ __("dialogue.oh") }}</strong
                             >{{ __("dialogue.no_wine") }}.

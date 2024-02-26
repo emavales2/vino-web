@@ -44,12 +44,24 @@
     align-items: center;
 }
 
+/* Flex-row, sp in between */
+.row_els_apart.row_els_line {
+    justify-content: space-around;
+    padding: 20px;
+}
+
 /* Flex-row, 10px gap */
 .row_gap_10 {
     display: flex;
     flex-direction: row;
     gap: var(--small-space);
     align-items: center;
+}
+
+.column_10 {
+    display: flex;
+    flex-direction: column;
+    gap: var(--small-space);
 }
 
 .column_15 {
@@ -176,7 +188,6 @@
 }
 
 .float_up {
-    margin-top: var(--small-space);
     padding-bottom: var(--xlarge-space);
     z-index: 2;
     position: relative;
