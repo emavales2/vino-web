@@ -7,7 +7,7 @@
         <h1 class="index_title">{{ __('cellar.list') }}</h1>
       </header>
 
-      <button class="button">
+      <button class="button btn-cream">
         <Link :href="route('cellar.create')">{{ __('cellar.add') }}</Link>
       </button>
 
