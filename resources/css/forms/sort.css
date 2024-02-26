@@ -1,0 +1,26 @@
+.sort-square {
+  overflow: hidden;
+  height: 105px;
+  background-color: var(--cream-lt);
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.sort-square-fade-enter-active, .sort-square-fade-leave-active {
+  transition: height 0.5s;
+}
+
+.sort-square-fade-enter-from, .sort-square-fade-leave-to {
+  height: 0;
+}
+
+.sort-square-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.sort-square-options > div > label {
+  width: 100px;
+  height: 50px;
+}

@@ -26,13 +26,33 @@
         <SearchAuto :cellars="collection" :collection="collectionReceived" @collection-event="receiveTreatedCollection"
           v-if="collection.length !== 0" />
 
-        <!-- ---- * Filtres * ---- -->  
+        <!-- ---- * Filtres * ---- -->
         <span class="row_els_apart">
           <button class="button button-sml btn_wide">{{ __("cellar.filter") }}</button>
 
-         <!-- ---- * Tri * ---- -->  
-          <button class="button button-sml btn_wide">{{ __("cellar.sort") }}</button>
+          <!-- ---- * Tri * ---- -->
+          <button class="button button-sml btn_wide" @click="toggleSortSquare">{{ __("cellar.sort") }}</button>
         </span>
+
+        <transition name="sort-square-fade">
+          <section v-show="isSortSquareOpen" class="sort-square">
+            <h1 class="fs_6 display-font coral">Sort by</h1>
+            <div class="sort-square-options">
+              <div>
+                <input type="radio" class="radio" name="sort" id="type" v-model="sort" :value="1">
+                <label for="type">Type</label>
+              </div>
+              <div>
+                <input type="radio" class="radio" name="sort" id="country" v-model="sort" :value="2">
+                <label for="country">Country</label>
+              </div>
+              <div>
+                <input type="radio" class="radio" name="sort" id="price" v-model="sort" :value="3">
+                <label for="price">Price</label>
+              </div>
+            </div>
+          </section>
+        </transition>
       </aside>
 
       <ul class="wine-list" v-if="collectionReceived.length !== 0">
@@ -98,7 +118,9 @@ export default {
       wineId: null,
       collectionReceived: this.collection,
       searchTerm: null,
-      action: null
+      action: null,
+      isSortSquareOpen: false,
+      sort: 0
     }
   },
   watch: {
@@ -107,6 +129,9 @@ export default {
     },
     collection() {
       this.collectionReceived = this.collection;
+    },
+    sort() {
+      this.sortCollection(this.sort);
     }
   },
   layout: MainLayout,
@@ -151,7 +176,33 @@ export default {
     receiveTreatedCollection(data) {
       this.collectionReceived = data.myCollection;
       this.searchTerm = data.term;
-    }
+    },
+    toggleSortSquare() {
+      this.isSortSquareOpen = !this.isSortSquareOpen;
+    },
+    sortCollection(option) {
+      if (option != 0) {
+        this.collectionReceived.sort((a, b) => {
+          if (option == 1) {
+            const typeA = a.wine.type;
+            const typeB = b.wine.type;
+            return typeA.localeCompare(typeB);
+          }
+
+          if (option == 2) {
+            const countryA = a.wine.country;
+            const countryB = b.wine.country;
+            return countryA.localeCompare(countryB);
+          }
+          
+          if (option == 3) {
+            const priceA = a.wine.price;
+            const priceB = b.wine.price;
+            return priceA - priceB;
+          }
+        });
+      }
+    },
   },
   props: ['cellar', 'collection', 'trans']
 }
