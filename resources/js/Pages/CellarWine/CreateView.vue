@@ -6,7 +6,7 @@
             <GoBackButton :color="'cream'"/>
 
             <header>
-                <h1 class="title_index">{{ __('cellar.add_wine_buylist') }}</h1>
+                <h1 class="title_index">{{ __('cellar.add_wine') }}</h1>
             </header>
 
             <div v-if="cellars.length !== 0">    
