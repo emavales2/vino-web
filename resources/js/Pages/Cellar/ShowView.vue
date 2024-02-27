@@ -165,12 +165,21 @@ export default {
     },
     deleteAllWine() {
       Inertia.delete(route('cellarwine.deleteallwine', { cellar: this.cellar }),
-        { preserveScroll: true })
+        { preserveScroll: true,
+          onSuccess: () => {
+            this.$parent.openDialog(this.__('dialogue.cellar_delete'));
+          }
+        })
       this.openDeleteModal = false
     },
     deleteWine() {
       Inertia.delete(route('cellarwine.delete', { cellar: this.cellar, wine: this.wineId }),
-        { preserveScroll: true })
+        { 
+          preserveScroll: true,
+          onSuccess: () => {
+            this.$parent.openDialog(this.__('dialogue.cellarwine_delete'));
+          }
+        })
       this.openDeleteModal = false
     },
     receiveTreatedCollection(data) {

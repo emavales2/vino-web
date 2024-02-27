@@ -42,7 +42,7 @@ export default {
     return {
       form: useForm({
         name: '',
-      }),
+      })
     };
   },
   layout: MainLayout,
@@ -50,7 +50,7 @@ export default {
     submitForm() {
       this.form.post(route('cellar.store'), {
           onSuccess: () => {
-            this.$parent.openDialog(`Great ! Your cellar has been added`);
+            this.$parent.openDialog(this.__('dialogue.cellar_create'));
           }
       });
     },
