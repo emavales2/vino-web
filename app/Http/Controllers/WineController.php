@@ -54,7 +54,6 @@ class WineController extends Controller
     {
         $request->validate([
             'name' => 'min:3|max:100',
-            'type' => 'min:3|max:45|nullable',
             'country' => 'min:3|max:100|nullable',
             'size' => 'min:3|max:45|nullable',
             'price' => 'numeric|gte:0|nullable',
@@ -64,11 +63,10 @@ class WineController extends Controller
             'cellar_qty' => Rule::requiredIf(!$request->buyList_qty),
             'buyList_qty' => Rule::requiredIf(!$request->cellar_qty)
         ]);
-        $type = json_encode(['fr' => $request->type]);
         $country = json_encode(['fr' => $request->country]);
         $wine = Wine::create([
             'name' => $request->name,
-            'type' => $type,
+            'type' => $request->type,
             'country' => $country,
             'size' => $request->size,
             'price' => $request->price,

@@ -278,6 +278,9 @@
     },
     "words": {
         "yes": "yes",
-        "no": "no"
+        "no": "no",
+        "red": "Red wine",
+        "white": "White wine",
+        "rose": "Ros\u00e9"
     }
 }

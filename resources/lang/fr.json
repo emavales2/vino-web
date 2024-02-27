@@ -219,6 +219,9 @@
     },
     "words": {
         "yes": "oui",
-        "no": "non"
+        "no": "non",
+        "red": "Vin rouge",
+        "white": "Vin blanc",
+        "rose": "Ros\u00e9"
     }
 }

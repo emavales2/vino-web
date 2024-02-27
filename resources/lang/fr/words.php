@@ -2,5 +2,8 @@
 
 return [
   'yes' => 'oui',
-  'no' => 'non'
+  'no' => 'non',
+  'red' => 'Vin rouge',
+  'white' => 'Vin blanc',
+  'rose' => 'Vin Rosé'
 ];
