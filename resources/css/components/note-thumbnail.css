@@ -1,0 +1,16 @@
+.note-thumbnail{
+  display: flex;
+  gap: var(--vsmall-space);
+  justify-content: space-between;
+  padding: var(--small-space);
+  border: 1px solid var(--coral-tr);
+  background-color: var(--cream-tr);
+  border-radius: 12px;
+  text-align: left;
+}
+.note-thumbnail p{
+  font-size: 1em;
+}
+.note-thumbnail div>div{
+  font-size: .8em;
+}
