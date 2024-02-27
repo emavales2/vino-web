@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CellarController;
 use App\Http\Controllers\CellarHasWineController;
 use App\Http\Controllers\BuyListController;
+use App\Http\Controllers\NoteController;
 use App\Http\Controllers\LocaleController;
 use App\Models\BuyList;
 use App\Providers\WineProvider;
@@ -81,6 +82,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/buy-list-create/{wine}', [BuyListController::class, 'create'])->name('buylist.create');
     Route::post('/buy-list', [BuyListController::class, 'store'])->name('buylist.store');
     Route::delete('/buy-list/{wine}', [BuyListController::class, 'destroy'])->name('buylist.delete');
+
+    //Notes
+    Route::get('/note-wine-index/{wine}', [NoteController::class, 'wineIndex'])->name('note.wine-index');
+    Route::get('/note-create/{wine}', [NoteController::class, 'create'])->name('note.create');
+    Route::get('/note-show/{note}', [NoteController::class, 'show'])->name('note.show');
+    Route::post('/note-store', [NoteController::class, 'store'])->name('note.store');
+    Route::delete('/note-delete/{note}', [NoteController::class, 'destroy'])->name('note.delete');
 
     // Utilitaires
     //-------------- Add & Remove One --------------------
