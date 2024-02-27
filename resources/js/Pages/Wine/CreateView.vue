@@ -182,7 +182,7 @@
           price: '',
           size: '',
           cellar_id: this.cellars[0].id || null,
-          cellar_qty: '0',
+          cellar_qty: '1',
           buyList_qty: '',
         }),
         wineDialog: this.trans.dialogue.wine_create
