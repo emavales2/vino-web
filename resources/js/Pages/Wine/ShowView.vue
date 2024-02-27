@@ -43,7 +43,7 @@
                         <li>{{ wine.size ? wine.size : 'n/a' }}</li>
                     </ul>                        
                      
-                    <span class="typo-semibold burg-lt">{{ __('cellar.price') }}: {{ wine.price ? wine.price + ' $' : 'n/a' }}</span>   
+                    <span class="typo-semibold burg-lt">{{ __('cellar.price') }}: {{ wine.price ? wine.price.toFixed(2) + ' $' : 'n/a' }}</span>   
                     <button @click="shareOnFacebook">Partage sur Facebook</button>               
                 </section>
             </article>

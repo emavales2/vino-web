@@ -9,7 +9,7 @@ return [
   'commented' => 'Commenté le ',
   'time_beg' => 'Votre dégustation du',
   'time_end' => 'pour',
-  'create_new' => 'Nouvelle note pour',
+  'create_new' => 'Nouvelle note',
   'write_note' => 'Comment était votre dégustation?',
   'note_placeholder' => 'Ce vin était très fruité et léger...'
 ];

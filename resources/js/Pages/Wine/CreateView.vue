@@ -26,7 +26,7 @@
                         autocomplete="name"
                         placeholder="what is the wine's name"
                         aria-label="Nom du vin" 
-                        />
+                    />
                     <InputError class="auto_msg auto_msg_input_err" :message="form.errors.name" />
                     </fieldset>
 
