@@ -33,6 +33,8 @@ return [
     'registerDialog' => 'Yeah ! Merci pour votre inscription',
     // Wine
     'wine_create' => 'Super ! Votre vin a été ajouté.',
-    'wine_update' => 'Super ! Votre vin a été mis à jour.'
+    'wine_update' => 'Super ! Votre vin a été mis à jour.',
+    'wine_deleted' => 'Votre vin a été supprimé.',
+
 
 ];

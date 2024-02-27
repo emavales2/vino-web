@@ -92,3 +92,14 @@ button {
     filter: opacity(.5);
 }
 
+.button--icon figcaption{
+    font-size: 1rem;
+    max-width: 10ch;
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    letter-spacing: var(--small-ltr-spacing);
+    line-height: 1em;
+    color: var(--coral);
+}
+

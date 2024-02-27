@@ -36,7 +36,7 @@
                                 <div>
                                     <Link
                                         v-if="cellars.length > 3"
-                                        class="lien_sml cream typo-block-font"
+                                        class="lien_sml cream_lt typo-block-font"
                                         :href="route('cellar.index')"
                                         >{{ __("buttons.see_more") }}
                                     </Link>
