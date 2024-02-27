@@ -102,7 +102,7 @@
                 
                 <div class="flex items-center justify-end">
                     <button
-                        class="button"
+                        class="button btn-cream"
                         :class="{ 'opacity-25': form.processing }"
                         :disabled="form.processing"
                     >

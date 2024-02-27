@@ -41,7 +41,7 @@
                     <InputError class="auto_msg auto_msg_input_err" :message="form.errors.password" />
                 </fieldset>
                     
-                <button class="button" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <button class="button btn-cream" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     {{ __('home.sign') }}
                 </button>
             </form>
