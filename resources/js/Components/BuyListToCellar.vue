@@ -13,7 +13,7 @@
       <legend class="typo-fs-6 typo-display-font coral">{{ __('select') }}</legend>
       <div>
         <div v-for="(cellar, i) in cellars">
-            <input 
+          <input 
             :key="i" 
             :id=cellar.id 
             type="radio" 
@@ -26,10 +26,9 @@
       </div>
     </section>
     <section>
-      <button class="button btn-sml btn-coral">Store all</button>
+      <button class="button btn-sml btn-coral">{{ __('actions.store') }}</button>
     </section>
   </form>
-
 </template>
 
 <script>

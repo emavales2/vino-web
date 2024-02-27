@@ -12,6 +12,7 @@
     /* ----- ACCENT ----- */
 
     --coral: #F95148;
+    --coral-tr: #f9514855;
 
 
     /* ----- NEUTRALS ----- */
@@ -19,6 +20,7 @@
     --white: #fffaf6;
     --cream: #F2D9AF;
     --cream-lt: #EDE7D1;
+    --cream-tr: #ede7d1af;
     --med-gray: #36332f;
 
     /* ----- SUCCESS ----- */

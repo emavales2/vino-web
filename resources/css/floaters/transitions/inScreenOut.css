@@ -1,8 +1,10 @@
+/* classes appliquées pour les transitions Vue.js */
+
+/* @extends-> floaters/dialog.css */
 .inScreenOut-enter-active,
 .inScreenOut-leave-active {
   transition: right 0.5s ease;
 }
-
 .inScreenOut-enter-from,
 .inScreenOut-leave-to {
   right: -400px;
