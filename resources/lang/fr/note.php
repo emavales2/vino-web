@@ -6,6 +6,7 @@ return [
   'confirm_action' => 'supprimer la note',
   'confirm_dialog' => 'êtes-vous sur de vouloir supprimer cette note?',
   'action_success' => 'vous avez supprimé cette note',
+  'commented' => 'Commenté le ',
   'time_beg' => 'Votre dégustation du',
   'time_end' => 'pour',
   'create_new' => 'Nouvelle note pour',
