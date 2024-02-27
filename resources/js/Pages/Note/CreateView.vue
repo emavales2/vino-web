@@ -1,16 +1,11 @@
 <template>
   <Head title="Cellar" />
-  <main>
+  <main class="note-create">
     <GoBackButton :color="'cream'"/>
     <header class="index_title">
       <h1 class="index_title">{{ __('note.create_new') }}</h1>
-      <p>{{ wine.name }}</p>
-      <figure>
-        <img
-         :src="wine.photo" 
-         :alt="wine.name"
-        >
-      </figure>
+      <h2>{{ wine.name }}</h2>
+
     </header>
       <form @submit.prevent="submitForm">
         <h2 class="disp_subtitle">{{ __('note.write_note') }}</h2>
@@ -18,8 +13,8 @@
         <fieldset class="fieldset_1">
             <legend aria-labelledby="note">note</legend>          
             <textarea v-model="form.note" id="note" :placeholder="__('note.note_placeholder')"></textarea>
-            <!-- <InputError class="msg input_err" :message="form.errors.note" /> -->
-        </fieldset>
+          </fieldset>
+          <InputError class="msg input_err" :message="form.errors.note" />
 
         <button class="button" type="submit">{{ __('buttons.save') }}</button>
       </form>
