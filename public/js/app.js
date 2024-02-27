@@ -25543,7 +25543,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       openDeleteModal: false,
       wineId: null,
-      message: this.trans.dialogue.delete_wine
+      message: this.trans.dialogue.delete_wine,
+      deleteMessage: this.trans.dialogue.wine_deleted
     };
   },
   layout: _Layouts_MainLayout_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
@@ -25553,7 +25554,12 @@ __webpack_require__.r(__webpack_exports__);
       this.openDeleteModal = !this.openDeleteModal;
     },
     "delete": function _delete() {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia["delete"](route("wine.delete", this.wineId));
+      var _this = this;
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia["delete"](route("wine.delete", this.wineId), {
+        onSuccess: function onSuccess() {
+          _this.$parent.openDialog(_this.deleteMessage);
+        }
+      });
       this.openDeleteModal = false;
     }
   },
@@ -28085,7 +28091,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1 /* STABLE */
   }, 8 /* PROPS */, ["href"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" --------------- * CELLARS * ------------------ "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__("dashboard.my_cellars")), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [$props.cellars.length > 3 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Link, {
     key: 0,
-    "class": "lien_sml cream typo-block-font",
+    "class": "lien_sml cream_lt typo-block-font",
     href: _ctx.route('cellar.index')
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {

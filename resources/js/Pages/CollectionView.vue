@@ -82,7 +82,8 @@ export default {
         return {
             openDeleteModal: false,
             wineId: null,
-            message: this.trans.dialogue.delete_wine
+            message: this.trans.dialogue.delete_wine,
+            deleteMessage: this.trans.dialogue.wine_deleted,
         };
     },
     layout: MainLayout,
@@ -92,7 +93,11 @@ export default {
             this.openDeleteModal = !this.openDeleteModal;
         },
         delete() {
-          Inertia.delete(route("wine.delete", this.wineId));
+          Inertia.delete(route("wine.delete", this.wineId), {
+            onSuccess: () => {
+              this.$parent.openDialog(this.deleteMessage);
+            },
+          });
           this.openDeleteModal = false
         },
     },
