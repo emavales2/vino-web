@@ -102,7 +102,7 @@
                 
                 <div class="flex items-center justify-end">
                     <button
-                        class="button"
+                        class="button btn-cream"
                         :class="{ 'opacity-25': form.processing }"
                         :disabled="form.processing"
                     >
@@ -147,13 +147,9 @@ export default {
     },
     methods: {
         submit() {
-            this.form.post(route("register"), {
-                onSuccess: () => {
-                    this.openDialog(this.registerDialog);
-                },
-            });
+            this.form.post(route("register"));
         },
     },
-    props: ['trans', 'openDialog']
+    props: ['trans']
 };
 </script>
