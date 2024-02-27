@@ -1,0 +1,15 @@
+/* inseré comme seul enfant dans -> floaters/modal.css*/
+.note-file{
+  align-self: center;
+  background-color: var(--cream);
+  border-radius: 13px;
+  padding:var(--small-space);
+  height: max-content;
+}
+.note-file header{
+
+  &>h2{
+    font-size: 1em;
+    font-weight: 400;
+  }
+}
