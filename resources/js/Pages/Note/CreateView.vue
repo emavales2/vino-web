@@ -46,6 +46,7 @@ export default {
   methods: {
     submitForm() {
       this.form.post(route('note.store'), {
+        preserveScroll: true,
           onSuccess: () => {
             this.$parent.openDialog(`Great ! Your note has been created`);
             Inertia.visit(route('wine.show', this.wine.id))
