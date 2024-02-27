@@ -28,8 +28,8 @@
             </div>
 
             <div class="btn-container">
-                <Link class="button" :href="route('profile.edit', user.id )">{{ __('user.edit_profile') }}</Link>
-                <Link class="button" :href="route('logout', user.id )">{{ __('buttons.logout') }}</Link>
+                <Link class="button btn-cream" :href="route('profile.edit', user.id )">{{ __('user.edit_profile') }}</Link>
+                <Link class="button btn-cream" :href="route('logout', user.id )">{{ __('buttons.logout') }}</Link>
             </div>
         </main>
     </div>
