@@ -12,9 +12,6 @@
         "filter": "filtre",
         "sort": "trier"
     },
-    "aria": {
-        "profil": "Profil utilisateur"
-    },
     "auth": {
         "failed": "Ces identifiants ne correspondent pas \u00e0 nos enregistrements.",
         "password": "Le mot de passe fourni est incorrect.",
@@ -124,6 +121,19 @@
         "last_name": "Nom",
         "confirm_password": "Confirmez le mot de passe",
         "already_account": "Vous avez d\u00e9j\u00e0 un compte ?"
+    },
+    "note": {
+        "title": "notes de d\u00e9gustation",
+        "instructions": "cliquez sur une note pour plus d'options",
+        "no_notes": "vous n'avez pas encore de notes pour ce vin",
+        "confirm_action": "supprimer la note",
+        "confirm_dialog": "\u00eates-vous sur de vouloir supprimer cette note?",
+        "action_success": "vous avez supprimer cette note",
+        "time_beg": "Votre d\u00e9gustation du",
+        "time_end": "pour",
+        "create_new": "Nouvelle note pour",
+        "write_note": "Comment \u00e9tait votre d\u00e9gustation?",
+        "note_placeholder": "Ce vin \u00e9tait tr\u00e8s fruit\u00e9 et l\u00e9ger..."
     },
     "pagination": {
         "previous": "&laquo; Pr\u00e9c\u00e9dent",

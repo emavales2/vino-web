@@ -68,8 +68,8 @@
         <section class="notes-box">
             <header>
                 <div>
-                    <h2 class="typo-display-font">tasting notes</h2>
-                    <small v-if="notes.length > 0">click on a note for more options</small>
+                    <h2 class="typo-display-font">{{__('note.title')}}</h2>
+                    <small v-if="notes.length > 0">{{__('note.instructions')}}</small>
                 </div>
                 <Link class="button--icon" :href="route('note.create', { wine: wine.id })">
                     <figure>
@@ -81,7 +81,7 @@
                 </Link>
             </header>
             <div v-if="notes.length == 0">
-                you have no notes yet for this wine
+                {{ __('note.no_notes') }}
             </div>
             <div v-else>
                 <NoteThumbnail v-for="(note, i) in notes"
@@ -105,8 +105,8 @@
                     <ConfirmModal v-if="showConfirmModal"
                         :toggleModal="toggleModal"
                         :YesAction="deleteNote"
-                        :action="'delete note'"
-                        :actionMessage="'are you sure you want to delete this note?'"
+                        :action="__('note.confirm_action')"
+                        :actionMessage="__('note.confirm_dialog')"
                     />
                 </Modal>
             </Teleport>
@@ -203,7 +203,7 @@ export default {
                 onSuccess: () => {
                     this.showModal = false
                     this.$parent.openDialog(
-                        'vous avez supprimé la note'
+                        this.__('note.action_success')
                     );
                 }
             })

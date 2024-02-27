@@ -12,13 +12,12 @@
         >
       </figure>
     </header>
-    
       <form @submit.prevent="submitForm">
         <h2 class="disp_subtitle">{{ __('note.write_note') }}</h2>
 
         <fieldset class="fieldset_1">
-            <legend aria-labelledby="note">{{ __('note.note') }}</legend>          
-            <textarea v-model="form.note" id="note" placeholder="This wine is fruity and light..."></textarea>
+            <legend aria-labelledby="note">note</legend>          
+            <textarea v-model="form.note" id="note" :placeholder="__('note.note_placeholder')"></textarea>
             <!-- <InputError class="msg input_err" :message="form.errors.note" /> -->
         </fieldset>
 
