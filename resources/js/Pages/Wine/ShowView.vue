@@ -94,10 +94,19 @@
                 <Modal v-if="showModal"
                     :toggleOff="toggleModal"
                 >
-                    <NoteModal
+                    <NoteModal v-if="showNoteModal"
                         :note="selectedNote"
                         :date="setDate(selectedNote.updated_at)"
+                        :closeModal="toggleModal"
+                        :showNoteModal="showNoteModal"
+                        :openConfirm="toggleConfirm"
                         :wine="wine"
+                    />
+                    <ConfirmModal v-if="showConfirmModal"
+                        :toggleModal="toggleModal"
+                        :YesAction="deleteNote"
+                        :action="'delete note'"
+                        :actionMessage="'are you sure you want to delete this note?'"
                     />
                 </Modal>
             </Teleport>
@@ -117,19 +126,24 @@ import MainLayout from "@/Layouts/MainLayout.vue";
 import ColorDrop from "@/Components/ButtonsIcons/ColorDrop.vue";
 import GoBackButton from "@/Components/ButtonsIcons/GoBackButton.vue";
 import NoteThumbnail from "@/Components/NoteThumbnail.vue";
+import ConfirmModal from "@/Components/ConfirmModal.vue";
+import { Inertia } from "@inertiajs/inertia";
 export default {
     name: "Wine.ShowView",
     components: {
-        Head,
-        Link,
-        ColorDrop,
-        GoBackButton,
-        NoteThumbnail,
-        NoteModal,
-        Modal
-    },
+    Head,
+    Link,
+    ColorDrop,
+    GoBackButton,
+    NoteThumbnail,
+    NoteModal,
+    Modal,
+    ConfirmModal
+},
     data() {
         return {
+            showNoteModal: false,
+            showConfirmModal: false,
             selectedNote: null,
             showModal: false,
             testUrl: "https://thomasira.com/",
@@ -164,6 +178,10 @@ export default {
         toggleModal () {
             this.showModal = !this.showModal
         },
+        toggleConfirm () {
+            this.showConfirmModal = true
+            this.showNoteModal = false
+        },
         setDate (date) {
             //setting pour date en francais
             let dateLang = 'fr-ca'
@@ -175,8 +193,20 @@ export default {
             return formatDate.toLocaleString(dateLang, { day:'numeric', month: 'long', year:'numeric' })
         },
         setNoteModal (note) {
+            this.showNoteModal = true
+            this.showConfirmModal = false
             this.selectedNote = note
             this.toggleModal()
+        },
+        deleteNote () {
+            Inertia.delete(route('note.delete', {note: this.selectedNote}), {
+                onSuccess: () => {
+                    this.showModal = false
+                    this.$parent.openDialog(
+                        'vous avez supprimé la note'
+                    );
+                }
+            })
         }
     },
     mounted() {

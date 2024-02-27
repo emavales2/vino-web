@@ -88,6 +88,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/note-create/{wine}', [NoteController::class, 'create'])->name('note.create');
     Route::get('/note-show/{note}', [NoteController::class, 'show'])->name('note.show');
     Route::post('/note-store', [NoteController::class, 'store'])->name('note.store');
+    Route::delete('/note-delete/{note}', [NoteController::class, 'destroy'])->name('note.delete');
 
     // Utilitaires
     //-------------- Add & Remove One --------------------

@@ -33,6 +33,7 @@ import { useForm } from '@inertiajs/inertia-vue3';
 import MainLayout from '@/Layouts/MainLayout.vue';
 import GoBackButton from '@/Components/ButtonsIcons/GoBackButton.vue';
 import InputError from '@/Components/InputError.vue';
+import { Inertia } from '@inertiajs/inertia';
 
 export default {
   name: 'CreateView',
@@ -56,6 +57,7 @@ export default {
       this.form.post(route('note.store'), {
           onSuccess: () => {
             this.$parent.openDialog(`Great ! Your note has been created`);
+            Inertia.visit(route('wine.show', this.wine.id))
           }
       });
     },

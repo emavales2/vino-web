@@ -24624,7 +24624,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Note.Thumbnail',
-  props: ['note', 'wine', 'date']
+  props: ['note', 'wine', 'date', 'openConfirm', 'closeModal']
 });
 
 /***/ }),
@@ -25432,7 +25432,9 @@ __webpack_require__.r(__webpack_exports__);
       wineId: null,
       collectionReceived: this.collection,
       searchTerm: null,
-      action: null
+      action: null,
+      isSortSquareOpen: false,
+      sort: 0
     };
   },
   watch: {
@@ -25444,6 +25446,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     collection: function collection() {
       this.collectionReceived = this.collection;
+    },
+    sort: function sort() {
+      this.sortCollection(this.sort);
     }
   },
   layout: _Layouts_MainLayout_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
@@ -25505,6 +25510,30 @@ __webpack_require__.r(__webpack_exports__);
     receiveTreatedCollection: function receiveTreatedCollection(data) {
       this.collectionReceived = data.myCollection;
       this.searchTerm = data.term;
+    },
+    toggleSortSquare: function toggleSortSquare() {
+      this.isSortSquareOpen = !this.isSortSquareOpen;
+    },
+    sortCollection: function sortCollection(option) {
+      if (option != 0) {
+        this.collectionReceived.sort(function (a, b) {
+          if (option == 1) {
+            var typeA = a.wine.type;
+            var typeB = b.wine.type;
+            return typeA.localeCompare(typeB);
+          }
+          if (option == 2) {
+            var countryA = a.wine.country;
+            var countryB = b.wine.country;
+            return countryA.localeCompare(countryB);
+          }
+          if (option == 3) {
+            var priceA = a.wine.price;
+            var priceB = b.wine.price;
+            return priceA - priceB;
+          }
+        });
+      }
     }
   },
   props: ['cellar', 'collection', 'trans']
@@ -25688,6 +25717,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_MainLayout_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/MainLayout.vue */ "./resources/js/Layouts/MainLayout.vue");
 /* harmony import */ var _Components_ButtonsIcons_GoBackButton_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/ButtonsIcons/GoBackButton.vue */ "./resources/js/Components/ButtonsIcons/GoBackButton.vue");
 /* harmony import */ var _Components_InputError_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/InputError.vue */ "./resources/js/Components/InputError.vue");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+
 
 
 
@@ -25716,6 +25747,7 @@ __webpack_require__.r(__webpack_exports__);
       this.form.post(route('note.store'), {
         onSuccess: function onSuccess() {
           _this.$parent.openDialog("Great ! Your note has been created");
+          _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__.Inertia.visit(route('wine.show', _this.wine.id));
         }
       });
     }
@@ -26102,6 +26134,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_ButtonsIcons_ColorDrop_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/ButtonsIcons/ColorDrop.vue */ "./resources/js/Components/ButtonsIcons/ColorDrop.vue");
 /* harmony import */ var _Components_ButtonsIcons_GoBackButton_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Components/ButtonsIcons/GoBackButton.vue */ "./resources/js/Components/ButtonsIcons/GoBackButton.vue");
 /* harmony import */ var _Components_NoteThumbnail_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Components/NoteThumbnail.vue */ "./resources/js/Components/NoteThumbnail.vue");
+/* harmony import */ var _Components_ConfirmModal_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Components/ConfirmModal.vue */ "./resources/js/Components/ConfirmModal.vue");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+
+
 
 
 
@@ -26118,10 +26154,13 @@ __webpack_require__.r(__webpack_exports__);
     GoBackButton: _Components_ButtonsIcons_GoBackButton_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
     NoteThumbnail: _Components_NoteThumbnail_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
     NoteModal: _Components_NoteModal_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    Modal: _Components_Modal_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    Modal: _Components_Modal_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    ConfirmModal: _Components_ConfirmModal_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
   },
   data: function data() {
     return {
+      showNoteModal: false,
+      showConfirmModal: false,
       selectedNote: null,
       showModal: false,
       testUrl: "https://thomasira.com/",
@@ -26159,6 +26198,10 @@ __webpack_require__.r(__webpack_exports__);
     toggleModal: function toggleModal() {
       this.showModal = !this.showModal;
     },
+    toggleConfirm: function toggleConfirm() {
+      this.showConfirmModal = true;
+      this.showNoteModal = false;
+    },
     setDate: function setDate(date) {
       //setting pour date en francais
       var dateLang = 'fr-ca';
@@ -26174,8 +26217,21 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     setNoteModal: function setNoteModal(note) {
+      this.showNoteModal = true;
+      this.showConfirmModal = false;
       this.selectedNote = note;
       this.toggleModal();
+    },
+    deleteNote: function deleteNote() {
+      var _this = this;
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_8__.Inertia["delete"](route('note.delete', {
+        note: this.selectedNote
+      }), {
+        onSuccess: function onSuccess() {
+          _this.showModal = false;
+          _this.$parent.openDialog('vous avez supprimé la note');
+        }
+      });
     }
   },
   mounted: function mounted() {
@@ -26776,11 +26832,18 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "note-file"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "button btn-warning btn-sml"
-}, "delete", -1 /* HOISTED */);
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("article", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("your tasting on "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("time", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.date), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "for " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.name), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.note.note), 1 /* TEXT */)]), _hoisted_2]);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("article", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("your tasting on "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("time", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.date), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" for")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.wine.name), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.note.note), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    "class": "button btn-warning btn-sml",
+    onClick: _cache[0] || (_cache[0] = function () {
+      return $props.openConfirm && $props.openConfirm.apply($props, arguments);
+    })
+  }, "delete"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    "class": "button btn-coral btn-sml",
+    onClick: _cache[1] || (_cache[1] = function () {
+      return $props.closeModal && $props.closeModal.apply($props, arguments);
+    })
+  }, "cancel")]);
 }
 
 /***/ }),
@@ -27951,24 +28014,39 @@ var _hoisted_6 = {
   "class": "button button-sml btn_wide"
 };
 var _hoisted_7 = {
-  "class": "button button-sml btn_wide"
+  "class": "sort-square"
 };
-var _hoisted_8 = {
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
+  "class": "fs_6 display-font coral"
+}, "Sort by", -1 /* HOISTED */);
+var _hoisted_9 = {
+  "class": "sort-square-options"
+};
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "type"
+}, "Type", -1 /* HOISTED */);
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "country"
+}, "Country", -1 /* HOISTED */);
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "price"
+}, "Price", -1 /* HOISTED */);
+var _hoisted_13 = {
   key: 1,
   "class": "wine-list"
 };
-var _hoisted_9 = {
+var _hoisted_14 = {
   "class": "wine_thb_nav"
 };
-var _hoisted_10 = ["onClick"];
-var _hoisted_11 = {
+var _hoisted_15 = ["onClick"];
+var _hoisted_16 = {
   key: 2
 };
-var _hoisted_12 = {
+var _hoisted_17 = {
   key: 0,
   "class": "cream"
 };
-var _hoisted_13 = {
+var _hoisted_18 = {
   key: 1,
   "class": "cream"
 };
@@ -28005,7 +28083,47 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     cellars: $props.collection,
     collection: $data.collectionReceived,
     onCollectionEvent: $options.receiveTreatedCollection
-  }, null, 8 /* PROPS */, ["cellars", "collection", "onCollectionEvent"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ---- * Filtres * ---- "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__("cellar.filter")), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ---- * Tri * ---- "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__("cellar.sort")), 1 /* TEXT */)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.collectionReceived.length !== 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_8, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.collectionReceived, function (wine, i) {
+  }, null, 8 /* PROPS */, ["cellars", "collection", "onCollectionEvent"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ---- * Filtres * ---- "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__("cellar.filter")), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ---- * Tri * ---- "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    "class": "button button-sml btn_wide",
+    onClick: _cache[1] || (_cache[1] = function () {
+      return $options.toggleSortSquare && $options.toggleSortSquare.apply($options, arguments);
+    })
+  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__("cellar.sort")), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(vue__WEBPACK_IMPORTED_MODULE_0__.Transition, {
+    name: "sort-square-fade",
+    persisted: ""
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+        type: "radio",
+        "class": "radio",
+        name: "sort",
+        id: "type",
+        "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+          return $data.sort = $event;
+        }),
+        value: 1
+      }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.sort]]), _hoisted_10]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+        type: "radio",
+        "class": "radio",
+        name: "sort",
+        id: "country",
+        "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+          return $data.sort = $event;
+        }),
+        value: 2
+      }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.sort]]), _hoisted_11]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+        type: "radio",
+        "class": "radio",
+        name: "sort",
+        id: "price",
+        "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
+          return $data.sort = $event;
+        }),
+        value: 3
+      }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.sort]]), _hoisted_12])])], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.isSortSquareOpen]])];
+    }),
+    _: 1 /* STABLE */
+  })])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.collectionReceived.length !== 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_13, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.collectionReceived, function (wine, i) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_WineThumbnail, {
       key: i,
       wine: wine.wine,
@@ -28013,7 +28131,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       quantity: wine.qty
     }, {
       "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-        return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" section std(sloté dans WineThumbnail), inclus btns - et + ainsi que btn remove "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_MinusButton, {
+        return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" section std(sloté dans WineThumbnail), inclus btns - et + ainsi que btn remove "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_MinusButton, {
           color: 'coral',
           disabled: wine.qty === 0,
           onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
@@ -28029,11 +28147,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
             return $options.toggleModalWine(wine.wine, $props.cellar.id);
           }, ["stop"])
-        }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__("buttons.remove")), 9 /* TEXT, PROPS */, _hoisted_10)])];
+        }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__("buttons.remove")), 9 /* TEXT, PROPS */, _hoisted_15)])];
       }),
       _: 2 /* DYNAMIC */
     }, 1032 /* PROPS, DYNAMIC_SLOTS */, ["wine", "cellar", "quantity"]);
-  }), 128 /* KEYED_FRAGMENT */))])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_11, [$data.searchTerm ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__('dialogue.no_term')) + " ", 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.searchTerm), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(".")])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__('dialogue.no_wine')), 1 /* TEXT */))]))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Modal, {
+  }), 128 /* KEYED_FRAGMENT */))])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_16, [$data.searchTerm ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__('dialogue.no_term')) + " ", 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.searchTerm), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(".")])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__('dialogue.no_wine')), 1 /* TEXT */))]))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Modal, {
     toggleOff: $options.toggleModal
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -29349,6 +29467,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
   var _component_NoteThumbnail = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("NoteThumbnail");
   var _component_NoteModal = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("NoteModal");
+  var _component_ConfirmModal = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ConfirmModal");
   var _component_Modal = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Modal");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ----- * DÉCOR BACKGROUND * ----- "), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ----- * BACK BUTTON * ----- "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" --- * Si la dernière pg visité n'est pas /wine-create, le bouton apparaît * --- "), $props.prevPage !== '/wine-create' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_GoBackButton, {
     color: 'coral'
@@ -29406,11 +29525,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     toggleOff: $options.toggleModal
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_NoteModal, {
+      return [$data.showNoteModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_NoteModal, {
+        key: 0,
         note: $data.selectedNote,
         date: $options.setDate($data.selectedNote.updated_at),
+        closeModal: $options.toggleModal,
+        showNoteModal: $data.showNoteModal,
+        openConfirm: $options.toggleConfirm,
         wine: $props.wine
-      }, null, 8 /* PROPS */, ["note", "date", "wine"])];
+      }, null, 8 /* PROPS */, ["note", "date", "closeModal", "showNoteModal", "openConfirm", "wine"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.showConfirmModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_ConfirmModal, {
+        key: 1,
+        toggleModal: $options.toggleModal,
+        YesAction: $options.deleteNote,
+        action: 'delete note',
+        actionMessage: 'are you sure you want to delete this note?'
+      }, null, 8 /* PROPS */, ["toggleModal", "YesAction"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
     }),
     _: 1 /* STABLE */
   }, 8 /* PROPS */, ["toggleOff"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ----- * NAV SECTION : BOUTONS * ----- ")]);

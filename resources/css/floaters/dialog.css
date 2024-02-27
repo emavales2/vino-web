@@ -8,6 +8,6 @@
   padding: var(--vsmall-space) var(--med-space);
   position: fixed;
   right: var(--small-space);
-  z-index: 2;
+  z-index: 3;
   max-width: 90vw;
 }
