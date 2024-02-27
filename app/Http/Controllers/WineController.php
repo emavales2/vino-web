@@ -60,8 +60,8 @@ class WineController extends Controller
             'cellar_id' => Rule::exists('cellars', 'id')->where(function ($query) {
                 return $query->where('user_id', Auth::id());
             }),
-            'cellar_qty' => Rule::requiredIf(!$request->buyList_qty),
-            'buyList_qty' => Rule::requiredIf(!$request->cellar_qty)
+            'cellar_qty' => 'min:1',
+            'buyList_qty' => 'min:1 | nullable'
         ]);
         $country = json_encode(['fr' => $request->country]);
         $wine = Wine::create([
