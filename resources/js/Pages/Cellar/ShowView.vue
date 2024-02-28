@@ -315,19 +315,11 @@ export default {
   
           this.collectionReceived = filteredList;
       },
-      // thiss to keep option meny open while i style it, delete after:
-      openSelect() {
-      // Function to open the select dropdown
-      this.$refs.filterByType.size = 3; // Show 3 options at a time
-    },
   },
   // ---- * Appeler l'extraction des filtres * ----
   mounted() {
         this.allFilters();
-        // thiss to keep option meny open while i style it, delete after:
-        const selectElement = document.getElementById('filterByType');
-        selectElement.addEventListener('click', this.openSelect);
     },
-  props: ['cellar', 'collection', 'trans', 'wine']
+  props: ['cellar', 'collection', 'trans', 'wine', 'numCellars']
 }
 </script>
