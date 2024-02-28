@@ -14,8 +14,18 @@ return [
     'select' => 'Sélectionner un cellier',
     'no_cellar' => 'Il semble que vous n\'ayez pas de cellier, veuillez en créer un d\'abord',
     'create' => 'Créer un cellier',
-    // TRIER
+    "search_in_cellar" => "Rechercher un vin dans ce cellier",
+    // TRIER/Filtrer
+    'sort' => 'Trier',
+    'filter' => 'Filtrer',
+    'filter_by' => 'Filtrer par',
     'sort_by' => 'Trier par',
+    'all_type' => 'Tous les types de vin',
+    'all_country' => 'Tous les pays',
+    'all_size' => 'Toutes les tailles',
+    'min_price' => 'Prix minimum',
+    'max_price' => 'Prix maximum',
+    'filrer_price' => 'Filtrer par prix',
     // Collection
     'my_wines' => 'Mes vins',
     'add_custom' => 'Ajouter un vin personnalisé',

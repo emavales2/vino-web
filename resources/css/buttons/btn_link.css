@@ -4,13 +4,11 @@
     text-transform: lowercase;
     font-size: 1rem;
     font-weight: 500;
-    padding: 0 var(--med-space);
-}
-.btn_link.cream {
-    border-left: 1px solid var(--cream-lt);
+    padding-right: var(--med-space);
 }
 .btn_link.cream:last-child {
-    border-right: 1px solid var(--cream-lt);
+    border-left: 1px solid var(--cream-lt);
+    padding-left: var(--med-space);
 }
 
 .btn_link.plain {

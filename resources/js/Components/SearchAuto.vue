@@ -1,25 +1,30 @@
 <template>
   <div>
-    <fieldset class="fieldset_1">
-      <legend aria-labelledby="search">{{ __('dialogue.find_wine') }}</legend>
-      <label>
-        <input 
-          type="text" 
-          id="search"
-          class="mt-1 block w-full"
-          placeholder="chardonnay"
-          v-model="term"
-          @input="handleInput"
-        />
-      </label>
-    </fieldset>    
+    <form class="search-auto">
+      <fieldset class="fieldset_1 row_els_apart">
+        <legend aria-labelledby="search">{{ __('cellar.search_in_cellar') }}</legend>
+        <label for="search">
+          <input 
+            type="text" 
+            id="search"
+            class="mt-1 block w-full"
+            placeholder="chardonnay"
+            v-model="term"
+          />
+        </label>
+        <SearchIcon :color="'cream'" :searchAction="handleInput"/>
+      </fieldset>  
+    </form>  
   </div>
 </template>
 
 <script>
-
+import SearchIcon from './ButtonsIcons/SearchIcon.vue';
 export default {
   name: 'SearchAuto',
+  components: {
+    SearchIcon
+  },
   props: ['cellars'],
   data() {
     return {

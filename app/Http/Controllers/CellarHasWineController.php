@@ -118,17 +118,6 @@ class CellarHasWineController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\CellarHasWine  $cellarHasWine
-     * @return \Illuminate\Http\Response
-     */
-    public function show(CellarHasWine $cellarHasWine)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\CellarHasWine  $cellarHasWine
@@ -161,7 +150,6 @@ class CellarHasWineController extends Controller
     {
         $cellarHasWine = new CellarHasWine;
         $cellarHasWine::where('cellar_id', $cellar->id)->where('wine_id', $wine->id)->delete();
-
         return redirect(route('cellar.show', $cellar))->with('timestamp', now());
     }
 
@@ -169,19 +157,13 @@ class CellarHasWineController extends Controller
     {
         try {
             DB::beginTransaction();
-
             CellarHasWine::where('cellar_id', $cellar->id)->delete();
-
             $cellar->delete();
-
             DB::commit();
-    
             return redirect(route('cellar.index'));
         } catch (\Exception $e) {
-
             DB::rollback();
-    
-            return redirect(route('cellar.index'))->with('error', 'Error deleting records.');
+            return redirect(route('cellar.index'));
         }
     }
 }

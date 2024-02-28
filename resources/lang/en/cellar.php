@@ -14,8 +14,18 @@ return [
     'select' => 'Select a cellar',
     'no_cellar' => 'It seems like you have no cellar, please create one first',
     'create' => 'Create a cellar',
-    // TRIER
+    "search_in_cellar" => "Search a wine in this cellar",
+    // TRIER/Filtrer
+    'sort' => 'Sort',
     'sort_by' => 'Sort by',
+    'filter' => 'Filter',
+    'filter_by' => 'Filter by',
+    'all_type' => 'All wine types',
+    'all_country' => 'All countries',
+    'all_size' => 'All sizes',
+    'min_price' => 'Minimum price',
+    'max_price' => 'Maximum price',
+    'filrer_price' => 'Filter by price',
     // Collection
     'my_wines' => 'My wines',
     'add_custom' => 'Add a custom wine',

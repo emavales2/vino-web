@@ -31,7 +31,7 @@
 .card_nav {
     background-color: var(--coral);
     /* border-radius: 12px; */
-    border-radius: 20px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,6 +41,10 @@
 .card_nav.bckgd-burg-lt {
     background-color: var(--burgundy-lt);
     gap: var(--small-space);
+}
+.card_nav.bckgr-trans{
+    background-color: transparent;
+    gap: var(--med-sm-space);
 }
 
 .card_nav ul {
