@@ -76,7 +76,6 @@
                                     v-for="(wine, i) in collection.slice(0, 3)"
                                     :key="i"
                                     :wine="wine.wine"
-                                    :quantities="wine.quantities"
                                 />
                             </ul>
                         </div>

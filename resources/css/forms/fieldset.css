@@ -61,3 +61,30 @@ fieldset {
 .fs_burg legend, .fs_burg input {
     color: var(--burgundy);
 }
+
+.fieldset_3{
+    border: 2px solid var(--cream); 
+    border-radius: var(--large-space);
+    background-color: var(--white);
+}
+.fieldset_3 legend{
+    margin: 0 var(--large-space);
+    padding: 0 var(--small-space);
+    font-size: medium;
+    text-transform: lowercase;
+    border: 1px solid var(--cream);
+    background-color: var(--burgundy);
+    border-radius: 10px;
+    color: var(--cream-lt);
+    font-family: var(--text-font);
+}
+.fieldset_3>div{
+    display: flex;
+    justify-content: space-between;
+    padding: var(--small-space) var(--med-space);
+    gap: var(--small-space);
+}
+.fieldset_3 label{
+    font-family: var(--block-font);
+    color: var(--burgundy);
+}

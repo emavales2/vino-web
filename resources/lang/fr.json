@@ -128,6 +128,20 @@
         "confirm_password": "Confirmez le mot de passe",
         "already_account": "Vous avez d\u00e9j\u00e0 un compte ?"
     },
+    "note": {
+        "title": "notes de d\u00e9gustation",
+        "instructions": "cliquez sur une note pour plus d'options",
+        "no_notes": "vous n'avez pas encore de notes pour ce vin",
+        "confirm_action": "supprimer la note",
+        "confirm_dialog": "\u00eates-vous sur de vouloir supprimer cette note?",
+        "action_success": "vous avez supprim\u00e9 cette note",
+        "commented": "Comment\u00e9 le ",
+        "time_beg": "Votre d\u00e9gustation du",
+        "time_end": "pour",
+        "create_new": "Nouvelle note",
+        "write_note": "Comment \u00e9tait votre d\u00e9gustation?",
+        "note_placeholder": "Ce vin \u00e9tait tr\u00e8s fruit\u00e9 et l\u00e9ger..."
+    },
     "pagination": {
         "previous": "&laquo; Pr\u00e9c\u00e9dent",
         "next": "Suivant &raquo;"
@@ -209,6 +223,9 @@
     },
     "words": {
         "yes": "oui",
-        "no": "non"
+        "no": "non",
+        "red": "Rouge",
+        "white": "Blanc",
+        "rose": "Ros\u00e9"
     }
 }
