@@ -65,18 +65,18 @@ fieldset {
 .fieldset_3{
     border: 2px solid var(--cream); 
     border-radius: var(--large-space);
-    background-color: var(--white);
+    background-color: var(--cream-lt);
 }
 .fieldset_3 legend{
-    margin: 0 var(--large-space);
-    padding: 0 var(--small-space);
-    font-size: medium;
-    text-transform: lowercase;
+    margin: 0 var(--small-space);
+    padding: var(--small-space);
     border: 1px solid var(--cream);
     background-color: var(--burgundy);
     border-radius: 10px;
-    color: var(--cream-lt);
-    font-family: var(--text-font);
+    color: var(--coral);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 .fieldset_3>div{
     display: flex;
@@ -88,3 +88,39 @@ fieldset {
     font-family: var(--block-font);
     color: var(--burgundy);
 }
+
+.form_wrapper_2 {
+    display: flex;
+    flex-direction: column;
+    gap: var(--small-space);
+}
+
+.form_wrapper_2 label {
+    color: var(--coral);
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 var(--med-space);
+    text-transform: uppercase;
+}
+
+.form_wrapper_2 > .burg{
+    color: var(--burgundy);
+}
+
+.form_wrapper_2 input {
+    box-sizing: border-box;
+    align-self: center;
+    border-radius: var(--large-space);
+    border: none;
+    background: var(--cream-lt);
+    font-size: 1rem;
+    padding: 12px var(--med-space);
+    max-width: 100%;
+    width: 100%;
+    color: var(--burgundy-lt);
+}
+
+.form_wrapper_2 input::placeholder {
+    color: var(--coral);
+}
+

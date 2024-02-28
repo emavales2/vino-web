@@ -13,10 +13,8 @@
                         <h2 class="title_disp_subt">{{ __('cellar.tell_us') }}</h2>
                     </header>
 
-                    <!-- <legend class="legend cream">Tell us about your wine</legend> -->
-                    <fieldset class="fieldset_1">
-                    <legend>{{ __('cellar.wine_name') }}</legend>
-                    <label aria-labelledby="name" for="name" hidden></label>
+                    <div class="form_wrapper_2">
+                    <label aria-labelledby="name" for="name">{{ __('cellar.wine_name') }}</label>
                     <input
                         id="name"
                         type="text"
@@ -24,11 +22,10 @@
                         v-model="form.name"
                         autofocus
                         autocomplete="name"
-                        placeholder="what is the wine's name"
-                        aria-label="Nom du vin" 
+                        :placeholder="__('cellar.wine_name')"
                     />
                     <InputError class="auto_msg auto_msg_input_err" :message="form.errors.name" />
-                    </fieldset>
+                    </div>
 
                     <fieldset class="fieldset_3">
                         <legend>{{ __('cellar.wine_type') }}</legend>
@@ -68,25 +65,22 @@
                         <InputError class="auto_msg auto_msg_input_err" :message="form.errors.type" />
                     </fieldset>
 
-                    <fieldset class="fieldset_1">
-                    <legend>{{ __('cellar.wine_country') }}</legend>
-                    <label aria-labelledby="country" for="country" hidden></label>
-                    <input
-                        id="country"
-                        type="text"
-                        class=""
-                        v-model="form.country"
-                        autofocus
-                        autocomplete="country"
-                        placeholder="where is your wine from?"
-                        aria-label="Pays de provenance du vin"
-                        />
-                    <InputError class="auto_msg auto_msg_input_err" :message="form.errors.country" />
-                    </fieldset>
+                    <div class="form_wrapper_2">
+                        <label aria-labelledby="country" for="country">{{__('cellar.wine_country')}}</label>
+                        <input
+                            id="country"
+                            type="text"
+                            class=""
+                            v-model="form.country"
+                            autofocus
+                            autocomplete="country"
+                            :placeholder="__('cellar.wine_country')"
+                            />
+                        <InputError class="auto_msg auto_msg_input_err" :message="form.errors.country" />
+                    </div>
 
-                    <fieldset class="fieldset_1">
-                        <legend>{{ __('cellar.wine_size') }}</legend>
-                        <label  aria-labelledby="size" for="size" hidden></label>
+                    <div class="form_wrapper_2">
+                        <label  aria-labelledby="size" for="size">{{ __('cellar.wine_size') }}</label>
                         <input
                             id="size"
                             type="text"
@@ -94,15 +88,13 @@
                             v-model="form.size"
                             autofocus
                             autocomplete="size"
-                            placeholder="what size is your wine?"
-                            aria-label="Taille de la bouteille de vin"
+                            :placeholder=" __('cellar.wine_size')"
                             />
                         <InputError class="auto_msg auto_msg_input_err" :message="form.errors.size" />
-                    </fieldset>
+                    </div>
 
-                    <fieldset class="fieldset_1">
-                        <legend >{{ __('cellar.wine_price') }}</legend>
-                        <label aria-labelledby="price" for="price" hidden></label>
+                    <div class="form_wrapper_2">
+                        <label aria-labelledby="price" for="price">{{ __('cellar.wine_price') }}</label>
                         <input
                             id="price"
                             type="number"
@@ -112,11 +104,10 @@
                             v-model="form.price"
                             autofocus
                             autocomplete="price"
-                            placeholder="how much is your wine?"
-                            aria-label="Prix du vin"
+                            :placeholder="__('cellar.wine_price')"
                             />
                         <InputError class="auto_msg auto_msg_input_err" :message="form.errors.price" />
-                    </fieldset>
+                    </div>
                 </section>
 
                 <section class="card_cellar card_cell_w_sections">
@@ -139,40 +130,36 @@
                         </div>
                         <p v-if="form.errors.cellar_id">{{ form.errors.cellar_id }}</p>
 
-                        <!-- <label for="cellar_qty" class="legend_small cream">How many bottles do you want to store</label> -->
-                        <fieldset class="fieldset_1 fs_burg">
-                            <legend>{{ __('cellar.how_many') }}</legend>
-                            <!-- <label for="cellar_qty" class="legend_small cream">How many bottles do you want to store</label> -->
-                            <label aria-labelledby="quantité" for="cellar_qty" hidden></label>
+                        <div class="form_wrapper_2">
+                            <label class="burg" for="cellar_qty">{{ __('cellar.how_many') }}</label>
                             <input
                                 id="cellar_qty"
                                 type="number"
                                 min="0"
                                 v-model="form.cellar_qty"
                                 autofocus
-                                placeholder="please choose a number"
-                                aria-label="Quantité de bouteilles à stocker dans le cellier"
+                                :placeholder=" __('cellar.how_many')"
                                 />
                             <InputError class="auto_msg auto_msg_input_err" :message="form.errors.price" />
-                        </fieldset>
+                        </div>
                     </div>
 
                     <div class="column_15">
                         <!-- <h5 class="legend cream">Add to your buy list</h5> -->
                         <h3 class="typo-fs-5 burg-lt typo-block-font">{{ __('cellar.add_buylist') }}</h3>
                         
-                        <fieldset class="fieldset_1 fs_burg">
-                            <legend>{{ __('cellar.how_many') }}</legend>
-                            <label aria-labelledby="quantité" for="buyList_qty" hidden></label>
-                        <input 
-                            id="buyList_qty" 
-                            type="number" 
-                            min="0"
-                            v-model="form.buyList_qty"
-                            aria-label="Quantité de bouteilles à ajouter à la liste d'achat"
-                            />
-                        <p v-if="form.errors.buyList_qty">{{ form.errors.buyList_qty }}</p>
-                        </fieldset>
+                        <div class="form_wrapper_2">
+                            <label class="burg" for="buyList_qty">{{ __('cellar.how_many') }}</label>
+                            <input 
+                                id="buyList_qty" 
+                                type="number" 
+                                min="0"
+                                v-model="form.buyList_qty"
+                                :placeholder=" __('cellar.how_many')"
+
+                                />
+                            <p v-if="form.errors.buyList_qty">{{ form.errors.buyList_qty }}</p>
+                        </div>
                     </div>
                 </section>
                 <button class="button btn-cream">{{ __('cellar.save_wine') }}</button>

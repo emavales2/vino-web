@@ -11,9 +11,8 @@
             </header>
 
             <form @submit.prevent="submit">
-                <fieldset class="fieldset_1">
-                    <legend aria-labelledby="email">{{ __('home.email') }}</legend>
-                    <label for="email" value="Email" hidden></label>
+                <div class="form_wrapper_2">
+                    <label for="email" value="Email">{{ __('home.email') }}</label>
                     <input
                         id="email"
                         type="email"
@@ -22,24 +21,23 @@
                         required
                         autofocus
                         autocomplete="username"
-                        placeholder="your email address"
+                        :placeholder="__('home.email')"
                     />
                     <InputError class="auto_msg auto_msg_input_err" :message="form.errors.email" />
-                </fieldset>
+                </div>
 
-                <fieldset class="fieldset_1">
-                    <legend aria-labelledby="password">{{ __('home.password') }}</legend>
-                    <label for="password" value="Password" hidden></label>
+                <div class="form_wrapper_2">
+                    <label for="password" value="Password">{{ __('home.password') }}</label>
                     <input
                         id="password"
                         type="password"
                         v-model="form.password"
                         required
                         autocomplete="current-password"
-                        placeholder="your password"
+                        :placeholder="__('home.password')"
                     />
                     <InputError class="auto_msg auto_msg_input_err" :message="form.errors.password" />
-                </fieldset>
+                </div>
                     
                 <button class="button btn-cream" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     {{ __('home.sign') }}

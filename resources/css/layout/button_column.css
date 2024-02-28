@@ -11,5 +11,5 @@
 .button_column_tight {
     display: flex;
     flex-direction: column;
-    gap: var(--small-space);
+    gap: var(--vsmall-space);
   }

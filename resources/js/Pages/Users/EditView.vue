@@ -7,9 +7,8 @@
                 <h1 class="title_index">{{ __('user.edit_profile') }}</h1>
             </header>
             <form @submit.prevent="submit">
-                <fieldset class="fieldset_1">
-                    <legend aria-labelledby="first_name">{{ __('user.first_name') }}</legend>
-                    <label for="first_name" value="First name"></label>
+                <div class="form_wrapper_2">
+                    <label for="first_name" value="First name">{{ __('user.first_name') }}</label>
                     <input
                         id="first_name"
                         type="text"
@@ -24,11 +23,10 @@
                         class="input_err"
                         :message="form.errors.first_name"
                     />
-                </fieldset>
+                </div>
 
-                <fieldset class="fieldset_1">
-                    <legend aria-labelledby="last_name">{{ __('user.last_name') }}</legend>
-                    <label for="last_name" value="Last name"></label>
+                <div class="form_wrapper_2">
+                    <label for="last_name" value="Last name">{{ __('user.last_name') }}</label>
                     <input
                         id="last_name"
                         type="text"
@@ -43,11 +41,10 @@
                         class="input_err"
                         :message="form.errors.last_name"
                     />
-                </fieldset>
+                </div>
 
-                <fieldset class="fieldset_1">
-                    <legend aria-labelledby="email">{{ __('user.email') }}</legend>
-                    <label for="email" value="Email"></label>
+                <div class="form_wrapper_2">
+                    <label for="email" value="Email">{{ __('user.email') }}</label>
                     <input
                         id="email"
                         type="email"
@@ -62,8 +59,7 @@
                         class="input_err"
                         :message="form.errors.email"
                     />
-                </fieldset>
-
+                </div>
                 <input type="hidden" v-model="form.id" />
                 
                 <div>
