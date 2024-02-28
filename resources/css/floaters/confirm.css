@@ -1,7 +1,7 @@
 /* inseré comme seul enfant dans -> floaters/modal.css*/
 .confirm {
     align-self: center;
-    background-color: var(--danger-lt);
+    background-color: var(--cream-lt);
     color: var(--danger);
     font-size: 1em;
     border-radius: 13px;

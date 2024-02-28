@@ -8,9 +8,8 @@
             </header>
 
             <form @submit.prevent="submit">
-                <fieldset class="fieldset_1">
-                    <legend aria-labelledby="first_name">{{ __('home.first_name') }}</legend>
-                    <label for="first_name" value="First name"></label>
+                <div class="form_wrapper_2">
+                    <label for="first_name" value="First name">{{ __('home.first_name') }}</label>
                     <input
                         id="first_name"
                         type="text"
@@ -19,17 +18,16 @@
                         required
                         autofocus
                         autocomplete="first_name"
-                        placeholder="first name"
+                        :placeholder="__('home.first_name')"
                     />
                     <InputError
                         class="auto_msg auto_msg_input_err"
                         :message="form.errors.first_name"
                     />
-                </fieldset>
+                </div>
 
-                <fieldset class="fieldset_1">
-                    <legend aria-labelledby="last_name">{{ __('home.last_name') }}</legend>
-                    <label for="last_name" value="Last name"></label>
+                <div class="form_wrapper_2">
+                    <label for="last_name" value="Last name">{{ __('home.last_name') }}</label>
                     <input
                         id="last_name"
                         type="text"
@@ -38,17 +36,16 @@
                         required
                         autofocus
                         autocomplete="last_name"
-                        placeholder="last name"
+                        :placeholder=" __('home.last_name')"
                     />
                     <InputError
                         class="auto_msg auto_msg_input_err"
                         :message="form.errors.last_name"
                     />
-                </fieldset>
+                </div>
 
-                <fieldset class="fieldset_1">
-                    <legend aria-labelledby="email">{{ __('home.email') }}</legend>
-                    <label for="email" value="Email"></label>
+                <div class="form_wrapper_2">
+                    <label for="email" value="Email">{{ __('home.email') }}</label>
                     <input
                         id="email"
                         type="email"
@@ -56,17 +53,16 @@
                         v-model="form.email"
                         required
                         autocomplete="username"
-                        placeholder="email address"
+                        :placeholder="__('home.email')"
                     />
                     <InputError
                         class="auto_msg auto_msg_input_err"
                         :message="form.errors.email"
                     />
-                </fieldset>
+                </div>
 
-                <fieldset class="fieldset_1">
-                    <legend aria-labelledby="password">{{ __('home.password') }}</legend>
-                    <label for="password" value="Password" hidden></label>
+                <div class="form_wrapper_2">
+                    <label for="password" value="Password">{{ __('home.password') }}</label>
                     <input
                         id="password"
                         type="password"
@@ -80,11 +76,10 @@
                         class="auto_msg auto_msg_input_err"
                         :message="form.errors.password"
                     />
-                </fieldset>
+                </div>
 
-                <fieldset class="fieldset_1">
-                    <legend aria-labelledby="password_confirmation">{{ __('home.confirm_password') }}</legend>
-                    <label for="password_confirmation" value="Confirm Password" hidden></label>
+                <div class="form_wrapper_2">
+                    <label for="password_confirmation" value="Confirm Password">{{ __('home.confirm_password') }}</label>
                     <input
                         id="password_confirmation"
                         type="password"
@@ -98,7 +93,7 @@
                         class="auto_msg auto_msg_input_err"
                         :message="form.errors.password_confirmation"
                     />
-                </fieldset>
+                </div>
                 
                 <div class="flex items-center justify-end">
                     <button

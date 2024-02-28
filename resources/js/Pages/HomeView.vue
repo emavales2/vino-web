@@ -31,7 +31,7 @@
                     </span>
                 </header>
                 <div class="button_column">             
-                    <button class="button">
+                    <button class="button btn-cream">
                         <Link :href="route('login')">
                             {{ __('home.sign') }}
                         </Link>

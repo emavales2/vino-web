@@ -51,12 +51,13 @@ button {
 .button.btn-coral {
     background: var(--coral);
     border-color: var(--coral);
+    color: var(--white);
 }
 
 .button.btn-warning { 
     background-color: var(--danger);
     border-color:var(--danger);
-    color: var(--cream-lt)
+    color: var(--white)
 }   
 
 /* - variants de tailles - */

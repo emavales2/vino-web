@@ -30,7 +30,7 @@
                                 >
                                   {{ __('buttons.edit') }}
                                 </Link>
-                                <button class="button btn-full btn-sml btn-warning" @click="toggleModal(wine.wine)">{{ __('buttons.remove') }}</button>
+                                <button class="button btn-full btn-sml btn-coral" @click="toggleModal(wine.wine)">{{ __('buttons.remove') }}</button>
                               </section>
                             </WineThumbnail>
                         </ul>

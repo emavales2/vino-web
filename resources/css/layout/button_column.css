@@ -11,6 +11,10 @@
 .button_column_tight {
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
+    gap: var(--vsmall-space);
+  }
+=======
     gap: var(--small-space);
   }
 
@@ -22,3 +26,4 @@
     gap: 20px;
     margin-top: auto;
 }
+>>>>>>> 52fa2c93c61a33b406b7bbe8e1eb2526858e3cdf

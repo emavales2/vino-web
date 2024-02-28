@@ -33,9 +33,16 @@
 
         <!-- ---- * Boutons Filtres / Tri * ---- -->
         <span class="row_els_apart">
+<<<<<<< HEAD
+          <button class="button button-sml btn-cream btn_wide">{{ __("cellar.filter") }}</button>
+
+          <!-- ---- * Tri * ---- -->
+          <button class="button button-sml btn-cream btn_wide" @click="toggleSortSquare">{{ __("cellar.sort") }}</button>
+=======
             <button class="button button-sml btn_wide">{{ __("cellar.filter") }}</button>
 
             <button class="button button-sml btn_wide" @click="toggleSortSquare">{{ __("cellar.sort") }}</button>
+>>>>>>> 52fa2c93c61a33b406b7bbe8e1eb2526858e3cdf
         </span>
 
         <!-- ---- * Depliant Tri * ---- -->
@@ -116,7 +123,7 @@
               <PlusButton :color="'coral'" @click.stop="addOne(wine.wine)" />
 
             </span>
-            <button class="button btn-sml btn-full btn-warning" @click.stop="toggleModalWine(wine.wine, cellar.id)">
+            <button class="button btn-sml btn-full btn-coral" @click.stop="toggleModalWine(wine.wine, cellar.id)">
               {{ __("buttons.remove") }}
             </button>
           </section>
