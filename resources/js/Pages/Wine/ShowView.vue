@@ -1,7 +1,7 @@
 <template>
     <Head>
         <title>Wine</title>
-        <meta property="og:image" :content="wine.photo" />
+        <meta property="og:image" content="http://127.0.0.1:8000/wine/21896" />
     </Head> 
     <div class="bckgd bckgd-white cont_float_up">
         <!-- ----- * DÉCOR BACKGROUND * ----- -->
@@ -17,7 +17,6 @@
                 />
             </figure>
         </section>
-
         <main>
             <!-- ----- * BACK BUTTON * ----- -->
             <!-- --- * Si la dernière pg visité n'est pas /wine-create, le bouton apparaît * --- -->
@@ -26,9 +25,9 @@
             </span>
 
             <!-- ----- * FICHE * ----- -->
-            <article class="fiche_wine">
+            <article class="fiche_wine" @click="getImage">
                 <figure>
-                    <img :src="wine.photo" :alt="wine.name" />
+                    <img :src="wine.photo" :alt="wine.name"/>
                 </figure>
 
                 <!-- ----- * TEXTE * ----- -->
@@ -67,6 +66,7 @@
                     >
                     <!-- Btn pour partager sur Facebook -->
                     <ShareNetwork
+                        title="vino"
                         network="facebook"
                         :url="this.currentUrl"
                         quote="The hot reload is so fast it\'s near instant. - Evan You"
@@ -264,6 +264,8 @@ import GoBackButton from "@/Components/ButtonsIcons/GoBackButton.vue";
 import NoteThumbnail from "@/Components/NoteThumbnail.vue";
 import ConfirmModal from "@/Components/ConfirmModal.vue";
 import { Inertia } from "@inertiajs/inertia";
+import domtoimage from 'dom-to-image-more';
+
 export default {
     name: "Wine.ShowView",
     components: {
@@ -278,6 +280,7 @@ export default {
     },
     data() {
         return {
+            shareImage: '',
             showNoteModal: false,
             showConfirmModal: false,
             selectedNote: null,
@@ -324,6 +327,17 @@ export default {
                     );
                 }
             })
+        },
+        getImage() {
+
+            var node = document.querySelector('.fiche_wine>section')
+            var options = {
+                quality: 0.95 
+            };
+            domtoimage.toJpeg(node, options).then(function (dataUrl) {
+                var img = new Image();
+                img.src = dataUrl;
+            });
         }
     },
     props: {
@@ -333,4 +347,13 @@ export default {
         notes: Array,
     },
 };
+
+/* var node = document.getElementById('my-node');
+var options = {
+    quality: 0.95 
+};
+
+domtoimage.toJpeg(node, options).then(function (dataUrl) {
+    // Do something with the dataURL (data:image/jpeg;base64,i........)
+}); */
 </script>

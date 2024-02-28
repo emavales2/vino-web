@@ -27,6 +27,7 @@
         "vue-template-compiler": "^2.7.16"
     },
     "dependencies": {
+        "dom-to-image-more": "^3.3.0",
         "vue-social-sharing": "^4.0.0-alpha4"
     }
 }
