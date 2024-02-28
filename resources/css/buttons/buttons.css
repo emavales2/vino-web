@@ -27,7 +27,7 @@ button {
 }
 
 /* - états - */
-.button:active {
+.button:active:not([disabled]) {
     transform: translate(2px, 2px);
 }
 
@@ -84,7 +84,7 @@ button {
     padding: 0;
 }
 
-.button--icon:active {
+.button--icon:active:not([disabled]) {
     transform: translate(2px, 2px);
 }
 

@@ -3,7 +3,7 @@
       <div>
         <p>{{ note.note }}</p>
         <div>
-          <strong>Commented on </strong>
+          <strong>{{__('note.commented')}}</strong> 
           <time>{{ this.date }}</time>
         </div>
       </div>

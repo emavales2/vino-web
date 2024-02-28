@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\WineResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -27,19 +28,13 @@ class UserController extends Controller
         // Get the user's cellars and the wines in each cellar
         $collection = [];
         $cellars = $user->cellar;
-        $cellars = $user->cellar;
         foreach($cellars as $cellar) {
             foreach($cellar->cellarHasWines as $wine) {
-                if(array_key_exists($wine->wine_id, $collection)) {
-                    $collection[$wine->wine_id]['quantities']['totalQty'] += $wine->quantity;
-                    $collection[$wine->wine_id]['quantities']['perCellar'][] = ['cellar' => $wine->cellar, 'qty'=>$wine->quantity];
-                } else {
+                if(!array_key_exists($wine->wine_id, $collection)) {
+                    $newWine = new WineResource($wine->wine);
+                    $newWine = $newWine->resolve();
                     $collection[$wine->wine_id] = [
-                        'wine'=> $wine->wine,
-                        'quantities' => [
-                            'perCellar' => [['cellar' => $wine->cellar]],
-                            'totalQty' => $wine->quantity
-                        ]
+                        'wine'=> $newWine
                     ];
                 }
             }

@@ -24,3 +24,7 @@
   padding: var(--small-space);
   border: 1px solid var(--coral-tr);
 }
+.note-file div:last-of-type{
+  display: flex;
+  gap: var(--med-space);
+}
