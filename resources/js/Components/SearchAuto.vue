@@ -1,18 +1,20 @@
 <template>
-  <div class="search-bar">
-    <fieldset class="fieldset_1 row_els_apart">
-      <legend aria-labelledby="search">{{ __('dialogue.find_wine') }}</legend>
-      <label for="search">
-        <input 
-          type="text" 
-          id="search"
-          class="mt-1 block w-full"
-          placeholder="chardonnay"
-          v-model="term"
-        />
-      </label>
-      <SearchIcon :color="'cream'" :searchAction="handleInput"/>
-    </fieldset>    
+  <div>
+    <form class="search-auto">
+      <fieldset class="fieldset_1 row_els_apart">
+        <legend aria-labelledby="search">{{ __('dialogue.find_wine') }}</legend>
+        <label for="search">
+          <input 
+            type="text" 
+            id="search"
+            class="mt-1 block w-full"
+            placeholder="chardonnay"
+            v-model="term"
+          />
+        </label>
+        <SearchIcon :color="'cream'" :searchAction="handleInput"/>
+      </fieldset>  
+    </form>  
   </div>
 </template>
 
