@@ -1,16 +1,13 @@
 /* ---- * GROUPE: OPTION AUX BOUTONS * ---- */
-
 .btn_link {
     font-family: 'Roboto', sans-serif;
     text-transform: lowercase;
     font-size: 1rem;
-    font-weight: 300;
+    font-weight: 500;
     padding: 0 var(--med-space);
 }
-
-.btn_link:first-child {
-    border-right: 1px solid var(--cream-lt);
-    padding-left: var(--small-space);
+.btn_link.cream {
+    border-left: 1px solid var(--cream-lt);
 }
 
 .btn_link.plain {
