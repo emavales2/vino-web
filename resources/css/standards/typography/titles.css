@@ -18,12 +18,14 @@
     font-size: 1.728rem;
     line-height: var(--tall-line);
     font-family: var(--display-font);
-    color: var(--cream-lt);
+    color: var(--cream);
     font-weight: 600;
     text-transform: lowercase;
     max-width: 15ch;
 }
-
+.title_disp_subt.ds_smllst.burg-lt{
+    color: var(--burgundy-lt);
+}
 /* ---- * Var taille * ---- */
 .title_disp_subt.tit_sub_sm {
     font-size: 1.4rem;
@@ -35,4 +37,9 @@
     font-size: 1.12rem;
     text-transform: unset;
     line-height: var(--text-line);
+}
+
+/* Variante lorsque le texte est sur le coral */
+.title_disp_subt.cream_lt{
+    color: var(--cream-lt);
 }

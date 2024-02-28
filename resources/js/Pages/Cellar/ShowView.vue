@@ -10,7 +10,8 @@
         <h1 class="title_index">{{ cellar.name }}</h1>
         <section>
           <Link :href="route('cellar.edit', cellar.id)" class="btn_link cream">{{ __("buttons.edit") }}</Link>
-          <button type="button" @click.stop="toggleModal(cellar)" class="btn_link cream">
+          <!-- Le btn delete ne s'affiche pas si le cellier est le seul -->
+          <button v-if="(numCellars !== 1)" type="button" @click.stop="toggleModal(cellar)" class="btn_link cream">
             {{ __("cellar.cellar_delete") }}
           </button>
         </section>
@@ -165,12 +166,21 @@ export default {
     },
     deleteAllWine() {
       Inertia.delete(route('cellarwine.deleteallwine', { cellar: this.cellar }),
-        { preserveScroll: true })
+        { preserveScroll: true,
+          onSuccess: () => {
+            this.$parent.openDialog(this.__('dialogue.cellar_delete'));
+          }
+        })
       this.openDeleteModal = false
     },
     deleteWine() {
       Inertia.delete(route('cellarwine.delete', { cellar: this.cellar, wine: this.wineId }),
-        { preserveScroll: true })
+        { 
+          preserveScroll: true,
+          onSuccess: () => {
+            this.$parent.openDialog(this.__('dialogue.cellarwine_delete'));
+          }
+        })
       this.openDeleteModal = false
     },
     receiveTreatedCollection(data) {
@@ -204,6 +214,6 @@ export default {
       }
     },
   },
-  props: ['cellar', 'collection', 'trans']
+  props: ['cellar', 'collection', 'trans', 'numCellars']
 }
 </script>

@@ -7,7 +7,11 @@ return [
     'find_wine' => 'Find a wine !',
     // Page cellar
     'no_wine' => 'No wines found with the term ',
-    'no_term' => 'No wines found with the term ',
+    'no_term' => 'No wines found with the term ',    
+    'cellar_create' => 'Great ! Your cellar has been added',
+    'cellar_update' => 'Great ! Your cellar has been updated.',
+    'cellar_delete' => 'Your cellar has been removed',
+    'cellarwine_delete' => 'Your wine has been removed',
     // Dashboard
     'Oh' => 'Oh No!',
     'no_wine' => ' You have no wines yet',

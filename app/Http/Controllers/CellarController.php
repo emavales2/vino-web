@@ -88,6 +88,8 @@ class CellarController extends Controller
         if ($cellar->user_id != $userId) {
             return redirect(route('cellar.index'))->withErrors("You do not have authorization to access this cellar");
         }
+        // Vérifier le nombre de caves associées à cet utilisateur
+        $numCellars = Auth::user()->cellar->count();
 
         $collection = [];
         foreach($cellar->cellarHasWines as $cellarWine) {
@@ -96,7 +98,7 @@ class CellarController extends Controller
             $collection[] = ['wine' => $wine, 'qty' => $cellarWine->quantity];
         }
 
-        return Inertia::render('Cellar/ShowView', compact('cellar','collection'));
+        return Inertia::render('Cellar/ShowView', compact('cellar','collection','numCellars'));
     }
 
     /**
