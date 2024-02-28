@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
-
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
+        <meta name="Description" content="Vino, le cellier le plus conviviable pour gérer vos bouteilles">
+        <meta property=”og:image:width” content=”180″ />
+        <meta property=”og:image:height” content=”110″ />
         <!-- Scripts -->
         @routes
         <script src="{{ mix('js/app.js') }}" defer></script>

@@ -1,4 +1,8 @@
 <template>
+    <Head>
+        <title>Wine</title>
+        <meta property="og:image" content="http://127.0.0.1:8000/wine/21896" />
+    </Head> 
     <div class="bckgd bckgd-white cont_float_up">
         <!-- ----- * DÉCOR BACKGROUND * ----- -->
         <section class="blobs_bckgd">
@@ -13,7 +17,6 @@
                 />
             </figure>
         </section>
-
         <main>
             <!-- ----- * BACK BUTTON * ----- -->
             <!-- --- * Si la dernière pg visité n'est pas /wine-create, le bouton apparaît * --- -->
@@ -22,9 +25,9 @@
             </span>
 
             <!-- ----- * FICHE * ----- -->
-            <article class="fiche_wine">
+            <article class="fiche_wine" @click="getImage">
                 <figure>
-                    <img :src="wine.photo" :alt="wine.name" />
+                    <img :src="wine.photo" :alt="wine.name"/>
                 </figure>
 
                 <!-- ----- * TEXTE * ----- -->
@@ -63,15 +66,17 @@
                     >
                     <!-- Btn pour partager sur Facebook -->
                     <ShareNetwork
+                        title="vino"
                         network="facebook"
-                        :url="this.testUrl"
-                        title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
-                        description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
-                        quote="The hot reload is so fast it\'s near instant. - Evan You"
-                        hashtags="vuejs,vite"
+                        :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
+                        quote="Look at that hot wine!"
+                        hashtags="vino"
                     >
                         Share on Facebook
                     </ShareNetwork>
+
+
+
                 </section>
             </article>
             <aside class="row_els_apart row_els_line">
@@ -262,6 +267,7 @@ import GoBackButton from "@/Components/ButtonsIcons/GoBackButton.vue";
 import NoteThumbnail from "@/Components/NoteThumbnail.vue";
 import ConfirmModal from "@/Components/ConfirmModal.vue";
 import { Inertia } from "@inertiajs/inertia";
+
 export default {
     name: "Wine.ShowView",
     components: {
@@ -276,6 +282,7 @@ export default {
     },
     data() {
         return {
+            shareImage: '',
             showNoteModal: false,
             showConfirmModal: false,
             selectedNote: null,
@@ -331,4 +338,5 @@ export default {
         notes: Array,
     },
 };
+
 </script>
