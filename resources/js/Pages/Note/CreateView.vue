@@ -10,7 +10,7 @@
         <h3 class="typo-display-font cream">{{ __('note.write_note') }}</h3>
         <fieldset class="fieldset_1">
             <legend aria-labelledby="note">note</legend>          
-            <textarea v-model="form.note" id="note" :placeholder="__('note.note_placeholder')"></textarea>
+            <textarea :aria-label="__('note.write_note')" v-model="form.note" id="note" :placeholder="__('note.note_placeholder')"></textarea>
           </fieldset>
           <InputError class="msg input_err" :message="form.errors.note" />
         <button class="button" type="submit">{{ __('buttons.save') }}</button>

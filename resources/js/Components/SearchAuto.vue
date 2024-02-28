@@ -3,7 +3,7 @@
     <form class="search-auto">
       <fieldset class="fieldset_1 row_els_apart">
         <legend aria-labelledby="search">{{ __('cellar.search_in_cellar') }}</legend>
-        <label for="search">
+        <label for="search" aria-label="search">
           <input 
             type="text" 
             id="search"
