@@ -51,6 +51,7 @@ button {
 .button.btn-coral {
     background: var(--coral);
     border-color: var(--coral);
+    color: var(--white);
 }
 
 .button.btn-warning { 

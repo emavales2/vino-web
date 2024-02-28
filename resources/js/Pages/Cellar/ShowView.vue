@@ -29,10 +29,10 @@
 
         <!-- ---- * Filtres * ---- -->
         <span class="row_els_apart">
-          <button class="button button-sml btn_wide">{{ __("cellar.filter") }}</button>
+          <button class="button button-sml btn-cream btn_wide">{{ __("cellar.filter") }}</button>
 
           <!-- ---- * Tri * ---- -->
-          <button class="button button-sml btn_wide" @click="toggleSortSquare">{{ __("cellar.sort") }}</button>
+          <button class="button button-sml btn-cream btn_wide" @click="toggleSortSquare">{{ __("cellar.sort") }}</button>
         </span>
 
         <transition name="sort-square-fade">
@@ -66,7 +66,7 @@
               <PlusButton :color="'coral'" @click.stop="addOne(wine.wine)" />
 
             </span>
-            <button class="button btn-sml btn-full btn-warning" @click.stop="toggleModalWine(wine.wine, cellar.id)">
+            <button class="button btn-sml btn-full btn-coral" @click.stop="toggleModalWine(wine.wine, cellar.id)">
               {{ __("buttons.remove") }}
             </button>
           </section>

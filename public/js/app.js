@@ -27662,7 +27662,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, {
       "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
         return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-          "class": "button btn-sml btn-warning",
+          "class": "button btn-full btn-sml btn-coral",
           onClick: function onClick($event) {
             return $options.toggleModal(wine);
           }
@@ -27991,7 +27991,7 @@ var _hoisted_5 = {
   "class": "row_els_apart"
 };
 var _hoisted_6 = {
-  "class": "button button-sml btn_wide"
+  "class": "button button-sml btn-cream btn_wide"
 };
 var _hoisted_7 = {
   "class": "sort-square"
@@ -28065,7 +28065,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     collection: $data.collectionReceived,
     onCollectionEvent: $options.receiveTreatedCollection
   }, null, 8 /* PROPS */, ["cellars", "collection", "onCollectionEvent"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ---- * Filtres * ---- "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__("cellar.filter")), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ---- * Tri * ---- "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "button button-sml btn_wide",
+    "class": "button button-sml btn-cream btn_wide",
     onClick: _cache[1] || (_cache[1] = function () {
       return $options.toggleSortSquare && $options.toggleSortSquare.apply($options, arguments);
     })
@@ -28124,7 +28124,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             return $options.addOne(wine.wine);
           }, ["stop"])
         }, null, 8 /* PROPS */, ["onClick"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-          "class": "button btn-sml btn-full btn-warning",
+          "class": "button btn-sml btn-full btn-coral",
           onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
             return $options.toggleModalWine(wine.wine, $props.cellar.id);
           }, ["stop"])
@@ -28222,7 +28222,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }),
           _: 2 /* DYNAMIC */
         }, 1032 /* PROPS, DYNAMIC_SLOTS */, ["href"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-          "class": "button btn-full btn-sml btn-warning",
+          "class": "button btn-full btn-sml btn-coral",
           onClick: function onClick($event) {
             return $options.toggleModal(wine.wine);
           }
