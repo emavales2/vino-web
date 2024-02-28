@@ -1,6 +1,5 @@
 <template>
   <div class="search-bar">
-    
     <form @submit.prevent="submit">
         <fieldset class="fieldset_1 fs_burg row_els_apart">
             <legend aria-labelledby="search">{{ __('dialogue.find_wine') }}</legend>
@@ -8,6 +7,7 @@
                 <input 
                 type="text" 
                 id="search"
+                class="mt-1 block w-full"
                 placeholder="chardonnay"
                 v-model="form.search"
                 >

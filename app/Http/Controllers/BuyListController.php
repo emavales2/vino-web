@@ -62,7 +62,7 @@ class BuyListController extends Controller
             'quantity'=> $request->quantity
         ]);
 
-        return redirect(route('buylist.index', $newBuyList->id))->withSuccess('The item has been added to your shopping list successfully');
+        return redirect(route('buylist.index', $newBuyList->id));
     }
 
         /**
@@ -137,13 +137,11 @@ class BuyListController extends Controller
         $buylist = BuyList::where('user_id', $userId)->where('wine_id', $wine_id)->first();
 
         if ($buylist) {
-
             $buylist->delete();
-            return redirect(route('buylist.index'))->withSuccess('The item on your shopping list was successfully deleted');
+            return redirect(route('buylist.index'));
 
         } else {
-
-            return redirect(route('buylist.index'))->withError('Unable to delete item from your shopping list');
+            return redirect(route('buylist.index'));
         }
     }
 }

@@ -63,42 +63,42 @@
 
 <!-- ---- * TESTING FILTERS * ---- -->
     <section>
-        <h1 class="fs_6 display-font coral">Filter by</h1>
+        <h1 class="fs_6 display-font coral">{{ __('cellar.filter_by') }}</h1>
   
         <div class="column_10 cream">
             
             <span>
-                <label for="filterByType">Type</label>                     
+                <label for="filterByType">{{ __('cellar.wine_type') }}</label>                     
                 <select id="filterByType" v-model="filters.type" @change="filterCollection" ref="filterByType">
-                    <option value="">All Wine Types</option>
+                    <option value="">{{ __('cellar.all_type') }}</option>
                     <option v-for="type in wineTypes" :value="type">{{ type }}</option>
                 </select>
             </span>
 
             <span>
-                <label for="filterByCountry">Country</label>                     
+                <label for="filterByCountry">{{ __('cellar.wine_country') }}</label>                     
                 <select id="filterByCountry" v-model="filters.country" @change="filterCollection">
-                    <option value="">All Countries</option>
+                    <option value="">{{ __('cellar.all_country') }}</option>
                     <option v-for="country in wineCountries" :value="country">{{ country }}</option>
                 </select>
             </span>
 
             <span>
-                <label for="filterBySize">Size</label>                     
+                <label for="filterBySize">{{ __('cellar.wine_size') }}</label>                     
                 <select id="filterBySize" v-model="filters.size" @change="filterCollection">
-                    <option value="">All Wine Sizes</option>
+                    <option value="">{{ __('cellar.all_size') }}</option>
                     <option v-for="size in wineSizes" :value="size">{{ size }}</option>
                 </select>
             </span>
 
             <span>
-                <label for="minPrice">Min Price</label>                     
+                <label for="minPrice">{{ __('cellar.min_price') }}</label>                     
                 <input type="number" id="minPrice" v-model="filters.minPrice">
 
-                <label for="maxPrice">Max Price</label>                     
+                <label for="maxPrice">{{ __('cellar.max_price') }}</label>                     
                 <input type="number" id="maxPrice" v-model="filters.maxPrice">
 
-                <button @click="filterCollection">Filter Price</button>
+                <button @click="filterCollection">{{ __('cellar.filter_price')}}</button>
             </span>
         </div>
     </section>

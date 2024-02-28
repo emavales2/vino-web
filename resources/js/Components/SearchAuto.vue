@@ -1,25 +1,28 @@
 <template>
-  <div>
-    <fieldset class="fieldset_1">
+  <div class="search-bar src-auto">
+    <fieldset class="fieldset_1 row_els_apart">
       <legend aria-labelledby="search">{{ __('dialogue.find_wine') }}</legend>
-      <label>
+      <label for="search">
         <input 
           type="text" 
           id="search"
           class="mt-1 block w-full"
           placeholder="chardonnay"
           v-model="term"
-          @input="handleInput"
         />
       </label>
+      <SearchIcon :color="'cream'" :searchAction="handleInput"/>
     </fieldset>    
   </div>
 </template>
 
 <script>
-
+import SearchIcon from './ButtonsIcons/SearchIcon.vue';
 export default {
   name: 'SearchAuto',
+  components: {
+    SearchIcon
+  },
   props: ['cellars'],
   data() {
     return {
