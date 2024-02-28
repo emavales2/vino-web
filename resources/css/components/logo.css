@@ -1,0 +1,11 @@
+
+/* ---- * Cette classe sera appliqué au conteneur <figure> qui contient l'image du logo * --- */
+
+.logo {
+    display: block;
+    text-align: center;
+}
+
+.logo > img {
+    max-height: 130px;
+}

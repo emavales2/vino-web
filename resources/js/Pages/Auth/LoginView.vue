@@ -1,7 +1,7 @@
 <template>
     <Head title="Log in" />
 
-    <div class="bckgd marg_vert_home">
+    <div class="bckgd cont_marg_vert_home">
         <main>
             <header>
                 <!-- <figure>   

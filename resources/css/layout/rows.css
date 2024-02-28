@@ -1,0 +1,27 @@
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Flex-row, elements apart */
+.row_els_apart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--med-space);
+    align-items: center;
+}
+
+/* Flex-row, sp in between */
+.row_els_apart.row_els_line {
+    justify-content: space-around;
+    padding: 20px;
+}
+
+/* Flex-row, 10px gap */
+.row_gap_10 {
+    display: flex;
+    flex-direction: row;
+    gap: var(--small-space);
+    align-items: center;
+}
