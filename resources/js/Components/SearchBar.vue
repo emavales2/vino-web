@@ -15,15 +15,6 @@
             <SearchIcon :color="'burgundy'" :searchAction="submit"/>
         </fieldset>    
 
-      <!-- <label>
-        <input 
-          type="text" 
-          placeholder="chardonnay"
-          v-model="form.search"
-        >
-      </label> -->
-
-      <!-- <SearchIcon :color="'burgundy'" :searchAction="submit"/> -->
       <DeleteButton :deleteAction="searchAction"/>
     </form>
     <InputError class="input_err" :message="form.errors.search"/>

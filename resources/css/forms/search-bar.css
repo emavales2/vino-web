@@ -16,10 +16,14 @@
 .search-bar svg{
   width: var(--med-space);
   height: var(--med-space);
+  margin-bottom: 5px;
+  margin-right: 10px;
 }
-
+.search-bar .button--icon.btn-delete{
+  margin-top: 17px;
+}
 /* Class qui s'applique sur search Bar dans la page Dashboard */
-.search-bar.search-dashboard {
+.search-dashboard.search-bar {
   box-shadow: none;
   background-color: transparent;
   padding: 0;
@@ -33,8 +37,9 @@
   & .fs_burg{
     border-color: var(--cream);  
   }
-  & svg{
+  & .svg-search{
     fill: var(--cream);
+    margin-bottom: 5px;
     margin-right: 10px;
   }
   & > form > .button--icon{
