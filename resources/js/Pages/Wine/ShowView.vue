@@ -41,7 +41,7 @@
                                 }}
                             </h3>
                         </span>
-                        <h1 class="typo-block-font fiche_wine_title coral">
+                        <h1 class="typo-block-font fiche_wine_title burg">
                             {{ wine.name }}
                         </h1>
                     </header>

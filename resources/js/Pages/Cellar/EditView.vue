@@ -9,17 +9,15 @@
     </header>
 
     <form @submit.prevent="submitForm">
-      <label for="name">
-        <h2 class="title_disp_subt">{{ __('cellar.modify_text') }}</h2>
-      </label>
+      <h2 class="title_disp_subt">{{ __('cellar.modify_text') }}</h2>
 
-      <fieldset class="fieldset_1">
-        <legend aria-labelledby="name">{{ __('cellar.name') }}</legend>
+      <div class="form_wrapper_2">
+        <label for="name">{{ __('cellar.name') }}</label>
         <input v-model="form.name" type="text" id="name" required>
         <InputError class="auto_msg auto_msg_input_err" :message="form.errors.name" />
-      </fieldset>
+      </div>
 
-      <button class="button" type="submit">{{ __('buttons.save') }}</button>
+      <button class="button btn-cream" type="submit">{{ __('buttons.save') }}</button>
     </form>
   </main>
 </template>

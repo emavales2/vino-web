@@ -9,6 +9,9 @@
 .btn_link.cream {
     border-left: 1px solid var(--cream-lt);
 }
+.btn_link.cream:last-child {
+    border-right: 1px solid var(--cream-lt);
+}
 
 .btn_link.plain {
     border-right: none;
