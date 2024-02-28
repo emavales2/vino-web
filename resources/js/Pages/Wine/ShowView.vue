@@ -1,4 +1,8 @@
 <template>
+    <Head>
+        <title>Wine</title>
+        <meta property="og:image" :content="wine.photo" />
+    </Head> 
     <div class="bckgd bckgd-white cont_float_up">
         <!-- ----- * DÉCOR BACKGROUND * ----- -->
         <section class="blobs_bckgd">
@@ -64,11 +68,9 @@
                     <!-- Btn pour partager sur Facebook -->
                     <ShareNetwork
                         network="facebook"
-                        :url="this.testUrl"
-                        title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
-                        description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
+                        :url="this.currentUrl"
                         quote="The hot reload is so fast it\'s near instant. - Evan You"
-                        hashtags="vuejs,vite"
+                        hashtags="vino"
                     >
                         Share on Facebook
                     </ShareNetwork>
@@ -323,9 +325,6 @@ export default {
                 }
             })
         }
-    },
-    mounted() {
-        this.loadFacebookSDK();
     },
     props: {
         wine: Object,
