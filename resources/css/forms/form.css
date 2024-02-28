@@ -33,6 +33,9 @@ form textarea{
     color: var(--cream);
     height: 200px;
 }
+form textarea::placeholder {
+    color: var(--coral);
+}
 form textarea:focus-visible{
     outline: none;
 }

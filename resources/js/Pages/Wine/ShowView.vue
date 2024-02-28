@@ -316,11 +316,16 @@ export default {
         deleteNote() {
             Inertia.delete(route("note.delete", { note: this.selectedNote }), {
                 onSuccess: () => {
-                    this.showModal = false;
-                    this.$parent.openDialog("vous avez supprimé la note");
-                },
-            });
-        },
+                    this.showModal = false
+                    this.$parent.openDialog(
+                        this.__('note.action_success')
+                    );
+                }
+            })
+        }
+    },
+    mounted() {
+        this.loadFacebookSDK();
     },
     props: {
         wine: Object,

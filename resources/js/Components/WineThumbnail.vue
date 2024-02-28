@@ -22,9 +22,9 @@
                 <p v-else>
                 {{ wine.name }}
                 </p> 
-                <p class="wine-th-price">
-                    {{ wine.price }} CAD
-                </p>        
+                <p v-if="wine.price" class="wine-th-price">
+                    {{ wine.price.toFixed(2) }} CAD
+                </p>     
             </div>
         </Link>
 
