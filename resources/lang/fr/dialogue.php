@@ -7,6 +7,10 @@ return [
     // Page cellar/wine
     'no_wine' => 'Aucun vin dans ce cellier.',
     'no_term' => 'Aucun vin trouvé avec le terme ',
+    'cellar_create' => 'Super ! Votre cellier a été ajouté.',
+    'cellar_update' => 'Super ! Votre cellier a été mis à jour.',
+    'cellar_delete' => 'Votre cellar a été supprimé',
+    'cellarwine_delete' => 'Votre vin a été supprimé',
     // Dashboard
     'Oh' => 'Oh non!',
     'no_wine' => ' Vous n\'avez pas encore de vin',

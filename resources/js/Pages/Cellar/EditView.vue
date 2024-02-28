@@ -48,14 +48,14 @@ export default {
       form: useForm({
         id: this.cellar.id,
         name: this.cellar.name,
-      }),
+      })
     };
   },
   methods: {
     submitForm() {
       this.form.put(route('cellar.update', { cellar: this.form.id }), {
         onSuccess: () => {
-          this.$parent.openDialog(`Cellar updated successfully!`);
+          this.$parent.openDialog(this.__('dialogue.cellar_update'));
         },
       });
     },
