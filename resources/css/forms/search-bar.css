@@ -20,13 +20,6 @@
   margin-right: 10px;
 }
 
-/* // Class pour le composant searchAuto */
-.search-bar.src-auto {
-  background-color: transparent;
-  box-shadow: none;
-  padding: 0;
-}
-
 .search-bar .button--icon.btn-delete{
   margin-top: 17px;
 }

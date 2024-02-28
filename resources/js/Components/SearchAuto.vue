@@ -1,5 +1,5 @@
 <template>
-  <div class="search-bar src-auto">
+  <div class="search-bar">
     <fieldset class="fieldset_1 row_els_apart">
       <legend aria-labelledby="search">{{ __('dialogue.find_wine') }}</legend>
       <label for="search">
