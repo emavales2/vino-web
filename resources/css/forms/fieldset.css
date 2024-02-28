@@ -89,6 +89,7 @@ fieldset {
     color: var(--burgundy);
 }
 
+/* Display group label and input */
 .form_wrapper_2 {
     display: flex;
     flex-direction: column;
@@ -98,7 +99,7 @@ fieldset {
 .form_wrapper_2 label {
     color: var(--coral);
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 500;
     margin: 0 var(--med-space);
     text-transform: uppercase;
 }
