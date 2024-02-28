@@ -68,12 +68,15 @@
                     <ShareNetwork
                         title="vino"
                         network="facebook"
-                        :url="this.currentUrl"
-                        quote="The hot reload is so fast it\'s near instant. - Evan You"
+                        :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
+                        quote="Look at that hot wine!"
                         hashtags="vino"
                     >
                         Share on Facebook
                     </ShareNetwork>
+
+
+
                 </section>
             </article>
             <aside class="row_els_apart row_els_line">
@@ -264,7 +267,6 @@ import GoBackButton from "@/Components/ButtonsIcons/GoBackButton.vue";
 import NoteThumbnail from "@/Components/NoteThumbnail.vue";
 import ConfirmModal from "@/Components/ConfirmModal.vue";
 import { Inertia } from "@inertiajs/inertia";
-import domtoimage from 'dom-to-image-more';
 
 export default {
     name: "Wine.ShowView",
@@ -327,17 +329,6 @@ export default {
                     );
                 }
             })
-        },
-        getImage() {
-
-            var node = document.querySelector('.fiche_wine>section')
-            var options = {
-                quality: 0.95 
-            };
-            domtoimage.toJpeg(node, options).then(function (dataUrl) {
-                var img = new Image();
-                img.src = dataUrl;
-            });
         }
     },
     props: {
@@ -348,12 +339,4 @@ export default {
     },
 };
 
-/* var node = document.getElementById('my-node');
-var options = {
-    quality: 0.95 
-};
-
-domtoimage.toJpeg(node, options).then(function (dataUrl) {
-    // Do something with the dataURL (data:image/jpeg;base64,i........)
-}); */
 </script>

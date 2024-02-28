@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\CellarHasWine;
 use App\Models\BuyList;
 use App\Models\Wine;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Resources\WineResource;
 use Inertia\Inertia;
@@ -133,28 +134,38 @@ class WineController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Wine $wine)
-{
-    $request->validate([
-        'name' => 'required|min:3|max:100',
-        'type' => 'min:3|max:45|nullable',
-        'country' => 'min:3|max:100|nullable',
-        'size' => 'min:3|max:45|nullable',
-        'price' => 'numeric|gte:0|nullable'
-    ]);
+    {
+        $request->validate([
+            'name' => 'required|min:3|max:100',
+            'type' => 'min:3|max:45|nullable',
+            'country' => 'min:3|max:100|nullable',
+            'size' => 'min:3|max:45|nullable',
+            'price' => 'numeric|gte:0|nullable'
+        ]);
 
-    $type = json_encode(['fr' => $request->type]);
-    $country = json_encode(['fr' => $request->country]);
+        $type = json_encode(['fr' => $request->type]);
+        $country = json_encode(['fr' => $request->country]);
 
-    $wine->update([
-        'name' => $request->name,
-        'type' => $type,
-        'country' => $country,
-        'size' => $request->size,
-        'price' => $request->price,
-    ]);
+        $wine->update([
+            'name' => $request->name,
+            'type' => $type,
+            'country' => $country,
+            'size' => $request->size,
+            'price' => $request->price,
+        ]);
 
-    return redirect(route('collection'));
-}
+        return redirect(route('collection'));
+    }
+
+    public function publicShow (Wine $wine, User $user) 
+    {
+        
+        $wine = new WineResource($wine);
+        $wine = $wine->resolve();
+        return Inertia::render('Wine/ShowPublicView', compact('wine', 'user'));
+    }
+
+
     /**
      * Remove the specified resource from storage.
      *

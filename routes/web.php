@@ -102,6 +102,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/search-auto', [CellarController::class, 'searchAuto'])->name('cellar.searchauto');
 });
 
+// Page pour share un vin
+Route::get('/wine/public/{wine}/{user}', [WineController::class, 'publicShow'])->name('wine.public');
+
 // Page d'erreur
 // ----------------------------------------------------
 Route::get('/error', function () {
