@@ -9,25 +9,25 @@
             </header>
 
             <div>
-                <dl class="txt-center">
-                    <span class="flex-row gap_20">
-                        <dt class="typo-display-font coral">{{ __('user.first_name') }}</dt>
-                        <dd class="cream typo-block-font">{{ user.first_name }}</dd>
+                <dl class="txt-center container_profil">
+                    <span>
+                        <dt>{{ __('user.first_name') }}</dt>
+                        <dd>{{ user.first_name }}</dd>
                     </span>
 
-                    <span class="flex-row gap_20">
-                        <dt class="typo-display-font coral">{{ __('user.last_name') }}</dt>
-                        <dd class="cream typo-block-font">{{ user.last_name }}</dd>
+                    <span>
+                        <dt>{{ __('user.last_name') }}</dt>
+                        <dd>{{ user.last_name }}</dd>
                     </span>
 
-                    <span class="flex-row gap_20">
-                        <dt class="typo-display-font coral">{{__('user.email')}}</dt>
-                        <dd class="cream typo-block-font">{{ user.email }}</dd>
+                    <span>
+                        <dt>{{__('user.email')}}</dt>
+                        <dd>{{ user.email }}</dd>
                     </span>        
                 </dl>
             </div>
 
-            <div class="btn-container">
+            <div class="button_column btn_col_20">
                 <Link class="button btn-cream" :href="route('profile.edit', user.id )">{{ __('user.edit_profile') }}</Link>
                 <Link class="button btn-cream" :href="route('logout', user.id )">{{ __('buttons.logout') }}</Link>
             </div>

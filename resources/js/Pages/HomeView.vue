@@ -2,7 +2,7 @@
     <Head title="Home" />
 
     
-    <div class="marg_vert_home"> 
+    <!-- <div class="bckgd">  -->
         <!-- ---- * En dessus de body, le conteneur principale. Au dessous du page content * ---- -->
         <div class="bckgd bckgd-home">
             <!-- ---- * Contenu décoratif du bg (flat). Pas d'interaction avec page content * ---- -->
@@ -21,8 +21,8 @@
             </section>
 
             <main class="cont_narrow_splash just_top">
-                <header>
-                    <figure>
+                <header class="column_15">
+                    <figure class="logo">
                         <img src="@/../assets/logos/VINO_lt.svg" alt="VINO logo">
                     </figure>
 
@@ -37,11 +37,15 @@
                         </Link>
                     </button>
 
-                    <p class="cream txt-center">
-                        {{ __('home.no_account') }}
-                        <Link class="typo-block-font coral" :href="route('register')">{{ __('home.join') }}</Link>
-                       
-                    </p>
+                    <aside class="txt-center">
+                        <p class="cream">
+                            {{ __('home.no_account') }}
+                        </p>
+                        <p class="txt-center">
+                            <Link class="typo-block-font coral" :href="route('register')">{{ __('home.join') }}</Link>   
+                        </p>   
+                    </aside>
+                    
                     <p class="cream txt-center"> 
                         {{ __('home.switch') }}
                         <LanguageSelector/>
@@ -49,7 +53,7 @@
                 </div>
             </main>
         </div>
-    </div>
+    <!-- </div> -->
 </template>
 
 <script>

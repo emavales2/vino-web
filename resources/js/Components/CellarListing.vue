@@ -1,5 +1,5 @@
 <template>
-  <section class="column gap_20">
+  <section class="column_20">
 
     <ul v-if="!isEmpty(cellars)" class="grid_square_horiz">
       <li class="grid_sq_insert" v-for="(cellar, index) in cellars.slice(0, limit ? limit : cellars.length)" :key="cellar.id">

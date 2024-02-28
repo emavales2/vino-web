@@ -71,7 +71,7 @@
                 </div>
             </form>
 
-            <div class="btn-container">
+            <div class="button_column btn_col_20">
                 <button class="button btn-cream" @click="toggleModal">
                     {{ __('user.delete_account') }}
                 </button>
