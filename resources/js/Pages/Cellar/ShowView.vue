@@ -23,7 +23,7 @@
       <!-- <aside v-if="collection.length !== 0 || searchTerm" class="card_nav bckgd-burg-lt"> -->
 
     <!-- ---- * SECTION SEARCH / TRI / FILTRES COMMENCE * ---- -->    
-    <aside class="card_nav bckgd-burg-lt">
+    <aside class="card_nav bckgd-burg-lt" v-if="collection.length !== 0">
         <h2 class="title_disp_subt tit_sub_sm">
             {{ __("cellar.more_options") }}
         </h2>
