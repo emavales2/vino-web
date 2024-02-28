@@ -7,7 +7,7 @@
 
       <!-- ---- * Titre et boutons qui affecten le cellier * ---- -->
       <header>
-        <h1 class="title_index">{{ cellar.name }} {{ numCellars }}</h1>
+        <h1 class="title_index">{{ cellar.name }}</h1>
         <section>
           <Link :href="route('cellar.edit', cellar.id)" class="btn_link cream">{{ __("buttons.edit") }}</Link>
           <!-- Le btn delete ne s'affiche pas si le cellier est le seul -->
