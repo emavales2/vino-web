@@ -51,7 +51,7 @@ class CellarController extends Controller
             'user_id' => $userId
         ]);
 
-        return redirect(route('cellar.index', $newCellar->id))->withSuccess('Cellar successfully created');
+        return redirect(route('cellar.index', $newCellar->id));
     }
 
 
@@ -86,7 +86,7 @@ class CellarController extends Controller
         $userId = Auth::id();
 
         if ($cellar->user_id != $userId) {
-            return redirect(route('cellar.index'))->withErrors("You do not have authorization to access this cellar");
+            return redirect(route('cellar.index'));
         }
         // Vérifier le nombre de caves associées à cet utilisateur
         $numCellars = Auth::user()->cellar->count();
@@ -112,7 +112,7 @@ class CellarController extends Controller
         $userId = Auth::id();
 
         if ($cellar->user_id != $userId) {
-            return redirect(route('cellar.index'))->withErrors("You do not have authorization to access this cellar");
+            return redirect(route('cellar.index'));
         }
 
         return Inertia::render('Cellar/EditView', compact('cellar'));
@@ -134,14 +134,14 @@ class CellarController extends Controller
         $userId = Auth::id();
 
         if ($cellar->user_id != $userId) {
-            return redirect(route('cellar.index'))->withErrors("You do not have authorization to access this cellar");
+            return redirect(route('cellar.index'));
         }        
 
         $cellar->update([
             'name' => $request->name
         ]);
 
-        return redirect(route('cellar.show', $cellar->id))->withSuccess('Cellar modified successfully');
+        return redirect(route('cellar.show', $cellar->id));
     }
 
     /**
@@ -156,18 +156,18 @@ class CellarController extends Controller
 
         // dans ma tête, ce n'était deja pas possible d'acceder ici manuellement
         if ($cellar->user_id != $userId) {
-            return redirect(route('cellar.index'))->withErrors("You do not have authorization to access this cellar");
+            return redirect(route('cellar.index'));
         }
         
         //to discuss
         $hasWines = $cellar->cellarHasWines()->exists();
 
         if ($hasWines) {
-            return redirect(route('cellar.index'))->withError('Unable to delete cellar. Wines are associated with it.');
+            return redirect(route('cellar.index'));
         }
 
         $cellar->delete();
 
-        return redirect(route('cellar.index'))->withSuccess('Cellar deleted successfully');
+        return redirect(route('cellar.index'));
     }
 }
