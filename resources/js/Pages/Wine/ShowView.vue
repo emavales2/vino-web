@@ -65,18 +65,16 @@
                         {{ wine.price ? wine.price + " $" : "n/a" }}</span
                     >
                     <!-- Btn pour partager sur Facebook -->
-                    <ShareNetwork
-                        title="vino"
+                    <SocialShare
                         network="facebook"
+                        title="Vino!"
+                        description="Lets%20share%20our%20love%20for%20wine"
+                        quote="Hi,%20share%20this%20amazing%20bottle%20with%20me"
+                        hashtag="vino"
                         :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
-                        quote="Look at that hot wine!"
-                        hashtags="vino"
-                    >
-                        Share on Facebook
-                    </ShareNetwork>
+                    />
 
-
-
+                    <button @click="openWindow">Share New</button>
                 </section>
             </article>
             <aside class="row_els_apart row_els_line">
@@ -190,9 +188,9 @@
             <section class="notes-box">
                 <header>
                     <div>
-                        <h2 class="typo-display-font">tasting notes</h2>
+                        <h2 class="typo-display-font">{{ __('note.title') }}</h2>
                         <small v-if="notes.length > 0"
-                            >click on a note for more options</small
+                            >{{__('note.instructions')}}</small
                         >
                     </div>
                     <Link
@@ -222,7 +220,7 @@
                     </Link>
                 </header>
                 <div v-if="notes.length == 0">
-                    you have no notes yet for this wine
+                    {{__('note.no_notes')}}
                 </div>
                 <div v-else>
                     <NoteThumbnail
@@ -267,7 +265,7 @@ import GoBackButton from "@/Components/ButtonsIcons/GoBackButton.vue";
 import NoteThumbnail from "@/Components/NoteThumbnail.vue";
 import ConfirmModal from "@/Components/ConfirmModal.vue";
 import { Inertia } from "@inertiajs/inertia";
-
+import SocialShare from "@/Components/SocialShare.vue";
 export default {
     name: "Wine.ShowView",
     components: {
@@ -279,6 +277,7 @@ export default {
         NoteModal,
         Modal,
         ConfirmModal,
+        SocialShare
     },
     data() {
         return {
@@ -286,13 +285,14 @@ export default {
             showNoteModal: false,
             showConfirmModal: false,
             selectedNote: null,
-            showModal: false,
-            testUrl: "https://thomasira.com/wine/1182",
-            currentUrl: window.location.href,
+            showModal: false
         };
     },
     layout: MainLayout,
     methods: {
+        openWindow () {
+            window.open("https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8000%2Fwine%2Fpublic%2F30546%2F1&title=vino&description=&quote=Look%20at%20that%20hot%20wine!&hashtag=%23vino", "MsgWindow", "width=300,height=400",'')
+        },
         toggleModal() {
             this.showModal = !this.showModal;
         },
