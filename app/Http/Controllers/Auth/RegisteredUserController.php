@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Inertia\Inertia;
+use App\Models\Cellar;
 
 class RegisteredUserController extends Controller
 {
@@ -49,6 +50,12 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
         Auth::login($user);
+
+        Cellar::create([
+            'name' => 'Principal',
+            'user_id' => Auth::id()
+        ]);
+
         return redirect(RouteServiceProvider::HOME);
     }
 }
