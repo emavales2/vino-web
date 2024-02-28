@@ -23,9 +23,7 @@
     text-transform: lowercase;
     max-width: 15ch;
 }
-.title_disp_subt.ds_smllst.burg-lt{
-    color: var(--burgundy-lt);
-}
+
 /* ---- * Var taille * ---- */
 .title_disp_subt.tit_sub_sm {
     font-size: 1.4rem;
@@ -37,6 +35,10 @@
     font-size: 1.12rem;
     text-transform: unset;
     line-height: var(--text-line);
+}
+
+.title_disp_subt.ds_smllst.burg-lt{
+    color: var(--burgundy-lt);
 }
 
 /* Variante lorsque le texte est sur le coral */

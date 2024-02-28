@@ -29,7 +29,7 @@
                 <li>
                     <section class="column_30">
                         <header>
-                            <span class="row_els_apart gap_20">
+                            <span class="row_els_apart">
                                 <h2 class="title_disp_subt">
                                     {{ __("dashboard.my_cellars") }}
                                 </h2>
@@ -52,7 +52,7 @@
                 <li>
                     <section class="column_30">
                         <header>
-                            <span class="row_els_apart gap_20">
+                            <span class="row_els_apart">
                                 <h2 class="title_disp_subt">
                                     {{ __("dashboard.my_wines") }}
                                 </h2>

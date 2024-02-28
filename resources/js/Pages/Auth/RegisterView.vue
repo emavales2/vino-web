@@ -1,7 +1,7 @@
 <template>
     <Head title="Register" />
 
-    <div class="bckgd marg_vert_home">
+    <div class="bckgd cont_marg_vert_home">
         <main>
             <header>
                 <h1 class="title_index">{{ __('home.join') }}</h1>
