@@ -30,41 +30,41 @@
                     <InputError class="auto_msg auto_msg_input_err" :message="form.errors.name" />
                     </fieldset>
 
-                    <fieldset class="fieldset_1">
+                    <fieldset class="fieldset_3">
                         <legend>{{ __('cellar.wine_type') }}</legend>
-                        <label aria-labelledby="type" for="type" hidden></label>
                         <div>
-                            <span>
+                            <span class="radio-round radio-red">
                                 <input
                                     id="type-red"
                                     type="radio"
-                                    class="radio-round.radio-red"
+                                    
                                     v-model="form.type"
                                     value='{"fr":"Vin rouge ","en":"Red wine "}'
+                                    checked
                                 >
                                 <label for="type-red">{{ __('words.red') }}</label>
                             </span>
-                            <span>
+                            <span class="radio-round radio.white">
                                 <input
                                     id="type-white"
                                     type="radio"
-                                    class="radio-round.radio.white"
+                                    
                                     v-model="form.type"
                                     value='{"fr":"Vin blanc ","en":"White wine "}'
                                 >
                                 <label for="type-white">{{ __('words.white') }}</label>
                             </span>
-                            <span>
+                            <span class="radio-round radio-rose">
                                 <input
                                     id="type-rose"
                                     type="radio"
-                                    class="radio-round"
+                                    
                                     v-model="form.type"
                                     value='{"fr":"Vin ros\u00e9 ","en":"Ros\u00e9 "}'
                                 >
                                 <label for="type-rose">{{ __('words.rose') }}</label>
                             </span>
-                          </div>
+                        </div>
                         <InputError class="auto_msg auto_msg_input_err" :message="form.errors.type" />
                     </fieldset>
 

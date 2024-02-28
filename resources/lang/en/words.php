@@ -3,7 +3,7 @@
 return [
   'yes' => 'yes',
   'no' => 'no',
-  'red' => 'Red wine',
-  'white' => 'White wine',
+  'red' => 'Red',
+  'white' => 'White',
   'rose' => 'Rosé'
 ];
