@@ -51,6 +51,7 @@
         "select": "S\u00e9lectionner un cellier",
         "no_cellar": "Il semble que vous n'ayez pas de cellier, veuillez en cr\u00e9er un d'abord",
         "create": "Cr\u00e9er un cellier",
+        "search_in_cellar": "Rechercher un vin dans ce cellier",
         "sort": "Trier",
         "filter": "Filtrer",
         "filter_by": "Filtrer par",

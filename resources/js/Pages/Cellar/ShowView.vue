@@ -23,7 +23,7 @@
       <!-- <aside v-if="collection.length !== 0 || searchTerm" class="card_nav bckgd-burg-lt"> -->
 
     <!-- ---- * SECTION SEARCH / TRI / FILTRES COMMENCE * ---- -->    
-    <aside class="card_nav bckgd-burg-lt" v-if="collection.length !== 0">
+    <aside class="card_nav bckgr-trans" v-if="collection.length !== 0">
         <h2 class="title_disp_subt tit_sub_sm">
             {{ __("cellar.more_options") }}
         </h2>
@@ -33,10 +33,10 @@
 
         <!-- ---- * Boutons Filtres / Tri * ---- -->
         <span class="row_els_apart">
-          <button class="button button-sml btn-cream btn_wide">{{ __("cellar.filter") }}</button>
+          <button class="button btn-sml btn-cream btn_wide">{{ __("cellar.filter") }}</button>
 
           <!-- ---- * Tri * ---- -->
-          <button class="button button-sml btn-cream btn_wide" @click="toggleSortSquare">{{ __("cellar.sort") }}</button>
+          <button class="button btn-sml btn-cream btn_wide" @click="toggleSortSquare">{{ __("cellar.sort") }}</button>
         </span>
 
         <!-- ---- * Depliant Tri * ---- -->

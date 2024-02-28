@@ -19,9 +19,16 @@
   margin-bottom: 5px;
   margin-right: 10px;
 }
-
 .search-bar .button--icon.btn-delete{
   margin-top: 17px;
+}
+
+.search-auto .svg-search{
+  fill: var(--cream);
+  width: var(--med-space);
+  height: var(--med-space);
+  margin-bottom: 5px;
+  margin-right: 10px;
 }
 /* Class qui s'applique sur search Bar dans la page Dashboard */
 .search-dashboard.search-bar {

@@ -2,7 +2,7 @@
   <div>
     <form class="search-auto">
       <fieldset class="fieldset_1 row_els_apart">
-        <legend aria-labelledby="search">{{ __('dialogue.find_wine') }}</legend>
+        <legend aria-labelledby="search">{{ __('cellar.search_in_cellar') }}</legend>
         <label for="search">
           <input 
             type="text" 

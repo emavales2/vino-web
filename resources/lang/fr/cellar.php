@@ -14,6 +14,7 @@ return [
     'select' => 'Sélectionner un cellier',
     'no_cellar' => 'Il semble que vous n\'ayez pas de cellier, veuillez en créer un d\'abord',
     'create' => 'Créer un cellier',
+    "search_in_cellar" => "Rechercher un vin dans ce cellier",
     // TRIER/Filtrer
     'sort' => 'Trier',
     'filter' => 'Filtrer',
