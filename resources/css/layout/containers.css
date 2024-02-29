@@ -59,7 +59,18 @@
     }
 }
 
- 
+@media (min-width: 750px){
+    .container_profil {
+        & span {
+            & dt {
+                font-size: 1.5rem;
+            }
+            & dd {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
 
 
 

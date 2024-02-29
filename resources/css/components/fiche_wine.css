@@ -37,3 +37,31 @@
 .fiche_wine img {
     height: 100%;
 }
+
+/* ----- * Responsive * ----- */
+
+@media (min-width: 750px){
+    .fiche_wine figure {
+        max-height: 70vh;
+    }
+    .fiche_wine .fiche_wine_title {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+    .fiche_wine .fiche_wine_subtitle {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+    .fiche_wine small{
+        font-size: 1rem;
+    }
+    .fiche_wine li{
+        font-size: 1.4rem;
+    }
+    .fiche_wine .title_disp_subt{
+        font-size: 1.4rem;
+    }
+    .fiche_wine .typo-semibold{
+        font-size: 1.4rem;
+    }
+}
