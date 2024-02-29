@@ -29,6 +29,11 @@ class Wine extends Model
     public function note() {
         return $this->hasMany(Note::class);
     }
+
+    public function buylist() {
+        return $this->belongsTo(BuyList::class);
+    }
+
     // retourner une méthode nommé 'like' (appartient à Model)
     public  function scopeLike($query, $field, $value){
 

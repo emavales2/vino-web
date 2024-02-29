@@ -21,7 +21,7 @@
             <!-- ----- * BACK BUTTON * ----- -->
             <!-- --- * Si la dernière pg visité n'est pas /wine-create, le bouton apparaît * --- -->
             <span v-if="prevPage !== '/wine-create'">
-                <GoBackButton :color="'coral'" />
+                <GoBackButton :color="'coral-dk'" />
             </span>
 
             <!-- ----- * FICHE * ----- -->
@@ -36,9 +36,7 @@
                         <span class="row_gap_10">
                             <ColorDrop :color="wine.type" />
                             <h3 class="title_disp_subt ds_smllst burg-lt">
-                                {{
-                                    wine.country != null ? wine.country : "n/a"
-                                }}
+                                {{ wine.type != null ? wine.type : "n/a" }}
                             </h3>
                         </span>
                         <h1 class="fiche_wine_title">
@@ -56,8 +54,8 @@
                                 {{ wine.code_saq }}</small
                             >
                         </li>
-                        <li>{{ wine.type != null ? wine.type : "n/a" }}</li>
-                        <li>{{ wine.size ? wine.size : "n/a" }}</li>
+                        <li>{{ wine.country != null ? wine.country : country + ": n/a" }}</li>
+                        <li>{{ wine.size ? wine.size : size + ": n/a" }}</li>
                     </ul>
 
                     <span class="typo-semibold burg-lt"
@@ -65,12 +63,16 @@
                         {{ wine.price ? wine.price + " $" : "n/a" }}</span
                     >
                     <!-- Btn pour partager sur Facebook -->
-                    <SocialShare
-                        network="facebook"
-                        :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
-                    />
-                </section>
-            </article>
+                    <Link v-if="wine.user_id"
+                    :href="route('wine.edit', wine.id)" 
+                    class="button btn-sml btn-burgundy"
+                    >
+                    {{ __('buttons.edit') }}
+                </Link>
+                
+            </section>
+        </article>
+
             <aside class="row_els_apart row_els_line">
                 <Link
                     v-if="!exists"
@@ -179,7 +181,7 @@
                 </Link>
             </aside>
 
-            <section class="notes-box">
+            <section class="notes-box" v-if="prevPage !== '/wine-search'">
                 <header>
                     <div>
                         <h2 class="typo-display-font">{{ __('note.title') }}</h2>
@@ -225,6 +227,7 @@
                         @click="setNoteModal(note)"
                     />
                 </div>
+                
                 <Teleport to="body">
                     <Modal v-if="showModal" :toggleOff="toggleModal">
                         <NoteModal
@@ -246,6 +249,17 @@
                     </Modal>
                 </Teleport>
             </section>
+
+            <div class="row_gap_10">
+                <SocialShare
+                    network="twitter"
+                    :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
+                />
+                <SocialShare
+                    network="facebook"
+                    :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
+                />
+            </div>
         </main>
     </div>
 </template>
@@ -276,6 +290,8 @@ export default {
     },
     data() {
         return {
+            country: this.__('dialogue.country_n_a'),
+            size: this.__('dialogue.size_n_a'),
             shareImage: '',
             showNoteModal: false,
             showConfirmModal: false,

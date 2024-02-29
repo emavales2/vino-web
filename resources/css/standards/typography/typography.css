@@ -126,3 +126,22 @@ small {
     text-align: center;
 }
 
+
+/* ----- * Responsive * ----- */
+
+@media (min-width: 750px){
+    .typo-fs-5 {
+        font-size: 2.4rem;
+        line-height: 3rem;
+        max-width: 30ch;
+    }
+    .typo-fs-1 {
+        font-size: 3.75rem;
+        line-height: 5rem;
+        letter-spacing: var(--med-ltr-spacing);
+    }
+    p {
+        font-size: 1.4rem;
+        line-height: var(--tall-line);
+    }
+}

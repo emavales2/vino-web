@@ -41,7 +41,11 @@ button {
     border-color: var(--burgundy);
     color: var(--burgundy);
 }
-
+.button.btn-burgundy-lt {
+    background: none;
+    border-color: var(--burgundy-lt);
+    color: var(--burgundy-lt);
+}
 .button.btn-cream {
     background: none;
     border-color: var(--cream);
@@ -49,11 +53,10 @@ button {
 }
 
 .button.btn-coral {
-    background: var(--coral);
-    border-color: var(--coral);
+    background: var(--coral-dk);
+    border-color: var(--coral-dk);
     color: var(--white);
 }
-
 .button.btn-warning { 
     background-color: var(--danger);
     border-color:var(--danger);
@@ -77,6 +80,16 @@ button {
     max-width: 120px;
     width: 100%;
 }
+
+.button.btn-logo{
+    display: flex;
+    flex-flow: row;
+    gap: var(--small-space);
+}
+.button.btn-logo svg{
+    flex: 1;
+}
+
 
 /* - variants pour icones - */
 .button--icon {
@@ -108,3 +121,23 @@ button {
     font-size: .833rem;
 }
 
+.button.p-small {
+    font-size: .833rem;
+}
+
+/* ----- * Responsive * ----- */
+
+@media (min-width: 750px){
+    .button{
+        font-size: 1.5rem;
+        padding: 18px 24px;
+    }
+    .button.btn-sml{
+        font-size: 1rem;
+        margin-inline: auto;
+    }
+    .button--icon figcaption{
+        font-size: 1.2rem;
+    }
+    
+}

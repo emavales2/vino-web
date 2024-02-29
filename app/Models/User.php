@@ -52,6 +52,10 @@ class User extends Authenticatable
     public function wine() {
         return $this->hasMany(Wine::class);
     }
+    
+    public function buylist() {
+        return $this->hasMany(BuyList::class);
+    }
 
 
 }

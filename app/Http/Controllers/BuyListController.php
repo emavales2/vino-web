@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\resources\WineResource;
 use App\Models\BuyList;
 use App\Models\Wine;
 use Illuminate\Http\Request;
@@ -19,10 +20,13 @@ class BuyListController extends Controller
     {
         $userId = Auth::id();
         $cellars = Auth::user()->cellar;
-        $buylist = BuyList::where('buy_lists.user_id', $userId)
-            ->join('wines', 'wines.id', '=', 'buy_lists.wine_id')
-            ->get();
-
+        $buylist = Auth::user()->buylist;
+        if($buylist) {
+            foreach($buylist as &$item) {
+                $wine = new WineResource($item->wine[0]);
+                $item->newWine = $wine->resolve();
+            }
+        } else $buylist = [];
         return Inertia::render('BuyList/IndexView', compact('buylist', 'cellars'));
     }
 

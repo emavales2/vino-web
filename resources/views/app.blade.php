@@ -3,13 +3,20 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <meta name="Description" content="Vino, le cellier le plus conviviable pour gérer vos bouteilles">
+
+        <!-- for FB sharing -->
         <meta property="og:site_name" content="thomasira.com">
         <meta property="og:title" content="Vino!">
-        <meta property="og:image" content="/storage/img/vino.jpg">
+        <meta property="og:image" content="https://thomasira.com//storage/img/vino.jpg">
+
+        <!-- for twitter sharing -->
+        <meta name="twitter:app:name" content="Vino!">
+        <meta name="twitter:image" content="https://thomasira.com//storage/img/vino.jpg">
+        
+        <!-- Styles -->
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        
         <!-- Scripts -->
         @routes
         <script src="{{ mix('js/app.js') }}" defer></script>

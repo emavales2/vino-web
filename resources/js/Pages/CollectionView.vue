@@ -24,12 +24,7 @@
                             >
                               <!-- section std sloté -->
                               <section class="button_column_tight">
-                                <Link v-if="wine.wine.user_id"
-                                  :href="route('wine.edit', wine.wine.id)" 
-                                  class="button btn-sml btn-full btn-coral"
-                                >
-                                  {{ __('buttons.edit') }}
-                                </Link>
+                               
                                 <button class="button btn-full btn-sml btn-coral" @click="toggleModal(wine.wine)">{{ __('buttons.remove') }}</button>
                               </section>
                             </WineThumbnail>
