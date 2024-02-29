@@ -11,7 +11,7 @@
           />
         </ul>
       </div>
-      <div v-else>
+      <div v-else class="column_10 typo-display-font cream">
         <p>{{ __('dialogue.create') }}</p>
         <Link class="button btn-sml btn-coral" :href="route('wine.create')">{{ __('dialogue.create_wine') }}</Link>
       </div>

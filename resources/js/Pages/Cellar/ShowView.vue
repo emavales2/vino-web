@@ -113,7 +113,7 @@
           <!-- section std(sloté dans WineThumbnail), inclus btns - et + ainsi que btn remove -->
           <section class="wine_thb_nav">
             <span>
-              <MinusButton :color="'coral'" :disabled="wine.qty === 0" @click.stop="removeOne(wine.wine, wine.qty)" />
+              <MinusButton :color="'coral'" :disabled="wine.qty <= 0" @click.stop="removeOne(wine.wine, wine.qty)" />
               <PlusButton :color="'coral'" @click.stop="addOne(wine.wine)" />
 
             </span>
