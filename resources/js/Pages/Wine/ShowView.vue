@@ -67,6 +67,12 @@
                         network="facebook"
                         :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
                     />
+                    <Link v-if="wine.user_id"
+                        :href="route('wine.edit', wine.id)" 
+                        class="button btn-sml btn-burgundy"
+                    >
+                        {{ __('buttons.edit') }}
+                    </Link>
 
                 </section>
             </article>
