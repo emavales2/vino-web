@@ -39,7 +39,8 @@
   }
 
 /* ---- * Contient l'image * ---- */
-.wine-thumbnail a div:first-of-type {
+/* .wine-thumbnail a div:first-of-type { */
+.wine-thumbnail a figure {
     height: 60px;
     position: relative;
     display: flex;
@@ -54,7 +55,8 @@
 }
 
 /* ---- * Contient le nom et le prix * ---- */
-.wine-thumbnail a div:last-of-type {
+/* .wine-thumbnail a div:last-of-type { */
+.wine-thumbnail a section {
     height: fit-content;
     display: flex;
     flex-flow: column;
