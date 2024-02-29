@@ -81,6 +81,16 @@ button {
     width: 100%;
 }
 
+.button.btn-logo{
+    display: flex;
+    flex-flow: row;
+    gap: var(--small-space);
+}
+.button.btn-logo svg{
+    flex: 1;
+}
+
+
 /* - variants pour icones - */
 .button--icon {
     border: none;
