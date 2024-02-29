@@ -65,7 +65,7 @@
         "all_size": "All sizes",
         "min_price": "Minimum price",
         "max_price": "Maximum price",
-        "filrer_price": "Filter by price",
+        "filter_price": "Price (min to max)",
         "my_wines": "My wines",
         "add_custom": "Add a custom wine",
         "more_options": "More cellar options",
@@ -301,6 +301,7 @@
         "no": "no",
         "red": "Red",
         "white": "White",
-        "rose": "Ros\u00e9"
+        "rose": "Ros\u00e9",
+        "calculate": "Calculate"
     }
 }

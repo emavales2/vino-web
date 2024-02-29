@@ -104,3 +104,7 @@ button {
     color: var(--burgundy-lt);
 }
 
+.button.p-small {
+    font-size: .833rem;
+}
+

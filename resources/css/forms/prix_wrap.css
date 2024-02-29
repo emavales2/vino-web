@@ -1,0 +1,45 @@
+/* POUR LA NAV DE FILTRAGE */
+
+.prix_wrapper  {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    box-sizing: border-box;
+    border-radius: var(--large-space);
+    background: var(--cream-lt);
+    font-size: 1rem;
+    padding: 0 var(--med-space);
+    max-width: 100%;
+    width: 100%;
+    color: var(--burgundy-lt);
+    /* padding: 5px 15px; */
+    align-items: center;
+    line-height: var(--text-line);
+    font-family: var(--block-font);
+    font-size: .833rem;
+    /* border: 2px solid var(--burgundy-lt); */
+    max-width: 300px;
+}
+
+.prix_wrapper input {
+    width: 50%;
+    padding: 8px 15px;
+    border: none;
+    background: transparent;
+}
+
+.prix p {
+    font-family: var(--block-font);
+    text-transform: uppercase;
+    color: var(--coral);
+    font-weight: 600;
+}
+
+.prix_wrapper label {
+    border-right: 2px solid;
+    padding-right: 20px;
+}
+
+.s-a-cellar {
+    max-width: 310px;
+}

@@ -31,7 +31,9 @@
                 </h2>
 
                 <!-- ---- * Rechercher un vin dans ce cellier * ---- -->
-                <SearchAuto :cellars="collection" :collection="collectionReceived" @collection-event="receiveTreatedCollection" v-if="collection.length !== 0" />
+                <span class="s-a-cellar">
+                    <SearchAuto :cellars="collection" :collection="collectionReceived" @collection-event="receiveTreatedCollection" v-if="collection.length !== 0" />
+                </span>
 
                 <!-- ---- * Boutons Filtres / Tri * ---- -->
                 <span>
@@ -42,7 +44,7 @@
                 <!-- ---- * Dépliant Tri * ---- -->
                 <transition name="sort-container-fade">
                     <section v-show="isSortSquareOpen" class="sort-container">
-                        <h1 class="fs_6 display-font coral">{{ __('cellar.sort_by') }}</h1>
+                        <!-- <h1 class="fs_6 display-font coral">{{ __('cellar.sort_by') }}</h1> -->
                         <ul class="sort-container sort-options">
                             <li>
                                 <input type="radio" class="radio" name="sort" id="type" v-model="sort" :value="1">
@@ -63,52 +65,98 @@
                 <!-- ---- * Dépliant Filtre * ---- -->
                 <transition name="sort-container-fade">
                     <section v-show="isFilterSquareOpen" class="sort-container">
-                        <h1 class="fs_6 display-font coral">{{ __('cellar.filter_by') }}</h1>
-                
-                        <ul class="sort-container column_10">                            
-                            <li>
-                                <label for="filterByType">{{ __('cellar.wine_type') }}</label>                   
-                                <select id="filterByType" v-model="filters.type" @change="filterCollection" ref="filterByType"> 
-                                    <option value="">{{ __('cellar.all_type') }}</option>
-                                    <option v-for="type in wineTypes" :value="type">{{ type }}</option>
-                                </select>
-                            </li>
+                        <div class="column_30">
+                            <section class="column_10">                                                
+                                <!-- ---- * Filtre "Type" * ---- -->
+                                <article class="dropdown_container"> 
+                                    <header class="button">
+                                        <span>
+                                            <input type="checkbox" id="filterByType" class="dropdown_toggle" @click="toggleTypes">
+                                            <label for="filterByType">{{ __('cellar.wine_type') }}</label>
+                                        </span>
+                                        <span class="drop_arrrow">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>
+                                        </span>
+                                    </header>  
 
-                            <li>
-                                <label for="filterByCountry">{{ __('cellar.wine_country') }}</label>                     
-                                <select id="filterByCountry" v-model="filters.country" @change="filterCollection">
-                                    <option value="">{{ __('cellar.all_country') }}</option>
-                                    <option v-for="country in wineCountries" :value="country">{{ country }}</option>
-                                </select>
-                            </li>
+                                    <ul class="dropdown_options" @change="filterCollection" ref="filterByType" v-show="typeFilterOpen">
+                                        <li>
+                                            <label for="allType">{{ __('cellar.all_type') }}</label>
+                                            <input type="radio" id="allType" name="type" value="" v-model="filters.type">
+                                        </li> 
+                                        <li v-for="type in wineTypes" :value="type">
+                                            <label :for="type">{{ type }}</label>
+                                            <input type="radio" :id="type" :name="type" :value="type" v-model="filters.type">
+                                        </li>
+                                    </ul>                               
+                                </article>
 
-                            <li>
-                                <label for="filterBySize">{{ __('cellar.wine_size') }}</label>                     
-                                <select id="filterBySize" v-model="filters.size" @change="filterCollection">
-                                    <option value="">{{ __('cellar.all_size') }}</option>
-                                    <option v-for="size in wineSizes" :value="size">{{ size }}</option>
-                                </select>
-                            </li>
+                                <!-- ---- * Filtre "Pays" * ---- -->
+                                <article class="dropdown_container">      
+                                    <header class="button">
+                                        <span>
+                                            <input type="checkbox" id="filterByCountry" class="dropdown_toggle" @click="toggleCountries">
+                                            <label for="filterByCountry">{{ __('cellar.wine_country') }}</label>
+                                        </span>
+                                        <span class="drop_arrrow">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>
+                                        </span>
+                                    </header> 
+                                    
+                                    <ul class="dropdown_options" @change="filterCollection" ref="filterByCountry" v-show="countryFilterOpen">
+                                        <li>
+                                            <label for="allCountry">{{ __('cellar.all_country') }}</label>
+                                            <input type="radio" id="allCountry" name="country" value="" v-model="filters.country">
+                                        </li> 
+                                        <li v-for="country in wineCountries" :value="country">
+                                            <label :for="country">{{ country }}</label>
+                                            <input type="radio" :id="country" :name="country" :value="country" v-model="filters.country">
+                                        </li>
+                                    </ul>                               
+                                </article>
 
-                            <li>
-                                <label for="minPrice">{{ __('cellar.min_price') }}</label>                     
-                                <input type="number" id="minPrice" v-model="filters.minPrice">
+                                <!-- ---- * Filtre "Taille" * ---- -->
+                                <article class="dropdown_container">      
+                                    <header class="button">
+                                        <span>
+                                            <input type="checkbox" id="filterBySize" class="dropdown_toggle" @click="toggleSizes">
+                                            <label for="filterBySize">{{ __('cellar.wine_size') }}</label>
+                                        </span>
+                                        <span class="drop_arrrow">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>
+                                        </span>
+                                    </header>  
+                                    
+                                    <ul class="dropdown_options" @change="filterCollection" ref="filterBySize" v-show="sizeFilterOpen">
+                                        <li>
+                                            <label for="allSize">{{ __('cellar.all_size') }}</label>
+                                            <input type="radio" id="allSize" name="size" value="" v-model="filters.size">
+                                        </li> 
+                                        <li v-for="size in wineSizes" :value="size">
+                                            <label :for="size">{{ size }}</label>
+                                            <input type="radio" :id="size" :name="size" :value="size" v-model="filters.size">
+                                        </li>
+                                    </ul>                               
+                                </article>
+                            </section> 
 
-                                <label for="maxPrice">{{ __('cellar.max_price') }}</label>                     
-                                <input type="number" id="maxPrice" v-model="filters.maxPrice">
-
-                                <button @click="filterCollection">{{ __('cellar.filter_price')}}</button>
-                            </li>
-                        </ul>
+                            <!-- ---- * Filtre "Prix" * ---- -->
+                            <article class="prix column_15">
+                                <p>{{ __('cellar.filter_price') }}</p>
+                                <span class="prix_wrapper">    
+                                    <label for="minPrice">$ MIN</label>                     
+                                    <input type="number" id="minPrice" v-model="filters.minPrice">
+                                </span>                                    
+                                <span class="prix_wrapper">
+                                    <label for="maxPrice">$ MAX</label>                     
+                                    <input type="number" id="maxPrice" v-model="filters.maxPrice">
+                                </span>
+                                <button class="button p-small" @click="filterCollection">{{ __('words.calculate')}}</button>
+                            </article>
+                        </div>
                     </section>
                 </transition>
             </aside>
-
-        <!-- ---- * TESTING FILTERS * ---- -->
-            
-
-            <!-- ---- * FIN TESTING FILTERS * ---- -->
-
 
 
             <ul class="wine-list" v-if="collectionReceived.length !== 0">
@@ -187,6 +235,9 @@ export default {
             wineTypes: [],
             wineCountries: [],
             wineSizes: [],
+            typeFilterOpen: false,
+            countryFilterOpen: false,
+            sizeFilterOpen: false
         }
     },
     watch: {
@@ -280,6 +331,15 @@ export default {
         },
         toggleFilterSquare() {
         this.isFilterSquareOpen = !this.isFilterSquareOpen;
+        },
+        toggleTypes() {
+        this.typeFilterOpen = !this.typeFilterOpen;
+        },
+        toggleCountries() {
+        this.countryFilterOpen = !this.countryFilterOpen;
+        },
+        toggleSizes() {
+        this.sizeFilterOpen = !this.sizeFilterOpen;
         },
         // ---- * Créer arrays dynamiques pour les différents sets de filtres contenant autant de values qui existent dans le cellier. À NOTER: LE PRIX N'EST PAS INCLU ICI  * ----
         allFilters() {
