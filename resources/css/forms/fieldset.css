@@ -120,6 +120,18 @@ fieldset {
     width: 100%;
     color: var(--burgundy-lt);
 }
+.form_wrapper_2 textarea {
+    box-sizing: border-box;
+    align-self: center;
+    border-radius: var(--large-space);
+    border: none;
+    background: var(--cream-lt);
+    font-size: 1rem;
+    padding: 12px var(--med-space);
+    max-width: 100%;
+    width: 100%;
+    color: var(--burgundy-lt);
+}
 
 .form_wrapper_2 input::placeholder {
     color: var(--coral);

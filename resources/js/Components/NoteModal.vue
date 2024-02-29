@@ -9,7 +9,7 @@
     </div>
     <div>
       <button class="button btn-warning btn-sml" @click="openConfirm">{{__('actions.delete')}}</button>
-      <button class="button btn-coral btn-sml" @click="closeModal">{{__('actions.cancel')}}</button>
+      <button class="button btn-burgundy-lt btn-sml" @click="closeModal">{{__('actions.cancel')}}</button>
     </div>
   </article>
 </template>
