@@ -15,5 +15,6 @@ return [
   'plus-1' => 'ajouter 1',
   'minus-1' => 'enlever 1',
   'go-to' => 'aller à l\'app',
-  'sharing' => ' vous a partagé un vin!'
+  'sharing' => ' vous a partagé un vin!',
+  'share' => 'partager'
 ];

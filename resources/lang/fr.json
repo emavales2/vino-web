@@ -14,7 +14,8 @@
         "plus-1": "ajouter 1",
         "minus-1": "enlever 1",
         "go-to": "aller \u00e0 l'app",
-        "sharing": " vous a partag\u00e9 un vin!"
+        "sharing": " vous a partag\u00e9 un vin!",
+        "share": "partager"
     },
     "auth": {
         "failed": "Ces identifiants ne correspondent pas \u00e0 nos enregistrements.",

@@ -67,10 +67,6 @@
                     <!-- Btn pour partager sur Facebook -->
                     <SocialShare
                         network="facebook"
-                        title="Vino!"
-                        description="Lets%20share%20our%20love%20for%20wine"
-                        quote="Hi,%20share%20this%20amazing%20bottle%20with%20me"
-                        hashtag="vino"
                         :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
                     />
                 </section>

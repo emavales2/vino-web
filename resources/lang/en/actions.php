@@ -15,5 +15,6 @@ return [
   'plus-1' => 'add 1',
   'minus-1' => 'remove 1',
   'go-to' => 'go to app',
-  'sharing' => ' has shared a wine with you!'
+  'sharing' => ' has shared a wine with you!',
+  'share' => 'share'
 ];
