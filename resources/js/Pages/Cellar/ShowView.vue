@@ -1,139 +1,143 @@
 <template>
-  <Head title="Cellar" />
+    <Head title="Cellar" />
 
-  <div class="bckgd">
-    <main>
-      <GoBackButton :color="'cream'" />
+    <div class="bckgd">
+        <main>
+            <GoBackButton :color="'cream'" />
 
-      <!-- ---- * Titre et boutons qui affecten le cellier * ---- -->
-      <header>
-        <h1 class="title_index">{{ cellar.name }}</h1>
-        <section>
-          <Link :href="route('cellar.edit', cellar.id)" class="btn_link cream">{{ __("buttons.edit") }}</Link>
-          <!-- Le btn delete ne s'affiche pas si le cellier est le seul -->
-          <button v-if="(numCellars !== 1)" type="button" @click.stop="toggleModal(cellar)" class="btn_link cream">
-            {{ __("cellar.cellar_delete") }}
-          </button>
-        </section>
-      </header>
+            <!-- ---- * Titre et boutons qui affecten le cellier * ---- -->
+            <header>
+                <h1 class="title_index">{{ cellar.name }}</h1>
+                <section>
+                    <Link :href="route('cellar.edit', cellar.id)" class="btn_link cream">{{ __("buttons.edit") }}</Link>
+                    
+                    <!-- Le btn delete ne s'affiche pas si le cellier est le seul -->
+                    <button v-if="(numCellars !== 1)" type="button" @click.stop="toggleModal(cellar)" class="btn_link cream">
+                        {{ __("cellar.cellar_delete") }}
+                    </button>
+                </section>
+            </header>
 
-      <!-- ---- * SECTION RECHERCHE/FILTRES/TRI * ---- -->
+            <!-- ---- * SECTION RECHERCHE/FILTRES/TRI * ---- -->
 
-      <!-- If I make it into a component, will add back the v-if maybe? -->
-      <!-- <aside v-if="collection.length !== 0 || searchTerm" class="card_nav bckgd-burg-lt"> -->
+            <!-- If I make it into a component, will add back the v-if maybe? -->
+            <!-- <aside v-if="collection.length !== 0 || searchTerm" class="card_nav bckgd-burg-lt"> -->
 
-    <!-- ---- * SECTION SEARCH / TRI / FILTRES COMMENCE * ---- -->    
-    <aside class="card_nav bckgr-trans" v-if="collection.length !== 0">
-        <h2 class="title_disp_subt tit_sub_sm">
-            {{ __("cellar.more_options") }}
-        </h2>
+            <!-- ---- * SECTION SEARCH / TRI / FILTRES COMMENCE * ---- -->   
+            <!-- bckgd-trans  -->
+            <aside class="card_nav " v-if="collection.length !== 0">
+                <h2 class="title_disp_subt tit_sub_sm">
+                    {{ __("cellar.more_options") }}
+                </h2>
 
-        <!-- ---- * Rechercher un vin dans ce cellier * ---- -->
-        <SearchAuto :cellars="collection" :collection="collectionReceived" @collection-event="receiveTreatedCollection" v-if="collection.length !== 0" />
+                <!-- ---- * Rechercher un vin dans ce cellier * ---- -->
+                <SearchAuto :cellars="collection" :collection="collectionReceived" @collection-event="receiveTreatedCollection" v-if="collection.length !== 0" />
 
-        <!-- ---- * Boutons Filtres / Tri * ---- -->
-        <span class="row_els_apart">
-          <button :aria-label="__('cellar.filter')" class="button btn-sml btn-cream btn_wide">{{ __("cellar.filter") }}</button>
+                <!-- ---- * Boutons Filtres / Tri * ---- -->
+                <span>
+                    <button :aria-label="__('cellar.filter')" class="btn_link cream" @click="toggleFilterSquare">{{ __("cellar.filter") }}</button>
+                    <button :aria-label="__('cellar.sort')" class="btn_link cream" @click="toggleSortSquare">{{ __("cellar.sort") }}</button>
+                </span>
 
-          <!-- ---- * Tri * ---- -->
-          <button :aria-label="__('cellar.sort')" class="button btn-sml btn-cream btn_wide" @click="toggleSortSquare">{{ __("cellar.sort") }}</button>
-        </span>
+                <!-- ---- * Dépliant Tri * ---- -->
+                <transition name="sort-container-fade">
+                    <section v-show="isSortSquareOpen" class="sort-container">
+                        <h1 class="fs_6 display-font coral">{{ __('cellar.sort_by') }}</h1>
+                        <ul class="sort-container sort-options">
+                            <li>
+                                <input type="radio" class="radio" name="sort" id="type" v-model="sort" :value="1">
+                                <label for="type">{{ __('cellar.wine_type') }}</label>
+                            </li>
+                            <li>
+                                <input type="radio" class="radio" name="sort" id="country" v-model="sort" :value="2">
+                                <label for="country">{{ __('cellar.wine_country') }}</label>
+                            </li>
+                            <li>
+                                <input type="radio" class="radio" name="sort" id="price" v-model="sort" :value="3">
+                                <label for="price">{{ __('cellar.wine_price') }}</label>
+                            </li>
+                        </ul>
+                    </section>
+                </transition>
 
-        <!-- ---- * Depliant Tri * ---- -->
-        <transition name="sort-square-fade">
-            <section v-show="isSortSquareOpen" class="sort-square">
-                <h1 class="fs_6 display-font coral">{{ __('cellar.sort_by') }}</h1>
-                <div class="sort-square-options">
-                <div>
-                    <input type="radio" class="radio" name="sort" id="type" v-model="sort" :value="1">
-                    <label for="type">{{ __('cellar.wine_type') }}</label>
-                </div>
-                <div>
-                    <input type="radio" class="radio" name="sort" id="country" v-model="sort" :value="2">
-                    <label for="country">{{ __('cellar.wine_country') }}</label>
-                </div>
-                <div>
-                    <input type="radio" class="radio" name="sort" id="price" v-model="sort" :value="3">
-                    <label for="price">{{ __('cellar.wine_price') }}</label>
-                </div>
-                </div>
-            </section>
-        </transition>
-    </aside>
+                <!-- ---- * Dépliant Filtre * ---- -->
+                <transition name="sort-container-fade">
+                    <section v-show="isFilterSquareOpen" class="sort-container">
+                        <h1 class="fs_6 display-font coral">{{ __('cellar.filter_by') }}</h1>
+                
+                        <ul class="sort-container column_10">                            
+                            <li>
+                                <label for="filterByType">{{ __('cellar.wine_type') }}</label>                   
+                                <select id="filterByType" v-model="filters.type" @change="filterCollection" ref="filterByType"> 
+                                    <option value="">{{ __('cellar.all_type') }}</option>
+                                    <option v-for="type in wineTypes" :value="type">{{ type }}</option>
+                                </select>
+                            </li>
 
-<!-- ---- * TESTING FILTERS * ---- -->
-    <section>
-        <h1 class="fs_6 display-font coral">{{ __('cellar.filter_by') }}</h1>
-  
-        <div class="column_10 cream">
+                            <li>
+                                <label for="filterByCountry">{{ __('cellar.wine_country') }}</label>                     
+                                <select id="filterByCountry" v-model="filters.country" @change="filterCollection">
+                                    <option value="">{{ __('cellar.all_country') }}</option>
+                                    <option v-for="country in wineCountries" :value="country">{{ country }}</option>
+                                </select>
+                            </li>
+
+                            <li>
+                                <label for="filterBySize">{{ __('cellar.wine_size') }}</label>                     
+                                <select id="filterBySize" v-model="filters.size" @change="filterCollection">
+                                    <option value="">{{ __('cellar.all_size') }}</option>
+                                    <option v-for="size in wineSizes" :value="size">{{ size }}</option>
+                                </select>
+                            </li>
+
+                            <li>
+                                <label for="minPrice">{{ __('cellar.min_price') }}</label>                     
+                                <input type="number" id="minPrice" v-model="filters.minPrice">
+
+                                <label for="maxPrice">{{ __('cellar.max_price') }}</label>                     
+                                <input type="number" id="maxPrice" v-model="filters.maxPrice">
+
+                                <button @click="filterCollection">{{ __('cellar.filter_price')}}</button>
+                            </li>
+                        </ul>
+                    </section>
+                </transition>
+            </aside>
+
+        <!-- ---- * TESTING FILTERS * ---- -->
             
-            <span>
-                <label for="filterByType">{{ __('cellar.wine_type') }}</label>                     
-                <select id="filterByType" v-model="filters.type" @change="filterCollection" ref="filterByType">
-                    <option value="">{{ __('cellar.all_type') }}</option>
-                    <option v-for="type in wineTypes" :value="type">{{ type }}</option>
-                </select>
-            </span>
 
-            <span>
-                <label for="filterByCountry">{{ __('cellar.wine_country') }}</label>                     
-                <select id="filterByCountry" v-model="filters.country" @change="filterCollection">
-                    <option value="">{{ __('cellar.all_country') }}</option>
-                    <option v-for="country in wineCountries" :value="country">{{ country }}</option>
-                </select>
-            </span>
-
-            <span>
-                <label for="filterBySize">{{ __('cellar.wine_size') }}</label>                     
-                <select id="filterBySize" v-model="filters.size" @change="filterCollection">
-                    <option value="">{{ __('cellar.all_size') }}</option>
-                    <option v-for="size in wineSizes" :value="size">{{ size }}</option>
-                </select>
-            </span>
-
-            <span>
-                <label for="minPrice">{{ __('cellar.min_price') }}</label>                     
-                <input type="number" id="minPrice" v-model="filters.minPrice">
-
-                <label for="maxPrice">{{ __('cellar.max_price') }}</label>                     
-                <input type="number" id="maxPrice" v-model="filters.maxPrice">
-
-                <button @click="filterCollection">{{ __('cellar.filter_price')}}</button>
-            </span>
-        </div>
-    </section>
-
-    <!-- ---- * FIN TESTING FILTERS * ---- -->
+            <!-- ---- * FIN TESTING FILTERS * ---- -->
 
 
 
-      <ul class="wine-list" v-if="collectionReceived.length !== 0">
-        <WineThumbnail v-for="(wine, i) in collectionReceived" :key="i" :wine="wine.wine" :cellar="cellar"
-          :quantity="wine.qty">
-          <!-- section std(sloté dans WineThumbnail), inclus btns - et + ainsi que btn remove -->
-          <section class="wine_thb_nav">
-            <span>
-              <MinusButton :color="'coral'" :disabled="wine.qty === 0" @click.stop="removeOne(wine.wine, wine.qty)" />
-              <PlusButton :color="'coral'" @click.stop="addOne(wine.wine)" />
+            <ul class="wine-list" v-if="collectionReceived.length !== 0">
+                <WineThumbnail v-for="(wine, i) in collectionReceived" :key="i" :wine="wine.wine" :cellar="cellar"
+                :quantity="wine.qty">
+                <!-- section std(sloté dans WineThumbnail), inclus btns - et + ainsi que btn remove -->
+                <section class="wine_thb_nav">
+                    <span>
+                    <MinusButton :color="'coral'" :disabled="wine.qty === 0" @click.stop="removeOne(wine.wine, wine.qty)" />
+                    <PlusButton :color="'coral'" @click.stop="addOne(wine.wine)" />
 
-            </span>
-            <button class="button btn-sml btn-full btn-coral" @click.stop="toggleModalWine(wine.wine, cellar.id)">
-              {{ __("buttons.remove") }}
-            </button>
-          </section>
-        </WineThumbnail>
-      </ul>
-      <div v-else>
-        <p class="cream" v-if="searchTerm">{{ __('dialogue.no_term') }} <strong>{{ searchTerm }}</strong>.</p>
-        <p class="cream" v-else>{{ __('dialogue.no_wine') }}</p>
-      </div>
+                    </span>
+                    <button class="button btn-sml btn-full btn-coral" @click.stop="toggleModalWine(wine.wine, cellar.id)">
+                    {{ __("buttons.remove") }}
+                    </button>
+                </section>
+                </WineThumbnail>
+            </ul>
+            <div v-else>
+                <p class="cream" v-if="searchTerm">{{ __('dialogue.no_term') }} <strong>{{ searchTerm }}</strong>.</p>
+                <p class="cream" v-else>{{ __('dialogue.no_wine') }}</p>
+            </div>
+        </main>
+    </div>
 
-    </main>
-  </div>
-  <Modal v-show="openDeleteModal" :toggleOff="toggleModal">
-    <!-- // Modal pour la suppression d'un vin -->
-    <ConfirmModal :YesAction="action" action="delete" :toggleModal="toggleModalWine" :actionMessage="message" />
-  </Modal>
+    <Modal v-show="openDeleteModal" :toggleOff="toggleModal">
+        <!-- // Modal pour la suppression d'un vin -->
+        <ConfirmModal :YesAction="action" action="delete" :toggleModal="toggleModalWine" :actionMessage="message" />
+    </Modal>
 </template>
 
 <script>
@@ -150,177 +154,181 @@ import Modal from '@/Components/Modal.vue';
 import SearchAuto from '@/Components/SearchAuto.vue';
 
 export default {
-  name: 'ShowView',
-  components: {
-    ConfirmModal,
-    Modal,
-    Head,
-    WineThumbnail,
-    GoBackButton,
-    Link,
-    PlusButton,
-    MinusButton,
-    SearchAuto
-  },
-  data() {
-    return {
-        openDeleteModal: false,
-        cellarId: null,
-        message: null,
-        wineId: null,
-        collectionReceived: this.collection,
-        searchTerm: null,
-        action: null,
-        isSortSquareOpen: false,
-        sort: 0,
-        filters: {
-            type: null,
-            country: null,
-            size: null,
-            price: null
-        },
-        wineTypes: [],
-        wineCountries: [],
-        wineSizes: [],
-    }
-  },
-  watch: {
-    collectionReceived() {
-      this.filteredCollection = this.collectionReceived.filter(wine => !this.collection.includes(wine));
+    name: 'ShowView',
+    components: {
+        ConfirmModal,
+        Modal,
+        Head,
+        WineThumbnail,
+        GoBackButton,
+        Link,
+        PlusButton,
+        MinusButton,
+        SearchAuto
     },
-    collection() {
-      this.collectionReceived = this.collection;
-    },
-    sort() {
-      this.sortCollection(this.sort);
-    }
-  },
-  layout: MainLayout,
-  methods: {
-    toggleModal(cellar) {
-      this.message = this.trans.dialogue.show_view;
-      this.cellarId = cellar;
-      this.action = this.deleteAllWine;
-      this.openDeleteModal = !this.openDeleteModal;
-    },
-    toggleModalWine(wine, cellar) {
-      this.message = this.trans.dialogue.show_view_wine;
-      this.cellarId = cellar;
-      this.wineId = wine;
-      this.action = this.deleteWine;
-      this.openDeleteModal = !this.openDeleteModal;
-    },
-    removeOne(wine, quantity) {
-      if (quantity > 0)
-        Inertia.visit(route('cellarwine.remove', { cellar: this.cellar, wine: wine }),
-          { preserveScroll: true })
-    },
-    addOne(wine) {
-      Inertia.visit(route('cellarwine.add', { cellar: this.cellar, wine: wine }),
-        { preserveScroll: true })
-    },
-    delete() {
-      Inertia.delete(route('cellar.delete', { cellar: this.cellar }),
-        { preserveScroll: true })
-      this.openDeleteModal = false
-    },
-    deleteAllWine() {
-      Inertia.delete(route('cellarwine.deleteallwine', { cellar: this.cellar }),
-        { preserveScroll: true,
-          onSuccess: () => {
-            this.$parent.openDialog(this.__('dialogue.cellar_delete'));
-          }
-        })
-      this.openDeleteModal = false
-    },
-    deleteWine() {
-      Inertia.delete(route('cellarwine.delete', { cellar: this.cellar, wine: this.wineId }),
-        { 
-          preserveScroll: true,
-          onSuccess: () => {
-            this.$parent.openDialog(this.__('dialogue.cellarwine_delete'));
-          }
-        })
-      this.openDeleteModal = false
-    },
-    receiveTreatedCollection(data) {
-      this.collectionReceived = data.myCollection;
-      this.searchTerm = data.term;
-    },
-    toggleSortSquare() {
-      this.isSortSquareOpen = !this.isSortSquareOpen;
-    },
-    sortCollection(option) {
-        if (option != 0) {
-            this.collectionReceived.sort((a, b) => {
-                if (option == 1) {
-                    const typeA = a.wine.type;
-                    const typeB = b.wine.type;
-                    return typeA.localeCompare(typeB);
-                }
-
-                if (option == 2) {
-                    const countryA = a.wine.country;
-                    const countryB = b.wine.country;
-                    return countryA.localeCompare(countryB);
-                }
-                
-                if (option == 3) {
-                    const priceA = a.wine.price;
-                    const priceB = b.wine.price;
-                    return priceA - priceB;
-                }
-            });
+    data() {
+        return {
+            openDeleteModal: false,
+            cellarId: null,
+            message: null,
+            wineId: null,
+            collectionReceived: this.collection,
+            searchTerm: null,
+            action: null,
+            isSortSquareOpen: false,
+            sort: 0,
+            isFilterSquareOpen: false,
+            filters: {
+                type: null,
+                country: null,
+                size: null,
+                price: null
+            },
+            wineTypes: [],
+            wineCountries: [],
+            wineSizes: [],
         }
     },
-    // ---- * Créer arrays dynamiques pour les différents sets de filtres contenant autant de values qui existent dans le cellier. À NOTER: LE PRIX N'EST PAS INCLU ICI  * ----
-    allFilters() {
-        const types = [];
-        const countries = [];
-        const sizes = [];
-
-        this.collection.forEach(item => {
-            if (!types.includes(item.wine.type)) {
-                types.push(item.wine.type);
-            }
-            if (!countries.includes(item.wine.country)) {
-                countries.push(item.wine.country);
-            }
-            if (!sizes.includes(item.wine.size)) {
-                sizes.push(item.wine.size);
-            }
-        });
-
-        this.wineTypes = types;
-        this.wineCountries = countries;
-        this.wineSizes = sizes;
+    watch: {
+        collectionReceived() {
+        this.filteredCollection = this.collectionReceived.filter(wine => !this.collection.includes(wine));
+        },
+        collection() {
+        this.collectionReceived = this.collection;
+        },
+        sort() {
+        this.sortCollection(this.sort);
+        }
     },
-    // ---- * Filtrer les données dans ce cellier en utilisant les options disponibles  * ----
-    filterCollection() {
-          let filteredList = this.collection; 
-  
-          if (this.filters.type) {
-              filteredList = filteredList.filter(item => item.wine.type === this.filters.type);
-          }  
-          if (this.filters.country) {
-              filteredList = filteredList.filter(item => item.wine.country === this.filters.country);
-          }  
-          if (this.filters.size) {
-              filteredList = filteredList.filter(item => item.wine.size === this.filters.size);
-          }  
-          if (this.filters.minPrice && this.filters.maxPrice) {
-              filteredList = filteredList.filter(item => 
-              item.wine.price >= this.filters.minPrice && 
-              item.wine.price <= this.filters.maxPrice);
-          }
-  
-          this.collectionReceived = filteredList;
-      },
-  },
-  // ---- * Appeler l'extraction des filtres * ----
-  mounted() {
-        this.allFilters();
+    layout: MainLayout,
+    methods: {
+        toggleModal(cellar) {
+        this.message = this.trans.dialogue.show_view;
+        this.cellarId = cellar;
+        this.action = this.deleteAllWine;
+        this.openDeleteModal = !this.openDeleteModal;
+        },
+        toggleModalWine(wine, cellar) {
+        this.message = this.trans.dialogue.show_view_wine;
+        this.cellarId = cellar;
+        this.wineId = wine;
+        this.action = this.deleteWine;
+        this.openDeleteModal = !this.openDeleteModal;
+        },
+        removeOne(wine, quantity) {
+        if (quantity > 0)
+            Inertia.visit(route('cellarwine.remove', { cellar: this.cellar, wine: wine }),
+            { preserveScroll: true })
+        },
+        addOne(wine) {
+        Inertia.visit(route('cellarwine.add', { cellar: this.cellar, wine: wine }),
+            { preserveScroll: true })
+        },
+        delete() {
+        Inertia.delete(route('cellar.delete', { cellar: this.cellar }),
+            { preserveScroll: true })
+        this.openDeleteModal = false
+        },
+        deleteAllWine() {
+        Inertia.delete(route('cellarwine.deleteallwine', { cellar: this.cellar }),
+            { preserveScroll: true,
+            onSuccess: () => {
+                this.$parent.openDialog(this.__('dialogue.cellar_delete'));
+            }
+            })
+        this.openDeleteModal = false
+        },
+        deleteWine() {
+        Inertia.delete(route('cellarwine.delete', { cellar: this.cellar, wine: this.wineId }),
+            { 
+            preserveScroll: true,
+            onSuccess: () => {
+                this.$parent.openDialog(this.__('dialogue.cellarwine_delete'));
+            }
+            })
+        this.openDeleteModal = false
+        },
+        receiveTreatedCollection(data) {
+        this.collectionReceived = data.myCollection;
+        this.searchTerm = data.term;
+        },
+        toggleSortSquare() {
+        this.isSortSquareOpen = !this.isSortSquareOpen;
+        },
+        sortCollection(option) {
+            if (option != 0) {
+                this.collectionReceived.sort((a, b) => {
+                    if (option == 1) {
+                        const typeA = a.wine.type;
+                        const typeB = b.wine.type;
+                        return typeA.localeCompare(typeB);
+                    }
+
+                    if (option == 2) {
+                        const countryA = a.wine.country;
+                        const countryB = b.wine.country;
+                        return countryA.localeCompare(countryB);
+                    }
+                    
+                    if (option == 3) {
+                        const priceA = a.wine.price;
+                        const priceB = b.wine.price;
+                        return priceA - priceB;
+                    }
+                });
+            }
+        },
+        toggleFilterSquare() {
+        this.isFilterSquareOpen = !this.isFilterSquareOpen;
+        },
+        // ---- * Créer arrays dynamiques pour les différents sets de filtres contenant autant de values qui existent dans le cellier. À NOTER: LE PRIX N'EST PAS INCLU ICI  * ----
+        allFilters() {
+            const types = [];
+            const countries = [];
+            const sizes = [];
+
+            this.collection.forEach(item => {
+                if (!types.includes(item.wine.type)) {
+                    types.push(item.wine.type);
+                }
+                if (!countries.includes(item.wine.country)) {
+                    countries.push(item.wine.country);
+                }
+                if (!sizes.includes(item.wine.size)) {
+                    sizes.push(item.wine.size);
+                }
+            });
+
+            this.wineTypes = types;
+            this.wineCountries = countries;
+            this.wineSizes = sizes;
+        },
+        // ---- * Filtrer les données dans ce cellier en utilisant les options disponibles  * ----
+        filterCollection() {
+            let filteredList = this.collection; 
+    
+            if (this.filters.type) {
+                filteredList = filteredList.filter(item => item.wine.type === this.filters.type);
+            }  
+            if (this.filters.country) {
+                filteredList = filteredList.filter(item => item.wine.country === this.filters.country);
+            }  
+            if (this.filters.size) {
+                filteredList = filteredList.filter(item => item.wine.size === this.filters.size);
+            }  
+            if (this.filters.minPrice && this.filters.maxPrice) {
+                filteredList = filteredList.filter(item => 
+                item.wine.price >= this.filters.minPrice && 
+                item.wine.price <= this.filters.maxPrice);
+            }
+    
+            this.collectionReceived = filteredList;
+        },
     },
-  props: ['cellar', 'collection', 'trans', 'wine', 'numCellars']
+    // ---- * Appeler l'extraction des filtres * ----
+    mounted() {
+            this.allFilters();
+        },
+    props: ['cellar', 'collection', 'trans', 'wine', 'numCellars']
 }
 </script>

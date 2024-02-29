@@ -6,9 +6,15 @@
     font-weight: 500;
     padding-right: var(--med-space);
 }
+
 .btn_link.cream:not(:first-child) {
     border-left: 1px solid var(--cream-lt);
     padding-left: var(--med-space);
+}
+
+.btn_link.cream:active, .btn_link.cream:checked {
+    text-decoration: underline solid 2px;
+    text-underline-offset: 5px;
 }
 
 .btn_link.plain {
@@ -17,4 +23,3 @@
     width: 100%;
     display: block;
 }
-/* ---- * FIN GROUPE: links * ---- */

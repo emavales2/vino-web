@@ -29,25 +29,27 @@
 
 /* ---- * Card components for filter box : TO BE REASSESSED LATER * ----  */
 .card_nav {
-    background-color: var(--coral);
+    background-color: var(--burgundy-lt);
     /* border-radius: 12px; */
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: var(--small-space);
+    gap: var(--med-space);
 }
 
-.card_nav.bckgd-burg-lt {
+/* .card_nav.bckgd-burg-lt {
     background-color: var(--burgundy-lt);
     gap: var(--small-space);
 }
-.card_nav.bckgr-trans{
+
+.card_nav.bckgd-trans{
     background-color: transparent;
     gap: var(--med-sm-space);
-}
+} */
 
-.card_nav ul {
+/* .card_nav ul {
     display: flex; 
 }
 
@@ -56,3 +58,7 @@
     border-right: 2px solid white;
     padding: 0px 10px;
 }
+
+.card_nav .btn_link.cream:active {
+    padding-bottom: 5px;
+} */
