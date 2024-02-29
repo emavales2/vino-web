@@ -18,6 +18,7 @@
 .sort-square-options {
   display: flex;
   flex-direction: row;
+  gap: var(--vsmall-space);
   justify-content: space-around;
 }
 
