@@ -34,7 +34,6 @@
                                 <input
                                     id="type-red"
                                     type="radio"
-                                    
                                     v-model="form.type"
                                     value='{"fr":"Vin rouge ","en":"Red wine "}'
                                     checked
@@ -45,7 +44,6 @@
                                 <input
                                     id="type-white"
                                     type="radio"
-                                    
                                     v-model="form.type"
                                     value='{"fr":"Vin blanc ","en":"White wine "}'
                                 >
@@ -55,7 +53,6 @@
                                 <input
                                     id="type-rose"
                                     type="radio"
-                                    
                                     v-model="form.type"
                                     value='{"fr":"Vin ros\u00e9 ","en":"Ros\u00e9 "}'
                                 >
@@ -200,11 +197,12 @@
     layout: MainLayout,
     methods: {
       submit () {
-        this.form.post(route('wine.store'), {
+        console.log(this.form)
+/*         this.form.post(route('wine.store'), {
           onSuccess: () => {
             this.$parent.openDialog(this.wineDialog);
           }
-      });
+      }); */
       }
     },
     props: ['cellars', 'trans']

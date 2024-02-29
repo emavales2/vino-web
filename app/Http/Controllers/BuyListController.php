@@ -22,12 +22,14 @@ class BuyListController extends Controller
         $cellars = Auth::user()->cellar;
         $buylist = Auth::user()->buylist;
 
-        $wines = WineResource::collection($buylist->wine);
-        $resolvedWines = [];
-        foreach($wines as $wine) {
-            $resolvedWines[] = $wine->resolve();
-        }
-        $buylist->newWine = $resolvedWines;
+        if($buylist) {
+            $wines = WineResource::collection($buylist->wine);
+            $resolvedWines = [];
+            foreach($wines as $wine) {
+                $resolvedWines[] = $wine->resolve();
+            }
+            $buylist->newWine = $resolvedWines;
+        } else $buylist = [];
 
         return Inertia::render('BuyList/IndexView', compact('buylist', 'cellars'));
     }
