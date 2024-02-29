@@ -249,6 +249,7 @@
                     </Modal>
                 </Teleport>
             </section>
+
             <div class="row_gap_10">
                 <SocialShare
                     network="twitter"
@@ -258,7 +259,7 @@
                     network="facebook"
                     :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
                 />
-        </div>
+            </div>
         </main>
     </div>
 </template>

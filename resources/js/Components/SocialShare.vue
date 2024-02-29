@@ -5,6 +5,8 @@
     {{ __('actions.share') }}
   </button>
 </template>
+
+
 <script>
 import FacebookLogo from '@/Components/ButtonsIcons/FacebookLogo.vue'
 import TwitterLogo from '@/Components/ButtonsIcons/TwitterLogo.vue'
@@ -24,6 +26,7 @@ export default {
       let net = ''
       if(this.network === 'facebook') net = this.facebook
       if(this.network === 'twitter') net = this.twitter
+      
       window.open(net,'popup', "width=600, height=600")
     }
   },
