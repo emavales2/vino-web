@@ -47,7 +47,7 @@ export default{
     return {
       showForm: false,
       form : useForm({
-        wine_id : this.wine.id,
+        wine_id : this.wine.wine_id,
         quantity: this.wine.quantity,
         cellar_id: this.cellars[0].id
       })
@@ -65,7 +65,8 @@ export default{
       else this.submit()
     },
     submit () {
-      Inertia.delete(route('buylist.delete', { wine: this.wine }), {
+      console.log(this.wine)
+      Inertia.delete(route('buylist.delete', { wine: this.wine.wine_id }), {
         onFinish: () => {
           this.toggleModal()
           this.form.post(route('cellarwine.store'), {
@@ -80,7 +81,7 @@ export default{
       })
     },
     deleteWine () {
-      Inertia.delete(route('buylist.delete', { wine: this.wine }), {
+      Inertia.delete(route('buylist.delete', { wine: this.wine.wine_id }), {
         onSuccess: () => {
           this.openDialog(
               `${this.__('buylist.success_delete')}`
