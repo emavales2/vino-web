@@ -36,9 +36,7 @@
                         <span class="row_gap_10">
                             <ColorDrop :color="wine.type" />
                             <h3 class="title_disp_subt ds_smllst burg-lt">
-                                {{
-                                    wine.country != null ? wine.country : country + ": n/a"
-                                }}
+                                {{ wine.type != null ? wine.type : "n/a" }}
                             </h3>
                         </span>
                         <h1 class="fiche_wine_title">
@@ -56,7 +54,7 @@
                                 {{ wine.code_saq }}</small
                             >
                         </li>
-                        <li>{{ wine.type != null ? wine.type : "n/a" }}</li>
+                        <li>{{ wine.country != null ? wine.country : country + ": n/a" }}</li>
                         <li>{{ wine.size ? wine.size : size + ": n/a" }}</li>
                     </ul>
 
@@ -69,6 +67,12 @@
                         network="facebook"
                         :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
                     />
+                    <Link v-if="wine.user_id"
+                        :href="route('wine.edit', wine.id)" 
+                        class="button btn-sml btn-burgundy"
+                    >
+                        {{ __('buttons.edit') }}
+                    </Link>
 
                 </section>
             </article>

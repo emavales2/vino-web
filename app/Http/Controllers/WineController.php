@@ -143,12 +143,11 @@ class WineController extends Controller
             'price' => 'numeric|gte:0|nullable'
         ]);
 
-        $type = json_encode(['fr' => $request->type]);
         $country = json_encode(['fr' => $request->country]);
 
         $wine->update([
             'name' => $request->name,
-            'type' => $type,
+            'type' => $request->type,
             'country' => $country,
             'size' => $request->size,
             'price' => $request->price,

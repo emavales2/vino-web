@@ -54,7 +54,7 @@ class User extends Authenticatable
     }
     
     public function buylist() {
-        return $this->hasOne(BuyList::class);
+        return $this->hasMany(BuyList::class);
     }
 
 
