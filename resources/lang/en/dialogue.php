@@ -41,6 +41,5 @@ return [
     'wine_update' => 'Great ! Your wine has been updated.',
     'wine_deleted' => 'Your wine has been deleted.',
     'country_n_a' => 'Country ',
-    'size_n_a' => 'Size '
-    'country_n-a' => 'Wine country not available',
+    'size_n_a' => 'Size ',
 ];

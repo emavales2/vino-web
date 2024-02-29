@@ -107,3 +107,16 @@ button {
     color: var(--burgundy-lt);
 }
 
+/* ----- * Responsive * ----- */
+
+@media (min-width: 750px){
+    .button{
+        font-size: 1.5rem;
+        padding: 18px 24px;
+    }
+    .button.btn-sml{
+        font-size: 1rem;
+        margin-inline: auto;
+    }
+    
+}

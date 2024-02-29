@@ -14,3 +14,12 @@
     flex-direction: column;
     gap: var(--large-space);
 }
+
+
+/* ----- * Responsive * ----- */
+
+@media (min-width: 750px){
+    .wine-list{
+      grid-template-columns: repeat(auto-fill, minmax(127px, 1fr));
+    }
+}

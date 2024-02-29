@@ -1,5 +1,5 @@
 <template>
-  <span class="color-drop" :class="realColor">
+  <span aria-label="color drop wine type" class="color-drop" :class="realColor">
   </span>
 </template>
 
