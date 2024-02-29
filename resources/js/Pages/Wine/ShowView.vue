@@ -63,19 +63,25 @@
                         {{ wine.price ? wine.price + " $" : "n/a" }}</span
                     >
                     <!-- Btn pour partager sur Facebook -->
-                    <SocialShare
-                        network="facebook"
-                        :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
-                    />
                     <Link v-if="wine.user_id"
-                        :href="route('wine.edit', wine.id)" 
-                        class="button btn-sml btn-burgundy"
+                    :href="route('wine.edit', wine.id)" 
+                    class="button btn-sml btn-burgundy"
                     >
-                        {{ __('buttons.edit') }}
-                    </Link>
-
-                </section>
-            </article>
+                    {{ __('buttons.edit') }}
+                </Link>
+                
+            </section>
+        </article>
+        <div class="row_gap_10">
+            <SocialShare
+                network="twitter"
+                :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
+            />
+            <SocialShare
+                network="facebook"
+                :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
+            />
+        </div>
             <aside class="row_els_apart row_els_line">
                 <Link
                     v-if="!exists"
