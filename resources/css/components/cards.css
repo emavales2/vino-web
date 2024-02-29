@@ -45,25 +45,7 @@
     padding-top: 10px;
 }
 
-/* .card_nav.bckgd-burg-lt {
-    background-color: var(--burgundy-lt);
-    gap: var(--small-space);
-}
 
-.card_nav.bckgd-trans{
-    background-color: transparent;
-    gap: var(--med-sm-space);
-} */
-
-/* .card_nav ul {
-    display: flex; 
-}
-
-.card_nav li {
-    color: white;
-    border-right: 2px solid white;
-    padding: 0px 10px;
-}
 /* ----- * Responsive * ----- */
 
 @media (min-width: 750px){
@@ -74,4 +56,4 @@
 
 .card_nav .btn_link.cream:active {
     padding-bottom: 5px;
-} */
+} 
