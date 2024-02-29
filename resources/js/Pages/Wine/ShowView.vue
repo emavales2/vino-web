@@ -37,7 +37,7 @@
                             <ColorDrop :color="wine.type" />
                             <h3 class="title_disp_subt ds_smllst burg-lt">
                                 {{
-                                    wine.country != null ? wine.country : "n/a"
+                                    wine.country != null ? wine.country : country + ": n/a"
                                 }}
                             </h3>
                         </span>
@@ -57,7 +57,7 @@
                             >
                         </li>
                         <li>{{ wine.type != null ? wine.type : "n/a" }}</li>
-                        <li>{{ wine.size ? wine.size : "n/a" }}</li>
+                        <li>{{ wine.size ? wine.size : size + ": n/a" }}</li>
                     </ul>
 
                     <span class="typo-semibold burg-lt"
@@ -69,6 +69,7 @@
                         network="facebook"
                         :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
                     />
+
                 </section>
             </article>
             <aside class="row_els_apart row_els_line">
@@ -276,6 +277,8 @@ export default {
     },
     data() {
         return {
+            country: this.__('dialogue.country_n_a'),
+            size: this.__('dialogue.size_n_a'),
             shareImage: '',
             showNoteModal: false,
             showConfirmModal: false,

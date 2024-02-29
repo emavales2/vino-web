@@ -34,7 +34,6 @@
                                 <input
                                     id="type-red"
                                     type="radio"
-                                    
                                     v-model="form.type"
                                     value='{"fr":"Vin rouge ","en":"Red wine "}'
                                     checked
@@ -45,7 +44,6 @@
                                 <input
                                     id="type-white"
                                     type="radio"
-                                    
                                     v-model="form.type"
                                     value='{"fr":"Vin blanc ","en":"White wine "}'
                                 >
@@ -55,7 +53,6 @@
                                 <input
                                     id="type-rose"
                                     type="radio"
-                                    
                                     v-model="form.type"
                                     value='{"fr":"Vin ros\u00e9 ","en":"Ros\u00e9 "}'
                                 >
@@ -186,7 +183,7 @@
       return {
         form : useForm({
           name : '',
-          type : '',
+          type : '{"fr":"Vin rouge ","en":"Red wine "}',
           country: '',
           price: '',
           size: '',
