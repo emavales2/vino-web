@@ -1,0 +1,19 @@
+.table-admin {
+    width: 90vw;
+    border-collapse: collapse;
+    color: var(--cream-lt);
+}
+td, th {
+    border: 1px solid var(--coral);
+    padding: var(--small-space);
+    max-width: 15ch;
+    text-align: center;
+}
+
+th {
+    background-color: var(--coral);
+}
+.table-admin td button{
+    max-width: 15ch;
+    margin-inline: auto;
+}

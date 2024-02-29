@@ -1,33 +1,41 @@
 <template>
     <Head title="Users" />
-    <header>
-        <h1 class="title_index">{{ __('user.users') }}</h1>
-    </header>
-    <table class="cream">
-        <thead>
-            <tr>
-                <th>{{ __('user.id') }}</th>
-                <th>{{ __('user.name') }}</th>
-                <th>{{ __('user.email') }}</th>
-                <th>{{ __('buttons.delete') }}</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="user in users" :key="user.id">
-                <td>{{ user.id }}</td>
-                <td>{{ user.first_name + ' ' + user.last_name }} </td>
-                <td>{{ user.email }}</td>
-                <td>
-                    <button class="button btn-sml btn-coral" @click="toggleModal(user.id)">{{ __('user.delete_user') }}</button> 
-                </td>
-            </tr>
-        </tbody>
-    </table>
-        <ConfirmModal v-show="openDeleteModal" 
+    <div class="bckgd">
+        <main>
+            <header>
+                <h1 class="title_index">{{ __('user.users') }}</h1>
+            </header>
+            <table class="table-admin">
+                <thead>
+                    <tr>
+                        <th>{{ __('user.id') }}</th>
+                        <th>{{ __('user.email') }}</th>
+                        <th>{{ __('buttons.delete') }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="user in users" :key="user.id">
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>
+                            <button class="button btn-sml btn-coral" @click="toggleModal(user.id)">{{ __('buttons.delete') }}</button> 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+    <Modal
+        v-show="openDeleteModal"
+        :toggleOff="toggleModal"
+    >
+    <ConfirmModal  
+            :toggleModal="toggleModal"
             :YesAction="delete" 
-            action="delete" 
-            actionMessage="Are you sure you want to delete your account?" 
+            :action="__('buttons.delete')" 
+            :actionMessage="__('user.delete_user')" 
         />
+    </Modal>
 </template>
 <script>
 import { Head } from '@inertiajs/inertia-vue3';
@@ -50,7 +58,11 @@ export default {
     layout: MainLayout,
     methods: {
         delete() {
-            this.$inertia.delete(route('admin.delete', { user: this.user.id }));
+            this.$inertia.delete(route('admin.delete', { user: this.user.id }), {
+                onSuccess: () => {
+                    this.$parent.openDialog(this.__('user.success_delete'));
+                },
+            });
             this.openDeleteModal = false;
         },
         toggleModal(userId) {

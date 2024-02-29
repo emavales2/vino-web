@@ -15,5 +15,6 @@ return [
     'edit_user' => 'Edit User',
     // Admin
     'show_users' => 'Show all users',
-    
+    'delete_user' => 'Are you sure you want to delete this user account?',
+    'success_delete' => 'User has been successfully deleted!',
 ];
