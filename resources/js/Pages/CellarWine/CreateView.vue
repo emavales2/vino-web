@@ -32,8 +32,8 @@
 
                     <section class="column">
                         <legend class="typo-fs-6 typo-display-font coral">{{ __('cellar.select') }}</legend>
-                        <div>
-                          <div v-for="(cellar, i) in cellars">
+                        <div class="grid_square_horiz">
+                          <div v-for="(cellar, i) in cellars" class="grid_sq_insert_sm">
                               <input 
                               :key="i" 
                               :id=cellar.id 
