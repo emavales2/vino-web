@@ -102,12 +102,19 @@ class WineController extends Controller
         $exists = BuyList::where('user_id', $userId)
         ->where('wine_id', $wine->id)
         ->exists();
+        $cellars = Auth::user()->cellar;
+        $hasUser = false;
+        foreach($cellars as $cellar) {
+            if(CellarHasWine::where('cellar_id', $cellar->id)->where('wine_id', $wine->id)->exists()) {
+                $hasUser = true;
+            };
+        }
         // --- * Previent conflit btn GoBack + redirection vers wine-create * ---
         $prevPage = explode('?',str_replace(url('/'), '', URL::previous()))[0];
         $notes = $wine->note;
         $wine = new WineResource($wine);
         $wine = $wine->resolve();
-        return Inertia::render('Wine/ShowView', compact('wine', 'notes','exists', 'prevPage'));
+        return Inertia::render('Wine/ShowView', compact('wine', 'notes','exists', 'prevPage', 'hasUser'));
     }
 
     /**

@@ -17,7 +17,7 @@
                     </button>
                 </section>
             </header>
-
+      
             <!-- ---- * SECTION RECHERCHE/FILTRES/TRI * ---- -->
 
             <!-- If I make it into a component, will add back the v-if maybe? -->
@@ -168,6 +168,7 @@
                     <MinusButton :color="'coral'" :disabled="wine.qty === 0" @click.stop="removeOne(wine.wine, wine.qty)" />
                     <PlusButton :color="'coral'" @click.stop="addOne(wine.wine)" />
 
+
                     </span>
                     <button class="button btn-sml btn-full btn-coral" @click.stop="toggleModalWine(wine.wine, cellar.id)">
                     {{ __("buttons.remove") }}
@@ -181,6 +182,7 @@
             </div>
         </main>
     </div>
+
 
     <Modal v-show="openDeleteModal" :toggleOff="toggleModal">
         <!-- // Modal pour la suppression d'un vin -->

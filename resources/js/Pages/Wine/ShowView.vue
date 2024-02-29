@@ -181,7 +181,7 @@
                 </Link>
             </aside>
 
-            <section class="notes-box" v-if="prevPage !== '/wine-search'">
+            <section class="notes-box" v-if="hasUser">
                 <header>
                     <div>
                         <h2 class="typo-display-font">{{ __('note.title') }}</h2>
@@ -347,6 +347,7 @@ export default {
         exists: Boolean,
         prevPage: String,
         notes: Array,
+        hasUser: Boolean
     },
 };
 

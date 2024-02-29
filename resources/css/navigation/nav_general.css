@@ -94,6 +94,7 @@ nav svg {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: var(--small-space); 
     background: var(--coral);  
+    box-shadow: 0 -2px 3px rgba(23, 5, 5, 0.347);
 }
 
 .nav_bottom svg {
