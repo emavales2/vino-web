@@ -54,3 +54,13 @@
     display: none;
   }
 }
+
+/* ----- * Responsive * ----- */
+
+@media (min-width: 750px){
+  .search-bar svg{
+    width: var(--large-space);
+    height: var(--large-space);
+  }
+
+}

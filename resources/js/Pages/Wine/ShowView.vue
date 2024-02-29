@@ -21,7 +21,7 @@
             <!-- ----- * BACK BUTTON * ----- -->
             <!-- --- * Si la dernière pg visité n'est pas /wine-create, le bouton apparaît * --- -->
             <span v-if="prevPage !== '/wine-create'">
-                <GoBackButton :color="'coral'" />
+                <GoBackButton :color="'coral-dk'" />
             </span>
 
             <!-- ----- * FICHE * ----- -->

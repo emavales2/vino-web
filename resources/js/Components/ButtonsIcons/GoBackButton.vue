@@ -24,6 +24,9 @@ export default {
       case 'coral':
         this.fill = '#F95148'
         break;
+      case 'coral-dk':
+        this.fill = '#cb3a32'
+        break;
       case 'burgundy':
         this.fill = '#2B0303'
       default:
