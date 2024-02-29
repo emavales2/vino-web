@@ -63,19 +63,16 @@
                         {{ wine.price ? wine.price + " $" : "n/a" }}</span
                     >
                     <!-- Btn pour partager sur Facebook -->
-                    <SocialShare
-                        network="facebook"
-                        :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
-                    />
                     <Link v-if="wine.user_id"
-                        :href="route('wine.edit', wine.id)" 
-                        class="button btn-sml btn-burgundy"
+                    :href="route('wine.edit', wine.id)" 
+                    class="button btn-sml btn-burgundy"
                     >
-                        {{ __('buttons.edit') }}
-                    </Link>
+                    {{ __('buttons.edit') }}
+                </Link>
+                
+            </section>
+        </article>
 
-                </section>
-            </article>
             <aside class="row_els_apart row_els_line">
                 <Link
                     v-if="!exists"
@@ -184,7 +181,7 @@
                 </Link>
             </aside>
 
-            <section class="notes-box">
+            <section class="notes-box" v-if="prevPage !== '/wine-search'">
                 <header>
                     <div>
                         <h2 class="typo-display-font">{{ __('note.title') }}</h2>
@@ -230,6 +227,7 @@
                         @click="setNoteModal(note)"
                     />
                 </div>
+                
                 <Teleport to="body">
                     <Modal v-if="showModal" :toggleOff="toggleModal">
                         <NoteModal
@@ -251,6 +249,17 @@
                     </Modal>
                 </Teleport>
             </section>
+
+            <div class="row_gap_10">
+                <SocialShare
+                    network="twitter"
+                    :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
+                />
+                <SocialShare
+                    network="facebook"
+                    :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
+                />
+            </div>
         </main>
     </div>
 </template>
