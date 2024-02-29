@@ -15,19 +15,10 @@
             {{ __("cellar.cellar_delete") }}
           </button>
         </section>
-      </header>
-
-      <!-- ---- * SECTION RECHERCHE/FILTRES/TRI * ---- -->
-
-      <!-- If I make it into a component, will add back the v-if maybe? -->
-      <!-- <aside v-if="collection.length !== 0 || searchTerm" class="card_nav bckgd-burg-lt"> -->
-
-    <!-- ---- * SECTION SEARCH / TRI / FILTRES COMMENCE * ---- -->    
-    <aside class="card_nav bckgr-trans" v-if="collection.length !== 0">
-        <h2 class="title_disp_subt tit_sub_sm">
+        <aside class="card_nav bckgr-trans" v-if="collection.length !== 0">
+        <!-- <h2 class="title_disp_subt tit_sub_sm">
             {{ __("cellar.more_options") }}
-        </h2>
-
+        </h2> -->
         <!-- ---- * Rechercher un vin dans ce cellier * ---- -->
         <SearchAuto :cellars="collection" :collection="collectionReceived" @collection-event="receiveTreatedCollection" v-if="collection.length !== 0" />
 
@@ -60,6 +51,15 @@
             </section>
         </transition>
     </aside>
+      </header>
+
+      <!-- ---- * SECTION RECHERCHE/FILTRES/TRI * ---- -->
+
+      <!-- If I make it into a component, will add back the v-if maybe? -->
+      <!-- <aside v-if="collection.length !== 0 || searchTerm" class="card_nav bckgd-burg-lt"> -->
+
+    <!-- ---- * SECTION SEARCH / TRI / FILTRES COMMENCE * ---- -->    
+    
 
 <!-- ---- * TESTING FILTERS * ---- -->
     <section>

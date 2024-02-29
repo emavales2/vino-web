@@ -1,21 +1,18 @@
 <template>
   <div class="search-bar">
     <form @submit.prevent="submit">
-        <fieldset class="fieldset_1 fs_burg row_els_apart">
-            <legend aria-labelledby="search">{{ __('dialogue.find_wine') }}</legend>
-            <label for="search" :aria-label="__('dialogue.find_wine')">
-                <input 
-                type="text" 
-                id="search"
-                class="mt-1 block w-full"
-                placeholder="chardonnay"
-                v-model="form.search"
-                >
-            </label>
-            <SearchIcon :color="'burgundy'" :searchAction="submit"/>
-        </fieldset>    
-
-      <DeleteButton :deleteAction="searchAction"/>
+            <label for="search" :aria-label="__('dialogue.find_wine')">{{ __('dialogue.find_wine') }}</label>
+            <div>
+              <input 
+                  type="text" 
+                  id="search"
+                  class="mt-1 block w-full"
+                  placeholder="chardonnay"
+                  v-model="form.search"
+                  >
+                  <SearchIcon :color="'burgundy'" :searchAction="submit"/>
+                  <DeleteButton :deleteAction="searchAction"/>
+              </div>
     </form>
     <InputError class="input_err" :message="form.errors.search"/>
   </div>

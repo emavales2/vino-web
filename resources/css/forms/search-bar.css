@@ -7,50 +7,56 @@
   height: max-content;
   border-radius: 0 0 12px 12px;
   box-shadow: var(--box-shadow);
+  & form{
+    display: flex;
+    flex-direction: column;
+    gap: var(--small-space);
+  }
+  & label{
+    color: var(--coral);
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  & input{
+    box-sizing: border-box;
+    align-self: center;
+    border-radius: var(--large-space);
+    border: none;
+    background: var(--cream-lt);
+    font-size: 1rem;
+    padding: 12px var(--med-space);
+    max-width: 100%;
+    width: 100%;
+    color: var(--burgundy-lt);
+  }
+  & .button--icon > svg{
+    padding: var(--vsmall-space);
+
+  }
 }
-.search-bar form{
+.search-bar form > div {
   display: flex;
-  flex-flow: row;
-  gap: var(--vsmall-space);
-}
-.search-bar svg{
-  width: var(--med-space);
-  height: var(--med-space);
-  margin-bottom: 5px;
-  margin-right: 10px;
-}
-.search-bar .button--icon.btn-delete{
-  margin-top: 17px;
+  gap: var(--small-space);
 }
 
-.search-auto .svg-search{
-  fill: var(--cream);
-  width: var(--med-space);
-  height: var(--med-space);
-  margin-bottom: 5px;
-  margin-right: 10px;
-}
-/* Class qui s'applique sur search Bar dans la page Dashboard */
+/* Class qui s'applique sur search Bar dans la page Dashboard et cellier */
 .search-dashboard.search-bar {
   box-shadow: none;
   background-color: transparent;
   padding: 0;
   padding-top: var(--small-space);
-  & legend{
+  & label{
     color: var(--cream);
-  }
-  & fieldset_1{
-    max-width: 100%;
-  }
-  & .fs_burg{
-    border-color: var(--cream);  
   }
   & .svg-search{
     fill: var(--cream);
-    margin-bottom: 5px;
-    margin-right: 10px;
+    padding: var(--vsmall-space);
   }
   & > form > .button--icon{
+    display: none;
+  }
+  & .button--icon.btn-delete{
     display: none;
   }
 }
