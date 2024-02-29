@@ -72,16 +72,7 @@
                 
             </section>
         </article>
-        <div class="row_gap_10">
-            <SocialShare
-                network="twitter"
-                :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
-            />
-            <SocialShare
-                network="facebook"
-                :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
-            />
-        </div>
+
             <aside class="row_els_apart row_els_line">
                 <Link
                     v-if="!exists"
@@ -236,6 +227,7 @@
                         @click="setNoteModal(note)"
                     />
                 </div>
+                
                 <Teleport to="body">
                     <Modal v-if="showModal" :toggleOff="toggleModal">
                         <NoteModal
@@ -257,6 +249,16 @@
                     </Modal>
                 </Teleport>
             </section>
+            <div class="row_gap_10">
+                <SocialShare
+                    network="twitter"
+                    :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
+                />
+                <SocialShare
+                    network="facebook"
+                    :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
+                />
+        </div>
         </main>
     </div>
 </template>
