@@ -21,12 +21,10 @@ export default {
   },
   methods: {
     shareTo () {
-      if(this.network === 'facebook') {
-        window.open(this.facebook, 'popup', "width=600, height=600")
-      }
-      if(this.network === 'twitter') {
-        window.open(this.twitter, 'popup', "width=600, height=600")
-      }
+      let net = ''
+      if(this.network === 'facebook') net = this.facebook
+      if(this.network === 'twitter') net = this.twitter
+      window.open(net,'popup', "width=600, height=600")
     }
   },
   props: ['url', 'network']
