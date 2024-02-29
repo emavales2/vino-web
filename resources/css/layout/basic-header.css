@@ -1,0 +1,7 @@
+.basic-header{
+  background-color: var(--burgundy);
+  padding: var(--small-space);
+}
+.basic-header figure{
+  width: 50px;
+}

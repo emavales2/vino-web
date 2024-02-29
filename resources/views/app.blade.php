@@ -7,8 +7,9 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <meta name="Description" content="Vino, le cellier le plus conviviable pour gérer vos bouteilles">
-        <meta property=”og:image:width” content=”180″ />
-        <meta property=”og:image:height” content=”110″ />
+        <meta property="og:site_name" content="thomasira.com">
+        <meta property="og:title" content="Vino!">
+        <meta property="og:image" content="/storage/img/vino.jpg">
         <!-- Scripts -->
         @routes
         <script src="{{ mix('js/app.js') }}" defer></script>
