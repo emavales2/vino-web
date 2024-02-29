@@ -64,7 +64,6 @@ class WineController extends Controller
             'cellar_qty' => 'min:1',
             'buyList_qty' => 'min:1 | nullable'
         ]);
-        return $request;
         $country = json_encode(['fr' => $request->country]);
         $wine = Wine::create([
             'name' => $request->name,

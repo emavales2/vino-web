@@ -183,7 +183,7 @@
       return {
         form : useForm({
           name : '',
-          type : '',
+          type : '{"fr":"Vin rouge ","en":"Red wine "}',
           country: '',
           price: '',
           size: '',
@@ -197,12 +197,11 @@
     layout: MainLayout,
     methods: {
       submit () {
-        console.log(this.form)
-/*         this.form.post(route('wine.store'), {
+        this.form.post(route('wine.store'), {
           onSuccess: () => {
             this.$parent.openDialog(this.wineDialog);
           }
-      }); */
+      });
       }
     },
     props: ['cellars', 'trans']
