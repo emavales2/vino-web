@@ -8,25 +8,30 @@
                 {{ quantity }}
                 </span>
             </aside>
-            <div>
+            <figure>
                 <img 
                 :src="wine.photo"
                 :alt="wine.name"
                 loading="lazy" 
                 >
-            </div>
-            <div>
-                <p v-if="wine.name.length > 30">
-                {{ wine.name.replaceAll('/', ' ').slice(0, 30) }}...
-                </p>
-                <p v-else>
-                {{ wine.name }}
-                </p> 
-                <small class="wine_th_country">{{ wine.country }}</small>
-                <p v-if="wine.price" class="wine-th-price">
-                    {{ wine.price.toFixed(2) }} CAD
-                </p>     
-            </div>
+            </figure>
+            <section>
+                <header>
+                    <p v-if="wine.name.length > 30">
+                    {{ wine.name.replaceAll('/', ' ').slice(0, 30) }}...
+                    </p>
+                    <p v-else>
+                    {{ wine.name }}
+                    </p> 
+                </header>
+
+                <div class="column_10">
+                    <small class="wine_th_country">{{ wine.country }}</small>
+                    <p v-if="wine.price" class="wine-th-price">
+                        {{ wine.price.toFixed(2) }} CAD
+                    </p>
+                </div>     
+            </section>
         </Link>
 
         <!-- <slot> utilisé pour les sections contenant des boutons affectant le vin(BD et DOM) -->
