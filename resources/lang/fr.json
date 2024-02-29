@@ -10,7 +10,9 @@
         "close": "fermer",
         "open": "ouvrir",
         "filter": "filtre",
-        "sort": "trier"
+        "sort": "trier",
+        "plus-1": "ajouter 1",
+        "minus-1": "enlever 1"
     },
     "auth": {
         "failed": "Ces identifiants ne correspondent pas \u00e0 nos enregistrements.",
@@ -173,9 +175,10 @@
         "users": "Utilisateurs",
         "id": "ID",
         "name": "Nom",
-        "delete_user": "Supprimer l'utilisateur",
+        "delete_user": "\u00cates-vous s\u00fbr de vouloir supprimer ce compte utilisateur?",
         "edit_user": "Modifier l'utilisateur",
-        "show_users": "Afficher tous les utilisateurs"
+        "show_users": "Afficher tous les utilisateurs",
+        "success_delete": "L'utilisateur a \u00e9t\u00e9 supprim\u00e9 avec succ\u00e8s!"
     },
     "validation": {
         "accepted": "Le champ :attribute doit \u00eatre accept\u00e9.",

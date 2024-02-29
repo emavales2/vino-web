@@ -33,10 +33,10 @@
 
         <!-- ---- * Boutons Filtres / Tri * ---- -->
         <span class="row_els_apart">
-          <button class="button btn-sml btn-cream btn_wide">{{ __("cellar.filter") }}</button>
+          <button :aria-label="__('cellar.filter')" class="button btn-sml btn-cream btn_wide">{{ __("cellar.filter") }}</button>
 
           <!-- ---- * Tri * ---- -->
-          <button class="button btn-sml btn-cream btn_wide" @click="toggleSortSquare">{{ __("cellar.sort") }}</button>
+          <button :aria-label="__('cellar.sort')" class="button btn-sml btn-cream btn_wide" @click="toggleSortSquare">{{ __("cellar.sort") }}</button>
         </span>
 
         <!-- ---- * Depliant Tri * ---- -->
