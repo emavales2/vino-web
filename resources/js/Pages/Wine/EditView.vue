@@ -23,21 +23,40 @@
               />
             <InputError class="auto_msg auto_msg_input_err" :message="form.errors.name" />
         </fieldset>
-
-        <fieldset class="fieldset_1">
-            <legend>{{ __('cellar.wine_type') }}</legend>
-            <label aria-labelledby="type" for="type" hidden></label>
-            <input
-                id="type"
-                type="text"
-                class="mt-1 block w-full"
-                v-model="form.type"
-                autofocus
-                autocomplete="type"
-                placeholder="type"
-              />
-            <InputError class="auto_msg auto_msg_input_err" :message="form.errors.type" />
-        </fieldset>
+        <fieldset class="fieldset_3">
+                        <legend>{{ __('cellar.wine_type') }}</legend>
+                        <div>
+                            <span class="radio-round radio-red">
+                                <input
+                                    id="type-red"
+                                    type="radio"
+                                    v-model="form.type"
+                                    value='{"fr":"Vin rouge ","en":"Red wine "}'
+                                    checked
+                                >
+                                <label for="type-red">{{ __('words.red') }}</label>
+                            </span>
+                            <span class="radio-round radio.white">
+                                <input
+                                    id="type-white"
+                                    type="radio"
+                                    v-model="form.type"
+                                    value='{"fr":"Vin blanc ","en":"White wine "}'
+                                >
+                                <label for="type-white">{{ __('words.white') }}</label>
+                            </span>
+                            <span class="radio-round radio-rose">
+                                <input
+                                    id="type-rose"
+                                    type="radio"
+                                    v-model="form.type"
+                                    value='{"fr":"Vin ros\u00e9 ","en":"Ros\u00e9 "}'
+                                >
+                                <label for="type-rose">{{ __('words.rose') }}</label>
+                            </span>
+                        </div>
+                        <InputError class="auto_msg auto_msg_input_err" :message="form.errors.type" />
+                    </fieldset>
 
         <fieldset class="fieldset_1">
             <legend>{{ __('cellar.wine_country') }}</legend>
@@ -111,7 +130,7 @@ export default {
         form: useForm({
             id: this.wine.id,
             name: this.wine.name,
-            type: this.wine.type,
+            type: '{"fr":"Vin rouge ","en":"Red wine "}',
             country: this.wine.country,
             size: this.wine.size,
             price: this.wine.price,
@@ -122,7 +141,6 @@ export default {
   layout: MainLayout,
   methods: {
     submit() {
-      console.log(this.form.id);
       this.form.put(route("wine.update", {wine: this.wine.id}), {
         onSuccess: () => {
           this.$parent.openDialog(this.updateDialogue);
