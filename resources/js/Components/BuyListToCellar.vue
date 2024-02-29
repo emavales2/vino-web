@@ -65,7 +65,6 @@ export default{
       else this.submit()
     },
     submit () {
-      console.log(this.wine)
       Inertia.delete(route('buylist.delete', { wine: this.wine.wine_id }), {
         onFinish: () => {
           this.toggleModal()

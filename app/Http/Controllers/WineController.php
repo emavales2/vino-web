@@ -99,13 +99,11 @@ class WineController extends Controller
     public function show(Wine $wine)
     {
         $userId = Auth::id();
-
         $exists = BuyList::where('user_id', $userId)
         ->where('wine_id', $wine->id)
         ->exists();
-
         // --- * Previent conflit btn GoBack + redirection vers wine-create * ---
-        $prevPage = str_replace(url('/'), '', URL::previous());
+        $prevPage = explode('?',str_replace(url('/'), '', URL::previous()))[0];
         $notes = $wine->note;
         $wine = new WineResource($wine);
         $wine = $wine->resolve();

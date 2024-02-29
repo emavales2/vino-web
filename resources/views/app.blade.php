@@ -8,8 +8,12 @@
         <!-- for FB sharing -->
         <meta property="og:site_name" content="thomasira.com">
         <meta property="og:title" content="Vino!">
-        <meta property="og:image" content="/storage/img/vino.jpg">
+        <meta property="og:image" content="https://thomasira.com//storage/img/vino.jpg">
 
+        <!-- for twitter sharing -->
+        <meta name="twitter:app:name" content="Vino!">
+        <meta name="twitter:image" content="https://thomasira.com//storage/img/vino.jpg">
+        
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         
