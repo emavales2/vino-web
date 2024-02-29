@@ -131,6 +131,9 @@ fieldset {
     .form_wrapper_2 label {
         font-size: 1.5rem;
     }
+    .form_wrapper_2 input {
+        font-size: 1.5rem;
+    }
     .fieldset_1.fs_burg.row_els_apart{
         font-size: 2rem;
     }
