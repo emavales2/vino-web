@@ -23,6 +23,6 @@ class BuyList extends Model
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
     public function wine() {
-        return $this->belongsTo(Wine::class, 'wine_id', 'id');
+        return $this->hasMany(Wine::class, 'id', 'wine_id');
     }    
 }

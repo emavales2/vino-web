@@ -49,6 +49,7 @@
 
 .wine-thumbnail img {
     position: absolute;
+    width: 60px;
     bottom: 0;
     min-height: 150px;
     filter: drop-shadow(var(--box-shadow));

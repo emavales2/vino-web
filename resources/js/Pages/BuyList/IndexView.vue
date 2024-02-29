@@ -9,7 +9,7 @@
             </header>
             <div v-if="buylist.length !== 0">
                 <ul class="wine-list">
-                <WineThumbnail v-for="(wine, i) in buylist" 
+                <WineThumbnail v-for="(wine, i) in buylist.newWine" 
                   :key="i" 
                   :wine="wine"
                   :quantity="wine.quantity"
