@@ -118,5 +118,8 @@ button {
         font-size: 1rem;
         margin-inline: auto;
     }
+    .button--icon figcaption{
+        font-size: 1.2rem;
+    }
     
 }
