@@ -49,11 +49,10 @@ button {
 }
 
 .button.btn-coral {
-    background: var(--coral);
-    border-color: var(--coral);
+    background: var(--coral-dk);
+    border-color: var(--coral-dk);
     color: var(--white);
 }
-
 .button.btn-warning { 
     background-color: var(--danger);
     border-color:var(--danger);
