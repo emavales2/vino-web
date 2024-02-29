@@ -67,14 +67,8 @@
                     <!-- Btn pour partager sur Facebook -->
                     <SocialShare
                         network="facebook"
-                        title="Vino!"
-                        description="Lets%20share%20our%20love%20for%20wine"
-                        quote="Hi,%20share%20this%20amazing%20bottle%20with%20me"
-                        hashtag="vino"
                         :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
                     />
-
-                    <button @click="openWindow">Share New</button>
                 </section>
             </article>
             <aside class="row_els_apart row_els_line">
@@ -246,8 +240,8 @@
                             v-if="showConfirmModal"
                             :toggleModal="toggleModal"
                             :YesAction="deleteNote"
-                            :action="'delete note'"
-                            :actionMessage="'are you sure you want to delete this note?'"
+                            :action="__('note.confirm_action')"
+                            :actionMessage="__('note.confirm_dialog')"
                         />
                     </Modal>
                 </Teleport>
