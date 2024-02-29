@@ -72,7 +72,7 @@
                                     <header class="button">
                                         <span>
                                             <input type="checkbox" id="filterByType" class="dropdown_toggle" @click="toggleTypes">
-                                            <label for="filterByType">{{ __('cellar.wine_type') }}</label>
+                                            <label for="filterByType">{{ typeFilter }}</label>
                                         </span>
                                         <span class="drop_arrrow">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>
@@ -82,7 +82,7 @@
                                     <ul class="dropdown_options" @change="filterCollection" ref="filterByType" v-show="typeFilterOpen">
                                         <li>
                                             <label for="allType">{{ __('cellar.all_type') }}</label>
-                                            <input type="radio" id="allType" name="type" value="" v-model="filters.type">
+                                            <input type="radio" id="allType" name="type" value="" v-model="filters.type" @click="allTypes">
                                         </li> 
                                         <li v-for="type in wineTypes" :value="type">
                                             <label :for="type">{{ type }}</label>
@@ -96,7 +96,7 @@
                                     <header class="button">
                                         <span>
                                             <input type="checkbox" id="filterByCountry" class="dropdown_toggle" @click="toggleCountries">
-                                            <label for="filterByCountry">{{ __('cellar.wine_country') }}</label>
+                                            <label for="filterByCountry">{{ countryFilter }}</label>
                                         </span>
                                         <span class="drop_arrrow">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>
@@ -106,7 +106,7 @@
                                     <ul class="dropdown_options" @change="filterCollection" ref="filterByCountry" v-show="countryFilterOpen">
                                         <li>
                                             <label for="allCountry">{{ __('cellar.all_country') }}</label>
-                                            <input type="radio" id="allCountry" name="country" value="" v-model="filters.country">
+                                            <input type="radio" id="allCountry" name="country" value="" v-model="filters.country" @click="allCountries">
                                         </li> 
                                         <li v-for="country in wineCountries" :value="country">
                                             <label :for="country">{{ country }}</label>
@@ -120,7 +120,7 @@
                                     <header class="button">
                                         <span>
                                             <input type="checkbox" id="filterBySize" class="dropdown_toggle" @click="toggleSizes">
-                                            <label for="filterBySize">{{ __('cellar.wine_size') }}</label>
+                                            <label for="filterBySize">{{ sizeFilter }}</label>
                                         </span>
                                         <span class="drop_arrrow">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>
@@ -129,11 +129,11 @@
                                     
                                     <ul class="dropdown_options" @change="filterCollection" ref="filterBySize" v-show="sizeFilterOpen">
                                         <li>
-                                            <label for="allSize">{{ __('cellar.all_size') }}</label>
+                                            <label for="allSize" @click="allSizes">{{ __('cellar.all_size') }}</label>
                                             <input type="radio" id="allSize" name="size" value="" v-model="filters.size">
                                         </li> 
                                         <li v-for="size in wineSizes" :value="size">
-                                            <label :for="size">{{ size }}</label>
+                                            <label :for="size" @click="filterCollection">{{ size }}</label>
                                             <input type="radio" :id="size" :name="size" :value="size" v-model="filters.size">
                                         </li>
                                     </ul>                               
@@ -157,7 +157,6 @@
                     </section>
                 </transition>
             </aside>
-
 
             <ul class="wine-list" v-if="collectionReceived.length !== 0">
                 <WineThumbnail v-for="(wine, i) in collectionReceived" :key="i" :wine="wine.wine" :cellar="cellar"
@@ -228,6 +227,9 @@ export default {
             isSortSquareOpen: false,
             sort: 0,
             isFilterSquareOpen: false,
+            countryFilter: this.__('cellar.wine_country'),
+            typeFilter: this.__('cellar.wine_type'),
+            sizeFilter: this.__('cellar.wine_size'),
             filters: {
                 type: null,
                 country: null,
@@ -262,25 +264,25 @@ export default {
         this.openDeleteModal = !this.openDeleteModal;
         },
         toggleModalWine(wine, cellar) {
-        this.message = this.trans.dialogue.show_view_wine;
-        this.cellarId = cellar;
-        this.wineId = wine;
-        this.action = this.deleteWine;
-        this.openDeleteModal = !this.openDeleteModal;
+            this.message = this.trans.dialogue.show_view_wine;
+            this.cellarId = cellar;
+            this.wineId = wine;
+            this.action = this.deleteWine;
+            this.openDeleteModal = !this.openDeleteModal;
         },
         removeOne(wine, quantity) {
-        if (quantity > 0)
-            Inertia.visit(route('cellarwine.remove', { cellar: this.cellar, wine: wine }),
-            { preserveScroll: true })
-        },
+            if (quantity > 0)
+                Inertia.visit(route('cellarwine.remove', { cellar: this.cellar, wine: wine }),
+                { preserveScroll: true })
+            },
         addOne(wine) {
-        Inertia.visit(route('cellarwine.add', { cellar: this.cellar, wine: wine }),
-            { preserveScroll: true })
-        },
+            Inertia.visit(route('cellarwine.add', { cellar: this.cellar, wine: wine }),
+                { preserveScroll: true })
+            },
         delete() {
-        Inertia.delete(route('cellar.delete', { cellar: this.cellar }),
-            { preserveScroll: true })
-        this.openDeleteModal = false
+            Inertia.delete(route('cellar.delete', { cellar: this.cellar }),
+                { preserveScroll: true })
+            this.openDeleteModal = false
         },
         deleteAllWine() {
         Inertia.delete(route('cellarwine.deleteallwine', { cellar: this.cellar }),
@@ -337,11 +339,32 @@ export default {
         toggleTypes() {
         this.typeFilterOpen = !this.typeFilterOpen;
         },
+        closeTypes() {
+            this.typeFilterOpen = false;
+        },
+        allTypes() {
+            this.typeFilter = this.__('cellar.all_type')
+            this.closeTypes()
+        },
         toggleCountries() {
         this.countryFilterOpen = !this.countryFilterOpen;
         },
+        closeCountries() {
+            this.countryFilterOpen = false;
+        },
+        allCountries () {
+            this.countryFilter = this.__('cellar.all_country')
+            this.closeCountries()
+        },
         toggleSizes() {
         this.sizeFilterOpen = !this.sizeFilterOpen;
+        },
+        closeSizes () {
+            this.sizeFilterOpen = false
+        },
+        allSizes () {
+            this.sizeFilter = this.__('cellar.all_size')
+            this.closeSizes()
         },
         // ---- * Créer arrays dynamiques pour les différents sets de filtres contenant autant de values qui existent dans le cellier. À NOTER: LE PRIX N'EST PAS INCLU ICI  * ----
         allFilters() {
@@ -370,12 +393,18 @@ export default {
             let filteredList = this.collection; 
     
             if (this.filters.type) {
+                this.typeFilter = this.filters.type
+                this.closeTypes()
                 filteredList = filteredList.filter(item => item.wine.type === this.filters.type);
             }  
             if (this.filters.country) {
+                this.countryFilter = this.filters.country
+                this.closeCountries()
                 filteredList = filteredList.filter(item => item.wine.country === this.filters.country);
             }  
             if (this.filters.size) {
+                this.sizeFilter = this.filters.size
+                this.closeSizes()
                 filteredList = filteredList.filter(item => item.wine.size === this.filters.size);
             }  
             if (this.filters.minPrice && this.filters.maxPrice) {

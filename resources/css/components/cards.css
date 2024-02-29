@@ -36,7 +36,7 @@
     flex-direction: column;
     justify-content: center;
     padding: var(--small-space);
-    gap: var(--med-space);
+    gap: var(--small-space);
     background: #fffdfc1a;
 }
 
