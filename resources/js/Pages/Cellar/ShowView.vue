@@ -15,7 +15,7 @@
             {{ __("cellar.cellar_delete") }}
           </button>
         </section>
-        <aside class="card_nav bckgr-trans" v-if="collection.length !== 0">
+        <aside class="card_nav bckgd-burg-lt" v-if="collection.length !== 0">
         <!-- <h2 class="title_disp_subt tit_sub_sm">
             {{ __("cellar.more_options") }}
         </h2> -->
