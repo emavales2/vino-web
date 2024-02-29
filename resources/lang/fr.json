@@ -66,7 +66,7 @@
         "all_size": "Toutes les tailles",
         "min_price": "Prix minimum",
         "max_price": "Prix maximum",
-        "filrer_price": "Filtrer par prix",
+        "filter_price": "Prix (min au max)",
         "my_wines": "Mes vins",
         "add_custom": "Ajouter un vin personnalis\u00e9",
         "more_options": "Plus d'options",
@@ -245,6 +245,7 @@
         "no": "non",
         "red": "Rouge",
         "white": "Blanc",
-        "rose": "Ros\u00e9"
+        "rose": "Ros\u00e9",
+        "calculate": "Calculer"
     }
 }

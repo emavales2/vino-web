@@ -25,7 +25,7 @@ return [
     'all_size' => 'All sizes',
     'min_price' => 'Minimum price',
     'max_price' => 'Maximum price',
-    'filrer_price' => 'Filter by price',
+    'filter_price' => 'Price (min to max)',
     // Collection
     'my_wines' => 'My wines',
     'add_custom' => 'Add a custom wine',

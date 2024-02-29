@@ -53,6 +53,7 @@
     @import url(forms/fieldset.css);
     @import url(forms/search-bar.css);
     @import url(forms/sort.css);
+    @import url(forms/prix_wrap.css);
 
 
 /* ---------- * * FLOATERS * * ---------- */
@@ -61,6 +62,7 @@
     @import url(floaters/dialog.css);
     @import url(floaters/transitions/inScreenOut.css);
     @import url(floaters/confirm.css);
+    @import url(floaters/dropdown.css);
 
 
 /* ---------- * * AUTRES COMPOSANTS * * ---------- */

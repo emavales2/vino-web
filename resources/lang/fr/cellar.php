@@ -25,7 +25,7 @@ return [
     'all_size' => 'Toutes les tailles',
     'min_price' => 'Prix minimum',
     'max_price' => 'Prix maximum',
-    'filrer_price' => 'Filtrer par prix',
+    'filter_price' => 'Prix (min au max)',
     // Collection
     'my_wines' => 'Mes vins',
     'add_custom' => 'Ajouter un vin personnalisé',

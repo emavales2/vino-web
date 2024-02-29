@@ -5,5 +5,6 @@ return [
   'no' => 'non',
   'red' => 'Rouge',
   'white' => 'Blanc',
-  'rose' => 'Rosé'
+  'rose' => 'Rosé',
+  'calculate' => 'Calculer'
 ];

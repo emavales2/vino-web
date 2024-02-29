@@ -109,8 +109,12 @@ p {
     line-height: var(--text-line);
 }
 
+ .p-small {
+    font-size: .833rem;
+ }
+
 small {
-    /* font-size: .833rem; */
+    
     font-size: .694rem;
     line-height: var(--small-line);
 }
