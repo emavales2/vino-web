@@ -181,7 +181,7 @@
                 </Link>
             </aside>
 
-            <section class="notes-box">
+            <section class="notes-box" v-if="prevPage !== '/wine-search'">
                 <header>
                     <div>
                         <h2 class="typo-display-font">{{ __('note.title') }}</h2>
