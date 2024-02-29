@@ -73,8 +73,6 @@
                         hashtag="vino"
                         :url="'http://127.0.0.1:8000/wine/public/'+ wine.id + '/'+ $parent.user.id"
                     />
-
-                    <button @click="openWindow">Share New</button>
                 </section>
             </article>
             <aside class="row_els_apart row_els_line">
@@ -246,8 +244,8 @@
                             v-if="showConfirmModal"
                             :toggleModal="toggleModal"
                             :YesAction="deleteNote"
-                            :action="'delete note'"
-                            :actionMessage="'are you sure you want to delete this note?'"
+                            :action="__('note.confirm_action')"
+                            :actionMessage="__('note.confirm_dialog')"
                         />
                     </Modal>
                 </Teleport>

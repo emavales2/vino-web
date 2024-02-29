@@ -13,9 +13,14 @@
                 />
             </figure>
         </section>
+        <header class="basic-header">
+            <figure>
+                <img src="@/../assets/logos/VINO_lt.svg" alt="VNO logo">
+            </figure>
+        </header>        
         <main>
             <!-- ----- * FICHE * ----- -->
-            <h1>{{ user.first_name }} has shared a wine with you!</h1>
+            <h1 class="title_index">{{ user.first_name }} {{__('actions.sharing')}}</h1>
             <article class="fiche_wine" @click="getImage">
                 <figure>
                     <img :src="wine.photo" :alt="wine.name"/>
@@ -56,8 +61,8 @@
                     >
                 </section>
             </article>
-            <Link :href="route('dashboard')" class="button btn-burgundy">
-              Go to app
+            <Link :href="route('wine.show', { wine:wine.id})" class="button btn-burgundy">
+              {{__('actions.go-to')}}
             </Link>
         </main>
     </div>
