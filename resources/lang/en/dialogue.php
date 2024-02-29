@@ -40,4 +40,5 @@ return [
     'wine_create' => 'Great ! Your wine has been added.',
     'wine_update' => 'Great ! Your wine has been updated.',
     'wine_deleted' => 'Your wine has been deleted.',
+    'country_n-a' => 'Wine country not available',
 ];

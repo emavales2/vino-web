@@ -126,7 +126,8 @@
         "registerDialog": "Yeah ! Merci pour votre inscription",
         "wine_create": "Super ! Votre vin a \u00e9t\u00e9 ajout\u00e9.",
         "wine_update": "Super ! Votre vin a \u00e9t\u00e9 mis \u00e0 jour.",
-        "wine_deleted": "Votre vin a \u00e9t\u00e9 supprim\u00e9."
+        "wine_deleted": "Votre vin a \u00e9t\u00e9 supprim\u00e9.",
+        "country_n-a": "Pays du vin non disponible"
     },
     "home": {
         "sub": "Votre sanctuaire",

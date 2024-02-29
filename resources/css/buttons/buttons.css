@@ -41,7 +41,11 @@ button {
     border-color: var(--burgundy);
     color: var(--burgundy);
 }
-
+.button.btn-burgundy-lt {
+    background: none;
+    border-color: var(--burgundy-lt);
+    color: var(--burgundy-lt);
+}
 .button.btn-cream {
     background: none;
     border-color: var(--cream);
