@@ -39,7 +39,6 @@
 /* ---------- * * BOUTONS * * ---------- */
 
     @import url(buttons/buttons.css);
-    @import url(buttons/search-button.css);
     @import url(./buttons/radio.css);
     @import url(./buttons/radio-round.css);
     @import url(buttons/lien_sml.css);

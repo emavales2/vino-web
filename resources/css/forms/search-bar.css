@@ -32,7 +32,6 @@
   }
   & .button--icon > svg{
     padding: var(--vsmall-space);
-
   }
 }
 .search-bar form > div {
