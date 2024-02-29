@@ -1,5 +1,5 @@
 <template>
-  <button class="button btn-sml btn-coral" @click="shareTo">{{ __('actions.share') }}</button>
+  <button class="button btn-sml btn-burgundy" @click="shareTo">{{ __('actions.share') }}</button>
 </template>
 <script>
 import { Head } from '@inertiajs/inertia-vue3'
@@ -13,7 +13,7 @@ export default {
   methods: {
     shareTo () {
       if(this.network === 'facebook') {
-        window.open(this.facebook, 'popup', "width=600, height=400")
+        window.open(this.facebook, 'popup', "width=600, height=600")
       }
     }
   },
