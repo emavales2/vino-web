@@ -21,7 +21,7 @@ fieldset {
     padding: 0 var(--small-space);
     font-size: medium;
     text-transform: lowercase;
-    color: var(--cream-lt);
+    color: var(--cream);
     font-family: var(--text-font);
 }
 

@@ -11,5 +11,7 @@ return [
   'close' => 'close',
   'open' => 'open',
   'filter' => 'filter',
-  'sort' => 'sort'
+  'sort' => 'sort',
+  'plus-1' => 'add 1',
+  'minus-1' => 'remove 1',
 ];
