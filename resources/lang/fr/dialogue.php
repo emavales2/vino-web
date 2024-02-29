@@ -39,6 +39,7 @@ return [
     'wine_create' => 'Super ! Votre vin a été ajouté.',
     'wine_update' => 'Super ! Votre vin a été mis à jour.',
     'wine_deleted' => 'Votre vin a été supprimé.',
-
+    'country_n_a' => 'Pays ',
+    'size_n_a' => 'Taille ',
 
 ];
