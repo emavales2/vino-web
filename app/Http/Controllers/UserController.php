@@ -25,6 +25,9 @@ class UserController extends Controller
     public function dashboard()
     {
         $user = Auth::user();
+        if ($user->is_admin == 1) {
+            return redirect()->route('admin.dashboard');
+        }
         // Get the user's cellars and the wines in each cellar
         $collection = [];
         $cellars = $user->cellar;

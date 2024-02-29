@@ -6,7 +6,8 @@
   border-radius: 100%;
 }
 .color-drop.blanc{
-  background-color: var(--cream);
+  /* background-color: var(--cream); */
+  background-color: var(--white-wine);
 }
 .color-drop.rouge{
   background-color: var(--burgundy);

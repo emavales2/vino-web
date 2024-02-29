@@ -16,4 +16,6 @@ return [
     'edit_user' => 'Modifier l\'utilisateur',
     // Admin
     'show_users' => 'Afficher tous les utilisateurs',
+    'delete_user' => 'Êtes-vous sûr de vouloir supprimer ce compte utilisateur?',
+    'success_delete' => 'L\'utilisateur a été supprimé avec succès!',
 ];

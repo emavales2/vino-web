@@ -6,7 +6,7 @@
     font-weight: 500;
     padding-right: var(--med-space);
 }
-.btn_link.cream:last-child {
+.btn_link.cream:not(:first-child) {
     border-left: 1px solid var(--cream-lt);
     padding-left: var(--med-space);
 }

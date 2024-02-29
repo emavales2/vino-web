@@ -3,7 +3,7 @@
     <form @submit.prevent="submit">
         <fieldset class="fieldset_1 fs_burg row_els_apart">
             <legend aria-labelledby="search">{{ __('dialogue.find_wine') }}</legend>
-            <label for="search" aria-labelledby="search">
+            <label for="search" :aria-label="__('dialogue.find_wine')">
                 <input 
                 type="text" 
                 id="search"

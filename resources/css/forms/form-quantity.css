@@ -31,8 +31,8 @@
 }
 
 .form-quantity section:last-of-type div{
-  display: flex;
-  flex-flow: wrap;
+  /* display: flex;
+  flex-flow: wrap; */
   gap: var(--small-space);
 
   &>*{
