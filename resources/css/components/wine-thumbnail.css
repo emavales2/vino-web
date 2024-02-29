@@ -3,7 +3,8 @@
     display: flex;
     flex-flow: column;
     justify-content: space-between;
-    background-color: var(--cream-lt);
+    /* background-color: var(--cream-lt); */
+    background-color: var(--white);
     border-radius: 20px;
     box-shadow: var(--box-shadow);
     height: 100%;
@@ -60,7 +61,7 @@
     gap: var(--small-space);
     justify-content: space-between;
     max-height: 100%;
-    height: 75px;
+    height: 110px;
     margin-bottom: var(--med-sm-space);
 }
 
@@ -70,9 +71,7 @@
     line-height: 1.2em;
     font-weight: 400;
     font-size: .833rem;
-    color: var(--burgundy);
-    /* Pour maintenir le texte dans l'étiquette */
-    max-height: 10px;
+    color: var(--burgundy-lt);
 }
 
 /* ---- * Prix du vin * ---- */
@@ -112,6 +111,13 @@
     max-height: 100%;
     vertical-align: middle;
     height: fit-content;
+}
+
+.wine-thumbnail .wine_th_country {
+    color: var(--coral-xdk);
+    text-transform: uppercase;
+    font-size: .694rem;
+    line-height: var(--vsmall-line);
 }
 
 /* ---- * Bouton "delete" * ---- */

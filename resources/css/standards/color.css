@@ -13,6 +13,10 @@
 
     --coral: #F95148;
     --coral-tr: #f9514855;
+    --coral-dk: #cb3a32;
+    --coral-xdk: #A5322C;
+
+    --white-wine: #f4cd78;
 
 
     /* ----- NEUTRALS ----- */
@@ -36,6 +40,8 @@
     /* ----- DANGER ----- */
     --danger: #a6160e;
     --danger-lt: #d8cdcc;
+
+
 
     /* ---------- * * APPLICATION * * ---------- */
 
