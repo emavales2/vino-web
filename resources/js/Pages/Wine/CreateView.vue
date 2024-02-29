@@ -153,7 +153,6 @@
                                 min="0"
                                 v-model="form.buyList_qty"
                                 :placeholder=" __('cellar.how_many')"
-
                                 />
                             <p v-if="form.errors.buyList_qty">{{ form.errors.buyList_qty }}</p>
                         </div>

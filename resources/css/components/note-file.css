@@ -27,4 +27,5 @@
 .note-file div:last-of-type{
   display: flex;
   gap: var(--med-space);
+  justify-content: center;
 }

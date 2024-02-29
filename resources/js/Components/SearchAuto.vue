@@ -1,9 +1,8 @@
 <template>
-  <div>
-    <form class="search-auto">
-      <fieldset class="fieldset_1 row_els_apart">
-        <legend aria-labelledby="search">{{ __('cellar.search_in_cellar') }}</legend>
-        <label for="search" aria-label="search">
+  <div class="search-dashboard search-bar">
+    <form>
+        <label for="search" aria-label="search">{{ __('cellar.search_in_cellar') }}</label>
+        <div>
           <input 
             type="text" 
             id="search"
@@ -11,9 +10,8 @@
             placeholder="chardonnay"
             v-model="term"
           />
-        </label>
         <SearchIcon :color="'cream'" :searchAction="handleInput"/>
-      </fieldset>  
+        </div>
     </form>  
   </div>
 </template>
