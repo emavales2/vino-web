@@ -3,12 +3,11 @@
     display: flex;
     flex-flow: column;
     justify-content: space-between;
-    /* background-color: var(--cream-lt); */
     background-color: var(--white);
     border-radius: 20px;
     box-shadow: var(--box-shadow);
     height: 100%;
-    padding: var(--vsmall-space); 
+    padding: var(--xsmall-space); 
     padding-top: var(--small-space) ;
 }
 
@@ -39,7 +38,7 @@
   }
 
 /* ---- * Contient l'image * ---- */
-/* .wine-thumbnail a div:first-of-type { */
+
 .wine-thumbnail a figure {
     height: 60px;
     position: relative;
@@ -56,7 +55,7 @@
 }
 
 /* ---- * Contient le nom et le prix * ---- */
-/* .wine-thumbnail a div:last-of-type { */
+
 .wine-thumbnail a section {
     height: fit-content;
     display: flex;
@@ -71,9 +70,9 @@
 /* ---- * Nom du vin * ---- */
 .wine-thumbnail p {
     text-align: center;
-    line-height: 1.2em;
+    line-height: var(--xsmall-line);
     font-weight: 400;
-    font-size: .833rem;
+    font-size: var(--sz-10);
     color: var(--burgundy-lt);
 }
 
@@ -81,7 +80,7 @@
 .wine-thumbnail p.wine-th-price {
     text-align: left;
     font-weight: 600;
-    line-height: 1.2em;
+    line-height: var(--xsmall-line);
     font-size: .9rem;
     text-align: center;
 }
@@ -119,7 +118,7 @@
 .wine-thumbnail .wine_th_country {
     color: var(--coral-xdk);
     text-transform: uppercase;
-    font-size: .694rem;
+    font-size: var(--sz-12);
     line-height: var(--vsmall-line);
 }
 
@@ -129,27 +128,23 @@
 }
 
 
-
-
-
-/* ----- * Responsive * ----- */
+/* ---------- * * * TABLET-RESPONSIVE * * * ---------- */
 
 @media (min-width: 750px){
-.wine-thumbnail p{
-    font-size: 1.2rem;
-}
-.wine-thumbnail p.wine-th-price{
-    font-size: 1.1rem;
-}
-.wine-thumbnail img{
-    width: 120px;
-    height: 120px;
-}
-.wine-thumbnail a section{
-    height: 150px;
-}
-.wine-thumbnail .wine_th_country{
-    font-size: 0.9rem;
-}
-
+    .wine-thumbnail p{
+        font-size: var(--sz-9);
+    }
+    .wine-thumbnail p.wine-th-price{
+        font-size: var(--sz-8);
+    }
+    .wine-thumbnail img{
+        width: 120px;
+        height: 120px;
+    }
+    .wine-thumbnail a section{
+        height: 150px;
+    }
+    .wine-thumbnail .wine_th_country{
+        font-size: var(--sz-9);
+    }
 }

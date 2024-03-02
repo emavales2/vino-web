@@ -1,14 +1,14 @@
 .lien_sml {
-  padding: 6px;
-  font-size: 0.6rem;
-  background: none;
-  max-height: fit-content;
-  width: max-content;
-  font-family: 'Oswald', sans-serif;
-  display: block;
+    padding: 6px;
+    font-size: var(--sz-13);
+    background: none;
+    max-height: fit-content;
+    width: max-content;
+    font-family: var(--block-font);
+    display: block;
 }
 
-/* états */
+/* ---- * États * ---- */
 .lien_sml:hover {
-  color:var(--coral)
+    color: var(--coral);
 }

@@ -13,6 +13,12 @@
     padding-bottom: var(--small-space);
 }
 
+.title_index.typo-fs-5 {
+    font-size: var(--sz-7);
+    line-height: var(--med-line);
+    max-width: 30ch;
+}
+
 /* ---- * Tous les sous-titres ou titres h2 de section std * ---- */
 .title_disp_subt {
     font-size: 1.728rem;

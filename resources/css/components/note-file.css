@@ -1,5 +1,5 @@
 /* inseré comme seul enfant dans -> floaters/modal.css*/
-.note-file{
+.note-file {
   align-self: center;
   background-color: var(--cream-lt);
   border-radius: 13px;
@@ -9,22 +9,26 @@
   flex-flow: column;
   gap: var(--small-space);
 }
-.note-file h2{
+
+.note-file h2 {
     font-size: .8em;
 }
-.note-file h3{
+.note-file h3 {
   font-size: 1.2em;
   font-weight: 600;
 }
-.note-file time{
+
+.note-file time {
   font-weight: 600;
 }
-.note-file p{
+
+.note-file p {
   border-radius: 12px;
   padding: var(--small-space);
   border: 1px solid var(--coral-tr);
 }
-.note-file div:last-of-type{
+
+.note-file div:last-of-type {
   display: flex;
   gap: var(--med-space);
   justify-content: center;

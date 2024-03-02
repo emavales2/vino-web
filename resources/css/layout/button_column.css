@@ -11,8 +11,9 @@
 .button_column_tight {
     display: flex;
     flex-direction: column;
-    gap: var(--vsmall-space);
+    gap: var(--xsmall-space);
   }
 .button_column.btn_col_20{
   align-items: start;
+  gap: var(--med-space);
 }

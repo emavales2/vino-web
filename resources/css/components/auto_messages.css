@@ -7,24 +7,24 @@
     font-style: italic;
     text-transform: uppercase;
     text-align: center;
-    font-size: 0.8rem;
+    font-size: var(--sz-11);
 }
 
 /* --------- * ERROR * --------- */
 .auto_msg_input_err {
-    color: red;
+    color: var(--danger);
 }
 
 /* --------- * STATUS (session; tjrs une class du v-if) * --------- */
 
 .auto_msg_status {
-    color: green;
+    color: var(--success);
 }
 
 /* ---- * Sur les messages montrés quand collection d'éléments est vide * ---- */
 .auto_msg_no_show {
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: var(--sz-9);
     line-height: var(--small-line);
     color: var(--coral);
 }

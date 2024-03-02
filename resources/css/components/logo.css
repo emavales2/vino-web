@@ -1,5 +1,5 @@
 
-/* ---- * Cette classe sera appliqué au conteneur <figure> qui contient l'image du logo * --- */
+/* ---- * Cette classe est appliqué au conteneur <figure> qui contient l'image du logo * --- */
 
 .logo {
     display: block;
@@ -9,6 +9,9 @@
 .logo > img {
     max-height: 130px;
 }
+
+
+/* ---------- * * * TABLET-RESPONSIVE * * * ---------- */
 
 @media (min-width: 750px){
     .logo > img {

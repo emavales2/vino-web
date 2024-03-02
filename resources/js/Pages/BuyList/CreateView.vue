@@ -11,7 +11,7 @@
             </header>
 
             <form @submit.prevent="addToBuyList" class="form-quantity">
-                <h2 class="typo-block-font fiche_wine_title coral">{{ wineData.name }}</h2>
+                <h2 class="fiche_wine_title">{{ wineData.name }}</h2>
                 
                 <section>
                     <figure><img :src="wineData.photo" :alt="wineData.name"></figure>

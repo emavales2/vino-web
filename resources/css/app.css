@@ -54,6 +54,7 @@
     @import url(forms/search-bar.css);
     @import url(forms/sort.css);
     @import url(forms/prix_wrap.css);
+    @import url(forms/form_wrapper.css);
 
 
 /* ---------- * * FLOATERS * * ---------- */
@@ -79,6 +80,5 @@
     @import url(components/note-thumbnail.css);
     @import url(components/note-file.css);
     @import url(components/logo.css);
-    @import url(components/option.css);
     @import url(components/table-admin.css);
     
