@@ -110,7 +110,6 @@
                 <section class="card_cellar card_cell_w_sections">
                     <h2 class="title_disp_subt cream_lt">{{ __('cellar.what_to_do') }}</h2>
                     <div class="column_15">
-                        <!-- <h5 class="legend_small cream">Store in a cellar</h5> -->
                         <h3 class="typo-fs-5 burg-lt typo-block-font">{{ __('cellar.store') }}</h3>
                         <div class="grid_square_horiz">
                             <div v-for="(cellar, i) in cellars"  class="grid_sq_insert">

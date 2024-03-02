@@ -301,9 +301,6 @@ export default {
     },
     layout: MainLayout,
     methods: {
-        openWindow () {
-            window.open("https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8000%2Fwine%2Fpublic%2F30546%2F1&title=vino&description=&quote=Look%20at%20that%20hot%20wine!&hashtag=%23vino", "MsgWindow", "width=300,height=400",'')
-        },
         toggleModal() {
             this.showModal = !this.showModal;
         },

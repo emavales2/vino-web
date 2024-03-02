@@ -18,13 +18,9 @@
                 </section>
             </header>
       
-            <!-- ---- * SECTION RECHERCHE/FILTRES/TRI * ---- -->
-
-            <!-- If I make it into a component, will add back the v-if maybe? -->
-            <!-- <aside v-if="collection.length !== 0 || searchTerm" class="card_nav bckgd-burg-lt"> -->
 
             <!-- ---- * SECTION SEARCH / TRI / FILTRES COMMENCE * ---- -->   
-            <!-- bckgd-trans  -->
+
             <aside class="card_nav " v-if="collection.length !== 0">
                 <h2 class="title_disp_subt tit_sub_sm">
                     {{ __("cellar.more_options") }}

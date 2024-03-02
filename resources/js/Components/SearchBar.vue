@@ -45,7 +45,6 @@ export default{
           this.form.reset()
         }
       })
-      
     }
   },
   props: ['searchAction']
