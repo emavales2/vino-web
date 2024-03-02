@@ -23,7 +23,7 @@ nav svg {
     box-sizing: border-box;
     max-height: 90%;
     max-width: 90%;
-    padding: var(--vsmall-space);
+    padding: var(--xsmall-space);
 }
 
 

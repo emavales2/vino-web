@@ -14,5 +14,5 @@
 .notes-box>div{
   display: flex;
   flex-flow: column;
-  gap: var(--vsmall-space);
+  gap: var(--xsmall-space);
 }

@@ -5,8 +5,6 @@
 .radio + label {
   font-family: var(--block-font);
   border: 2px solid var(--burgundy-lt);
-  /* border-color: transparent; */
-  /* border-radius: 100px; */
   padding: var(--small-space);
   text-align: center;
   font-weight: 600;
@@ -20,7 +18,7 @@
   width: 100%;
   flex: 1;
   color: var(--burgundy-lt);
-  font-size: .833rem;
+  font-size: var(--sz-10);
   line-height: var(--small-line);
   overflow-wrap: break-word;
   hyphens: auto;
@@ -34,9 +32,11 @@
   border-color: var(--burgundy);
   color: var(--cream-lt);
 }
-/* ----- * Responsive * ----- */
 
-@media (min-width: 750px){
+
+/* ---------- * * * TABLET-RESPONSIVE * * * ---------- */
+
+@media (min-width: 750px) {
     .radio + label {
         font-size: 1.25rem;
     }

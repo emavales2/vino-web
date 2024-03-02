@@ -37,6 +37,7 @@
     flex-direction: column;
     gap: var(--med-space);
     color: var(--cream-lt);
+    padding: 0 var(--med-space);
     & span {
         display: flex;
         flex-direction: row;

@@ -1,5 +1,5 @@
 
-/* Card components Dashboard CellarDisplayBox  */
+/* ---- * Componsants Dashboard: CellarDisplayBox * ---- */
 
 .card_cellar {
     background-color: var(--cream);
@@ -14,7 +14,7 @@
     color: var(--burgundy);
     font-family: var(--block-font);
     text-transform: uppercase;
-    font-size: .833rem;
+    font-size: var(--sz-10);
     line-height: var(--small-line);
     overflow-wrap: break-word;
     hyphens: auto;
@@ -29,30 +29,28 @@
 
 /* ---- * Card components for filter box : TO BE REASSESSED LATER * ----  */
 .card_nav {
-    /* background-color: var(--burgundy-lt); */
-    /* border-radius: 12px; */
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: var(--small-space);
+    padding: var(--med-sm-space);
     gap: var(--small-space);
     background: #fffdfc1a;
 }
 
 .card_nav > span {
-    padding-top: 10px;
+    padding-top: var(--small-space);
 }
 
 
-/* ----- * Responsive * ----- */
+/* ---------- * * * TABLET-RESPONSIVE * * * ---------- */
 
 @media (min-width: 750px){
     .card_cellar .typo-block-font {
-        font-size: 1.25rem;
+        font-size: var(--sz-7half);
     }
 }
 
 .card_nav .btn_link.cream:active {
-    padding-bottom: 5px;
+    padding-bottom: var(--xsmall-space);
 } 
