@@ -5,7 +5,7 @@
   border-radius: 100px;
   color: var(--white);
   background-color: var(--success);
-  padding: var(--vsmall-space) var(--med-space);
+  padding: var(--xsmall-space) var(--med-space);
   position: fixed;
   right: var(--small-space);
   z-index: 3;

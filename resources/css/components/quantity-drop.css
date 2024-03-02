@@ -2,7 +2,7 @@
   background-color: var(--burgundy-lt);
   min-height: var(--med-space);
   height: var(--med-space);
-  padding: var(--vsmall-space);
+  padding: var(--xsmall-space);
   border-radius: 100%;
   display: flex;
   align-items: center;
@@ -10,5 +10,5 @@
   aspect-ratio: 1/1;
   text-align: center;
   color: var(--cream);
-  font-size: .694rem;
+  font-size: var(--sz-12);
 }

@@ -3,17 +3,16 @@
 
     <div class="bckgd">
         <main>
-            <section class="column_30">
-                <header>
-                    <h1 class="title_index">{{ __('cellar.my_wines') }}</h1>
-                </header>
-
+            <header class="column_15">
+                <h1 class="title_index">{{ __('cellar.my_wines') }}</h1>
                 <button class="button btn-cream">
                     <Link :href="route('wine.create')">
                         {{ __('cellar.add_custom') }}
                     </Link>
                 </button>
-                
+            </header>
+
+            <section class="column_30">           
                 <div v-if="collection.length !== 0">
                     <div>
                         <ul class="wine-list">

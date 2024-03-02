@@ -6,6 +6,7 @@
     max-width: 315px;
     max-height: 650px;
     overflow: hidden;
+    padding: 20px 0;
 }
 
 /* ---- * Transitions * ---- */

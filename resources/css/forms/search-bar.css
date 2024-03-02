@@ -31,7 +31,7 @@
     color: var(--burgundy-lt);
   }
   & .button--icon > svg{
-    padding: var(--vsmall-space);
+    padding: var(--xsmall-space);
   }
 }
 .search-bar form > div {
@@ -44,13 +44,14 @@
   box-shadow: none;
   background-color: transparent;
   padding: 0;
-  padding-top: var(--small-space);
+  /* padding-top: var(--small-space); */
   & label{
     color: var(--cream);
+    margin: 0 var(--med-space);
   }
   & .svg-search{
     fill: var(--cream);
-    padding: var(--vsmall-space);
+    padding: var(--xsmall-space);
   }
   & > form > .button--icon{
     display: none;

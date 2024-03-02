@@ -1,17 +1,19 @@
-.color-drop{
-  display: block;
-  width: var(--med-space);
-  min-height: var(--med-space);
-  height: var(--med-space);
-  border-radius: 100%;
+.color-drop {
+    display: block;
+    width: var(--med-space);
+    min-height: var(--med-space);
+    height: var(--med-space);
+    border-radius: 100%;
 }
-.color-drop.blanc{
-  /* background-color: var(--cream); */
-  background-color: var(--white-wine);
+
+.color-drop.blanc {
+    background-color: var(--white-wine);
 }
-.color-drop.rouge{
-  background-color: var(--burgundy);
+
+.color-drop.rouge {
+    background-color: var(--burgundy);
 }
-.color-drop.rosé{
-  background-color: var(--coral);
+
+.color-drop.rosé {
+    background-color: var(--coral);
 }

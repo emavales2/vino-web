@@ -3,15 +3,15 @@
 
     <div class="bckgd">
         <main>
-            <header>
+            <header class="column_15">
                 <!-- EXEMPLE POUR ACCEDER AUX TRADUCTIONS -->
                 <h1 class="title_index">
                     {{ __("dashboard.welcome") }}, {{ user.first_name }}
                 </h1>
 
-                <aside class="column_20">
+                <aside class="column_25">
                     <!-- ---- * Rechercher un vin * ---- -->
-                    <span class="search-dashboard">
+                    <span>
                         <SearchBar class="search-dashboard"/>
                     </span>
 

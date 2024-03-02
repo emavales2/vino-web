@@ -1,6 +1,6 @@
-.note-thumbnail{
+.note-thumbnail {
   display: flex;
-  gap: var(--vsmall-space);
+  gap: var(--xsmall-space);
   justify-content: space-between;
   padding: var(--small-space);
   border: 1px solid var(--coral-tr);
@@ -8,9 +8,10 @@
   border-radius: 12px;
   text-align: left;
 }
-.note-thumbnail p{
-  font-size: 1em;
+.note-thumbnail p {
+  font-size: var(--sz-9);
 }
-.note-thumbnail div>div{
-  font-size: .8em;
+
+.note-thumbnail div > div {
+    font-size: var(--sz-11);
 }

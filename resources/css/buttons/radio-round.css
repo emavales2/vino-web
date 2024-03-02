@@ -1,9 +1,10 @@
-.radio-round{
+.radio-round {
   display: flex;
   flex-flow: column;
   align-items: center;
 }
-.radio-round input{
+
+.radio-round input {
   padding: 0;
   appearance: none;
   display: block;
@@ -12,18 +13,23 @@
   background-color: var(--cream);
   box-shadow:inset var(--box-shadow);
 }
-.radio-round input:checked{
-  outline: 3px coral solid;
+
+.radio-round input:checked {
+  outline: 3px var(--coral) solid;
 }
-.radio-round input:checked + label{
+
+.radio-round input:checked + label {
   transform: scale(1.2);
 }
-.radio-round.radio-red input{
+
+.radio-round.radio-red input {
   background-color: var(--burgundy);
 }
-.radio-round.radio-white input{
+
+.radio-round.radio-white input {
   background-color: var(--cream);
 }
-.radio-round.radio-rose input{
+
+.radio-round.radio-rose input {
   background-color: var(--coral);
 }

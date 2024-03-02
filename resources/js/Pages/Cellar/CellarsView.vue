@@ -3,13 +3,12 @@
 
   <div class="bckgd bckgd-burg">
     <main>
-      <header>
+      <header class="column_15">
         <h1 class="title_index">{{ __('cellar.list') }}</h1>
-      </header>
-
-      <button class="button btn-cream">
-        <Link :href="route('cellar.create')">{{ __('cellar.add') }}</Link>
-      </button>
+        <button class="button btn-cream">
+            <Link :href="route('cellar.create')">{{ __('cellar.add') }}</Link>
+        </button>
+      </header>     
 
       <CellarListing
         :cellars="cellars"
