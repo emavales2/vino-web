@@ -36,7 +36,7 @@ button {
     outline-color: var(--coral);
 }
 
-/* ---- * Variants Vouleurs * ---- */
+/* ---- * Variants Couleurs * ---- */
 .button.btn-burgundy {
     background: none;
     border-color: var(--burgundy);
@@ -60,6 +60,7 @@ button {
     border-color: var(--coral-dk);
     color: var(--white);
 }
+
 .button.btn-warning { 
     background-color: var(--danger);
     border-color:var(--danger);
@@ -85,12 +86,12 @@ button {
     align-self: center;
 }
 
-.button.btn-logo{
+.button.btn-logo {
     display: flex;
     flex-flow: row;
     gap: var(--small-space);
 }
-.button.btn-logo svg{
+.button.btn-logo svg {
     flex: 1;
 }
 
@@ -118,7 +119,7 @@ button {
     font-family: var(--block-font);
     font-weight: 500;
     letter-spacing: var(--small-ltr-spacing);
-    line-height: 1em;
+    line-height: var(--xsmall-line);
     color: var(--burgundy-lt);
 }
 
@@ -133,7 +134,7 @@ button {
 @media (min-width: 750px) {
     .button {
         font-size: var(--sz-6half);
-        padding: 18px 24px;
+        padding: 18px var(--med-large-space);
     }
 
     .button.btn-sml {

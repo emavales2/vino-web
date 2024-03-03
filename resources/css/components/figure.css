@@ -4,6 +4,7 @@ figure {
     margin: 0;
 }
 
+/* ---- * Pertinent aux blobs décoratifs * ----*/
 .fig_bg {
     position: absolute;
     height: 100%;

@@ -1,4 +1,4 @@
-/* --------- * FORM * --------- */
+/* --------- * FORMULAIRES * --------- */
 
 form {
     display: flex;
@@ -7,12 +7,11 @@ form {
     gap: var(--large-space);
 }
 
-/* Will grab "InputText.vue" (came with Laravel) as well as input in forms */
 form input, form textarea {
     box-sizing: border-box;
     align-self: center;
     padding: 12px var(--med-space);
-    width: 100%; /*This can be done here because it is limited to its container */
+    width: 100%; 
     border-radius: var(--large-space);
     border: none;
     background: var(--cream-lt);
@@ -24,19 +23,18 @@ form input:focus-visible {
     outline: var(--coral) auto 1px;
 }
 
-form input:-internal-autofill-selected {
-    background: green !important;
-}
-form textarea{
+form textarea {
     background: none;
     font-family: var(--font-text);
     color: var(--cream);
     height: 200px;
 }
+
 form textarea::placeholder {
     color: var(--coral);
 }
-form textarea:focus-visible{
+
+form textarea:focus-visible {
     outline: none;
 }
 

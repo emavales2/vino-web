@@ -1,8 +1,11 @@
+/* ---- * Table des usagers visible seulement à l'admin (users/UsersView) * ---- */
+
 .table-admin {
     width: 90vw;
     border-collapse: collapse;
     color: var(--cream-lt);
 }
+
 td, th {
     border: 1px solid var(--coral);
     padding: var(--small-space);
@@ -13,6 +16,7 @@ td, th {
 th {
     background-color: var(--coral);
 }
+
 .table-admin td button{
     max-width: 15ch;
     margin-inline: auto;

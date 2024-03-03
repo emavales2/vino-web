@@ -1,3 +1,5 @@
+/* ---- * CLASSES UTILITAIRES POUR DISPOSER DES ÉLEMENTS EN LIGNE * ---- */
+
 .flex-row {
     display: flex;
     flex-direction: row;
@@ -16,6 +18,7 @@
 .row_els_apart.row_els_line {
     justify-content: space-around;
     padding: 20px;
+    align-items: flex-start;
 }
 
 /* Flex-row, 10px gap */

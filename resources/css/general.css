@@ -1,5 +1,14 @@
 
 /* ----- * GENÉRALE * ----- */
+
+:root {
+
+    /* ---- * BORDER RADIUS * ---- */
+    --br-std: 12px;
+
+}
+
+
 /* Balises modifiées directement */
 
 * {

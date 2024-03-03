@@ -1,3 +1,6 @@
+
+/* ---- * Drops couleur liées au type de vin (Fiche Wine + WineThumbnail * ----*/
+
 .color-drop {
     display: block;
     width: var(--med-space);

@@ -1,25 +1,20 @@
-.wine-list{
-  gap: var(--med-sm-space);
-  justify-content: center;
-  /* Changé à grid pour maintenir l'alignement même s'il y a un seul vin */
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
-  padding: 0;
-  margin-top: var(--xxlarge-space);
-  gap: var(--xxxlarge-space) var(--med-sm-space);
-}
+/* ---- * CONTENEUR GRILLE POUR LES WINE THUMBNAILS * ---- */
 
-.wine-list-col {
-    display: flex;
-    flex-direction: column;
-    gap: var(--large-space);
+.wine-list {
+    gap: var(--med-sm-space);
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+    padding: 0;
+    margin-top: var(--xxlarge-space);
+    gap: var(--xxxlarge-space) var(--med-sm-space);
 }
 
 
-/* ----- * Responsive * ----- */
+/* ---------- * * * TABLET-RESPONSIVE * * * ---------- */
 
-@media (min-width: 750px){
-    .wine-list{
-      grid-template-columns: repeat(auto-fill, minmax(127px, 1fr));
+@media (min-width: 750px) {
+    .wine-list{ 
+        grid-template-columns: repeat(auto-fill, minmax(127px, 1fr));
     }
 }

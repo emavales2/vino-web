@@ -1,15 +1,17 @@
+/* ---- * Style du modal et son arrière-plan * ---- */
+
 .modal {
-  background-color: var(--veil);
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 100%;
-  z-index: 3;
+    background-color: var(--veil);
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 3;
 }
 
 .modal > * {
-  flex-grow: 1;
+    flex-grow: 1;
 }

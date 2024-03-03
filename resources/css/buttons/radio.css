@@ -1,30 +1,30 @@
+/* ---- * "Radio" en tant que input déclancheur * ---- */
 .radio {
-  display: none;
+    display: none;
 }
 
-.radio + label {
-  font-family: var(--block-font);
-  border: 2px solid var(--burgundy-lt);
-  padding: var(--small-space);
-  text-align: center;
-  font-weight: 600;
-  color: var(--coral);
+/* ---- * Style de bouton de base attaché à radio * ---- */
 
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  flex: 1;
-  color: var(--burgundy-lt);
-  font-size: var(--sz-10);
-  line-height: var(--small-line);
-  overflow-wrap: break-word;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  aspect-ratio: 1/1;
-  box-sizing: border-box;
+.radio + label {
+    border: 2px solid var(--burgundy-lt);
+    border-radius: var(--br-std);
+    padding: var(--small-space);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    aspect-ratio: 1/1;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    flex: 1;
+    color: var(--burgundy-lt);
+    text-align: center;
+    font-family: var(--block-font);
+    font-weight: 600;
+    font-size: var(--sz-10);
+    line-height: var(--small-line);
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .radio:checked + label {
@@ -38,6 +38,6 @@
 
 @media (min-width: 750px) {
     .radio + label {
-        font-size: 1.25rem;
+        font-size: var(--sz-7half);
     }
 }

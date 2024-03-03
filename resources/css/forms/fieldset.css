@@ -5,21 +5,15 @@ fieldset {
     padding: 0;
 }
 
-.fieldset_3 {
-    border: 2px solid var(--cream); 
-    border-radius: var(--large-space);
-    background-color: var(--cream-lt);
-}
+/* ---- * fieldset_3 enveloppe les choix de type de vin dans le formulaire pour créer un custom wine * ---- */
 
+/* ----- * Stylée pour ressembler les labels avant les inputs aussi présents dans le formulaire * ------ */
 .fieldset_3 legend {
     margin: 0 var(--small-space);
     padding: var(--small-space);
-    border: 1px solid var(--cream);
-    background-color: var(--burgundy);
-    border-radius: 10px;
     color: var(--coral);
     font-size: var(--sz-9);
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
 }
 
@@ -28,11 +22,15 @@ fieldset {
     justify-content: space-between;
     padding: var(--small-space) var(--med-space);
     gap: var(--small-space);
+    border: 2px solid var(--cream); 
+    border-radius: 35px;
+    background-color: var(--cream-lt);
 }
 
 .fieldset_3 label {
-    font-family: var(--block-font);
+    font-family: var(--text-font);
     color: var(--burgundy);
+    font-size: var(--sz-9);
 }
 
 

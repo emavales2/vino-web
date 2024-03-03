@@ -13,7 +13,6 @@
                     <input
                         id="first_name"
                         type="text"
-                        class="mt-1 block w-full"
                         v-model="form.first_name"
                         required
                         autofocus
@@ -31,7 +30,6 @@
                     <input
                         id="last_name"
                         type="text"
-                        class="mt-1 block w-full"
                         v-model="form.last_name"
                         required
                         autofocus
@@ -49,7 +47,6 @@
                     <input
                         id="email"
                         type="email"
-                        class="mt-1 block w-full"
                         v-model="form.email"
                         required
                         autocomplete="username"
@@ -66,7 +63,6 @@
                     <input
                         id="password"
                         type="password"
-                        class="mt-1 block w-full"
                         v-model="form.password"
                         required
                         autocomplete="new-password"
@@ -83,7 +79,6 @@
                     <input
                         id="password_confirmation"
                         type="password"
-                        class="mt-1 block w-full"
                         v-model="form.password_confirmation"
                         required
                         autocomplete="new-password"

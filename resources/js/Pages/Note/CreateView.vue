@@ -1,13 +1,16 @@
 <template>
   <Head title="Cellar" />
-  <main class="note-create">
+  <main>
     <GoBackButton :color="'cream'"/>
     <header>
-      <h1 class="title_index">{{ __('note.create_new') }}</h1>
-      <h2 class="title_disp_subt"> {{ wine.name }}</h2>
+      <h1 class="title_index">{{ __('note.create_new') }}</h1> 
     </header>
-      <form @submit.prevent="submitForm">
-        <h3 class="typo-display-font cream">{{ __('note.write_note') }}</h3>
+
+    <form @submit.prevent="submitForm">
+        <header class="column_15">
+            <h2 class="typo-fs-4 typo-block-font cream"> {{ wine.name }}</h2>
+            <h3 class="typo-display-font cream">{{ __('note.write_note') }}</h3>
+        </header>
 
         <div class="form_wrapper_2">
             <label for="note" aria-labelledby="note">note</label>          

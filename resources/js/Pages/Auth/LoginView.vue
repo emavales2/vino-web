@@ -16,7 +16,6 @@
                     <input
                         id="email"
                         type="email"
-                        class=""
                         v-model="form.email"
                         required
                         autofocus

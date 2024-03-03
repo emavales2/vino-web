@@ -34,7 +34,7 @@
 .form_wrapper_2 textarea {
     box-sizing: border-box;
     align-self: center;
-    border-radius: var(--large-space);
+    border-radius: var(--br-std);
     border: none;
     background: var(--cream-lt);
     font-size: var(--sz-9);
