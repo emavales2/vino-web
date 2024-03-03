@@ -1,6 +1,8 @@
+/* ---- * Carte-Formulaire: choix de nombre de bouteilles + cellier + pour ajouter un vin aux celliers ou liste d'achat * ---- */
+
 .form-quantity {
     background-color: var(--cream-lt);
-    border-radius: 12px;
+    border-radius: var(--br-std);
     padding: var(--med-sm-space);
 }
 
@@ -31,10 +33,10 @@
         display: flex;
         gap: var(--med-space);
     }
-    }
+}
 
-    .form-quantity section:last-of-type div {
-        gap: var(--small-space);
+.form-quantity section:last-of-type div {
+    gap: var(--small-space);
 
     & > * {
         flex: 1;

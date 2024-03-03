@@ -2,11 +2,9 @@
 /* ---- * CONTENEUR POUR LES OPTIONS DE TRI / FLTRE * ---- */
 
 .sort-container {
-    border-radius: 10px;
     max-width: 315px;
     max-height: 650px;
-    overflow: hidden;
-    padding: 20px 0;
+    padding: var(--med-space) 0;
 }
 
 /* ---- * Transitions * ---- */
@@ -16,7 +14,7 @@
 
 .sort-container-fade-enter-from, .sort-container-fade-leave-to {
     max-height: 0;
-    padding: 0 5px;
+    padding: 0 var(--xsmall-space);
 }
 
 
@@ -25,19 +23,18 @@
 .sort-container.sort-options {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
+    gap: var(--small-space);
     font-family: var(--block-font);
     text-transform: uppercase;
     padding: 0;
 }
 
 .sort-container.sort-options > li > label {
-    /* width: 100px; */
-    /* height: 50px; */
-    padding: 10px;
+    padding: var(--small-space);
     aspect-ratio: unset;
     background: var(--coral);
-    font-size: .8rem;
+    font-size: var(--sz-10);
+    line-height: var(--xsmall-line);
     letter-spacing: var(--small-ltr-spacing);
     color: var(--white);
     font-weight: 500;

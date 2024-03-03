@@ -27,7 +27,7 @@
                 </dl>
             </div>
 
-            <div class="button_column btn_col_20">
+            <div class="column_20">
                 <Link class="button btn-cream" :href="route('profile.edit', user.id )">{{ __('user.edit_profile') }}</Link>
                 <Link class="button btn-cream" :href="route('logout', user.id )">{{ __('buttons.logout') }}</Link>
             </div>

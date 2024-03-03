@@ -45,14 +45,14 @@
         align-items: baseline;
         & dt {
             color: var(--coral);
-            font-size: 1.12rem;
+            font-size: var(--sz-8);
             line-height: var(--text-line);
             font-family: var(--display-font);
             font-weight: 600;
             padding-bottom: 0;
         }
         & dd {
-            font-size: 1rem;
+            font-size: var(--sz-9);
             line-height: var(--text-line);
             font-family: var(--text-font);
             color: var(--cream);
@@ -60,14 +60,17 @@
     }
 }
 
+
+/* ---------- * * * TABLET-RESPONSIVE * * * ---------- */
+
 @media (min-width: 750px){
     .container_profil {
         & span {
             & dt {
-                font-size: 1.5rem;
+                font-size: var(--sz-6half);
             }
             & dd {
-                font-size: 1.25rem;
+                font-size: var(--sz-7half);
             }
         }
     }

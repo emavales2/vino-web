@@ -1,72 +1,75 @@
-.search-bar{
-  display: flex;
-  flex-flow: column;
-  gap: var(--small-space);
-  background-color: var(--cream);
-  padding: var(--med-space);
-  height: max-content;
-  border-radius: 0 0 12px 12px;
-  box-shadow: var(--box-shadow);
-  & form{
+/* ---- * BARRE DE RECHERCHE PRINCIPALE (NAV) * ---- */
+
+.search-bar {
     display: flex;
-    flex-direction: column;
+    flex-flow: column;
     gap: var(--small-space);
-  }
-  & label{
-    color: var(--coral);
-    font-size: 1rem;
-    font-weight: 500;
-    text-transform: uppercase;
-  }
-  & input{
-    box-sizing: border-box;
-    align-self: center;
-    border-radius: var(--large-space);
-    border: none;
-    background: var(--cream-lt);
-    font-size: 1rem;
-    padding: 12px var(--med-space);
-    max-width: 100%;
-    width: 100%;
-    color: var(--burgundy-lt);
-  }
-  & .button--icon > svg{
-    padding: var(--xsmall-space);
-  }
+    background-color: var(--cream);
+    padding: var(--med-space);
+    height: max-content;
+    border-radius: 0 0 var(--br-std) var(--br-std);
+    box-shadow: var(--box-shadow);
+    & form{
+        display: flex;
+        flex-direction: column;
+        gap: var(--small-space);
+    }
+    & label{
+        color: var(--coral);
+        font-size: var(--sz-9);
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    & input{
+        box-sizing: border-box;
+        align-self: center;
+        border-radius: var(--large-space);
+        border: none;
+        background: var(--cream-lt);
+        font-size: 1rem;
+        padding: var(--med-sm-space) var(--med-space);
+        max-width: 100%;
+        width: 100%;
+        color: var(--burgundy-lt);
+    }
+    & .button--icon > svg{
+        padding: var(--xsmall-space);
+    }
 }
+
 .search-bar form > div {
-  display: flex;
-  gap: var(--small-space);
+    display: flex;
+    gap: var(--small-space);
 }
 
-/* Class qui s'applique sur search Bar dans la page Dashboard et cellier */
+/* ---- * Class qui s'applique sur search Bar dans la page Dashboard et cellier * ---- */
 .search-dashboard.search-bar {
-  box-shadow: none;
-  background-color: transparent;
-  padding: 0;
-  /* padding-top: var(--small-space); */
-  & label{
-    color: var(--cream);
-    margin: 0 var(--med-space);
-  }
-  & .svg-search{
-    fill: var(--cream);
-    padding: var(--xsmall-space);
-  }
-  & > form > .button--icon{
-    display: none;
-  }
-  & .button--icon.btn-delete{
-    display: none;
-  }
+    box-shadow: none;
+    background-color: transparent;
+    padding: 0;
+    & label{
+        color: var(--cream);
+        margin: 0 var(--med-space);
+    }
+    & .svg-search{
+        fill: var(--cream);
+        padding: var(--xsmall-space);
+    }
+    & > form > .button--icon{
+        display: none;
+    }
+    & .button--icon.btn-delete{
+        display: none;
+    }
 }
 
-/* ----- * Responsive * ----- */
 
-@media (min-width: 750px){
-  .search-bar svg{
-    width: var(--large-space);
-    height: var(--large-space);
-  }
+/* ---------- * * * TABLET-RESPONSIVE * * * ---------- */
+
+@media (min-width: 750px) {
+    .search-bar svg {
+        width: var(--large-space);
+        height: var(--large-space);
+    }
 
 }

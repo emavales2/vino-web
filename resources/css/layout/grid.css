@@ -1,3 +1,5 @@
+/* ---- * GRILLE POUR LES CARTES CARRÉES POR CELLIER * ---- */
+
 .grid_square_horiz {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));

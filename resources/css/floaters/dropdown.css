@@ -1,4 +1,4 @@
-/* ---- * MENU DE FILTRAGE * ---- */
+/* ---- * DROPDOWN UTILISÉ DANS MENU DE FILTRAGE * ---- */
 
 .dropdown_container {
     position: relative;
@@ -6,6 +6,8 @@
     flex-direction: column;
     max-width: 300px;
 }
+
+/* ---- * Style du bouton pour chaque filtre * ---- */
 
 .dropdown_container header {
     background: var(--coral);
@@ -45,11 +47,16 @@
             max-height: 20px;
         }
 }
-  
+
+/* ---- * Faire le input d'activation invisible * ---- */
+
 .dropdown_toggle {
     display: none;
 }
   
+
+/* ---- * Options visibles une fois que le menu est déplié * ---- */
+
 .dropdown_options {
     width: auto;
     background: var(--white);

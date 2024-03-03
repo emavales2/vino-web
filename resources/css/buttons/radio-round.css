@@ -1,7 +1,10 @@
+/* ---- * INPUTS "RADIO" CHOIX DE VIN * ---- */
+
 .radio-round {
   display: flex;
   flex-flow: column;
   align-items: center;
+  gap: var(--xsmall-space);
 }
 
 .radio-round input {
@@ -19,7 +22,8 @@
 }
 
 .radio-round input:checked + label {
-  transform: scale(1.2);
+  color: var(--burgundy-lt);
+  font-weight: 500;
 }
 
 .radio-round.radio-red input {

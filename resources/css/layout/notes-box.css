@@ -1,18 +1,22 @@
-.notes-box{
-  backdrop-filter: brightness(90%);
-  border-radius: 12px;
-  display: flex;
-  flex-flow: column;
-  padding: var(--small-space);
-  gap: var(--small-space);
+/* ---- * CONTENEUS POUR NOTES DE DÉGUSTATION (FICHE VIN) * ---- */
+
+.notes-box {
+    backdrop-filter: brightness(90%);
+    border-radius: var(--br-std);
+    display: flex;
+    flex-flow: column;
+    padding: var(--small-space);
+    gap: var(--small-space);
 }
-.notes-box header{
-  display: flex;
-  gap: var(--small-space);
-  justify-content: space-between;
+
+.notes-box header {
+    display: flex;
+    gap: var(--small-space);
+    justify-content: space-between;
 }
-.notes-box>div{
-  display: flex;
-  flex-flow: column;
-  gap: var(--xsmall-space);
+
+.notes-box > div {
+    display: flex;
+    flex-flow: column;
+    gap: var(--xsmall-space);
 }

@@ -1,9 +1,9 @@
 
-/* ---- * Componsants Dashboard: CellarDisplayBox * ---- */
+/* ---- * COMPOSANTS CARTE POUR DASHBOARD: CellarDisplayBox * ---- */
 
 .card_cellar {
     background-color: var(--cream);
-    border-radius: 12px;
+    border-radius: var(--br-std);
     padding: var(--small-space);
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@
     background-color: var(--coral);
 }
 
-/* ---- * Card components for filter box : TO BE REASSESSED LATER * ----  */
+/* ---- * COMPOSANTS CARTE POUR NAV TRI + FILTRE TOUJOURS VISIBLE * ----  */
 .card_nav {
     border-radius: 10px;
     display: flex;

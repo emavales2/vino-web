@@ -14,7 +14,6 @@
           <input
               id="name"
               type="text"
-              class=""
               v-model="form.name"
               autofocus
               autocomplete="name"
@@ -62,7 +61,6 @@
           <input
               id="country"
               type="text"
-              class=""
               v-model="form.country"
               autofocus
               autocomplete="country"
@@ -75,7 +73,6 @@
           <input
               id="size"
               type="text"
-              class=""
               v-model="form.size"
               autofocus
               autocomplete="size"
@@ -90,7 +87,6 @@
               type="number"
               min="0"
               step="0.01"
-              class=""
               v-model="form.price"
               autofocus
               autocomplete="price"

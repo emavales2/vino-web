@@ -3,7 +3,7 @@
 /* ---- * Tous les titres h1 principaux std * ---- */
 .title_index {
     font-family: var(--block-font);
-    font-size: 2.488rem;
+    font-size: var(--sz-3);
     line-height: var(--xtall-line);
     color: var(--coral);
     text-transform: uppercase;
@@ -21,7 +21,7 @@
 
 /* ---- * Tous les sous-titres ou titres h2 de section std * ---- */
 .title_disp_subt {
-    font-size: 1.728rem;
+    font-size: var(--sz-6);
     line-height: var(--tall-line);
     font-family: var(--display-font);
     color: var(--cream);

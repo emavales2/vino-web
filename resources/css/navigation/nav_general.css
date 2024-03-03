@@ -5,7 +5,6 @@ nav {
     text-align: center;
     padding: var(--small-space);
     max-height: 80px;
-    /* min-height: 60px; */
     max-width: 100%;
     align-items: center;
 }
@@ -13,7 +12,6 @@ nav {
 nav a {
     max-height: 32px;
     display: flex;
-    /* align-items: center; */
     justify-content: center;
     min-height: 100%;
     max-width: 100%;
@@ -27,13 +25,11 @@ nav svg {
 }
 
 
-/* ---------- * * TOP NAV * * ---------- */
-
+/* ---------- * * NAV SUPÉRIEURE : Search, Profil, Langue * * ---------- */
 
 .nav_top_header {
     position: absolute;
     z-index: 1;
-    /* added as per my other one*/
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -74,7 +70,7 @@ nav svg {
     padding-left: var(--small-space);
 }
 
-/* ---------- * * Language * * ---------- */
+/* ---------- * * Langue * * ---------- */
 .nav_lang {
     max-height: 30px;
     display: flex;
@@ -85,12 +81,10 @@ nav svg {
     cursor: pointer;
 }
 
-/* ---------- * * BOTTOM NAV * * ---------- */
-/* ---------- * * Navigation en Général * * ---------- */
+/* ---------- * * NAV INFÉRIEURE: Dashboard, Celliers, Collection, Liste d'Achat  * * ---------- */
 
 .nav_bottom {
     display: grid;
-    /* --- Changer à 5 une fois rajouté l'icône pour "notes" --- */
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: var(--small-space); 
     background: var(--coral);  
@@ -105,29 +99,32 @@ nav svg {
 }
 
 
-/* ------- * * * * AUTRES TAILLES * * * * ------- */
-
-/* ----- * Responsive * ----- */
+/* ---------- * * * TABLET-RESPONSIVE * * * ---------- */
 
 @media (min-width: 750px){
-    nav{
+    nav {
         padding: var(--med-space);
     }
-    nav a{
-        max-height: 40px;
-        
+
+    nav a {
+        max-height: 40px; 
     }
-    .nav_top img{
+
+    .nav_top img {
         height: 42px;
     }
+
     .nav_top svg {
         fill: var(--cream);
         width: var(--xlarge-space);
         height: var(--xlarge-space);
     }
-    .nav_lang{
+
+    .nav_lang {
         font-size: var(--med-space);
         padding-top: 18px;
-
     }
 }
+
+
+
