@@ -1,31 +1,36 @@
-/* inseré comme seul enfant dans -> floaters/modal.css*/
-.note-file{
-  align-self: center;
-  background-color: var(--cream-lt);
-  border-radius: 13px;
-  padding:var(--small-space);
-  height: max-content;
-  display: flex;
-  flex-flow: column;
-  gap: var(--small-space);
+/* ---- * Inseré comme seul enfant dans -> floaters/modal.css * ---- */
+.note-file {
+    align-self: center;
+    margin: var(--small-space);
+    background-color: var(--cream-lt);
+    border-radius: var(--br-std);
+    padding:var(--small-space);
+    height: max-content;
+    display: flex;
+    flex-flow: column;
+    gap: var(--small-space);
 }
-.note-file h2{
-    font-size: .8em;
+
+.note-file h2 {
+    font-size: var(--sz-10);
 }
-.note-file h3{
-  font-size: 1.2em;
-  font-weight: 600;
+.note-file h3 {
+    font-size: var(--sz-7half);
+    font-weight: 600;
 }
-.note-file time{
-  font-weight: 600;
+
+.note-file time {
+    font-weight: 600;
 }
-.note-file p{
-  border-radius: 12px;
-  padding: var(--small-space);
-  border: 1px solid var(--coral-tr);
+
+.note-file p {
+    border-radius: var(--br-std);
+    padding: var(--small-space);
+    border: 1px solid var(--coral-tr);
 }
-.note-file div:last-of-type{
-  display: flex;
-  gap: var(--med-space);
-  justify-content: center;
+
+.note-file div:last-of-type {
+    display: flex;
+    gap: var(--med-space);
+    justify-content: center;
 }

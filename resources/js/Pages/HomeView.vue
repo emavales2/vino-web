@@ -1,8 +1,6 @@
 <template>
     <Head title="Home" />
 
-    
-    <!-- <div class="bckgd">  -->
         <!-- ---- * En dessus de body, le conteneur principale. Au dessous du page content * ---- -->
         <div class="bckgd bckgd-home">
             <!-- ---- * Contenu décoratif du bg (flat). Pas d'interaction avec page content * ---- -->

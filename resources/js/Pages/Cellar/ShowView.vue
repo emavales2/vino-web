@@ -18,13 +18,8 @@
                 </section>
             </header>
       
-            <!-- ---- * SECTION RECHERCHE/FILTRES/TRI * ---- -->
+            <!-- ---- * SECTION RECHERCHE / FILTRES / TRI * ---- -->
 
-            <!-- If I make it into a component, will add back the v-if maybe? -->
-            <!-- <aside v-if="collection.length !== 0 || searchTerm" class="card_nav bckgd-burg-lt"> -->
-
-            <!-- ---- * SECTION SEARCH / TRI / FILTRES COMMENCE * ---- -->   
-            <!-- bckgd-trans  -->
             <aside class="card_nav " v-if="collection.length !== 0">
                 <h2 class="title_disp_subt tit_sub_sm">
                     {{ __("cellar.more_options") }}
@@ -44,7 +39,7 @@
                 <!-- ---- * Dépliant Tri * ---- -->
                 <transition name="sort-container-fade">
                     <section v-show="isSortSquareOpen" class="sort-container">
-                        <!-- <h1 class="fs_6 display-font coral">{{ __('cellar.sort_by') }}</h1> -->
+
                         <ul class="sort-container sort-options">
                             <li>
                                 <input type="radio" class="radio" name="sort" id="type" v-model="sort" :value="1">
@@ -66,17 +61,19 @@
                 <transition name="sort-container-fade">
                     <section v-show="isFilterSquareOpen" class="sort-container">
                         <div class="column_30">
-                            <section class="column_10">                                                
+                            <section class="column_15">                                                
                                 <!-- ---- * Filtre "Type" * ---- -->
                                 <article class="dropdown_container"> 
                                     <header class="button">
-                                        <span>
+                                        <section>
                                             <input type="checkbox" id="filterByType" class="dropdown_toggle" @click="toggleTypes">
-                                            <label for="filterByType">{{ typeFilter }}</label>
-                                        </span>
-                                        <span class="drop_arrrow">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>
-                                        </span>
+                                            <label for="filterByType">
+                                                <span>
+                                                    {{ typeFilter }}
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>
+                                                </span>
+                                            </label>
+                                        </section>
                                     </header>  
 
                                     <ul class="dropdown_options" @change="filterCollection" ref="filterByType" v-show="typeFilterOpen">
@@ -94,13 +91,15 @@
                                 <!-- ---- * Filtre "Pays" * ---- -->
                                 <article class="dropdown_container">      
                                     <header class="button">
-                                        <span>
+                                        <section>
                                             <input type="checkbox" id="filterByCountry" class="dropdown_toggle" @click="toggleCountries">
-                                            <label for="filterByCountry">{{ countryFilter }}</label>
-                                        </span>
-                                        <span class="drop_arrrow">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>
-                                        </span>
+                                            <label for="filterByCountry">
+                                                <span>
+                                                {{ countryFilter }}
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>
+                                                </span>
+                                            </label>
+                                        </section>
                                     </header> 
                                     
                                     <ul class="dropdown_options" @change="filterCollection" ref="filterByCountry" v-show="countryFilterOpen">
@@ -118,13 +117,15 @@
                                 <!-- ---- * Filtre "Taille" * ---- -->
                                 <article class="dropdown_container">      
                                     <header class="button">
-                                        <span>
+                                        <section>
                                             <input type="checkbox" id="filterBySize" class="dropdown_toggle" @click="toggleSizes">
-                                            <label for="filterBySize">{{ sizeFilter }}</label>
-                                        </span>
-                                        <span class="drop_arrrow">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>
-                                        </span>
+                                            <label for="filterBySize">
+                                                <span>
+                                                    {{ sizeFilter }}
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>
+                                                </span>
+                                            </label>
+                                        </section>
                                     </header>  
                                     
                                     <ul class="dropdown_options" @change="filterCollection" ref="filterBySize" v-show="sizeFilterOpen">

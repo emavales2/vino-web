@@ -6,72 +6,70 @@
             <header>
                 <h1 class="title_index">{{ __('user.edit_profile') }}</h1>
             </header>
-            <form @submit.prevent="submit">
-                <div class="form_wrapper_2">
-                    <label for="first_name" value="First name">{{ __('user.first_name') }}</label>
-                    <input
-                        id="first_name"
-                        type="text"
-                        class="mt-1 block w-full"
-                        v-model="form.first_name"
-                        required
-                        autofocus
-                        autocomplete="first_name"
-                        placeholder="first name"
-                    />
-                    <InputError
-                        class="input_err"
-                        :message="form.errors.first_name"
-                    />
-                </div>
 
-                <div class="form_wrapper_2">
-                    <label for="last_name" value="Last name">{{ __('user.last_name') }}</label>
-                    <input
-                        id="last_name"
-                        type="text"
-                        class="mt-1 block w-full"
-                        v-model="form.last_name"
-                        required
-                        autofocus
-                        autocomplete="last_name"
-                        placeholder="last name"
-                    />
-                    <InputError
-                        class="input_err"
-                        :message="form.errors.last_name"
-                    />
-                </div>
+            <div class="column_20">
+                <form @submit.prevent="submit">
+                    <div class="form_wrapper_2">
+                        <label for="first_name" value="First name">{{ __('user.first_name') }}</label>
+                        <input
+                            id="first_name"
+                            type="text"
+                            v-model="form.first_name"
+                            required
+                            autofocus
+                            autocomplete="first_name"
+                            placeholder="first name"
+                        />
+                        <InputError
+                            class="input_err"
+                            :message="form.errors.first_name"
+                        />
+                    </div>
 
-                <div class="form_wrapper_2">
-                    <label for="email" value="Email">{{ __('user.email') }}</label>
-                    <input
-                        id="email"
-                        type="email"
-                        class="mt-1 block w-full"
-                        v-model="form.email"
-                        required
-                        autofocus
-                        autocomplete="username"
-                        placeholder="email address"
-                    />
-                    <InputError
-                        class="input_err"
-                        :message="form.errors.email"
-                    />
-                </div>
-                <input type="hidden" v-model="form.id" />
+                    <div class="form_wrapper_2">
+                        <label for="last_name" value="Last name">{{ __('user.last_name') }}</label>
+                        <input
+                            id="last_name"
+                            type="text"
+                            v-model="form.last_name"
+                            required
+                            autofocus
+                            autocomplete="last_name"
+                            placeholder="last name"
+                        />
+                        <InputError
+                            class="input_err"
+                            :message="form.errors.last_name"
+                        />
+                    </div>
+
+                    <div class="form_wrapper_2">
+                        <label for="email" value="Email">{{ __('user.email') }}</label>
+                        <input
+                            id="email"
+                            type="email"
+                            v-model="form.email"
+                            required
+                            autofocus
+                            autocomplete="username"
+                            placeholder="email address"
+                        />
+                        <InputError
+                            class="input_err"
+                            :message="form.errors.email"
+                        />
+                    </div>
+                    <input type="hidden" v-model="form.id" />
+                    
+                    <div>
+                        <button class="button btn-cream" type="submit">{{ __('buttons.save') }}</button>
+                    </div>
+                </form>
                 
-                <div>
-                    <button class="button btn-cream" type="submit">{{ __('buttons.save') }}</button>
-                </div>
-            </form>
-
-            <div class="button_column btn_col_20">
                 <button class="button btn-cream" @click="toggleModal">
                     {{ __('user.delete_account') }}
-                </button>
-            </div>
+                </button>              
+            </div>            
         </main>
     </div>
     <Modal

@@ -7,7 +7,7 @@
             <h1 class="title_index">{{ __('cellar.create_custom') }}</h1>
             </header>
             
-            <form @submit.prevent="submit" class="form-create-wine">
+            <form @submit.prevent="submit">
                 <section class="column_25">
                     <header>
                         <h2 class="title_disp_subt">{{ __('cellar.tell_us') }}</h2>
@@ -18,7 +18,6 @@
                     <input
                         id="name"
                         type="text"
-                        class=""
                         v-model="form.name"
                         autofocus
                         autocomplete="name"
@@ -67,7 +66,6 @@
                         <input
                             id="country"
                             type="text"
-                            class=""
                             v-model="form.country"
                             autofocus
                             autocomplete="country"
@@ -81,7 +79,6 @@
                         <input
                             id="size"
                             type="text"
-                            class=""
                             v-model="form.size"
                             autofocus
                             autocomplete="size"
@@ -97,7 +94,6 @@
                             type="number"
                             min="0"
                             step="0.01"
-                            class=""
                             v-model="form.price"
                             autofocus
                             autocomplete="price"
@@ -109,8 +105,7 @@
 
                 <section class="card_cellar card_cell_w_sections">
                     <h2 class="title_disp_subt cream_lt">{{ __('cellar.what_to_do') }}</h2>
-                    <div class="column_15">
-                        <!-- <h5 class="legend_small cream">Store in a cellar</h5> -->
+                    <div class="column_20">
                         <h3 class="typo-fs-5 burg-lt typo-block-font">{{ __('cellar.store') }}</h3>
                         <div class="grid_square_horiz">
                             <div v-for="(cellar, i) in cellars"  class="grid_sq_insert">
@@ -142,7 +137,6 @@
                     </div>
 
                     <div class="column_15">
-                        <!-- <h5 class="legend cream">Add to your buy list</h5> -->
                         <h3 class="typo-fs-5 burg-lt typo-block-font">{{ __('cellar.add_buylist') }}</h3>
                         
                         <div class="form_wrapper_2">

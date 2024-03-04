@@ -6,7 +6,6 @@
               <input 
                   type="text" 
                   id="search"
-                  class="mt-1 block w-full"
                   placeholder="chardonnay"
                   v-model="form.search"
                   >
@@ -45,7 +44,6 @@ export default{
           this.form.reset()
         }
       })
-      
     }
   },
   props: ['searchAction']

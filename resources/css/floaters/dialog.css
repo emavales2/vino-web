@@ -1,13 +1,15 @@
-.dialog{
-  background-color: var(--success);
-  bottom: 60px;
-  border: 2px solid var(--success-lt);
-  border-radius: 100px;
-  color: var(--white);
-  background-color: var(--success);
-  padding: var(--vsmall-space) var(--med-space);
-  position: fixed;
-  right: var(--small-space);
-  z-index: 3;
-  max-width: 90vw;
+/* * ---- * Dialogs de confirmation succès * ---- */
+
+.dialog {
+    background-color: var(--success);
+    bottom: 60px;
+    border: 2px solid var(--success-lt);
+    border-radius: 100px;
+    color: var(--white);
+    background-color: var(--success);
+    padding: var(--xsmall-space) var(--med-space);
+    position: fixed;
+    right: var(--small-space);
+    z-index: 3;
+    max-width: 90vw;
 }

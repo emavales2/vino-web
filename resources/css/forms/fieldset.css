@@ -1,158 +1,51 @@
 
-
-/* ----- * FIELDSET (input ou champ) * ------ */
-
 /* ----- * Élimine le css natif du fieldset * ------ */
 fieldset {
     border: none;
     padding: 0;
 }
 
-.fieldset_1 {
-    border: 2px solid var(--cream); 
-    border-radius: var(--large-space);
-    /* margin: auto;  */
-    max-width: 100%;
-    width: 100%;
-}
+/* ---- * fieldset_3 enveloppe les choix de type de vin dans le formulaire pour créer un custom wine * ---- */
 
-.fieldset_1 legend {
-    margin: 0 var(--large-space);
-    padding: 0 var(--small-space);
-    font-size: medium;
-    text-transform: lowercase;
-    color: var(--cream);
-    font-family: var(--text-font);
-}
-
-.fieldset_1 input {
-    box-sizing: border-box;
-    border-radius: var(--large-space);
-    border: none;
-    background: transparent;
-    font-size: medium;
-    padding: 0px var(--med-space);
-    margin-bottom: 12px;
-    margin-top: 4px;
-    max-width: 100%;
-    width: 100%;
-    color: var(--cream-lt);
-}
-
-.fieldset_1 input:focus-visible {
-    outline: none;
-}
-
-.fieldset_1 input::placeholder {
-    color: var(--coral);
-    font-family: var(--text-font);
-    text-transform: lowercase;
-}
-
-.fieldset_1 input:-webkit-autofill {
-    background-color: none;
-    color: var(--cream-lt) !important;
-}
-
-.fs_burg {
-    border: 2px solid var(--burgundy); 
-}
-
-.fs_burg legend, .fs_burg input {
-    color: var(--burgundy);
-}
-
-.fieldset_3{
-    border: 2px solid var(--cream); 
-    border-radius: var(--large-space);
-    background-color: var(--cream-lt);
-}
-.fieldset_3 legend{
+/* ----- * Stylée pour ressembler les labels avant les inputs aussi présents dans le formulaire * ------ */
+.fieldset_3 legend {
     margin: 0 var(--small-space);
     padding: var(--small-space);
-    border: 1px solid var(--cream);
-    background-color: var(--burgundy);
-    border-radius: 10px;
     color: var(--coral);
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: var(--sz-9);
+    font-weight: 500;
     text-transform: uppercase;
 }
-.fieldset_3>div{
+
+.fieldset_3 > div {
     display: flex;
     justify-content: space-between;
     padding: var(--small-space) var(--med-space);
     gap: var(--small-space);
+    border: 2px solid var(--cream); 
+    border-radius: 35px;
+    background-color: var(--cream-lt);
 }
-.fieldset_3 label{
-    font-family: var(--block-font);
+
+.fieldset_3 label {
+    font-family: var(--text-font);
     color: var(--burgundy);
+    font-size: var(--sz-9);
 }
 
-/* Display group label and input */
-.form_wrapper_2 {
-    display: flex;
-    flex-direction: column;
-    gap: var(--small-space);
-}
 
-.form_wrapper_2 label {
-    color: var(--coral);
-    font-size: 1rem;
-    font-weight: 500;
-    margin: 0 var(--med-space);
-    text-transform: uppercase;
-}
+/* ---------- * * * TABLET-RESPONSIVE * * * ---------- */
 
-.form_wrapper_2 > .burg{
-    color: var(--burgundy);
-}
+@media (min-width: 750px) {
 
-.form_wrapper_2 input {
-    box-sizing: border-box;
-    align-self: center;
-    border-radius: var(--large-space);
-    border: none;
-    background: var(--cream-lt);
-    font-size: 1rem;
-    padding: 12px var(--med-space);
-    max-width: 100%;
-    width: 100%;
-    color: var(--burgundy-lt);
-}
-.form_wrapper_2 textarea {
-    box-sizing: border-box;
-    align-self: center;
-    border-radius: var(--large-space);
-    border: none;
-    background: var(--cream-lt);
-    font-size: 1rem;
-    padding: 12px var(--med-space);
-    max-width: 100%;
-    width: 100%;
-    color: var(--burgundy-lt);
-}
-
-.form_wrapper_2 input::placeholder {
-    color: var(--coral);
-}
-
-/* ----- * Responsive * ----- */
-
-@media (min-width: 750px){
-    .form_wrapper_2 label {
-        font-size: 1.5rem;
+    .fieldset_3.fs_burg.row_els_apart{
+        font-size: var(--sz-5);
     }
-    .form_wrapper_2 input {
-        font-size: 1.5rem;
+
+    .fieldset_3 legend {
+        font-size: var(--sz-6half);
     }
-    .fieldset_1.fs_burg.row_els_apart{
-        font-size: 2rem;
-    }
-    .fieldset_1 legend{
-        font-size: 1.5rem;
-    }
-    .fieldset_1 input{
-        font-size: 1.5rem;
+    .fieldset_3 input {
+        font-size: var(--sz-6half);
     }
 }

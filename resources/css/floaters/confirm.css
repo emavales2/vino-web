@@ -1,9 +1,10 @@
-/* inseré comme seul enfant dans -> floaters/modal.css*/
+/* ---- * inseré comme seul enfant dans -> floaters/modal.css * ---- */
+
 .confirm {
     align-self: center;
     background-color: var(--cream-lt);
     color: var(--danger);
-    font-size: 1em;
+    font-size: var(--sz-9);
     border-radius: 13px;
     padding: var(--med-space) var(--small-space);
     font-family: var(--block-font);

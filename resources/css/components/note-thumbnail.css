@@ -1,16 +1,21 @@
-.note-thumbnail{
-  display: flex;
-  gap: var(--vsmall-space);
-  justify-content: space-between;
-  padding: var(--small-space);
-  border: 1px solid var(--coral-tr);
-  background-color: var(--cream-tr);
-  border-radius: 12px;
-  text-align: left;
+
+/* ---- * Instance de note dans "Notes de Dégustation" (wine/show) * ---- */
+
+.note-thumbnail {
+    display: flex;
+    gap: var(--xsmall-space);
+    justify-content: space-between;
+    padding: var(--small-space);
+    border: 1px solid var(--coral-tr);
+    background-color: var(--cream-tr);
+    border-radius: var(--br-std);
+    text-align: left;
 }
-.note-thumbnail p{
-  font-size: 1em;
+
+.note-thumbnail p {
+    font-size: var(--sz-9);
 }
-.note-thumbnail div>div{
-  font-size: .8em;
+
+.note-thumbnail div > div {
+    font-size: var(--sz-11);
 }

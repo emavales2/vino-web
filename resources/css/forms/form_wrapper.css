@@ -1,0 +1,62 @@
+/* ---- * Affiche le libellé + champs input du group * ---- */
+
+.form_wrapper_2 {
+    display: flex;
+    flex-direction: column;
+    gap: var(--small-space);
+}
+
+.form_wrapper_2 label {
+    color: var(--coral);
+    font-size: var(--sz-9);
+    font-weight: 500;
+    margin: 0 var(--med-space);
+    text-transform: uppercase;
+}
+
+.form_wrapper_2 > .burg{
+    color: var(--burgundy);
+}
+
+.form_wrapper_2 input {
+    box-sizing: border-box;
+    align-self: center;
+    border-radius: var(--large-space);
+    border: none;
+    background: var(--cream-lt);
+    font-size: var(--sz-9);
+    padding: var(--med-sm-space) var(--med-space);
+    max-width: 100%;
+    width: 100%;
+    color: var(--burgundy-lt);
+}
+
+.form_wrapper_2 textarea {
+    box-sizing: border-box;
+    align-self: center;
+    border-radius: var(--br-std);
+    border: none;
+    background: var(--cream-lt);
+    font-size: var(--sz-9);
+    padding: var(--med-sm-space) var(--med-space);
+    max-width: 100%;
+    width: 100%;
+    color: var(--burgundy-lt);
+}
+
+.form_wrapper_2 input::placeholder {
+    color: var(--coral);
+}
+
+
+/* ---------- * * * TABLET-RESPONSIVE * * * ---------- */
+
+@media (min-width: 750px) {
+    .form_wrapper_2 label {
+        font-size: var(--sz-6half);
+    }
+
+    .form_wrapper_2 input {
+        font-size: var(--sz-6half);
+    }
+}

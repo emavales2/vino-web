@@ -1,7 +1,7 @@
 <template>
   <main>
     <section>
-      <h1 class="title_index">{{ __('dialogue.found') }} {{ count }} {{ __('dialogue.result') }} "{{ search }}"</h1>
+      <h1 class="title_index typo-fs-5">{{ __('dialogue.found') }} {{ count }} {{ __('dialogue.result') }} "{{ search }}"</h1>
       <div v-if="results.length !== 0">
         <p v-if="count > 1000">{{ __('dialogue.too_many') }}</p>
         <ul class="wine-list">

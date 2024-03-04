@@ -16,7 +16,6 @@
                     <input
                         id="email"
                         type="email"
-                        class=""
                         v-model="form.email"
                         required
                         autofocus
@@ -53,7 +52,6 @@
         </main>
     </div>
 </template>
-// keep
 
 <script>
 import InputError from '@/Components/InputError.vue';

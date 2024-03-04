@@ -1,5 +1,5 @@
 <template>
-    <div class="ml-4">
+    <div>
         <div v-if="this.$page.props.locale == 'en'" @click="toggleLocale('fr')">FR</div>
         <div v-else @click="toggleLocale('en')">EN</div>
     </div>
