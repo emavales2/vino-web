@@ -161,6 +161,9 @@ class WineController extends Controller
         return redirect(route('collection'));
     }
 
+    /**
+     * Display the specified resource.
+     */
     public function publicShow (Wine $wine, User $user) 
     {
         
@@ -168,7 +171,6 @@ class WineController extends Controller
         $wine = $wine->resolve();
         return Inertia::render('Wine/ShowPublicView', compact('wine', 'user'));
     }
-
 
     /**
      * Remove the specified resource from storage.

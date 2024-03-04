@@ -130,17 +130,13 @@ class CellarController extends Controller
         $request->validate([
             'name' => 'min:3|max:255'
         ]);
-
         $userId = Auth::id();
-
         if ($cellar->user_id != $userId) {
             return redirect(route('cellar.index'));
         }        
-
         $cellar->update([
             'name' => $request->name
         ]);
-
         return redirect(route('cellar.show', $cellar->id));
     }
 
@@ -153,21 +149,14 @@ class CellarController extends Controller
     public function destroy(Cellar $cellar)
     {
         $userId = Auth::id();
-
-        // dans ma tête, ce n'était deja pas possible d'acceder ici manuellement
         if ($cellar->user_id != $userId) {
             return redirect(route('cellar.index'));
         }
-        
-        //to discuss
         $hasWines = $cellar->cellarHasWines()->exists();
-
         if ($hasWines) {
             return redirect(route('cellar.index'));
         }
-
         $cellar->delete();
-
         return redirect(route('cellar.index'));
     }
 }

@@ -95,39 +95,6 @@ class BuyListController extends Controller
             ]);
         }
     }
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\BuyList  $buyList
-     * @return \Illuminate\Http\Response
-     */
-    public function show(BuyList $buyList)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\BuyList  $buyList
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(BuyList $buyList)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\BuyList  $buyList
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, BuyList $buyList)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.

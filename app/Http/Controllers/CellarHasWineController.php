@@ -118,29 +118,6 @@ class CellarHasWineController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\CellarHasWine  $cellarHasWine
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(CellarHasWine $cellarHasWine)
-    {
-        //Ajouter les btn delete et changer la quantité sur chaque bouteille + btn edit si bouteille custom
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\CellarHasWine  $cellarHasWine
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, CellarHasWine $cellarHasWine)
-    {
-        //
-    }
-
-    /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\CellarHasWine  $cellarHasWine
